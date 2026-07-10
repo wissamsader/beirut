@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booza Society — Ice cream shop in Hamra, Beirut</title>
+<meta name="description" content="Booza Society, Ice cream shop in Hamra, Beirut. Call +961 81 359 842.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--milk:#FFF9F0;--pist:#A8CBA0;--pist2:#7FB07A;--berry:#E76D8F;--mango:#F5B33B;--choc:#4A3226;--ink:#33261F}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--berry);color:#fff}
+body{font-family:'Inter',sans-serif;background:var(--milk);color:var(--ink);line-height:1.7}
+.fk{font-family:'Fredoka',sans-serif}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:rgba(255,249,240,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--ink)}
+nav .brand{font-family:'Fredoka';font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none}
+nav .brand .o1{color:var(--berry)}nav .brand .o2{color:var(--pist2)}nav .brand .o3{color:var(--mango)}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.85rem}
+nav .links a:hover{color:var(--berry)}
+nav .call{background:var(--ink);color:#fff !important;padding:10px 22px;border-radius:99px}
+/* hero: embossed-in-gelato */
+.hero{position:relative;overflow:hidden}
+.hero img.bg{width:100%;height:min(78vh,640px);object-fit:cover;display:block;filter:saturate(1.06)}
+.hero .stamp{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 5vw}
+.hero .stamp h1{font-family:'Fredoka';font-weight:700;font-size:clamp(3rem,10.5vw,8.4rem);line-height:.95;color:rgba(255,249,240,.96);letter-spacing:.01em;
+ text-shadow:0 3px 0 rgba(51,38,31,.18), 0 -2px 6px rgba(255,255,255,.35), 0 14px 40px rgba(51,38,31,.45)}
+.hero .stamp .tag{font-family:'Fredoka';font-weight:500;color:#fff;font-size:clamp(1rem,2.4vw,1.4rem);margin-top:14px;text-shadow:0 4px 18px rgba(51,38,31,.55);max-width:620px}
+.hero .scoopchips{position:absolute;left:0;right:0;bottom:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:0 4vw}
+.scp{font-family:'Fredoka';font-weight:600;font-size:.85rem;background:rgba(255,249,240,.92);border-radius:99px;padding:9px 18px;box-shadow:0 8px 22px rgba(51,38,31,.25)}
+.scp b{margin-right:6px}
+/* seasonal ribbon */
+.ribbon{background:var(--pist);color:var(--ink);text-align:center;font-family:'Fredoka';font-weight:600;padding:14px 4vw;font-size:1rem;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.ctarow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:42px 5vw 8px}
+.btn{font-family:'Fredoka';font-weight:600;font-size:.95rem;text-decoration:none;padding:14px 32px;border-radius:99px;border:2px solid var(--ink);color:var(--ink);background:#fff;transition:transform .15s,box-shadow .15s;box-shadow:0 5px 0 var(--ink)}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.btn.b{background:var(--berry);border-color:var(--ink);color:#fff}
+.btn.wa{background:#39a05c;color:#fff}
+section{padding:92px 5vw}
+.wrap{max-width:1120px;margin:0 auto}
+.k{font-family:'Fredoka';font-weight:600;color:var(--berry);letter-spacing:.2em;text-transform:uppercase;font-size:.76rem;display:block;margin-bottom:12px}
+/* story */
+.story{display:grid;grid-template-columns:1.04fr .96fr;gap:60px;align-items:center}
+.story h2{font-family:'Fredoka';font-weight:700;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1.04;margin-bottom:16px}
+.story h2 em{font-style:normal;color:var(--pist2)}
+.story p{color:rgba(51,38,31,.85);max-width:54ch;margin-bottom:12px}
+.story .owner{display:flex;gap:18px;align-items:center;background:#fff;border:2px solid var(--ink);border-radius:22px;padding:18px 22px;margin-top:22px;box-shadow:0 6px 0 var(--ink)}
+.story .owner img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--pist)}
+.story .owner b{font-family:'Fredoka';display:block}
+.story .owner span{font-size:.88rem;color:rgba(51,38,31,.7)}
+.story .ph img{width:100%;height:470px;object-fit:cover;display:block;border-radius:200px 200px 26px 26px;border:3px solid var(--ink);box-shadow:0 10px 0 var(--pist)}
+/* flavor wall (highlights) */
+.flav{background:var(--berry)}
+.flav h2{font-family:'Fredoka';font-weight:700;color:#fff;font-size:clamp(2rem,4.8vw,3.4rem);text-align:center;line-height:1}
+.flav h2 em{font-style:normal;color:#FFE1B8}
+.flav .sub{text-align:center;color:rgba(255,255,255,.9);margin:10px 0 50px}
+.f-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.fc{background:var(--milk);border:2.5px solid var(--ink);border-radius:26px;overflow:hidden;box-shadow:0 8px 0 rgba(51,38,31,.35);transition:transform .16s}
+.fc:hover{transform:translateY(-6px) rotate(-.5deg)}
+.fc img{width:100%;height:215px;object-fit:cover;display:block;border-bottom:2.5px solid var(--ink)}
+.fc .bd{padding:20px 22px 26px}
+.fc .dot{display:inline-block;width:14px;height:14px;border-radius:50%;margin-right:8px;vertical-align:middle;border:2px solid var(--ink)}
+.fc h3{font-family:'Fredoka';font-weight:600;font-size:1.25rem;display:inline;vertical-align:middle}
+.fc p{font-size:.92rem;color:rgba(51,38,31,.8);margin-top:10px}
+/* menu board */
+.menu{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center;max-width:1120px;margin:0 auto}
+.menu .board img{width:100%;display:block;border-radius:22px;border:2.5px solid var(--ink);box-shadow:0 10px 0 var(--mango)}
+.menu h2{font-family:'Fredoka';font-weight:700;font-size:clamp(2rem,4.4vw,3rem);line-height:1.05;margin-bottom:14px}
+.menu h2 em{font-style:normal;color:var(--berry)}
+.menu p{color:rgba(51,38,31,.85);max-width:52ch;margin-bottom:10px}
+.menu .fl{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.menu .fl span{font-family:'Fredoka';font-weight:500;font-size:.85rem;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:7px 16px}
+/* gallery scoops */
+.gal h2{font-family:'Fredoka';font-weight:700;font-size:clamp(2rem,4.8vw,3.4rem);text-align:center;margin-bottom:8px}
+.gal h2 em{font-style:normal;color:var(--berry)}
+.gal .sub{text-align:center;color:rgba(51,38,31,.7);margin-bottom:46px}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:0 auto}
+.g-grid a{display:block;border-radius:24px;overflow:hidden;border:2.5px solid var(--ink);box-shadow:0 7px 0 var(--ink);transition:transform .16s;background:#fff}
+.g-grid a:hover{transform:translateY(-6px)}
+.g-grid img{width:100%;height:270px;object-fit:cover;display:block}
+/* reviews: cone cards */
+.rev{background:var(--pist);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.rev h2{font-family:'Fredoka';font-weight:700;font-size:clamp(2rem,4.6vw,3.2rem);text-align:center;margin-bottom:48px}
+.rev h2 em{font-style:normal;color:#fff}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:var(--milk);border:2.5px solid var(--ink);border-radius:22px;padding:26px;box-shadow:0 7px 0 var(--ink)}
+.rc .st{color:var(--berry);letter-spacing:3px;display:block;margin-bottom:12px}
+.rc p{font-size:.97rem;line-height:1.7}
+.rc .who{margin-top:14px;font-family:'Fredoka';font-weight:600;color:var(--pist2)}
+/* visit */
+.visit{text-align:center;padding:105px 5vw}
+.visit h2{font-family:'Fredoka';font-weight:700;font-size:clamp(2.4rem,6.8vw,4.6rem);line-height:1}
+.visit h2 em{font-style:normal;color:var(--berry)}
+.visit .phone{font-family:'Fredoka';font-weight:700;font-size:clamp(1.8rem,4.6vw,3rem);color:#fff;background:var(--ink);text-decoration:none;display:inline-block;margin:26px 0 8px;padding:12px 34px;border-radius:99px;box-shadow:0 7px 0 var(--berry)}
+.visit .phone:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--berry)}
+.visit .meta{color:rgba(51,38,31,.8);max-width:460px;margin:18px auto 32px;line-height:2}
+.visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2.5px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 8px 22px rgba(51,38,31,.3)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Fredoka';font-weight:600;font-size:.9rem;text-decoration:none;color:var(--ink)}
+.mbar .c{background:var(--berry);color:#fff}
+.mbar .w{background:#39a05c;color:#fff}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .story,.menu{grid-template-columns:1fr;gap:40px}
+ .f-grid,.g-grid{grid-template-columns:1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+ .hero img.bg{height:60vh}
+}
+@media(min-width:600px) and (max-width:900px){.f-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+ <a class="brand" href="#">B<span class="o1">o</span><span class="o2">o</span>za S<span class="o3">o</span>ciety</a>
+ <div class="links">
+  <a href="#story">The maker</a><a href="#flavors">Flavors</a><a href="#menu">The board</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+96181359842">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <img class="bg" src="img/05.jpg" alt="Booza Society booza">
+ <div class="stamp">
+  <h1>BOOZA<br>SOCIETY</h1>
+  <p class="tag">Small-batch booza churned from whatever fruit is in season — by one very dedicated owner.</p>
+ </div>
+ <div class="scoopchips">
+  <span class="scp"><b>★ 4.8</b>121 reviews</span>
+  <span class="scp">Hamra · Jeanne d'Arc</span>
+  <span class="scp">Whatever fruit is in season</span>
+ </div>
+</header>
+
+<div class="ribbon">This week's churn depends on the fruit market — that's the whole philosophy 🍓</div>
+
+<div class="ctarow">
+ <a class="btn b" href="tel:+96181359842">Call +961 81 359 842</a>
+ <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener">Get directions ↗</a>
+</div>
+
+<section id="story">
+ <div class="wrap story">
+  <div class="rv">
+   <span class="k">The maker</span>
+   <h2>One owner. One machine.<br><em>Real fruit.</em></h2>
+   <p>Booza Society is a one-man institution on Jeanne d'Arc street: the owner in his chef's coat, a churning machine, and fruit bought like an argument with the season. Little sugar, natural everything, and flavors that appear and vanish with the market — plus oriental classics like sahlab & miskeh that taste like childhood.</p>
+   <p>Little sugar, natural ingredients, and flavors that change with the season — when strawberries end, the strawberry ends. Nobody argues.</p>
+   <div class="owner">
+    <img src="img/03.jpg" alt="The owner of Booza Society">
+    <div><b>The man in the chef's coat</b><span>He churns it, he scoops it, he'll talk you through every flavor.</span></div>
+   </div>
+  </div>
+  <div class="ph rv"><img src="img/08.jpg" alt="Booza Society scoops"></div>
+ </div>
+</section>
+
+<section class="flav" id="flavors">
+ <div class="wrap">
+  <h2 class="rv">The <em>society's</em> favorites</h2>
+  <p class="sub">Membership requirement: order a scoop</p>
+  <div class="f-grid"><div class="fc rv"><img src="img/05.jpg" alt="Seasonal fruit booza" loading="lazy"><div class="bd"><span class="dot" style="background:#E76D8F"></span><h3>Seasonal fruit booza</h3><p>Mulberry in mulberry season, strawberry in strawberry season. No exceptions.</p></div></div><div class="fc rv"><img src="img/04.jpg" alt="Almond praline" loading="lazy"><div class="bd"><span class="dot" style="background:#D9A05B"></span><h3>Almond praline</h3><p>The nutty corner of the board — praline, coconut, hazelnut, pistachio.</p></div></div><div class="fc rv"><img src="img/06.jpg" alt="Sahlab & miskeh" loading="lazy"><div class="bd"><span class="dot" style="background:#A8CBA0"></span><h3>Sahlab & miskeh</h3><p>The oriental classics, chewy and floral, exactly like the old souks.</p></div></div></div>
+ </div>
+</section>
+
+<section id="menu">
+ <div class="menu">
+  <div class="board rv"><img src="img/02.jpg" alt="Booza Society flavor board"></div>
+  <div class="rv">
+   <span class="k">The board</span>
+   <h2>Today's flavors, <em>chalked daily</em></h2>
+   <p>Oriental classics next to chocolate work: sahlab &amp; miskeh, tamer &amp; loz, osmalieh — then almond praline, chocolate orange, pistachio.</p>
+   <div class="fl">
+    <span>Sahlab &amp; Miskeh</span><span>Osmalieh</span><span>Almond Praline</span><span>Chocolate Hazelnut</span><span>Zaatar (yes, really)</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Scooped &amp; <em>photographed</em></h2>
+ <p class="sub">By the society's members, on Jeanne d'Arc street</p>
+ <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Members' <em>testimony</em></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>The ice cream is genuinely delicious, and the owner prepares each flavor using whatever fruit is in season. Consistently excellent.</p><div class="who">Philip Tohme</div></div><div class="rc rv"><span class="st">★★★★★</span><p>This is the only place in Beirut I will be coming to get ice cream from now on. A must-visit. The flavours are delicious and so thoughtfully made with little sugar. An incredible artisanal ice cream shop.</p><div class="who">Cam llly</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Hands down one of the best ice cream spots in Beirut. The owner is incredibly kind and crafts his ice cream using natural ingredients.</p><div class="who">Leila Joheir</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Join the <em>society.</em></h2>
+ <a class="phone" href="tel:+96181359842">+961 81 359 842</a>
+ <p class="meta">Jeanne d'Arc Street, Hamra, Beirut, Lebanon<br>Mon-Sat 10 AM - 9:30 PM; Sun 5 - 9 PM</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/96181359842" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+96181359842">Call</a>
+ <a class="w" href="https://wa.me/96181359842" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Booza Society · Hamra, Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kahwet 60 — Lebanese restaurant & cafe on Pasteur, Beirut</title>
+<meta name="description" content="Kahwet 60, retro Lebanese cafe-restaurant on Pasteur street. Call +961 81 196 000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Poppins:wght@400;500;600;700&family=Amiri:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0F6B66;--teal2:#0B524E;--orange:#E07A2F;--rose:#D8827E;--cream:#F6E8D6;--ink:#28211B;--wal:#6B4A32}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--orange);color:#fff}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);line-height:1.72}
+.ys{font-family:'Yeseva One',cursive}
+/* retro stripes top */
+.stripes{height:16px;background:linear-gradient(90deg,var(--teal) 0 25%,var(--orange) 25% 50%,var(--rose) 50% 75%,var(--wal) 75%)}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;background:rgba(246,232,214,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink)}
+nav .brand{font-family:'Yeseva One';font-size:1.3rem;color:var(--teal);text-decoration:none}
+nav .brand span{color:var(--orange)}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.84rem}
+nav .links a:hover{color:var(--orange)}
+nav .call{background:var(--teal);color:#fff !important;padding:10px 24px;border-radius:99px}
+/* hero */
+.hero{max-width:1200px;margin:0 auto;padding:70px 5vw 30px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero .year{display:inline-flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:.74rem;color:var(--orange)}
+.hero .year:before{content:"";width:34px;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange),var(--rose))}
+h1{font-family:'Yeseva One';font-size:clamp(3rem,8.6vw,6.4rem);line-height:.98;margin:16px 0 6px;color:var(--teal)}
+h1 span{color:var(--orange)}
+.hero .arb{font-family:'Amiri',serif;font-style:italic;font-size:clamp(1.2rem,2.8vw,1.7rem);color:var(--wal)}
+.hero p.tg{margin-top:16px;max-width:48ch;color:rgba(40,33,27,.82)}
+.hero .dial{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 30px}
+.dl{border:2px solid var(--ink);border-radius:14px;padding:10px 18px;font-weight:600;font-size:.8rem;background:#fff;box-shadow:4px 4px 0 rgba(40,33,27,.2)}
+.dl.t{background:var(--teal);color:#fff}
+.dl.o{background:var(--orange);color:#fff}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-weight:700;font-size:.9rem;text-decoration:none;padding:14px 32px;border-radius:99px;border:2px solid var(--ink);color:var(--ink);background:#fff;transition:all .16s;box-shadow:0 5px 0 var(--ink)}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.btn.t{background:var(--teal);color:#fff}
+.btn.wa{background:#2c8a52;color:#fff}
+.hero .tv{position:relative}
+.hero .tv img{width:100%;height:520px;object-fit:cover;display:block;border-radius:26px 26px 120px 26px;border:4px solid var(--ink);box-shadow:14px 14px 0 var(--rose)}
+.hero .tv .knob{position:absolute;top:-20px;left:-16px;background:var(--orange);color:#fff;font-family:'Yeseva One';padding:12px 22px;border-radius:99px;border:3px solid var(--ink);transform:rotate(-5deg);box-shadow:0 5px 0 var(--ink)}
+/* dial strip */
+.dialstrip{background:var(--teal);color:var(--cream);overflow:hidden;padding:13px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);margin-top:54px}
+.dialstrip .tt{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:'Yeseva One';font-size:.95rem;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:94px 5vw}
+.wrap{max-width:1200px;margin:0 auto}
+.k{font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:.74rem;color:var(--orange);display:block;margin-bottom:12px}
+/* time capsule story */
+.cap2{display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}
+.cap2 h2{font-family:'Yeseva One';font-size:clamp(2rem,4.8vw,3.4rem);line-height:1.04;margin-bottom:18px;color:var(--teal)}
+.cap2 h2 em{font-style:normal;color:var(--orange)}
+.cap2 p{color:rgba(40,33,27,.85);max-width:54ch;margin-bottom:12px}
+.cap2 .vinyl{display:flex;align-items:center;gap:16px;background:#fff;border:2px solid var(--ink);border-radius:18px;padding:16px 20px;margin-top:22px;box-shadow:6px 6px 0 rgba(40,33,27,.18)}
+.cap2 .vinyl .disc{width:54px;height:54px;border-radius:50%;background:repeating-radial-gradient(circle,var(--ink) 0 2px,#3a322b 2px 4px);position:relative;flex:none;animation:spin 6s linear infinite}
+.cap2 .vinyl .disc:after{content:"";position:absolute;inset:20px;border-radius:50%;background:var(--orange)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cap2 .vinyl b{display:block;font-size:.92rem}
+.cap2 .vinyl span{font-size:.8rem;color:rgba(40,33,27,.65)}
+.cap2 .ph img{width:100%;height:480px;object-fit:cover;display:block;border-radius:22px;border:4px solid var(--ink);box-shadow:-14px 14px 0 var(--teal)}
+/* rooftop band */
+.roof{background:var(--rose);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.roof .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
+.roof img{width:100%;height:430px;object-fit:cover;display:block;border-radius:22px;border:4px solid var(--ink);box-shadow:12px 12px 0 rgba(40,33,27,.25)}
+.roof h2{font-family:'Yeseva One';font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.04;color:#fff;text-shadow:2px 2px 0 rgba(40,33,27,.4);margin-bottom:16px}
+.roof p{color:rgba(255,255,255,.95);max-width:52ch;margin-bottom:10px;font-weight:500}
+/* breakfast wheel (highlights) */
+.wheel h2{font-family:'Yeseva One';font-size:clamp(2.1rem,5vw,3.6rem);text-align:center;color:var(--teal);line-height:1}
+.wheel h2 em{font-style:normal;color:var(--orange)}
+.wheel .sub{text-align:center;color:rgba(40,33,27,.7);margin:12px 0 52px}
+.w-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.wc{background:#fff;border:3px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:0 8px 0 var(--ink);transition:transform .16s}
+.wc:hover{transform:translateY(-6px)}
+.wc img{width:100%;height:220px;object-fit:cover;display:block;border-bottom:3px solid var(--ink)}
+.wc .bd{padding:20px 24px 26px}
+.wc .no{display:inline-block;font-family:'Yeseva One';background:var(--rose);color:#fff;padding:3px 14px;border-radius:99px;font-size:.85rem;margin-bottom:10px;border:2px solid var(--ink)}
+.wc h3{font-family:'Yeseva One';font-size:1.3rem;color:var(--teal)}
+.wc p{font-size:.92rem;color:rgba(40,33,27,.8);margin-top:8px}
+/* menu artifact */
+.art .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
+.art .sheet{transform:rotate(-1.6deg)}
+.art .sheet img{width:100%;display:block;border-radius:14px;border:3px solid var(--ink);box-shadow:0 10px 0 var(--orange)}
+.art h2{font-family:'Yeseva One';font-size:clamp(2rem,4.6vw,3.2rem);color:var(--teal);line-height:1.04;margin-bottom:16px}
+.art h2 em{font-style:normal;color:var(--orange)}
+.art p{color:rgba(40,33,27,.85);max-width:52ch;margin-bottom:10px}
+/* gallery */
+.gal{background:var(--teal2)}
+.gal h2{font-family:'Yeseva One';font-size:clamp(2.1rem,5vw,3.6rem);text-align:center;color:var(--cream);margin-bottom:10px}
+.gal h2 em{font-style:normal;color:var(--orange)}
+.gal .sub{text-align:center;color:rgba(246,232,214,.75);margin-bottom:50px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:215px;gap:16px;max-width:1200px;margin:0 auto}
+.g-grid a{display:block;border-radius:18px;overflow:hidden;border:3px solid var(--cream)}
+.g-grid a:nth-child(5n+2){grid-row:span 2}
+.g-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.g-grid a:hover img{transform:scale(1.06)}
+/* reviews postcards */
+.rev h2{font-family:'Yeseva One';font-size:clamp(2rem,4.8vw,3.3rem);text-align:center;color:var(--teal);margin-bottom:48px}
+.rev h2 em{font-style:normal;color:var(--orange)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.rc{background:#fff;border:3px solid var(--ink);border-radius:6px;padding:28px;box-shadow:8px 8px 0 rgba(40,33,27,.15);position:relative}
+.rc:before{content:"POSTCARD · PASTEUR ST";position:absolute;top:12px;right:14px;font-size:.6rem;letter-spacing:.16em;color:rgba(40,33,27,.4);font-weight:700}
+.rc .st{color:var(--orange);letter-spacing:3px;display:block;margin-bottom:12px}
+.rc p{font-size:.97rem;line-height:1.7}
+.rc .who{margin-top:14px;font-family:'Yeseva One';color:var(--teal);font-size:.95rem}
+/* visit */
+.visit{background:var(--orange);color:#fff;text-align:center;padding:110px 5vw;border-top:3px solid var(--ink)}
+.visit h2{font-family:'Yeseva One';font-size:clamp(2.4rem,7vw,4.8rem);line-height:1;text-shadow:3px 3px 0 rgba(40,33,27,.35)}
+.visit .phone{font-family:'Yeseva One';font-size:clamp(1.8rem,4.8vw,3rem);color:var(--orange);background:#fff;text-decoration:none;display:inline-block;margin:28px 0 8px;padding:10px 34px;border-radius:99px;border:3px solid var(--ink);box-shadow:0 7px 0 var(--ink)}
+.visit .phone:hover{transform:translateY(3px);box-shadow:0 4px 0 var(--ink)}
+.visit .meta{color:rgba(255,255,255,.95);max-width:480px;margin:18px auto 34px;line-height:2;font-weight:500}
+.visit .cta{justify-content:center}
+.visit .btn{background:transparent;color:#fff;border-color:#fff;box-shadow:0 5px 0 rgba(40,33,27,.35)}
+.visit .btn.wa{background:#2c8a52;border-color:#2c8a52}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(40,33,27,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--ink)}
+.mbar .c{background:var(--teal);color:#fff}
+.mbar .w{background:#2c8a52;color:#fff}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:920px){
+ nav .links a:not(.call){display:none}
+ .hero,.cap2,.roof .grid,.art .grid{grid-template-columns:1fr;gap:42px}
+ .w-grid{grid-template-columns:1fr}
+ .g-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+ .hero .tv img{height:420px}
+}
+@media(min-width:620px) and (max-width:920px){.w-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="stripes"></div>
+<nav>
+ <a class="brand" href="#">KAHWET <span>60</span></a>
+ <div class="links">
+  <a href="#capsule">The capsule</a><a href="#roof">The rooftop</a><a href="#wheel">Breakfast</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+96181196000">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <span class="year">Pasteur Street · tuned to the sixties</span>
+  <h1>KAHWET <span>60</span></h1>
+  <p class="arb">قهوة الستّين — where the decade never ended</p>
+  <p class="tg">A rooftop café styled like Beirut in the sixties — rakweh coffee, floral sofas, city views.</p>
+  <div class="dial">
+   <span class="dl t">★ 4.8 · 337 reviews</span>
+   <span class="dl o">Rooftop views</span>
+   <span class="dl">Shisha done properly</span>
+  </div>
+  <div class="cta">
+   <a class="btn t" href="tel:+96181196000">Call +961 81 196 000</a>
+   <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener">Directions ↗</a>
+  </div>
+ </div>
+ <div class="tv rv">
+  <span class="knob">est. in spirit, 1960</span>
+  <img src="img/01.jpg" alt="Kahwet 60 — pink wall and green shutters">
+ </div>
+</header>
+
+<div class="dialstrip"><div class="tt"><span>TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ </span></div></div>
+
+<section id="capsule">
+ <div class="wrap cap2">
+  <div class="rv">
+   <span class="k">The time capsule</span>
+   <h2>Beirut, <em>1960-something</em>, preserved with love</h2>
+   <p>Kahwet 60 turned a Pasteur-street rooftop into a time machine: pink walls and green shutters, floral sofas, copper rakwehs on crochet doilies, and a breakfast spread that arrives like a color TV test card. The decade never ended here — it just got a better view of the city.</p>
+   <p>Floral sofas, wall clocks that all agree to disagree, copper rakwehs and Turkish delight on crochet doilies — every corner styled like your grandmother's best salon.</p>
+   <div class="vinyl">
+    <span class="disc"></span>
+    <div><b>Now playing: the classics</b><span>Fairuz in the morning, tarab after dark — as the law requires.</span></div>
+   </div>
+  </div>
+  <div class="ph rv"><img src="img/06.jpg" alt="Inside Kahwet 60"></div>
+ </div>
+</section>
+
+<section class="roof" id="roof">
+ <div class="grid">
+  <img class="rv" src="img/05.jpg" alt="Kahwet 60 rooftop tables">
+  <div class="rv">
+   <span class="k" style="color:#fff">Sky-high vibes</span>
+   <h2>A balcony over the whole city</h2>
+   <p>The rooftop rail looks straight across Beirut's rooftops — orange juice at sunrise, shisha smoke curling at sunset, and that pink wall glowing behind you in every photo.</p>
+  </div>
+ </div>
+</section>
+
+<section class="wheel" id="wheel">
+ <div class="wrap">
+  <h2 class="rv">The breakfast <em>wheels</em></h2>
+  <p class="sub">Platters built like color TV test cards</p>
+  <div class="w-grid"><div class="wc rv"><img src="img/04.jpg" alt="The breakfast wheel" loading="lazy"><div class="bd"><span class="no">channel 1</span><h3>The breakfast wheel</h3><p>Cheeses, jams, zaatar and eggs arranged like a vintage clock face.</p></div></div><div class="wc rv"><img src="img/03.jpg" alt="Rakweh & delight" loading="lazy"><div class="bd"><span class="no">channel 2</span><h3>Rakweh & delight</h3><p>Turkish coffee in hammered copper, lokum on the side, always.</p></div></div><div class="wc rv"><img src="img/07.jpg" alt="Tea, poured properly" loading="lazy"><div class="bd"><span class="no">channel 3</span><h3>Tea, poured properly</h3><p>From silver pots onto balcony tables above the rooftops.</p></div></div></div>
+ </div>
+</section>
+
+<section class="art" id="menu">
+ <div class="grid">
+  <div class="sheet rv"><img src="img/02.jpg" alt="Kahwet 60 nostalgic menu card"></div>
+  <div class="rv">
+   <span class="k">The menu card</span>
+   <h2>Printed like an old <em>exam sheet</em></h2>
+   <p>The menu arrives looking like a 1960s school questionnaire — checkboxes, old-paper texture, Arabic handwriting. Tick what you want, hand it back, wait for the trays.</p>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Scenes from the <em>sixties</em></h2>
+ <p class="sub">Shot yesterday. Feels like fifty years ago.</p>
+ <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Postcards from <em>guests</em></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>The place has one of the best settings and such a beautiful ambiance. I love the 60s vibe inside, it feels warm, stylish, and relaxed.</p><div class="who">shady deeb</div></div><div class="rc rv"><span class="st">★★★★★</span><p>We came for breakfast and loved it. Delicious with a big variety of options, and the whole place takes you back to the beautiful 70s and 80s, very authentic and full of charm.</p><div class="who">Suzy Ghazali</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Sky-high vibes at Kahwet 60! Amazing atmosphere, comfy seating, and the shisha game is strong. Decor is on point, perfect spot to chill and take in the views.</p><div class="who">Ragheed Kotob</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Turn the dial back.</h2>
+ <a class="phone" href="tel:+96181196000">+961 81 196 000</a>
+ <p class="meta">Pasteur Street (rooftop views), Gemmayze, Beirut, Lebanon<br>Open daily — breakfast till late night shisha</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/96181196000" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+96181196000">Call</a>
+ <a class="w" href="https://wa.me/96181196000" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Kahwet 60 · Pasteur, Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

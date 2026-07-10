@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakim Beirut — Snack bar & shawarma in Ras Beirut</title>
+<meta name="description" content="Hakim Beirut, snack & shawarma in Ras Beirut, open 8 AM to 2 AM. Call +961 3 873 124.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--flame:#E85D1F;--flame2:#C74812;--ivory:#FFF6E9;--char:#2B2018;--butter:#FFC94D;--mint:#31A662}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--flame);color:#fff}
+body{font-family:'Nunito',sans-serif;background:var(--ivory);color:var(--char);line-height:1.7;font-weight:600}
+.tt1{font-family:'Titan One',cursive}
+/* marquee lights top */
+.lights{background:var(--char);padding:10px 0;overflow:hidden;border-bottom:4px solid var(--flame)}
+.lights .tt{display:flex;width:max-content;animation:mq 20s linear infinite;font-family:'Titan One';color:var(--butter);font-size:.95rem;letter-spacing:.22em;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(255,246,233,.96);backdrop-filter:blur(5px);border-bottom:3px solid var(--char)}
+nav .brand{font-family:'Titan One';font-size:1.35rem;color:var(--flame);text-decoration:none;text-shadow:2px 2px 0 rgba(43,32,24,.15)}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:var(--char);text-decoration:none;font-weight:800;font-size:.85rem}
+nav .links a:hover{color:var(--flame)}
+nav .call{background:var(--flame);color:#fff !important;padding:10px 24px;border-radius:99px;border:2.5px solid var(--char);box-shadow:0 4px 0 var(--char)}
+/* hero */
+.hero{max-width:1160px;margin:0 auto;padding:64px 5vw 40px;display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center}
+.hero .open{display:inline-flex;align-items:center;gap:10px;background:var(--char);color:var(--butter);border-radius:99px;padding:9px 20px;font-weight:800;font-size:.8rem;letter-spacing:.08em}
+.hero .open .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-family:'Titan One';font-size:clamp(3.4rem,10.5vw,7.8rem);line-height:.9;color:var(--flame);margin:18px 0 6px;text-shadow:4px 4px 0 rgba(43,32,24,.14)}
+h1 span{display:block;font-size:.36em;color:var(--char);text-shadow:none;letter-spacing:.14em}
+.hero p.tg{max-width:46ch;color:rgba(43,32,24,.85);font-size:1.05rem}
+.hero .badges{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 28px}
+.bd{background:#fff;border:2.5px solid var(--char);border-radius:14px;padding:9px 18px;font-weight:800;font-size:.8rem;box-shadow:0 4px 0 var(--char)}
+.bd.f{background:var(--butter)}
+.bd.o{background:var(--flame);color:#fff}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:'Titan One';font-size:1rem;text-decoration:none;padding:14px 32px;border-radius:99px;border:3px solid var(--char);color:var(--char);background:#fff;box-shadow:0 5px 0 var(--char);transition:all .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--char)}
+.btn.f{background:var(--flame);color:#fff}
+.btn.wa{background:var(--mint);color:#fff}
+.hero .spit{position:relative}
+.hero .spit img{width:100%;height:500px;object-fit:cover;display:block;border-radius:24px;border:4px solid var(--char);box-shadow:0 12px 0 var(--flame)}
+.hero .spit .live{position:absolute;top:-20px;left:24px;background:#fff;border:3px solid var(--char);border-radius:99px;padding:9px 20px;font-weight:800;box-shadow:0 5px 0 var(--char);transform:rotate(-3deg)}
+.hero .spit .live b{color:var(--flame)}
+.hero .spit .flamesvg{position:absolute;bottom:-26px;right:-14px;width:92px;height:92px}
+/* five-oh wall */
+.fivewall{background:var(--flame);color:#fff;border-top:4px solid var(--char);border-bottom:4px solid var(--char);padding:44px 5vw}
+.fivewall .in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+.fivewall .score{font-family:'Titan One';font-size:clamp(3rem,8vw,5.4rem);line-height:1;text-shadow:4px 4px 0 var(--flame2)}
+.fivewall .stars{font-size:1.6rem;letter-spacing:6px;color:var(--butter)}
+.fivewall p{max-width:400px;font-weight:700}
+section{padding:92px 5vw}
+.wrap{max-width:1160px;margin:0 auto}
+.k{font-family:'Titan One';color:var(--flame);font-size:.95rem;letter-spacing:.08em;display:block;margin-bottom:10px}
+/* hakim story */
+.man{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.man .ph img{width:100%;height:440px;object-fit:cover;display:block;border-radius:24px;border:4px solid var(--char);box-shadow:-12px 12px 0 var(--butter)}
+.man h2{font-family:'Titan One';font-size:clamp(2rem,5vw,3.5rem);line-height:.98;margin-bottom:16px}
+.man h2 span{color:var(--flame)}
+.man p{color:rgba(43,32,24,.85);max-width:52ch;margin-bottom:12px}
+.man .quote{background:#fff;border:3px solid var(--char);border-radius:18px;padding:18px 22px;margin-top:20px;box-shadow:0 6px 0 var(--char);font-weight:700}
+.man .quote span{display:block;font-family:'Titan One';color:var(--flame);margin-top:8px;font-size:.9rem}
+/* counter hits (highlights) */
+.hits{background:var(--char);color:var(--ivory)}
+.hits h2{font-family:'Titan One';font-size:clamp(2.2rem,5.4vw,3.8rem);text-align:center;line-height:.94;color:var(--butter)}
+.hits h2 span{color:var(--flame)}
+.hits .sub{text-align:center;color:rgba(255,246,233,.75);margin:12px 0 50px;font-weight:700}
+.h-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.hc{background:var(--ivory);color:var(--char);border-radius:22px;overflow:hidden;border:3px solid var(--butter);box-shadow:0 9px 0 rgba(255,201,77,.4);transition:transform .15s}
+.hc:hover{transform:translateY(-6px)}
+.hc img{width:100%;height:215px;object-fit:cover;display:block;border-bottom:3px solid var(--char)}
+.hc .bdy{padding:20px 22px 26px}
+.hc h3{font-family:'Titan One';font-size:1.25rem;color:var(--flame)}
+.hc p{font-size:.92rem;color:rgba(43,32,24,.8);margin-top:6px}
+/* menu */
+.menu .grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center;max-width:1160px;margin:0 auto}
+.menu .sheet img{width:100%;display:block;border-radius:18px;border:4px solid var(--char);box-shadow:12px 12px 0 var(--butter)}
+.menu h2{font-family:'Titan One';font-size:clamp(2rem,5vw,3.4rem);line-height:.96;margin-bottom:16px}
+.menu h2 span{color:var(--flame)}
+.menu p{color:rgba(43,32,24,.85);max-width:50ch;margin-bottom:10px}
+.menu ul{list-style:none;margin-top:16px}
+.menu li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:2px dashed rgba(43,32,24,.3);font-weight:700;font-size:.95rem}
+.menu li span:last-child{font-family:'Titan One';color:var(--flame);font-size:.9rem}
+/* gallery */
+.gal{background:#fff;border-top:4px solid var(--char);border-bottom:4px solid var(--char)}
+.gal h2{font-family:'Titan One';font-size:clamp(2.2rem,5.4vw,3.8rem);text-align:center;margin-bottom:8px}
+.gal h2 span{color:var(--flame)}
+.gal .sub{text-align:center;color:rgba(43,32,24,.7);font-weight:700;margin-bottom:46px}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1160px;margin:0 auto}
+.g-grid a{display:block;border-radius:18px;overflow:hidden;border:3px solid var(--char);box-shadow:0 7px 0 var(--char);transition:transform .15s;background:var(--ivory)}
+.g-grid a:hover{transform:translateY(-6px)}
+.g-grid img{width:100%;height:255px;object-fit:cover;display:block}
+/* reviews */
+.rev h2{font-family:'Titan One';font-size:clamp(2.2rem,5.4vw,3.6rem);text-align:center;margin-bottom:46px}
+.rev h2 span{color:var(--flame)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:#fff;border:3px solid var(--char);border-radius:20px;padding:26px;box-shadow:0 7px 0 var(--char)}
+.rc .st{color:var(--butter);text-shadow:0 1px 0 rgba(43,32,24,.4);letter-spacing:3px;display:block;margin-bottom:12px;font-size:1.05rem}
+.rc p{font-size:.97rem;line-height:1.7}
+.rc .who{margin-top:14px;font-family:'Titan One';font-size:.9rem;color:var(--flame)}
+/* visit */
+.visit{background:var(--char);color:var(--ivory);text-align:center;padding:105px 5vw;position:relative;overflow:hidden}
+.visit h2{font-family:'Titan One';font-size:clamp(2.6rem,8vw,5.6rem);line-height:.9;color:var(--butter)}
+.visit h2 span{color:var(--flame)}
+.visit .phone{font-family:'Titan One';font-size:clamp(1.9rem,5vw,3.1rem);color:var(--char);background:var(--butter);text-decoration:none;display:inline-block;margin:28px 0 8px;padding:10px 34px;border-radius:99px;border:3px solid var(--ivory);box-shadow:0 7px 0 rgba(255,246,233,.3)}
+.visit .meta{color:rgba(255,246,233,.85);max-width:480px;margin:18px auto 34px;line-height:2;font-weight:700}
+.visit .cta{justify-content:center}
+.visit .btn{background:transparent;color:var(--ivory);border-color:var(--ivory);box-shadow:0 5px 0 rgba(255,246,233,.3)}
+.visit .btn.wa{background:var(--mint);border-color:var(--mint)}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(43,32,24,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--char);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--char)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Titan One';font-size:.9rem;text-decoration:none;color:var(--char)}
+.mbar .c{background:var(--flame);color:#fff}
+.mbar .w{background:var(--mint);color:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero,.man,.menu .grid{grid-template-columns:1fr;gap:40px}
+ .h-grid,.g-grid{grid-template-columns:1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+@media(min-width:620px) and (max-width:900px){.h-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="lights"><div class="tt"><span>★ HAKIM IS COOKING ★ OPEN 8 AM — 2 AM ★ LIVE SHAWARMA ★ HAKIM IS COOKING ★ OPEN 8 AM — 2 AM ★ LIVE SHAWARMA ★ HAKIM IS COOKING ★ OPEN 8 AM — 2 AM ★ LIVE SHAWARMA ★ </span></div></div>
+<nav>
+ <a class="brand" href="#">HAKIM</a>
+ <div class="links">
+  <a href="#hakim">Meet Hakim</a><a href="#hits">The hits</a><a href="#menu">Menu</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+9613873124">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <span class="open"><span class="dot"></span> OPEN NOW-ISH · 8 AM — 2 AM DAILY</span>
+  <h1>HAKIM<span>RAS BEIRUT · SNACK &amp; SHAWARMA</span></h1>
+  <p class="tg">One man, one counter, live shawarma from 8 AM to 2 AM — and a perfect five-star record.</p>
+  <div class="badges">
+   <span class="bd o">★ 5.0 — a perfect score</span>
+   <span class="bd f">36 reviews, zero complaints</span>
+   <span class="bd">One man. One counter.</span>
+  </div>
+  <div class="cta">
+   <a class="btn f" href="tel:+9613873124">Call +961 3 873 124</a>
+   <a class="btn" href="https://maps.google.com/?cid=478162119403825640" target="_blank" rel="noopener">Directions ↗</a>
+  </div>
+ </div>
+ <div class="spit rv">
+  <span class="live"><b>●</b> LIVE: the spits are turning</span>
+  <img src="img/10.jpg" alt="Hakim Beirut shawarma spits">
+  <svg class="flamesvg" viewBox="0 0 100 100" fill="none">
+   <path d="M50 8C58 26 76 32 76 56c0 16-12 28-26 28S24 72 24 56c0-12 6-18 12-26 2 8 6 10 10 12-2-12 0-24 4-34z" fill="#E85D1F" stroke="#2B2018" stroke-width="3.4"/>
+   <path d="M50 46c4 8 10 10 10 18 0 7-5 12-10 12s-10-5-10-12c0-6 4-9 6-13 1 3 2 4 4 5-1-4 0-7 0-10z" fill="#FFC94D" stroke="#2B2018" stroke-width="2.6"/>
+  </svg>
+ </div>
+</header>
+
+<div class="fivewall">
+ <div class="in">
+  <div><div class="score">5.0</div><div class="stars">★★★★★</div></div>
+  <p class="rv">Every single reviewer gave Hakim five stars. In Beirut. For shawarma. That practically never happens.</p>
+  <a class="btn" style="background:#fff" href="#reviews">Read why ↓</a>
+ </div>
+</div>
+
+<section id="hakim">
+ <div class="wrap man">
+  <div class="ph rv"><img src="img/05.jpg" alt="Hakim at the machine"></div>
+  <div class="rv">
+   <span class="k">MEET THE MAN</span>
+   <h2>Hakim cooks. <span>Hakim serves.</span> Hakim remembers your order.</h2>
+   <p>Hakim Beirut is a one-man show in Ras Beirut: the owner himself carving the spits, working the saj, stacking the burgers and telling the stories — eighteen hours a day. Every review is five stars, every plate comes with a welcome, and the lights stay on long after the rest of the street sleeps.</p>
+   <p>From 8 in the morning to 2 after midnight, the owner himself carves the spit, works the saj, flips the burgers and pours the coffee — with a story for everyone who waits.</p>
+   <div class="quote">"Hakim is more than a cook. That is a part of his life."<span>— five-star review, naturally</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="hits" id="hits">
+ <div class="wrap">
+  <h2 class="rv">THE COUNTER <span>HITS</span></h2>
+  <p class="sub">Carved, grilled and stacked in front of you</p>
+  <div class="h-grid"><div class="hc rv"><img src="img/10.jpg" alt="Live from the spit" loading="lazy"><div class="bdy"><h3>Live from the spit</h3><p>Chicken and beef turning side by side — carved the second you order.</p></div></div><div class="hc rv"><img src="img/09.jpg" alt="The saj show" loading="lazy"><div class="bdy"><h3>The saj show</h3><p>Wraps toasted flat on the dome, edges crisp, middle molten.</p></div></div><div class="hc rv"><img src="img/08.jpg" alt="Burgers after midnight" loading="lazy"><div class="bdy"><h3>Burgers after midnight</h3><p>Stacked, sauced, and somehow exactly what 1 AM required.</p></div></div></div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="grid">
+  <div class="sheet rv"><img src="img/02.jpg" alt="Hakim Beirut menu with prices"></div>
+  <div class="rv">
+   <span class="k">THE MENU</span>
+   <h2>Everything, <span>till 2 AM</span></h2>
+   <p>Shawarma saj, egg platters, burgers, arayes — the full board hangs over the counter, and Hakim talks you through it faster than you can read it.</p>
+   <ul>
+    <li><span>Chicken &amp; beef shawarma saj</span><span>the classic</span></li>
+    <li><span>Arayes kafta</span><span>crispy</span></li>
+    <li><span>Egg platters till late</span><span>yes, at 1 AM</span></li>
+    <li><span>Burgers — beef, chili, egg</span><span>stacked</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">FROM THE <span>COUNTER</span></h2>
+ <p class="sub">Spits, saj and the graffiti wall</p>
+ <div class="g-grid"><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev" id="reviews">
+ <div class="wrap">
+  <h2 class="rv">FIVE STARS, <span>EVERY TIME</span></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>A truly unique experience. I had the pleasure of meeting the owner, who works there himself, and he was extremely knowledgeable and friendly. They prepare the shawarma with live cooking.</p><div class="who">Saeed Almarar</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Had an amazing experience with Hakim who was very kind and friendly. He also serves delicious shawarma! He is the best guy who serves the best food in all of Lebanon!</p><div class="who">Markus Deakin</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Hakim is more than a cook. That is a part of his life. The food, whatever you take, is great here and it tastes excellent. Definitely worth visiting.</p><div class="who">Jacek Fijołek</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">HUNGRY AT 1 AM? <span>HAKIM'S UP.</span></h2>
+ <a class="phone" href="tel:+9613873124">+961 3 873 124</a>
+ <p class="meta">Ras Beirut (near Hamra), Beirut, Lebanon<br>Daily 8 AM - 2 AM</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/9613873124" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=478162119403825640" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9613873124">Call</a>
+ <a class="w" href="https://wa.me/9613873124" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=478162119403825640" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Hakim Beirut · Ras Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

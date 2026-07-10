@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Bach Snack & Grill — Snack & grill restaurant in Ain El Remmaneh</title>
+<meta name="description" content="El Bach Snack & Grill, snack & grill in Ain El Remmaneh. Call +961 3 436 367.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@700;900&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D92B2B;--red2:#B21F1F;--pink:#FFB9C7;--pink2:#FF8FA5;--crm:#FFF4EC;--ink:#231015}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--ink);color:var(--pink)}
+body{font-family:'Rubik',sans-serif;background:var(--crm);color:var(--ink);line-height:1.68}
+.pas{font-family:'Passion One',cursive}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:var(--red);border-bottom:4px solid var(--ink)}
+nav .brand{font-family:'Passion One';font-weight:900;font-size:1.5rem;color:#fff;text-decoration:none;letter-spacing:.03em;text-shadow:2px 2px 0 var(--ink)}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:#fff;text-decoration:none;font-weight:600;font-size:.85rem}
+nav .links a:hover{color:var(--pink)}
+nav .call{background:var(--ink);color:#fff !important;padding:10px 24px;border-radius:99px;border:2px solid #fff}
+/* hero: split poster pair */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:78vh}
+.hero .left{background:var(--red);color:#fff;padding:70px 6vw 60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;border-right:4px solid var(--ink)}
+.hero .left:before{content:"4.9";position:absolute;right:-40px;top:-60px;font-family:'Passion One';font-weight:900;font-size:22rem;color:rgba(255,255,255,.08);line-height:1}
+.hero .kick{font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:.76rem;color:var(--pink)}
+h1{font-family:'Passion One';font-weight:900;font-size:clamp(3.4rem,9.5vw,7.6rem);line-height:.85;text-transform:uppercase;margin:16px 0 10px;text-shadow:4px 4px 0 var(--ink)}
+h1 span{color:var(--pink)}
+.hero p.tg{max-width:44ch;color:rgba(255,255,255,.92);font-weight:500;font-size:1.05rem}
+.hero .stick{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0 30px}
+.st{background:#fff;color:var(--ink);border:2.5px solid var(--ink);border-radius:99px;padding:8px 18px;font-weight:700;font-size:.8rem;box-shadow:0 4px 0 var(--ink);transform:rotate(-1.4deg)}
+.st.p{background:var(--pink);transform:rotate(1.2deg)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:'Passion One';font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;padding:13px 32px;border-radius:99px;border:3px solid var(--ink);color:var(--ink);background:#fff;box-shadow:0 5px 0 var(--ink);transition:all .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.btn.k{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 5px 0 rgba(0,0,0,.45)}
+.btn.wa{background:#27a355;color:#fff}
+.hero .right{position:relative;overflow:hidden}
+.hero .right img{width:100%;height:100%;object-fit:cover;display:block}
+.hero .right .badge{position:absolute;bottom:26px;left:26px;background:var(--pink);border:3px solid var(--ink);border-radius:18px;padding:14px 22px;font-family:'Passion One';font-size:1.3rem;text-transform:uppercase;transform:rotate(-3deg);box-shadow:0 6px 0 var(--ink)}
+/* stamp bar */
+.bar{background:var(--ink);color:var(--crm);overflow:hidden;padding:13px 0;border-bottom:4px solid var(--ink)}
+.bar .tt{display:flex;width:max-content;animation:mq 22s linear infinite;font-family:'Passion One';font-size:1.05rem;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:94px 5vw}
+.wrap{max-width:1140px;margin:0 auto}
+.k{font-weight:700;letter-spacing:.26em;text-transform:uppercase;font-size:.75rem;color:var(--red);display:block;margin-bottom:12px}
+/* best sellers poster wall */
+.best h2{font-family:'Passion One';font-weight:900;font-size:clamp(2.4rem,6vw,4.4rem);text-transform:uppercase;text-align:center;line-height:.9}
+.best h2 span{color:var(--red)}
+.best .sub{text-align:center;color:rgba(35,16,21,.7);font-weight:500;margin:12px 0 52px}
+.b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.bc{background:#fff;border:3px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:0 8px 0 var(--ink);transition:transform .15s;position:relative}
+.bc:nth-child(2){transform:rotate(1deg)}
+.bc:hover{transform:translateY(-6px) rotate(0)}
+.bc img{width:100%;height:220px;object-fit:cover;display:block;border-bottom:3px solid var(--ink)}
+.bc .no{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;border:2.5px solid var(--ink);border-radius:99px;font-family:'Passion One';padding:4px 14px;font-size:1rem;box-shadow:0 3px 0 var(--ink)}
+.bc .bd{padding:20px 22px 26px}
+.bc h3{font-family:'Passion One';font-size:1.5rem;text-transform:uppercase;color:var(--red)}
+.bc p{font-size:.92rem;color:rgba(35,16,21,.75);margin-top:6px}
+/* menu */
+.menu{background:var(--pink);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.menu .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center;max-width:1140px;margin:0 auto}
+.menu .sheet{transform:rotate(-1.6deg)}
+.menu .sheet img{width:100%;display:block;border:3px solid var(--ink);border-radius:16px;box-shadow:0 9px 0 var(--ink);background:#fff}
+.menu h2{font-family:'Passion One';font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);text-transform:uppercase;line-height:.9;margin-bottom:16px}
+.menu h2 span{color:var(--red)}
+.menu p{color:rgba(35,16,21,.85);max-width:50ch;margin-bottom:10px;font-weight:500}
+.menu .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.menu .tags span{background:#fff;border:2.5px solid var(--ink);border-radius:99px;padding:8px 16px;font-weight:700;font-size:.82rem;box-shadow:0 4px 0 var(--ink)}
+/* gallery */
+.gal h2{font-family:'Passion One';font-weight:900;font-size:clamp(2.4rem,6vw,4.4rem);text-transform:uppercase;text-align:center;margin-bottom:8px}
+.gal h2 span{color:var(--red)}
+.gal .sub{text-align:center;color:rgba(35,16,21,.7);font-weight:500;margin-bottom:46px}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1140px;margin:0 auto}
+.g-grid a{display:block;border:3px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:0 7px 0 var(--ink);transition:transform .15s;background:#fff}
+.g-grid a:hover{transform:translateY(-6px)}
+.g-grid img{width:100%;height:265px;object-fit:cover;display:block}
+/* reviews: sticker blasts */
+.rev h2{font-family:'Passion One';font-weight:900;font-size:clamp(2.2rem,5.4vw,4rem);text-transform:uppercase;text-align:center;margin-bottom:48px}
+.rev h2 span{color:var(--red)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:26px;box-shadow:0 7px 0 var(--ink);position:relative}
+.rc:nth-child(odd){transform:rotate(-.8deg)}
+.rc:nth-child(even){transform:rotate(.8deg)}
+.rc .st2{font-family:'Passion One';color:var(--red);letter-spacing:4px;display:block;margin-bottom:12px;font-size:1.05rem}
+.rc p{font-size:.97rem;line-height:1.7;font-weight:500}
+.rc .who{margin-top:14px;font-family:'Passion One';font-size:1rem;text-transform:uppercase;color:var(--pink2)}
+/* visit */
+.visit{background:var(--red);color:#fff;text-align:center;padding:110px 5vw;border-top:4px solid var(--ink)}
+.visit h2{font-family:'Passion One';font-weight:900;font-size:clamp(2.8rem,8.5vw,6.4rem);text-transform:uppercase;line-height:.85;text-shadow:4px 4px 0 var(--ink)}
+.visit h2 span{color:var(--pink)}
+.visit .phone{font-family:'Passion One';font-size:clamp(2rem,5.2vw,3.4rem);color:var(--ink);background:#fff;text-decoration:none;display:inline-block;margin:30px 0 8px;padding:10px 36px;border-radius:99px;border:3px solid var(--ink);box-shadow:0 7px 0 var(--ink)}
+.visit .phone:hover{transform:translateY(3px);box-shadow:0 4px 0 var(--ink)}
+.visit .meta{color:rgba(255,255,255,.92);max-width:460px;margin:18px auto 34px;line-height:2;font-weight:500}
+.visit .cta{justify-content:center}
+.visit .btn{background:transparent;color:#fff;border-color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.35)}
+.visit .btn.wa{background:#27a355;border-color:#27a355}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(35,16,21,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Passion One';font-size:1rem;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+.mbar .c{background:var(--red);color:#fff}
+.mbar .w{background:#27a355;color:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero{grid-template-columns:1fr;min-height:0}
+ .hero .left{border-right:0;border-bottom:4px solid var(--ink);padding:60px 6vw}
+ .hero .right img{height:340px}
+ .b-grid,.g-grid{grid-template-columns:1fr}
+ .menu .grid{grid-template-columns:1fr;gap:40px}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+@media(min-width:600px) and (max-width:900px){.b-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+ <a class="brand" href="#">EL BACH</a>
+ <div class="links">
+  <a href="#best">Best sellers</a><a href="#menu">Menu</a><a href="#gallery">Photos</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+9613436367">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div class="left">
+  <span class="kick">Snack &amp; Grill · Ain El Remmaneh</span>
+  <h1>EL <span>BACH</span></h1>
+  <p class="tg">The 4.9-star snack & grill of Ain el Remmaneh — tawouk, bach burger, no exaggeration.</p>
+  <div class="stick">
+   <span class="st">★ 4.9 from 134 neighbors</span>
+   <span class="st p">Pierre Gemayel St</span>
+  </div>
+  <div class="cta">
+   <a class="btn k" href="tel:+9613436367">Call +961 3 436 367</a>
+   <a class="btn" href="https://maps.google.com/?cid=6220470188685012082" target="_blank" rel="noopener">Directions ↗</a>
+  </div>
+ </div>
+ <div class="right rv">
+  <img src="img/01.jpg" alt="El Bach Snack & Grill mixed grill">
+  <span class="badge">the bach burger →</span>
+ </div>
+</header>
+
+<div class="bar"><div class="tt"><span>TAWOUK ★ BACH BURGER ★ MAKANEK ★ FAJITA ★ BATATA HARRA ★ 4.9 STARS ★ TAWOUK ★ BACH BURGER ★ MAKANEK ★ FAJITA ★ BATATA HARRA ★ 4.9 STARS ★ </span></div></div>
+
+<section class="best" id="best">
+ <div class="wrap">
+  <h2 class="rv">The <span>best sellers</span></h2>
+  <p class="sub">Simple, authentic, grilled without exaggeration — the 4.9 stars agree</p>
+  <div class="b-grid"><div class="bc rv"><img src="img/07.jpg" alt="Kafta & the plates" loading="lazy"><span class="no">#1</span><div class="bd"><h3>Kafta & the plates</h3><p>Grilled rows with fries, hummus and pickles — the working lunch of champions.</p></div></div><div class="bc rv"><img src="img/03.jpg" alt="The wraps" loading="lazy"><span class="no">#2</span><div class="bd"><h3>The wraps</h3><p>Tawouk and shawarma-style rolls, toasted tight.</p></div></div><div class="bc rv"><img src="img/10.jpg" alt="The mixed platter" loading="lazy"><span class="no">#3</span><div class="bd"><h3>The mixed platter</h3><p>Kebab, tawuk and friends stacked for the table.</p></div></div></div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="grid">
+  <div class="sheet rv"><img src="img/02.jpg" alt="El Bach Snack & Grill menu"></div>
+  <div class="rv">
+   <span class="k">The menu</span>
+   <h2>One page of <span>good decisions</span></h2>
+   <p>Sandwiches and sahen plates, burgers with 150g of real grilled meat, cauliflower and zucchini for the wise — all priced like a neighborhood should price things.</p>
+   <div class="tags">
+    <span>Tawouk</span><span>Bach Burger</span><span>Fajita</span><span>Makanek</span><span>Philadelphia</span><span>Batata Harra</span><span>Fatouch</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Plate <span>evidence</span></h2>
+ <p class="sub">From the grill to the table, in full colour</p>
+ <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">The block <span>has spoken</span></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st2">★★★★★</span><p>Tried the bach burger, so yummy, highly recommended.</p><div class="who">hadi fakih</div></div><div class="rc rv"><span class="st2">★★★★★</span><p>Everything we tried was very tasty especially Tawouk!</p><div class="who">Joyce Shmait</div></div><div class="rc rv"><span class="st2">★★★★★</span><p>This place is amazing, a simple authentic Lebanese grill place with super tasty food made without exaggeration. The prices are very affordable and the portions are good.</p><div class="who">Johnny Abed</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">COME <span>HUNGRY.</span></h2>
+ <a class="phone" href="tel:+9613436367">+961 3 436 367</a>
+ <p class="meta">Pierre Gemayel Street, Ain El Remmaneh, Lebanon<br>Mon-Sat 12 - 10:30 PM; Sun 12 - 4 PM</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/9613436367" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=6220470188685012082" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9613436367">Call</a>
+ <a class="w" href="https://wa.me/9613436367" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=6220470188685012082" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© El Bach Snack & Grill · Ain El Remmaneh — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

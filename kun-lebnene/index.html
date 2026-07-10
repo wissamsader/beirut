@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kun Lebnéné Beirut — Lebanese restaurant in Beirut</title>
+<meta name="description" content="Kun Lebnéné Beirut, elegant Lebanese dining in Beirut. Call +961 1 986 786.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Amiri:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--em:#0E3B2E;--em2:#0A2C22;--gold:#C6A75E;--ivory:#F3EDE2;--sage:#8FA895}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--gold);color:var(--em2)}
+body{font-family:'Jost',sans-serif;background:var(--em);color:var(--ivory);line-height:1.8;font-weight:300}
+.it{font-family:'Italiana',serif}
+.cg{font-family:'Cormorant Garamond',serif}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:20px 5vw;background:rgba(10,44,34,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(198,167,94,.35)}
+nav .brand{font-family:'Italiana',serif;font-size:1.4rem;color:var(--ivory);text-decoration:none;letter-spacing:.14em}
+nav .brand span{color:var(--gold)}
+nav .links{display:flex;gap:28px;align-items:center}
+nav .links a{color:var(--ivory);text-decoration:none;font-weight:400;font-size:.84rem;letter-spacing:.06em}
+nav .links a:hover{color:var(--gold)}
+nav .call{border:1px solid var(--gold);color:var(--gold) !important;padding:11px 28px;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase}
+nav .call:hover{background:var(--gold);color:var(--em2) !important}
+/* hero */
+.hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.02)}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,44,34,.25),rgba(10,44,34,.88) 82%)}
+.hero .in{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:0 5vw 84px;text-align:center}
+.hero .small{letter-spacing:.42em;text-transform:uppercase;font-size:.74rem;color:var(--gold);font-weight:400}
+h1{font-family:'Italiana',serif;font-size:clamp(3.2rem,10vw,7.8rem);line-height:1;letter-spacing:.06em;margin:20px 0 6px}
+.hero .arb{font-family:'Amiri',serif;font-style:italic;font-size:clamp(1.3rem,3vw,1.9rem);color:var(--gold)}
+.hero .mean{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.05rem,2.4vw,1.4rem);color:rgba(243,237,226,.85);margin-top:16px}
+.hero .line{width:1px;height:64px;background:linear-gradient(180deg,var(--gold),transparent);margin:30px auto 0}
+/* intro manifesto */
+.man{max-width:820px;margin:0 auto;text-align:center;padding:100px 5vw 70px}
+.man p.big{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.55;color:var(--ivory)}
+.man p.big em{color:var(--gold);font-style:italic}
+.man .row{display:flex;gap:0;justify-content:center;margin-top:44px;border:1px solid rgba(198,167,94,.4);flex-wrap:wrap}
+.man .cell{flex:1;min-width:160px;padding:20px 14px;border-right:1px solid rgba(198,167,94,.4)}
+.man .cell:last-child{border-right:0}
+.man .cell b{font-family:'Italiana',serif;font-size:1.3rem;color:var(--gold);display:block;font-weight:400}
+.man .cell span{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(243,237,226,.65)}
+.cta{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+.btn{font-weight:400;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;padding:16px 40px;border:1px solid var(--ivory);color:var(--ivory);transition:all .22s;background:transparent}
+.btn:hover{background:var(--ivory);color:var(--em2)}
+.btn.g{background:var(--gold);border-color:var(--gold);color:var(--em2)}
+.btn.g:hover{background:var(--ivory);border-color:var(--ivory)}
+.btn.wa{background:#2c6e46;border-color:#2c6e46;color:#fff}
+section{padding:100px 5vw}
+.wrap{max-width:1200px;margin:0 auto}
+.k{color:var(--gold);letter-spacing:.36em;text-transform:uppercase;font-size:.7rem;display:block;margin-bottom:16px}
+/* table (highlights) */
+.table h2{font-family:'Italiana',serif;font-size:clamp(2.2rem,5vw,3.8rem);text-align:center;letter-spacing:.04em;line-height:1.05}
+.table h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)}
+.table .sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(243,237,226,.7);margin:14px 0 64px}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.tc{text-align:center}
+.tc .imw{position:relative;overflow:hidden}
+.tc img{width:100%;height:340px;object-fit:cover;display:block;transition:transform .5s}
+.tc:hover img{transform:scale(1.05)}
+.tc .imw:after{content:"";position:absolute;inset:10px;border:1px solid rgba(243,237,226,.4);pointer-events:none}
+.tc h3{font-family:'Italiana',serif;font-size:1.45rem;letter-spacing:.08em;margin-top:22px}
+.tc .no{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);display:block;margin-top:2px}
+.tc p{font-size:.9rem;color:rgba(243,237,226,.72);max-width:36ch;margin:10px auto 0}
+/* story split */
+.story{background:var(--em2)}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto}
+.story h2{font-family:'Italiana',serif;font-size:clamp(2rem,4.6vw,3.4rem);letter-spacing:.04em;line-height:1.12;margin-bottom:20px}
+.story h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)}
+.story p{color:rgba(243,237,226,.8);max-width:52ch;margin-bottom:14px}
+.story .ph{position:relative;padding:16px;border:1px solid rgba(198,167,94,.45)}
+.story .ph img{width:100%;height:520px;object-fit:cover;display:block}
+.story .ph .tag{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--em2);font-family:'Italiana',serif;letter-spacing:.2em;padding:10px 30px;font-size:.85rem;white-space:nowrap}
+/* gallery */
+.gal h2{font-family:'Italiana',serif;font-size:clamp(2.2rem,5vw,3.8rem);text-align:center;letter-spacing:.04em;margin-bottom:12px}
+.gal h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)}
+.gal .sub{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(243,237,226,.7);font-size:1.15rem;margin-bottom:56px}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px;max-width:1200px;margin:0 auto}
+.g-grid a{display:block;overflow:hidden;position:relative}
+.g-grid a:after{content:"";position:absolute;inset:8px;border:1px solid rgba(243,237,226,.35);pointer-events:none;opacity:0;transition:opacity .25s}
+.g-grid a:hover:after{opacity:1}
+.g-grid a:nth-child(5n+1){grid-row:span 2}
+.g-grid a:nth-child(8n+4){grid-column:span 2}
+.g-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.g-grid a:hover img{transform:scale(1.06)}
+/* reviews */
+.rev{background:var(--em2)}
+.rev h2{font-family:'Italiana',serif;font-size:clamp(2rem,4.6vw,3.4rem);text-align:center;letter-spacing:.04em;margin-bottom:60px}
+.rev h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:34px}
+.rc{text-align:center;padding:38px 30px;border:1px solid rgba(198,167,94,.4)}
+.rc .st{color:var(--gold);letter-spacing:6px;font-size:.8rem;display:block;margin-bottom:20px}
+.rc p{font-family:'Cormorant Garamond',serif;font-size:1.25rem;line-height:1.65;font-style:italic;color:rgba(243,237,226,.9)}
+.rc .who{margin-top:20px;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+/* visit */
+.visit{text-align:center;padding:120px 5vw}
+.visit h2{font-family:'Italiana',serif;font-size:clamp(2.4rem,6.6vw,5rem);letter-spacing:.05em;line-height:1.04}
+.visit h2 em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold)}
+.visit .phone{font-family:'Italiana',serif;font-size:clamp(1.8rem,4.6vw,2.9rem);color:var(--ivory);text-decoration:none;display:inline-block;margin:30px 0 8px;border-bottom:1px solid var(--gold);padding-bottom:8px;letter-spacing:.08em}
+.visit .meta{color:rgba(243,237,226,.72);max-width:480px;margin:20px auto 40px;line-height:2.1;font-size:.92rem}
+.visit .cta{justify-content:center}
+footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:.06em;color:rgba(243,237,226,.5)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--em2);border:1px solid var(--gold);padding:8px}
+.mbar a{flex:1;text-align:center;padding:13px 4px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ivory);border:1px solid rgba(243,237,226,.25)}
+.mbar .c{background:var(--gold);color:var(--em2);border-color:var(--gold)}
+.mbar .w{background:#2c6e46;color:#fff;border-color:#2c6e46}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:940px){
+ nav .links a:not(.call){display:none}
+ .story .grid{grid-template-columns:1fr;gap:48px}
+ .t-grid{grid-template-columns:1fr}
+ .g-grid{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+ .hero{min-height:74vh}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <a class="brand" href="#">KUN <span>LEBNÉNÉ</span></a>
+ <div class="links">
+  <a href="#table">The table</a><a href="#story">The house</a><a href="#gallery">Gallery</a><a href="#visit">Reserve</a>
+  <a class="call" href="tel:+9611986786">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <img class="bg" src="img/01.jpg" alt="Kun Lebnéné Beirut facade">
+ <div class="veil"></div>
+ <div class="in">
+  <span class="small">Beirut · Lebanese fine dining</span>
+  <h1>KUN LEBNÉNÉ</h1>
+  <p class="arb">كن لبناني</p>
+  <p class="mean">“Be Lebanese.” — an instruction, an invitation, a menu.</p>
+  <div class="line"></div>
+ </div>
+</header>
+
+<div class="man">
+ <p class="big rv">Elegant Lebanese dining by the sea — refined rooms, heirloom mezze, unhurried evenings. Here the mezze arrives like an heirloom, the service moves like <em>a promise</em>, and the room insists — gently — that you stay another hour.</p>
+ <div class="row rv">
+  <div class="cell"><b>★ 4.6</b><span>115 reviews</span></div>
+  <div class="cell"><b>Noon — Midnight</b><span>every day</span></div>
+  <div class="cell"><b>Ain El Mreisseh</b><span>beirut</span></div>
+ </div>
+ <div class="cta rv">
+  <a class="btn g" href="tel:+9611986786">Reserve · +961 1 986 786</a>
+  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener">Directions</a>
+ </div>
+</div>
+
+<section class="table" id="table">
+ <div class="wrap">
+  <h2 class="rv">The table, <em>composed</em></h2>
+  <p class="sub">Plates that carry the country in them</p>
+  <div class="t-grid"><div class="tc rv"><div class="imw"><img src="img/03.jpg" alt="Hummus, composed" loading="lazy"></div><h3>Hummus, composed</h3><span class="no">plate 1</span><p>Poured, pooled with oil, finished with whole chickpeas — a still life.</p></div><div class="tc rv"><div class="imw"><img src="img/04.jpg" alt="Warak enab" loading="lazy"></div><h3>Warak enab</h3><span class="no">plate 2</span><p>Vine leaves rolled thin and stacked like cigars in a silver case.</p></div><div class="tc rv"><div class="imw"><img src="img/08.jpg" alt="The roasted chicken" loading="lazy"></div><h3>The roasted chicken</h3><span class="no">plate 3</span><p>Golden, herbed, carried whole to the table.</p></div></div>
+ </div>
+</section>
+
+<section class="story" id="story">
+ <div class="grid">
+  <div class="rv">
+   <span class="k">The house</span>
+   <h2>Elegance with a <em>Lebanese accent</em></h2>
+   <p>Kun Lebnéné — “Be Lebanese” — is both the name and the house philosophy. The room is elegant and luxurious, the welcome is warm from the first moment, and the kitchen treats the Lebanese repertoire like an inheritance: fattoush bright as a garden, hummus like silk, warak enab folded tight as letters home.</p>
+   <p>In summer the name travels — a seasonal address in Batroun at Capo — but the heart stays here, by the sea in Beirut, where the room glows and the kitchen keeps its promises.</p>
+  </div>
+  <div class="ph rv">
+   <img src="img/07.jpg" alt="Kun Lebnéné Beirut dining room">
+   <span class="tag">THE DINING ROOM</span>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">A quiet <em>gallery</em></h2>
+ <p class="sub">The room, the plates, the evening light</p>
+ <div class="g-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Guests, <em>quoted</em></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p>The restaurant has a very elegant and luxurious atmosphere, with beautiful decor and a welcoming ambiance that makes you feel comfortable from the moment you arrive.</p><div class="who">Nana Mansour</div></div><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p>A lovely place serving delicious Lebanese food, where eating and greeting come together for a truly enjoyable experience. The location is both convenient and beautiful, decorated with a refined and elegant touch.</p><div class="who">Doumit AbiSaleh</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Tonight, <em>be Lebanese.</em></h2>
+ <a class="phone" href="tel:+9611986786">+961 1 986 786</a>
+ <p class="meta">Ain El Mreisseh area, Beirut, Lebanon<br>Daily 12 PM - 12 AM</p>
+ <div class="cta">
+  <a class="btn" href="tel:+9611986786">Call +961 1 986 786</a>
+  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener">Google Maps</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9611986786">Call</a>
+ 
+ <a class="m" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Kun Lebnéné Beirut · Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

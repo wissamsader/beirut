@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chubby Fish — Seafood restaurant & handroll bar in Gemmayze, Beirut</title>
+<meta name="description" content="Chubby Fish, Seafood restaurant & handroll bar on Pasteur street, Beirut. Call +961 79 061 466.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--sky:#BFE3F2;--sea:#1273A6;--deep:#0B4763;--cream:#FFF6E8;--coral:#F26D5B;--ink:#12303F}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--coral);color:#fff}
+body{font-family:'Karla',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
+.lt{font-family:'Lilita One',cursive}
+/* awning top */
+.awn{height:34px;background:repeating-linear-gradient(90deg,var(--sea) 0 44px,#fff 44px 88px);border-bottom:3px solid var(--ink);position:relative}
+.awn:after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:radial-gradient(circle at 22px -2px, transparent 14px, var(--sea) 15px);background-size:44px 14px}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:18px 5vw 14px;background:rgba(255,246,232,.95);backdrop-filter:blur(6px);border-bottom:2px solid var(--ink);margin-top:14px}
+nav .brand{font-family:'Lilita One';font-size:1.3rem;color:var(--sea);text-decoration:none;letter-spacing:.02em}
+nav .brand span{color:var(--coral)}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.85rem}
+nav .links a:hover{color:var(--sea)}
+nav .call{background:var(--coral);color:#fff !important;padding:10px 22px;border-radius:99px;border:2px solid var(--ink)}
+/* hero */
+.hero{max-width:1180px;margin:0 auto;padding:64px 5vw 30px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.hero .kick{font-weight:800;letter-spacing:.24em;text-transform:uppercase;font-size:.75rem;color:var(--sea)}
+h1{font-family:'Lilita One';font-size:clamp(3.2rem,9.4vw,7.4rem);line-height:.92;color:var(--sea);margin:12px 0 8px;letter-spacing:.01em;text-shadow:4px 4px 0 rgba(18,48,63,.12)}
+h1 span{color:var(--coral);display:block}
+.hero p.tg{font-size:1.08rem;color:rgba(18,48,63,.85);max-width:46ch;font-weight:500}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 28px}
+.chip{background:#fff;border:2px solid var(--ink);border-radius:99px;padding:8px 18px;font-weight:800;font-size:.8rem;box-shadow:0 4px 0 var(--ink)}
+.chip.s{background:var(--sea);color:#fff}
+.chip.c{background:var(--coral);color:#fff}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:'Lilita One';font-size:1rem;letter-spacing:.02em;text-decoration:none;padding:14px 32px;border-radius:99px;border:2.5px solid var(--ink);color:var(--ink);background:#fff;box-shadow:0 5px 0 var(--ink);transition:all .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.btn.s{background:var(--sea);color:#fff}
+.btn.wa{background:#2c9a55;color:#fff}
+.hero .tank{position:relative}
+.hero .tank img{width:100%;height:500px;object-fit:cover;display:block;border-radius:28px;border:3px solid var(--ink);box-shadow:0 12px 0 var(--sea)}
+.hero .tank .fish{position:absolute;top:-26px;right:-14px;background:var(--coral);color:#fff;font-family:'Lilita One';padding:12px 22px;border:3px solid var(--ink);border-radius:99px;transform:rotate(7deg);box-shadow:0 6px 0 var(--ink)}
+/* wave divider */
+.wave{height:46px;background:radial-gradient(circle at 26px -14px, transparent 30px, var(--sky) 31px);background-size:52px 46px;margin-top:40px}
+/* ticker */
+.mq{overflow:hidden;background:var(--sky);padding:14px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.mq .tt{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:'Lilita One';font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:94px 5vw}
+.wrap{max-width:1180px;margin:0 auto}
+.k{font-weight:800;letter-spacing:.24em;text-transform:uppercase;font-size:.74rem;color:var(--coral);display:block;margin-bottom:12px}
+/* catch of the day (highlights) */
+.catch{background:var(--sea);color:var(--cream)}
+.catch h2{font-family:'Lilita One';font-size:clamp(2.2rem,5vw,3.6rem);text-align:center;line-height:.98}
+.catch h2 em{font-style:normal;color:var(--sky)}
+.catch .sub{text-align:center;color:rgba(255,246,232,.85);font-weight:600;margin:12px 0 52px}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.cc{background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:0 8px 0 rgba(11,71,99,.55);transition:transform .16s}
+.cc:hover{transform:translateY(-6px)}
+.cc img{width:100%;height:215px;object-fit:cover;display:block;border-bottom:3px solid var(--ink)}
+.cc .bd{padding:20px 22px 26px}
+.cc h3{font-family:'Lilita One';font-size:1.3rem;color:var(--sea)}
+.cc p{font-size:.93rem;color:rgba(18,48,63,.8);margin-top:8px}
+/* menu checklist */
+.menu .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center;max-width:1180px;margin:0 auto}
+.menu .sheet{position:relative;transform:rotate(-1.4deg)}
+.menu .sheet img{width:100%;display:block;border:3px solid var(--ink);border-radius:14px;box-shadow:0 10px 0 var(--coral)}
+.menu h2{font-family:'Lilita One';font-size:clamp(2rem,4.6vw,3.2rem);line-height:1;margin-bottom:16px;color:var(--deep)}
+.menu h2 em{font-style:normal;color:var(--coral)}
+.menu p{color:rgba(18,48,63,.85);max-width:52ch;margin-bottom:10px;font-weight:500}
+.menu ul{list-style:none;margin-top:18px}
+.menu li{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:2px dashed rgba(18,48,63,.25);font-weight:700}
+.menu li:before{content:"☑";color:var(--sea);font-size:1.2rem}
+/* gallery: porthole row + big shots */
+.gal h2{font-family:'Lilita One';font-size:clamp(2.2rem,5vw,3.6rem);text-align:center;color:var(--deep);margin-bottom:8px}
+.gal h2 em{font-style:normal;color:var(--coral)}
+.gal .sub{text-align:center;color:rgba(18,48,63,.7);font-weight:600;margin-bottom:48px}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1180px;margin:0 auto}
+.g-grid a{display:block;border-radius:22px;overflow:hidden;border:3px solid var(--ink);box-shadow:0 7px 0 var(--ink);transition:transform .16s;background:#fff}
+.g-grid a:nth-child(4){grid-column:span 2}
+.g-grid a:hover{transform:translateY(-6px)}
+.g-grid img{width:100%;height:260px;object-fit:cover;display:block}
+/* records + reviews */
+.rev{background:var(--sky);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.rev h2{font-family:'Lilita One';font-size:clamp(2rem,4.6vw,3.2rem);color:var(--deep);text-align:center;margin-bottom:12px}
+.rev .sub{text-align:center;font-weight:600;color:rgba(11,71,99,.8);margin-bottom:48px}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:var(--cream);border:3px solid var(--ink);border-radius:20px;padding:26px;box-shadow:0 7px 0 var(--ink);position:relative}
+.rc .st{color:var(--coral);letter-spacing:3px;display:block;margin-bottom:12px}
+.rc p{font-size:.98rem;line-height:1.7;font-weight:500}
+.rc .who{margin-top:14px;font-family:'Lilita One';color:var(--sea);font-size:.95rem}
+/* visit */
+.visit{background:var(--deep);color:var(--cream);text-align:center;padding:110px 5vw;position:relative;overflow:hidden}
+.visit h2{font-family:'Lilita One';font-size:clamp(2.6rem,7.4vw,5.2rem);line-height:.94}
+.visit h2 em{font-style:normal;color:var(--sky)}
+.visit .late{display:inline-block;font-weight:800;background:var(--coral);border:2.5px solid var(--cream);border-radius:99px;padding:9px 22px;margin-top:20px;letter-spacing:.06em}
+.visit .phone{font-family:'Lilita One';font-size:clamp(1.9rem,4.8vw,3.1rem);color:var(--deep);background:var(--cream);text-decoration:none;display:inline-block;margin:28px 0 8px;padding:12px 34px;border-radius:99px;box-shadow:0 7px 0 var(--coral)}
+.visit .meta{color:rgba(255,246,232,.8);max-width:480px;margin:16px auto 34px;line-height:2;font-weight:500}
+.visit .cta{justify-content:center}
+.visit .btn{background:transparent;border-color:var(--cream);color:var(--cream);box-shadow:0 5px 0 rgba(255,246,232,.35)}
+.visit .btn.wa{background:#2c9a55}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48,63,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Lilita One';font-size:.9rem;text-decoration:none;color:var(--ink)}
+.mbar .c{background:var(--coral);color:#fff}
+.mbar .w{background:#2c9a55;color:#fff}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero{grid-template-columns:1fr;gap:40px}
+ .hero .tank img{height:400px}
+ .c-grid,.g-grid{grid-template-columns:1fr}
+ .g-grid a:nth-child(4){grid-column:auto}
+ .menu .grid{grid-template-columns:1fr;gap:40px}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+@media(min-width:600px) and (max-width:900px){.c-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="awn"></div>
+<nav>
+ <a class="brand" href="#">CHUBBY <span>FISH</span></a>
+ <div class="links">
+  <a href="#catch">The catch</a><a href="#menu">Menu</a><a href="#gallery">Photos</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+96179061466">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <span class="kick">Pasteur St · Gemmayze · till 2:30 AM weekends</span>
+  <h1>CHUBBY<span>FISH</span></h1>
+  <p class="tg">Handrolls, sashimi and a fish burger with a fan club — on Pasteur till way past midnight.</p>
+  <div class="chips">
+   <span class="chip c">★ 4.8 · 92 reviews</span>
+   <span class="chip s">Handrolls &amp; sashimi</span>
+   <span class="chip">Vinyl on the walls</span>
+  </div>
+  <div class="cta">
+   <a class="btn s" href="tel:+96179061466">Call +961 79 061 466</a>
+   <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener">Swim over ↗</a>
+  </div>
+ </div>
+ <div class="tank rv">
+  <img src="img/05.jpg" alt="Chubby Fish handroll counter">
+  <span class="fish">fresh daily!</span>
+ </div>
+</header>
+
+<div class="wave"></div>
+<div class="mq"><div class="tt"><span>SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ </span></div></div>
+
+<section class="catch" id="catch">
+ <div class="wrap">
+  <h2 class="rv">Today's <em>catch</em></h2>
+  <p class="sub">The plates that made a fish chubby</p>
+  <div class="c-grid"><div class="cc rv"><img src="img/05.jpg" alt="The handroll six" loading="lazy"><div class="bd"><h3>The handroll six</h3><p>Spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu — the full lineup.</p></div></div><div class="cc rv"><img src="img/04.jpg" alt="The fish burger" loading="lazy"><div class="bd"><h3>The fish burger</h3><p>Crisp, rich, gone in five bites. The dish reviewers lead with.</p></div></div><div class="cc rv"><img src="img/03.jpg" alt="Late-night pours" loading="lazy"><div class="bd"><h3>Late-night pours</h3><p>Cocktails and cold ones until 2:30 on the weekend.</p></div></div></div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="grid">
+  <div class="sheet rv"><img src="img/02.jpg" alt="Chubby Fish checklist menu"></div>
+  <div class="rv">
+   <span class="k">The menu</span>
+   <h2>Tick the boxes, <em>pass it back</em></h2>
+   <p>Ordering here works like a sushi bar should — a pencil, a checklist, and zero regrets. Sides, greens, handrolls by the six.</p>
+   <ul>
+    <li>6x handrolls — spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu</li>
+    <li>Sashimi &amp; nigiri — salmon, chutoro, otoro, scallop</li>
+    <li>Truffle miso soup &amp; fresh crab salad</li>
+    <li>The fish burger everyone writes home about</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Through the <em>porthole</em></h2>
+ <p class="sub">Amber lights, records, and very fresh fish</p>
+ <div class="g-grid"><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Overheard at the counter</h2>
+  <p class="sub">Between tracks, between handrolls</p>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>New handrolls bar and more. Loved this place. The fish burger is to die for.</p><div class="who">Talaviews</div></div><div class="rc rv"><span class="st">★★★★★</span><p>The food is bursting with flavor, so much packed into every bite. The service is excellent, and the music creates a great atmosphere.</p><div class="who">Stephanie Abou Chakra</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Tried almost everything. Kudos to the spicy crab handroll. The staff are friendly and welcoming. The service is exquisite.</p><div class="who">Georges Kassab</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">The night is<br><em>still young.</em></h2>
+ <span class="late">Fri &amp; Sat till 2:30 AM</span><br>
+ <a class="phone" href="tel:+96179061466">+961 79 061 466</a>
+ <p class="meta">Pasteur Street, Gemmayze, Beirut, Lebanon<br>Tue-Thu 1 PM - 12 AM; Fri-Sat 1 PM - 2:30 AM; Sun 1 PM - 12 AM; Mon 7 PM - 12 AM</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/96179061466" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+96179061466">Call</a>
+ <a class="w" href="https://wa.me/96179061466" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Chubby Fish · Gemmayze, Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

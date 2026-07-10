@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Restaurant Varouj — Armenian restaurant in Bourj Hammoud</title>
+<meta name="description" content="Restaurant Varouj, Armenian restaurant in Bourj Hammoud. Call +961 3 882 933.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500;700;800&family=Permanent+Marker&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--kraft:#D9B98A;--kraft2:#C9A671;--ink:#33261A;--tom:#C03A21;--crm:#F8EFDC;--grn:#4C6B3C}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--tom);color:#fff}
+body{font-family:'Shantell Sans',cursive;background:var(--kraft);color:var(--ink);line-height:1.7;
+background-image:radial-gradient(rgba(51,38,26,.06) 1px,transparent 1.4px);background-size:26px 26px}
+.mk{font-family:'Permanent Marker',cursive}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(217,185,138,.95);backdrop-filter:blur(4px);border-bottom:3px dashed var(--ink)}
+nav .brand{font-family:'Permanent Marker';font-size:1.3rem;color:var(--tom);text-decoration:none;transform:rotate(-2deg)}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.85rem}
+nav .links a:hover{color:var(--tom)}
+nav .call{background:var(--ink);color:var(--kraft) !important;padding:10px 20px;border-radius:6px;transform:rotate(-1deg)}
+/* hero: today's note */
+.hero{max-width:1100px;margin:0 auto;padding:70px 5vw 40px;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero .since{font-family:'Permanent Marker';color:var(--grn);font-size:1.2rem;transform:rotate(-2deg);display:inline-block}
+h1{font-family:'Permanent Marker';font-size:clamp(3rem,9vw,6.4rem);line-height:.95;margin:10px 0 4px;color:var(--ink);text-shadow:3px 3px 0 rgba(192,58,33,.35)}
+.hero .arm{font-size:1.15rem;font-weight:700;color:var(--tom);margin-bottom:14px}
+.hero p.tg{font-size:1.08rem;max-width:46ch}
+.hero p.tg mark{background:rgba(192,58,33,.22);padding:0 4px}
+.hero .chips{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0 28px}
+.chip{background:var(--crm);border:2px solid var(--ink);padding:8px 16px;font-weight:700;font-size:.8rem;border-radius:4px;box-shadow:3px 3px 0 var(--ink)}
+.chip.t{background:var(--tom);color:#fff;transform:rotate(-1.6deg)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-weight:800;font-size:.92rem;text-decoration:none;padding:14px 28px;border-radius:6px;border:2.5px solid var(--ink);color:var(--ink);background:var(--crm);box-shadow:4px 4px 0 var(--ink);transition:all .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.t{background:var(--tom);color:#fff}
+.btn.wa{background:#2c7a44;color:#fff}
+.hero .photo{position:relative;transform:rotate(2deg)}
+.hero .photo img{width:100%;height:470px;object-fit:cover;display:block;border:12px solid #fff;border-bottom-width:52px;box-shadow:0 18px 40px -14px rgba(51,38,26,.5)}
+.hero .photo .cap{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:'Permanent Marker';color:var(--ink);font-size:1.1rem}
+.hero .photo .tape{position:absolute;top:-16px;left:38%;width:130px;height:30px;background:rgba(248,239,220,.75);transform:rotate(-4deg);box-shadow:0 3px 8px rgba(51,38,26,.25)}
+/* no menu banner */
+.nomenu{background:var(--ink);color:var(--kraft);text-align:center;padding:26px 5vw;font-family:'Permanent Marker';font-size:clamp(1.1rem,2.6vw,1.7rem);transform:rotate(-.4deg);margin:30px -10px 0}
+.nomenu span{color:#E8A03E}
+section{padding:90px 5vw}
+.wrap{max-width:1100px;margin:0 auto}
+.k{font-family:'Permanent Marker';color:var(--tom);font-size:1.15rem;display:block;margin-bottom:10px;transform:rotate(-1deg)}
+/* story */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story h2{font-family:'Permanent Marker';font-size:clamp(2rem,4.8vw,3.3rem);line-height:1.05;margin-bottom:16px}
+.story h2 span{color:var(--tom)}
+.story p{max-width:52ch;margin-bottom:12px}
+.story .ph{position:relative;transform:rotate(-1.6deg)}
+.story .ph img{width:100%;display:block;border:10px solid #fff;box-shadow:0 16px 36px -14px rgba(51,38,26,.5)}
+.story .ph .tape{position:absolute;top:-14px;right:30px;width:110px;height:28px;background:rgba(248,239,220,.75);transform:rotate(5deg)}
+.story .years{display:inline-block;font-family:'Permanent Marker';background:var(--crm);border:2.5px dashed var(--tom);color:var(--tom);padding:12px 20px;transform:rotate(-1.4deg);margin-top:16px}
+/* what varouj cooks (highlights, handwritten cards) */
+.cook{background:var(--crm);border-top:3px dashed var(--ink);border-bottom:3px dashed var(--ink)}
+.cook h2{font-family:'Permanent Marker';font-size:clamp(2rem,4.8vw,3.3rem);text-align:center;margin-bottom:8px}
+.cook h2 span{color:var(--grn)}
+.cook .sub{text-align:center;font-weight:500;color:rgba(51,38,26,.75);margin-bottom:48px}
+.c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.cc{background:#fff;border:2.5px solid var(--ink);padding:12px 12px 20px;box-shadow:5px 5px 0 var(--ink);transition:transform .16s}
+.cc:nth-child(odd){transform:rotate(-1.2deg)}
+.cc:nth-child(even){transform:rotate(1.2deg)}
+.cc:hover{transform:rotate(0) translateY(-5px)}
+.cc img{width:100%;height:210px;object-fit:cover;display:block;border:1px solid rgba(51,38,26,.2)}
+.cc h3{font-family:'Permanent Marker';font-size:1.25rem;margin:14px 6px 4px;color:var(--tom)}
+.cc p{font-size:.9rem;margin:0 6px;color:rgba(51,38,26,.85)}
+/* menu polaroid */
+.menuw{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.menuw .sheet{transform:rotate(1.6deg);position:relative}
+.menuw .sheet img{width:100%;display:block;border:10px solid #fff;box-shadow:0 18px 40px -14px rgba(51,38,26,.5)}
+.menuw h2{font-family:'Permanent Marker';font-size:clamp(2rem,4.4vw,3rem);margin-bottom:14px}
+.menuw h2 span{color:var(--tom)}
+.menuw p{max-width:50ch;margin-bottom:10px}
+/* reviews: guest notes */
+.rev h2{font-family:'Permanent Marker';font-size:clamp(2rem,4.8vw,3.3rem);text-align:center;margin-bottom:46px}
+.rev h2 span{color:var(--tom)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:28px}
+.rc{background:var(--crm);border:2.5px solid var(--ink);padding:24px;box-shadow:5px 5px 0 var(--ink);position:relative}
+.rc:nth-child(odd){transform:rotate(-1deg)}
+.rc:nth-child(even){transform:rotate(1deg)}
+.rc .st{font-family:'Permanent Marker';color:var(--tom);display:block;margin-bottom:10px;letter-spacing:2px}
+.rc p{font-size:.97rem}
+.rc .who{margin-top:12px;font-family:'Permanent Marker';color:var(--grn)}
+/* visit */
+.visit{background:var(--tom);color:#fff;text-align:center;padding:100px 5vw;border-top:3px dashed var(--ink)}
+.visit h2{font-family:'Permanent Marker';font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;text-shadow:3px 3px 0 rgba(51,38,26,.4)}
+.visit .phone{font-family:'Permanent Marker';font-size:clamp(1.8rem,4.6vw,2.9rem);color:var(--tom);background:#fff;text-decoration:none;display:inline-block;margin:28px 0 8px;padding:10px 30px;transform:rotate(-1.6deg);box-shadow:5px 5px 0 rgba(51,38,26,.5)}
+.visit .meta{max-width:480px;margin:18px auto 32px;line-height:2;font-weight:500}
+.visit .cta{justify-content:center}
+.visit .btn{border-color:#fff;background:transparent;color:#fff;box-shadow:4px 4px 0 rgba(51,38,26,.45)}
+.visit .btn.wa{background:#2c7a44}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(51,38,26,.65)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--crm);border:2.5px solid var(--ink);border-radius:8px;padding:8px;box-shadow:0 10px 24px rgba(51,38,26,.35)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:5px;font-weight:800;font-size:.88rem;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink)}
+.mbar .c{background:var(--tom);color:#fff}
+.mbar .w{background:#2c7a44;color:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero,.story,.menuw{grid-template-columns:1fr;gap:40px}
+ .c-grid{grid-template-columns:1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <a class="brand" href="#">VAROUJ</a>
+ <div class="links">
+  <a href="#story">45 years</a><a href="#cook">What he cooks</a><a href="#menu">The card</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+9613882933">Call Varouj</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <span class="since">since the late 1970s — Bourj Hammoud</span>
+  <h1>VAROUJ</h1>
+  <p class="arm">ՎԱՐՈՒԺ · مطعم فاروج</p>
+  <p class="tg">A tiny Armenian dining room where the menu is whatever Varouj felt like cooking — for 45 years. <mark>You eat what Varouj cooked today</mark> — and it is always the right choice.</p>
+  <div class="chips">
+   <span class="chip t">★ 4.4 · 219 reviews</span>
+   <span class="chip">A few tables only</span>
+   <span class="chip">Bourj Hammoud</span>
+  </div>
+  <div class="cta">
+   <a class="btn t" href="tel:+9613882933">Call +961 3 882 933</a>
+   <a class="btn" href="https://maps.google.com/?cid=2555547586149269731" target="_blank" rel="noopener">Find the door ↗</a>
+  </div>
+ </div>
+ <div class="photo rv">
+  <span class="tape"></span>
+  <img src="img/02.jpg" alt="Restaurant Varouj — soujouk and tomatoes">
+  <span class="cap">today: soujouk, like always perfect</span>
+ </div>
+</header>
+
+<div class="nomenu">There is <span>no menu</span>. There never was. That's the whole point.</div>
+
+<section id="story">
+ <div class="wrap story">
+  <div class="rv">
+   <span class="k">the story, in marker</span>
+   <h2>45 years of <span>one man's</span> cooking</h2>
+   <p>For over forty-five years Varouj has run this small wood-panelled room in Bourj Hammoud on one rule: he cooks, you eat. Mante, ich, soujouk with tomatoes, kebbe in yogurt — whatever the day brings, it arrives hot, honest and exactly right. Genuine, flavorful dishes that reflect tradition and care.</p>
+   <p>The room is small, the walls are wood, and the dishes come out the moment they're ready. Mante, ich, soujouk — whatever Varouj decided this morning.</p>
+   <span class="years">1970s → today. Same hands.</span>
+  </div>
+  <div class="ph rv">
+   <span class="tape"></span>
+   <img src="img/09.jpg" alt="Restaurant Varouj storefront">
+  </div>
+ </div>
+</section>
+
+<section class="cook" id="cook">
+ <div class="wrap">
+  <h2 class="rv">What <span>Varouj</span> cooks</h2>
+  <p class="sub">Depends on the day. These keep coming back.</p>
+  <div class="c-grid"><div class="cc rv"><img src="img/02.jpg" alt="Soujouk & tomatoes" loading="lazy"><h3>Soujouk & tomatoes</h3><p>Sliced thin, fried hard, sweetened by tomatoes — the eternal opener.</p></div><div class="cc rv"><img src="img/05.jpg" alt="Kebbe in yogurt" loading="lazy"><h3>Kebbe in yogurt</h3><p>Warm, comforting, ladled from the pot like at home.</p></div><div class="cc rv"><img src="img/03.jpg" alt="The shrimp surprise" loading="lazy"><h3>The shrimp surprise</h3><p>Some days the sea decides the menu. Say yes.</p></div></div>
+ </div>
+</section>
+
+<section id="menu">
+ <div class="wrap menuw">
+  <div class="sheet rv"><img src="img/01.jpg" alt="Restaurant Varouj menu card"></div>
+  <div class="rv">
+   <span class="k">okay, fine</span>
+   <h2>There is <span>one card</span> for the curious</h2>
+   <p>A single printed card exists for first-timers — food on one side, drinks on the other. Regulars have never opened it.</p>
+   <p>Ask what's fresh instead. The answer is better than anything printed.</p>
+  </div>
+ </div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Notes from the <span>little room</span></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>An absolutely mouthwatering experience. This lovely Armenian-Lebanese restaurant truly stands out, not only for its delicious food but also for its warm, authentic atmosphere.</p><div class="who">— Ghina Sidani</div></div><div class="rc rv"><span class="st">★★★★★</span><p>One of those rare places that stays true to itself. For over 45 years, this authentic Armenian eatery has been serving genuine, flavorful dishes that reflect tradition and care.</p><div class="who">— Elie Aramouny</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Really tasty Armenian dishes. Great quality for price. There's no menu but all the dishes ordered were really good, especially the mante and the ich. Highly recommend.</p><div class="who">— Sarah Saleh</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Knock. He's cooking.</h2>
+ <a class="phone" href="tel:+9613882933">+961 3 882 933</a>
+ <p class="meta">Bourj Hammoud, Lebanon<br>Mon-Sat 12:30-4:30 PM & 7:30-11 PM; Sun closed</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/9613882933" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=2555547586149269731" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9613882933">Call</a>
+ <a class="w" href="https://wa.me/9613882933" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=2555547586149269731" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Restaurant Varouj · Bourj Hammoud, Lebanon — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Man'oushit Chaiban — Bakery (manakish) in Forn El Chebbak</title>
+<meta name="description" content="Man'oushit Chaiban, manakish bakery in Forn El Chebbak. Call +961 70 161 028.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Amiri:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--kraft:#C8A26B;--kraft2:#B78F55;--paperk:#DDBE8F;--ink:#2E2214;--fire:#D96C2C;--zaat:#5C6B33;--crm:#F6EEDB}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--fire);color:#fff}
+body{font-family:'Inter',sans-serif;background:var(--kraft);color:var(--ink);line-height:1.68;
+background-image:repeating-linear-gradient(0deg,rgba(46,34,20,.035) 0 2px,transparent 2px 4px)}
+.nar{font-family:'Archivo Narrow',sans-serif}
+.am{font-family:'Amiri',serif}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(200,162,107,.95);backdrop-filter:blur(4px);border-bottom:3px solid var(--ink)}
+nav .brand{font-family:'Archivo Narrow';font-weight:700;font-size:1.2rem;color:var(--ink);text-decoration:none;text-transform:uppercase;letter-spacing:.04em}
+nav .brand span{color:var(--fire)}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.85rem}
+nav .links a:hover{color:var(--fire)}
+nav .call{background:var(--fire);color:#fff !important;padding:10px 22px;border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+/* hero: butcher-bag lockup */
+.hero{max-width:1140px;margin:0 auto;padding:70px 5vw 30px;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero .stamps{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.stamp{border:2px solid var(--ink);padding:6px 14px;font-family:'Archivo Narrow';font-weight:700;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1.4deg);background:transparent;color:var(--ink)}
+.stamp.f{background:var(--fire);color:#fff;transform:rotate(1.2deg)}
+h1{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2.9rem,8.4vw,6rem);line-height:.92;text-transform:uppercase;letter-spacing:-.01em}
+h1 .ar{display:block;font-family:'Amiri',serif;font-weight:700;font-size:clamp(2.2rem,6vw,4.2rem);color:var(--fire);margin-top:8px;text-transform:none;letter-spacing:0}
+.hero p.tg{margin-top:18px;max-width:48ch;color:rgba(46,34,20,.85);font-weight:500}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{font-family:'Archivo Narrow';font-weight:700;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:14px 30px;border:2.5px solid var(--ink);color:var(--ink);background:var(--crm);box-shadow:4px 4px 0 var(--ink);transition:all .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn.f{background:var(--fire);color:#fff}
+.btn.wa{background:#2c7a44;color:#fff}
+.hero .bag{position:relative}
+.hero .bag img{width:100%;height:500px;object-fit:cover;display:block;border:3px solid var(--ink);box-shadow:10px 10px 0 rgba(46,34,20,.28)}
+.hero .bag .oven{position:absolute;top:-22px;left:-16px;background:var(--zaat);color:var(--crm);font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;padding:10px 18px;border:2.5px solid var(--ink);transform:rotate(-4deg);box-shadow:3px 3px 0 var(--ink)}
+.hero .bag .h6{position:absolute;bottom:-20px;right:-12px;background:var(--crm);border:2.5px solid var(--ink);font-family:'Archivo Narrow';font-weight:700;padding:10px 18px;transform:rotate(2.4deg);box-shadow:3px 3px 0 var(--ink)}
+/* fire strip */
+.fire{background:var(--ink);color:var(--kraft);overflow:hidden;padding:12px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);margin-top:52px}
+.fire .tt{display:flex;width:max-content;animation:mq 24s linear infinite;font-family:'Archivo Narrow';font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.9rem;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:92px 5vw}
+.wrap{max-width:1140px;margin:0 auto}
+.k{font-family:'Archivo Narrow';font-weight:700;color:var(--fire);letter-spacing:.24em;text-transform:uppercase;font-size:.76rem;display:block;margin-bottom:12px}
+/* oven line (highlights) */
+.oven h2{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2.1rem,5vw,3.6rem);text-transform:uppercase;text-align:center;line-height:.96}
+.oven h2 span{color:var(--fire)}
+.oven .sub{text-align:center;color:rgba(46,34,20,.75);margin:12px 0 50px;font-weight:500}
+.o-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.oc{background:var(--crm);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);transition:transform .16s;overflow:hidden}
+.oc:hover{transform:translateY(-6px)}
+.oc img{width:100%;height:215px;object-fit:cover;display:block;border-bottom:3px solid var(--ink)}
+.oc .bd{padding:20px 22px 26px}
+.oc .tag{display:inline-block;font-family:'Archivo Narrow';font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;background:var(--zaat);color:var(--crm);padding:4px 12px;margin-bottom:12px}
+.oc h3{font-family:'Archivo Narrow';font-weight:700;font-size:1.3rem;text-transform:uppercase}
+.oc p{font-size:.92rem;color:rgba(46,34,20,.8);margin-top:8px}
+/* variety board (menu) */
+.menu{background:var(--paperk);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.menu .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;max-width:1140px;margin:0 auto}
+.menu h2{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2rem,4.6vw,3.2rem);text-transform:uppercase;line-height:.98;margin-bottom:16px}
+.menu h2 span{color:var(--fire)}
+.menu p{color:rgba(46,34,20,.85);max-width:52ch;margin-bottom:10px;font-weight:500}
+.menu .board img{width:100%;display:block;border:3px solid var(--ink);box-shadow:10px 10px 0 rgba(46,34,20,.28)}
+.menu ul{list-style:none;margin-top:18px;columns:2;column-gap:34px}
+.menu li{font-family:'Archivo Narrow';font-weight:600;padding:8px 0;border-bottom:2px dotted rgba(46,34,20,.4);break-inside:avoid;font-size:.95rem;text-transform:uppercase;letter-spacing:.03em}
+/* gallery: kraft sticker sheet */
+.gal h2{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2.1rem,5vw,3.6rem);text-transform:uppercase;text-align:center;margin-bottom:8px}
+.gal h2 span{color:var(--zaat)}
+.gal .sub{text-align:center;color:rgba(46,34,20,.7);margin-bottom:46px;font-weight:500}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1140px;margin:0 auto}
+.g-grid a{display:block;background:var(--crm);border:3px solid var(--ink);padding:8px 8px 12px;box-shadow:5px 5px 0 var(--ink);transition:transform .15s}
+.g-grid a:nth-child(odd){transform:rotate(-.8deg)}
+.g-grid a:nth-child(even){transform:rotate(.8deg)}
+.g-grid a:hover{transform:rotate(0) translateY(-5px)}
+.g-grid img{width:100%;height:250px;object-fit:cover;display:block}
+/* reviews: order tickets */
+.rev h2{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2rem,4.8vw,3.3rem);text-transform:uppercase;text-align:center;margin-bottom:46px}
+.rev h2 span{color:var(--fire)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:var(--crm);border:3px solid var(--ink);padding:24px;box-shadow:5px 5px 0 var(--ink);position:relative}
+.rc:before{content:"ORDER Nº";font-family:'Archivo Narrow';font-weight:700;font-size:.68rem;letter-spacing:.2em;color:var(--fire);display:block;margin-bottom:10px}
+.rc p{font-size:.96rem}
+.rc .who{margin-top:12px;font-family:'Archivo Narrow';font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:.08em;color:var(--zaat)}
+/* visit */
+.visit{background:var(--ink);color:var(--kraft);text-align:center;padding:105px 5vw}
+.visit h2{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(2.4rem,7vw,4.8rem);text-transform:uppercase;line-height:.94}
+.visit h2 span{color:var(--fire)}
+.visit .phone{font-family:'Archivo Narrow';font-weight:700;font-size:clamp(1.8rem,4.8vw,3rem);color:var(--ink);background:var(--kraft);text-decoration:none;display:inline-block;margin:28px 0 8px;padding:10px 32px;box-shadow:5px 5px 0 var(--fire)}
+.visit .meta{color:rgba(200,162,107,.85);max-width:480px;margin:18px auto 34px;line-height:2}
+.visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.visit .btn{background:transparent;color:var(--kraft);border-color:var(--kraft);box-shadow:4px 4px 0 rgba(200,162,107,.4)}
+.visit .btn.wa{background:#2c7a44;color:#fff;border-color:#2c7a44}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(46,34,20,.65)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--crm);border:3px solid var(--ink);padding:8px;box-shadow:0 8px 22px rgba(46,34,20,.4)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;font-family:'Archivo Narrow';font-weight:700;font-size:.9rem;text-transform:uppercase;text-decoration:none;color:var(--ink);border:2px solid var(--ink)}
+.mbar .c{background:var(--fire);color:#fff}
+.mbar .w{background:#2c7a44;color:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero,.menu .grid{grid-template-columns:1fr;gap:40px}
+ .o-grid,.g-grid{grid-template-columns:1fr}
+ .menu ul{columns:1}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+@media(min-width:600px) and (max-width:900px){.o-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+ <a class="brand" href="#">MAN'OUSHIT <span>CHAIBAN</span></a>
+ <div class="links">
+  <a href="#oven">From the oven</a><a href="#menu">The board</a><a href="#gallery">Photos</a><a href="#visit">Visit</a>
+  <a class="call nar" href="tel:+96170161028">CALL</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <div class="stamps">
+   <span class="stamp f">OVEN ON AT 6:30 AM</span>
+   <span class="stamp">FORN EL CHEBBAK</span>
+   <span class="stamp">★ 4.3 / 99</span>
+  </div>
+  <h1>MAN'OUSHIT CHAIBAN<span class="ar">منقوشة شيبان</span></h1>
+  <p class="tg">Zaatar, cheese and meat manakish out of the oven from 6:30 AM — Forn el Chebbak's morning stop.</p>
+  <div class="cta">
+   <a class="btn f" href="tel:+96170161028">Call +961 70 161 028</a>
+   <a class="btn" href="https://maps.google.com/?cid=9014475017821031782" target="_blank" rel="noopener">Find the forn ↗</a>
+  </div>
+ </div>
+ <div class="bag rv">
+  <span class="oven">WOOD-WARM · SAINT NOHRA ST</span>
+  <img src="img/03.jpg" alt="Man'oushit Chaiban manakish">
+  <span class="h6">Baking since 6:30 AM</span>
+ </div>
+</header>
+
+<div class="fire"><div class="tt"><span>ZAATAR ✕ CHEESE ✕ MEAT ✕ KISHIK ✕ HOT FROM THE SAJ ✕ DELIVERY ✕ ZAATAR ✕ CHEESE ✕ MEAT ✕ KISHIK ✕ HOT FROM THE SAJ ✕ DELIVERY ✕ </span></div></div>
+
+<section class="oven" id="oven">
+ <div class="wrap">
+  <h2 class="rv">First out of <span>the oven</span></h2>
+  <p class="sub">Ordered at the counter, folded in paper, eaten walking</p>
+  <div class="o-grid"><div class="oc rv"><img src="img/02.jpg" alt="Zaatar, the standard" loading="lazy"><div class="bd"><span class="tag">batch 1</span><h3>Zaatar, the standard</h3><p>Green, glistening, folded — the breakfast handshake of Lebanon.</p></div></div><div class="oc rv"><img src="img/03.jpg" alt="The meat one" loading="lazy"><div class="bd"><span class="tag">batch 2</span><h3>The meat one</h3><p>Their lahm b'ajin is the reason the regulars are regulars.</p></div></div><div class="oc rv"><img src="img/08.jpg" alt="Kaak & the sweet tray" loading="lazy"><div class="bd"><span class="tag">batch 3</span><h3>Kaak & the sweet tray</h3><p>Sesame kaak and cheese-filled surprises for the road.</p></div></div></div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="grid">
+  <div class="rv">
+   <span class="k">The board</span>
+   <h2>Every man'ousheh <span>on one sheet</span></h2>
+   <p>The whole range, stamped on kraft like a flour sack — from the classic zaatar to the loaded cheese-meat hybrids.</p>
+   <ul>
+    <li>Zaatar</li><li>Cheese</li><li>Half &amp; half</li><li>Meat (lahm b'ajin)</li><li>Kishik</li><li>Spicy cheese</li><li>Mini pizzas</li><li>Kaak b'jebneh</li>
+   </ul>
+  </div>
+  <div class="board rv"><img src="img/05.jpg" alt="Man'oushit Chaiban variety board"></div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Hot &amp; <span>photographed</span></h2>
+ <p class="sub">Straight off the trays, before the paper wrap</p>
+ <div class="g-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Tickets from <span>the counter</span></h2>
+  <div class="r-grid"><div class="rc rv"><p>Nice place for breakfast in Furn el Chebbak. They have delicious manakish, specially meat and zaatar.</p><div class="who">Christian Habib</div></div><div class="rc rv"><p>They serve a good taste of the traditional Lebanese Manaish!</p><div class="who">Marwan</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Breakfast is <span>ready.</span></h2>
+ <a class="phone" href="tel:+96170161028">+961 70 161 028</a>
+ <p class="meta">Saint Nohra, Forn El Chebbak, Lebanon<br>Mon-Sat 6:30 AM - 4 PM; Sun 6:30 AM - 2:30 PM · WhatsApp orders welcome</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/96170161028" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=9014475017821031782" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+96170161028">Call</a>
+ <a class="w" href="https://wa.me/96170161028" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=9014475017821031782" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Man'oushit Chaiban · Forn El Chebbak — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

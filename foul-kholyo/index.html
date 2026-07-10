@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foul Kholyo — Breakfast restaurant in Ouzai, Beirut</title>
+<meta name="description" content="Foul Kholyo, breakfast in Ouzai. Call +961 70 039 558.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Rubik:wght@400;500;600;700&family=Amiri:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--cobalt:#1D4ED8;--cobalt2:#153CA8;--sun:#F7C531;--sun2:#EBAD0F;--crm:#FDF6E3;--ink:#171E33;--mint:#2E9B70}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:clip}
+::selection{background:var(--sun);color:var(--ink)}
+body{font-family:'Rubik',sans-serif;background:var(--crm);color:var(--ink);line-height:1.68}
+.lz{font-family:'Lalezar',cursive}
+/* tiled header pattern */
+.tiles{background:
+ radial-gradient(circle at 12px 12px, var(--sun) 5px, transparent 6px),
+ radial-gradient(circle at 36px 36px, #fff 4px, transparent 5px),
+ var(--cobalt);
+ background-size:48px 48px;padding:10px 0;border-bottom:4px solid var(--ink)}
+nav{position:sticky;top:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;background:rgba(253,246,227,.96);backdrop-filter:blur(4px);border-bottom:3px solid var(--ink)}
+nav .brand{font-family:'Lalezar';font-size:1.4rem;color:var(--cobalt);text-decoration:none}
+nav .brand span{color:var(--sun2)}
+nav .links{display:flex;gap:22px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.85rem}
+nav .links a:hover{color:var(--cobalt)}
+nav .call{background:var(--cobalt);color:#fff !important;padding:10px 22px;border-radius:12px;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+/* hero */
+.hero{max-width:1150px;margin:0 auto;padding:64px 5vw 40px;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero .morn{display:inline-block;font-family:'Lalezar';background:var(--sun);border:3px solid var(--ink);border-radius:14px;padding:8px 20px;font-size:1.05rem;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--ink)}
+h1{font-family:'Lalezar';font-size:clamp(3.2rem,10vw,7.2rem);line-height:.9;color:var(--cobalt);margin:20px 0 2px;text-shadow:4px 4px 0 var(--sun)}
+.hero .arb{font-family:'Amiri',serif;font-weight:700;font-size:clamp(1.8rem,4.6vw,2.8rem);color:var(--ink)}
+.hero p.tg{margin-top:16px;max-width:46ch;color:rgba(23,30,51,.85);font-weight:500;font-size:1.05rem}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 28px}
+.chip{background:#fff;border:2.5px solid var(--ink);border-radius:99px;padding:8px 18px;font-weight:700;font-size:.8rem;box-shadow:0 4px 0 var(--ink)}
+.chip.b{background:var(--cobalt);color:#fff}
+.chip.y{background:var(--sun)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:'Lalezar';font-size:1.1rem;text-decoration:none;padding:13px 30px;border-radius:14px;border:3px solid var(--ink);color:var(--ink);background:#fff;box-shadow:0 5px 0 var(--ink);transition:all .15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 2px 0 var(--ink)}
+.btn.b{background:var(--cobalt);color:#fff}
+.btn.wa{background:var(--mint);color:#fff}
+.hero .ph{position:relative}
+.hero .ph img{width:100%;height:480px;object-fit:cover;display:block;border-radius:26px;border:4px solid var(--ink);box-shadow:12px 12px 0 var(--sun)}
+.hero .ph .sing{position:absolute;top:-24px;right:-10px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:10px 18px;font-family:'Lalezar';font-size:1rem;transform:rotate(5deg);box-shadow:0 5px 0 var(--ink)}
+.hero .ph .notes{position:absolute;bottom:18px;left:18px;background:var(--ink);color:var(--sun);border-radius:14px;padding:8px 16px;font-family:'Lalezar';letter-spacing:.1em}
+/* singing strip */
+.sing2{background:var(--sun);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink);overflow:hidden;padding:12px 0}
+.sing2 .tt{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:'Lalezar';font-size:1.05rem;letter-spacing:.1em;color:var(--ink);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:92px 5vw}
+.wrap{max-width:1150px;margin:0 auto}
+.k{font-family:'Lalezar';color:var(--cobalt);font-size:1.1rem;display:block;margin-bottom:10px}
+/* plates (highlights) */
+.plates{background:var(--cobalt);color:var(--crm);position:relative}
+.plates:before{content:"";position:absolute;inset:0;opacity:.5;background:radial-gradient(circle at 20px 20px, rgba(255,255,255,.09) 6px, transparent 7px);background-size:56px 56px}
+.plates .wrap{position:relative}
+.plates h2{font-family:'Lalezar';font-size:clamp(2.2rem,5.4vw,3.8rem);text-align:center;line-height:.95;text-shadow:3px 3px 0 var(--cobalt2)}
+.plates h2 span{color:var(--sun)}
+.plates .sub{text-align:center;color:rgba(253,246,227,.85);font-weight:500;margin:12px 0 52px}
+.p-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.pc{background:var(--crm);color:var(--ink);border:3.5px solid var(--ink);border-radius:24px;overflow:hidden;box-shadow:0 9px 0 var(--cobalt2);transition:transform .15s}
+.pc:hover{transform:translateY(-6px)}
+.pc img{width:100%;height:215px;object-fit:cover;display:block;border-bottom:3.5px solid var(--ink)}
+.pc .bd{padding:20px 22px 26px}
+.pc h3{font-family:'Lalezar';font-size:1.45rem;color:var(--cobalt)}
+.pc p{font-size:.92rem;color:rgba(23,30,51,.8);margin-top:6px}
+/* kholyo himself */
+.man2{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center;max-width:1150px;margin:0 auto}
+.man2 .ph img{width:100%;height:440px;object-fit:cover;display:block;border-radius:24px;border:4px solid var(--ink);box-shadow:-12px 12px 0 var(--cobalt)}
+.man2 h2{font-family:'Lalezar';font-size:clamp(2.1rem,5vw,3.5rem);line-height:.95;margin-bottom:16px}
+.man2 h2 span{color:var(--cobalt)}
+.man2 p{color:rgba(23,30,51,.85);max-width:52ch;margin-bottom:12px;font-weight:500}
+.man2 .quote{background:#fff;border:3px solid var(--ink);border-radius:18px;padding:18px 22px;margin-top:20px;box-shadow:6px 6px 0 var(--sun);font-weight:600}
+.man2 .quote span{display:block;font-family:'Lalezar';color:var(--cobalt);margin-top:8px}
+/* menu board */
+.menu{background:var(--crm)}
+.menu .grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:60px;align-items:center;max-width:1150px;margin:0 auto}
+.menu .sheet img{width:100%;display:block;border-radius:20px;border:4px solid var(--ink);box-shadow:12px 12px 0 var(--sun)}
+.menu h2{font-family:'Lalezar';font-size:clamp(2.1rem,5vw,3.4rem);line-height:.95;margin-bottom:16px}
+.menu h2 span{color:var(--cobalt)}
+.menu p{color:rgba(23,30,51,.85);max-width:50ch;margin-bottom:10px;font-weight:500}
+.menu ul{list-style:none;margin-top:18px}
+.menu li{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:2px dashed rgba(23,30,51,.3);font-weight:600;font-size:.96rem}
+.menu li span:last-child{font-family:'Lalezar';color:var(--cobalt)}
+/* gallery */
+.gal{background:#fff;border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+.gal h2{font-family:'Lalezar';font-size:clamp(2.2rem,5.4vw,3.8rem);text-align:center;margin-bottom:8px}
+.gal h2 span{color:var(--cobalt)}
+.gal .sub{text-align:center;color:rgba(23,30,51,.7);font-weight:500;margin-bottom:46px}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1150px;margin:0 auto}
+.g-grid a{display:block;border-radius:20px;overflow:hidden;border:3.5px solid var(--ink);box-shadow:0 7px 0 var(--ink);transition:transform .15s;background:var(--crm)}
+.g-grid a:hover{transform:translateY(-6px)}
+.g-grid img{width:100%;height:255px;object-fit:cover;display:block}
+/* reviews */
+.rev h2{font-family:'Lalezar';font-size:clamp(2.2rem,5.4vw,3.6rem);text-align:center;margin-bottom:46px}
+.rev h2 span{color:var(--cobalt)}
+.r-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.rc{background:#fff;border:3.5px solid var(--ink);border-radius:22px;padding:26px;box-shadow:0 7px 0 var(--ink);position:relative}
+.rc .st{font-family:'Lalezar';color:var(--sun2);letter-spacing:3px;display:block;margin-bottom:10px;font-size:1.05rem}
+.rc p{font-size:.97rem;line-height:1.7;font-weight:500}
+.rc .who{margin-top:12px;font-family:'Lalezar';color:var(--cobalt)}
+/* visit */
+.visit{background:var(--ink);color:var(--crm);text-align:center;padding:105px 5vw;position:relative;overflow:hidden}
+.visit:before{content:"";position:absolute;inset:0;opacity:.35;background:radial-gradient(circle at 24px 24px, rgba(247,197,49,.2) 6px, transparent 7px);background-size:60px 60px}
+.visit h2{position:relative;font-family:'Lalezar';font-size:clamp(2.6rem,7.6vw,5.2rem);line-height:.9}
+.visit h2 span{color:var(--sun)}
+.visit .phone{position:relative;font-family:'Lalezar';font-size:clamp(1.9rem,5vw,3.1rem);color:var(--ink);background:var(--sun);text-decoration:none;display:inline-block;margin:28px 0 8px;padding:10px 34px;border-radius:16px;border:3px solid var(--crm);box-shadow:0 7px 0 rgba(253,246,227,.35)}
+.visit .meta{position:relative;color:rgba(253,246,227,.85);max-width:500px;margin:18px auto 34px;line-height:2;font-weight:500}
+.visit .cta{position:relative;justify-content:center}
+.visit .btn{background:transparent;color:var(--crm);border-color:var(--crm);box-shadow:0 5px 0 rgba(253,246,227,.3)}
+.visit .btn.wa{background:var(--mint);border-color:var(--mint)}
+footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30,51,.6)}
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:12px;font-family:'Lalezar';font-size:1rem;text-decoration:none;color:var(--ink)}
+.mbar .c{background:var(--cobalt);color:#fff}
+.mbar .w{background:var(--mint);color:#fff}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .hero,.man2,.menu .grid{grid-template-columns:1fr;gap:40px}
+ .p-grid,.g-grid{grid-template-columns:1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:150px}
+}
+@media(min-width:600px) and (max-width:900px){.p-grid,.g-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="tiles"></div>
+<nav>
+ <a class="brand" href="#">FOUL <span>KHOLYO</span></a>
+ <div class="links">
+  <a href="#plates">The plates</a><a href="#kholyo">Kholyo</a><a href="#menu">Menu</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+96170039558">Call</a>
+ </div>
+</nav>
+
+<header class="hero">
+ <div>
+  <span class="morn">☀ Mornings only · 7:30 AM — 12 PM</span>
+  <h1>FOUL KHOLYO</h1>
+  <p class="arb">فول خوليو</p>
+  <p class="tg">A hidden Ouzai breakfast room where chef Khalil cooks, sings, and puts shrimp on hummus.</p>
+  <div class="chips">
+   <span class="chip b">★ 4.6 · 149 reviews</span>
+   <span class="chip y">Ouzai, by the gas station</span>
+   <span class="chip">A couple of tables, that's it</span>
+  </div>
+  <div class="cta">
+   <a class="btn b" href="tel:+96170039558">Call +961 70 039 558</a>
+   <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener">Find it (good luck) ↗</a>
+  </div>
+ </div>
+ <div class="ph rv">
+  <img src="img/01.jpg" alt="Foul Kholyo breakfast table">
+  <span class="sing">chef Khalil sings 🎵</span>
+  <span class="notes">♪ ♫ ♪</span>
+ </div>
+</header>
+
+<div class="sing2"><div class="tt"><span>FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ </span></div></div>
+
+<section class="plates" id="plates">
+ <div class="wrap">
+  <h2 class="rv">Plates worth the <span>detour</span></h2>
+  <p class="sub">This is not normal foul. There is shrimp involved.</p>
+  <div class="p-grid"><div class="pc rv"><img src="img/06.jpg" alt="Hummus, crowned" loading="lazy"><div class="bd"><h3>Hummus, crowned</h3><p>Chickpeas arranged like a little sun — the classic done carefully.</p></div></div><div class="pc rv"><img src="img/10.jpg" alt="The shrimp fatteh" loading="lazy"><div class="bd"><h3>The shrimp fatteh</h3><p>The house legend: seafood meets the breakfast table.</p></div></div><div class="pc rv"><img src="img/03.jpg" alt="Sawda & sharhaat" loading="lazy"><div class="bd"><h3>Sawda & sharhaat</h3><p>Pan-fried liver and meat slices for the brave and the blessed.</p></div></div></div>
+ </div>
+</section>
+
+<section id="kholyo">
+ <div class="man2">
+  <div class="ph rv"><img src="img/05.jpg" alt="Inside Foul Kholyo"></div>
+  <div class="rv">
+   <span class="k">The man himself</span>
+   <h2>Khalil cooks. <span>Kholyo sings.</span> Same person.</h2>
+   <p>Foul Kholyo is an old-school morning house on the Ouzai road with a couple of tables, a counter, and the funniest natural person in the Lebanese restaurant business behind it. Khalil — Kholyo — simmers foul, stacks hummus with meat or shrimp, and sings while he does it. Mornings only; joy guaranteed.</p>
+   <p>Reviewers come for the food and return for the man — "the funniest natural person" running the warmest little room in Ouzai.</p>
+   <div class="quote">"If I would visit Kholyo again, it would be because of Kholyo."<span>— an honest review</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="menu" id="menu">
+ <div class="grid">
+  <div class="sheet rv"><img src="img/02.jpg" alt="Foul Kholyo price board"></div>
+  <div class="rv">
+   <span class="k">The board outside</span>
+   <h2>Prices on the <span>wall</span>, like the old days</h2>
+   <p>One board, hand-updated, photographed straight from the street — foul, hummus, fatteh, sawda, and the famous seafood twists.</p>
+   <ul>
+    <li><span>Foul, the foundation</span><span>always</span></li>
+    <li><span>Hummus with lahme</span><span>the upgrade</span></li>
+    <li><span>Hummus with shrimp</span><span>the legend</span></li>
+    <li><span>Lahme sharhaat</span><span>ask nicely</span></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section class="gal" id="gallery">
+ <h2 class="rv">Morning <span>photographs</span></h2>
+ <p class="sub">Sunrise over Ouzai, steam over the plates</p>
+ <div class="g-grid"><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="rev">
+ <div class="wrap">
+  <h2 class="rv">Songs of <span>praise</span></h2>
+  <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p>Amazing hidden gem, this is an old breakfast place offering a variety of plates, foul, hummus with meat, shrimp and much more. The experience itself is worth it.</p><div class="who">Imad Bazzi</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Probably the funniest encounter I had in a restaurant with the restaurant owner, he is the funniest natural person. If I would visit Kholyo again, it would be because of Kholyo.</p><div class="who">Ali Deeb</div></div><div class="rc rv"><span class="st">★★★★★</span><p>The food there is great specially the lahme sharhaat, you feel at home. Only a couple of tables and you can enjoy chef Khalil cooking and singing at the same time.</p><div class="who">Mazen Youniss</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <h2 class="rv">Come before <span>noon.</span></h2>
+ <a class="phone" href="tel:+96170039558">+961 70 039 558</a>
+ <p class="meta">Main road, facing Saidaco gas company, Hachem station junction, Ouzai, Lebanon<br>Tue-Sun 7:30 AM - 12 PM; Mon closed</p>
+ <div class="cta">
+  <a class="btn wa" href="https://wa.me/96170039558" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+96170039558">Call</a>
+ <a class="w" href="https://wa.me/96170039558" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Foul Kholyo · Ouzai, Beirut — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>
