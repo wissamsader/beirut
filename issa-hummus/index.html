@@ -93,6 +93,19 @@ section{padding:90px 5vw}
 .rcpt .hd{text-align:center;border-bottom:2px dashed rgba(51,33,14,.3);padding-bottom:12px;margin-bottom:16px;font-weight:800;letter-spacing:.18em;font-size:.72rem;text-transform:uppercase;color:var(--deep)}
 .rcpt p{font-size:.98rem;line-height:1.75}
 .rcpt .who{margin-top:16px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--deep);display:flex;justify-content:space-between}
+/* the big receipt (real menu) */
+.bigr{padding-top:0}
+.bigr h2{font-family:'Alfa Slab One';font-size:clamp(2rem,5.4vw,3.4rem);text-align:center;margin-bottom:10px;text-transform:uppercase}
+.bigr h2 em{font-style:normal;color:var(--orange)}
+.bigr .sub{text-align:center;font-weight:600;margin-bottom:44px}
+.rcpt.big{max-width:760px;margin:0 auto;transform:none;padding:44px clamp(22px,5vw,56px) 58px}
+.msec{font-family:'Alfa Slab One';letter-spacing:.1em;text-transform:uppercase;color:var(--orange);margin:28px 0 8px;font-size:1.05rem;display:flex;align-items:baseline;gap:12px}
+.msec .arabic{font-size:.9rem;color:var(--deep)}
+.msec:after{content:"";flex:1;border-bottom:2px dashed rgba(51,33,14,.3)}
+.mrow{display:flex;align-items:baseline;gap:10px;padding:9px 0;font-size:1.02rem;font-weight:600}
+.mrow .ld{flex:1;border-bottom:2px dotted rgba(51,33,14,.35);transform:translateY(-4px);min-width:20px}
+.mrow .ar{font-family:'Cairo';font-weight:700;color:var(--deep);font-size:.95rem}
+.rcpt .total{border-top:2px dashed rgba(51,33,14,.3);margin-top:30px;padding-top:16px;text-align:center;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.76rem;color:var(--deep);line-height:2}
 /* visit awning panel */
 .visit{background:var(--orange);color:#fff;text-align:center;position:relative;padding:100px 5vw 110px}
 .visit:before{content:"";position:absolute;left:0;right:0;top:0;height:17px;background-image:radial-gradient(circle at 23px 0,var(--cream) 15px,transparent 16px);background-size:92px 17px}
@@ -166,6 +179,36 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
   <h2 class="rv">Off the <em>morning</em> stove</h2>
   <p class="sub">Three things people cross the city for</p>
   <div class="crate-grid"><div class="crate rv"><span class="tagp">THE GLORY</span><img src="img/07.jpg" alt="Fatteh" loading="lazy"><div class="bd"><h3>Fatteh</h3><p>Warm chickpeas, yogurt, toasted bread and sizzling ghee. The house glory.</p></div></div><div class="crate rv"><span class="tagp">NO SHORTCUTS</span><img src="img/04.jpg" alt="Foul & Hummus" loading="lazy"><div class="bd"><h3>Foul & Hummus</h3><p>Slow-cooked, hand-mashed, finished with good olive oil.</p></div></div><div class="crate rv"><span class="tagp">7 AM SHARP</span><img src="img/06.jpg" alt="Sunrise Hours" loading="lazy"><div class="bd"><h3>Sunrise Hours</h3><p>Open 7 AM – 2 PM. Come early — Sundays are jam-packed.</p></div></div></div>
+ </div>
+</section>
+
+<section class="bigr" id="carte">
+ <h2 class="rv">The <em>whole</em> board</h2>
+ <p class="sub">Everything the hall serves — rung up like a Sunday morning</p>
+ <div class="rcpt big rv">
+  <div class="hd">ISSA &amp; SONS — BEIRUT · الصالة · DAILY 7 AM – 2 PM</div>
+  <div class="msec">From the pot <span class="arabic">من التنجرة</span></div>
+  <div class="mrow"><span>Foul — the classic</span><span class="ld"></span><span class="ar arabic">صحن فول</span></div>
+  <div class="mrow"><span>Foul Issa — the house special</span><span class="ld"></span><span class="ar arabic">فول عيسى</span></div>
+  <div class="mrow"><span>Foul with butter</span><span class="ld"></span><span class="ar arabic">فول بالزبدة</span></div>
+  <div class="mrow"><span>Msabbaha</span><span class="ld"></span><span class="ar arabic">مسبحة</span></div>
+  <div class="mrow"><span>Hummus bi tahini</span><span class="ld"></span><span class="ar arabic">حمص بطحينة</span></div>
+  <div class="mrow"><span>Spiced hummus beans</span><span class="ld"></span><span class="ar arabic">حمص حب متبل</span></div>
+  <div class="mrow"><span>Qudsiyeh</span><span class="ld"></span><span class="ar arabic">قدسية</span></div>
+  <div class="msec">Fatteh corner <span class="arabic">ركن الفتة</span></div>
+  <div class="mrow"><span>Fatteh bi laban</span><span class="ld"></span><span class="ar arabic">فتة بلبن</span></div>
+  <div class="mrow"><span>Fatteh bi tahini</span><span class="ld"></span><span class="ar arabic">فتة بطحينة</span></div>
+  <div class="mrow"><span>Fatteh with meat</span><span class="ld"></span><span class="ar arabic">فتة مع لحمة</span></div>
+  <div class="mrow"><span>The big jat — feeds the table</span><span class="ld"></span><span class="ar arabic">جاط فتة</span></div>
+  <div class="msec">On the side <span class="arabic">عالجنب</span></div>
+  <div class="mrow"><span>Fried eggs</span><span class="ld"></span><span class="ar arabic">بيض مقلي</span></div>
+  <div class="mrow"><span>Fried eggs with meat</span><span class="ld"></span><span class="ar arabic">بيض مع لحمة</span></div>
+  <div class="mrow"><span>Labneh</span><span class="ld"></span><span class="ar arabic">لبنة</span></div>
+  <div class="mrow"><span>Fried halloum</span><span class="ld"></span><span class="ar arabic">حلوم مقلي</span></div>
+  <div class="msec">To go <span class="arabic">جاط للخارج</span></div>
+  <div class="mrow"><span>Foul, msabbaha &amp; hummus — by the ½ kilo &amp; kilo</span><span class="ld"></span><span class="ar arabic">عالوزن</span></div>
+  <div class="mrow"><span>Full service trays — small / medium / large</span><span class="ld"></span><span class="ar arabic">السرفيس</span></div>
+  <div class="total">★ prices at the counter — they move with the market ★<br>thank you · come back Sunday</div>
  </div>
 </section>
 

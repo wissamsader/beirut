@@ -79,6 +79,27 @@ section{padding:90px 4vw}
 .mc .bd{padding:20px 22px 26px}
 .mc h3{font-family:'Baloo 2';font-weight:800;font-size:1.3rem;margin-bottom:6px}
 .mc p{font-size:.92rem;color:rgba(42,20,16,.8)}
+/* il menu (real card) */
+.ilmenu{padding-top:70px}
+.ilmenu .wrap2{max-width:1080px;margin:0 auto}
+.ilmenu h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(2rem,4.8vw,3.2rem);text-align:center;margin-bottom:8px}
+.ilmenu h2 em{font-style:normal;color:var(--tomato)}
+.ilmenu .sub2{text-align:center;font-weight:500;color:rgba(42,20,16,.7);margin-bottom:44px}
+.boxcard{background:var(--tomato);color:#fff;border:3px solid var(--ink);border-radius:28px;box-shadow:0 8px 0 var(--ink);padding:30px 34px;display:flex;gap:26px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:26px;transform:rotate(-.5deg)}
+.boxcard h3{font-family:'Baloo 2';font-weight:800;font-size:1.7rem;margin-bottom:6px}
+.boxcard p{font-weight:500;max-width:52ch}
+.boxcard .pr{font-family:'Baloo 2';font-weight:800;font-size:1.6rem;background:var(--ink);border-radius:99px;padding:10px 26px;white-space:nowrap;box-shadow:0 5px 0 rgba(0,0,0,.3)}
+.mcols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.mcol2{background:#fff;border:3px solid var(--ink);border-radius:24px;box-shadow:0 6px 0 var(--ink);padding:26px 26px 22px}
+.mcol2:nth-child(2){transform:rotate(.7deg)}
+.mcol2:nth-child(3){transform:rotate(-.7deg)}
+.mcol2 h3{font-family:'Baloo 2';font-weight:800;font-size:1.25rem;margin-bottom:4px;color:var(--green)}
+.mcol2 .hint{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(42,20,16,.55);margin-bottom:14px}
+.mcol2 .r{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:2px dotted rgba(42,20,16,.25);font-weight:600;font-size:.98rem}
+.mcol2 .r:last-child{border-bottom:none}
+.mcol2 .r .ld{flex:1;min-width:14px}
+.mcol2 .r .pr2{font-family:'Baloo 2';font-weight:800;color:var(--tomato);white-space:nowrap;font-size:.92rem}
+.ilmenu .fine{text-align:center;font-weight:500;color:rgba(42,20,16,.6);margin-top:26px;font-size:.9rem}
 /* gallery scroll */
 .gal h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(2rem,4.8vw,3.2rem);margin-bottom:8px}
 .gal h2 em{font-style:normal;color:var(--tomato)}
@@ -186,6 +207,50 @@ footer{text-align:center;padding:0 4vw 110px;font-weight:600;font-size:.82rem;co
   <h2 class="rv">The <em>greatest hits</em></h2>
   <p class="sub">Everything comes with a little party in your mouth</p>
   <div class="m-grid"><div class="mc rv"><span class="n">01</span><img src="img/01.jpg" alt="The 30cm Wrap" loading="lazy"><div class="bd"><h3>The 30cm Wrap</h3><p>They bring a measuring tape. It's a whole thing. It's glorious.</p></div></div><div class="mc rv"><span class="n">02</span><img src="img/03.jpg" alt="Shawarma Popcorn" loading="lazy"><div class="bd"><h3>Shawarma Popcorn</h3><p>Bite-size crispy shawarma — invented for sharing, hoarded anyway.</p></div></div><div class="mc rv"><span class="n">03</span><img src="img/09.jpg" alt="Till 3 AM" loading="lazy"><div class="bd"><h3>Till 3 AM</h3><p>Gemmayze's official late-night closing argument.</p></div></div></div>
+ </div>
+</section>
+
+<section class="ilmenu" id="carte">
+ <div class="wrap2">
+  <h2 class="rv">IL <em>MENU</em></h2>
+  <p class="sub2 rv">the real card — regular bread, markouk, or lettuce wrap</p>
+  <div class="boxcard rv">
+   <div>
+    <h3>SHAWARMA BOX 📦</h3>
+    <p>3 chicken shawarma + 3 beef shawarma + 3 falafel, all stuffed in mini pita — with fries. Built for the after-midnight table.</p>
+   </div>
+   <span class="pr">1,900,000 LL</span>
+  </div>
+  <div class="mcols rv">
+   <div class="mcol2">
+    <h3>Sandwiches</h3>
+    <div class="hint">pick your wrap: bread · markouk · lettuce</div>
+    <div class="r"><span>Chicken shawarma</span><span class="ld"></span><span class="pr2">500,000 LL</span></div>
+    <div class="r"><span>Beef shawarma</span><span class="ld"></span><span class="pr2">550,000 LL</span></div>
+    <div class="r"><span>Taouk</span><span class="ld"></span><span class="pr2">500,000 LL</span></div>
+    <div class="r"><span>Soujouk</span><span class="ld"></span><span class="pr2">450,000 LL</span></div>
+    <div class="r"><span>Breaded chicken shawarma</span><span class="ld"></span><span class="pr2">500,000 LL</span></div>
+   </div>
+   <div class="mcol2">
+    <h3>Fries</h3>
+    <div class="hint">loaded &amp; otherwise</div>
+    <div class="r"><span>Beef shawarma fries</span><span class="ld"></span><span class="pr2">700,000 LL</span></div>
+    <div class="r"><span>Chicken shawarma fries</span><span class="ld"></span><span class="pr2">700,000 LL</span></div>
+    <div class="r"><span>Shawarma popcorn</span><span class="ld"></span><span class="pr2">400,000 LL</span></div>
+    <div class="r"><span>Regular fries</span><span class="ld"></span><span class="pr2">300,000 LL</span></div>
+    <div class="r"><span>Small fries</span><span class="ld"></span><span class="pr2">150,000 LL</span></div>
+   </div>
+   <div class="mcol2">
+    <h3>Dips &amp; Drinks</h3>
+    <div class="hint">the supporting cast</div>
+    <div class="r"><span>Toum — mild or regular</span><span class="ld"></span><span class="pr2">50,000 LL</span></div>
+    <div class="r"><span>Spicy toum</span><span class="ld"></span><span class="pr2">50,000 LL</span></div>
+    <div class="r"><span>Tarator / spicy tarator</span><span class="ld"></span><span class="pr2">50,000 LL</span></div>
+    <div class="r"><span>Soft drinks</span><span class="ld"></span><span class="pr2">100,000 LL</span></div>
+    <div class="r"><span>Water · sparkling</span><span class="ld"></span><span class="pr2">30–130,000 LL</span></div>
+   </div>
+  </div>
+  <p class="fine rv">LL prices from the printed card — they follow the market, the flavour doesn't.</p>
  </div>
 </section>
 

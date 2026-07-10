@@ -74,6 +74,13 @@ section{padding:100px 5vw}
 .dish p{width:100%;font-style:italic;font-size:.98rem;color:rgba(36,21,5,.75);margin-top:6px}
 .dish-w{display:flex;flex-wrap:wrap}
 .carte .note{text-align:center;font-style:italic;margin-top:40px;color:rgba(36,21,5,.65)}
+.wrap2{max-width:1120px;margin:0 auto}
+.carte-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:60px}
+.carte-cols h3{font-family:'Bebas Neue';font-weight:400;font-size:1.3rem;letter-spacing:.16em;color:var(--rust);border-bottom:3px double rgba(36,21,5,.4);padding-bottom:10px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.carte-cols h3 .arabic{font-size:.95rem;color:rgba(36,21,5,.6)}
+.carte-cols ul{list-style:none}
+.carte-cols li{font-style:italic;font-size:1.02rem;color:rgba(36,21,5,.85);padding:11px 0;border-bottom:1px dotted rgba(36,21,5,.3)}
+.carte-cols li small{display:block;font-size:.8rem;color:rgba(36,21,5,.55)}
 /* film strip gallery */
 .strip-w{padding:100px 0}
 .strip-head{padding:0 5vw;max-width:1120px;margin:0 auto}
@@ -126,6 +133,7 @@ footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:ital
 @media(max-width:900px){
  nav .links a:not(.call){display:none}
  .story-grid{grid-template-columns:1fr;gap:70px}
+ .carte-cols{grid-template-columns:1fr;gap:34px}
  .tarab .wrap{grid-template-columns:1fr;gap:50px}
  .vinyl{width:220px;height:220px}
  .mbar{display:flex}
@@ -186,7 +194,46 @@ footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:ital
  <div class="wrap">
   <div class="head rv"><h2>LA CARTE</h2><span>ما تستحي، كول</span></div>
   <div class="dish-w"><div class="dish rv"><h3>Osmaliyah Shawarma</h3><span class="dots"></span><span class="no">№1</span><p>The dish reviewers can't stop writing about — outstanding presentation, incredible taste.</p></div><div class="dish rv"><h3>Mezze by the Sea</h3><span class="dots"></span><span class="no">№2</span><p>Labneh, olives, saj bread and the Mediterranean breeze on the terrace.</p></div><div class="dish rv"><h3>Oriental Nights</h3><span class="dots"></span><span class="no">№3</span><p>Live tarab and oud evenings — Beirut's soul, on stage.</p></div></div>
-  <p class="note">…and the mezze keeps coming until you say stop. Nobody says stop.</p>
+ </div>
+ <div class="wrap2">
+  <div class="carte-cols rv">
+   <div>
+    <h3>MORNINGS <span class="arabic">الصبح</span></h3>
+    <ul>
+     <li>Foul moudammas</li>
+     <li>Mousabbaha</li>
+     <li>Mini manakeesh <small>zaatar &amp; cheese</small></li>
+     <li>Labneh &amp; fresh vegetables</li>
+     <li>Omelet</li>
+     <li>Apricot jam, butter &amp; warm bread</li>
+    </ul>
+   </div>
+   <div>
+    <h3>MEZZE <span class="arabic">المازة</span></h3>
+    <ul>
+     <li>Fattouch</li>
+     <li>Hommos · Mouhammara</li>
+     <li>Warak enab</li>
+     <li>Batata harra</li>
+     <li>Rkakat jabneh</li>
+     <li>Makanek bi fakhara</li>
+     <li>Msakhan djej</li>
+    </ul>
+   </div>
+   <div>
+    <h3>SWEET &amp; LATE <span class="arabic">حلو وسهر</span></h3>
+    <ul>
+     <li>Katayef</li>
+     <li>Kellaj</li>
+     <li>Lebanese coffee</li>
+     <li>Tea, poured properly</li>
+     <li>Soup &amp; lentils <small>on cold evenings</small></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+ <div class="wrap">
+  <p class="note">…and the mezze keeps coming until you say stop. Nobody says stop. Feast-night set menus at the counter.</p>
  </div>
 </section>
 

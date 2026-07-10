@@ -82,6 +82,20 @@ h1 .circ svg path{fill:none;stroke:var(--bright);stroke-width:3.2}
 .m-card .bd{padding:22px 24px 26px}
 .m-card h3{font-size:1.25rem;letter-spacing:-.01em;margin-bottom:8px}
 .m-card p{font-size:.95rem;color:rgba(23,48,28,.75)}
+/* napkin menu (real board) */
+.napkin{max-width:1180px;margin:90px auto 0;padding:0 4vw;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.npk{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:38px 34px;position:relative}
+.npk:after{content:"the whole menu — yes, that's it";position:absolute;top:-16px;left:26px;font-family:'Caveat';font-size:1.35rem;color:var(--green);background:var(--paper);padding:0 10px}
+.npk .row{display:flex;align-items:baseline;gap:14px;padding:15px 0}
+.npk .row+.row{border-top:1px dashed rgba(23,48,28,.25)}
+.npk .row>div b{font-size:1.08rem}
+.npk .row small{display:block;font-weight:500;color:rgba(23,48,28,.65);font-size:.9rem;margin-top:2px}
+.npk .row .ar{margin-left:auto;font-family:'Cairo';font-weight:700;color:var(--green);white-space:nowrap}
+.doz{background:var(--mark);border:2px solid var(--ink);border-radius:16px;padding:34px 28px 30px;transform:rotate(1.6deg);text-align:center;box-shadow:0 14px 34px rgba(23,48,28,.15)}
+.doz .hand{font-size:2.1rem;line-height:1.15;color:var(--ink);display:block}
+.doz .arabic{display:block;font-weight:700;font-size:1.15rem;margin-top:10px;color:var(--green)}
+.doz p{margin-top:14px;font-weight:700;font-size:.95rem}
+.doz .ps{font-family:'Caveat';font-size:1.3rem;color:rgba(23,48,28,.75);display:block;margin-top:16px}
 /* gallery tape wall */
 .wall{background:var(--green);padding:90px 4vw;margin-top:90px}
 .wall h2{color:#fff;font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.02em;text-align:center;margin-bottom:8px}
@@ -126,6 +140,8 @@ footer .big{font-weight:700;font-size:clamp(3rem,12vw,9rem);letter-spacing:-.04e
  .board{grid-template-columns:1fr}
  .story{grid-template-columns:1fr;gap:44px}
  .m-grid{grid-template-columns:1fr}
+ .napkin{grid-template-columns:1fr}
+ .doz{transform:rotate(0)}
  .wall-grid{grid-template-columns:1fr 1fr}
  .mbar{display:flex}
  footer{padding-bottom:130px}
@@ -189,6 +205,23 @@ footer .big{font-weight:700;font-size:clamp(3rem,12vw,9rem);letter-spacing:-.04e
  <h2 class="rv">What to <em>order</em></h2>
  <p class="sub">(there is only one right answer, but here are three)</p>
  <div class="m-grid"><div class="m-card rv"><span class="num">01</span><img src="img/02.jpg" alt="The Falafel Wrap" loading="lazy"><div class="bd"><h3>The Falafel Wrap</h3><p>Crispy outside, bright green inside, perfectly balanced — the city's benchmark.</p></div></div><div class="m-card rv"><span class="num">02</span><img src="img/05.jpg" alt="Chili Pickles" loading="lazy"><div class="bd"><h3>Chili Pickles</h3><p>The legendary side that turns a sandwich into an event.</p></div></div><div class="m-card rv"><span class="num">03</span><img src="img/11.jpg" alt="Family Recipe" loading="lazy"><div class="bd"><h3>Family Recipe</h3><p>'& Sons' isn't branding — it's a promise kept over generations.</p></div></div></div>
+</section>
+
+<section class="napkin" id="carte">
+ <div class="npk rv">
+  <div class="row"><div><b>Falafel sandwich — regular</b><small>tomatoes, herbs, tarator &amp; the famous chili pickles</small></div><span class="ar arabic">سندويش عادي</span></div>
+  <div class="row"><div><b>Falafel sandwich — medium</b><small>same wrap, bigger appetite</small></div><span class="ar arabic">سندويش وسط</span></div>
+  <div class="row"><div><b>The dozen — plain</b><small>hot falafel, straight from the fryer</small></div><span class="ar arabic">دزينة سادة</span></div>
+  <div class="row"><div><b>The dozen — dressed</b><small>with veggies &amp; tarator, ready for the table</small></div><span class="ar arabic">دزينة مع خضرة وطرطور</span></div>
+  <div class="row"><div><b>Falafel dough by the kilo</b><small>fry the family batch at home</small></div><span class="ar arabic">عجينة فلافل</span></div>
+  <div class="row"><div><b>Cold drinks &amp; water</b><small>something to put the fire out</small></div><span class="ar arabic">مرطبات</span></div>
+ </div>
+ <div class="doz rv">
+  <span class="hand">"our dozen<br>= 14 pieces"</span>
+  <span class="arabic">الدزينة عنا ١٤ حبة</span>
+  <p>Count them. Go ahead. That's the house policy since day one.</p>
+  <span class="ps">prices at the counter — they're kind ♥</span>
+ </div>
 </section>
 
 <section class="wall" id="gallery">

@@ -83,6 +83,20 @@ h1 .it{color:var(--emerald)}
 .oud h2 em{font-family:'Instrument Serif';font-style:italic;color:#D9C08A}
 .oud p{position:relative;z-index:2;max-width:52ch;margin:24px auto 0;font-size:1.15rem;color:rgba(247,243,232,.85);line-height:1.9}
 .oud .times{position:relative;z-index:2;margin-top:34px;font-family:'Inter';font-size:.75rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+/* the program */
+.prog{background:var(--cream);padding:100px 5vw 0}
+.prog .card{max-width:680px;margin:0 auto;background:#fff;border:1px solid rgba(34,48,31,.15);padding:56px clamp(24px,6vw,66px);box-shadow:0 24px 60px rgba(34,48,31,.08);position:relative;text-align:center}
+.prog .card:before{content:"❧";position:absolute;top:18px;right:22px;color:var(--gold);font-size:1.3rem}
+.prog h2{font-weight:600;font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:6px}
+.prog h2 em{font-family:'Instrument Serif';font-style:italic;color:var(--emerald)}
+.prog .sub{font-family:'Instrument Serif';font-style:italic;color:rgba(34,48,31,.7);margin-bottom:34px}
+.ev{padding:24px 0;border-bottom:1px solid rgba(34,48,31,.14);text-align:left;display:flex;gap:22px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
+.ev:last-of-type{border-bottom:none}
+.ev h3{font-weight:600;font-size:1.3rem}
+.ev p{font-family:'Instrument Serif';font-style:italic;font-size:1.02rem;color:rgba(34,48,31,.72);margin-top:4px;max-width:44ch}
+.ev .tag2{font-family:'Inter';font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+.prog .rsvp{margin-top:32px;font-family:'Inter';font-size:.73rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(34,48,31,.6)}
+.prog .rsvp b{color:var(--emerald)}
 /* gallery grid soft */
 .gal{padding:100px 5vw}
 .gal .wrap{max-width:1140px;margin:0 auto;text-align:center}
@@ -179,6 +193,30 @@ footer{text-align:center;padding:10px 5vw 110px;font-family:'Inter';font-size:.7
  <h2 class="rv">An oud appears, and <em>nobody wants to leave</em></h2>
  <p class="rv">Live oriental music, themed dinners, poetry between the tea rounds — evenings at Zmrd have a way of stretching past midnight without anyone noticing.</p>
  <div class="times rv">Live tarab &amp; oud evenings · check the phone for dates</div>
+</section>
+
+<section class="prog" id="program">
+ <div class="card rv">
+  <h2>The <em>program</em></h2>
+  <p class="sub">what happens in the salon</p>
+  <div class="ev">
+   <div><h3>Oud &amp; tarab nights</h3><p>Live oriental music in the living room — the old songs, close enough to touch. Tea keeps coming.</p></div>
+   <span class="tag2">Evenings</span>
+  </div>
+  <div class="ev">
+   <div><h3>Kitchens-of-the-world nights</h3><p>A set menu around one cuisine, cooked with love — the last one was an Indonesian night with a live traditional show.</p></div>
+   <span class="tag2">Set menu · ~$20</span>
+  </div>
+  <div class="ev">
+   <div><h3>The homemade table, daily</h3><p>Mezze, apricot crumble, walnut cake, pomegranate juice, pots of tea — like family made it, because they did.</p></div>
+   <span class="tag2">All day</span>
+  </div>
+  <div class="ev">
+   <div><h3>Your gathering</h3><p>Book the salon for readings, small concerts, birthdays that feel like home.</p></div>
+   <span class="tag2">By reservation</span>
+  </div>
+  <p class="rsvp">Programme on the door &amp; socials — <b>reserve by WhatsApp</b></p>
+ </div>
 </section>
 
 <section class="gal" id="gallery">

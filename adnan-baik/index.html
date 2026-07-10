@@ -71,6 +71,25 @@ section.ritual{padding:90px 4vw}
 .step .bd{padding:22px 24px 28px}
 .step h3{font-family:'Anton';font-size:1.35rem;text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px}
 .step p{font-size:.95rem;font-weight:500}
+/* menu board */
+.mboard{background:var(--green);padding:90px 4vw;color:var(--cream)}
+.mboard .wrap{max-width:1140px;margin:0 auto}
+.mboard h2{font-family:'Anton';font-size:clamp(2.2rem,6vw,4rem);text-transform:uppercase;text-align:center;margin-bottom:8px;color:var(--yellow)}
+.mboard h2 em{font-style:normal;color:var(--red);-webkit-text-stroke:1px var(--cream)}
+.mboard .sub{text-align:center;font-weight:700;margin-bottom:48px;color:rgba(255,246,220,.85)}
+.mpanels{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;align-items:start}
+.mpanel{background:var(--cream);color:var(--green);border:3px solid var(--green);box-shadow:8px 8px 0 rgba(0,0,0,.3);padding:26px 24px 22px}
+.mpanel h3{font-family:'Anton';font-size:1.25rem;text-transform:uppercase;background:var(--red);color:#fff;padding:12px 16px;margin:-26px -24px 18px;letter-spacing:.05em}
+.mpanel:nth-child(2) h3{background:var(--yellow);color:var(--green)}
+.mpanel .mi{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:2px dotted rgba(23,53,26,.25);font-weight:700}
+.mpanel .mi:last-of-type{border-bottom:none}
+.mpanel .mi>div{flex:1}
+.mpanel .mi small{display:block;font-weight:600;font-size:.8rem;color:rgba(23,53,26,.7)}
+.mpanel .mi .pr{font-family:'Anton';color:var(--red);white-space:nowrap;font-size:1.1rem}
+.mpanel .foot{margin-top:16px;font-weight:800;font-size:.85rem;text-align:center;background:var(--yellow);border:2px solid var(--green);padding:9px 10px;transform:rotate(-1deg)}
+.starters{margin-top:36px;background:var(--cream);border:3px solid var(--green);box-shadow:8px 8px 0 rgba(0,0,0,.3);padding:20px 22px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;color:var(--green)}
+.starters b{font-family:'Anton';text-transform:uppercase;color:var(--red);margin-right:8px;font-size:1.05rem}
+.starters span{border:2px solid var(--green);padding:6px 14px;font-weight:700;font-size:.85rem;background:#fff}
 /* marquee */
 .mq{overflow:hidden;background:var(--red);color:#fff;padding:13px 0;border-top:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-1.2deg) scale(1.02)}
 .mq .tt{display:flex;width:max-content;animation:mq 26s linear infinite;font-family:'Anton';font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
@@ -115,6 +134,7 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
  .stick{display:none}
  .splash .wrap{grid-template-columns:1fr;gap:44px}
  .steps{grid-template-columns:1fr}
+ .mpanels{grid-template-columns:1fr}
  .g-grid{grid-template-columns:1fr 1fr}
  .mbar{display:flex}
  footer{padding-bottom:136px}
@@ -173,6 +193,47 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
 </section>
 
 <div class="mq"><div class="tt"><span>BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ </span></div></div>
+
+<section class="mboard" id="carte">
+ <div class="wrap">
+  <h2 class="rv">THE <em>BOARD</em></h2>
+  <p class="sub">Straight off the screens above the counter — regular or spicy 🌶</p>
+  <div class="mpanels rv">
+   <div class="mpanel">
+    <h3>Special Sandwiches</h3>
+    <div class="mi"><div>Big Adnan Baik<small>the double-decker legend</small></div><span class="pr">$8</span></div>
+    <div class="mi"><div>Zinger Burger</div><span class="pr">$5</span></div>
+    <div class="mi"><div>Musahab Burger</div><span class="pr">$5</span></div>
+    <div class="mi"><div>Zinger Twister</div><span class="pr">$5</span></div>
+    <div class="mi"><div>Mushab Wrap</div><span class="pr">$5</span></div>
+    <div class="mi"><div>Crispy Twister</div><span class="pr">$5</span></div>
+    <div class="mi"><div>Shrimp Twister</div><span class="pr">$5.5</span></div>
+    <div class="foot">COMBO IT — FRIES &amp; KINZA COLA +$3</div>
+   </div>
+   <div class="mpanel">
+    <h3>Meals — fries, garlic &amp; bunz in</h3>
+    <div class="mi"><div>Broasted Meal<small>4 pcs, golden</small></div></div>
+    <div class="mi"><div>Crispy Meal<small>5 pcs, the crunch</small></div></div>
+    <div class="mi"><div>Musahab Meal<small>7 or 10 pcs</small></div></div>
+    <div class="mi"><div>Fried Fish Fillet<small>6 or 9 pcs · tarator &amp; cocktail sauce</small></div></div>
+    <div class="mi"><div>Shrimp<small>10 pcs regular · 7 pcs jumbo</small></div></div>
+    <div class="foot">PRICED AT THE COUNTER — ASK AWAY</div>
+   </div>
+   <div class="mpanel">
+    <h3>Family Boxes</h3>
+    <div class="mi"><div>Broasted Family<small>12 or 16 pcs · fries, colslow, garlic, bunz</small></div></div>
+    <div class="mi"><div>Crispy Family<small>10 · 15 · 20 pcs</small></div></div>
+    <div class="mi"><div>Musahab Albaik<small>24 or 32 pcs, the big rig</small></div></div>
+    <div class="mi"><div>Mix Family<small>broasted + crispy + musahab + shrimps</small></div></div>
+    <div class="foot">FEEDS THE WHOLE TABLE. AND THEN SOME.</div>
+   </div>
+  </div>
+  <div class="starters rv">
+   <b>Starters:</b>
+   <span>French fries</span><span>Potato wedges</span><span>Curly fries</span><span>Mozzarella sticks</span><span>Crazy boneless</span><span>Cheese balls</span><span>Musahab fingers</span>
+  </div>
+ </div>
+</section>
 
 <section class="gal" id="gallery">
  <div class="wrap">

@@ -81,6 +81,24 @@ section{padding:110px 5vw}
 .sg .n{position:absolute;top:14px;left:14px;background:rgba(8,8,13,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,59,48,.5);color:var(--neon);font-weight:700;font-size:.75rem;padding:6px 13px;border-radius:99px;letter-spacing:.1em}
 .sg h3{font-weight:800;font-size:1.2rem;margin-bottom:8px}
 .sg p{color:var(--dim);font-size:.93rem}
+/* night board (real menu) */
+.nboard{padding-top:0}
+.nboard h2{font-weight:800;font-size:clamp(2rem,4.8vw,3.4rem);letter-spacing:-.02em;margin-bottom:10px}
+.nboard .subt{color:var(--dim);margin-bottom:44px}
+.nb-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.nb{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 32px}
+.nb h3{font-weight:800;font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--neon);text-shadow:0 0 14px var(--glow);margin-bottom:22px}
+.nb .cats{display:flex;flex-wrap:wrap;gap:10px}
+.nb .cats span{border:1px solid rgba(255,59,48,.45);color:var(--ink);border-radius:99px;padding:9px 18px;font-size:.85rem;font-weight:600;background:rgba(255,59,48,.06)}
+.nb .mi{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed rgba(244,241,236,.14)}
+.nb .mi:last-of-type{border-bottom:none}
+.nb .mi b{font-weight:700;font-size:1.02rem}
+.nb .mi small{display:block;color:var(--dim);font-size:.8rem;margin-top:2px;font-weight:400}
+.nb .mi .ld{flex:1;border-bottom:1px dotted rgba(244,241,236,.25);transform:translateY(-4px);min-width:20px}
+.nb .mi .pr{color:var(--neon);font-weight:800;white-space:nowrap;text-shadow:0 0 10px rgba(255,59,48,.5)}
+.obtn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;border:1px solid rgba(255,59,48,.6);color:var(--neon);text-decoration:none;padding:13px 26px;border-radius:99px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;box-shadow:0 0 18px rgba(255,59,48,.15),inset 0 0 14px rgba(255,59,48,.06);transition:all .25s}
+.obtn:hover{background:var(--neon);color:#fff;box-shadow:0 0 30px var(--glow)}
+.nb .note{color:var(--dim);font-size:.8rem;margin-top:16px;line-height:1.7}
 /* gallery */
 .night-gal{padding-top:0}
 .night-gal h2{font-weight:800;font-size:clamp(2rem,4.8vw,3.4rem);letter-spacing:-.02em;margin-bottom:44px}
@@ -121,6 +139,7 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
  nav .links a:not(.call){display:none}
  .story{grid-template-columns:1fr;gap:44px}
  .sig-grid{grid-template-columns:1fr}
+ .nb-grid{grid-template-columns:1fr}
  .ng{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
  .clock .h span{display:none}
  .mbar{display:flex}
@@ -185,6 +204,30 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
   <span class="k">Signatures</span>
   <h2 class="rv">What the night <em>orders</em></h2>
   <div class="sig-grid"><div class="sg rv"><span class="n">01</span><img src="img/07.jpg" alt="Sujuk Shawarma" loading="lazy"><div class="bd"><h3>Sujuk Shawarma</h3><p>'The best I've ever had' — an actual review. Come argue with it.</p></div></div><div class="sg rv"><span class="n">02</span><img src="img/09.jpg" alt="Feast Platters" loading="lazy"><div class="bd"><h3>Feast Platters</h3><p>Grills, wraps, mezze and lahm b'ajin made for the whole table.</p></div></div><div class="sg rv"><span class="n">03</span><img src="img/10.jpg" alt="Till 1 AM · Cards OK" loading="lazy"><div class="bd"><h3>Till 1 AM · Cards OK</h3><p>Late hours and card payments — rare and precious in Beirut.</p></div></div></div>
+ </div>
+</section>
+
+<section class="nboard" id="carte">
+ <div class="wrap">
+  <h2 class="rv">The night board</h2>
+  <p class="subt rv">Everything the corner cooks — morning till 1 AM</p>
+  <div class="nb-grid rv">
+   <div class="nb">
+    <h3>On the board</h3>
+    <div class="cats">
+     <span>Daily dishes</span><span>Shawarma</span><span>Falafel</span><span>Soup</span><span>Hot mezza</span><span>Sandwiches</span><span>Burgers &amp; hotdogs</span><span>Pizza</span><span>Beverages</span><span>Buy 1 get 1 deals</span>
+    </div>
+    <p class="note">Cooked through the night — dine in, take away, grab n' go. Cards accepted, always.</p>
+   </div>
+   <div class="nb">
+    <h3>Most ordered</h3>
+    <div class="mi"><div><b>Grilled Chicken</b><small>off the grill, with the works</small></div><span class="ld"></span><span class="pr">$10.50</span></div>
+    <div class="mi"><div><b>Arabic Shawarma — Chicken</b><small>the late-night classic</small></div><span class="ld"></span><span class="pr">$11.75</span></div>
+    <div class="mi"><div><b>Arabic Shawarma — Beef</b><small>carved generous</small></div><span class="ld"></span><span class="pr">$13.75</span></div>
+    <a class="obtn" href="https://allobeirut-lb.com" target="_blank" rel="noopener">Order online ↗</a>
+    <p class="note">Full menu &amp; delivery on the ordering site — deals live now.</p>
+   </div>
+  </div>
  </div>
 </section>
 
