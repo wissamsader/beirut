@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Soussa Restaurant — Lebanese restaurant · Shawarma & grills in Beirut</title>
+<meta name="description" content="Al Soussa Restaurant, Lebanese restaurant · Shawarma & grills in Beirut, Lebanon. Call +961 1 309 422.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,900&family=Space+Grotesk:wght@400;500;700&family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C3311C;--cream:#F5EFDF;--board:#14351F;--ink:#1C130D}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::selection{background:var(--board);color:var(--cream)}
+html,body{overflow-x:clip}
+body{font-family:'Space Grotesk',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65}
+.arabic{font-family:'Cairo',sans-serif}
+/* shopfront hero — flat red */
+.front{background:var(--red);color:var(--cream);padding:0 0 0;position:relative}
+.front .bar{display:flex;justify-content:space-between;align-items:center;padding:16px 4vw;border-bottom:2px solid rgba(245,239,223,.35);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase}
+.front .bar a{color:var(--cream);text-decoration:none;border:2px solid var(--cream);padding:8px 18px;transition:all .2s}
+.front .bar a:hover{background:var(--cream);color:var(--red)}
+.front .inner{padding:9vh 4vw 7vh;text-align:center}
+.front .ar{font-family:'Cairo';font-weight:900;font-size:clamp(1.3rem,3vw,2.1rem);opacity:.95}
+.front h1{font-family:'Archivo';font-weight:900;font-size:clamp(4rem,16vw,13rem);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin:14px 0 6px}
+.front .sub{font-weight:500;font-size:clamp(1rem,2.2vw,1.3rem);max-width:620px;margin:14px auto 0;opacity:.92}
+.front .chips{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.front .chip{border:2px solid var(--cream);padding:10px 20px;font-weight:700;letter-spacing:.08em;font-size:.85rem;text-transform:uppercase}
+.front .chip.inv{background:var(--cream);color:var(--red)}
+.front .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:34px 0 0;padding-bottom:8vh}
+.btn{text-decoration:none;font-family:'Archivo';font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:.92rem;padding:17px 36px;transition:all .18s}
+.btn.cream{background:var(--cream);color:var(--red)}
+.btn.cream:hover{background:var(--board);color:var(--cream)}
+.btn.line{border:2px solid var(--cream);color:var(--cream)}
+.btn.line:hover{background:var(--cream);color:var(--red)}
+.btn.wa{background:#1fce5f;color:#052b12}
+/* letterspaced name band */
+.spread{display:flex;justify-content:space-between;padding:0 4vw 26px;font-family:'Archivo';font-weight:900;font-size:clamp(1rem,3vw,2rem);color:var(--cream);opacity:.9}
+/* photo ledge */
+.ledge{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:6px solid var(--ink);border-bottom:6px solid var(--ink)}
+.ledge img{width:100%;height:clamp(160px,26vw,320px);object-fit:cover;display:block;border-right:6px solid var(--ink)}
+.ledge img:last-child{border-right:none}
+/* story */
+section{padding:96px 4vw}
+.wrap{max-width:1100px;margin:0 auto}
+.k{font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;color:var(--red);display:block;margin-bottom:16px}
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.story-grid h2{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,5vw,3.4rem);line-height:1;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:22px}
+.story-grid h2 em{font-style:normal;color:var(--red)}
+.story-grid p{font-size:1.08rem;max-width:56ch;color:rgba(28,19,13,.85)}
+.story-grid .ph{position:relative}
+.story-grid .ph img{width:100%;height:460px;object-fit:cover;display:block;border:6px solid var(--ink)}
+.story-grid .ph:after{content:"مطبخ الحي";font-family:'Cairo';font-weight:900;position:absolute;bottom:-22px;right:-10px;background:var(--red);color:var(--cream);padding:10px 22px;font-size:1.2rem;transform:rotate(-2deg)}
+.stats{display:flex;gap:0;margin-top:38px;border:3px solid var(--ink)}
+.stats div{flex:1;text-align:center;padding:18px 10px;border-right:3px solid var(--ink)}
+.stats div:last-child{border-right:none}
+.stats b{font-family:'Archivo';font-weight:900;font-size:1.7rem;color:var(--red);display:block;line-height:1.1}
+.stats span{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+/* menu board */
+.boardw{background:var(--board);color:var(--cream)}
+.boardw .k{color:#8BC49A}
+.boardw h2{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,5vw,3.4rem);text-transform:uppercase;line-height:1;margin-bottom:44px}
+.boardw h2 em{font-style:normal;color:#F2B33D}
+.mb{max-width:820px}
+.mb .item{display:flex;align-items:baseline;gap:14px;padding:20px 0;border-bottom:1px solid rgba(245,239,223,.2)}
+.mb .item h3{font-family:'Archivo';font-weight:700;font-size:1.35rem;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.mb .item .dots{flex:1;border-bottom:2px dotted rgba(245,239,223,.35);transform:translateY(-6px);min-width:40px}
+.mb .item .no{font-family:'Archivo';font-weight:900;color:#F2B33D;font-size:1.1rem}
+.mb .item p{width:100%;font-size:.98rem;color:rgba(245,239,223,.75);margin-top:6px}
+.mb .item{flex-wrap:wrap}
+.boardw .note{margin-top:38px;font-weight:500;color:rgba(245,239,223,.6);font-style:italic}
+/* shop window gallery */
+.window h2{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,5vw,3.4rem);text-transform:uppercase;margin-bottom:44px}
+.window h2 em{font-style:normal;color:var(--red)}
+.win-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.win{background:#fff;border:3px solid var(--ink);padding:12px 12px 14px;transition:transform .18s}
+.win:hover{transform:translateY(-6px)}
+.win img{width:100%;height:250px;object-fit:cover;display:block}
+.win .cap{display:flex;justify-content:space-between;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding-top:10px}
+.win .cap span:last-child{color:var(--red)}
+/* tickets */
+.tickets{background:var(--red);color:var(--cream)}
+.tickets .k{color:#F5C9B8}
+.tickets h2{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,5vw,3.4rem);text-transform:uppercase;margin-bottom:44px}
+.t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.tick{background:var(--cream);color:var(--ink);padding:28px 26px;position:relative;box-shadow:0 14px 40px rgba(0,0,0,.22)}
+.tick:before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:repeating-linear-gradient(90deg,var(--board) 0 18px,transparent 18px 36px)}
+.tick p{font-size:1rem;line-height:1.75;margin-top:8px}
+.tick .who{margin-top:18px;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.tick .s{letter-spacing:3px;color:var(--red)}
+/* visit */
+.visit{text-align:center;padding:110px 4vw}
+.visit h2{font-family:'Archivo';font-weight:900;font-size:clamp(2.4rem,7vw,5rem);text-transform:uppercase;line-height:.98}
+.visit h2 em{font-style:normal;color:var(--red)}
+.visit .phone{font-family:'Archivo';font-weight:900;font-size:clamp(2rem,6vw,4rem);color:var(--ink);text-decoration:none;display:inline-block;margin:30px 0 10px;border-bottom:6px solid var(--red);padding-bottom:6px}
+.visit .phone:hover{color:var(--red)}
+.visit .meta{max-width:520px;margin:18px auto 36px;line-height:1.9;color:rgba(28,19,13,.8)}
+.visit .meta b{color:var(--ink)}
+.visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.visit .btn.red{background:var(--red);color:var(--cream)}
+.visit .btn.red:hover{background:var(--board)}
+.visit .btn.dark{border:2px solid var(--ink);color:var(--ink)}
+.visit .btn.dark:hover{background:var(--ink);color:var(--cream)}
+/* footer letterspaced */
+footer{border-top:6px solid var(--ink);padding:34px 4vw 120px;background:var(--cream)}
+footer .spread2{display:flex;justify-content:space-between;font-family:'Archivo';font-weight:900;font-size:clamp(1.4rem,5vw,3.4rem);color:var(--red);margin-bottom:20px}
+footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.6)}
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--ink);padding:8px}
+.mbar a{flex:1;text-align:center;padding:13px 4px;font-family:'Archivo';font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;text-decoration:none}
+.mbar .c{background:var(--red);color:var(--cream)}
+.mbar .w{background:#1fce5f;color:#052b12}
+.mbar .m{background:var(--cream);color:var(--ink)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){
+ .ledge{grid-template-columns:1fr 1fr}
+ .ledge img:nth-child(2){border-right:none}
+ .ledge img:nth-child(1),.ledge img:nth-child(2){border-bottom:6px solid var(--ink)}
+ .story-grid{grid-template-columns:1fr;gap:60px}
+ .win-grid{grid-template-columns:1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:130px}
+}
+</style>
+</head>
+<body>
+<header class="front" id="top">
+ <div class="bar">
+  <span>Tariq el Jdideh classic</span>
+  <a href="tel:+9611309422">CALL +961 1 309 422</a>
+ </div>
+ <div class="inner">
+  <div class="ar arabic">مطعم الصوصة</div>
+  <h1>AL SOUSSA</h1>
+  <p class="sub">Shawarma, farouj & home-cooked Beiruti meals in the heart of Tariq el Jdideh</p>
+  <div class="chips">
+   <span class="chip inv">★ 4.0 GOOGLE</span>
+   <span class="chip">434 REVIEWS</span>
+   <span class="chip">TAKEAWAY + DINE IN</span>
+  </div>
+  <div class="cta">
+   <a class="btn cream" href="tel:+9611309422">Call the kitchen</a>
+   
+   <a class="btn line" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener">Directions ↗</a>
+  </div>
+ </div>
+ <div class="spread"><span>T</span><span>A</span><span>R</span><span>I</span><span>Q</span><span>·</span><span>E</span><span>L</span><span>·</span><span>J</span><span>D</span><span>I</span><span>D</span><span>E</span><span>H</span></div>
+</header>
+
+<div class="ledge">
+ <img src="img/01.jpg" alt="Al Soussa Restaurant">
+ <img src="img/03.jpg" alt="" loading="lazy">
+ <img src="img/01.jpg" alt="" loading="lazy">
+ <img src="img/04.jpg" alt="" loading="lazy">
+</div>
+
+<section id="story">
+ <div class="wrap story-grid">
+  <div class="rv">
+   <span class="k">The neighborhood's kitchen</span>
+   <h2>THE NEIGHBORHOOD'S <em>KITCHEN</em></h2>
+   <p>In the heart of Tariq el Jdideh, Al Soussa does what great neighborhood restaurants do: everything, and all of it well. Shawarma carved fresh all day, farouj off the grill, home-cooked meals to take away, and Arabic sweets to finish. Big portions, honest prices, and hummus people call the best they've ever had.</p>
+   <div class="stats">
+    <div><b>★ 4.0</b><span>on Google</span></div>
+    <div><b>434</b><span>reviews</span></div>
+    <div><b>ALL DAY</b><span>spit turning</span></div>
+   </div>
+  </div>
+  <div class="ph rv"><img src="img/03.jpg" alt="" loading="lazy"></div>
+ </div>
+</section>
+
+<section class="boardw" id="menu">
+ <div class="wrap">
+  <span class="k">Today's board</span>
+  <h2 class="rv">EVERYTHING, <em>AND ALL OF IT WELL</em></h2>
+  <div class="mb"><div class="item rv"><h3>Shawarma & Garlic Mayo</h3><span class="dots"></span><span class="no">№1</span><p>Carved fresh from the spit all day long — with their famous toum.</p></div><div class="item rv"><h3>Farouj Mashwi</h3><span class="dots"></span><span class="no">№2</span><p>Grilled chicken that disappears fast at family gatherings.</p></div><div class="item rv"><h3>Home-Cooked Daily</h3><span class="dots"></span><span class="no">№3</span><p>Real yakhnehs and daily plates, ready to take home.</p></div><div class="item rv"><h3>Arabic Sweets</h3><span class="dots"></span><span class="no">№4</span><p>Something golden and syrupy to finish — as tradition demands.</p></div></div>
+  <p class="note">Plus daily home-cooked yakhnehs, Arabic sweets, and whatever the family decided to make this morning.</p>
+ </div>
+</section>
+
+<section class="window" id="gallery">
+ <div class="wrap">
+  <span class="k">The shop window</span>
+  <h2 class="rv">FRESH <em>TODAY</em></h2>
+  <div class="win-grid"><div class="win rv"><img src="img/02.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№01</span></div></div><div class="win rv"><img src="img/03.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№02</span></div></div><div class="win rv"><img src="img/05.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№03</span></div></div><div class="win rv"><img src="img/04.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№04</span></div></div><div class="win rv"><img src="img/07.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№05</span></div></div><div class="win rv"><img src="img/10.jpg" alt="" loading="lazy"><div class="cap"><span>FRESH TODAY</span><span>№06</span></div></div></div>
+ </div>
+</section>
+
+<section class="tickets" id="reviews">
+ <div class="wrap">
+  <span class="k">Order tickets</span>
+  <h2 class="rv">THE REGULARS SAY</h2>
+  <div class="t-grid"><div class="tick rv"><p>“The hummus was the best I have ever had. I highly recommend it. The gentleman working there was very sweet and kind, and the prices were very good.”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div><div class="tick rv"><p>“As well as shawarma, there are several fast food options, home-cooked meals to take away, and traditional Arab sweets. The shawarma with garlic mayonnaise was my favourite.”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div><div class="tick rv"><p>“We ordered farouj and grilled chicken to go — it was amazing! Despite the huge amount we ordered, my family scarfed it down. Amazing for gatherings!”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <span class="k">Dinner plans</span>
+ <h2>DINNER IS <em>SOLVED.</em></h2>
+ <a class="phone" href="tel:+9611309422">+961 1 309 422</a>
+ <p class="meta"><b>Tariq el Jdideh, Beirut, Lebanon</b><br>Open daily · 10:00 AM – 12:00 AM</p>
+ <div class="cta">
+  <a class="btn red" href="tel:+9611309422">Call now</a>
+  
+  <a class="btn dark" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener">Google Maps ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9611309422">Call</a>
+ 
+ <a class="m" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>
+ <div class="spread2"><span>A</span><span>L</span><span>·</span><span>S</span><span>O</span><span>U</span><span>S</span><span>S</span><span>A</span></div>
+ <p>© Al Soussa Restaurant · Beirut, Lebanon — website demo crafted by Wissam Sader</p>
+</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

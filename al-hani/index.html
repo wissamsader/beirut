@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Hani Restaurant — Lebanese breakfast restaurant in Beirut</title>
+<meta name="description" content="Al Hani Restaurant, Lebanese breakfast restaurant in Beirut, Lebanon. Call +961 1 852 305.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Archivo:wght@600;800&family=Cairo:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F8F4E9;--ink:#1B1710;--rule:#1B1710;--red:#9E2B1E;--gold:#C08A2D}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::selection{background:var(--ink);color:var(--paper)}
+html,body{overflow-x:clip}
+body{font-family:'Newsreader',serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.sans{font-family:'Archivo',sans-serif}
+.arabic{font-family:'Cairo',sans-serif}
+/* masthead */
+.mast{padding:26px 4vw 0;max-width:1180px;margin:0 auto;text-align:center}
+.mast .edition{display:flex;justify-content:space-between;font-family:'Archivo';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;border-bottom:1.5px solid var(--rule);padding-bottom:8px}
+.mast .edition span:nth-child(2){color:var(--red)}
+.mast h1{font-family:'Playfair Display';font-weight:900;font-size:clamp(3.6rem,12vw,9rem);line-height:1;letter-spacing:.01em;padding:18px 0 6px}
+.mast .ar{font-family:'Cairo';color:var(--red);font-size:clamp(1rem,2.2vw,1.5rem);font-weight:700;margin-bottom:14px}
+.mast .dateline{display:flex;justify-content:space-between;align-items:center;border-top:3px double var(--rule);border-bottom:3px double var(--rule);padding:9px 0;font-family:'Archivo';font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;gap:8px;flex-wrap:wrap}
+.mast .dateline b{color:var(--red)}
+/* front page */
+.front{max-width:1180px;margin:0 auto;padding:40px 4vw;display:grid;grid-template-columns:1.35fr .9fr .75fr;gap:0}
+.front>div{padding:0 28px}
+.front>div:first-child{padding-left:0;border-right:1px solid var(--rule)}
+.front>div:nth-child(2){border-right:1px solid var(--rule)}
+.front>div:last-child{padding-right:0}
+.headline{font-family:'Playfair Display';font-weight:900;font-size:clamp(2rem,4.6vw,3.4rem);line-height:1.04;margin-bottom:10px}
+.headline em{font-style:italic;color:var(--red)}
+.byline{font-family:'Archivo';font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:18px;display:block}
+.lede{font-size:1.12rem;line-height:1.8}
+.lede::first-letter{font-family:'Playfair Display';font-weight:900;font-size:3.9em;float:left;line-height:.78;padding:6px 10px 0 0;color:var(--red)}
+.contd{font-family:'Archivo';font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;margin-top:16px;color:rgba(27,23,16,.55)}
+.front figure{margin:0 0 20px}
+.front figure img{width:100%;height:300px;object-fit:cover;display:block;border:1px solid var(--rule)}
+.front figcaption{font-size:.82rem;font-style:italic;padding-top:7px;color:rgba(27,23,16,.7);border-bottom:1px solid var(--rule);padding-bottom:10px}
+.subhead{font-family:'Playfair Display';font-weight:700;font-size:1.35rem;line-height:1.2;margin-bottom:10px}
+.front .col3 p{font-size:.98rem;line-height:1.75}
+/* specials box (classifieds) */
+.box{border:2px solid var(--rule);padding:20px 20px 8px;margin-top:6px}
+.box .bh{font-family:'Archivo';font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:.72rem;text-align:center;border-bottom:1px solid var(--rule);padding-bottom:10px;margin-bottom:6px;color:var(--red)}
+.sp{padding:14px 0;border-bottom:1px dotted rgba(27,23,16,.4)}
+.sp:last-child{border-bottom:none}
+.sp h3{font-family:'Playfair Display';font-weight:700;font-size:1.1rem;margin-bottom:4px}
+.sp p{font-size:.88rem;line-height:1.6;color:rgba(27,23,16,.8)}
+.sp .no{float:right;font-family:'Archivo';font-weight:800;font-size:.7rem;color:var(--gold)}
+.wx{border:2px solid var(--rule);margin-top:22px;padding:16px 18px;text-align:center}
+.wx b{font-family:'Archivo';letter-spacing:.16em;font-size:.68rem;text-transform:uppercase;display:block;color:var(--red);margin-bottom:6px}
+.wx p{font-style:italic;font-size:.95rem}
+/* ribbon */
+.ribbon{overflow:hidden;border-top:1.5px solid var(--rule);border-bottom:1.5px solid var(--rule);padding:8px 0;background:var(--paper)}
+.ribbon .tt{display:flex;width:max-content;animation:mq 30s linear infinite;font-family:'Archivo';font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* photo spread */
+.spread{max-width:1180px;margin:0 auto;padding:56px 4vw}
+.spread .sh{display:flex;align-items:baseline;justify-content:space-between;border-bottom:3px double var(--rule);margin-bottom:26px;padding-bottom:8px}
+.spread .sh h2{font-family:'Playfair Display';font-weight:900;font-size:clamp(1.7rem,4vw,2.6rem)}
+.spread .sh span{font-family:'Archivo';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.sp-grid figure{margin:0}
+.sp-grid img{width:100%;height:240px;object-fit:cover;display:block;border:1px solid var(--rule)}
+.sp-grid figcaption{font-size:.8rem;font-style:italic;padding-top:6px;color:rgba(27,23,16,.7)}
+.sp-grid figure:nth-child(1){grid-column:span 2}
+.sp-grid figure:nth-child(1) img{height:340px}
+.sp-grid figure:nth-child(4) img,{height:240px}
+/* letters */
+.letters{max-width:1180px;margin:0 auto;padding:20px 4vw 60px}
+.letters .sh{display:flex;align-items:baseline;justify-content:space-between;border-bottom:3px double var(--rule);margin-bottom:26px;padding-bottom:8px}
+.letters .sh h2{font-family:'Playfair Display';font-weight:900;font-size:clamp(1.7rem,4vw,2.6rem)}
+.letters .sh span{font-family:'Archivo';font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.l-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0;border-left:1px solid var(--rule)}
+.letter{border-right:1px solid var(--rule);padding:6px 26px 18px}
+.letter p{font-size:1.02rem;line-height:1.8;font-style:italic}
+.letter p:before{content:"“";font-family:'Playfair Display';font-size:1.6em;color:var(--red)}
+.letter .who{margin-top:12px;font-family:'Archivo';font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(27,23,16,.6)}
+.letter .stars{color:var(--gold);letter-spacing:3px;font-size:.8rem}
+/* back page visit */
+.back{border-top:3px double var(--rule);background:var(--paper)}
+.back .inner{max-width:1180px;margin:0 auto;padding:70px 4vw 90px;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}
+.back h2{font-family:'Playfair Display';font-weight:900;font-size:clamp(2.2rem,5.6vw,4rem);line-height:1.05;margin-bottom:12px}
+.back h2 em{font-style:italic;color:var(--red)}
+.back .phone{font-family:'Playfair Display';font-weight:900;font-size:clamp(2rem,5vw,3.6rem);color:var(--ink);text-decoration:none;display:inline-block;margin:12px 0 20px;border-bottom:3px solid var(--red);padding-bottom:4px}
+.back .phone:hover{color:var(--red)}
+.back .meta{font-size:1.02rem;line-height:1.9;color:rgba(27,23,16,.85)}
+.back .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{font-family:'Archivo';font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem;text-decoration:none;padding:14px 28px;border:2px solid var(--ink);color:var(--ink);transition:all .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.red{background:var(--red);border-color:var(--red);color:var(--paper)}
+.btn.red:hover{background:var(--ink);border-color:var(--ink)}
+.btn.wa{background:#1fce5f;border-color:#1fce5f;color:#052b12}
+/* coupon */
+.coupon{border:2.5px dashed var(--red);padding:30px 28px;text-align:center;position:relative}
+.coupon:before{content:"✂ CUT HERE";position:absolute;top:-12px;left:26px;background:var(--paper);padding:0 8px;font-family:'Archivo';font-size:.64rem;letter-spacing:.2em;color:var(--red)}
+.coupon h3{font-family:'Playfair Display';font-weight:900;font-size:1.6rem;margin-bottom:8px}
+.coupon p{font-size:.95rem;font-style:italic;margin-bottom:18px}
+.coupon .hours{font-family:'Archivo';font-weight:800;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase;color:var(--red)}
+footer{text-align:center;border-top:1.5px solid var(--rule);padding:20px 4vw 110px;font-family:'Archivo';font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(27,23,16,.55)}
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--paper);border:2px solid var(--ink);padding:8px}
+.mbar a{flex:1;text-align:center;padding:13px 4px;font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;text-decoration:none}
+.mbar .c{background:var(--red);color:var(--paper)}
+.mbar .w{background:#1fce5f;color:#052b12}
+.mbar .m{background:var(--ink);color:var(--paper)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:960px){
+ .front{grid-template-columns:1fr}
+ .front>div{padding:0 0 34px;border-right:none !important;border-bottom:1px solid var(--rule);margin-bottom:34px}
+ .front>div:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+ .sp-grid{grid-template-columns:1fr 1fr}
+ .sp-grid figure:nth-child(1){grid-column:span 2}
+ .l-grid{border-left:none}
+ .letter{border-right:none;border-bottom:1px solid var(--rule);padding:18px 0}
+ .back .inner{grid-template-columns:1fr;gap:44px}
+ .mbar{display:flex}
+ footer{padding-bottom:130px}
+}
+</style>
+</head>
+<body>
+<header class="mast" id="top">
+ <div class="edition">
+  <span>Beirut, Lebanon</span>
+  <span>The Six O'Clock Edition</span>
+  <span>Price: one appetite</span>
+ </div>
+ <h1>AL HANI</h1>
+ <div class="ar arabic">مطعم الهاني — الطبعة الصباحية</div>
+ <div class="dateline">
+  <span>Breakfast wire since dawn</span>
+  <span><b>★ 4.1</b> — 324 verified readers</span>
+  <span>6:00 AM – 3:00 PM</span>
+ </div>
+</header>
+
+<main class="front">
+ <div>
+  <h2 class="headline">Mornings start at <em>Al Hani</em></h2>
+  <span class="byline">From our correspondent at the counter</span>
+  <p class="lede">Al Hani opens at 6 in the morning because Beirut wakes up hungry. Hummus balila still steaming, foul with loads of fresh vegetables, msabbaha that regulars cross town for — served in minutes, priced like a neighborhood should be. Breakfast here isn't a meal, it's a ritual.</p>
+  <p class="contd">Continued over coffee, daily from 6 AM →</p>
+ </div>
+ <div>
+  <figure>
+   <img src="img/02.jpg" alt="Al Hani Restaurant">
+   <figcaption>The morning rush, photographed at the counter. Full tables served in minutes.</figcaption>
+  </figure>
+  <h3 class="subhead">City wakes; hummus already warm</h3>
+  <div class="col3"><p>Regulars report crossing town before sunrise. Sources confirm: the msabbaha is worth the traffic. Investigation ongoing — readers are advised to arrive hungry and early, particularly on weekends, when the tables fill before the fog lifts off the corniche.</p></div>
+ </div>
+ <div>
+  <div class="box">
+   <div class="bh">Today's Specials — Classifieds</div>
+   <div class="sp"><span class="no">№1</span><h3>Hummus Balila</h3><p>Warm chickpeas, cumin, lemon and olive oil — the morning classic.</p></div><div class="sp"><span class="no">№2</span><h3>Foul & Msabbaha</h3><p>Slow-simmered and generous, with mountains of fresh vegetables.</p></div><div class="sp"><span class="no">№3</span><h3>Ready in Minutes</h3><p>Full tables served in 5–7 minutes. Beirut's fastest breakfast.</p></div>
+  </div>
+  <div class="wx">
+   <b>The Forecast</b>
+   <p>Sunny with a strong chance of foul. Ghee levels: generous. Expect queues after 9.</p>
+  </div>
+ </div>
+</main>
+
+<div class="ribbon"><div class="tt"><span>HUMMUS BALILA ✦ FOUL ✦ MSABBAHA ✦ FROM 6AM ✦ SERVED IN MINUTES ✦ BEIRUT MORNINGS ✦ HUMMUS BALILA ✦ FOUL ✦ MSABBAHA ✦ FROM 6AM ✦ SERVED IN MINUTES ✦ BEIRUT MORNINGS ✦ </span></div></div>
+
+<section class="spread" id="gallery">
+ <div class="sh"><h2>Morning, Illustrated</h2><span>Photo desk</span></div>
+ <div class="sp-grid"><figure class="rv"><img src="img/07.jpg" alt="" loading="lazy"><figcaption>The counter at first light.</figcaption></figure><figure class="rv"><img src="img/08.jpg" alt="" loading="lazy"><figcaption>Foul, exactly as the founders intended.</figcaption></figure><figure class="rv"><img src="img/01.jpg" alt="" loading="lazy"><figcaption>Msabbaha worth crossing town for.</figcaption></figure><figure class="rv"><img src="img/03.jpg" alt="" loading="lazy"><figcaption>Regulars, quarter to seven.</figcaption></figure><figure class="rv"><img src="img/04.jpg" alt="" loading="lazy"><figcaption>Balila, still steaming.</figcaption></figure></div>
+</section>
+
+<section class="letters" id="reviews">
+ <div class="sh"><h2>Letters to the Editor</h2><span>Unpaid, unprompted</span></div>
+ <div class="l-grid"><div class="letter rv"><p>Great place for breakfast, and they have very fast service — our order took barely 5–7 minutes even though multiple tables were full. Must try.</p><div class="who">Google review — <span class="stars">★★★★★</span></div></div><div class="letter rv"><p>I ordered a classic Lebanese breakfast as take-away. Foul and msabbaha were really good, loads of fresh & tasty vegetables. Totally recommend it.</p><div class="who">Google review — <span class="stars">★★★★★</span></div></div><div class="letter rv"><p>Tasty and amazing service.</p><div class="who">Google review — <span class="stars">★★★★★</span></div></div></div>
+</section>
+
+<section class="back" id="visit">
+ <div class="inner">
+  <div>
+   <h2>The city wakes up <em>here.</em></h2>
+   <a class="phone" href="tel:+9611852305">+961 1 852 305</a>
+   <p class="meta">Beirut, Lebanon<br>Open daily · 6:00 AM – 3:00 PM</p>
+   <div class="btns">
+    <a class="btn red" href="tel:+9611852305">Call the counter</a>
+    
+    <a class="btn" href="https://maps.google.com/?cid=5707579121348582864" target="_blank" rel="noopener">Directions ↗</a>
+   </div>
+  </div>
+  <div class="coupon rv">
+   <h3>Reader's Voucher</h3>
+   <p>Good for one table at six in the morning, hummus balila still steaming. Redeemable daily, forever.</p>
+   <span class="hours">6:00 AM – 3:00 PM</span>
+  </div>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9611852305">Call</a>
+ 
+ <a class="m" href="https://maps.google.com/?cid=5707579121348582864" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Al Hani Restaurant · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

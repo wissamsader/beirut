@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falafel Abou Nabil & Sons — Falafel restaurant in Beirut</title>
+<meta name="description" content="Falafel Abou Nabil & Sons, Falafel restaurant in Beirut, Lebanon. Call +961 3 530 331.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@600;700&family=Cairo:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FCFCF6;--green:#1E5B2E;--bright:#4CAF50;--ink:#17301C;--mark:#8BE05F}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::selection{background:var(--mark);color:var(--ink)}
+html,body{overflow-x:clip}
+body{font-family:'Space Grotesk',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+.hand{font-family:'Caveat',cursive}
+.arabic{font-family:'Cairo',sans-serif}
+/* nav */
+nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:2px dashed var(--green);display:flex;align-items:center;justify-content:space-between;padding:14px 4vw}
+nav .brand{font-weight:700;letter-spacing:-.01em;font-size:1.05rem;color:var(--green);text-decoration:none}
+nav .brand span{color:var(--ink);font-weight:500}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--ink);text-decoration:none;font-size:.88rem;transition:color .2s}
+nav .links a:hover{color:var(--green);text-decoration:underline wavy}
+nav .call{background:var(--green);color:#fff !important;padding:9px 20px;border-radius:8px;font-weight:700;font-size:.85rem}
+/* hero */
+.hero{padding:64px 4vw 40px;max-width:1180px;margin:0 auto;position:relative}
+.hero .note{position:absolute;top:44px;right:5vw;transform:rotate(6deg);font-family:'Caveat';font-size:1.5rem;color:var(--green)}
+.hero .note svg{display:block;margin:2px auto 0}
+h1{font-weight:700;font-size:clamp(2.6rem,7.5vw,5.6rem);line-height:1.02;letter-spacing:-.03em;max-width:16ch}
+h1 .circ{position:relative;white-space:nowrap}
+h1 .circ svg{position:absolute;inset:-14% -6%;width:112%;height:128%;pointer-events:none}
+h1 .circ svg path{fill:none;stroke:var(--bright);stroke-width:3.2}
+.hero .ar{font-family:'Cairo';font-weight:700;color:var(--green);font-size:clamp(1.1rem,2.4vw,1.6rem);margin-top:16px}
+.hero .tag{margin-top:18px;font-size:1.1rem;max-width:56ch;color:rgba(23,48,28,.8)}
+.hero .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.chip{border:2px solid var(--green);border-radius:99px;padding:8px 18px;font-weight:700;font-size:.85rem}
+.chip.f{background:var(--green);color:#fff}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.btn{text-decoration:none;font-weight:700;font-size:.95rem;padding:15px 30px;border-radius:12px;transition:transform .15s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn.g{background:var(--green);color:#fff}
+.btn.wa{background:#1fce5f;color:#052b12}
+.btn.o{border:2px solid var(--ink);color:var(--ink)}
+/* photo board hero */
+.board{max-width:1180px;margin:30px auto 0;padding:0 4vw;display:grid;grid-template-columns:1.6fr 1fr;gap:22px}
+.pola{background:#fff;border:1px solid rgba(23,48,28,.14);box-shadow:0 16px 40px rgba(23,48,28,.12);padding:12px 12px 46px;position:relative}
+.pola:before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2deg);width:110px;height:28px;background:rgba(139,224,95,.5);border-left:1px dashed rgba(23,48,28,.2);border-right:1px dashed rgba(23,48,28,.2)}
+.pola img{width:100%;height:100%;max-height:480px;object-fit:cover;display:block}
+.pola .cap{position:absolute;bottom:10px;left:14px;font-family:'Caveat';font-size:1.4rem;color:var(--ink)}
+.pola.small{transform:rotate(1.6deg)}
+.pola.small img{max-height:200px}
+.board .col{display:grid;gap:22px}
+.board .col .pola:last-child{transform:rotate(-1.4deg)}
+/* dashed divider */
+.dash{border:none;border-top:2px dashed var(--green);max-width:1180px;margin:70px auto;width:92%}
+/* story */
+.story{max-width:1180px;margin:0 auto;padding:0 4vw;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.k{font-weight:700;letter-spacing:.24em;text-transform:uppercase;font-size:.72rem;color:var(--green);display:block;margin-bottom:14px}
+.story h2{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.08;letter-spacing:-.02em;margin-bottom:20px}
+.story h2 em{font-style:normal;color:var(--green);text-decoration:underline wavy var(--bright)}
+.story p{font-size:1.06rem;color:rgba(23,48,28,.85);max-width:56ch}
+.tree{background:#fff;border:2px solid var(--green);border-radius:18px;padding:38px 34px;position:relative}
+.tree:after{content:"est. family recipe";position:absolute;top:-14px;right:22px;font-family:'Caveat';font-size:1.3rem;color:var(--green);background:var(--paper);padding:0 10px}
+.tree .gen{display:flex;align-items:center;gap:16px;padding:14px 0}
+.tree .gen+.gen{border-top:1px dashed rgba(23,48,28,.25)}
+.tree .gen .dot{width:14px;height:14px;border-radius:50%;background:var(--bright);flex:none}
+.tree .gen b{font-size:1.05rem}
+.tree .gen span{font-size:.9rem;color:rgba(23,48,28,.65)}
+/* menu stickers */
+.menu{max-width:1180px;margin:0 auto;padding:0 4vw}
+.menu h2{font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.02em;margin-bottom:8px}
+.menu h2 em{font-style:normal;color:var(--green)}
+.menu .sub{font-family:'Caveat';font-size:1.5rem;color:var(--green);margin-bottom:40px}
+.m-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.m-card{background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden;transition:transform .18s;position:relative}
+.m-card:hover{transform:translateY(-6px) rotate(-.6deg)}
+.m-card img{width:100%;height:210px;object-fit:cover;display:block;border-bottom:2px solid var(--ink)}
+.m-card .num{position:absolute;top:12px;left:12px;background:var(--mark);border:2px solid var(--ink);border-radius:99px;font-weight:700;padding:5px 13px;font-size:.85rem}
+.m-card .bd{padding:22px 24px 26px}
+.m-card h3{font-size:1.25rem;letter-spacing:-.01em;margin-bottom:8px}
+.m-card p{font-size:.95rem;color:rgba(23,48,28,.75)}
+/* gallery tape wall */
+.wall{background:var(--green);padding:90px 4vw;margin-top:90px}
+.wall h2{color:#fff;font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.02em;text-align:center;margin-bottom:8px}
+.wall .sub{text-align:center;font-family:'Caveat';font-size:1.5rem;color:var(--mark);margin-bottom:46px}
+.wall-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1180px;margin:0 auto}
+.wall-grid a{background:#fff;padding:8px 8px 26px;display:block;box-shadow:0 14px 34px rgba(0,0,0,.25);transition:transform .18s}
+.wall-grid a:nth-child(odd){transform:rotate(-1.2deg)}
+.wall-grid a:nth-child(even){transform:rotate(1.2deg)}
+.wall-grid a:hover{transform:rotate(0) scale(1.04);z-index:2}
+.wall-grid img{width:100%;height:200px;object-fit:cover;display:block}
+/* bubbles */
+.bubbles{max-width:1180px;margin:0 auto;padding:90px 4vw 0}
+.bubbles h2{font-size:clamp(1.9rem,4.4vw,3rem);letter-spacing:-.02em;margin-bottom:46px}
+.bubbles h2 em{font-style:normal;color:var(--green)}
+.b-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.bub{background:#fff;border:2px solid var(--ink);border-radius:20px 20px 20px 4px;padding:28px 26px;position:relative}
+.bub p{font-size:1rem;line-height:1.75}
+.bub .who{margin-top:16px;font-weight:700;font-size:.8rem;color:var(--green);display:flex;align-items:center;gap:8px}
+.bub .who:before{content:"★★★★★";letter-spacing:2px;font-size:.75rem;color:var(--bright)}
+/* visit */
+.visit{max-width:1180px;margin:80px auto 0;padding:0 4vw 100px;text-align:center}
+.visit .box{border:2px solid var(--ink);border-radius:24px;background:#fff;padding:70px clamp(20px,6vw,80px);position:relative;overflow:hidden}
+.visit .box:before{content:"يلّا؟";font-family:'Cairo';position:absolute;top:18px;right:26px;color:var(--mark);font-weight:700;font-size:1.5rem}
+.visit h2{font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.03em;line-height:1.02}
+.visit h2 em{font-style:normal;color:var(--green)}
+.visit .phone{display:inline-block;font-weight:700;font-size:clamp(1.8rem,5vw,3.2rem);letter-spacing:-.02em;color:var(--ink);text-decoration:none;margin:26px 0 8px;border-bottom:4px solid var(--bright);padding-bottom:4px}
+.visit .phone:hover{color:var(--green)}
+.visit .meta{color:rgba(23,48,28,.75);max-width:480px;margin:14px auto 32px;line-height:1.9}
+.visit .cta{justify-content:center}
+footer{text-align:center;padding:0 4vw 110px;color:rgba(23,48,28,.6);font-size:.85rem}
+footer .big{font-weight:700;font-size:clamp(3rem,12vw,9rem);letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(30,91,46,.25);display:block;margin-bottom:26px;user-select:none}
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:16px;padding:8px}
+.mbar a{flex:1;text-align:center;padding:13px 4px;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none}
+.mbar .c{background:var(--green);color:#fff}
+.mbar .w{background:#1fce5f;color:#052b12}
+.mbar .m{background:var(--paper);color:var(--ink);border:1px solid rgba(23,48,28,.3)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){
+ nav .links a:not(.call){display:none}
+ .board{grid-template-columns:1fr}
+ .story{grid-template-columns:1fr;gap:44px}
+ .m-grid{grid-template-columns:1fr}
+ .wall-grid{grid-template-columns:1fr 1fr}
+ .mbar{display:flex}
+ footer{padding-bottom:130px}
+}
+</style>
+</head>
+<body>
+<nav>
+ <a class="brand" href="#top">ABOU NABIL <span>&amp; SONS</span></a>
+ <div class="links">
+  <a href="#story">The family</a><a href="#menu">The wrap</a><a href="#gallery">Wall</a><a href="#reviews">Reviews</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+9613530331">Call</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="note">crispy outside,<br>green inside!
+  <svg width="60" height="26" viewBox="0 0 60 26"><path d="M4 4 C 20 26, 40 2, 56 18" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"/></svg>
+ </div>
+ <h1>One family.<br>One <span class="circ">perfect falafel.<svg viewBox="0 0 300 80" preserveAspectRatio="none"><path d="M14,60 C40,14 260,6 288,34 C300,52 240,74 60,72 C30,70 10,66 14,58"/></svg></span></h1>
+ <div class="ar arabic">فلافل أبو نبيل وأولاده</div>
+ <p class="tag">Hands down the best falafel sandwich in Beirut — crispy, fresh, legendary</p>
+ <div class="chips">
+  <span class="chip f">★ 4.6 on Google</span>
+  <span class="chip">377 reviews</span>
+  <span class="chip">Beirut</span>
+ </div>
+ <div class="cta">
+  <a class="btn g" href="tel:+9613530331">Call the shop</a>
+  <a class="btn wa" href="https://wa.me/9613530331" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn o" href="https://maps.google.com/?cid=2940298493843411724" target="_blank" rel="noopener">Directions ↗</a>
+ </div>
+</header>
+
+<div class="board">
+ <div class="pola rv"><img src="img/08.jpg" alt="Falafel Abou Nabil & Sons"><span class="cap">the benchmark, mid-wrap</span></div>
+ <div class="col">
+  <div class="pola small rv"><img src="img/02.jpg" alt="" loading="lazy"><span class="cap">those chili pickles →</span></div>
+  <div class="pola small rv"><img src="img/09.jpg" alt="" loading="lazy"><span class="cap">fresh out of the fryer</span></div>
+ </div>
+</div>
+
+<hr class="dash">
+
+<section class="story" id="story">
+ <div class="rv">
+  <span class="k">The family</span>
+  <h2>One family. One <em>perfect</em> falafel.</h2>
+  <p>A father, his sons, and one perfect falafel. Abou Nabil's fry crackling-crisp, stay green inside, and get wrapped with tomatoes, herbs, tarator and those famous chili pickles. Ask anyone in Beirut where the best falafel sandwich is — then come see why they said here.</p>
+ </div>
+ <div class="tree rv">
+  <div class="gen"><span class="dot"></span><div><b>Abou Nabil</b><br><span>the father — set the recipe, no shortcuts allowed</span></div></div>
+  <div class="gen"><span class="dot"></span><div><b>&amp; Sons</b><br><span>same fryer, same standards, next generation</span></div></div>
+  <div class="gen"><span class="dot"></span><div><b>You, probably</b><br><span>about to understand what the fuss is about</span></div></div>
+ </div>
+</section>
+
+<hr class="dash">
+
+<section class="menu" id="menu">
+ <h2 class="rv">What to <em>order</em></h2>
+ <p class="sub">(there is only one right answer, but here are three)</p>
+ <div class="m-grid"><div class="m-card rv"><span class="num">01</span><img src="img/02.jpg" alt="The Falafel Wrap" loading="lazy"><div class="bd"><h3>The Falafel Wrap</h3><p>Crispy outside, bright green inside, perfectly balanced — the city's benchmark.</p></div></div><div class="m-card rv"><span class="num">02</span><img src="img/05.jpg" alt="Chili Pickles" loading="lazy"><div class="bd"><h3>Chili Pickles</h3><p>The legendary side that turns a sandwich into an event.</p></div></div><div class="m-card rv"><span class="num">03</span><img src="img/11.jpg" alt="Family Recipe" loading="lazy"><div class="bd"><h3>Family Recipe</h3><p>'& Sons' isn't branding — it's a promise kept over generations.</p></div></div></div>
+</section>
+
+<section class="wall" id="gallery">
+ <h2 class="rv">The wall of green</h2>
+ <p class="sub">taped up straight from the phone</p>
+ <div class="wall-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/12.jpg" target="_blank"><img src="img/12.jpg" alt="" loading="lazy"></a></div>
+</section>
+
+<section class="bubbles" id="reviews">
+ <h2 class="rv">Word of <em>mouth</em></h2>
+ <div class="b-grid"><div class="bub rv"><p>Hands down the best falafel sandwich! Super crispy, so tasty, and the chili pickles on the side make it even better. After trying so many places, Abu Nabil is definitely the best.</p><div class="who">Google review</div></div><div class="bub rv"><p>Best falafel in Beirut. Fresh, crispy, and full of flavor. The wrap is perfectly balanced with tomatoes, pickles, and herbs. Street food at its best with very reasonable prices.</p><div class="who">Google review</div></div><div class="bub rv"><p>To be honest, I didn't really know the difference between falafels until I came to Beirut. But there is a big difference.</p><div class="who">Google review</div></div></div>
+</section>
+
+<section class="visit" id="visit">
+ <div class="box rv">
+  <h2>Hot. Crispy. <em>Now.</em></h2>
+  <a class="phone" href="tel:+9613530331">+961 3 530 331</a>
+  <p class="meta">Beirut, Lebanon<br>Open daily</p>
+  <div class="cta">
+   <a class="btn wa" href="https://wa.me/9613530331" target="_blank" rel="noopener">Message on WhatsApp</a>
+   <a class="btn o" href="https://maps.google.com/?cid=2940298493843411724" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+  </div>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9613530331">Call</a>
+ <a class="w" href="https://wa.me/9613530331" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=2940298493843411724" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>
+ <span class="big">FALAFEL</span>
+ © Falafel Abou Nabil & Sons · Beirut, Lebanon — website demo crafted by Wissam Sader
+</footer>
+
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>

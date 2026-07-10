@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kahwat Ras Beirut — Lebanese restaurant in Beirut</title>
+<meta name="description" content="Kahwat Ras Beirut, Lebanese restaurant in Beirut, Lebanon. Call +961 3 259 200.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Cairo:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1A120B;--cream:#F0E3CE;--amber:#D89B3D;--rust:#A9502B;--dim:rgba(240,227,206,.62)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+::selection{background:var(--amber);color:#1A120B}
+html,body{overflow-x:clip}
+body{font-family:'Lora',serif;background:var(--bg);color:var(--cream);line-height:1.7}
+body::after{content:"";position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");opacity:.09;pointer-events:none;z-index:80}
+.arabic{font-family:'Cairo',sans-serif}
+/* credits nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:60;padding:14px 5vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(240,227,206,.25);transition:background .3s}
+nav.sc{background:rgba(26,18,11,.92);backdrop-filter:blur(10px)}
+nav .brand{font-family:'Bebas Neue';font-size:1.3rem;letter-spacing:.22em;color:var(--cream);text-decoration:none}
+nav .links{display:flex;gap:26px;align-items:center}
+nav .links a{color:var(--dim);text-decoration:none;font-size:.82rem;font-style:italic;transition:color .2s}
+nav .links a:hover{color:var(--amber)}
+nav .call{font-style:normal !important;font-family:'Bebas Neue';letter-spacing:.14em;color:#1A120B !important;background:var(--amber);padding:8px 20px;font-size:.95rem}
+/* hero — film frame */
+.hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(.72)}
+.hero .vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 40%,rgba(26,18,11,.72) 100%),linear-gradient(180deg,rgba(26,18,11,.4),transparent 30%,transparent 60%,var(--bg) 100%)}
+.hero-c{position:relative;z-index:2;width:100%;padding:0 5vw 9vh}
+.pre{font-family:'Bebas Neue';letter-spacing:.5em;font-size:clamp(.8rem,1.6vw,1rem);color:var(--amber);margin-bottom:10px}
+h1{font-family:'Bebas Neue';font-size:clamp(4rem,14vw,12rem);line-height:.88;letter-spacing:.015em;color:var(--cream);text-shadow:0 8px 60px rgba(0,0,0,.55)}
+.hero .ar{font-family:'Cairo';color:var(--amber);font-size:clamp(1.1rem,2.4vw,1.7rem);margin-top:10px;font-weight:700}
+.hero .tag{font-style:italic;font-size:clamp(1rem,2vw,1.3rem);color:var(--dim);max-width:520px;margin-top:14px}
+.hero .row{display:flex;gap:26px;align-items:center;margin-top:28px;flex-wrap:wrap}
+.hero .row .st{font-family:'Bebas Neue';letter-spacing:.18em;font-size:1rem;color:var(--cream)}
+.hero .row .st b{color:var(--amber)}
+.btn{display:inline-block;font-family:'Bebas Neue';letter-spacing:.2em;font-size:1.05rem;text-decoration:none;padding:14px 34px;transition:all .2s}
+.btn.solid{background:var(--amber);color:#1A120B}
+.btn.solid:hover{background:var(--cream)}
+.btn.line{border:1px solid rgba(240,227,206,.5);color:var(--cream)}
+.btn.line:hover{border-color:var(--amber);color:var(--amber)}
+.btn.wa{background:#1fce5f;color:#052b12}
+/* double-rule section head */
+section{padding:100px 5vw}
+.wrap{max-width:1120px;margin:0 auto}
+.head{border-top:3px double rgba(240,227,206,.45);border-bottom:3px double rgba(240,227,206,.45);padding:14px 0;display:flex;justify-content:space-between;align-items:baseline;gap:18px;margin-bottom:52px}
+.head h2{font-family:'Bebas Neue';font-size:clamp(1.8rem,4.5vw,3rem);letter-spacing:.08em;font-weight:400}
+.head h2 em{color:var(--amber);font-style:normal}
+.head span{font-style:italic;color:var(--dim);font-size:.9rem;white-space:nowrap}
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story-grid p.lead{font-size:1.16rem;font-style:italic;color:var(--cream);line-height:2;max-width:52ch}
+.story-grid p.lead::first-line{color:var(--amber)}
+.sea{position:relative}
+.sea img{width:100%;height:480px;object-fit:cover;filter:contrast(1.02) brightness(.85);display:block}
+.sea:before{content:"";position:absolute;inset:-14px;border:1px solid rgba(216,155,61,.5);pointer-events:none}
+.sea .cap{position:absolute;left:0;right:0;bottom:-34px;text-align:center;font-style:italic;font-size:.85rem;color:var(--dim)}
+.stats{display:flex;gap:44px;margin-top:38px;flex-wrap:wrap}
+.stats div b{font-family:'Bebas Neue';font-size:2.4rem;letter-spacing:.06em;color:var(--amber);display:block;line-height:1}
+.stats div span{font-style:italic;font-size:.85rem;color:var(--dim)}
+/* carte */
+.carte{background:var(--cream);color:#241505;position:relative}
+.carte .wrap{max-width:760px}
+.carte .head{border-color:rgba(36,21,5,.4)}
+.carte .head h2{color:#241505}
+.carte .head span{color:rgba(36,21,5,.6)}
+.dish{display:flex;align-items:baseline;gap:12px;padding:20px 0;border-bottom:1px dotted rgba(36,21,5,.4)}
+.dish h3{font-family:'Bebas Neue';font-size:1.5rem;letter-spacing:.1em;font-weight:400;white-space:nowrap}
+.dish .dots{flex:1;border-bottom:2px dotted rgba(36,21,5,.35);transform:translateY(-6px)}
+.dish .no{font-family:'Bebas Neue';font-size:1.2rem;color:var(--rust)}
+.dish p{width:100%;font-style:italic;font-size:.98rem;color:rgba(36,21,5,.75);margin-top:6px}
+.dish-w{display:flex;flex-wrap:wrap}
+.carte .note{text-align:center;font-style:italic;margin-top:40px;color:rgba(36,21,5,.65)}
+/* film strip gallery */
+.strip-w{padding:100px 0}
+.strip-head{padding:0 5vw;max-width:1120px;margin:0 auto}
+.strip{margin-top:48px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:#0D0906;padding:26px 0;border-top:14px solid #0D0906;border-bottom:14px solid #0D0906;background-image:repeating-linear-gradient(90deg,transparent 0 26px,rgba(240,227,206,.16) 26px 40px);background-size:66px 12px;background-repeat:repeat-x;background-position:0 6px}
+.strip::-webkit-scrollbar{display:none}
+.strip .inner{display:flex;gap:18px;width:max-content;padding:18px 5vw;background-image:repeating-linear-gradient(90deg,transparent 0 26px,rgba(240,227,206,.16) 26px 40px);background-size:66px 12px;background-repeat:repeat-x;background-position:0 calc(100% - 6px)}
+.strip a{display:block;flex:none}
+.strip img{height:330px;width:auto;display:block;filter:contrast(1.05) brightness(.88)}
+.strip-hint{padding:14px 5vw 0;font-style:italic;color:var(--dim);font-size:.85rem;max-width:1120px;margin:0 auto}
+/* tarab */
+.tarab{position:relative;overflow:hidden}
+.tarab .wrap{display:grid;grid-template-columns:340px 1fr;gap:64px;align-items:center}
+.vinyl{width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,#0D0906 18%,#150E08 19% 21%,#0D0906 22% 24%,#150E08 25% 27%,#0D0906 28% 30%,#150E08 31% 33%,#0D0906 34% 36%,#150E08 37% 39%,#0D0906 40%);position:relative;animation:spin 14s linear infinite;box-shadow:0 20px 70px rgba(0,0,0,.6);flex:none;margin:0 auto}
+.vinyl:after{content:"طرب";font-family:'Cairo';position:absolute;inset:38%;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#1A120B;font-weight:700;font-size:1.3rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.vinyl{animation:none}}
+.tarab h2{font-family:'Bebas Neue';font-size:clamp(2rem,5vw,3.4rem);letter-spacing:.06em;margin-bottom:18px}
+.tarab h2 em{color:var(--amber);font-style:normal}
+.tarab p{font-style:italic;color:var(--dim);font-size:1.08rem;max-width:52ch;line-height:2}
+.tarab .times{display:flex;gap:30px;margin-top:26px;font-family:'Bebas Neue';letter-spacing:.14em;color:var(--amber);flex-wrap:wrap}
+/* postcards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.card{background:var(--cream);color:#241505;padding:30px 28px 26px;box-shadow:0 18px 50px rgba(0,0,0,.45);position:relative}
+.card:nth-child(odd){transform:rotate(-1.3deg)}
+.card:nth-child(even){transform:rotate(1.1deg)}
+.card:before{content:"POSTE — BEYROUTH";position:absolute;top:12px;right:14px;font-size:.6rem;letter-spacing:.2em;color:var(--rust);border:1px solid var(--rust);padding:4px 7px;transform:rotate(4deg)}
+.card p{font-style:italic;font-size:1.05rem;line-height:1.8;margin-top:16px}
+.card .who{margin-top:18px;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(36,21,5,.6)}
+.card .s{color:var(--rust);letter-spacing:4px}
+/* visit */
+.visit{text-align:center;padding:120px 5vw;position:relative}
+.visit:before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(680px,88vw);border-top:3px double rgba(240,227,206,.45)}
+.visit .pre{margin-bottom:16px}
+.visit h2{font-family:'Bebas Neue';font-size:clamp(2.6rem,7vw,5rem);letter-spacing:.04em;line-height:1}
+.visit h2 em{color:var(--amber);font-style:normal}
+.visit .phone{font-family:'Bebas Neue';font-size:clamp(2.2rem,6vw,4.2rem);letter-spacing:.06em;color:var(--cream);text-decoration:none;display:inline-block;margin:30px 0 8px;border-bottom:2px solid var(--amber);padding-bottom:6px}
+.visit .phone:hover{color:var(--amber)}
+.visit .meta{font-style:italic;color:var(--dim);max-width:460px;margin:18px auto 36px;line-height:2}
+.visit .meta b{color:var(--cream);font-weight:500}
+.visit .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:italic;font-size:.8rem}
+/* mobile bar */
+.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:rgba(13,9,6,.9);backdrop-filter:blur(14px);border:1px solid rgba(240,227,206,.25);padding:8px}
+.mbar a{flex:1;text-align:center;padding:13px 4px;font-family:'Bebas Neue';letter-spacing:.14em;font-size:1rem;text-decoration:none}
+.mbar .c{background:var(--amber);color:#1A120B}
+.mbar .w{background:#1fce5f;color:#052b12}
+.mbar .m{background:rgba(240,227,206,.14);color:var(--cream)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ nav .links a:not(.call){display:none}
+ .story-grid{grid-template-columns:1fr;gap:70px}
+ .tarab .wrap{grid-template-columns:1fr;gap:50px}
+ .vinyl{width:220px;height:220px}
+ .mbar{display:flex}
+ footer{padding-bottom:130px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+ <a class="brand" href="#top">Kahwat Ras Beirut</a>
+ <div class="links">
+  <a href="#story">The café</a><a href="#carte">La carte</a><a href="#gallery">Scenes</a><a href="#tarab">Tarab nights</a><a href="#visit">Visit</a>
+  <a class="call" href="tel:+9613259200">+961 3 259 200</a>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <img class="bg" src="img/07.jpg" alt="Kahwat Ras Beirut">
+ <div class="vig"></div>
+ <div class="hero-c">
+  <p class="pre">AVENUE DE PARIS — THE CORNICHE</p>
+  <h1>KAHWAT<br>RAS BEIRUT</h1>
+  <div class="ar arabic">قهوة رأس بيروت</div>
+  <p class="tag">Sea-view Lebanese kitchen & kahwa on the Corniche — where Beirut meets the Mediterranean</p>
+  <div class="row">
+   <span class="st"><b>★ 4.8</b> — 566 REVIEWS</span>
+   <span class="st">8 AM — 2 AM</span>
+  </div>
+  <div class="row">
+   <a class="btn solid" href="tel:+9613259200">CALL THE CAFÉ</a>
+   <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener">WhatsApp</a>
+   <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener">FIND US ON THE CORNICHE</a>
+  </div>
+ </div>
+</header>
+
+<section id="story">
+ <div class="wrap">
+  <div class="head rv"><h2>SCENE ONE — <em>THE SEA</em></h2><span>ext. corniche, golden hour</span></div>
+  <div class="story-grid">
+   <div class="rv">
+    <p class="lead">On the Avenue de Paris, where the Corniche meets the sea, Kahwat Ras Beirut serves Lebanon the way it tastes in memories — mezze on cool marble, soujouk with pomegranate, oriental nights with live music, and coffee that lasts until 2 AM. A 4.8-star love letter to the city.</p>
+    <div class="stats">
+     <div><b>★ 4.8</b><span>566 love letters</span></div>
+     <div><b>2 AM</b><span>the night ends late</span></div>
+     <div><b>1</b><span>sea, right there</span></div>
+    </div>
+   </div>
+   <div class="sea rv">
+    <img src="img/06.jpg" alt="" loading="lazy">
+    <span class="cap">— the terrace, where the mezze meets the Mediterranean —</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="carte" id="carte">
+ <div class="wrap">
+  <div class="head rv"><h2>LA CARTE</h2><span>ما تستحي، كول</span></div>
+  <div class="dish-w"><div class="dish rv"><h3>Osmaliyah Shawarma</h3><span class="dots"></span><span class="no">№1</span><p>The dish reviewers can't stop writing about — outstanding presentation, incredible taste.</p></div><div class="dish rv"><h3>Mezze by the Sea</h3><span class="dots"></span><span class="no">№2</span><p>Labneh, olives, saj bread and the Mediterranean breeze on the terrace.</p></div><div class="dish rv"><h3>Oriental Nights</h3><span class="dots"></span><span class="no">№3</span><p>Live tarab and oud evenings — Beirut's soul, on stage.</p></div></div>
+  <p class="note">…and the mezze keeps coming until you say stop. Nobody says stop.</p>
+ </div>
+</section>
+
+<div class="strip-w" id="gallery">
+ <div class="strip-head">
+  <div class="head rv"><h2>SCENES FROM <em>THE CAFÉ</em></h2><span>35mm, unedited</span></div>
+ </div>
+ <div class="strip"><div class="inner"><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div></div>
+ <p class="strip-hint">— drag the reel ⟶</p>
+</div>
+
+<section class="tarab" id="tarab">
+ <div class="wrap">
+  <div class="vinyl rv"></div>
+  <div class="rv">
+   <h2>ORIENTAL <em>NIGHTS</em></h2>
+   <p>When the sun drops behind the lighthouse, the oud comes out. Live tarab evenings — the old songs, sung the old way, with the windows open to the sea. Coffee turns to arak, and nobody checks the time.</p>
+   <div class="times"><span>LIVE MUSIC EVENINGS</span><span>OPEN TILL 2 AM</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="reviews">
+ <div class="wrap">
+  <div class="head rv"><h2>POSTCARDS <em>HOME</em></h2><span>what the guests wrote</span></div>
+  <div class="cards"><div class="card rv"><span class="s">★★★★★</span><p>Amazing experience. The food was absolutely delicious. The Osmaliyah Shawarma was outstanding — both the presentation and the taste were incredible.</p><div class="who">Google review</div></div><div class="card rv"><span class="s">★★★★★</span><p>The view is wonderful, the food yummy, and the service is great. I recommend you come and enjoy the view.</p><div class="who">Google review</div></div><div class="card rv"><span class="s">★★★★★</span><p>You can't go wrong with this place — a must visit every time we come from abroad. Lovely atmosphere, delightful food and outstanding staff with exceptional hospitality.</p><div class="who">Google review</div></div></div>
+ </div>
+</section>
+
+<section class="visit" id="visit">
+ <p class="pre">FINAL SCENE</p>
+ <h2>THE SEA IS <em>WAITING.</em></h2>
+ <a class="phone" href="tel:+9613259200">+961 3 259 200</a>
+ <p class="meta"><b>Avenue de Paris (Corniche), Ras Beirut, Beirut, Lebanon</b><br>Open daily · 8:00 AM – 2:00 AM</p>
+ <div class="btns">
+  <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener">Message on WhatsApp</a>
+  <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener">OPEN IN GOOGLE MAPS ↗</a>
+ </div>
+</section>
+
+<div class="mbar">
+ <a class="c" href="tel:+9613259200">Call</a>
+ <a class="w" href="https://wa.me/9613259200" target="_blank" rel="noopener">WhatsApp</a>
+ <a class="m" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener">Map</a>
+</div>
+
+<footer>© Kahwat Ras Beirut · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+
+<script>
+var nav=document.getElementById('nav');
+addEventListener('scroll',function(){nav.classList.toggle('sc',scrollY>40)},{passive:true});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body>
+</html>
