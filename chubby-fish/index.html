@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chubby Fish — Seafood restaurant & handroll bar in Gemmayze, Beirut</title>
 <meta name="description" content="Chubby Fish, Seafood restaurant & handroll bar on Pasteur street, Beirut. Call +961 79 061 466.">
@@ -104,7 +104,7 @@ section{padding:94px 5vw}
 .visit .btn{background:transparent;border-color:var(--cream);color:var(--cream);box-shadow:0 5px 0 rgba(255,246,232,.35)}
 .visit .btn.wa{background:#2c9a55}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48,63,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#0B4763;padding:9px 12px calc(9px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Lilita One';font-size:.9rem;text-decoration:none;color:var(--ink)}
 .mbar .c{background:var(--coral);color:#fff}
 .mbar .w{background:#2c9a55;color:#fff}
@@ -121,6 +121,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48
  footer{padding-bottom:150px}
 }
 @media(min-width:600px) and (max-width:900px){.c-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar::before{content:'';position:absolute;top:-8px;left:0;right:0;height:9px;background:radial-gradient(circle at 11px 0,transparent 8px,#0B4763 9px);background-size:22px 9px}.mbar a{background:#FFF6E8;border-radius:999px;color:#12303F;border:2px solid transparent}.mbar a.c{background:#F26D5B;color:#fff;border:3px double #FFF6E8}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -214,7 +217,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48
  <a class="m" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Chubby Fish · Gemmayze, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Chubby Fish · Gemmayze, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

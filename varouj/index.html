@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Restaurant Varouj — Armenian restaurant in Bourj Hammoud</title>
 <meta name="description" content="Restaurant Varouj, Armenian restaurant in Bourj Hammoud. Call +961 3 882 933.">
@@ -96,7 +96,7 @@ section{padding:90px 5vw}
 .visit .btn{border-color:#fff;background:transparent;color:#fff;box-shadow:4px 4px 0 rgba(51,38,26,.45)}
 .visit .btn.wa{background:#2c7a44}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(51,38,26,.65)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--crm);border:2.5px solid var(--ink);border-radius:8px;padding:8px;box-shadow:0 10px 24px rgba(51,38,26,.35)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#D9B98A;border-top:2px solid #33261A;padding:11px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:5px;font-weight:800;font-size:.88rem;text-decoration:none;color:var(--ink);border:1.5px solid var(--ink)}
 .mbar .c{background:var(--tom);color:#fff}
 .mbar .w{background:#2c7a44;color:#fff}
@@ -109,6 +109,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(51,38
  .mbar{display:flex}
  footer{padding-bottom:150px}
 }
+.mbar::before{content:'';position:absolute;top:3px;left:0;right:0;border-top:1.5px dashed #33261A;opacity:.5}.mbar a{background:#F8EFDC;border:1.5px solid #33261A;border-radius:2px;color:#33261A;box-shadow:2px 2px 0 rgba(51,38,26,.35)}.mbar a.c{background:#C03A21;color:#F8EFDC;transform:rotate(-.8deg)}.mbar a.w{background:#4C6B3C;color:#F8EFDC}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -205,7 +208,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(51,38
  <a class="m" href="https://maps.google.com/?cid=2555547586149269731" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Restaurant Varouj · Bourj Hammoud, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Restaurant Varouj · Bourj Hammoud, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

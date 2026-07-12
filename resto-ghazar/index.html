@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resto Ghazar — Armenian restaurant in Bourj Hammoud</title>
 <meta name="description" content="Resto Ghazar, Armenian restaurant in Bourj Hammoud, Beirut. Call +961 1 242 708.">
@@ -98,7 +98,7 @@ section{padding:96px 5vw}
 .visit .btn{border-color:var(--sand2);color:var(--sand2)}
 .visit .btn:hover{background:var(--sand2);color:var(--char)}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,33,30,.6);background:var(--sand2)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2px solid var(--char);border-radius:99px;padding:8px;box-shadow:0 10px 26px rgba(38,33,30,.3)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#EFE3D0;padding:12px 12px calc(11px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-weight:800;font-size:.88rem;text-decoration:none;color:var(--char)}
 .mbar .c{background:var(--red);color:#fff}
 .mbar .w{background:#237a46;color:#fff}
@@ -114,6 +114,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,33
  .mbar{display:flex}
  footer{padding-bottom:150px}
 }
+.mbar::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,#A8341F 0 14px,#D9A441 14px 22px,#26211E 22px 28px)}.mbar{padding-top:16px}.mbar a{background:#F7EFE2;border:1.5px solid #26211E;border-radius:1px;color:#26211E;letter-spacing:.1em}.mbar a.c{background:#A8341F;color:#F7EFE2;border-color:#A8341F}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -201,7 +204,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,33
  <a class="m" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Resto Ghazar · Bourj Hammoud, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Resto Ghazar · Bourj Hammoud, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

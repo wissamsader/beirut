@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foul Kholyo — Breakfast restaurant in Ouzai, Beirut</title>
 <meta name="description" content="Foul Kholyo, breakfast in Ouzai. Call +961 70 039 558.">
@@ -115,7 +115,7 @@ section{padding:92px 5vw}
 .visit .btn{background:transparent;color:var(--crm);border-color:var(--crm);box-shadow:0 5px 0 rgba(253,246,227,.3)}
 .visit .btn.wa{background:var(--mint);border-color:var(--mint)}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30,51,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#1D4ED8;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:3px solid #153CA8}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:12px;font-family:'Lalezar';font-size:1rem;text-decoration:none;color:var(--ink)}
 .mbar .c{background:var(--cobalt);color:#fff}
 .mbar .w{background:var(--mint);color:#fff}
@@ -129,6 +129,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30
  footer{padding-bottom:150px}
 }
 @media(min-width:600px) and (max-width:900px){.p-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar a{background:#FDF6E3;border-radius:12px;color:#171E33;font-weight:800;box-shadow:0 4px 0 #153CA8}.mbar a.c{background:#F7C531;animation:khobounce 2.6s ease-in-out infinite}.mbar a.w{background:#2E9B70;color:#FDF6E3}@keyframes khobounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}.mbar a:active{transform:translateY(3px);box-shadow:0 1px 0 #153CA8}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -234,7 +237,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30
  <a class="m" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Foul Kholyo · Ouzai, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Foul Kholyo · Ouzai, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

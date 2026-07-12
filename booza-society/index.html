@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Booza Society — Ice cream shop in Hamra, Beirut</title>
 <meta name="description" content="Booza Society, Ice cream shop in Hamra, Beirut. Call +961 81 359 842.">
@@ -100,7 +100,7 @@ section{padding:92px 5vw}
 .visit .meta{color:rgba(51,38,31,.8);max-width:460px;margin:18px auto 32px;line-height:2}
 .visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2.5px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 8px 22px rgba(51,38,31,.3)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:12px;right:12px;bottom:12px;background:#FFF9F0;border:2px solid #33261F;border-radius:16px 16px 24px 24px;padding:8px;box-shadow:0 8px 22px rgba(51,38,31,.3)}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Fredoka';font-weight:600;font-size:.9rem;text-decoration:none;color:var(--ink)}
 .mbar .c{background:var(--berry);color:#fff}
 .mbar .w{background:#39a05c;color:#fff}
@@ -115,6 +115,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31
  .hero img.bg{height:60vh}
 }
 @media(min-width:600px) and (max-width:900px){.f-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar a{border-radius:14px 14px 5px 5px;color:#33261F;font-weight:700;border:2px solid #33261F}.mbar a.c{background:#E76D8F;color:#fff;position:relative}.mbar a.c::before{content:'●';position:absolute;top:-9px;left:50%;transform:translateX(-50%);color:#C41E2F;font-size:9px}.mbar a.w{background:#A8CBA0}.mbar a.m{background:#F5B33B}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -214,7 +217,7 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31
  <a class="m" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Booza Society · Hamra, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Booza Society · Hamra, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

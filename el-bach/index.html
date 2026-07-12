@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Bach Snack & Grill — Snack & grill restaurant in Ain El Remmaneh</title>
 <meta name="description" content="El Bach Snack & Grill, snack & grill in Ain El Remmaneh. Call +961 3 436 367.">
@@ -100,7 +100,7 @@ section{padding:94px 5vw}
 .visit .btn{background:transparent;color:#fff;border-color:#fff;box-shadow:0 5px 0 rgba(0,0,0,.35)}
 .visit .btn.wa{background:#27a355;border-color:#27a355}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(35,16,21,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--ink)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#FFF4EC;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Passion One';font-size:1rem;text-transform:uppercase;text-decoration:none;color:var(--ink)}
 .mbar .c{background:var(--red);color:#fff}
 .mbar .w{background:#27a355;color:#fff}
@@ -117,6 +117,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(35,16
  footer{padding-bottom:150px}
 }
 @media(min-width:600px) and (max-width:900px){.b-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar::before{content:'';position:absolute;top:-6px;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,#D92B2B 0 10px,#FFB9C7 10px 20px)}.mbar a{background:#fff;border:1.5px solid #FF8FA5;border-radius:999px;color:#231015;box-shadow:0 3px 8px rgba(217,43,43,.18)}.mbar a.c{background:#D92B2B;color:#fff;border-color:#D92B2B}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -202,7 +205,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(35,16
  <a class="m" href="https://maps.google.com/?cid=6220470188685012082" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© El Bach Snack & Grill · Ain El Remmaneh — website demo crafted by Wissam Sader</footer>
+<footer>© El Bach Snack & Grill · Ain El Remmaneh</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

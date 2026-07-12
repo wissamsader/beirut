@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Allo Beirut Restaurant — Lebanese restaurant · Shawarma in Beirut</title>
 <meta name="description" content="Allo Beirut Restaurant, Lebanese restaurant · Shawarma in Beirut, Lebanon. Call +961 78 789 988.">
@@ -128,7 +128,7 @@ section{padding:110px 5vw}
 .visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
 footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
 /* mobile bar */
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:rgba(14,14,21,.85);backdrop-filter:blur(16px);border:1px solid var(--line);padding:8px;border-radius:20px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#08080D;border-top:1px solid rgba(255,59,48,.4);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:13px 4px;border-radius:14px;font-weight:700;font-size:.85rem;text-decoration:none}
 .mbar .c{background:var(--neon);color:#fff}
 .mbar .w{background:#1fce5f;color:#052b12}
@@ -145,6 +145,9 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
  .mbar{display:flex}
  footer{padding-bottom:130px}
 }
+.mbar a{background:transparent;border:1.5px solid #FF3B30;border-radius:6px;color:#FF3B30;text-shadow:0 0 8px rgba(255,59,48,.6)}.mbar a.c{background:#FF3B30;color:#08080D;text-shadow:none;animation:alloneon 2s ease-in-out infinite}@keyframes alloneon{0%,100%{box-shadow:0 0 8px rgba(255,59,48,.6)}50%{box-shadow:0 0 20px rgba(255,59,48,.95)}}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -268,7 +271,7 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
  <a class="m" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Allo Beirut Restaurant · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Allo Beirut Restaurant · Beirut, Lebanon</footer>
 
 <script>
 var nav=document.getElementById('nav');

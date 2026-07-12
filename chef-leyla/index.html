@@ -79,14 +79,19 @@ h1 em{color:var(--pist);font-style:italic;font-weight:500}
 .map{border-radius:18px;overflow:hidden;min-height:340px;background:#eee;border:1px solid #e4dbc9}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{border-top:1px solid #e4dbc9;color:#8a7a6a;text-align:center;padding:34px 5vw 110px;font-size:.82rem;letter-spacing:.1em}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;box-shadow:0 -8px 30px rgba(43,33,30,.12)}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--choc);color:#fff}
-.bar .w{background:#1FA855;color:#fff}
-.bar .m{background:var(--ivory);color:var(--ink)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:860px){.hero{grid-template-columns:1fr}.hi{min-height:46vh;order:-1}.story,.visit{grid-template-columns:1fr}}
+
+/* patisserie box ribbon */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FAF6EF;display:flex;align-items:center;justify-content:center;gap:22px;padding:13px 10px calc(12px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px -18px rgba(74,47,39,.45)}
+.bar::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:10px;transform:translateX(-50%);background:#E8C8C0;opacity:.9}
+.bar::after{content:'✿';position:absolute;top:-11px;left:50%;transform:translateX(-50%);color:#E8C8C0;background:#FAF6EF;border-radius:50%;padding:0 4px;font-size:14px}
+.bar a{position:relative;text-decoration:none;font-family:'Playfair Display',serif;font-size:15px;color:#4A2F27;background:#fff;border:1px solid #E8C8C0;padding:11px 18px;border-radius:3px}
+.bar a.c{background:#93B48B;color:#FAF6EF;border-color:#93B48B}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <div class="band"><span>Pâtisserie</span><div class="mono">CL</div><span>George Haddad · Beirut</span></div>
 <section class="hero">
@@ -149,8 +154,8 @@ footer{border-top:1px solid #e4dbc9;color:#8a7a6a;text-align:center;padding:34px
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=15384752039051736482&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>CHEF LEYLA BAKERY · George Haddad — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+96171251122">📞 Call</a><a class="w" href="https://wa.me/96171251122" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=15384752039051736482" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>CHEF LEYLA BAKERY · George Haddad</footer>
+<div class="bar"><a class="w" href="https://wa.me/96171251122" target="_blank" rel="noopener">WhatsApp</a><a class="c" href="tel:+96171251122">Call · Réserver</a><a class="m" href="https://maps.google.com/?cid=15384752039051736482" target="_blank" rel="noopener">Map</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

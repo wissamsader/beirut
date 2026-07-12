@@ -88,14 +88,19 @@ h1 em{font-style:normal;color:var(--coral)}
 .map{border:1px solid rgba(244,241,232,.3);min-height:340px;background:#222}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{border-top:1px solid rgba(244,241,232,.15);color:rgba(244,241,232,.45);text-align:center;padding:34px 5vw 110px;font-size:.8rem;letter-spacing:.12em;position:relative;z-index:1}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--coral);color:var(--sumi)}
-.bar .w{background:#1FA855;color:#fff}
-.bar .m{background:var(--paper);color:var(--sumi)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.story .in2,.visit{grid-template-columns:1fr}.gg{columns:2}.noren div{letter-spacing:.14em}}
+
+/* hanko seal tray */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#15181A;display:flex;align-items:center;justify-content:center;gap:22px;padding:11px 10px calc(11px + env(safe-area-inset-bottom));border-top:1px solid #5C7A55}
+.bar a{text-decoration:none;font-family:'Zen Old Mincho',serif;font-size:14px;letter-spacing:.18em;color:#F4F1E8}
+.bar a.c{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:#E8836F;color:#15181A;border-radius:8px;font-weight:700;box-shadow:0 0 0 1px #15181A,0 0 0 3px #E8836F;font-size:12px;letter-spacing:.04em}
+.bar a.w{color:#5C7A55;border:1px solid #5C7A55;padding:11px 16px}
+.bar a.m{border-bottom:1px solid #F4F1E8;padding-bottom:2px}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <div class="kanji">心</div>
 <div class="noren"><div>Sushi</div><div class="jp">計お計おろ 心</div><div>Japanese pub</div><div>Badaro</div></div>
@@ -162,8 +167,8 @@ footer{border-top:1px solid rgba(244,241,232,.15);color:rgba(244,241,232,.45);te
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=17423534326215671862&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>KOKORO SUSHI · JAPANESE PUB · BADARO — DEMO PAGE BY WISSAM SADER</footer>
-<div class="bar"><a class="c" href="tel:+96181810155">📞 Call</a><a class="w" href="https://wa.me/96181810155" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=17423534326215671862" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>KOKORO SUSHI · JAPANESE PUB · BADARO</footer>
+<div class="bar"><a class="w" href="https://wa.me/96181810155" target="_blank" rel="noopener">WhatsApp</a><a class="c" href="tel:+96181810155">CALL<br>心</a><a class="m" href="https://maps.google.com/?cid=17423534326215671862" target="_blank" rel="noopener">MAP</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

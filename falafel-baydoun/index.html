@@ -77,14 +77,18 @@ h1 .st{color:transparent;-webkit-text-stroke:3px var(--ink)}
 .map{border:5px solid var(--ink);min-height:340px;background:#eee}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{background:var(--ink);color:rgba(255,253,244,.5);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;border-top:4px solid var(--ink)}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:900;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--sun);color:var(--ink)}
-.bar .w{background:#1FA855;color:#fff}
-.bar .m{background:var(--paper);color:var(--ink)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.story .in2,.visit .in2{grid-template-columns:1fr}.band{grid-template-columns:1fr}.band .b2{border-left:0;border-top:5px solid var(--ink)}.hero .seal{width:100px;height:100px;font-size:.68rem}}
+
+/* the yellow board */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#141310;display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 10px calc(10px + env(safe-area-inset-bottom))}
+.bar a.c{text-decoration:none;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:.04em;color:#141310;background:#F4C21F;padding:14px 30px;border-radius:3px;box-shadow:4px 4px 0 #FFFDF4;position:relative}
+.bar a.c::after{content:'➔';position:absolute;right:-2px;top:-14px;transform:rotate(-24deg);color:#F4C21F;font-size:18px}
+.bar a.m{text-decoration:none;font-family:'Inter',sans-serif;font-weight:800;font-size:12px;letter-spacing:.16em;color:#F4C21F;border-bottom:2px solid #F4C21F;padding-bottom:2px}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <section class="hero">
  <div class="seal">الفاخرة<br>AL FAKHIRA<br>★ 4.9</div>
@@ -152,8 +156,8 @@ footer{background:var(--ink);color:rgba(255,253,244,.5);text-align:center;paddin
   <div class="map rv"><iframe src="https://www.google.com/maps?cid=9056253350759779030&output=embed" loading="lazy" title="Map"></iframe></div>
  </div>
 </section>
-<footer>FALAFEL BAYDOUN AL FAKHIRA — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+96170608542">📞 Call</a><a class="w" href="https://wa.me/96170608542" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=9056253350759779030" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>FALAFEL BAYDOUN AL FAKHIRA</footer>
+<div class="bar"><a class="w" href="https://wa.me/96170608542" target="_blank" rel="noopener">WhatsApp</a><a class="c" href="tel:+96170608542">GO CALL YOURSELF</a><a class="m" href="https://maps.google.com/?cid=9056253350759779030" target="_blank" rel="noopener">MAP</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

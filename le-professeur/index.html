@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Le Professeur — Breakfast restaurant in Beirut</title>
 <meta name="description" content="Le Professeur, Breakfast restaurant in Beirut, Lebanon. Call +961 1 703 666.">
@@ -114,7 +114,7 @@ section{padding:96px 5vw}
 .visit .btn:hover{box-shadow:4px 4px 0 rgba(234,241,250,.4)}
 .visit .btn.r{background:var(--red);border-color:var(--red);color:#fff}
 footer{text-align:center;padding:26px 5vw 110px;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--soft)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2px solid var(--ink);border-radius:8px;padding:8px;box-shadow:0 12px 28px rgba(32,48,74,.35)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#FBF7EE;background-image:repeating-linear-gradient(180deg,transparent 0 9px,#B9CBE0 9px 10px);border-top:2px solid #20304A;padding:11px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:5px;font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--ink);border:1px solid rgba(32,48,74,.3)}
 .mbar .c{background:var(--red);color:#fff;border-color:var(--red)}
 .mbar .w{background:#1f7a45;color:#fff;border-color:#1f7a45}
@@ -129,6 +129,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-family:'Inter',sans-serif;f
  footer{padding-bottom:150px}
 }
 @media(max-width:600px){.c-grid,.g-grid{grid-template-columns:1fr}}
+.mbar::before{content:'';position:absolute;top:0;bottom:0;left:26px;width:2px;background:#C93A2B;opacity:.6}.mbar a{background:#fff;border:1px solid #20304A;border-radius:3px;color:#20304A;font-style:italic}.mbar a.c{background:#20304A;color:#FBF7EE;font-style:normal}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -232,7 +235,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-family:'Inter',sans-serif;f
  <a class="m" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Le Professeur · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Le Professeur · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

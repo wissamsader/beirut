@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Man'oushit Chaiban — Bakery (manakish) in Forn El Chebbak</title>
 <meta name="description" content="Man'oushit Chaiban, manakish bakery in Forn El Chebbak. Call +961 70 161 028.">
@@ -98,7 +98,7 @@ section{padding:92px 5vw}
 .visit .btn{background:transparent;color:var(--kraft);border-color:var(--kraft);box-shadow:4px 4px 0 rgba(200,162,107,.4)}
 .visit .btn.wa{background:#2c7a44;color:#fff;border-color:#2c7a44}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(46,34,20,.65)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--crm);border:3px solid var(--ink);padding:8px;box-shadow:0 8px 22px rgba(46,34,20,.4)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#C8A26B;padding:10px 12px calc(10px + env(safe-area-inset-bottom));clip-path:polygon(0 12px,26px 0,100% 0,100% 100%,0 100%)}
 .mbar a{flex:1;text-align:center;padding:12px 4px;font-family:'Archivo Narrow';font-weight:700;font-size:.9rem;text-transform:uppercase;text-decoration:none;color:var(--ink);border:2px solid var(--ink)}
 .mbar .c{background:var(--fire);color:#fff}
 .mbar .w{background:#2c7a44;color:#fff}
@@ -113,6 +113,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(46,34
  footer{padding-bottom:150px}
 }
 @media(min-width:600px) and (max-width:900px){.o-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar{padding-top:14px}.mbar a{background:#F6EEDB;border-radius:3px;color:#2E2214;border:1.5px solid #2E2214}.mbar a.c{background:#D96C2C;color:#F6EEDB;border-color:#D96C2C}.mbar a.m{background:#5C6B33;color:#F6EEDB;border-color:#5C6B33}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -199,7 +202,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(46,34
  <a class="m" href="https://maps.google.com/?cid=9014475017821031782" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Man'oushit Chaiban · Forn El Chebbak — website demo crafted by Wissam Sader</footer>
+<footer>© Man'oushit Chaiban · Forn El Chebbak</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

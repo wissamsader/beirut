@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Hani Restaurant — Lebanese breakfast restaurant in Beirut</title>
 <meta name="description" content="Al Hani Restaurant, Lebanese breakfast restaurant in Beirut, Lebanon. Call +961 1 852 305.">
@@ -115,7 +115,7 @@ body{font-family:'Newsreader',serif;background:var(--paper);color:var(--ink);lin
 .coupon .hours{font-family:'Archivo';font-weight:800;letter-spacing:.12em;font-size:.8rem;text-transform:uppercase;color:var(--red)}
 footer{text-align:center;border-top:1.5px solid var(--rule);padding:20px 4vw 110px;font-family:'Archivo';font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(27,23,16,.55)}
 /* mobile bar */
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--paper);border:2px solid var(--ink);padding:8px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#F8F4E9;border-top:3px double #1B1710;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:13px 4px;font-family:'Archivo';font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;text-decoration:none}
 .mbar .c{background:var(--red);color:var(--paper)}
 .mbar .w{background:#1fce5f;color:#052b12}
@@ -137,6 +137,9 @@ footer{text-align:center;border-top:1.5px solid var(--rule);padding:20px 4vw 110
  .mbar{display:flex}
  footer{padding-bottom:130px}
 }
+.mbar a{background:transparent;border:0;border-bottom:2px solid #9E2B1E;border-radius:0;color:#1B1710;font-variant:small-caps;letter-spacing:.12em}.mbar a.c{background:#9E2B1E;color:#F8F4E9;border-bottom-color:#C08A2D}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -248,7 +251,7 @@ footer{text-align:center;border-top:1.5px solid var(--rule);padding:20px 4vw 110
  <a class="m" href="https://maps.google.com/?cid=5707579121348582864" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Al Hani Restaurant · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Al Hani Restaurant · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taht El Shajra — Lebanese restaurant & cafe in Hamra, Beirut</title>
 <meta name="description" content="Taht El Shajra, Lebanese restaurant & cafe in Hamra. Call +961 21 750 566.">
@@ -106,7 +106,7 @@ section{padding:94px 5vw}
 .visit .btn:hover{background:var(--cream);color:var(--leaf2)}
 .visit .btn.wa{background:#2c8a52;border-color:#2c8a52}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,48,31,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:2px solid var(--leaf);border-radius:99px;padding:8px;box-shadow:0 10px 26px rgba(46,82,40,.3)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#3E6B35;padding:12px 12px calc(11px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--ink)}
 .mbar .c{background:var(--leaf);color:#fff}
 .mbar .w{background:#2c8a52;color:#fff}
@@ -120,6 +120,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,48
  footer{padding-bottom:150px}
 }
 @media(min-width:620px) and (max-width:900px){.i-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar::before{content:'❦ ❦ ❦';position:absolute;top:-13px;left:0;right:0;text-align:center;color:#2E5228;font-size:15px;letter-spacing:36px;line-height:1}.mbar a{background:#FAF6EA;border-radius:0 12px 0 12px;color:#26301F;border:1.5px solid #2E5228}.mbar a.c{background:#F4D35E;font-weight:700;animation:shajsway 4s ease-in-out infinite;transform-origin:top center}@keyframes shajsway{0%,100%{transform:rotate(-.8deg)}50%{transform:rotate(.8deg)}}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -242,7 +245,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,48
  <a class="m" href="https://maps.google.com/?cid=12003138820214176666" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Taht El Shajra · Hamra, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Taht El Shajra · Hamra, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

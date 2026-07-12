@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lala Chicken 1967 — Chicken restaurant in Beirut</title>
 <meta name="description" content="Lala Chicken 1967, Chicken restaurant in Beirut, Lebanon. Call +961 21 203 986.">
@@ -106,7 +106,7 @@ section{padding:96px 5vw}
 .visit .meta{color:rgba(251,243,227,.75);max-width:460px;margin:18px auto 34px;line-height:2}
 .visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(251,243,227,.5)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--char);border:2px solid var(--must);border-radius:99px;padding:8px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#1C1B17;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:4px solid #F2B705}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Archivo Black';font-size:.85rem;text-decoration:none;color:var(--cream)}
 .mbar .c{background:var(--tom);color:#fff}
 .mbar .w{background:#25c25f;color:#06371a}
@@ -120,6 +120,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(251,243,
  footer{padding-bottom:150px}
  .hero img{height:56vh}
 }
+.mbar a{background:#FBF3E3;border-radius:10px;color:#1C1B17;font-weight:800;border-bottom:3px solid #8B887D}.mbar a.c{background:#F2B705;border-bottom-color:#D8401F;animation:lalawig 3s ease-in-out infinite}@keyframes lalawig{0%,92%,100%{transform:rotate(0)}94%{transform:rotate(-2deg)}97%{transform:rotate(2deg)}}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -217,7 +220,7 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(251,243,
  <a class="m" href="https://maps.google.com/?cid=9068258644810532056" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Lala Chicken 1967 · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Lala Chicken 1967 · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

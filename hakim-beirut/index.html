@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hakim Beirut — Snack bar & shawarma in Ras Beirut</title>
 <meta name="description" content="Hakim Beirut, snack & shawarma in Ras Beirut, open 8 AM to 2 AM. Call +961 3 873 124.">
@@ -113,7 +113,7 @@ section{padding:92px 5vw}
 .visit .btn{background:transparent;color:var(--ivory);border-color:var(--ivory);box-shadow:0 5px 0 rgba(255,246,233,.3)}
 .visit .btn.wa{background:var(--mint);border-color:var(--mint)}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(43,32,24,.6)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--char);border-radius:99px;padding:8px;box-shadow:0 6px 0 var(--char)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#2B2018;padding:12px 12px calc(11px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:99px;font-family:'Titan One';font-size:.9rem;text-decoration:none;color:var(--char)}
 .mbar .c{background:var(--flame);color:#fff}
 .mbar .w{background:var(--mint);color:#fff}
@@ -127,6 +127,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(43,32
  footer{padding-bottom:150px}
 }
 @media(min-width:620px) and (max-width:900px){.h-grid,.g-grid{grid-template-columns:1fr 1fr}}
+.mbar::before{content:'• • • • • • • • • • • •';position:absolute;top:2px;left:0;right:0;text-align:center;color:#FFC94D;font-size:7px;letter-spacing:16px;line-height:1;animation:hakbulb 1.8s steps(2,start) infinite}@keyframes hakbulb{to{opacity:.35}}.mbar{padding-top:16px}.mbar a{background:transparent;border:1.5px solid #FFC94D;border-radius:8px;color:#FFF6E9}.mbar a.c{background:#E85D1F;border-color:#E85D1F;box-shadow:0 0 16px rgba(232,93,31,.55)}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -240,7 +243,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(43,32
  <a class="m" href="https://maps.google.com/?cid=478162119403825640" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Hakim Beirut · Ras Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Hakim Beirut · Ras Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

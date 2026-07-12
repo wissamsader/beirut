@@ -83,13 +83,19 @@ h1 span{color:var(--red)}
 .map{border-radius:12px;overflow:hidden;min-height:340px;background:#ddd;border:4px solid var(--black)}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{background:var(--black);color:rgba(242,237,228,.5);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--red);color:#fff}
-.bar .m{background:var(--bone);color:var(--black)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.steps{grid-template-columns:1fr}.story .in2,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}}
+
+/* hanging butcher tags */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#191512;display:flex;justify-content:center;gap:18px;padding:6px 10px calc(8px + env(safe-area-inset-bottom));border-top:3px solid #C0392B}
+.bar a{position:relative;text-decoration:none;font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:.1em;color:#191512;background:#F2EDE4;padding:12px 18px 10px;margin-top:10px;clip-path:polygon(0 18%,8% 0,100% 0,100% 100%,0 100%);transform-origin:top center;animation:hamswing 3.4s ease-in-out infinite}
+.bar a::before{content:'○';position:absolute;top:1px;left:10px;font-size:8px;color:#191512}
+.bar a.c{background:#C0392B;color:#F2EDE4;animation-delay:.6s}
+@keyframes hamswing{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <section class="hero">
  <img class="bg" src="img/01.jpg" alt="Hamandi Butcher">
@@ -162,8 +168,8 @@ footer{background:var(--black);color:rgba(242,237,228,.5);text-align:center;padd
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=8427857005483538168&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>HAMANDI BUTCHER · Hamra — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+9611740704">📞 Call</a><a class="m" href="https://maps.google.com/?cid=8427857005483538168" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>HAMANDI BUTCHER · Hamra</footer>
+<div class="bar"><a class="c" href="tel:+9611740704">☎ CALL</a><a class="m" href="https://maps.google.com/?cid=8427857005483538168" target="_blank" rel="noopener">➤ MAP</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

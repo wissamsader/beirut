@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Falafel Tabbara — Falafel restaurant in Beirut</title>
 <meta name="description" content="Falafel Tabbara, Falafel restaurant in Beirut, Lebanon. Call +961 1 350 821.">
@@ -113,7 +113,7 @@ section{padding:96px 5vw}
 .visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(36,31,20,.6)}
 /* mobile bar */
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:8px;box-shadow:0 10px 26px rgba(36,31,20,.3)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:repeating-linear-gradient(90deg,#F7EFDF 0 26px,#F1E6CE 26px 52px);border-top:2px solid #4A5324;padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:5px;font-weight:700;font-size:.88rem;text-decoration:none;color:var(--ink);border:1px solid rgba(36,31,20,.3)}
 .mbar .c{background:var(--tomato);color:#fff;border-color:var(--tomato)}
 .mbar .w{background:#2e7d43;color:#fff;border-color:#2e7d43}
@@ -128,6 +128,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(36,31,20
  footer{padding-bottom:150px}
 }
 @media(max-width:560px){.g-grid{columns:1}}
+.mbar a{background:#FDF8EC;border:1.5px solid #4A5324;border-radius:2px;color:#241F14}.mbar a.c{background:#A8842C;color:#FDF8EC;border-color:#A8842C}.mbar a.w{border-color:#67722F}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -242,7 +245,7 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(36,31,20
  <a class="m" href="https://maps.google.com/?cid=10043178635628059090" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Falafel Tabbara · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Falafel Tabbara · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

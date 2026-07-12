@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Issa Restaurant — Hummus — Breakfast restaurant · Hummus & foul in Beirut</title>
 <meta name="description" content="Issa Restaurant — Hummus, Breakfast restaurant · Hummus & foul in Beirut, Lebanon. Call +961 1 706 268.">
@@ -118,7 +118,7 @@ section{padding:90px 5vw}
 .visit .btn{box-shadow:6px 6px 0 var(--ink)}
 footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;color:var(--deep)}
 /* mobile bar */
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:#fff;border:3px solid var(--ink);padding:8px;box-shadow:6px 6px 0 var(--ink)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:10px;right:10px;bottom:10px;background:#F7F0DC;border:2px solid #33210E;border-radius:999px;padding:7px}
 .mbar a{flex:1;text-align:center;padding:13px 4px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem;text-decoration:none;border:2px solid var(--ink)}
 .mbar .c{background:var(--orange);color:#fff}
 .mbar .w{background:#1fce5f;color:#052b12}
@@ -131,6 +131,9 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
  .mbar{display:flex}
  footer{padding-bottom:130px}
 }
+.mbar::before{content:'';position:absolute;top:-3px;left:18%;right:18%;height:3px;border-radius:3px;background:linear-gradient(90deg,transparent,#DF7112,transparent)}.mbar a{border-radius:999px;background:transparent;color:#33210E}.mbar a.c{background:#DF7112;color:#F7F0DC;position:relative}.mbar a.c::after{content:'◠';position:absolute;top:2px;right:10px;color:#F2B33D;font-size:11px}.mbar a.m{border:1.5px dashed #B34E0B}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -242,7 +245,7 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
  <a class="m" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Issa Restaurant — Hummus · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Issa Restaurant — Hummus · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

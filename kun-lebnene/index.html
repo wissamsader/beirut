@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kun Lebnéné Beirut — Lebanese restaurant in Beirut</title>
 <meta name="description" content="Kun Lebnéné Beirut, elegant Lebanese dining in Beirut. Call +961 1 986 786.">
@@ -104,7 +104,7 @@ section{padding:100px 5vw}
 .visit .meta{color:rgba(243,237,226,.72);max-width:480px;margin:20px auto 40px;line-height:2.1;font-size:.92rem}
 .visit .cta{justify-content:center}
 footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:.06em;color:rgba(243,237,226,.5)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--em2);border:1px solid var(--gold);padding:8px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#0A2C22;border-top:1px solid #C6A75E;padding:11px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:13px 4px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--ivory);border:1px solid rgba(243,237,226,.25)}
 .mbar .c{background:var(--gold);color:var(--em2);border-color:var(--gold)}
 .mbar .w{background:#2c6e46;color:#fff;border-color:#2c6e46}
@@ -119,6 +119,9 @@ footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:
  footer{padding-bottom:150px}
  .hero{min-height:74vh}
 }
+.mbar a{background:transparent;border:1px solid rgba(198,167,94,.55);border-radius:4px;color:#F3EDE2;letter-spacing:.16em;text-transform:uppercase;font-size:.7rem}.mbar a.c{background:#C6A75E;color:#0A2C22;font-weight:700}.mbar a.c::before{content:'▲ ';font-size:.8em}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -208,7 +211,7 @@ footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:
  <a class="m" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Kun Lebnéné Beirut · Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Kun Lebnéné Beirut · Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

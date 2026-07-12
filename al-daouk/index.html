@@ -72,13 +72,18 @@ h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.1;text-shadow:0 4px 0 rgba(5
 .map{border-radius:20px;overflow:hidden;min-height:340px;background:#e5e0cc;border:5px solid var(--pist)}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{background:var(--ink);color:rgba(253,248,236,.55);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--pdark);color:#fff}
-.bar .m{background:var(--ashta);color:var(--ink)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.story,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.gg{columns:2}}
+
+/* baklawa lozenges */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FDF8EC;display:flex;justify-content:center;gap:18px;padding:12px 10px calc(11px + env(safe-area-inset-bottom));border-top:2px solid #7FA65A}
+.bar::before{content:'◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆';position:absolute;top:-8px;left:0;right:0;text-align:center;color:#D9A05B;font-size:10px;letter-spacing:18px;line-height:0}
+.bar a{text-decoration:none;font-family:'Marhey',cursive;font-size:14px;color:#FDF8EC;background:#4C6B33;padding:13px 22px;clip-path:polygon(10% 0,90% 0,100% 50%,90% 100%,10% 100%,0 50%)}
+.bar a.c{background:#D9A05B;color:#33351F}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <div class="geo"></div>
 <section class="hero">
@@ -147,8 +152,8 @@ footer{background:var(--ink);color:rgba(253,248,236,.55);text-align:center;paddi
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=15830589012095761585&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>AL DAOUK SWEETS · Tareek Jdeede · since 1961 — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+9611300203">📞 Call</a><a class="m" href="https://maps.google.com/?cid=15830589012095761585" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>AL DAOUK SWEETS · Tareek Jdeede · since 1961</footer>
+<div class="bar"><a class="c" href="tel:+9611300203">☎ Call</a><a class="m" href="https://maps.google.com/?cid=15830589012095761585" target="_blank" rel="noopener">Map</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

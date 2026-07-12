@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abou Abdallah — Breakfast restaurant in Dawra, Beirut</title>
 <meta name="description" content="Abou Abdallah, Breakfast restaurant in Dawra. Call +961 1 256 286.">
@@ -114,7 +114,7 @@ section{padding:96px 5vw}
 .visit .meta{color:rgba(244,233,215,.75);max-width:520px;margin:18px auto 36px;line-height:2;font-size:.92rem}
 .visit .cta{justify-content:center}
 footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(244,233,215,.5);background:var(--walnut2)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--walnut2);border:1px solid var(--brass);border-radius:6px;padding:8px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#2C1F17;border-top:2px solid #C29B4C;padding:9px 10px calc(9px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;border-radius:3px;font-weight:600;font-size:.85rem;letter-spacing:.06em;text-decoration:none;color:var(--cream);border:1px solid rgba(244,233,215,.3)}
 .mbar .c{background:var(--brass);color:var(--walnut2);border-color:var(--brass)}
 .mbar .w{background:#2f7146;color:#fff;border-color:#2f7146}
@@ -129,6 +129,9 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(244,
  .mbar{display:flex}
  footer{padding-bottom:150px}
 }
+.mbar a{border-radius:0;background:transparent;color:#F4E9D7;border:1px solid rgba(194,155,76,.5)}.mbar a.c{background:#C29B4C;color:#2C1F17;border:0}.mbar a+a{position:relative}.mbar a+a::before{content:'●';position:absolute;left:-8px;top:50%;transform:translate(-50%,-50%);color:#C29B4C;font-size:6px}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -238,7 +241,7 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(244,
  <a class="m" href="https://maps.google.com/?cid=8635420213454485809" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Abou Abdallah · Dawra, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Abou Abdallah · Dawra, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adnan Baik — Fried chicken restaurant in Beirut</title>
 <meta name="description" content="Adnan Baik, Fried chicken restaurant in Beirut, Lebanon. Call +961 78 733 133.">
@@ -122,7 +122,7 @@ section.ritual{padding:90px 4vw}
 .visit .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padding:26px 4vw 116px;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em}
 /* mobile bar */
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--green);padding:8px;border:3px solid var(--green)}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#17351A;padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:13px 4px;font-family:'Anton';letter-spacing:.08em;font-size:.95rem;text-decoration:none;text-transform:uppercase}
 .mbar .c{background:var(--red);color:#fff}
 .mbar .w{background:#1fce5f;color:#052b12}
@@ -139,6 +139,9 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
  .mbar{display:flex}
  footer{padding-bottom:136px}
 }
+.mbar::before,.mbar::after{content:'';position:absolute;top:0;bottom:0;width:12px;background:repeating-linear-gradient(180deg,#FFCF2E 0 10px,#E23B22 10px 20px)}.mbar::before{left:0}.mbar::after{right:0}.mbar a{background:#FFF6DC;border-radius:8px;color:#17351A;font-weight:800}.mbar a.c{background:#FFCF2E;box-shadow:0 4px 0 #E23B22}.mbar a:active{transform:translateY(3px);box-shadow:none}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -266,7 +269,7 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
  <a class="m" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Adnan Baik · Beirut, Lebanon — website demo crafted by Wissam Sader</footer>
+<footer>© Adnan Baik · Beirut, Lebanon</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

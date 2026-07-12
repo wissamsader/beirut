@@ -80,14 +80,20 @@ h1 span{color:var(--org)}
 .map{border-radius:20px;overflow:hidden;min-height:340px;background:#222;border:3px solid rgba(255,122,26,.5)}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{text-align:center;padding:34px 5vw 110px;font-size:.82rem;color:rgba(255,243,228,.4)}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
-.bar .c{background:var(--org);color:var(--char)}
-.bar .w{background:#1FA855;color:#fff}
-.bar .m{background:var(--cream);color:var(--char)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.hero{grid-template-columns:1fr}.vert{display:none}.hp{padding-left:0}.story,.visit{grid-template-columns:1fr}}
+
+/* neon wrap */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#17130F;display:flex;justify-content:center;gap:14px;padding:12px 10px calc(12px + env(safe-area-inset-bottom));border-top:1px solid #241E17}
+.bar a{position:relative;text-decoration:none;font-family:'Changa',sans-serif;font-weight:700;font-size:14px;letter-spacing:.06em;color:#FF7A1A;border:2px solid #FF7A1A;border-radius:4px;padding:11px 20px;transform:skewX(-6deg);overflow:hidden}
+.bar a span{display:inline-block;transform:skewX(6deg)}
+.bar a.c{color:#17130F;background:#FF7A1A;animation:lefneon 2.2s ease-in-out infinite}
+@keyframes lefneon{0%,100%{box-shadow:0 0 8px rgba(255,122,26,.7)}50%{box-shadow:0 0 22px rgba(255,122,26,1)}}
+.bar a.w{color:#FFF3E4;border-color:#FFF3E4}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <section class="hero">
  <div class="spiral"></div>
@@ -149,8 +155,8 @@ footer{text-align:center;padding:34px 5vw 110px;font-size:.82rem;color:rgba(255,
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=12975842237661845777&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>LEFFET SHAWARMA · لفّة شاورما · Hamra — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+96170111330">📞 Call</a><a class="w" href="https://wa.me/96170111330" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=12975842237661845777" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>LEFFET SHAWARMA · لفّة شاورما · Hamra</footer>
+<div class="bar"><a class="w" href="https://wa.me/96170111330" target="_blank" rel="noopener">WhatsApp</a><a class="c" href="tel:+96170111330"><span>☎ CALL</span></a><a class="m" href="https://maps.google.com/?cid=12975842237661845777" target="_blank" rel="noopener"><span>➤ MAP</span></a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

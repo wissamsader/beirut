@@ -87,14 +87,20 @@ h1 em{font-style:normal;color:var(--frite)}
 .map{border:5px solid var(--ink);border-radius:18px;overflow:hidden;min-height:340px;background:#dde}
 .map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
 footer{background:var(--ink);color:#9fb2c8;text-align:center;padding:34px 5vw 110px;font-size:.85rem}
-.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;border-top:4px solid var(--ink)}
-.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.9rem;text-decoration:none;font-family:'Baloo 2'}
-.bar .c{background:var(--frite);color:var(--ink)}
-.bar .w{background:#1FA855;color:#fff}
-.bar .m{background:#fff;color:var(--ink)}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .rv.in{opacity:1;transform:none}
 @media(max-width:880px){.hero{grid-template-columns:1fr}.story,.visit{grid-template-columns:1fr}}
+
+/* cartoon capsules */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#4FA3D9;display:flex;justify-content:center;gap:12px;padding:11px 10px calc(11px + env(safe-area-inset-bottom));border-top:3px solid #243040}
+.bar a{text-decoration:none;font-family:'Baloo 2',cursive;font-weight:800;font-size:14.5px;color:#243040;background:#FEFDF8;border:3px solid #243040;border-radius:999px;padding:10px 20px;box-shadow:0 4px 0 #243040}
+.bar a.c{background:#F2B330;animation:patawig 2.8s ease-in-out infinite}
+.bar a.w{background:#7ac97a}
+@keyframes patawig{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.4deg)}75%{transform:rotate(1.4deg)}}
+.bar a:active{transform:translateY(3px);box-shadow:0 1px 0 #243040}
+
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <section class="hero">
  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
@@ -169,8 +175,8 @@ footer{background:var(--ink);color:#9fb2c8;text-align:center;padding:34px 5vw 11
  </div>
  <div class="map rv"><iframe src="https://www.google.com/maps?cid=5527315611646227106&output=embed" loading="lazy" title="Map"></iframe></div>
 </section>
-<footer>PATATOI · Badaro — demo page by Wissam Sader</footer>
-<div class="bar"><a class="c" href="tel:+9613872687">📞 Call</a><a class="w" href="https://wa.me/9613872687" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=5527315611646227106" target="_blank" rel="noopener">📍 Map</a></div>
+<footer>PATATOI · Badaro</footer>
+<div class="bar"><a class="w" href="https://wa.me/9613872687" target="_blank" rel="noopener">WhatsApp</a><a class="c" href="tel:+9613872687">📞 Call</a><a class="m" href="https://maps.google.com/?cid=5527315611646227106" target="_blank" rel="noopener">🗺 Map</a></div>
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});

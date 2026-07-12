@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mashawish Grill Bar — Barbecue restaurant in Mar Mikhael, Beirut</title>
 <meta name="description" content="Mashawish Grill Bar, barbecue restaurant in Mar Mikhael. Call +961 1 449 390.">
@@ -107,7 +107,7 @@ section{padding:96px 5vw}
 .visit .meta{position:relative;color:rgba(239,230,218,.75);max-width:480px;margin:18px auto 34px;line-height:2}
 .visit .cta{position:relative}
 footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
-.mbar{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;gap:8px;background:var(--char2);border:1.5px solid var(--org);padding:8px}
+.mbar{display:none;position:fixed;z-index:70;gap:8px;left:0;right:0;bottom:0;background:#191512;padding:11px 12px calc(10px + env(safe-area-inset-bottom))}
 .mbar a{flex:1;text-align:center;padding:12px 4px;font-family:'Oswald';font-weight:600;font-size:.9rem;text-transform:uppercase;letter-spacing:.08em;text-decoration:none;color:var(--smoke);border:1px solid rgba(239,230,218,.25)}
 .mbar .c{background:var(--org);color:var(--char2);border-color:var(--org)}
 .mbar .w{background:#2f8a4c;color:#fff;border-color:#2f8a4c}
@@ -120,6 +120,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
  .mbar{display:flex}
  footer{padding-bottom:150px}
 }
+.mbar::before{content:'';position:absolute;top:-8px;left:0;right:0;height:9px;background:linear-gradient(135deg,#E4642B 50%,transparent 50%) 0 0/12px 9px,linear-gradient(225deg,#E4642B 50%,transparent 50%) 6px 0/12px 9px;opacity:.9}.mbar a{background:#221D1A;border:1px solid #8E837A;border-radius:6px;color:#EFE6DA}.mbar a.c{background:#E4642B;border-color:#E4642B;color:#191512;font-weight:800;animation:ember 2.2s ease-in-out infinite}@keyframes ember{0%,100%{box-shadow:0 0 6px rgba(228,100,43,.5)}50%{box-shadow:0 0 18px rgba(228,100,43,.9)}}
+*{-webkit-tap-highlight-color:transparent}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -215,7 +218,7 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
  <a class="m" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener">Map</a>
 </div>
 
-<footer>© Mashawish Grill Bar · Mar Mikhael, Beirut — website demo crafted by Wissam Sader</footer>
+<footer>© Mashawish Grill Bar · Mar Mikhael, Beirut</footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
