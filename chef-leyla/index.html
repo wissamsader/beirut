@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Chef Leyla Bakery — pâtisserie, five stars, sells out by three</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Jost:wght@400;500;600&family=Amiri&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--ivory:#FAF6EF;--pist:#93B48B;--choc:#4A2F27;--rose:#E8C8C0;--ink:#2B211E}
+body{font-family:'Jost',sans-serif;background:var(--ivory);color:var(--ink)}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+/* monogram band */
+.band{display:flex;justify-content:center;align-items:center;gap:26px;padding:20px 5vw;border-bottom:1px solid #e4dbc9;letter-spacing:.34em;font-size:.7rem;text-transform:uppercase;color:#8a7a6a}
+.mono{width:52px;height:52px;border:2px solid var(--choc);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display';font-weight:900;font-size:1.2rem;color:var(--choc)}
+/* hero split */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:86vh}
+.hp{display:flex;flex-direction:column;justify-content:center;padding:9vh 6vw;position:relative}
+.hp .ar{font-family:'Amiri';color:var(--pist);font-size:1.1rem;margin-bottom:18px}
+h1{font-weight:900;font-size:clamp(2.6rem,5.6vw,4.6rem);line-height:1.04}
+h1 em{color:var(--pist);font-style:italic;font-weight:500}
+.tag{margin-top:24px;font-size:1.1rem;line-height:1.8;color:#5d5045;max-width:44ch}
+.stars{margin-top:28px;display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid #eadfce;border-radius:99px;padding:12px 24px;box-shadow:0 10px 30px rgba(74,47,39,.08)}
+.stars b{font-size:1.25rem;color:var(--choc)}
+.stars i{color:#D9A05B;font-style:normal;letter-spacing:.1em}
+.soldout{margin-top:22px;display:inline-block;background:var(--rose);color:#7c4a3f;border-radius:8px;padding:10px 18px;font-weight:600;font-size:.86rem;letter-spacing:.06em}
+.hi{position:relative;overflow:hidden}
+.hi img{width:100%;height:100%;object-fit:cover;display:block}
+.hi .rib{position:absolute;left:0;right:0;bottom:0;background:rgba(250,246,239,.9);backdrop-filter:blur(8px);padding:14px 24px;text-align:center;font-size:.86rem;letter-spacing:.2em;text-transform:uppercase;color:var(--choc)}
+/* story */
+.story{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:.9fr 1fr;gap:6vw;align-items:center}
+.story .im{position:relative}
+.story .im img{width:100%;min-height:440px;object-fit:cover;border-radius:220px 220px 18px 18px;border:1px solid #e4dbc9}
+.story h2{font-weight:900;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.14;margin-bottom:26px}
+.story h2 em{color:var(--pist);font-style:italic}
+.story p{line-height:2;font-size:1.03rem;margin-bottom:18px;color:#5d5045}
+/* highlights — vitrine cards */
+.hl{background:var(--choc);color:var(--ivory);padding:96px 5vw}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:10px}
+.hl .sub{color:var(--rose);margin-bottom:44px;font-style:italic;font-family:'Playfair Display'}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:var(--ivory);color:var(--ink);border-radius:16px 16px 120px 16px;overflow:hidden}
+.hc img{width:100%;height:235px;object-fit:cover;display:block}
+.hc .bd{padding:22px 24px 34px}
+.hc .no{color:var(--pist);font-weight:600;letter-spacing:.22em;font-size:.74rem}
+.hc h3{font-size:1.25rem;font-weight:700;margin:9px 0}
+.hc p{font-size:.93rem;line-height:1.75;color:#5d5045}
+/* menu / counter */
+.menu{max-width:960px;margin:0 auto;padding:100px 5vw;text-align:center}
+.menu h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:10px}
+.menu .sub{color:#8a7a6a;margin-bottom:44px}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:14px 4px;border-bottom:1px solid #e4dbc9;font-size:1.03rem;text-align:left}
+.mrow .a{font-family:'Amiri';color:#8a7a6a}
+.mnote{margin-top:36px;border:1px dashed var(--pist);border-radius:12px;padding:18px 24px;color:#5d5045;font-size:.95rem}
+/* gallery */
+.gal{padding:0 5vw 100px;max-width:1120px;margin:0 auto}
+.gal h2{font-weight:900;font-size:1.6rem;margin-bottom:26px;text-align:center}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gg a{display:block;border-radius:14px;overflow:hidden}
+.gg img{width:100%;height:235px;object-fit:cover;display:block;transition:transform .4s}
+.gg a:hover img{transform:scale(1.05)}
+/* reviews */
+.revs{background:var(--pist);color:#22301f;padding:96px 5vw}
+.revs .in2{max-width:1060px;margin:0 auto;text-align:center}
+.revs h2{font-weight:900;font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:8px}
+.revs .meta{margin-bottom:42px;font-weight:600}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+.rc{background:var(--ivory);border-radius:16px;padding:26px;color:var(--ink);box-shadow:0 14px 34px rgba(34,48,31,.18)}
+.rc .st{color:#D9A05B;letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.85;font-size:.96rem;font-style:italic;font-family:'Playfair Display'}
+.rc .who{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#7d8f76;font-weight:600}
+/* visit */
+.visit{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:26px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e4dbc9;font-size:.98rem}
+.hrs{font-weight:600;color:var(--choc)}
+.btn{display:inline-block;background:var(--choc);color:var(--ivory);padding:17px 36px;border-radius:99px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;text-decoration:none;margin-top:28px}
+.btn.wa{background:#1FA855}
+.map{border-radius:18px;overflow:hidden;min-height:340px;background:#eee;border:1px solid #e4dbc9}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{border-top:1px solid #e4dbc9;color:#8a7a6a;text-align:center;padding:34px 5vw 110px;font-size:.82rem;letter-spacing:.1em}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;box-shadow:0 -8px 30px rgba(43,33,30,.12)}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--choc);color:#fff}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:var(--ivory);color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hi{min-height:46vh;order:-1}.story,.visit{grid-template-columns:1fr}}
+</style></head><body>
+<div class="band"><span>Pâtisserie</span><div class="mono">CL</div><span>George Haddad · Beirut</span></div>
+<section class="hero">
+ <div class="hp">
+  <div class="ar">حلويات الشيف ليلى — خمس نجوم</div>
+  <h1>Baked at dawn.<br><em>Gone by three.</em></h1>
+  <p class="tag">A perfect five stars, and a dessert fridge that empties by mid-afternoon.</p>
+  <div class="stars"><b>5.0</b><i>★★★★★</i><span>67 Google reviews — every one of them five stars</span></div>
+  <br><span class="soldout">⏳ Reviewers' advice: come early — the fridge empties by mid-afternoon</span>
+ </div>
+ <div class="hi"><img src="img/01.jpg" alt="Chef Leyla Bakery"><div class="rib">Chef Leyla · The Bakery</div></div>
+</section>
+<section class="story">
+ <div class="im rv"><img src="img/03.jpg" alt="signature cake" loading="lazy"></div>
+ <div class="rv">
+  <h2>Come early. <em>It sells out.</em></h2>
+  <p>Chef Leyla bakes like someone with nothing to prove and everything sold out by 3 PM. The bakery on George Haddad keeps a perfect 5.0 rating — roulades, éclairs, mousse cakes and meringues made in small batches each morning. Reviewers' advice is unanimous: come early, the fridge doesn't stay full for long.</p>
+  <p>Everything is crafted in small batches with what one reviewer called “so much passion and perfection — you can taste the talent and love in every bite.”</p>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">From the vitrine</h2>
+  <p class="sub rv">this morning's case — while it lasts</p>
+  <div class="hlg"><div class="hc rv"><img src="img/03.jpg" alt="The pistachio-chocolate cake" loading="lazy"><div class="bd"><span class="no">N° 1</span><h3>The pistachio-chocolate cake</h3><p>Glazed, layered, gone by afternoon — the vitrine's crown jewel.</p></div></div><div class="hc rv"><img src="img/02.jpg" alt="Morning roulades" loading="lazy"><div class="bd"><span class="no">N° 2</span><h3>Morning roulades</h3><p>Cream-swirled, feather-light, baked in small daily batches.</p></div></div><div class="hc rv"><img src="img/05.jpg" alt="Éclairs & meringue" loading="lazy"><div class="bd"><span class="no">N° 3</span><h3>Éclairs & meringue</h3><p>French technique, Beirut portions — the counter classics.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <h2 class="rv">The counter</h2>
+ <p class="sub rv">Small-batch — the case changes daily · prices at the counter</p>
+ <div class="rv">
+  <div class="mrow"><span>Mousse cakes &amp; layer cakes</span><span class="a">قوالب موس وطبقات</span></div>
+  <div class="mrow"><span>Roulades</span><span class="a">رولات كريمة</span></div>
+  <div class="mrow"><span>Éclairs</span><span class="a">إكلير</span></div>
+  <div class="mrow"><span>Lemon meringue</span><span class="a">ميرانغ الليمون</span></div>
+  <div class="mrow"><span>Chocolate bonbons</span><span class="a">بونبون شوكولا</span></div>
+  <div class="mrow"><span>Custom celebration cakes</span><span class="a">قوالب المناسبات — بالطلب</span></div>
+ </div>
+ <div class="mnote rv">🎂 Celebration cakes are made to order — message us on WhatsApp a few days ahead.</div>
+</section>
+<section class="gal">
+ <h2 class="rv">This week's case</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Five stars, unanimously</h2>
+  <div class="meta rv">★ 5.0 · 67 reviews on Google</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>The desserts were light and absolutely delicious. I recommend going early to get the best desserts. You won't regret it!</p><div class="who">Roula Rahal</div></div><div class="rc rv"><span class="st">★★★★★</span><p>I'm absolutely raving about Chef Layla Bakery — everything was mouth-wateringly delicious and exceeded my expectations! Highly recommended and I'm already planning my next visit!</p><div class="who">souheir touma</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Chef Leyla Bakery is truly on another level! These are honestly some of the best desserts I've ever had, crafted with so much passion and perfection.</p><div class="who">Jason Madi</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · زورونا</h2>
+  <div class="vrow"><b>Address</b><span>George Haddad, Beirut, Lebanon</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+96171251122" style="color:var(--choc);font-weight:600">+961 71 251 122</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">8 AM – 9:30 PM</span></div>
+  <div class="vrow"><b>Best time</b><span>mornings — before it sells out</span></div>
+  <a class="btn wa" href="https://wa.me/96171251122" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=15384752039051736482&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>CHEF LEYLA BAKERY · George Haddad — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+96171251122">📞 Call</a><a class="w" href="https://wa.me/96171251122" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=15384752039051736482" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

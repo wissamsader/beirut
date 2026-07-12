@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Abu Shadi Lebanese Pizza Manousheh — the hidden manousheh of Hamra</title>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Karla:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--dough:#F3E7CE;--zaatar:#5C6B2F;--char:#211D14;--flame:#E2662B}
+body{font-family:'Karla',sans-serif;background:var(--dough);color:var(--char)}
+h1,h2,.slab{font-family:'Alfa Slab One',serif;font-weight:400}
+/* hero full-bleed */
+.hero{position:relative;min-height:96vh;display:flex;align-items:flex-end}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,29,20,.25),rgba(33,29,20,.86) 78%)}
+.hin{position:relative;z-index:2;color:var(--dough);padding:0 6vw 10vh;max-width:1100px}
+.pill{display:inline-block;background:var(--flame);color:#fff;padding:8px 18px;border-radius:99px;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:clamp(2.2rem,6vw,4.6rem);line-height:1.05;text-shadow:0 4px 26px rgba(0,0,0,.5)}
+h1 span{color:var(--flame)}
+.sub{margin-top:22px;font-size:1.15rem;line-height:1.75;max-width:56ch;color:rgba(243,231,206,.94)}
+.sub b{color:#fff}
+.starline{margin-top:26px;font-weight:700;letter-spacing:.14em;color:#F5C34B}
+/* path strip */
+.path{background:var(--char);color:var(--dough);padding:26px 6vw;font-size:1rem;display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
+.path .dots{letter-spacing:6px;color:var(--flame);font-weight:700}
+/* story */
+.story{max-width:1160px;margin:0 auto;padding:96px 5vw;display:grid;grid-template-columns:.9fr 1fr;gap:6vw;align-items:center}
+.story .im img{width:100%;object-fit:cover;min-height:430px;border-radius:18px;box-shadow:0 24px 60px rgba(33,29,20,.28)}
+.story h2{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.15;margin-bottom:24px}
+.story h2 em{color:var(--flame);font-style:normal}
+.story p{line-height:1.95;margin-bottom:18px;font-size:1.04rem}
+.arnote{font-family:'Noto Naskh Arabic';font-size:1.2rem;color:var(--zaatar);border-right:4px solid var(--zaatar);padding-right:16px;margin-top:8px;direction:rtl;text-align:right}
+/* highlights */
+.hl{background:var(--zaatar);padding:90px 5vw;color:var(--dough)}
+.hl .in2{max-width:1160px;margin:0 auto}
+.hl h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:44px}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:rgba(243,231,206,.08);border:2px dashed rgba(243,231,206,.35);border-radius:16px;overflow:hidden}
+.hc img{width:100%;height:225px;object-fit:cover;display:block}
+.hc .bd{padding:22px}
+.hc .no{color:var(--flame);font-weight:700;letter-spacing:.2em;font-size:.78rem}
+.hc h3{font-size:1.22rem;margin:10px 0;font-family:'Alfa Slab One'}
+.hc p{font-size:.95rem;line-height:1.7;color:rgba(243,231,206,.85)}
+/* menu */
+.menu{max-width:980px;margin:0 auto;padding:96px 5vw}
+.menu h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:10px}
+.menu .sub2{color:var(--zaatar);font-weight:700;margin-bottom:38px}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 4px;border-bottom:2px dotted #cdbd97;font-size:1.05rem}
+.mrow .n{font-weight:700}
+.mrow .a{font-family:'Noto Naskh Arabic';color:#7a6f52}
+.mnote{margin-top:32px;background:var(--char);color:var(--dough);padding:18px 24px;border-radius:12px;text-align:center;font-size:.95rem}
+/* gallery */
+.gal{padding:0 5vw 96px;max-width:1160px;margin:0 auto}
+.gal h2{font-size:1.5rem;margin-bottom:26px}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.gg a{border-radius:14px;overflow:hidden;display:block}
+.gg img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .4s}
+.gg a:hover img{transform:scale(1.06)}
+/* reviews */
+.revs{background:var(--char);color:var(--dough);padding:90px 5vw}
+.revs .in2{max-width:1060px;margin:0 auto}
+.revs h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:8px}
+.revs .meta{color:#F5C34B;font-weight:700;margin-bottom:40px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rc{background:rgba(243,231,206,.06);border-left:5px solid var(--flame);padding:24px;border-radius:0 14px 14px 0}
+.rc p{line-height:1.8;font-size:.98rem;font-style:italic;margin-bottom:14px}
+.rc .who{font-size:.82rem;letter-spacing:.12em;color:#F5C34B;font-weight:700}
+/* visit */
+.visit{max-width:1160px;margin:0 auto;padding:96px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #d9cba6;font-size:.98rem}
+.hrs{font-weight:700;color:var(--zaatar)}
+.btn{display:inline-block;background:var(--flame);color:#fff;padding:17px 34px;border-radius:99px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.84rem;text-decoration:none;margin-top:28px}
+.btn.wa{background:#1FA855}
+.map{border-radius:18px;overflow:hidden;min-height:340px;background:#ddd}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--char);color:rgba(243,231,206,.5);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--flame);color:#fff}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:var(--dough);color:var(--char)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.story,.visit{grid-template-columns:1fr}}
+</style></head><body>
+<section class="hero">
+ <img class="bg" src="img/01.jpg" alt="Abu Shadi Lebanese Pizza Manousheh wood oven">
+ <div class="hin">
+  <span class="pill">Hamra · near the Corniche · bakery · ★ 4.7 (60)</span>
+  <h1>No sign.<br>No storefront.<br><span>Just the manousheh.</span></h1>
+  <p class="sub"><b>Abu Shadi</b> — No sign. No storefront. Just the manousheh people cross Hamra to find. Regulars guard the location like a family recipe: <b>between the Moktar café and the Hamandi butcher</b>, just after the Saudi embassy, on the way down to the Corniche.</p>
+  <div class="starline">★★★★★ “One of the best manakeesh places in Beirut”</div>
+ </div>
+</section>
+<div class="path"><span class="slab">HOW TO FIND IT</span><span class="dots">• • • • •</span><span>Moktar café</span><span class="dots">→</span><span><b>the open kitchen with no sign</b></span><span class="dots">→</span><span>Hamandi butcher</span><span class="dots">• • • • •</span></div>
+<section class="story">
+ <div class="im rv"><img src="img/06.jpg" alt="manousheh" loading="lazy"></div>
+ <div class="rv">
+  <h2>The best manousheh in Hamra <em>hides</em></h2>
+  <p>You could walk past Abu Shadi a hundred times and never see it: a small open kitchen between the Moktar café and the Hamandi butcher, no sign over the door. The locals don't need one. The spinach-and-cheese manousheh here is, by most accounts, the best in Hamra — each one built slowly, deliberately, by the man himself, from six in the morning until the dough runs out.</p>
+  <p class="arnote">مناقيش عالحطب من الساعة ٦ الصبح — سبانخ وجبنة، كشك، زعتر. اسأل عن أبو شادي بين قهوة المختار وملحمة حمندي.</p>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">Worth the treasure hunt</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/05.jpg" alt="Sabanekh & cheese" loading="lazy"><div class="bd"><span class="no">✕ 1</span><h3>Sabanekh & cheese</h3><p>Spinach and cheese in one manousheh — the specialty regulars pledge allegiance to.</p></div></div><div class="hc rv"><img src="img/02.jpg" alt="Keshek & cheese" loading="lazy"><div class="bd"><span class="no">✕ 2</span><h3>Keshek & cheese</h3><p>The mountain classic, done the slow way on a real stone oven.</p></div></div><div class="hc rv"><img src="img/08.jpg" alt="Built one at a time" loading="lazy"><div class="bd"><span class="no">✕ 3</span><h3>Built one at a time</h3><p>No heat lamps, no stack — the owner makes each order meticulously, and it shows.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <h2 class="rv">From the oven</h2>
+ <p class="sub2 rv">Daily 8 AM – 6 PM · everything made to order — prices at the counter.</p>
+ <div class="rv">
+  <div class="mrow"><span class="n">Sabanekh &amp; cheese manousheh</span><span class="a">منقوشة سبانخ وجبنة</span></div>
+  <div class="mrow"><span class="n">Keshek &amp; cheese</span><span class="a">كشك وجبنة</span></div>
+  <div class="mrow"><span class="n">Za'atar</span><span class="a">زعتر</span></div>
+  <div class="mrow"><span class="n">Cheese</span><span class="a">جبنة</span></div>
+  <div class="mrow"><span class="n">Meat &amp; cheese</span><span class="a">لحمة وجبنة</span></div>
+  <div class="mrow"><span class="n">Fatayer &amp; pastries</span><span class="a">فطاير ومعجنات</span></div>
+ </div>
+ <div class="mnote rv">Big portions — one manousheh keeps you full till the afternoon. Message ahead on WhatsApp and it's waiting hot. 📱 <a href="https://wa.me/9613684334" style="color:#F5C34B">+961 3 684 334</a></div>
+</section>
+<section class="gal">
+ <h2 class="rv">The proof</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Found by the lucky</h2>
+  <div class="meta rv">★ 4.7 · 60 Google reviews</div>
+  <div class="rg"><div class="rc rv"><p>One of the best Manakeesh places in Beirut. Not to miss keshek and cheese, sabenegh and cheese.</p><div class="who">— Ghassan Baker (Gusbak88)</div></div><div class="rc rv"><p>One of the best manakeesh in beirut. Great service and huge portions. Dont miss their cheese and spinach manoushe super recommended.</p><div class="who">— Talaviews</div></div><div class="rc rv"><p>I never knew this place existed, it was recommended to me by a local Lebanese.</p><div class="who">— Matthew Lee</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Find us · إذا لقيتنا</h2>
+  <div class="vrow"><b>Landmark</b><span>Between Moktar café &amp; Hamandi butcher, Hamra</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+9613684334" style="color:var(--flame);font-weight:700">+961 3 684 334</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">8 AM – 6 PM</span></div>
+  <div class="vrow"><b>Good to know</b><span>Takeout &amp; delivery · come before the dough runs out</span></div>
+  <a class="btn wa" href="https://wa.me/9613684334" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=4228718559491606678&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>ABU SHADI · Lebanese Pizza Manousheh · Hamra — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9613684334">📞 Call</a><a class="w" href="https://wa.me/9613684334" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=4228718559491606678" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Hamandi Butcher — pick your cut, we grill it</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--black:#191512;--red:#C0392B;--bone:#F2EDE4;--tile:#E9E4D8}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bone);color:var(--black)}
+h1,h2,h3,.osw{font-family:'Oswald',sans-serif}
+/* white tile texture */
+.tiles{background:repeating-linear-gradient(0deg,var(--tile) 0 46px,#d9d3c4 46px 48px),repeating-linear-gradient(90deg,transparent 0 90px,#d9d3c4 90px 92px)}
+/* hero */
+.hero{position:relative;min-height:94vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,21,18,.2),rgba(25,21,18,.9) 82%)}
+.hin{position:relative;z-index:2;color:var(--bone);padding:0 6vw 9vh;width:100%;max-width:1200px;margin:0 auto}
+.stamp{display:inline-block;border:3px solid var(--red);color:var(--red);border-radius:6px;padding:8px 18px;font-family:'Oswald';font-weight:700;letter-spacing:.22em;font-size:.8rem;transform:rotate(-3deg);margin-bottom:24px;background:rgba(242,237,228,.06);text-transform:uppercase}
+h1{font-size:clamp(2.6rem,6.6vw,5.4rem);line-height:1;text-transform:uppercase;font-weight:700}
+h1 span{color:var(--red)}
+.tag{margin-top:20px;font-size:1.12rem;line-height:1.8;max-width:56ch;color:rgba(242,237,228,.9)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;max-width:760px}
+.steps .s{background:rgba(242,237,228,.08);border:1px solid rgba(242,237,228,.3);border-radius:10px;padding:16px 18px;backdrop-filter:blur(4px)}
+.steps .s b{display:block;font-family:'Oswald';font-size:1.05rem;color:var(--red);margin-bottom:4px;text-transform:uppercase}
+.steps .s span{font-size:.85rem;color:rgba(242,237,228,.8)}
+/* story */
+.story{padding:100px 5vw}
+.story .in2{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr .9fr;gap:6vw;align-items:center}
+.story h2{font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.08;text-transform:uppercase;margin-bottom:24px}
+.story h2 em{font-style:normal;color:var(--red)}
+.story p{line-height:1.95;font-size:1.04rem;margin-bottom:18px;color:#43user3b34}
+.story p{color:#433b34}
+.story .im img{width:100%;min-height:430px;object-fit:cover;border-radius:10px;border:5px solid var(--black);box-shadow:14px 14px 0 var(--red)}
+/* diagram divider */
+.diag{background:var(--black);color:var(--bone);padding:34px 5vw;text-align:center}
+.diag svg{max-width:420px;width:90%;opacity:.9}
+.diag .cap{font-family:'Oswald';letter-spacing:.28em;font-size:.75rem;color:var(--red);margin-top:10px;text-transform:uppercase}
+/* highlights */
+.hl{padding:96px 5vw}
+.hl.tiles{}
+.hl .in2{max-width:1140px;margin:0 auto}
+.hl h2{font-size:clamp(1.8rem,3.6vw,2.7rem);text-transform:uppercase;margin-bottom:44px;text-align:center}
+.hl h2 span{color:var(--red)}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#fff;border-radius:12px;overflow:hidden;border:3px solid var(--black);box-shadow:0 16px 38px rgba(25,21,18,.14)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block}
+.hc .bd{padding:22px}
+.hc .no{display:inline-block;background:var(--red);color:#fff;font-family:'Oswald';font-weight:700;width:34px;height:34px;text-align:center;line-height:34px;border-radius:50%;margin-bottom:12px}
+.hc h3{font-size:1.2rem;text-transform:uppercase;margin-bottom:9px}
+.hc p{font-size:.94rem;line-height:1.7;color:#5d554c}
+/* menu */
+.menu{background:var(--black);color:var(--bone);padding:100px 5vw}
+.menu .in2{max-width:980px;margin:0 auto}
+.menu h2{font-size:clamp(1.8rem,3.6vw,2.7rem);text-transform:uppercase;color:var(--red);text-align:center;margin-bottom:8px}
+.menu .sub{text-align:center;color:rgba(242,237,228,.6);margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:1px solid rgba(242,237,228,.18);font-size:1.02rem;font-weight:600}
+.mrow .a{font-family:'Cairo';color:rgba(242,237,228,.55);font-weight:400}
+.mnote{margin-top:38px;text-align:center;border:2px dashed var(--red);border-radius:10px;padding:18px 24px;font-size:.95rem}
+/* gallery */
+.gal{padding:100px 5vw 90px;max-width:1140px;margin:0 auto}
+.gal h2{text-transform:uppercase;font-size:1.6rem;margin-bottom:26px}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.gg a{display:block;border-radius:10px;overflow:hidden;border:3px solid var(--black)}
+.gg img{width:100%;height:225px;object-fit:cover;display:block}
+/* reviews */
+.revs{background:var(--red);color:#fff;padding:96px 5vw}
+.revs .in2{max-width:1040px;margin:0 auto}
+.revs h2{font-size:clamp(1.7rem,3.4vw,2.5rem);text-transform:uppercase;margin-bottom:8px}
+.revs .meta{color:#F3C9C2;margin-bottom:42px;font-weight:600}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rc{background:var(--bone);color:var(--black);border-radius:12px;padding:26px;border:3px solid var(--black)}
+.rc .st{color:var(--red);letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.8;font-size:.96rem}
+.rc .who{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#8a8175;font-weight:700}
+/* visit */
+.visit{max-width:1140px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.8rem,3.6vw,2.7rem);text-transform:uppercase;margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #ddd5c6;font-size:.98rem}
+.hrs{font-weight:700;color:var(--red)}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:17px 34px;border-radius:8px;font-family:'Oswald';font-weight:700;letter-spacing:.1em;font-size:.9rem;text-decoration:none;margin-top:28px;text-transform:uppercase;border:3px solid var(--black);box-shadow:6px 6px 0 var(--black)}
+.map{border-radius:12px;overflow:hidden;min-height:340px;background:#ddd;border:4px solid var(--black)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--black);color:rgba(242,237,228,.5);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--red);color:#fff}
+.bar .m{background:var(--bone);color:var(--black)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.steps{grid-template-columns:1fr}.story .in2,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}}
+</style></head><body>
+<section class="hero">
+ <img class="bg" src="img/01.jpg" alt="Hamandi Butcher">
+ <div class="hin">
+  <span class="stamp">Butcher · Grill · Hamra</span>
+  <h1>PICK YOUR CUT.<br><span>WE GRILL IT.</span></h1>
+  <p class="tag">Pick your cut at the case, they grill it while you wait — Hamra's sidewalk butcher-grill.</p>
+  <div class="steps">
+   <div class="s"><b>1 · The case</b><span>point at today's skewers on the marble</span></div>
+   <div class="s"><b>2 · The coals</b><span>straight onto real charcoal, seared hard</span></div>
+   <div class="s"><b>3 · The table</b><span>ten steps to the sidewalk, sahtein</span></div>
+  </div>
+ </div>
+</section>
+<section class="story">
+ <div class="in2">
+  <div class="rv">
+   <h2>From the case <em>to the coals</em></h2>
+   <p>Hamandi is a butcher shop that grills. You point at the case — tawouk, kafta, lamb cubes, the day's skewers — and it goes straight from the marble to the charcoal to your sidewalk table. Tiny, humble and honest, with meat reviewers call the best-tasting kebab in Beirut. Most of Hamra orders it delivered; the smart ones eat it ten steps from the fire.</p>
+  </div>
+  <div class="im rv"><img src="img/06.jpg" alt="the butcher case" loading="lazy"></div>
+ </div>
+</section>
+<div class="diag">
+ <svg viewBox="0 0 300 130" fill="none" stroke="#F2EDE4" stroke-width="2"><path d="M28 78 C 20 48 44 28 78 26 C 104 10 168 8 196 22 C 238 18 274 38 272 62 C 282 84 258 102 232 100 C 210 116 150 120 116 110 C 84 118 44 108 28 78 Z"/><path d="M96 22 L 96 110 M160 12 L 160 116 M216 20 L 216 104" stroke-dasharray="5 6"/><text x="52" y="66" fill="#C0392B" font-size="13" font-family="Oswald" stroke="none">TAWOUK</text><text x="112" y="66" fill="#C0392B" font-size="13" font-family="Oswald" stroke="none">KAFTA</text><text x="172" y="62" fill="#C0392B" font-size="13" font-family="Oswald" stroke="none">LAMB</text><text x="226" y="62" fill="#C0392B" font-size="13" font-family="Oswald" stroke="none">RIBS</text></svg>
+ <div class="cap">the only diagram you need</div>
+</div>
+<section class="hl tiles">
+ <div class="in2">
+  <h2 class="rv">From case to coals — <span>the system</span></h2>
+  <div class="hlg"><div class="hc rv"><img src="img/06.jpg" alt="Step 1 — pick your cut" loading="lazy"><div class="bd"><span class="no">1</span><h3>Step 1 — pick your cut</h3><p>The butcher case is the menu: skewers built fresh through the day.</p></div></div><div class="hc rv"><img src="img/04.jpg" alt="Step 2 — the coals" loading="lazy"><div class="bd"><span class="no">2</span><h3>Step 2 — the coals</h3><p>Kafta, tawouk and lamb over real charcoal, seared hard.</p></div></div><div class="hc rv"><img src="img/02.jpg" alt="Step 3 — the feast" loading="lazy"><div class="bd"><span class="no">3</span><h3>Step 3 — the feast</h3><p>Hummus, tabbouleh, grilled bread and the platter that covers the table.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The grill list</h2>
+  <p class="sub rv">Whatever's beautiful at the case today · prices at the counter</p>
+  <div class="mgrid rv">
+   <div class="mrow"><span>Tawouk skewers</span><span class="a">طاووق</span></div>
+   <div class="mrow"><span>Kafta skewers</span><span class="a">كفتة</span></div>
+   <div class="mrow"><span>Lamb cubes — lahm mashwi</span><span class="a">لحم مشوي</span></div>
+   <div class="mrow"><span>Mixed grill platter</span><span class="a">مشاوي مشكلة</span></div>
+   <div class="mrow"><span>Hummus &amp; tabbouleh</span><span class="a">حمص وتبولة</span></div>
+   <div class="mrow"><span>Grilled flatbread</span><span class="a">خبز مشوي</span></div>
+   <div class="mrow"><span>Fries &amp; garlic</span><span class="a">بطاطا وتوم</span></div>
+   <div class="mrow"><span>Fresh cuts to take home</span><span class="a">لحوم طازجة</span></div>
+  </div>
+  <div class="mnote rv">🥩 It's a real butcher shop — take the meat home raw, or let the charcoal have it.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">The daily case</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Carnivore consensus</h2>
+  <div class="meta rv">★ 4.4 · 69 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>We ordered tabbouleh and mashawi mshakkal — everything was absolutely delicious and of great quality. It's a very humble, tiny place, perfect if you're looking for authentic flavors.</p><div class="who">Hiba M. Hammoud</div></div><div class="rc rv"><span class="st">★★★★★</span><p>The meat is tasty and clean. Best lebanese snack I've had so far. Prices are fair for the quality.</p><div class="who">Maurice Salameh</div></div><div class="rc rv"><span class="st">★★★★★</span><p>It's a sidewalk dining experience which is worth it for the food. Had the 3 skewers bbq mix platter — tawook amazing.</p><div class="who">Ali Berjawi</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us</h2>
+  <div class="vrow"><b>Address</b><span>Hamra — near the Saudi embassy, toward the Corniche</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+9611740704" style="color:var(--red);font-weight:700">+961 1 740 704</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">8 AM – 11 PM</span></div>
+  <div class="vrow"><b>Dine-in · Takeout · Delivery</b><span>sidewalk tables + delivery apps</span></div>
+  <a class="btn" href="tel:+9611740704">Call +961 1 740 704</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=8427857005483538168&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>HAMANDI BUTCHER · Hamra — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9611740704">📞 Call</a><a class="m" href="https://maps.google.com/?cid=8427857005483538168" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

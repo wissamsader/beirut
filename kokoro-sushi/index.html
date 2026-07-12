@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Kokoro Sushi — the Japanese pub of Badaro</title>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Karla:wght@300;400;600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--sumi:#15181A;--matcha:#5C7A55;--coral:#E8836F;--paper:#F4F1E8}
+body{font-family:'Karla',sans-serif;background:var(--sumi);color:var(--paper)}
+h1,h2,h3,.min{font-family:'Zen Old Mincho',serif}
+/* kokoro watermark */
+.kanji{position:fixed;right:-4vw;bottom:-8vh;font-family:'Noto Sans JP';font-size:46vh;color:rgba(232,131,111,.06);z-index:0;pointer-events:none;font-weight:700}
+/* noren header */
+.noren{display:flex;border-bottom:2px solid rgba(244,241,232,.2);position:relative;z-index:2}
+.noren div{flex:1;text-align:center;padding:22px 8px;border-right:1px solid rgba(244,241,232,.15);font-family:'Zen Old Mincho';letter-spacing:.3em;font-size:.78rem;text-transform:uppercase}
+.noren div:last-child{border-right:0}
+.noren .jp{color:var(--coral)}
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;z-index:1}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,24,26,.2),rgba(21,24,26,.92) 82%)}
+.hin{position:relative;z-index:2;padding:0 6vw 9vh;max-width:1100px}
+.jp-line{font-family:'Noto Sans JP';color:var(--coral);letter-spacing:.5em;font-size:.85rem;margin-bottom:18px}
+h1{font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.06;font-weight:900}
+h1 em{font-style:normal;color:var(--coral)}
+.tag{margin-top:22px;font-size:1.12rem;line-height:1.85;max-width:54ch;color:rgba(244,241,232,.88);font-weight:300}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.chips span{border:1px solid rgba(244,241,232,.35);padding:10px 20px;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.chips .hot{background:var(--coral);color:var(--sumi);border-color:var(--coral);font-weight:600}
+/* shoji story */
+.story{position:relative;z-index:1;padding:110px 5vw;background:
+ linear-gradient(rgba(244,241,232,.06) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(244,241,232,.06) 1px,transparent 1px);
+ background-size:110px 110px}
+.story .in2{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .9fr;gap:6vw;align-items:center}
+.story h2{font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.2;margin-bottom:26px;font-weight:700}
+.story h2 em{font-style:normal;color:var(--coral)}
+.story p{line-height:2;font-size:1.03rem;margin-bottom:18px;color:rgba(244,241,232,.82);font-weight:300}
+.story .im{position:relative;border:1px solid rgba(244,241,232,.25);padding:14px}
+.story .im img{width:100%;min-height:430px;object-fit:cover;display:block}
+.story .im .cap{position:absolute;bottom:-14px;right:22px;background:var(--coral);color:var(--sumi);font-family:'Noto Sans JP';padding:7px 16px;font-size:.8rem;letter-spacing:.2em}
+/* highlights */
+.hl{position:relative;z-index:1;background:var(--paper);color:var(--sumi);padding:100px 5vw}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:12px;font-weight:900}
+.hl .sub{color:var(--matcha);margin-bottom:46px;font-family:'Noto Sans JP';letter-spacing:.2em;font-size:.85rem}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#fff;overflow:hidden;border:1px solid #ddd6c2;box-shadow:0 16px 40px rgba(21,24,26,.1)}
+.hc img{width:100%;height:240px;object-fit:cover;display:block}
+.hc .bd{padding:24px}
+.hc .no{font-family:'Noto Sans JP';color:var(--coral);font-size:1.2rem}
+.hc h3{font-size:1.25rem;margin:8px 0;font-weight:700}
+.hc p{font-size:.94rem;line-height:1.8;color:#4c5248}
+/* menu */
+.menu{position:relative;z-index:1;padding:110px 5vw}
+.menu .in2{max-width:940px;margin:0 auto}
+.menu h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:900;text-align:center;margin-bottom:8px}
+.menu h2 em{font-style:normal;color:var(--coral)}
+.menu .sub{text-align:center;color:rgba(244,241,232,.55);margin-bottom:48px;font-family:'Noto Sans JP';letter-spacing:.16em;font-size:.85rem}
+.mrow{display:flex;justify-content:space-between;gap:16px;padding:15px 4px;border-bottom:1px solid rgba(244,241,232,.14);font-size:1.04rem}
+.mrow .n{font-weight:600}
+.mrow .d{color:rgba(244,241,232,.5);font-size:.86rem;flex:1;text-align:right;font-weight:300}
+.mnote{margin-top:40px;text-align:center;border:1px solid var(--coral);padding:20px 26px;color:var(--coral);letter-spacing:.06em}
+/* gallery */
+.gal{position:relative;z-index:1;padding:0 5vw 110px;max-width:1120px;margin:0 auto}
+.gal h2{font-weight:900;font-size:1.7rem;margin-bottom:28px}
+.gg{columns:3;column-gap:14px}
+.gg a{display:block;margin-bottom:14px;border:1px solid rgba(244,241,232,.25);padding:8px;background:rgba(244,241,232,.03)}
+.gg img{width:100%;display:block}
+/* reviews */
+.revs{position:relative;z-index:1;background:var(--matcha);color:var(--paper);padding:100px 5vw}
+.revs .in2{max-width:1040px;margin:0 auto}
+.revs h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;margin-bottom:8px}
+.revs .meta{color:#D9E4CE;margin-bottom:44px;font-family:'Noto Sans JP';letter-spacing:.14em;font-size:.85rem}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rc{background:var(--paper);color:var(--sumi);padding:28px;border-top:4px solid var(--coral)}
+.rc .st{color:var(--coral);letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.85;font-size:.96rem}
+.rc .who{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--matcha);font-weight:600}
+/* visit */
+.visit{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:110px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:900;margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(244,241,232,.18);font-size:.98rem}
+.hrs{font-weight:600;color:var(--coral)}
+.btn{display:inline-block;background:var(--coral);color:var(--sumi);padding:17px 38px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;text-decoration:none;margin-top:28px}
+.btn.wa{background:#1FA855;color:#fff}
+.map{border:1px solid rgba(244,241,232,.3);min-height:340px;background:#222}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{border-top:1px solid rgba(244,241,232,.15);color:rgba(244,241,232,.45);text-align:center;padding:34px 5vw 110px;font-size:.8rem;letter-spacing:.12em;position:relative;z-index:1}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--coral);color:var(--sumi)}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:var(--paper);color:var(--sumi)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.story .in2,.visit{grid-template-columns:1fr}.gg{columns:2}.noren div{letter-spacing:.14em}}
+</style></head><body>
+<div class="kanji">心</div>
+<div class="noren"><div>Sushi</div><div class="jp">計お計おろ 心</div><div>Japanese pub</div><div>Badaro</div></div>
+<section class="hero">
+ <img class="bg" src="img/07.jpg" alt="Kokoro Sushi garden terrace">
+ <div class="hin">
+  <div class="jp-line">こころ — KOKORO MEANS HEART</div>
+  <h1>Open sushi under<br><em>a ceiling of flowers.</em></h1>
+  <p class="tag">Open sushi under a canopy of flowers — Badaro's Japanese pub, till midnight.</p>
+  <div class="chips"><span class="hot">Open-sushi formula</span><span>Garden terrace</span><span>DJ evenings</span><span>★ 4.8 · 107 reviews</span></div>
+ </div>
+</section>
+<section class="story">
+ <div class="in2">
+  <div class="rv">
+   <h2>心 — <em>the heart of Badaro</em></h2>
+   <p>Kokoro means heart, and the Badaro house wears it openly: a garden terrace under a ceiling of flowers, platters of open sushi built like bouquets, mochi for the table and a DJ warming the evenings. The open-sushi formula made it famous; the terrace made it stay. A second branch lives in Deir el Qamar, but this is the original heartbeat.</p>
+  </div>
+  <div class="im rv"><img src="img/01.jpg" alt="Kokoro storefront" loading="lazy"><div class="cap">バダロ · BADARO</div></div>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">The house arrangements</h2>
+  <p class="sub rv">おまかせ — LEAVE IT TO THE KITCHEN</p>
+  <div class="hlg"><div class="hc rv"><img src="img/05.jpg" alt="The open-sushi platter" loading="lazy"><div class="bd"><span class="no">心</span><h3>The open-sushi platter</h3><p>All-you-can-order rounds, built like flower arrangements.</p></div></div><div class="hc rv"><img src="img/08.jpg" alt="The dragon roll" loading="lazy"><div class="bd"><span class="no">心</span><h3>The dragon roll</h3><p>Avocado scales, torched edges — the plate that tours Instagram.</p></div></div><div class="hc rv"><img src="img/06.jpg" alt="The flower terrace" loading="lazy"><div class="bd"><span class="no">心</span><h3>The flower terrace</h3><p>A garden ceiling in the middle of Badaro — evenings go long here.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The <em>open sushi</em> deal</h2>
+  <p class="sub rv">メニュー — PRICES AT THE TABLE &amp; ON WHATSAPP</p>
+  <div class="rv">
+   <div class="mrow"><span class="n">Open sushi — all-you-can-order</span><span class="d">rounds of the full sushi list, built like bouquets</span></div>
+   <div class="mrow"><span class="n">Signature platters</span><span class="d">salmon gardens · rainbow sets · crab specials</span></div>
+   <div class="mrow"><span class="n">Dragon &amp; specialty rolls</span><span class="d">avocado scales, torched edges</span></div>
+   <div class="mrow"><span class="n">Sashimi &amp; nigiri</span><span class="d">cut to order</span></div>
+   <div class="mrow"><span class="n">Crazy shrimp tempura</span><span class="d">the review favorite</span></div>
+   <div class="mrow"><span class="n">Mochi for the table</span><span class="d">the soft landing</span></div>
+   <div class="mrow"><span class="n">Drinks &amp; the pub side</span><span class="d">beer add-on with open sushi</span></div>
+  </div>
+  <div class="mnote rv">Ask for the open-sushi formula — it's the reason the terrace fills up. Second home: Deir el Qamar.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">The garden, framed</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Hearts on record</h2>
+  <div class="meta rv">★ 4.8 · 107 GOOGLE REVIEWS</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★☆</span><p>Kokoro Sushi in Badaro offers an impressive dining experience, starting with its stunning décor. The atmosphere is lively and vibrant, enhanced by a DJ who adds a nice touch to the ambiance.</p><div class="who">Antony Kahwagi</div></div><div class="rc rv"><span class="st">★★★★☆</span><p>We ordered open sushi. The food was good. The place offers a great variety. Peter ensured a perfect service throughout our meal, shout out to him!</p><div class="who">Joe</div></div><div class="rc rv"><span class="st">★★★★☆</span><p>Badaro branch — fast service, nice decoration. We enjoyed our lunch: salmon, crab set and crazy shrimp tempura.</p><div class="who">Bouchra El Sayed</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · いらっしゃいませ</h2>
+  <div class="vrow"><b>Address</b><span>Badaro, Beirut</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+96181810155" style="color:var(--coral);font-weight:600">+961 81 810 155</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">12 PM – 12 AM</span></div>
+  <div class="vrow"><b>Good to know</b><span>garden terrace · DJ evenings · we are OPEN</span></div>
+  <a class="btn wa" href="https://wa.me/96181810155" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=17423534326215671862&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>KOKORO SUSHI · JAPANESE PUB · BADARO — DEMO PAGE BY WISSAM SADER</footer>
+<div class="bar"><a class="c" href="tel:+96181810155">📞 Call</a><a class="w" href="https://wa.me/96181810155" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=17423534326215671862" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Al Daouk Sweets Tareek Jdeede — home of the Daoukieh since 1961</title>
+<link href="https://fonts.googleapis.com/css2?family=Marhey:wght@500;700&family=Readex+Pro:wght@300;400;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--pist:#7FA65A;--pdark:#4C6B33;--ashta:#FDF8EC;--syrup:#D9A05B;--ink:#33351F}
+body{font-family:'Readex Pro',sans-serif;background:var(--ashta);color:var(--ink)}
+h1,h2,h3{font-family:'Marhey',cursive}
+.geo{height:22px;background:repeating-linear-gradient(45deg,var(--pdark) 0 10px,transparent 10px 20px),repeating-linear-gradient(-45deg,var(--pdark) 0 10px,var(--pist) 10px 20px)}
+/* hero: layered bands like the dessert */
+.hero{position:relative}
+.layer-p{background:var(--pist);color:#fff;padding:12vh 6vw 7vh;text-align:center;position:relative}
+.layer-p:after{content:"";position:absolute;left:0;right:0;bottom:-28px;height:30px;background:var(--pist);clip-path:polygon(0 0,100% 0,100% 30%,94% 90%,86% 20%,78% 85%,70% 25%,62% 90%,54% 20%,46% 85%,38% 25%,30% 90%,22% 20%,14% 85%,6% 25%,0 80%);z-index:2}
+.kick{letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;font-weight:600;color:#E8F2DB;margin-bottom:18px}
+h1{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.1;text-shadow:0 4px 0 rgba(51,53,31,.25)}
+.artitle{font-family:'Amiri';font-size:clamp(1.4rem,3.4vw,2.2rem);margin-top:10px;color:#E8F2DB}
+.tag{margin:22px auto 0;max-width:58ch;line-height:1.85;font-size:1.06rem;color:#F0F6E6}
+.layer-a{padding:9vh 6vw 7vh;text-align:center}
+.layer-a img{width:min(760px,92vw);border-radius:22px;box-shadow:0 30px 70px rgba(51,53,31,.25);display:block;margin:0 auto}
+.stat{display:inline-flex;gap:26px;margin-top:36px;background:#fff;border:1px solid #e5dcc2;border-radius:99px;padding:14px 34px;font-weight:600;box-shadow:0 12px 30px rgba(51,53,31,.08)}
+.stat b{color:var(--pdark)}
+/* story */
+.story{max-width:1120px;margin:0 auto;padding:90px 5vw;display:grid;grid-template-columns:1fr .9fr;gap:6vw;align-items:center}
+.story h2{font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.15;color:var(--pdark);margin-bottom:24px}
+.story h2 em{font-style:normal;color:var(--syrup)}
+.story p{line-height:2;font-size:1.03rem;margin-bottom:18px;color:#4f5138}
+.story .im img{width:100%;min-height:430px;object-fit:cover;border-radius:200px 200px 22px 22px;border:6px solid var(--pist)}
+/* highlights */
+.hl{background:var(--syrup);padding:96px 5vw;color:var(--ink)}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-size:clamp(1.8rem,3.6vw,2.7rem);color:#fff;text-shadow:0 3px 0 rgba(51,53,31,.2);margin-bottom:44px;text-align:center}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:var(--ashta);border-radius:20px;overflow:hidden;box-shadow:0 18px 40px rgba(51,53,31,.18)}
+.hc img{width:100%;height:235px;object-fit:cover;display:block}
+.hc .bd{padding:22px;text-align:center}
+.hc .no{font-family:'Amiri';color:var(--pdark);font-size:1rem}
+.hc h3{font-size:1.25rem;margin:8px 0;color:var(--pdark)}
+.hc p{font-size:.93rem;line-height:1.75;color:#4f5138}
+/* menu */
+.menu{max-width:960px;margin:0 auto;padding:100px 5vw;text-align:center}
+.menu h2{font-size:clamp(1.8rem,3.6vw,2.7rem);color:var(--pdark);margin-bottom:8px}
+.menu .sub{color:#8a8a6a;margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 46px;text-align:left}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:12px 4px;border-bottom:2px dotted #d8d0b0;font-size:1.02rem}
+.mrow .a{font-family:'Amiri';color:#7d7d5c;font-size:1.05rem}
+.mnote{margin-top:38px;background:var(--pist);color:#fff;border-radius:99px;padding:16px 30px;display:inline-block;font-weight:600}
+/* gallery */
+.gal{padding:0 5vw 100px;max-width:1120px;margin:0 auto}
+.gal h2{color:var(--pdark);font-size:1.6rem;margin-bottom:26px;text-align:center}
+.gg{columns:4;column-gap:12px}
+.gg a{display:block;margin-bottom:12px;border-radius:14px;overflow:hidden}
+.gg img{width:100%;display:block}
+/* reviews */
+.revs{background:var(--pdark);color:var(--ashta);padding:96px 5vw}
+.revs .in2{max-width:1040px;margin:0 auto;text-align:center}
+.revs h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:8px}
+.revs .meta{color:#CADBAF;margin-bottom:44px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+.rc{background:rgba(253,248,236,.08);border:1px solid rgba(253,248,236,.2);border-radius:18px;padding:26px}
+.rc .st{color:var(--syrup);letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.85;font-size:.96rem}
+.rc .who{font-size:.8rem;letter-spacing:.14em;color:#CADBAF;font-weight:600}
+/* visit */
+.visit{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.8rem,3.6vw,2.7rem);color:var(--pdark);margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e0d8ba;font-size:.98rem}
+.hrs{font-weight:600;color:var(--pdark)}
+.btn{display:inline-block;background:var(--pdark);color:#fff;padding:17px 36px;border-radius:99px;font-weight:600;letter-spacing:.08em;font-size:.86rem;text-decoration:none;margin-top:28px}
+.map{border-radius:20px;overflow:hidden;min-height:340px;background:#e5e0cc;border:5px solid var(--pist)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:rgba(253,248,236,.55);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--pdark);color:#fff}
+.bar .m{background:var(--ashta);color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.story,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.gg{columns:2}}
+</style></head><body>
+<div class="geo"></div>
+<section class="hero">
+ <div class="layer-p">
+  <div class="kick">Lebanese sweets · Tareek Jdeede · Cola · since 1961</div>
+  <h1>The family that invented the Daoukieh</h1>
+  <div class="artitle">حلويات الداعوق — بيت الداعوقية منذ ١٩٦١</div>
+  <p class="tag">Home of the Daoukieh since 1961 — pistachio, ashta and syrup layered into a Beirut legend.</p>
+ </div>
+ <div class="layer-a">
+  <img src="img/03.jpg" alt="the original Daoukieh">
+  <div class="stat"><span><b>★ 4.3</b> · 175 reviews</span><span><b>7</b> branches</span><span><b>63</b> years</span></div>
+ </div>
+</section>
+<section class="story">
+ <div class="rv">
+  <h2>The family that <em>invented</em> a dessert</h2>
+  <p>In 1961 the Daouk family layered ground pistachio over fresh ashta, poured syrup on top, and accidentally invented a dessert the whole city now calls by their name. The Tareek Jdeede shop near Cola is where the Daoukieh was born and where it's still made the original way — along with baklava, maamoul, znoud and every classic in the vitrine.</p>
+ </div>
+ <div class="im rv"><img src="img/01.jpg" alt="Al Daouk storefront" loading="lazy"></div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">Layer by layer</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/03.jpg" alt="The original Daoukieh" loading="lazy"><div class="bd"><span class="no">طبقة 1</span><h3>The original Daoukieh</h3><p>Pistachio green over ashta white — cut in squares, sold by the tray.</p></div></div><div class="hc rv"><img src="img/08.jpg" alt="The celebration cake" loading="lazy"><div class="bd"><span class="no">طبقة 2</span><h3>The celebration cake</h3><p>The Daoukieh grown up: layered, ringed with cashews, built to order.</p></div></div><div class="hc rv"><img src="img/07.jpg" alt="Made in-house, daily" loading="lazy"><div class="bd"><span class="no">طبقة 3</span><h3>Made in-house, daily</h3><p>The back room never stops — ashta folded, trays syruped, mornings first.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <h2 class="rv">The sweets board</h2>
+ <p class="sub rv">From the shop's own board — أسعار اليوم في المحل · today's prices at the counter</p>
+ <div class="mgrid rv">
+  <div class="mrow"><span>Daoukieh — the original</span><span class="a">داعوقية</span></div>
+  <div class="mrow"><span>Daoukieh Extra</span><span class="a">داعوقية اكسترا</span></div>
+  <div class="mrow"><span>Mixed baklava</span><span class="a">بقلاوة مشكلة</span></div>
+  <div class="mrow"><span>Borma</span><span class="a">برما</span></div>
+  <div class="mrow"><span>Ballourieh</span><span class="a">بلورية</span></div>
+  <div class="mrow"><span>Kol w shkor</span><span class="a">كول وشكور</span></div>
+  <div class="mrow"><span>Ward el Sham</span><span class="a">ورد الشام</span></div>
+  <div class="mrow"><span>Osmalliyeh</span><span class="a">عثملية</span></div>
+  <div class="mrow"><span>Maamoul — dates / walnut / pistachio</span><span class="a">معمول تمر · جوز · فستق</span></div>
+  <div class="mrow"><span>Maamoul mad — pistachio / ashta</span><span class="a">معمول مد فستق · قشطة</span></div>
+  <div class="mrow"><span>Sfouf</span><span class="a">صفوف</span></div>
+  <div class="mrow"><span>Nammoura</span><span class="a">نمورة</span></div>
+ </div>
+ <div class="mnote rv">🎁 Trays packed for gifting — call ahead and it's ready.</div>
+</section>
+<section class="gal">
+ <h2 class="rv">From the marble counters</h2>
+ <div class="gg rv"><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/12.jpg" target="_blank"><img src="img/12.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Sweet on the record</h2>
+  <div class="meta rv">★ 4.3 · 175 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>Truly one of those places that carries both tradition and excellence in every detail.</p><div class="who">Larochka C.</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Al Daouk Sweets offers top-quality Lebanese desserts, and their Daoukiye is a standout — filled with traditional Lebanese clotted cream and bursting with authentic flavor. Generous portions and great prices make it a must-visit!</p><div class="who">Mohamad Younes</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Their daoukieh hits the spot, creamy and with a nice pistachio crunch.</p><div class="who">Mohamad Antar</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · تفضلوا</h2>
+  <div class="vrow"><b>Address</b><span>Fleyfel, Tareek Jdeede — near Cola &amp; BAU</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+9611300203" style="color:var(--pdark);font-weight:600">+961 1 300 203</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">7 AM – 10 PM</span></div>
+  <div class="vrow"><b>Takeout &amp; delivery</b><span>trays, boxes, weddings</span></div>
+  <a class="btn" href="tel:+9611300203">Call +961 1 300 203</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=15830589012095761585&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>AL DAOUK SWEETS · Tareek Jdeede · since 1961 — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9611300203">📞 Call</a><a class="m" href="https://maps.google.com/?cid=15830589012095761585" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

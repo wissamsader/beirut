@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Abu Hassan Hummus & Fool — hummus &amp; foul, open 24 hours</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Archivo+Black&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--night:#101A38;--navy:#20315E;--dawn:#F0B93B;--paper:#F6F1E4;--red:#CE4A33}
+body{font-family:'Archivo',sans-serif;background:var(--night);color:var(--paper)}
+h1,h2,.blk{font-family:'Archivo Black',sans-serif}
+/* hero */
+.hero{position:relative;min-height:96vh;display:flex;align-items:center;overflow:hidden}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(16,26,56,.25),rgba(16,26,56,.94) 75%)}
+.hin{position:relative;z-index:2;padding:0 6vw;max-width:1150px}
+.open{display:inline-flex;align-items:center;gap:10px;background:rgba(240,185,59,.14);border:2px solid var(--dawn);color:var(--dawn);border-radius:99px;padding:10px 22px;font-weight:900;letter-spacing:.18em;font-size:.8rem;margin-bottom:28px;text-transform:uppercase}
+.open .dot{width:11px;height:11px;border-radius:50%;background:#39D172;box-shadow:0 0 0 0 rgba(57,209,114,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 13px rgba(57,209,114,0)}100%{box-shadow:0 0 0 0 rgba(57,209,114,0)}}
+h1{font-size:clamp(2.6rem,6.8vw,5.2rem);line-height:1;letter-spacing:-.01em}
+h1 .y{color:var(--dawn)}
+.ar-title{font-family:'Cairo';font-size:1.25rem;color:var(--dawn);margin-top:14px}
+.sub{margin-top:24px;font-size:1.14rem;line-height:1.8;max-width:56ch;color:rgba(246,241,228,.85)}
+.clockrow{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.clockrow span{border:1px solid rgba(246,241,228,.3);border-radius:12px;padding:12px 18px;font-weight:700;font-size:.86rem}
+.clockrow span b{color:var(--dawn);display:block;font-size:1.1rem}
+/* story — night to dawn gradient */
+.story{background:linear-gradient(180deg,var(--night),var(--navy) 60%,#6B5A8E 100%);padding:100px 5vw}
+.story .in2{max-width:1150px;margin:0 auto;display:grid;grid-template-columns:1fr .85fr;gap:6vw;align-items:center}
+.story h2{font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.12;margin-bottom:26px}
+.story h2 em{color:var(--dawn);font-style:normal}
+.story p{line-height:1.95;font-size:1.04rem;margin-bottom:18px;color:rgba(246,241,228,.88)}
+.story .im img{width:100%;min-height:430px;object-fit:cover;border-radius:20px;box-shadow:0 30px 70px rgba(0,0,0,.45)}
+.tick{display:flex;gap:12px;align-items:center;margin-top:24px;background:rgba(16,26,56,.5);border-radius:14px;padding:16px 20px;font-size:.95rem}
+.tick b{color:var(--dawn)}
+/* highlights — dawn */
+.hl{background:linear-gradient(180deg,#6B5A8E,var(--dawn) 130%);padding:96px 5vw}
+.hl .in2{max-width:1150px;margin:0 auto}
+.hl h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:44px}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:var(--paper);color:var(--night);border-radius:20px;overflow:hidden;box-shadow:0 18px 44px rgba(16,26,56,.3)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block}
+.hc .bd{padding:22px}
+.hc .no{display:inline-block;background:var(--night);color:var(--dawn);font-weight:900;border-radius:8px;padding:4px 12px;font-size:.8rem;margin-bottom:12px}
+.hc h3{font-family:'Archivo Black';font-size:1.15rem;margin-bottom:10px}
+.hc p{font-size:.94rem;line-height:1.7;color:#4a4436}
+/* menu — day */
+.menu{background:var(--paper);color:var(--night);padding:100px 5vw}
+.menu .in2{max-width:1000px;margin:0 auto}
+.menu h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:8px}
+.menu .sub2{color:var(--red);font-weight:700;margin-bottom:40px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px 48px}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:2px dotted #cfc6ad;font-size:1.02rem;font-weight:500}
+.mrow .a{font-family:'Cairo';color:#7d7460}
+.mnote{margin-top:36px;background:var(--night);color:var(--paper);border-radius:14px;padding:18px 24px;text-align:center;font-size:.95rem}
+.mnote b{color:var(--dawn)}
+/* gallery */
+.gal{background:var(--paper);padding:0 5vw 100px}
+.gal .in2{max-width:1150px;margin:0 auto}
+.gal h2{color:var(--night);font-size:1.5rem;margin-bottom:26px}
+.gg{columns:3;column-gap:14px}
+.gg a{display:block;margin-bottom:14px;border-radius:14px;overflow:hidden}
+.gg img{width:100%;display:block}
+/* reviews */
+.revs{background:var(--navy);padding:96px 5vw}
+.revs .in2{max-width:1060px;margin:0 auto}
+.revs h2{font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:8px}
+.revs .meta{color:var(--dawn);font-weight:700;margin-bottom:40px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rc{background:rgba(246,241,228,.06);border:1px solid rgba(246,241,228,.15);border-radius:18px;padding:26px}
+.rc .st{color:var(--dawn);letter-spacing:.2em;font-size:.85rem}
+.rc p{margin:14px 0 16px;line-height:1.8;font-size:.97rem}
+.rc .who{font-size:.83rem;letter-spacing:.1em;color:var(--dawn);font-weight:700}
+/* visit */
+.visit{padding:96px 5vw;max-width:1150px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(246,241,228,.2);font-size:.98rem}
+.hrs{font-weight:900;color:#39D172}
+.btn{display:inline-block;background:var(--dawn);color:var(--night);padding:17px 34px;border-radius:14px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.84rem;text-decoration:none;margin-top:28px}
+.map{border-radius:20px;overflow:hidden;min-height:340px;background:#223}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{color:rgba(246,241,228,.45);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--dawn);color:var(--night)}
+.bar .m{background:var(--paper);color:var(--night)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.story .in2,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.gg{columns:2}}
+</style></head><body>
+<section class="hero">
+ <img class="bg" src="img/10.jpg" alt="Abu Hassan Hummus & Fool at night">
+ <div class="hin">
+  <div class="open"><span class="dot"></span> OPEN NOW — WE NEVER CLOSED</div>
+  <h1>HUMMUS AT 8 AM.<br>FATTEH AT MIDNIGHT.<br><span class="y">FOUL AT 4 IN THE MORNING.</span></h1>
+  <div class="ar-title">مطعم أبو حسان — حمص وفول ٢٤ ساعة</div>
+  <p class="sub">Hummus, foul and fatteh — 24 hours a day, 7 days a week, on the western end of Hamra. Huge portions, honest prices, and a kitchen that treats 3 AM like lunchtime.</p>
+  <div class="clockrow"><span><b>24/7</b>never closes</span><span><b>★ 4.2</b>650 reviews</span><span><b>Hamra West · open 24/7</b>Ras Beirut</span><span><b>Delivery</b>day &amp; night</span></div>
+ </div>
+</section>
+<section class="story">
+ <div class="in2">
+  <div class="rv">
+   <h2>The place that <em>never</em> closes</h2>
+   <p>Some restaurants have opening hours; Abu Hassan has a light that never goes off. Day shift or 4 AM, the pots of foul stay warm, the fattet laban keeps coming, and the portions stay famously huge. It's the place Ras Beirut trusts at every hour — after work, after the airport, after everything else has closed.</p>
+   <div class="tick">🕐 <span>Right now — whatever the hour — the answer is: <b>yes, we're open.</b></span></div>
+  </div>
+  <div class="im rv"><img src="img/09.jpg" alt="fatteh" loading="lazy"></div>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">What the clock orders</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/09.jpg" alt="Fattet laban" loading="lazy"><div class="bd"><span class="no">1</span><h3>Fattet laban</h3><p>Warm chickpeas, toasted bread, garlicky yogurt, cashews — the house monument.</p></div></div><div class="hc rv"><img src="img/04.jpg" alt="The full spread" loading="lazy"><div class="bd"><span class="no">2</span><h3>The full spread</h3><p>Foul, msabaha, pickles and mint by the bouquet — breakfast at any hour.</p></div></div><div class="hc rv"><img src="img/06.jpg" alt="The pink pickles" loading="lazy"><div class="bd"><span class="no">3</span><h3>The pink pickles</h3><p>Turnips like neon — the color every table photo leads with.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The eternal menu</h2>
+  <p class="sub2 rv">The classics, any hour — today's prices at the counter.</p>
+  <div class="mgrid rv">
+   <div class="mrow"><span>Hummus bi tahini</span><span class="a">حمص بطحينة</span></div>
+   <div class="mrow"><span>Foul mdammas</span><span class="a">فول مدمس</span></div>
+   <div class="mrow"><span>Fattet laban</span><span class="a">فتة باللبن</span></div>
+   <div class="mrow"><span>Fattet lahme</span><span class="a">فتة باللحمة</span></div>
+   <div class="mrow"><span>Msabaha</span><span class="a">مسبحة</span></div>
+   <div class="mrow"><span>Balila</span><span class="a">بليلة</span></div>
+   <div class="mrow"><span>Falafel plate</span><span class="a">صحن فلافل</span></div>
+   <div class="mrow"><span>The famous fries</span><span class="a">بطاطا مقلية</span></div>
+   <div class="mrow"><span>Eggs &amp; awarma</span><span class="a">بيض بالقاورما</span></div>
+   <div class="mrow"><span>Pickles &amp; fresh mint</span><span class="a">كبيس ونعنع</span></div>
+  </div>
+  <div class="mnote rv"><b>Careful when ordering:</b> the portions are huge — reviewers warn each other about it.</div>
+ </div>
+</section>
+<section class="gal">
+ <div class="in2">
+  <h2 class="rv">Around the clock</h2>
+  <div class="gg rv"><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a></div>
+ </div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Sworn at every hour</h2>
+  <div class="meta rv">★ 4.2 · 650 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>You'll love the food experience there. I highly recommend Fattet laban, you must try it. Also Falafel was delicious. Take care while ordering — the portions are huge.</p><div class="who">Abd-Allah Mostafa</div></div><div class="rc rv"><span class="st">★★★★★</span><p>It surprised me! Very good service, reasonably priced and most importantly great food!</p><div class="who">B</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · anytime, literally</h2>
+  <div class="vrow"><b>Address</b><span>Western end of Hamra St, Ras Beirut, Lebanon (plus code VFWF+MPM)</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+9611750227" style="color:var(--dawn);font-weight:900">+961 1 750 227</a></div>
+  <div class="vrow"><b>Mon – Sun</b><span class="hrs">Open 24 hours</span></div>
+  <div class="vrow"><b>Dine-in · Takeout · Delivery</b><span>day &amp; night</span></div>
+  <a class="btn" href="tel:+9611750227">Call +961 1 750 227</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=8216059264100645265&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>ABU HASSAN HUMMUS &amp; FOOL · open 24/7 · Hamra West — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9611750227">📞 Call — we're open</a><a class="m" href="https://maps.google.com/?cid=8216059264100645265" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

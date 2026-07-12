@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Apo — Armenian BBQ since 1976 · Bourj Hammoud</title>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;0,900;1,400&family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--pom:#B4232E;--indigo:#2B3A67;--cream:#F4EDE0;--ink:#241B1C;--gold:#D9A05B}
+body{font-family:'Bitter',serif;background:var(--cream);color:var(--ink)}
+.carpet{height:18px;background:
+ repeating-linear-gradient(90deg,var(--pom) 0 14px,var(--cream) 14px 18px,var(--indigo) 18px 32px,var(--cream) 32px 36px);
+ border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.carpet.thin{height:10px}
+/* hero: split panel */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:88vh;background:var(--pom)}
+.hp{padding:9vh 6vw;color:var(--cream);display:flex;flex-direction:column;justify-content:center;position:relative}
+.hp:after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");opacity:.08;pointer-events:none}
+.kick{letter-spacing:.32em;text-transform:uppercase;font-size:.72rem;font-weight:700;color:var(--gold);margin-bottom:20px}
+h1{font-weight:900;font-size:clamp(3rem,7vw,5.4rem);line-height:.98;letter-spacing:-.01em}
+h1 small{display:block;font-family:'Noto Kufi Arabic';font-weight:700;font-size:.32em;color:var(--gold);margin-top:16px;letter-spacing:.1em}
+.tag{margin-top:26px;font-size:1.12rem;line-height:1.75;max-width:46ch;font-style:italic;color:rgba(244,237,224,.92)}
+.est{display:inline-flex;align-items:center;gap:12px;margin-top:34px;border:2px solid var(--gold);padding:11px 20px;width:max-content;color:var(--gold);font-weight:700;letter-spacing:.18em;font-size:.8rem;text-transform:uppercase}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.chips span{border:1px solid rgba(244,237,224,.4);padding:7px 15px;font-size:.78rem;letter-spacing:.06em}
+.hi{position:relative;overflow:hidden}
+.hi img{width:100%;height:100%;object-fit:cover;display:block}
+.hi:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(180,35,46,.35),transparent 35%)}
+/* story */
+.story{display:grid;grid-template-columns:1fr .85fr;gap:6vw;max-width:1180px;margin:0 auto;padding:96px 5vw}
+.story h2{font-weight:900;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.12;margin-bottom:26px}
+.story h2 em{color:var(--pom);font-style:italic}
+.story p{line-height:1.95;font-size:1.03rem;margin-bottom:18px;color:#3c3233}
+.story .im{position:relative}
+.story .im img{width:100%;height:100%;min-height:420px;object-fit:cover;border:3px solid var(--ink);box-shadow:14px 14px 0 var(--pom)}
+.plq{margin-top:22px;background:var(--indigo);color:var(--cream);padding:16px 20px;font-size:.86rem;letter-spacing:.08em}
+/* highlights */
+.hl{background:var(--ink);color:var(--cream);padding:90px 5vw}
+.hl .in2{max-width:1180px;margin:0 auto}
+.hl h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:14px}
+.hl .ar{font-family:'Noto Kufi Arabic';color:var(--gold);margin-bottom:44px;font-size:1.05rem}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#2e2324;border-top:6px solid var(--pom)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block}
+.hc .bd{padding:22px 22px 26px}
+.hc .no{display:inline-block;background:var(--gold);color:var(--ink);font-weight:900;width:30px;height:30px;text-align:center;line-height:30px;border-radius:50%;margin-bottom:14px}
+.hc h3{font-size:1.18rem;font-weight:700;margin-bottom:10px}
+.hc p{font-size:.94rem;line-height:1.7;color:rgba(244,237,224,.75)}
+/* menu */
+.menu{padding:96px 5vw;max-width:1050px;margin:0 auto}
+.menu h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:8px}
+.menu .sub{color:var(--pom);font-style:italic;margin-bottom:42px}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:44px 60px}
+.mcols h3{letter-spacing:.22em;text-transform:uppercase;font-size:.82rem;color:var(--indigo);border-bottom:3px double var(--ink);padding-bottom:9px;margin-bottom:16px}
+.menu ul{list-style:none}
+.menu li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dotted #c9bda9;font-size:.99rem}
+.menu li .ar{font-family:'Noto Kufi Arabic';color:#7c6f70;font-size:.88rem}
+.mnote{margin-top:34px;background:var(--pom);color:var(--cream);padding:16px 22px;font-size:.92rem;letter-spacing:.04em;text-align:center}
+/* gallery */
+.gal{padding:0 5vw 96px;max-width:1180px;margin:0 auto}
+.gal h2{font-weight:900;font-size:1.6rem;margin-bottom:26px}
+.gg{columns:3;column-gap:14px}
+.gg a{display:block;margin-bottom:14px;border:3px solid var(--ink)}
+.gg img{width:100%;display:block}
+/* reviews */
+.revs{background:var(--indigo);color:var(--cream);padding:90px 5vw}
+.revs .in2{max-width:1080px;margin:0 auto}
+.revs h2{font-weight:900;font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:10px}
+.revs .meta{color:var(--gold);margin-bottom:40px;font-size:.95rem}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.rc{background:rgba(244,237,224,.07);border:1px solid rgba(244,237,224,.18);padding:26px}
+.rc .st{color:var(--gold);letter-spacing:.2em;font-size:.85rem}
+.rc p{margin:14px 0 16px;line-height:1.8;font-size:.97rem;font-style:italic}
+.rc .who{font-size:.84rem;letter-spacing:.1em;color:var(--gold)}
+/* visit */
+.visit{padding:96px 5vw;max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:24px}
+.vrow{padding:13px 0;border-bottom:1px solid #d8cbb4;display:flex;justify-content:space-between;gap:18px;font-size:.97rem}
+.vrow b{font-weight:700}
+.hrs{color:#3c3233}
+.btn{display:inline-block;background:var(--pom);color:var(--cream);padding:17px 34px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.82rem;text-decoration:none;margin-top:28px;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink)}
+.btn.wa{background:#1FA855}
+.map{border:3px solid var(--ink);min-height:340px;background:#ddd}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:rgba(244,237,224,.55);text-align:center;padding:34px 5vw 110px;font-size:.82rem;letter-spacing:.08em}
+/* sticky bar */
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;border-top:3px solid var(--ink)}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;letter-spacing:.06em;text-decoration:none}
+.bar .c{background:var(--pom);color:#fff}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:var(--cream);color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hi{min-height:46vh}.story,.visit{grid-template-columns:1fr}.mcols{grid-template-columns:1fr}.gg{columns:2}}
+</style></head><body>
+<div class="carpet"></div>
+<section class="hero">
+ <div class="hp">
+  <div class="kick">Restaurant · Est. 1976 · Bourj Hammoud · Tiro St</div>
+  <h1>APO<small>مطعم أبو — مشاوي أرمنية منذ ١٩٧٦</small></h1>
+  <p class="tag">Armenian barbecue on Tiro Street since 1976 — kebab the way Bourj Hammoud swears by it.</p>
+  <div class="est">★ 4.5 on Google · 313 reviews</div>
+  <div class="chips"><span>Charcoal kebab</span><span>Armenian mezze</span><span>Garden terrace</span><span>Dine-in · Takeout · Delivery</span></div>
+ </div>
+ <div class="hi"><img src="img/09.jpg" alt="Apo"></div>
+</section>
+<div class="carpet thin"></div>
+<section class="story">
+ <div class="rv">
+  <h2>Fifty years on the same fire</h2>
+  <p>Apo has been threading kebab onto skewers since 1976, which makes it one of the oldest grill houses in Bourj Hammoud. The recipes haven't moved an inch in fifty years — kebab laban, kebab karaz, soubeureg, manteh — and the charcoal does the talking. The house recently moved into its new garden terrace a few doors down; same fire, same family, more chairs.</p>
+  <p>Ask the neighborhood and you'll hear the same thing reviewers write: the quality hasn't changed one bit over the years. That kind of consistency is the rarest dish in Beirut — Apo serves it daily, with extra garlic.</p>
+  <div class="plq">📍 Moved? Found us harder to find lately? The new garden terrace is on the same Tiro Street — this page always has the live pin.</div>
+ </div>
+ <div class="im rv"><img src="img/05.jpg" alt="Apo terrace" loading="lazy"></div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">What the charcoal does best</h2>
+  <div class="ar rv">كباب لبن · كباب كرز · سوبوريك · مانطي</div>
+  <div class="hlg"><div class="hc rv"><img src="img/07.jpg" alt="The mezze table" loading="lazy"><div class="bd"><span class="no">1</span><h3>The mezze table</h3><p>Hommos with awarma, moutabal, mohammara — the spread that starts every Apo evening.</p></div></div><div class="hc rv"><img src="img/03.jpg" alt="Kebab, wrapped to go" loading="lazy"><div class="bd"><span class="no">2</span><h3>Kebab, wrapped to go</h3><p>Charcoal kebab rolled in fresh bread — the Tiro Street lunch since 1976.</p></div></div><div class="hc rv"><img src="img/06.jpg" alt="Kebab laban & karaz" loading="lazy"><div class="bd"><span class="no">3</span><h3>Kebab laban & karaz</h3><p>The Armenian classics: yogurt-bathed and sour-cherry — order both, argue later.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <h2 class="rv">The menu</h2>
+ <p class="sub rv">From the house menu — full list &amp; today's prices at the counter.</p>
+ <div class="mcols rv">
+  <div><h3>Mezzet · مازات</h3><ul>
+   <li><span>Hommos</span><span class="ar">حمص</span></li>
+   <li><span>Hommos with awarma</span><span class="ar">حمص مع قاورما</span></li>
+   <li><span>Moutabal</span><span class="ar">متبل</span></li>
+   <li><span>Mohammara</span><span class="ar">محمرة</span></li>
+   <li><span>Special fattoush</span><span class="ar">فتوش سبسيال</span></li>
+   <li><span>Tabbouleh</span><span class="ar">تبولة</span></li>
+  </ul></div>
+  <div><h3>Armenian classics</h3><ul>
+   <li><span>Kebab laban</span><span class="ar">كباب لبن</span></li>
+   <li><span>Kebab karaz</span><span class="ar">كباب كرز</span></li>
+   <li><span>Soubeureg</span><span class="ar">سوبوريك</span></li>
+   <li><span>Manteh</span><span class="ar">مانطي</span></li>
+   <li><span>Basterma</span><span class="ar">بسطرما</span></li>
+   <li><span>Kebbeh bel sanieh</span><span class="ar">كبة بالصينية</span></li>
+  </ul></div>
+ </div>
+ <div class="mnote rv">الأسعار حسب لائحة اليوم في المطعم — prices at the counter · <a href="tel:+9611261789" style="color:inherit">call +961 1 261 789</a></div>
+</section>
+<section class="gal">
+ <h2 class="rv">From the terrace</h2>
+ <div class="gg rv"><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">The regulars, on record</h2>
+  <div class="meta rv">★ 4.5 · 313 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>I’ve been coming to Apo since I was young (many years ago), and honestly, the food quality hasn’t changed one bit over all these years. That consistency alone deserves a mention.</p><div class="who">— Gino Haddad</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Tried almost all types of kebabs, we weren't disappointed. Will go again when craving for such food style.</p><div class="who">— Hisham WAKED</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · زورونا</h2>
+  <div class="vrow"><b>Address</b><span>Tiro Street, Bourj Hammoud, Lebanon (Harboyan bldg)</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+9611261789" style="color:var(--pom);font-weight:700">+961 1 261 789</a></div>
+  <div class="vrow"><b>Mon–Fri</b><span class="hrs">11 AM – 8 PM</span></div>
+  <div class="vrow"><b>Saturday</b><span class="hrs">11 AM – 10 PM</span></div>
+  <div class="vrow"><b>Sunday</b><span class="hrs">11 AM – 3 PM</span></div>
+  <a class="btn" href="tel:+9611261789">Call +961 1 261 789</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=10797163985524666977&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>APO · Armenian BBQ since 1976 · Bourj Hammoud · Tiro St — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9611261789">📞 Call</a><a class="m" href="https://maps.google.com/?cid=10797163985524666977" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

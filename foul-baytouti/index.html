@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Foul Baytouti — the beautiful breakfast · Haret Hreik</title>
+<link href="https://fonts.googleapis.com/css2?family=Gulzar&family=Figtree:wght@400;600;800&family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--linen:#F5EFE4;--mag:#D14E8E;--olive:#6C7A44;--ink:#2E2A24;--clay:#B0764A}
+body{font-family:'Figtree',sans-serif;background:var(--linen);color:var(--ink)}
+body:before{content:"";position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");opacity:.05;pointer-events:none;z-index:1}
+h2,h3,.serif{font-family:'Fraunces',serif}
+/* hero — plate circles */
+.hero{min-height:94vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;max-width:1240px;margin:0 auto;padding:6vh 5vw;gap:4vw;position:relative;z-index:2}
+.plates{position:relative;height:min(74vh,620px)}
+.plates .p{position:absolute;border-radius:50%;overflow:hidden;box-shadow:0 24px 54px rgba(46,42,36,.28);border:6px solid #fff}
+.plates .p img{width:100%;height:100%;object-fit:cover;display:block}
+.p1{width:62%;aspect-ratio:1;top:0;left:4%}
+.p2{width:44%;aspect-ratio:1;bottom:4%;right:0}
+.p3{width:30%;aspect-ratio:1;bottom:0;left:0}
+.hp .ar{font-family:'Gulzar';font-size:clamp(1.9rem,4.4vw,3.2rem);color:var(--olive);line-height:1.7}
+.hp h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.04;margin-top:8px}
+.hp h1 em{color:var(--mag);font-style:italic}
+.tag{margin-top:22px;line-height:1.85;font-size:1.08rem;color:#5a5343;max-width:46ch}
+.badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.badges span{background:#fff;border:1px solid #e4dbc6;border-radius:99px;padding:10px 20px;font-weight:600;font-size:.85rem;box-shadow:0 8px 20px rgba(46,42,36,.06)}
+.badges .five{background:var(--mag);color:#fff;border-color:var(--mag)}
+/* story */
+.story{background:#fff;padding:100px 5vw;position:relative;z-index:2}
+.story .in2{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .9fr;gap:6vw;align-items:center}
+.story h2{font-weight:600;font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.14;margin-bottom:24px}
+.story h2 em{color:var(--mag);font-style:italic}
+.story p{line-height:2;font-size:1.03rem;margin-bottom:18px;color:#5a5343}
+.story .im{position:relative}
+.story .im img{width:100%;min-height:430px;object-fit:cover;border-radius:50% 50% 26px 26px;border:8px solid var(--linen);box-shadow:0 26px 60px rgba(46,42,36,.2)}
+/* highlights */
+.hl{padding:100px 5vw;position:relative;z-index:2}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-weight:600;font-size:clamp(1.8rem,3.6vw,2.7rem);text-align:center;margin-bottom:10px}
+.hl .sub{text-align:center;color:var(--olive);margin-bottom:46px;font-style:italic;font-family:'Fraunces'}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 18px 44px rgba(46,42,36,.12)}
+.hc img{width:100%;height:240px;object-fit:cover;display:block}
+.hc .bd{padding:24px;text-align:center}
+.hc .no{color:var(--mag);font-size:1.15rem}
+.hc h3{font-weight:600;font-size:1.25rem;margin:8px 0}
+.hc p{font-size:.94rem;line-height:1.8;color:#5a5343}
+/* menu */
+.menu{background:var(--olive);color:var(--linen);padding:100px 5vw;position:relative;z-index:2}
+.menu .in2{max-width:940px;margin:0 auto}
+.menu h2{font-weight:600;font-size:clamp(1.8rem,3.6vw,2.7rem);text-align:center;margin-bottom:8px}
+.menu .sub{text-align:center;color:#DCE5C2;margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:1px solid rgba(245,239,228,.25);font-size:1.02rem}
+.mrow .a{font-family:'Gulzar';font-size:1.15rem;color:#DCE5C2}
+.mnote{margin-top:38px;text-align:center;background:rgba(245,239,228,.12);border-radius:16px;padding:18px 24px;font-size:.95rem}
+/* gallery */
+.gal{padding:100px 5vw;max-width:1120px;margin:0 auto;position:relative;z-index:2}
+.gal h2{font-weight:600;font-size:1.7rem;margin-bottom:28px;text-align:center}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.gg a{display:block;border-radius:50%;overflow:hidden;aspect-ratio:1;border:5px solid #fff;box-shadow:0 14px 34px rgba(46,42,36,.16)}
+.gg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.gg a:hover img{transform:scale(1.07)}
+/* reviews */
+.revs{background:var(--mag);color:#fff;padding:96px 5vw;position:relative;z-index:2}
+.revs .in2{max-width:1040px;margin:0 auto;text-align:center}
+.revs h2{font-weight:600;font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:8px}
+.revs .meta{color:#FBD8E8;margin-bottom:44px;font-weight:600}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+.rc{background:#fff;color:var(--ink);border-radius:22px;padding:28px}
+.rc .st{color:var(--mag);letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.85;font-size:.97rem;font-family:'Fraunces';font-style:italic}
+.rc .who{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:#a09884;font-weight:800}
+/* visit */
+.visit{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw;position:relative;z-index:2}
+.visit h2{font-weight:600;font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:24px;font-family:'Fraunces'}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e4dbc6;font-size:.98rem}
+.hrs{font-weight:800;color:var(--olive)}
+.btn{display:inline-block;background:var(--mag);color:#fff;padding:17px 36px;border-radius:99px;font-weight:800;letter-spacing:.06em;font-size:.88rem;text-decoration:none;margin-top:28px}
+.btn.wa{background:#1FA855}
+.map{border-radius:24px;overflow:hidden;min-height:340px;background:#eee;border:6px solid #fff;box-shadow:0 18px 44px rgba(46,42,36,.14)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:rgba(245,239,228,.55);text-align:center;padding:34px 5vw 110px;font-size:.82rem;position:relative;z-index:2}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:800;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--mag);color:#fff}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:#fff;color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:8vh}.plates{height:64vw;order:-1}.story .in2,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}}
+</style></head><body>
+<section class="hero">
+ <div class="hp">
+  <div class="ar">فول بيتوتي</div>
+  <h1>Breakfast,<br><em>plated like art.</em></h1>
+  <p class="tag">Foul the way homes make it — plated so beautifully the reviews talk presentation first.</p>
+  <div class="badges"><span class="five">★ 5.0 — perfect score</span><span>23 reviews</span><span>Haret Hreik · mornings</span></div>
+ </div>
+ <div class="plates">
+  <div class="p p1"><img src="img/01.jpg" alt="the fatteh crown"></div>
+  <div class="p p2"><img src="img/02.jpg" alt="the morning table"></div>
+  <div class="p p3"><img src="img/03.jpg" alt="foul with pink pickles"></div>
+ </div>
+</section>
+<section class="story">
+ <div class="in2">
+  <div class="rv">
+   <h2>فطور عالأصول — <em>and plated like art</em></h2>
+   <p>Baytouti means 'homestyle', and that's the whole idea: foul, fatteh and msabaha cooked the old way in Haret Hreik — then plated like nobody's business. Crowns of crisp bread, rings of cashews, pink pickles fanned like petals. A perfect 5.0 rating, mornings only, closed Mondays. Come hungry, leave photographing your plate.</p>
+  </div>
+  <div class="im rv"><img src="img/05.jpg" alt="the spread" loading="lazy"></div>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">The morning ritual</h2>
+  <p class="sub rv">three plates that built the perfect score</p>
+  <div class="hlg"><div class="hc rv"><img src="img/01.jpg" alt="The fatteh crown" loading="lazy"><div class="bd"><span class="no">◯</span><h3>The fatteh crown</h3><p>Ringed in golden bread, mint in the middle — the plate that made the name.</p></div></div><div class="hc rv"><img src="img/04.jpg" alt="Msabaha & friends" loading="lazy"><div class="bd"><span class="no">◯</span><h3>Msabaha & friends</h3><p>Warm, hand-mashed, finished with the good olive oil.</p></div></div><div class="hc rv"><img src="img/03.jpg" alt="Eggs with awarma" loading="lazy"><div class="bd"><span class="no">◯</span><h3>Eggs with awarma</h3><p>The house specialty: fried eggs over preserved meat, sizzling to the table.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The breakfast card</h2>
+  <p class="sub rv">Tue–Sun mornings · prices at the counter · نسأل عن طبق اليوم</p>
+  <div class="mgrid rv">
+   <div class="mrow"><span>Foul mdammas</span><span class="a">فول</span></div>
+   <div class="mrow"><span>Fatteh — the crown</span><span class="a">فتة</span></div>
+   <div class="mrow"><span>Msabaha</span><span class="a">مسبحة</span></div>
+   <div class="mrow"><span>Hummus</span><span class="a">حمص</span></div>
+   <div class="mrow"><span>Fattet el chef</span><span class="a">فتة الشيف</span></div>
+   <div class="mrow"><span>Eggs with awarma</span><span class="a">بيض بقاورما</span></div>
+   <div class="mrow"><span>Eggs with sojok</span><span class="a">بيض بسجق</span></div>
+   <div class="mrow"><span>Balila</span><span class="a">بليلة</span></div>
+  </div>
+  <div class="mnote rv">Presentation is the house signature — every plate leaves the kitchen dressed for the occasion.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">Plate after plate</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Word of mouth, verbatim</h2>
+  <div class="meta rv">★ 5.0 · 23 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>This is without a doubt the best spot in Beirut for authentic foul, fatteh, masabaha & more! Not only is the presentation fantastic, but the flavors are just as incredible, and the service makes the whole experience even better.</p><div class="who">Daan</div></div><div class="rc rv"><span class="st">★★★★★</span><p>I honestly didn't expect such an amazing foul in that area! I loved it so much and the presentation was the cherry on top!</p><div class="who">Reem</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · صباح الخير</h2>
+  <div class="vrow"><b>Address</b><span>Haret Hreik, Beirut</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+96171474740" style="color:var(--mag);font-weight:800">+961 71 474 740</a></div>
+  <div class="vrow"><b>Tue – Sun</b><span class="hrs">8 AM – 3 PM</span></div>
+  <div class="vrow"><b>Monday</b><span class="hrs">closed</span></div>
+  <a class="btn wa" href="https://wa.me/96171474740" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=9539637341491406395&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>FOUL BAYTOUTI · Haret Hreik — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+96171474740">📞 Call</a><a class="w" href="https://wa.me/96171474740" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=9539637341491406395" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

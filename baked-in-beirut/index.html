@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Baked In Beirut — wood-fired pastries, Gemmayze, 5.0★</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=Caveat:wght@600&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--flour:#FBF7EE;--honey:#E0A458;--terra:#C96F4A;--ink:#33261A;--leaf:#7A8C5A}
+body{font-family:'Nunito Sans',sans-serif;background:var(--flour);color:var(--ink)}
+h1,h2,h3{font-family:'Fraunces',serif}
+.hand{font-family:'Caveat',cursive}
+/* hero */
+.hero{position:relative;min-height:94vh;display:grid;grid-template-columns:1.1fr .9fr}
+.hp{padding:10vh 6vw;display:flex;flex-direction:column;justify-content:center}
+.crumb{letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;font-weight:800;color:var(--terra);margin-bottom:22px}
+h1{font-weight:900;font-size:clamp(2.6rem,5.8vw,4.8rem);line-height:1.02}
+h1 em{font-style:italic;color:var(--terra);font-weight:500}
+.tag{margin-top:24px;font-size:1.12rem;line-height:1.85;color:#5f4d3b;max-width:46ch}
+.sahteyn{margin-top:30px;display:inline-block;background:#fff;border:2px dashed var(--honey);border-radius:4px;padding:16px 24px;transform:rotate(-1.6deg);box-shadow:0 12px 30px rgba(51,38,26,.1)}
+.sahteyn .hand{font-size:1.7rem;color:var(--terra)}
+.sahteyn small{display:block;color:#8a755d;margin-top:4px;font-size:.8rem}
+.badge5{margin-top:28px;display:inline-flex;gap:12px;align-items:center;font-weight:800}
+.badge5 b{font-size:1.5rem;font-family:'Fraunces'}
+.badge5 .st{color:var(--honey)}
+.hi{position:relative;clip-path:polygon(6% 0,100% 0,100% 100%,0 100%,2% 60%)}
+.hi img{width:100%;height:100%;object-fit:cover;display:block}
+/* torn divider */
+.torn{height:34px;background:var(--flour);clip-path:polygon(0 100%,4% 20%,9% 80%,15% 10%,22% 70%,28% 25%,36% 85%,43% 15%,50% 75%,57% 20%,64% 80%,71% 10%,78% 70%,85% 25%,92% 85%,100% 30%,100% 100%)}
+/* story */
+.story{background:var(--honey);padding:80px 5vw 100px;color:var(--ink)}
+.story .in2{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr .85fr;gap:6vw;align-items:center}
+.story h2{font-weight:900;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.14;margin-bottom:24px}
+.story h2 em{font-style:italic;color:#fff}
+.story p{line-height:1.95;font-size:1.04rem;margin-bottom:18px;color:#4b3a26}
+.story .im{position:relative}
+.story .im img{width:100%;min-height:420px;object-fit:cover;border-radius:16px;box-shadow:0 26px 60px rgba(51,38,26,.28)}
+.story .im .note{position:absolute;bottom:-20px;left:22px;background:#fff;border-radius:6px;padding:12px 20px;transform:rotate(2deg);box-shadow:0 12px 26px rgba(51,38,26,.22)}
+.story .im .note .hand{font-size:1.35rem;color:var(--terra)}
+/* highlights */
+.hl{padding:100px 5vw}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:10px}
+.hl .sub{color:#8a755d;margin-bottom:44px}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(51,38,26,.1)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block}
+.hc .bd{padding:22px}
+.hc .no{font-family:'Caveat';font-size:1.3rem;color:var(--terra)}
+.hc h3{font-weight:700;font-size:1.2rem;margin:8px 0}
+.hc p{font-size:.94rem;line-height:1.75;color:#5f4d3b}
+/* menu */
+.menu{background:var(--ink);color:var(--flour);padding:100px 5vw}
+.menu .in2{max-width:980px;margin:0 auto}
+.menu h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:8px}
+.menu .sub{color:var(--honey);margin-bottom:44px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:1px solid rgba(251,247,238,.15);font-size:1rem}
+.mrow .a{color:rgba(251,247,238,.55)}
+.mnote{margin-top:36px;border:2px dashed var(--honey);border-radius:12px;padding:18px 24px;text-align:center;font-size:.95rem}
+/* gallery */
+.gal{padding:100px 5vw 90px;max-width:1120px;margin:0 auto}
+.gal h2{font-weight:900;font-size:1.6rem;margin-bottom:26px}
+.gg{columns:3;column-gap:14px}
+.gg a{display:block;margin-bottom:14px;border-radius:14px;overflow:hidden}
+.gg img{width:100%;display:block}
+/* reviews */
+.revs{background:var(--leaf);color:#fff;padding:96px 5vw}
+.revs .in2{max-width:1060px;margin:0 auto}
+.revs h2{font-weight:900;font-size:clamp(1.7rem,3.2vw,2.4rem);margin-bottom:8px}
+.revs .meta{color:#EDE6C9;margin-bottom:42px;font-weight:600}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.rc{background:rgba(255,255,255,.95);color:var(--ink);border-radius:14px;padding:26px;transform:rotate(-.6deg)}
+.rc:nth-child(2){transform:rotate(.8deg)}
+.rc .st{color:var(--honey);letter-spacing:.16em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.8;font-size:.96rem;font-style:italic}
+.rc .who{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#8a755d;font-weight:800}
+/* visit */
+.visit{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-weight:900;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e8dfc9;font-size:.98rem}
+.hrs{font-weight:800;color:var(--terra)}
+.btn{display:inline-block;background:var(--terra);color:#fff;padding:17px 34px;border-radius:99px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem;text-decoration:none;margin-top:28px}
+.btn.wa{background:#1FA855}
+.map{border-radius:18px;overflow:hidden;min-height:340px;background:#eee}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:rgba(251,247,238,.55);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:800;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--terra);color:#fff}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:var(--flour);color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.hi{min-height:44vh;clip-path:none;order:-1}.story .in2,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.gg{columns:2}}
+</style></head><body>
+<section class="hero">
+ <div class="hp">
+  <div class="crumb">Bakery · Pasteur · Gemmayze · ★ 5.0 (82 reviews)</div>
+  <h1>Baked in Beirut,<br><em>signed by hand.</em></h1>
+  <p class="tag">Lebanese & Armenian pastries from a wood-fired oven — with a handwritten 'Sahteyn' on every bag.</p>
+  <div class="sahteyn"><span class="hand">“Sahteyn 🫶 have a nice day”</span><small>— handwritten on every single bag, really</small></div>
+  <div class="badge5"><b>5.0</b><span class="st">★★★★★</span><span>a perfect score on Google</span></div>
+ </div>
+ <div class="hi"><img src="img/01.jpg" alt="Baked In Beirut storefront"></div>
+</section>
+<div class="torn" style="background:var(--honey)"></div>
+<section class="story">
+ <div class="in2">
+  <div class="rv">
+   <h2>Sahteyn 🫶 — <em>it's handwritten</em></h2>
+   <p>Baked In Beirut is the smell of Pasteur Street at 7:30 in the morning: manousheh and lahm bi ajin sliding out of the oven, coffee on the counter, and a perfect 5.0 rating from everyone who's found it. Every delivery bag leaves with a handwritten note — 'Sahteyn, have a nice day' — which tells you most of what you need to know about the people inside.</p>
+   <p>The oven does Lebanese mornings and Armenian afternoons — za'atar and cheese on one side, lahm bi ajin and sujuk on the other. Gemmayze gets both, from 7:30 sharp.</p>
+  </div>
+  <div class="im rv"><img src="img/05.jpg" alt="the Sahteyn bag" loading="lazy"><div class="note"><span class="hand">the famous bag ↑</span></div></div>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">Out of the wood fire</h2>
+  <p class="sub rv">the three things people cross town for</p>
+  <div class="hlg"><div class="hc rv"><img src="img/03.jpg" alt="Za'atar, wood-fired" loading="lazy"><div class="bd"><span class="no">~ 1 ~</span><h3>Za'atar, wood-fired</h3><p>The classic, blistered on the oven floor — breakfast as Gemmayze intended.</p></div></div><div class="hc rv"><img src="img/04.jpg" alt="Lahm bi ajin" loading="lazy"><div class="bd"><span class="no">~ 2 ~</span><h3>Lahm bi ajin</h3><p>The Armenian side of the oven: thin, spiced, finished with lemon.</p></div></div><div class="hc rv"><img src="img/05.jpg" alt="The Sahteyn bag" loading="lazy"><div class="bd"><span class="no">~ 3 ~</span><h3>The Sahteyn bag</h3><p>A handwritten wish on every kraft bag — reviewers photograph it more than the food.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The morning board</h2>
+  <p class="sub rv">Wood-fired daily · prices at the counter</p>
+  <div class="mgrid rv">
+   <div class="mrow"><span>Za'atar manousheh</span><span class="a">منقوشة زعتر</span></div>
+   <div class="mrow"><span>Cheese manousheh</span><span class="a">منقوشة جبنة</span></div>
+   <div class="mrow"><span>Lahm bi ajin</span><span class="a">لحم بعجين</span></div>
+   <div class="mrow"><span>Sujuk &amp; cheese</span><span class="a">سجق وجبنة</span></div>
+   <div class="mrow"><span>Olive &amp; kashkaval flatbread</span><span class="a">خبز بالزيتون والقشقوان</span></div>
+   <div class="mrow"><span>Pepperoni pizza</span><span class="a">بيتزا</span></div>
+   <div class="mrow"><span>Coffee &amp; tea</span><span class="a">قهوة وشاي</span></div>
+   <div class="mrow"><span>Fresh juice</span><span class="a">عصير طازج</span></div>
+  </div>
+  <div class="mnote rv">☀️ Sundays we close early (2:30 PM) — come before the trays empty.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">Morning after morning</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">Love letters, basically</h2>
+  <div class="meta rv">★ 5.0 · 82 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>Tucked away in the vibrant streets of Mar Mikhael, Baked In Beirut is more than just a bakery — it's a local gem that celebrates the art of authentic Lebanese street pastries.</p><div class="who">Elie Aramouny</div></div><div class="rc rv"><span class="st">★★★★★</span><p>The best (affordable) food to try in Beirut, cute little place for a nice coffee or tea with amazing food and beautiful people. Must try out place!</p><div class="who">Nanditha Sirigiri</div></div><div class="rc rv"><span class="st">★★★★★</span><p>I recently ordered delivery for the first time, and it was a delightful experience. The first thing that caught my attention was the personal touch — a handwritten message on all the bags that said, "Sahteyn — Have a Nice…"</p><div class="who">Lena Rizk</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · صحتين</h2>
+  <div class="vrow"><b>Address</b><span>Pasteur, Gemmayze/Mar Mikhael, Beirut, Lebanon</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+9613660856" style="color:var(--terra);font-weight:800">+961 3 660 856</a></div>
+  <div class="vrow"><b>Mon – Sat</b><span class="hrs">7:30 AM – 4:30 PM</span></div>
+  <div class="vrow"><b>Sunday</b><span class="hrs">7:30 AM – 2:30 PM</span></div>
+  <a class="btn wa" href="https://wa.me/9613660856" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=1993107388568452190&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>BAKED IN BEIRUT · Pasteur, Gemmayze — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9613660856">📞 Call</a><a class="w" href="https://wa.me/9613660856" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=1993107388568452190" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Patatoi — the Belgian potato house of Badaro</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--sky:#4FA3D9;--frite:#F2B330;--white:#FEFDF8;--ink:#243040;--tom:#E2574C}
+body{font-family:'Atkinson Hyperlegible',sans-serif;background:var(--white);color:var(--ink)}
+h1,h2,h3,.bal{font-family:'Baloo 2',cursive}
+/* comic hero */
+.hero{background:var(--sky);min-height:92vh;display:grid;grid-template-columns:1fr .95fr;align-items:center;padding:8vh 6vw;gap:5vw;position:relative;overflow:hidden}
+.hero .cloud{position:absolute;background:#fff;border-radius:99px;opacity:.5}
+.c1{width:200px;height:56px;top:12%;left:8%}.c2{width:140px;height:42px;top:22%;right:14%}.c3{width:260px;height:64px;bottom:14%;left:44%}
+.hp{position:relative;z-index:2}
+.panelk{display:inline-block;background:#fff;border:4px solid var(--ink);border-radius:12px;padding:8px 18px;font-family:'Baloo 2';font-weight:700;letter-spacing:.08em;margin-bottom:22px;box-shadow:5px 5px 0 var(--ink);transform:rotate(-2deg)}
+h1{font-size:clamp(2.8rem,6.6vw,5.4rem);line-height:.98;color:#fff;text-shadow:4px 4px 0 var(--ink);font-weight:800}
+h1 em{font-style:normal;color:var(--frite)}
+.tag{margin-top:22px;font-size:1.12rem;line-height:1.8;color:#fff;max-width:46ch;font-weight:700}
+.magritte{margin-top:30px;display:inline-block;background:#fff;border:4px solid var(--ink);border-radius:16px;padding:14px 24px;font-family:'Baloo 2';font-weight:700;font-size:1.05rem;box-shadow:6px 6px 0 var(--ink)}
+.magritte small{display:block;font-family:'Atkinson Hyperlegible';font-weight:400;font-size:.78rem;color:#6b7787;margin-top:2px}
+.rate{margin-top:26px;color:#fff;font-weight:700;font-size:1rem}
+.rate b{font-family:'Baloo 2';font-size:1.6rem;color:var(--frite)}
+.hi{position:relative;z-index:2;border:5px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:12px 12px 0 var(--ink);transform:rotate(1.4deg)}
+.hi img{width:100%;height:100%;min-height:430px;object-fit:cover;display:block}
+.hi .bub{position:absolute;top:18px;left:18px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:10px 18px;font-family:'Baloo 2';font-weight:700;font-size:.95rem}
+.hi .bub:after{content:"";position:absolute;bottom:-12px;left:30px;border:8px solid transparent;border-top-color:var(--ink)}
+/* frite divider */
+.frites{height:38px;background:repeating-linear-gradient(100deg,var(--frite) 0 22px,#E6A31F 22px 30px,var(--frite) 30px 52px,var(--white) 52px 74px);border-top:4px solid var(--ink);border-bottom:4px solid var(--ink)}
+/* story */
+.story{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:.9fr 1fr;gap:6vw;align-items:center}
+.story .im{border:5px solid var(--ink);border-radius:20px;overflow:hidden;box-shadow:-12px 12px 0 var(--frite);transform:rotate(-1.2deg)}
+.story .im img{width:100%;min-height:420px;object-fit:cover;display:block}
+.story h2{font-size:clamp(2rem,4vw,3rem);line-height:1.04;margin-bottom:24px;font-weight:800}
+.story h2 em{font-style:normal;color:var(--sky)}
+.story p{line-height:1.95;font-size:1.05rem;margin-bottom:18px;color:#41506b}
+/* highlights — comic panels */
+.hl{background:var(--white);padding:96px 5vw}
+.hl .in2{max-width:1120px;margin:0 auto}
+.hl h2{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:800;margin-bottom:44px;text-align:center}
+.hl h2 span{color:var(--tom)}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:30px}
+.hc{background:#fff;border:4px solid var(--ink);border-radius:18px;overflow:hidden;box-shadow:8px 8px 0 var(--ink)}
+.hc:nth-child(2){transform:rotate(1deg)}
+.hc:nth-child(3){transform:rotate(-1deg)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block;border-bottom:4px solid var(--ink)}
+.hc .bd{padding:22px}
+.hc .no{display:inline-block;background:var(--frite);border:2px solid var(--ink);border-radius:8px;padding:3px 12px;font-family:'Baloo 2';font-weight:700;font-size:.85rem;margin-bottom:10px}
+.hc h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
+.hc p{font-size:.95rem;line-height:1.7;color:#41506b}
+/* menu — comic strip */
+.menu{background:var(--ink);color:var(--white);padding:100px 5vw}
+.menu .in2{max-width:940px;margin:0 auto}
+.menu h2{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:800;color:var(--frite);text-align:center;margin-bottom:8px}
+.menu .sub{text-align:center;color:#9fb2c8;margin-bottom:46px}
+.msec{font-family:'Baloo 2';font-weight:700;color:var(--sky);font-size:1.05rem;margin:26px 0 8px;letter-spacing:.04em}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 4px;border-bottom:2px dotted #3c4b61;font-size:1.02rem}
+.mrow .pr{font-family:'Baloo 2';font-weight:700;color:var(--frite);white-space:nowrap}
+.mnote{margin-top:38px;text-align:center;background:var(--tom);border:3px solid #fff;border-radius:14px;padding:18px 24px;font-weight:700}
+/* gallery */
+.gal{padding:100px 5vw;max-width:1120px;margin:0 auto}
+.gal h2{font-weight:800;font-size:1.7rem;margin-bottom:28px;text-align:center}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.gg a{display:block;border:4px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+.gg a:nth-child(even){transform:rotate(.8deg)}
+.gg a:nth-child(odd){transform:rotate(-.8deg)}
+.gg img{width:100%;height:240px;object-fit:cover;display:block}
+/* reviews — speech bubbles */
+.revs{background:var(--sky);padding:96px 5vw}
+.revs .in2{max-width:1040px;margin:0 auto}
+.revs h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;color:#fff;text-shadow:3px 3px 0 var(--ink);margin-bottom:8px;text-align:center}
+.revs .meta{text-align:center;color:#fff;font-weight:700;margin-bottom:44px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+.rc{background:#fff;border:4px solid var(--ink);border-radius:20px;padding:26px;position:relative;box-shadow:7px 7px 0 var(--ink)}
+.rc:after{content:"";position:absolute;bottom:-16px;left:38px;border:10px solid transparent;border-top-color:var(--ink)}
+.rc .st{color:var(--frite);letter-spacing:.16em;font-size:.9rem}
+.rc p{margin:13px 0 15px;line-height:1.8;font-size:.97rem}
+.rc .who{font-family:'Baloo 2';font-weight:700;color:var(--sky);font-size:.95rem}
+/* visit */
+.visit{max-width:1120px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.9rem,3.8vw,2.8rem);font-weight:800;margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:2px dotted #cfd8e2;font-size:1rem}
+.hrs{font-weight:700;color:var(--tom)}
+.btn{display:inline-block;background:var(--frite);color:var(--ink);padding:16px 34px;border:4px solid var(--ink);border-radius:14px;font-family:'Baloo 2';font-weight:800;font-size:1rem;text-decoration:none;margin-top:28px;box-shadow:6px 6px 0 var(--ink)}
+.btn.wa{background:#1FA855;color:#fff}
+.map{border:5px solid var(--ink);border-radius:18px;overflow:hidden;min-height:340px;background:#dde}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:#9fb2c8;text-align:center;padding:34px 5vw 110px;font-size:.85rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;border-top:4px solid var(--ink)}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.9rem;text-decoration:none;font-family:'Baloo 2'}
+.bar .c{background:var(--frite);color:var(--ink)}
+.bar .w{background:#1FA855;color:#fff}
+.bar .m{background:#fff;color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.story,.visit{grid-template-columns:1fr}}
+</style></head><body>
+<section class="hero">
+ <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+ <div class="hp">
+  <span class="panelk">BADARO · BELGIAN POTATO HOUSE</span>
+  <h1>PATATOI!<br><em>The potato, promoted.</em></h1>
+  <p class="tag">A Belgian potato house in Badaro — loaded spuds, proper frites, and a 4.9 to show for it.</p>
+  <div class="magritte">« Ceci n'est pas une patate. »<small>— it's dinner, actually</small></div>
+  <div class="rate"><b>★ 4.9</b> · 48 Google reviews · the owner greets the tables himself</div>
+ </div>
+ <div class="hi"><img src="img/01.jpg" alt="Patatoi terrace"><span class="bub">Bonjour, Badaro! 🥔</span></div>
+</section>
+<div class="frites"></div>
+<section class="story">
+ <div class="im rv"><img src="img/04.jpg" alt="loaded waffle plates" loading="lazy"></div>
+ <div class="rv">
+  <h2>Ceci n'est pas <em>une patate</em></h2>
+  <p>Patatoi took the humble potato and gave it a restaurant. Loaded baked potatoes from butter-and-chive to full gourmet, Belgian-style frites, waffle plates and homemade desserts — served in a bright Badaro corner where the owner still greets the tables himself. A 4.9 rating from a neighborhood that takes its food seriously.</p>
+ </div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">The <span>panels</span> everyone orders</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/04.jpg" alt="The loaded potato" loading="lazy"><div class="bd"><span class="no">BD.1</span><h3>The loaded potato</h3><p>From classic butter & chive to the full gourmet stack — the house canvas.</p></div></div><div class="hc rv"><img src="img/06.jpg" alt="The waffle plates" loading="lazy"><div class="bd"><span class="no">BD.2</span><h3>The waffle plates</h3><p>Savory waffles under smoked salmon and greens — Badaro's brunch secret.</p></div></div><div class="hc rv"><img src="img/03.jpg" alt="The lava cake" loading="lazy"><div class="bd"><span class="no">BD.3</span><h3>The lava cake</h3><p>Homemade desserts that reviewers stay for after the potatoes.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The menu card</h2>
+  <p class="sub rv">Potato mains at the counter · desserts &amp; drinks as printed (USD, VAT incl.)</p>
+  <div class="rv">
+   <div class="msec">🥔 The famous ones — ask at the counter</div>
+   <div class="mrow"><span>Loaded baked potatoes — butter &amp; chive → full gourmet</span><span class="pr">at the counter</span></div>
+   <div class="mrow"><span>Belgian frites &amp; sauces</span><span class="pr">at the counter</span></div>
+   <div class="mrow"><span>Savory waffle plates</span><span class="pr">at the counter</span></div>
+   <div class="msec">🍰 Homemade desserts</div>
+   <div class="mrow"><span>Oreo Icebox Dream</span><span class="pr">$7</span></div>
+   <div class="mrow"><span>Zesty Lemon Cake</span><span class="pr">$6</span></div>
+   <div class="mrow"><span>Tropical Mangomisu</span><span class="pr">$10</span></div>
+   <div class="mrow"><span>Fudgy Sea Salt Brownie</span><span class="pr">$8</span></div>
+   <div class="mrow"><span>Sweet Potato Bites — 3 / 5 pieces</span><span class="pr">$4 / $6</span></div>
+   <div class="msec">🥤 Drinks corner</div>
+   <div class="mrow"><span>Lavender Fresh · Rosemary Ginger Twist</span><span class="pr">$5</span></div>
+   <div class="mrow"><span>Iced Spanish latte</span><span class="pr">$6</span></div>
+   <div class="mrow"><span>Espresso / double</span><span class="pr">$3.5 / $4.5</span></div>
+   <div class="mrow"><span>Cappuccino</span><span class="pr">$5</span></div>
+   <div class="mrow"><span>Affogato · Matcha latte</span><span class="pr">$8</span></div>
+   <div class="mrow"><span>Soft drinks · water · sparkling</span><span class="pr">$2 / $1 / $2</span></div>
+  </div>
+  <div class="mnote rv">All prices VAT inclusive — as printed on the house card.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">Scenes from the potato house</h2>
+ <div class="gg rv"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">The speech bubbles</h2>
+  <div class="meta rv">★ 4.9 · 48 Google reviews</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>Patatoi is a charming restaurant in the heart of Badaro, offering creative potato-based dishes. The atmosphere is cozy and welcoming, the staff are very friendly, and the owner personally attends to us.</p><div class="who">Leila Joheir</div></div><div class="rc rv"><span class="st">★★★★★</span><p>When looking for a unique but not risky experience, this is the place. Nice variety, large portions, tasty without being heavy. Highly Recommend.</p><div class="who">Maher Abdallah</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Explore the full range of loaded baked potatoes. From classic butter and chive to gourmet toppings, a variety of delicious options to suit every craving.</p><div class="who">Hassan Zebib</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us!</h2>
+  <div class="vrow"><b>Address</b><span>Badaro, Beirut</span></div>
+  <div class="vrow"><b>Phone / WhatsApp</b><a href="tel:+9613872687" style="color:var(--tom);font-weight:700">+961 3 872 687</a></div>
+  <div class="vrow"><b>Every day</b><span class="hrs">12 – 10 PM</span></div>
+  <div class="vrow"><b>Dine-in · Takeout · Delivery</b><span>bien sûr</span></div>
+  <a class="btn wa" href="https://wa.me/9613872687" target="_blank" rel="noopener">Message on WhatsApp</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=5527315611646227106&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>PATATOI · Badaro — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9613872687">📞 Call</a><a class="w" href="https://wa.me/9613872687" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://maps.google.com/?cid=5527315611646227106" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

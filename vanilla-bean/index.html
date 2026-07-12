@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Vanilla Bean - The bakery — real vanilla, open kitchen, Kantari</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--ivory:#FCFAF4;--esp:#3D2C22;--van:#E9DEC4;--stem:#8C9179}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--esp);font-weight:300}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+/* botanical line art */
+.orchid{position:fixed;right:-70px;top:8vh;width:340px;opacity:.12;z-index:0;pointer-events:none}
+/* hero split */
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;min-height:90vh;position:relative;z-index:1}
+.hp{display:flex;flex-direction:column;justify-content:center;padding:10vh 6vw;border-right:1px solid #e8e0cc}
+.kick{letter-spacing:.36em;text-transform:uppercase;font-size:.68rem;color:var(--stem);margin-bottom:26px}
+h1{font-weight:600;font-size:clamp(2.8rem,6vw,5rem);line-height:1.02}
+h1 em{font-style:italic;color:var(--stem)}
+.tag{margin-top:24px;font-size:1.08rem;line-height:1.9;color:#6d5c4c;max-width:44ch}
+.oband{margin-top:32px;display:flex;align-items:center;gap:16px}
+.oband .live{width:10px;height:10px;border-radius:50%;background:#C96F4A;animation:bl 1.6s infinite}
+@keyframes bl{50%{opacity:.25}}
+.oband span{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.rate{margin-top:20px;font-size:.9rem;color:#8a7a66}
+.rate b{font-family:'Cormorant Garamond';font-size:1.5rem;color:var(--esp)}
+.hi img{width:100%;height:100%;object-fit:cover;display:block}
+/* story */
+.story{max-width:1100px;margin:0 auto;padding:110px 5vw;display:grid;grid-template-columns:1fr .85fr;gap:7vw;align-items:center;position:relative;z-index:1}
+.story h2{font-weight:600;font-size:clamp(2rem,3.8vw,3rem);line-height:1.12;margin-bottom:26px}
+.story h2 em{font-style:italic;color:var(--stem)}
+.story p{line-height:2.05;font-size:1.02rem;margin-bottom:18px;color:#6d5c4c}
+.story .im img{width:100%;min-height:440px;object-fit:cover;border-radius:4px}
+.story .im{padding:14px;background:#fff;border:1px solid #e8e0cc;box-shadow:0 20px 50px rgba(61,44,34,.1)}
+/* highlights */
+.hl{background:var(--van);padding:100px 5vw;position:relative;z-index:1}
+.hl .in2{max-width:1100px;margin:0 auto}
+.hl h2{font-weight:600;font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:46px;text-align:center}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:var(--ivory);overflow:hidden;border:1px solid #ddd2b6}
+.hc img{width:100%;height:240px;object-fit:cover;display:block}
+.hc .bd{padding:24px;text-align:center}
+.hc .no{color:var(--stem);font-size:1.1rem}
+.hc h3{font-weight:600;font-size:1.35rem;margin:8px 0}
+.hc p{font-size:.93rem;line-height:1.8;color:#6d5c4c}
+/* menu — letterboard like their wall */
+.menu{padding:110px 5vw;position:relative;z-index:1}
+.menu .in2{max-width:900px;margin:0 auto}
+.menu h2{font-weight:600;font-size:clamp(1.9rem,3.6vw,2.7rem);text-align:center;margin-bottom:8px}
+.menu .sub{text-align:center;color:#8a7a66;margin-bottom:50px;font-size:.92rem;letter-spacing:.1em}
+.board{background:#F4EFE2;border:1px solid #ddd2b6;padding:44px 6vw;box-shadow:inset 0 2px 14px rgba(61,44,34,.06)}
+.mrow{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:9px 0;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
+.mrow .dots{flex:1;border-bottom:1px dotted #b9ac8d;transform:translateY(-4px)}
+.mrow .pr{font-weight:600;white-space:nowrap}
+.mnote{margin-top:34px;text-align:center;color:#8a7a66;font-size:.9rem}
+/* gallery */
+.gal{padding:0 5vw 110px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.gal h2{font-weight:600;font-size:1.7rem;margin-bottom:28px;text-align:center}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gg a{display:block;overflow:hidden}
+.gg img{width:100%;height:235px;object-fit:cover;display:block;transition:transform .5s}
+.gg a:hover img{transform:scale(1.05)}
+/* reviews */
+.revs{background:var(--esp);color:var(--ivory);padding:100px 5vw;position:relative;z-index:1}
+.revs .in2{max-width:1040px;margin:0 auto;text-align:center}
+.revs h2{font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:8px}
+.revs .meta{color:var(--van);margin-bottom:46px;font-size:.9rem;letter-spacing:.14em}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+.rc{border:1px solid rgba(233,222,196,.3);padding:28px}
+.rc .st{color:#D9A05B;letter-spacing:.2em;font-size:.8rem}
+.rc p{margin:14px 0 16px;line-height:1.95;font-size:.97rem;font-family:'Cormorant Garamond';font-style:italic;font-size:1.1rem}
+.rc .who{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--van)}
+/* visit */
+.visit{max-width:1100px;margin:0 auto;padding:110px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:7vw;position:relative;z-index:1}
+.visit h2{font-weight:600;font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:26px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e8e0cc;font-size:.96rem}
+.hrs{font-weight:600}
+.btn{display:inline-block;background:var(--esp);color:var(--ivory);padding:17px 40px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;font-size:.76rem;text-decoration:none;margin-top:30px}
+.map{overflow:hidden;min-height:340px;background:#eee;border:1px solid #e8e0cc}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{border-top:1px solid #e8e0cc;color:#8a7a66;text-align:center;padding:36px 5vw 110px;font-size:.8rem;letter-spacing:.16em}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60;box-shadow:0 -8px 30px rgba(61,44,34,.1)}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:600;font-size:.85rem;text-decoration:none}
+.bar .c{background:var(--esp);color:#fff}
+.bar .m{background:var(--ivory);color:var(--esp)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.hp{border-right:0;border-bottom:1px solid #e8e0cc}.story,.visit{grid-template-columns:1fr}}
+</style></head><body>
+<svg class="orchid" viewBox="0 0 200 400" fill="none" stroke="#3D2C22" stroke-width="1.4"><path d="M100 390 C 96 300 92 240 100 170 C 106 120 96 80 84 52"/><path d="M100 250 C 130 236 152 214 160 180 C 138 186 116 200 104 224"/><path d="M96 300 C 70 288 52 266 46 234 C 68 240 88 256 96 278"/><ellipse cx="82" cy="44" rx="20" ry="30" transform="rotate(-18 82 44)"/><ellipse cx="106" cy="36" rx="16" ry="26" transform="rotate(24 106 36)"/><path d="M84 66 C 74 84 78 100 92 108 C 104 100 108 84 100 68"/></svg>
+<section class="hero">
+ <div class="hp">
+  <div class="kick">The Bakery · Kantari · Michel Chiha</div>
+  <h1>Vanilla Bean,<br><em>the real kind.</em></h1>
+  <p class="tag">Real vanilla, an open kitchen, and croissants Kantari plans its mornings around.</p>
+  <div class="oband"><span class="live"></span><span>Open kitchen — watch it baked live</span></div>
+  <div class="rate"><b>4.7</b> ★ · 95 Google reviews</div>
+ </div>
+ <div class="hi"><img src="img/01.jpg" alt="Vanilla Bean - The bakery"></div>
+</section>
+<section class="story">
+ <div class="rv">
+  <h2>Baked <em>in front of you</em></h2>
+  <p>At Vanilla Bean the kitchen has no door: you watch the owner and her mother roll croissants and build cakes a few steps from your table. The name is literal — real vanilla beans go into the signature bakes — and the za'atar croissant has quietly become a Hamra-district legend. Seats are few; mornings are busiest; the coffee wall is short and correct.</p>
+ </div>
+ <div class="im rv"><img src="img/06.jpg" alt="the vitrine" loading="lazy"></div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">Worth the seat hunt</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/04.jpg" alt="The almond croissant" loading="lazy"><div class="bd"><span class="no">❀</span><h3>The almond croissant</h3><p>Laminated by hand every morning — with the za'atar croissant, the house signature.</p></div></div><div class="hc rv"><img src="img/05.jpg" alt="Basque cheesecake" loading="lazy"><div class="bd"><span class="no">❀</span><h3>Basque cheesecake</h3><p>Burnt, custardy, gone early — the slice reviewers time their visits for.</p></div></div><div class="hc rv"><img src="img/06.jpg" alt="The vitrine" loading="lazy"><div class="bd"><span class="no">❀</span><h3>The vitrine</h3><p>Real-vanilla cakes and small-batch pastry, arranged like a jewelry case.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <div class="in2">
+  <h2 class="rv">The coffee wall</h2>
+  <p class="sub rv">AS WRITTEN ON THE LETTERBOARD · USD</p>
+  <div class="board rv">
+   <div class="mrow"><span>Espresso</span><span class="dots"></span><span class="pr">$2.2</span></div>
+   <div class="mrow"><span>Macchiato</span><span class="dots"></span><span class="pr">$3</span></div>
+   <div class="mrow"><span>Piccolo</span><span class="dots"></span><span class="pr">$3</span></div>
+   <div class="mrow"><span>Americano</span><span class="dots"></span><span class="pr">$4</span></div>
+   <div class="mrow"><span>Latte</span><span class="dots"></span><span class="pr">$4</span></div>
+   <div class="mrow"><span>Cortado</span><span class="dots"></span><span class="pr">$4</span></div>
+   <div class="mrow"><span>Flat white</span><span class="dots"></span><span class="pr">$4.5</span></div>
+   <div class="mrow"><span>Cappuccino</span><span class="dots"></span><span class="pr">$4.5</span></div>
+   <div class="mrow"><span>Matcha · Spanish latte · Mocha</span><span class="dots"></span><span class="pr">$5</span></div>
+   <div class="mrow"><span>Hot chocolate · Iced tea · Salted caramel</span><span class="dots"></span><span class="pr">$5</span></div>
+   <div class="mrow"><span>Pistachio frappé</span><span class="dots"></span><span class="pr">$5</span></div>
+   <div class="mrow"><span>Berry / passion lemonade</span><span class="dots"></span><span class="pr">$6.5</span></div>
+   <div class="mrow"><span>Tea</span><span class="dots"></span><span class="pr">$2.5</span></div>
+  </div>
+  <div class="mnote rv">Pastries, cakes and the famous za'atar croissant — at the counter, while they last.</div>
+ </div>
+</section>
+<section class="gal">
+ <h2 class="rv">From the open kitchen</h2>
+ <div class="gg rv"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">One visit is all it takes</h2>
+  <div class="meta rv">★ 4.7 · 95 GOOGLE REVIEWS</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>I love the open kitchen concept where you can see the owner and her mother with the staff preparing and creating the food live in front of you. The food is so so good with many varieties.</p><div class="who">Mike Aoun</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Vanilla Bean delivers on taste from the first sip. The coffee is genuinely good, and the smell of fresh-baked pastries fills the space the moment you walk in.</p><div class="who">layal koush</div></div><div class="rc rv"><span class="st">★★★★★</span><p>It only takes one visit to fall in love. Vanilla Bean is always my go-to place whenever I'm in Hamra. From the coffee to the food, and especially the staff.</p><div class="who">Leila Joheir</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us</h2>
+  <div class="vrow"><b>Address</b><span>Michel Chiha St, Kantari Suites, Beirut</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+96121341459" style="color:var(--esp);font-weight:600">+961 21 341 459</a></div>
+  <div class="vrow"><b>Tue – Fri</b><span class="hrs">8 AM – 5 PM</span></div>
+  <div class="vrow"><b>Saturday</b><span class="hrs">9 AM – 5 PM</span></div>
+  <div class="vrow"><b>Sunday</b><span class="hrs">9 AM – 2 PM</span></div>
+  <div class="vrow"><b>Monday</b><span class="hrs">closed</span></div>
+  <a class="btn" href="tel:+96121341459">Call +961 21 341 459</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=1484487983675973285&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>VANILLA BEAN — THE BAKERY · Kantari — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+96121341459">📞 Call</a><a class="m" href="https://maps.google.com/?cid=1484487983675973285" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>

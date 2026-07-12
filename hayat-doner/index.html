@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Hayat Doner Alturki — Turkish döner, İznik blue</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Marcellus&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:clip}
+:root{--cobalt:#1F5FA8;--turq:#3BA8A0;--tom:#C93B2B;--white:#F8F6F0;--ink:#1C2733}
+body{font-family:'Josefin Sans',sans-serif;background:var(--white);color:var(--ink)}
+h1,h2,h3{font-family:'Marcellus',serif}
+/* iznik tulip border */
+.iznik{height:34px;background:
+ radial-gradient(circle at 12px 17px,var(--tom) 5px,transparent 6px),
+ radial-gradient(circle at 34px 17px,var(--cobalt) 5px,transparent 6px),
+ radial-gradient(circle at 56px 17px,var(--turq) 5px,transparent 6px),
+ linear-gradient(var(--white),var(--white));
+ background-size:66px 34px;border-top:3px solid var(--cobalt);border-bottom:3px solid var(--cobalt)}
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:90vh}
+.hp{background:var(--cobalt);color:var(--white);padding:10vh 6vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hp:before{content:"";position:absolute;inset:0;opacity:.1;background:radial-gradient(circle at 20% 20%,#fff 3px,transparent 4px),radial-gradient(circle at 70% 60%,#fff 3px,transparent 4px),radial-gradient(circle at 40% 85%,#fff 3px,transparent 4px);background-size:120px 120px}
+.kick{letter-spacing:.3em;text-transform:uppercase;font-size:.72rem;font-weight:600;color:#BBD6F5;margin-bottom:20px}
+h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05}
+h1 em{font-style:italic;color:#F5C34B}
+.artitle{font-family:'Cairo';font-weight:700;font-size:1.1rem;color:#BBD6F5;margin-top:12px}
+.tag{margin-top:22px;font-size:1.1rem;line-height:1.8;max-width:46ch;color:rgba(248,246,240,.92)}
+.big{margin-top:32px;display:inline-flex;align-items:baseline;gap:14px;background:rgba(248,246,240,.12);border:1px solid rgba(248,246,240,.4);border-radius:14px;padding:16px 26px}
+.big b{font-size:2.2rem;font-family:'Marcellus';color:#F5C34B}
+.big span{font-size:.9rem;letter-spacing:.08em}
+.hi{position:relative;overflow:hidden}
+.hi img{width:100%;height:100%;object-fit:cover;display:block}
+/* story */
+.story{max-width:1140px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr .9fr;gap:6vw;align-items:center}
+.story h2{font-size:clamp(1.9rem,3.8vw,2.9rem);line-height:1.14;color:var(--cobalt);margin-bottom:24px}
+.story h2 em{font-style:italic;color:var(--tom)}
+.story p{line-height:1.95;font-size:1.04rem;margin-bottom:18px;color:#3d4854}
+.story .im{position:relative;padding:16px;background:linear-gradient(135deg,var(--cobalt),var(--turq));border-radius:26px}
+.story .im img{width:100%;min-height:420px;object-fit:cover;border-radius:14px;display:block}
+/* highlights */
+.hl{background:var(--ink);color:var(--white);padding:96px 5vw}
+.hl .in2{max-width:1140px;margin:0 auto}
+.hl h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:44px;color:#F5C34B;text-align:center}
+.hlg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px}
+.hc{background:#243240;border-radius:18px;overflow:hidden;border-bottom:5px solid var(--turq)}
+.hc img{width:100%;height:230px;object-fit:cover;display:block}
+.hc .bd{padding:22px}
+.hc .no{color:var(--turq);font-size:1.15rem}
+.hc h3{font-size:1.25rem;margin:8px 0;color:#F5C34B}
+.hc p{font-size:.94rem;line-height:1.75;color:rgba(248,246,240,.78)}
+/* menu */
+.menu{max-width:980px;margin:0 auto;padding:100px 5vw;text-align:center}
+.menu h2{font-size:clamp(1.8rem,3.6vw,2.7rem);color:var(--cobalt);margin-bottom:8px}
+.menu .sub{color:#7a8694;margin-bottom:46px}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px 48px;text-align:left}
+.mrow{display:flex;justify-content:space-between;gap:14px;padding:13px 4px;border-bottom:2px dotted #c8d2dc;font-size:1.02rem}
+.mrow .a{font-family:'Cairo';color:#7a8694}
+.mnote{margin-top:38px;display:inline-block;background:var(--turq);color:#fff;border-radius:99px;padding:16px 30px;font-weight:600}
+/* gallery */
+.gal{padding:0 5vw 100px;max-width:1140px;margin:0 auto}
+.gal h2{color:var(--cobalt);font-size:1.6rem;margin-bottom:26px;text-align:center}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gg a{display:block;border-radius:16px;overflow:hidden;border:3px solid var(--cobalt)}
+.gg img{width:100%;height:230px;object-fit:cover;display:block}
+/* reviews */
+.revs{background:linear-gradient(135deg,var(--cobalt),var(--turq));color:var(--white);padding:96px 5vw}
+.revs .in2{max-width:1040px;margin:0 auto;text-align:center}
+.revs h2{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:8px}
+.revs .meta{color:#DCEDF7;margin-bottom:44px}
+.rg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;text-align:left}
+.rc{background:var(--white);color:var(--ink);border-radius:18px;padding:26px}
+.rc .st{color:var(--tom);letter-spacing:.18em;font-size:.85rem}
+.rc p{margin:13px 0 15px;line-height:1.8;font-size:.96rem}
+.rc .who{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#7a8694;font-weight:700}
+/* visit */
+.visit{max-width:1140px;margin:0 auto;padding:100px 5vw;display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+.visit h2{font-size:clamp(1.8rem,3.6vw,2.7rem);color:var(--cobalt);margin-bottom:24px}
+.vrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #dbe3ea;font-size:.98rem}
+.hrs{font-weight:700;color:var(--cobalt)}
+.btn{display:inline-block;background:var(--tom);color:#fff;padding:17px 36px;border-radius:99px;font-weight:700;letter-spacing:.08em;font-size:.88rem;text-decoration:none;margin-top:28px}
+.map{border-radius:20px;overflow:hidden;min-height:340px;background:#dde;border:4px solid var(--cobalt)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+footer{background:var(--ink);color:rgba(248,246,240,.5);text-align:center;padding:34px 5vw 110px;font-size:.82rem}
+.bar{position:fixed;bottom:0;left:0;right:0;display:flex;z-index:60}
+.bar a{flex:1;text-align:center;padding:16px 6px;font-weight:700;font-size:.86rem;text-decoration:none}
+.bar .c{background:var(--cobalt);color:#fff}
+.bar .m{background:var(--white);color:var(--ink)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media(max-width:880px){.hero{grid-template-columns:1fr}.hi{min-height:44vh;order:-1}.story,.visit{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}}
+</style></head><body>
+<div class="iznik"></div>
+<section class="hero">
+ <div class="hp">
+  <div class="kick">Turkish döner · Borj Abi Haidar</div>
+  <h1>Döner,<br><em>Türk usulü.</em></h1>
+  <div class="artitle">مطعم شاورما التركي — حياة دونر التركي</div>
+  <p class="tag">Turkish döner the proper way — 1,894 reviews and a blue-tiled room to eat them in.</p>
+  <div class="big"><b>1,894</b><span>Google reviews.<br>The beef döner keeps winning.</span></div>
+ </div>
+ <div class="hi"><img src="img/01.jpg" alt="Hayat Doner Alturki storefront"></div>
+</section>
+<div class="iznik"></div>
+<section class="story">
+ <div class="rv">
+  <h2>Döner, <em>Türk usulü</em></h2>
+  <p>Hayat Doner Alturki brought the Istanbul playbook to Beirut: beef döner shaved thin, stuffed potatoes, proper çay in tulip glasses, and a room dressed in blue İznik patterns. Nearly two thousand people have reviewed it — the beef döner and the tea are the two words that keep repeating. Open till midnight, every day.</p>
+ </div>
+ <div class="im rv"><img src="img/05.jpg" alt="the blue room" loading="lazy"></div>
+</section>
+<section class="hl">
+ <div class="in2">
+  <h2 class="rv">What Istanbul would order</h2>
+  <div class="hlg"><div class="hc rv"><img src="img/03.jpg" alt="The beef döner" loading="lazy"><div class="bd"><span class="no">✿</span><h3>The beef döner</h3><p>'If you're not on a diet, try the beef döner' — the review that says it all.</p></div></div><div class="hc rv"><img src="img/04.jpg" alt="The döner plate" loading="lazy"><div class="bd"><span class="no">✿</span><h3>The döner plate</h3><p>Shaved meat, bulgur, grilled peppers and the purple cabbage crunch.</p></div></div><div class="hc rv"><img src="img/07.jpg" alt="Çay, endlessly" loading="lazy"><div class="bd"><span class="no">✿</span><h3>Çay, endlessly</h3><p>Great tea, tulip glasses, no rush — the Turkish way to end it.</p></div></div></div>
+ </div>
+</section>
+<section class="menu">
+ <h2 class="rv">The board</h2>
+ <p class="sub rv">The house lineup · today's prices at the counter</p>
+ <div class="mgrid rv">
+  <div class="mrow"><span>Beef döner sandwich</span><span class="a">دونر لحمة</span></div>
+  <div class="mrow"><span>Chicken döner sandwich</span><span class="a">دونر دجاج</span></div>
+  <div class="mrow"><span>Döner plate with bulgur</span><span class="a">صحن دونر</span></div>
+  <div class="mrow"><span>Stuffed potato — kumpir</span><span class="a">بطاطا محشية</span></div>
+  <div class="mrow"><span>Turkish pide</span><span class="a">بيدا تركية</span></div>
+  <div class="mrow"><span>Lahmacun</span><span class="a">لحم بعجين تركي</span></div>
+  <div class="mrow"><span>Çay — Turkish tea</span><span class="a">شاي تركي</span></div>
+  <div class="mrow"><span>Ayran</span><span class="a">عيران</span></div>
+ </div>
+ <div class="mnote rv">☕ End it the Turkish way — çay in a tulip glass, no rush.</div>
+</section>
+<section class="gal">
+ <h2 class="rv">Blue rooms &amp; big plates</h2>
+ <div class="gg rv"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
+</section>
+<section class="revs">
+ <div class="in2">
+  <h2 class="rv">1,894 opinions in</h2>
+  <div class="meta rv">★ 4.1 on Google</div>
+  <div class="rg"><div class="rc rv"><span class="st">★★★★★</span><p>Excellent experience — highly recommended! My experience at Hayat Doner Alturki was outstanding from start to finish. We ordered a mixed plate.</p><div class="who">Bahar Nurjanova</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Calm atmosphere with great service. Plus they have GREAT tea. If you're not on a diet, try the beef Doner.</p><div class="who">Mohammad Mortada</div></div><div class="rc rv"><span class="st">★★★★★</span><p>Tasty stuffed potato & I loved the chicken and beef Turkish shawarma sandwiches! Fair prices.</p><div class="who">Daan</div></div></div>
+ </div>
+</section>
+<section class="visit">
+ <div class="rv">
+  <h2>Visit us · Hoş geldiniz</h2>
+  <div class="vrow"><b>Address</b><span>Borj Abi Haidar area, Beirut</span></div>
+  <div class="vrow"><b>Phone</b><a href="tel:+9611302702" style="color:var(--cobalt);font-weight:700">+961 1 302 702</a></div>
+  <div class="vrow"><b>Mon – Sat</b><span class="hrs">9 AM – 12 AM</span></div>
+  <div class="vrow"><b>Sunday</b><span class="hrs">11 AM – 12 AM</span></div>
+  <a class="btn" href="tel:+9611302702">Call +961 1 302 702</a>
+ </div>
+ <div class="map rv"><iframe src="https://www.google.com/maps?cid=9982779150180958763&output=embed" loading="lazy" title="Map"></iframe></div>
+</section>
+<footer>HAYAT DONER ALTURKI · Beirut — demo page by Wissam Sader</footer>
+<div class="bar"><a class="c" href="tel:+9611302702">📞 Call</a><a class="m" href="https://maps.google.com/?cid=9982779150180958763" target="_blank" rel="noopener">📍 Map</a></div>
+<script>
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
+</script>
+</body></html>
