@@ -91,7 +91,10 @@ footer{background:var(--ink);color:rgba(251,245,233,.5);text-align:center;paddin
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
-</style></head><body>
+</style><style data-fx-orn>.est{overflow:hidden}
+.est::after{content:'';position:absolute;top:-20%;left:-70%;width:42%;height:140%;background:linear-gradient(105deg,transparent,rgba(255,252,240,.5),transparent);transform:skewX(-18deg);animation:fxglint 13s ease-in-out infinite}
+@keyframes fxglint{0%,86%{left:-70%}97%,100%{left:140%}}
+@media (prefers-reduced-motion: reduce){.est::after{animation:none}}</style></head><body>
 <section class="hero gingham">
  <div>
   <div class="varsity" data-edit="t1" data-edit-label="Text — ABOU SAMI · CLASS OF '87">ABOU SAMI · CLASS OF '87</div>

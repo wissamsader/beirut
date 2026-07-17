@@ -120,7 +120,10 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(246,
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
-</head>
+<style data-fx-orn>.medal{overflow:hidden}
+.medal::after{content:'';position:absolute;top:-20%;left:-70%;width:45%;height:140%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-18deg);animation:fxglint 12s ease-in-out infinite}
+@keyframes fxglint{0%,84%{left:-70%}96%,100%{left:140%}}
+@media (prefers-reduced-motion: reduce){.medal::after{animation:none}}</style></head>
 <body>
 
 <nav>
