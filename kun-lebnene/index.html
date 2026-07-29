@@ -125,14 +125,48 @@ footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Aref Ruqaa',serif;--arb:'Amiri',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#C6A75E;color:#0A2C22;border:1.5px solid #0E3B2E;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <nav>
- <a class="brand" href="#">KUN <span data-edit="t1" data-edit-label="Text — LEBNÉNÉ">LEBNÉNÉ</span></a>
+ <a class="brand" href="#"><xen>KUN <span data-edit="t1" data-edit-label="Text — LEBNÉNÉ">LEBNÉNÉ</span></xen><xar>كن <span data-edit="t2" data-edit-label="Text: لبناني">لبناني</span></xar></a>
  <div class="links">
-  <a href="#table" data-edit="t2" data-edit-label="Button / link — The table">The table</a><a href="#story" data-edit="t3" data-edit-label="Button / link — The house">The house</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Gallery">Gallery</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Reserve">Reserve</a>
-  <a class="call" href="tel:+9611986786" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#table"><xen data-edit="t3" data-edit-label="Text (EN): The table">The table</xen><xar data-edit="t4" data-edit-label="Text (AR): الطاولة">الطاولة</xar></a><a href="#story"><xen data-edit="t5" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t6" data-edit-label="Text (AR): البيت">البيت</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Gallery">Gallery</xen><xar data-edit="t8" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t9" data-edit-label="Text (EN): Reserve">Reserve</xen><xar data-edit="t10" data-edit-label="Text (AR): الحجز">الحجز</xar></a>
+  <a class="call" href="tel:+9611986786"><xen data-edit="t13" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t14" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
@@ -140,85 +174,97 @@ footer{text-align:center;padding:30px 5vw 110px;font-size:.76rem;letter-spacing:
  <img class="bg" src="img/01.jpg" alt="Kun Lebnéné Beirut facade">
  <div class="veil"></div>
  <div class="in">
-  <span class="small" data-edit="t7" data-edit-label="Text — Beirut · Lebanese fine dining">Beirut · Lebanese fine dining</span>
-  <h1 data-edit="t8" data-edit-label="Big title — KUN LEBNÉNÉ">KUN LEBNÉNÉ</h1>
-  <p class="arb" data-edit="t9" data-edit-label="Text — كن لبناني">كن لبناني</p>
-  <p class="mean" data-edit="t10" data-edit-label="Text — “Be Lebanese.” — an instruction, an in…">“Be Lebanese.” — an instruction, an invitation, a menu.</p>
+  <span class="small"><xen data-edit="t15" data-edit-label="Text (EN): Beirut · Lebanese fine dining">Beirut · Lebanese fine dining</xen><xar data-edit="t16" data-edit-label="Text (AR): بيروت · مطبخ لبناني راقٍ">بيروت · مطبخ لبناني راقٍ</xar></span>
+  <h1><xen data-edit="t17" data-edit-label="Text (EN): KUN LEBNÉNÉ">KUN LEBNÉNÉ</xen><xar data-edit="t18" data-edit-label="Text (AR): كن لبناني">كن لبناني</xar></h1>
+  <p class="arb"><xen data-edit="t19" data-edit-label="Text (EN): كن لبناني">كن لبناني</xen><xar><span class="lat" data-edit="t21" data-edit-label="Text: KUN LEBNÉNÉ">KUN LEBNÉNÉ</span></xar></p>
+  <p class="mean"><xen data-edit="t22" data-edit-label="Text (EN): “Be Lebanese.” — an instruction, an in…">“Be Lebanese.” — an instruction, an invitation, a menu.</xen><xar data-edit="t23" data-edit-label="Text (AR): «كن لبنانياً.» — أمر، ودعوة، ومنيو.">«كن لبنانياً.» — أمر، ودعوة، ومنيو.</xar></p>
   <div class="line"></div>
  </div>
 </header>
 
 <div class="man">
- <p class="big rv">Elegant Lebanese dining by the sea — refined rooms, heirloom mezze, unhurried evenings. Here the mezze arrives like an heirloom, the service moves like <em data-edit="t11" data-edit-label="Text — a promise">a promise</em>, and the room insists — gently — that you stay another hour.</p>
+ <p class="big rv"><xen>Elegant Lebanese dining by the sea — refined rooms, heirloom mezze, unhurried evenings. Here the mezze arrives like an heirloom, the service moves like <em data-edit="t11" data-edit-label="Text — a promise">a promise</em>, and the room insists — gently — that you stay another hour.</xen><xar>مطبخ لبناني أنيق على البحر — صالات راقية، مازة متوارثة، وسهرات بلا استعجال. هون المازة بتوصل متل إرث، والخدمة بتمشي متل <em data-edit="t24" data-edit-label="Text: وعد">وعد</em>، والصالة بتصرّ — بلطف — إنّك تقعد ساعة زيادة.</xar></p>
  <div class="row rv">
-  <div class="cell"><b data-edit="t12" data-edit-label="Text — ★ 4.6">★ 4.6</b><span data-edit="t13" data-edit-label="Text — 115 reviews">115 reviews</span></div>
-  <div class="cell"><b data-edit="t14" data-edit-label="Text — Noon — Midnight">Noon — Midnight</b><span data-edit="t15" data-edit-label="Text — every day">every day</span></div>
-  <div class="cell"><b data-edit="t16" data-edit-label="Text — Ain El Mreisseh">Ain El Mreisseh</b><span data-edit="t17" data-edit-label="Text — beirut">beirut</span></div>
+  <div class="cell"><b data-edit="t12" data-edit-label="Text — ★ 4.6">★ 4.6</b><span><xen data-edit="t25" data-edit-label="Text (EN): 115 reviews">115 reviews</xen><xar data-edit="t26" data-edit-label="Text (AR): 115 تقييم">115 تقييم</xar></span></div>
+  <div class="cell"><b><xen data-edit="t27" data-edit-label="Text (EN): Noon — Midnight">Noon — Midnight</xen><xar data-edit="t28" data-edit-label="Text (AR): الظهر — منتصف الليل">الظهر — منتصف الليل</xar></b><span><xen data-edit="t29" data-edit-label="Text (EN): every day">every day</xen><xar data-edit="t30" data-edit-label="Text (AR): كل يوم">كل يوم</xar></span></div>
+  <div class="cell"><b><xen data-edit="t31" data-edit-label="Text (EN): Ain El Mreisseh">Ain El Mreisseh</xen><xar data-edit="t33" data-edit-label="Text (AR): عين المريسة">عين المريسة</xar></b><span><xen data-edit="t34" data-edit-label="Text (EN): beirut">beirut</xen><xar data-edit="t35" data-edit-label="Text (AR): بيروت">بيروت</xar></span></div>
  </div>
  <div class="cta rv">
-  <a class="btn g" href="tel:+9611986786" data-edit="t18" data-edit-label="Button / link — Reserve · +961 1 986 786">Reserve · +961 1 986 786</a>
-  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener" data-edit="t19" data-edit-label="Button / link — Directions">Directions</a>
+  <a class="btn g" href="tel:+9611986786"><xen data-edit="t37" data-edit-label="Text (EN): Reserve · +961 1 986 786">Reserve · +961 1 986 786</xen><xar data-edit="t45" data-edit-label="Text (AR): إحجزوا · +961 1 986 786">إحجزوا · +961 1 986 786</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener"><xen data-edit="t46" data-edit-label="Text (EN): Directions">Directions</xen><xar data-edit="t47" data-edit-label="Text (AR): الطريق">الطريق</xar></a>
  </div>
 </div>
 
 <section class="table" id="table">
  <div class="wrap">
-  <h2 class="rv">The table, <em data-edit="t20" data-edit-label="Text — composed">composed</em></h2>
-  <p class="sub" data-edit="t21" data-edit-label="Text — Plates that carry the country in them">Plates that carry the country in them</p>
-  <div class="t-grid"><div class="tc rv"><div class="imw"><img src="img/03.jpg" alt="Hummus, composed" loading="lazy"></div><h3 data-edit="t22" data-edit-label="Heading — Hummus, composed">Hummus, composed</h3><span class="no" data-edit="t23" data-edit-label="Text — plate 1">plate 1</span><p data-edit="t24" data-edit-label="Text — Poured, pooled with oil, finished with…">Poured, pooled with oil, finished with whole chickpeas — a still life.</p></div><div class="tc rv"><div class="imw"><img src="img/04.jpg" alt="Warak enab" loading="lazy"></div><h3 data-edit="t25" data-edit-label="Heading — Warak enab">Warak enab</h3><span class="no" data-edit="t26" data-edit-label="Text — plate 2">plate 2</span><p data-edit="t27" data-edit-label="Text — Vine leaves rolled thin and stacked li…">Vine leaves rolled thin and stacked like cigars in a silver case.</p></div><div class="tc rv"><div class="imw"><img src="img/08.jpg" alt="The roasted chicken" loading="lazy"></div><h3 data-edit="t28" data-edit-label="Heading — The roasted chicken">The roasted chicken</h3><span class="no" data-edit="t29" data-edit-label="Text — plate 3">plate 3</span><p data-edit="t30" data-edit-label="Text — Golden, herbed, carried whole to the t…">Golden, herbed, carried whole to the table.</p></div></div>
+  <h2 class="rv"><xen>The table, <em data-edit="t20" data-edit-label="Text — composed">composed</em></xen><xar>الطاولة، <em data-edit="t48" data-edit-label="Text: مؤلّفة">مؤلّفة</em></xar></h2>
+  <p class="sub"><xen data-edit="t49" data-edit-label="Text (EN): Plates that carry the country in them">Plates that carry the country in them</xen><xar data-edit="t50" data-edit-label="Text (AR): صحون شايلة البلد جوّاتها">صحون شايلة البلد جوّاتها</xar></p>
+  <div class="t-grid"><div class="tc rv"><div class="imw"><img src="img/03.jpg" alt="Hummus, composed" loading="lazy"></div><h3><xen data-edit="t51" data-edit-label="Text (EN): Hummus, composed">Hummus, composed</xen><xar data-edit="t52" data-edit-label="Text (AR): حمّص، مؤلّف">حمّص، مؤلّف</xar></h3><span class="no"><xen data-edit="t53" data-edit-label="Text (EN): plate 1">plate 1</xen><xar data-edit="t54" data-edit-label="Text (AR): الصحن 1">الصحن 1</xar></span><p><xen data-edit="t55" data-edit-label="Text (EN): Poured, pooled with oil, finished with…">Poured, pooled with oil, finished with whole chickpeas — a still life.</xen><xar data-edit="t56" data-edit-label="Text (AR): مصبوب، وبركة زيت بالنصّ، ومزيّن بحبّات…">مصبوب، وبركة زيت بالنصّ، ومزيّن بحبّات كاملة — لوحة طبيعة صامتة.</xar></p></div><div class="tc rv"><div class="imw"><img src="img/04.jpg" alt="Warak enab" loading="lazy"></div><h3><xen data-edit="t57" data-edit-label="Text (EN): Warak enab">Warak enab</xen><xar data-edit="t58" data-edit-label="Text (AR): ورق عنب">ورق عنب</xar></h3><span class="no"><xen data-edit="t59" data-edit-label="Text (EN): plate 2">plate 2</xen><xar data-edit="t60" data-edit-label="Text (AR): الصحن 2">الصحن 2</xar></span><p><xen data-edit="t61" data-edit-label="Text (EN): Vine leaves rolled thin and stacked li…">Vine leaves rolled thin and stacked like cigars in a silver case.</xen><xar data-edit="t62" data-edit-label="Text (AR): ورق ملفوف رفيع ومرصوص متل سيجار بعلبة …">ورق ملفوف رفيع ومرصوص متل سيجار بعلبة فضّة.</xar></p></div><div class="tc rv"><div class="imw"><img src="img/08.jpg" alt="The roasted chicken" loading="lazy"></div><h3><xen data-edit="t63" data-edit-label="Text (EN): The roasted chicken">The roasted chicken</xen><xar data-edit="t64" data-edit-label="Text (AR): الدجاج المشوي">الدجاج المشوي</xar></h3><span class="no"><xen data-edit="t65" data-edit-label="Text (EN): plate 3">plate 3</xen><xar data-edit="t66" data-edit-label="Text (AR): الصحن 3">الصحن 3</xar></span><p><xen data-edit="t67" data-edit-label="Text (EN): Golden, herbed, carried whole to the t…">Golden, herbed, carried whole to the table.</xen><xar data-edit="t68" data-edit-label="Text (AR): ذهبي، بالأعشاب، وبيوصل كامل عالطاولة.">ذهبي، بالأعشاب، وبيوصل كامل عالطاولة.</xar></p></div></div>
  </div>
 </section>
 
 <section class="story" id="story">
  <div class="grid">
   <div class="rv">
-   <span class="k" data-edit="t31" data-edit-label="Text — The house">The house</span>
-   <h2>Elegance with a <em data-edit="t32" data-edit-label="Text — Lebanese accent">Lebanese accent</em></h2>
-   <p data-edit="t33" data-edit-label="Text — Kun Lebnéné — “Be Lebanese” — is both …">Kun Lebnéné — “Be Lebanese” — is both the name and the house philosophy. The room is elegant and luxurious, the welcome is warm from the first moment, and the kitchen treats the Lebanese repertoire like an inheritance: fattoush bright as a garden, hummus like silk, warak enab folded tight as letters home.</p>
-   <p data-edit="t34" data-edit-label="Text — In summer the name travels — a seasona…">In summer the name travels — a seasonal address in Batroun at Capo — but the heart stays here, by the sea in Beirut, where the room glows and the kitchen keeps its promises.</p>
+   <span class="k"><xen data-edit="t69" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t70" data-edit-label="Text (AR): البيت">البيت</xar></span>
+   <h2><xen>Elegance with a <em data-edit="t32" data-edit-label="Text — Lebanese accent">Lebanese accent</em></xen><xar>أناقة بلكنة <em data-edit="t71" data-edit-label="Text: لبنانية">لبنانية</em></xar></h2>
+   <p><xen data-edit="t72" data-edit-label="Text (EN): Kun Lebnéné — “Be Lebanese” — is both …">Kun Lebnéné — “Be Lebanese” — is both the name and the house philosophy. The room is elegant and luxurious, the welcome is warm from the first moment, and the kitchen treats the Lebanese repertoire like an inheritance: fattoush bright as a garden, hummus like silk, warak enab folded tight as letters home.</xen><xar data-edit="t73" data-edit-label="Text (AR): كن لبناني — الإسم وفلسفة البيت بنفس ال…">كن لبناني — الإسم وفلسفة البيت بنفس الوقت. الصالة أنيقة وفخمة، والترحيب دافي من أوّل لحظة، والمطبخ بيتعامل مع المطبخ اللبناني متل إرث: فتّوش منعش متل جنينة، حمّص متل الحرير، وورق عنب مطوي مضبوط متل رسايل عالبيت.</xar></p>
+   <p><xen data-edit="t74" data-edit-label="Text (EN): In summer the name travels — a seasona…">In summer the name travels — a seasonal address in Batroun at Capo — but the heart stays here, by the sea in Beirut, where the room glows and the kitchen keeps its promises.</xen><xar data-edit="t75" data-edit-label="Text (AR): بالصيف الإسم بيسافر — عنوان موسمي بالب…">بالصيف الإسم بيسافر — عنوان موسمي بالبترون عند كابو — بس القلب بيضلّ هون، عالبحر ببيروت، وين الصالة عم تضوّي والمطبخ عم يوفي بوعودو.</xar></p>
   </div>
   <div class="ph rv">
    <img src="img/07.jpg" alt="Kun Lebnéné Beirut dining room">
-   <span class="tag" data-edit="t35" data-edit-label="Text — THE DINING ROOM">THE DINING ROOM</span>
+   <span class="tag"><xen data-edit="t76" data-edit-label="Text (EN): THE DINING ROOM">THE DINING ROOM</xen><xar data-edit="t77" data-edit-label="Text (AR): الصالة">الصالة</xar></span>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">A quiet <em data-edit="t36" data-edit-label="Text — gallery">gallery</em></h2>
- <p class="sub" data-edit="t37" data-edit-label="Text — The room, the plates, the evening ligh…">The room, the plates, the evening light</p>
+ <h2 class="rv"><xen>A quiet <em data-edit="t36" data-edit-label="Text — gallery">gallery</em></xen><xar>معرض <em data-edit="t78" data-edit-label="Text: هادي">هادي</em></xar></h2>
+ <p class="sub"><xen data-edit="t79" data-edit-label="Text (EN): The room, the plates, the evening ligh…">The room, the plates, the evening light</xen><xar data-edit="t80" data-edit-label="Text (AR): الصالة، الصحون، وضوّ المسا">الصالة، الصحون، وضوّ المسا</xar></p>
  <div class="g-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Guests, <em data-edit="t38" data-edit-label="Text — quoted">quoted</em></h2>
+  <h2 class="rv"><xen>Guests, <em data-edit="t38" data-edit-label="Text — quoted">quoted</em></xen><xar>الضيوف، <em data-edit="t81" data-edit-label="Text: باقتباس">باقتباس</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t39" data-edit-label="Text — The restaurant has a very elegant and …">The restaurant has a very elegant and luxurious atmosphere, with beautiful decor and a welcoming ambiance that makes you feel comfortable from the moment you arrive.</p><div class="who" data-edit="t40" data-edit-label="Text — Nana Mansour">Nana Mansour</div></div><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t41" data-edit-label="Text — A lovely place serving delicious Leban…">A lovely place serving delicious Lebanese food, where eating and greeting come together for a truly enjoyable experience. The location is both convenient and beautiful, decorated with a refined and elegant touch.</p><div class="who" data-edit="t42" data-edit-label="Text — Doumit AbiSaleh">Doumit AbiSaleh</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Tonight, <em data-edit="t43" data-edit-label="Text — be Lebanese.">be Lebanese.</em></h2>
+ <h2 class="rv"><xen>Tonight, <em data-edit="t43" data-edit-label="Text — be Lebanese.">be Lebanese.</em></xen><xar>الليلة، <em data-edit="t82" data-edit-label="Text: كن لبنانياً.">كن لبنانياً.</em></xar></h2>
  <a class="phone" href="tel:+9611986786" data-edit="t44" data-edit-label="Button / link — +961 1 986 786">+961 1 986 786</a>
- <p class="meta">Ain El Mreisseh area, Beirut, Lebanon<br>Daily 12 PM - 12 AM</p>
+ <p class="meta"><xen>Ain El Mreisseh area, Beirut, Lebanon<br>Daily 12 PM - 12 AM</xen><xar>منطقة عين المريسة، بيروت، لبنان<br>كل يوم 12 ظهراً - 12 منتصف الليل</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+9611986786" data-edit="t45" data-edit-label="Button / link — Call +961 1 986 786">Call +961 1 986 786</a> <a class="btn ig" href="https://instagram.com/kunlebnene" target="_blank" rel="noopener" data-edit="t46" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener" data-edit="t47" data-edit-label="Button / link — Google Maps">Google Maps</a>
+  <a class="btn" href="tel:+9611986786"><xen data-edit="t83" data-edit-label="Text (EN): Call +961 1 986 786">Call +961 1 986 786</xen><xar data-edit="t84" data-edit-label="Text (AR): إتّصلوا +961 1 986 786">إتّصلوا +961 1 986 786</xar></a> <a class="btn ig" href="https://instagram.com/kunlebnene" target="_blank" rel="noopener"><xen data-edit="t85" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t86" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener"><xen data-edit="t87" data-edit-label="Text (EN): Google Maps">Google Maps</xen><xar data-edit="t88" data-edit-label="Text (AR): خرائط غوغل">خرائط غوغل</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611986786" data-edit="t48" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611986786"><xen data-edit="t89" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t90" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/kunlebnene" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener" data-edit="t49" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=2890951945600369216" target="_blank" rel="noopener"><xen data-edit="t91" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t92" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Kun Lebnéné Beirut · Beirut</footer>
+<footer><xen data-edit="t93" data-edit-label="Text (EN): © Kun Lebnéné Beirut · Beirut">© Kun Lebnéné Beirut · Beirut</xen><xar data-edit="t94" data-edit-label="Text (AR): © كن لبناني بيروت · بيروت">© كن لبناني بيروت · بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t95" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"كن لبناني بيروت — مطعم لبناني راقٍ في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

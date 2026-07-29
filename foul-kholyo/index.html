@@ -135,48 +135,82 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Lalezar:wght@400;700&family=Cairo:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Lalezar',serif;--arb:'Cairo',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#1D4ED8;color:#FDF6E3;border:1.5px solid #F7C531;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <div class="tiles"></div>
 <nav>
- <a class="brand" href="#">FOUL <span data-edit="t1" data-edit-label="Text — KHOLYO">KHOLYO</span></a>
+ <a class="brand" href="#"><xen>FOUL <span data-edit="t1" data-edit-label="Text — KHOLYO">KHOLYO</span></xen><xar>فول <span data-edit="t2" data-edit-label="Text: خوليو">خوليو</span></xar></a>
  <div class="links">
-  <a href="#plates" data-edit="t2" data-edit-label="Button / link — The plates">The plates</a><a href="#kholyo" data-edit="t3" data-edit-label="Button / link — Kholyo">Kholyo</a><a href="#menu" data-edit="t4" data-edit-label="Button / link — Menu">Menu</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96170039558" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#plates"><xen data-edit="t3" data-edit-label="Text (EN): The plates">The plates</xen><xar data-edit="t4" data-edit-label="Text (AR): الصحون">الصحون</xar></a><a href="#kholyo"><xen data-edit="t5" data-edit-label="Text (EN): Kholyo">Kholyo</xen><xar data-edit="t6" data-edit-label="Text (AR): خوليو">خوليو</xar></a><a href="#menu"><xen data-edit="t7" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t8" data-edit-label="Text (AR): المنيو">المنيو</xar></a><a href="#visit"><xen data-edit="t9" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t10" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96170039558"><xen data-edit="t11" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t12" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="morn" data-edit="t7" data-edit-label="Text — ☀ Mornings only · 7:30 AM — 12 PM">☀ Mornings only · 7:30 AM — 12 PM</span>
-  <h1 data-edit="t8" data-edit-label="Big title — FOUL KHOLYO">FOUL KHOLYO</h1>
-  <p class="arb" data-edit="t9" data-edit-label="Text — فول خوليو">فول خوليو</p>
-  <p class="tg" data-edit="t10" data-edit-label="Text — A hidden Ouzai breakfast room where ch…">A hidden Ouzai breakfast room where chef Khalil cooks, sings, and puts shrimp on hummus.</p>
+  <span class="morn"><xen data-edit="t13" data-edit-label="Text (EN): ☀ Mornings only · 7:30 AM — 12 PM">☀ Mornings only · 7:30 AM — 12 PM</xen><xar data-edit="t14" data-edit-label="Text (AR): ☀ الصبح بس · 7:30 صباحاً — 12 ظهراً">☀ الصبح بس · 7:30 صباحاً — 12 ظهراً</xar></span>
+  <h1><xen data-edit="t15" data-edit-label="Text (EN): FOUL KHOLYO">FOUL KHOLYO</xen><xar data-edit="t16" data-edit-label="Text (AR): فول خوليو">فول خوليو</xar></h1>
+  <p class="arb"><xen data-edit="t17" data-edit-label="Text (EN): فول خوليو">فول خوليو</xen><xar><span class="lat" data-edit="t19" data-edit-label="Text: FOUL KHOLYO">FOUL KHOLYO</span></xar></p>
+  <p class="tg"><xen data-edit="t20" data-edit-label="Text (EN): A hidden Ouzai breakfast room where ch…">A hidden Ouzai breakfast room where chef Khalil cooks, sings, and puts shrimp on hummus.</xen><xar data-edit="t21" data-edit-label="Text (AR): غرفة ترويقة مخبّاية بالأوزاعي، الشيف خ…">غرفة ترويقة مخبّاية بالأوزاعي، الشيف خليل بيطبخ، بيغنّي، وبيحطّ قريدس عالحمّص.</xar></p>
   <div class="chips">
-   <span class="chip b" data-edit="t11" data-edit-label="Text — ★ 4.6 · 149 reviews">★ 4.6 · 149 reviews</span>
-   <span class="chip y" data-edit="t12" data-edit-label="Text — Ouzai, by the gas station">Ouzai, by the gas station</span>
-   <span class="chip" data-edit="t13" data-edit-label="Text — A couple of tables, that's it">A couple of tables, that's it</span>
+   <span class="chip b"><xen data-edit="t22" data-edit-label="Text (EN): ★ 4.6 · 149 reviews">★ 4.6 · 149 reviews</xen><xar data-edit="t23" data-edit-label="Text (AR): ★ 4.6 · 149 تقييم">★ 4.6 · 149 تقييم</xar></span>
+   <span class="chip y"><xen data-edit="t24" data-edit-label="Text (EN): Ouzai, by the gas station">Ouzai, by the gas station</xen><xar data-edit="t25" data-edit-label="Text (AR): الأوزاعي، جنب محطّة البنزين">الأوزاعي، جنب محطّة البنزين</xar></span>
+   <span class="chip"><xen data-edit="t26" data-edit-label="Text (EN): A couple of tables, that's it">A couple of tables, that's it</xen><xar data-edit="t28" data-edit-label="Text (AR): كم طاولة، وبس">كم طاولة، وبس</xar></span>
   </div>
   <div class="cta">
-   <a class="btn b" href="tel:+96170039558" data-edit="t14" data-edit-label="Button / link — Call +961 70 039 558">Call +961 70 039 558</a>
-   <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Find it (good luck) ↗">Find it (good luck) ↗</a>
+   <a class="btn b" href="tel:+96170039558"><xen data-edit="t29" data-edit-label="Text (EN): Call +961 70 039 558">Call +961 70 039 558</xen><xar data-edit="t31" data-edit-label="Text (AR): إتّصلوا +961 70 039 558">إتّصلوا +961 70 039 558</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener"><xen data-edit="t33" data-edit-label="Text (EN): Find it (good luck) ↗">Find it (good luck) ↗</xen><xar data-edit="t34" data-edit-label="Text (AR): لاقوه (وبالتوفيق) ↗">لاقوه (وبالتوفيق) ↗</xar></a>
   </div>
  </div>
  <div class="ph rv">
   <img src="img/01.jpg" alt="Foul Kholyo breakfast table">
-  <span class="sing" data-edit="t16" data-edit-label="Text — chef Khalil sings 🎵">chef Khalil sings 🎵</span>
+  <span class="sing"><xen data-edit="t35" data-edit-label="Text (EN): chef Khalil sings 🎵">chef Khalil sings 🎵</xen><xar data-edit="t36" data-edit-label="Text (AR): الشيف خليل عم يغنّي 🎵">الشيف خليل عم يغنّي 🎵</xar></span>
   <span class="notes">♪ ♫ ♪</span>
  </div>
 </header>
 
-<div class="sing2"><div class="tt"><span data-edit="t17" data-edit-label="Text — FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMU…">FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ </span></div></div>
+<div class="sing2"><div class="tt"><span><xen data-edit="t37" data-edit-label="Text (EN): FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMU…">FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ FOUL ♪ HUMMUS WITH MEAT ♫ SHRIMP HUMMUS ♪ LAHME SHARHAAT ♫ TEA IN LITTLE GLASSES ♪ A SONG WITH EVERY PLATE ♫ </xen><xar data-edit="t38" data-edit-label="Text (AR): فول ♪ حمّص بلحمة ♫ حمّص بقريدس ♪ لحمة …">فول ♪ حمّص بلحمة ♫ حمّص بقريدس ♪ لحمة شرحات ♫ شاي بكاسات صغيرة ♪ وأغنية مع كل صحن ♫ فول ♪ حمّص بلحمة ♫ حمّص بقريدس ♪ لحمة شرحات ♫ شاي بكاسات صغيرة ♪ وأغنية مع كل صحن ♫</xar></span></div></div>
 
 <section class="plates" id="plates">
  <div class="wrap">
-  <h2 class="rv">Plates worth the <span data-edit="t18" data-edit-label="Text — detour">detour</span></h2>
-  <p class="sub" data-edit="t19" data-edit-label="Text — This is not normal foul. There is shri…">This is not normal foul. There is shrimp involved.</p>
-  <div class="p-grid"><div class="pc rv"><img src="img/06.jpg" alt="Hummus, crowned" loading="lazy"><div class="bd"><h3 data-edit="t20" data-edit-label="Heading — Hummus, crowned">Hummus, crowned</h3><p data-edit="t21" data-edit-label="Text — Chickpeas arranged like a little sun —…">Chickpeas arranged like a little sun — the classic done carefully.</p></div></div><div class="pc rv"><img src="img/10.jpg" alt="The shrimp fatteh" loading="lazy"><div class="bd"><h3 data-edit="t22" data-edit-label="Heading — The shrimp fatteh">The shrimp fatteh</h3><p data-edit="t23" data-edit-label="Text — The house legend: seafood meets the br…">The house legend: seafood meets the breakfast table.</p></div></div><div class="pc rv"><img src="img/03.jpg" alt="Sawda & sharhaat" loading="lazy"><div class="bd"><h3 data-edit="t24" data-edit-label="Heading — Sawda & sharhaat">Sawda & sharhaat</h3><p data-edit="t25" data-edit-label="Text — Pan-fried liver and meat slices for th…">Pan-fried liver and meat slices for the brave and the blessed.</p></div></div></div>
+  <h2 class="rv"><xen>Plates worth the <span data-edit="t18" data-edit-label="Text — detour">detour</span></xen><xar>صحون بتستاهل <span data-edit="t39" data-edit-label="Text: تلفّ كرمالها">تلفّ كرمالها</span></xar></h2>
+  <p class="sub"><xen data-edit="t40" data-edit-label="Text (EN): This is not normal foul. There is shri…">This is not normal foul. There is shrimp involved.</xen><xar data-edit="t41" data-edit-label="Text (AR): هيدا مش فول عادي. في قريدس بالقصّة.">هيدا مش فول عادي. في قريدس بالقصّة.</xar></p>
+  <div class="p-grid"><div class="pc rv"><img src="img/06.jpg" alt="Hummus, crowned" loading="lazy"><div class="bd"><h3><xen data-edit="t43" data-edit-label="Text (EN): Hummus, crowned">Hummus, crowned</xen><xar data-edit="t53" data-edit-label="Text (AR): حمّص، متوّج">حمّص، متوّج</xar></h3><p><xen data-edit="t54" data-edit-label="Text (EN): Chickpeas arranged like a little sun —…">Chickpeas arranged like a little sun — the classic done carefully.</xen><xar data-edit="t55" data-edit-label="Text (AR): حبّات الحمّص مرتّبة متل شمس صغيرة — ال…">حبّات الحمّص مرتّبة متل شمس صغيرة — الكلاسيكي معمول بعناية.</xar></p></div></div><div class="pc rv"><img src="img/10.jpg" alt="The shrimp fatteh" loading="lazy"><div class="bd"><h3><xen data-edit="t56" data-edit-label="Text (EN): The shrimp fatteh">The shrimp fatteh</xen><xar data-edit="t57" data-edit-label="Text (AR): فتّة القريدس">فتّة القريدس</xar></h3><p><xen data-edit="t58" data-edit-label="Text (EN): The house legend: seafood meets the br…">The house legend: seafood meets the breakfast table.</xen><xar data-edit="t59" data-edit-label="Text (AR): أسطورة البيت: البحر بيلاقي طاولة الترو…">أسطورة البيت: البحر بيلاقي طاولة الترويقة.</xar></p></div></div><div class="pc rv"><img src="img/03.jpg" alt="Sawda & sharhaat" loading="lazy"><div class="bd"><h3><xen data-edit="t60" data-edit-label="Text (EN): Sawda & sharhaat">Sawda & sharhaat</xen><xar data-edit="t61" data-edit-label="Text (AR): سودة وشرحات">سودة وشرحات</xar></h3><p><xen data-edit="t62" data-edit-label="Text (EN): Pan-fried liver and meat slices for th…">Pan-fried liver and meat slices for the brave and the blessed.</xen><xar data-edit="t63" data-edit-label="Text (AR): سودة ولحمة مقلية عالطاسة للشجعان والمح…">سودة ولحمة مقلية عالطاسة للشجعان والمحظوظين.</xar></p></div></div></div>
  </div>
 </section>
 
@@ -184,11 +218,11 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30
  <div class="man2">
   <div class="ph rv"><img src="img/05.jpg" alt="Inside Foul Kholyo"></div>
   <div class="rv">
-   <span class="k" data-edit="t26" data-edit-label="Text — The man himself">The man himself</span>
-   <h2>Khalil cooks. <span data-edit="t27" data-edit-label="Text — Kholyo sings.">Kholyo sings.</span> Same person.</h2>
-   <p data-edit="t28" data-edit-label="Text — Foul Kholyo is an old-school morning h…">Foul Kholyo is an old-school morning house on the Ouzai road with a couple of tables, a counter, and the funniest natural person in the Lebanese restaurant business behind it. Khalil — Kholyo — simmers foul, stacks hummus with meat or shrimp, and sings while he does it. Mornings only; joy guaranteed.</p>
-   <p data-edit="t29" data-edit-label="Text — Reviewers come for the food and return…">Reviewers come for the food and return for the man — "the funniest natural person" running the warmest little room in Ouzai.</p>
-   <div class="quote">"If I would visit Kholyo again, it would be because of Kholyo."<span data-edit="t30" data-edit-label="Text — — an honest review">— an honest review</span></div>
+   <span class="k"><xen data-edit="t64" data-edit-label="Text (EN): The man himself">The man himself</xen><xar data-edit="t65" data-edit-label="Text (AR): الرجّال نفسو">الرجّال نفسو</xar></span>
+   <h2><xen>Khalil cooks. <span data-edit="t27" data-edit-label="Text — Kholyo sings.">Kholyo sings.</span> Same person.</xen><xar>خليل بيطبخ. <span data-edit="t66" data-edit-label="Text: وخوليو بيغنّي.">وخوليو بيغنّي.</span> ونفس الشخص.</xar></h2>
+   <p><xen data-edit="t67" data-edit-label="Text (EN): Foul Kholyo is an old-school morning h…">Foul Kholyo is an old-school morning house on the Ouzai road with a couple of tables, a counter, and the funniest natural person in the Lebanese restaurant business behind it. Khalil — Kholyo — simmers foul, stacks hummus with meat or shrimp, and sings while he does it. Mornings only; joy guaranteed.</xen><xar data-edit="t68" data-edit-label="Text (AR): فول خوليو بيت صبح على الطريقة القديمة …">فول خوليو بيت صبح على الطريقة القديمة على طريق الأوزاعي، فيه كم طاولة وكاونتر، وأظرف شخص طبيعي بمهنة المطاعم بلبنان. خليل — خوليو — بيغلي الفول، بيرصّ الحمّص باللحمة أو بالقريدس، وبيغنّي وهوّي عم يعمل هيك. الصبح بس؛ والفرح مضمون.</xar></p>
+   <p><xen data-edit="t69" data-edit-label="Text (EN): Reviewers come for the food and return…">Reviewers come for the food and return for the man — "the funniest natural person" running the warmest little room in Ouzai.</xen><xar data-edit="t70" data-edit-label="Text (AR): الناس بتجي كرمال الأكل وبترجع كرمال ال…">الناس بتجي كرمال الأكل وبترجع كرمال الرجّال — «أظرف شخص طبيعي» عم يدير أدفا غرفة صغيرة بالأوزاعي.</xar></p>
+   <div class="quote"><xen>"If I would visit Kholyo again, it would be because of Kholyo."<span data-edit="t30" data-edit-label="Text — — an honest review">— an honest review</span></xen><xar>«إذا برجع عند خوليو، بيكون كرمال خوليو.»<span data-edit="t71" data-edit-label="Text: — تقييم صادق">— تقييم صادق</span></xar></div>
   </div>
  </div>
 </section>
@@ -197,54 +231,66 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(23,30
  <div class="grid">
   <div class="sheet rv"><img src="img/02.jpg" alt="Foul Kholyo price board"></div>
   <div class="rv">
-   <span class="k" data-edit="t31" data-edit-label="Text — The board outside">The board outside</span>
-   <h2>Prices on the <span data-edit="t32" data-edit-label="Text — wall">wall</span>, like the old days</h2>
-   <p data-edit="t33" data-edit-label="Text — One board, hand-updated, photographed …">One board, hand-updated, photographed straight from the street — foul, hummus, fatteh, sawda, and the famous seafood twists.</p>
+   <span class="k"><xen data-edit="t72" data-edit-label="Text (EN): The board outside">The board outside</xen><xar data-edit="t73" data-edit-label="Text (AR): اللوح يلّي برّا">اللوح يلّي برّا</xar></span>
+   <h2><xen>Prices on the <span data-edit="t32" data-edit-label="Text — wall">wall</span>, like the old days</xen><xar>الأسعار عال<span data-edit="t74" data-edit-label="Text: حيط">حيط</span>، متل أيام زمان</xar></h2>
+   <p><xen data-edit="t75" data-edit-label="Text (EN): One board, hand-updated, photographed …">One board, hand-updated, photographed straight from the street — foul, hummus, fatteh, sawda, and the famous seafood twists.</xen><xar data-edit="t76" data-edit-label="Text (AR): لوح واحد، محدّث بخطّ اليد، ومصوّر دغري…">لوح واحد، محدّث بخطّ اليد، ومصوّر دغري من الشارع — فول، حمّص، فتّة، سودة، ولمسات البحر المشهورة.</xar></p>
    <ul>
-    <li><span data-edit="t34" data-edit-label="Text — Foul, the foundation">Foul, the foundation</span><span data-edit="t35" data-edit-label="Text — always">always</span></li>
-    <li><span data-edit="t36" data-edit-label="Text — Hummus with lahme">Hummus with lahme</span><span data-edit="t37" data-edit-label="Text — the upgrade">the upgrade</span></li>
-    <li><span data-edit="t38" data-edit-label="Text — Hummus with shrimp">Hummus with shrimp</span><span data-edit="t39" data-edit-label="Text — the legend">the legend</span></li>
-    <li><span data-edit="t40" data-edit-label="Text — Lahme sharhaat">Lahme sharhaat</span><span data-edit="t41" data-edit-label="Text — ask nicely">ask nicely</span></li>
+    <li><span><xen data-edit="t77" data-edit-label="Text (EN): Foul, the foundation">Foul, the foundation</xen><xar data-edit="t78" data-edit-label="Text (AR): فول، الأساس">فول، الأساس</xar></span><span><xen data-edit="t79" data-edit-label="Text (EN): always">always</xen><xar data-edit="t80" data-edit-label="Text (AR): دايماً">دايماً</xar></span></li>
+    <li><span><xen data-edit="t81" data-edit-label="Text (EN): Hummus with lahme">Hummus with lahme</xen><xar data-edit="t82" data-edit-label="Text (AR): حمّص بلحمة">حمّص بلحمة</xar></span><span><xen data-edit="t83" data-edit-label="Text (EN): the upgrade">the upgrade</xen><xar data-edit="t84" data-edit-label="Text (AR): الترقية">الترقية</xar></span></li>
+    <li><span><xen data-edit="t85" data-edit-label="Text (EN): Hummus with shrimp">Hummus with shrimp</xen><xar data-edit="t86" data-edit-label="Text (AR): حمّص بقريدس">حمّص بقريدس</xar></span><span><xen data-edit="t87" data-edit-label="Text (EN): the legend">the legend</xen><xar data-edit="t88" data-edit-label="Text (AR): الأسطورة">الأسطورة</xar></span></li>
+    <li><span><xen data-edit="t89" data-edit-label="Text (EN): Lahme sharhaat">Lahme sharhaat</xen><xar data-edit="t90" data-edit-label="Text (AR): لحمة شرحات">لحمة شرحات</xar></span><span><xen data-edit="t91" data-edit-label="Text (EN): ask nicely">ask nicely</xen><xar data-edit="t92" data-edit-label="Text (AR): إسألوا بلطف">إسألوا بلطف</xar></span></li>
    </ul>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">Morning <span data-edit="t42" data-edit-label="Text — photographs">photographs</span></h2>
- <p class="sub" data-edit="t43" data-edit-label="Text — Sunrise over Ouzai, steam over the pla…">Sunrise over Ouzai, steam over the plates</p>
+ <h2 class="rv"><xen>Morning <span data-edit="t42" data-edit-label="Text — photographs">photographs</span></xen><xar>صور <span data-edit="t93" data-edit-label="Text: الصبح">الصبح</span></xar></h2>
+ <p class="sub"><xen data-edit="t94" data-edit-label="Text (EN): Sunrise over Ouzai, steam over the pla…">Sunrise over Ouzai, steam over the plates</xen><xar data-edit="t95" data-edit-label="Text (AR): شروق فوق الأوزاعي، وبخار فوق الصحون">شروق فوق الأوزاعي، وبخار فوق الصحون</xar></p>
  <div class="g-grid"><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Songs of <span data-edit="t44" data-edit-label="Text — praise">praise</span></h2>
+  <h2 class="rv"><xen>Songs of <span data-edit="t44" data-edit-label="Text — praise">praise</span></xen><xar>أغاني <span data-edit="t96" data-edit-label="Text: مديح">مديح</span></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t45" data-edit-label="Text — Amazing hidden gem, this is an old bre…">Amazing hidden gem, this is an old breakfast place offering a variety of plates, foul, hummus with meat, shrimp and much more. The experience itself is worth it.</p><div class="who" data-edit="t46" data-edit-label="Text — Imad Bazzi">Imad Bazzi</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t47" data-edit-label="Text — Probably the funniest encounter I had …">Probably the funniest encounter I had in a restaurant with the restaurant owner, he is the funniest natural person. If I would visit Kholyo again, it would be because of Kholyo.</p><div class="who" data-edit="t48" data-edit-label="Text — Ali Deeb">Ali Deeb</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t49" data-edit-label="Text — The food there is great specially the …">The food there is great specially the lahme sharhaat, you feel at home. Only a couple of tables and you can enjoy chef Khalil cooking and singing at the same time.</p><div class="who" data-edit="t50" data-edit-label="Text — Mazen Youniss">Mazen Youniss</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Come before <span data-edit="t51" data-edit-label="Text — noon.">noon.</span></h2>
+ <h2 class="rv"><xen>Come before <span data-edit="t51" data-edit-label="Text — noon.">noon.</span></xen><xar>تعوا قبل <span data-edit="t97" data-edit-label="Text: الضهر.">الضهر.</span></xar></h2>
  <a class="phone" href="tel:+96170039558" data-edit="t52" data-edit-label="Button / link — +961 70 039 558">+961 70 039 558</a>
- <p class="meta">Main road, facing Saidaco gas company, Hachem station junction, Ouzai, Lebanon<br>Tue-Sun 7:30 AM - 12 PM; Mon closed</p>
+ <p class="meta"><xen>Main road, facing Saidaco gas company, Hachem station junction, Ouzai, Lebanon<br>Tue-Sun 7:30 AM - 12 PM; Mon closed</xen><xar>الطريق العام، مقابل شركة صيداكو للمحروقات، مفرق محطّة هاشم، الأوزاعي، لبنان<br>الثلاثاء-الأحد 7:30 صباحاً - 12 ظهراً؛ الإثنين مسكّر</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96170039558" target="_blank" rel="noopener" data-edit="t53" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a>
-  <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener" data-edit="t54" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96170039558" target="_blank" rel="noopener"><xen data-edit="t98" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t99" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener"><xen data-edit="t100" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t101" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96170039558" data-edit="t55" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96170039558" target="_blank" rel="noopener" data-edit="t56" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
- <a class="m" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener" data-edit="t57" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96170039558"><xen data-edit="t102" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t103" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96170039558" target="_blank" rel="noopener"><xen data-edit="t104" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t105" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+ <a class="m" href="https://maps.google.com/?cid=8091591028880240565" target="_blank" rel="noopener"><xen data-edit="t106" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t107" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Foul Kholyo · Ouzai, Beirut</footer>
+<footer><xen data-edit="t108" data-edit-label="Text (EN): © Foul Kholyo · Ouzai, Beirut">© Foul Kholyo · Ouzai, Beirut</xen><xar data-edit="t109" data-edit-label="Text (AR): © فول خوليو · الأوزاعي، بيروت">© فول خوليو · الأوزاعي، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t110" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"فول خوليو — مطعم ترويقة في الأوزاعي، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

@@ -151,13 +151,47 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Reem Kufi',serif;--arb:'IBM Plex Sans Arabic',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#FF3B30;color:#08080D;border:1.5px solid #FF3B30;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+html.ar h1 xar{font-size:.84em}
+</style>
 </head>
 <body>
 <nav id="nav">
- <a class="brand" href="#top"><b data-edit="t1" data-edit-label="Text — ALLO">ALLO</b> BEIRUT</a>
+ <a class="brand" href="#top"><xen><b data-edit="t1" data-edit-label="Text — ALLO">ALLO</b> BEIRUT</xen><xar><b data-edit="t2" data-edit-label="Text: ألو">ألو</b> بيروت</xar></a>
  <div class="links">
-  <a href="#story" data-edit="t2" data-edit-label="Button / link — The corner">The corner</a><a href="#sig" data-edit="t3" data-edit-label="Button / link — Signatures">Signatures</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — After dark">After dark</a><a href="#reviews" data-edit="t5" data-edit-label="Button / link — Late texts">Late texts</a><a href="#visit" data-edit="t6" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96178789988" data-edit="t7" data-edit-label="Button / link — Call now">Call now</a>
+  <a href="#story"><xen data-edit="t3" data-edit-label="Text (EN): The corner">The corner</xen><xar data-edit="t4" data-edit-label="Text (AR): الزاوية">الزاوية</xar></a><a href="#sig"><xen data-edit="t5" data-edit-label="Text (EN): Signatures">Signatures</xen><xar data-edit="t6" data-edit-label="Text (AR): التواقيع">التواقيع</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): After dark">After dark</xen><xar data-edit="t9" data-edit-label="Text (AR): بعد العتمة">بعد العتمة</xar></a><a href="#reviews"><xen data-edit="t10" data-edit-label="Text (EN): Late texts">Late texts</xen><xar data-edit="t11" data-edit-label="Text (AR): رسائل الليل">رسائل الليل</xar></a><a href="#visit"><xen data-edit="t12" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t13" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96178789988"><xen data-edit="t14" data-edit-label="Text (EN): Call now">Call now</xen><xar data-edit="t15" data-edit-label="Text (AR): إتّصلوا فيّنا">إتّصلوا فيّنا</xar></a>
  </div>
 </nav>
 
@@ -165,39 +199,39 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
  <img class="bg" src="img/03.jpg" alt="Allo Beirut Restaurant">
  <div class="grad"></div>
  <div class="hero-c">
-  <span class="open"><span class="dot"></span>OPEN TILL 1 AM — HAMRA</span>
-  <h1><span class="neon" data-edit="t8" data-edit-label="Text — ALLO">ALLO</span> BEIRUT</h1>
-  <div class="ar arabic" data-edit="t9" data-edit-label="Text — الو بيروت">الو بيروت</div>
-  <p class="tag" data-edit="t10" data-edit-label="Text — Hamra's sujuk & shawarma spot — big fl…">Hamra's sujuk & shawarma spot — big flavors, fair prices, cards accepted</p>
+  <span class="open"><xen class="c"><span class="dot"></span>OPEN TILL 1 AM — HAMRA</xen><xar class="c"><span class="dot"></span>مفتوح لحدّ 1 بعد نصّ الليل — الحمرا</xar></span>
+  <h1><xen><span class="neon" data-edit="t8" data-edit-label="Text — ALLO">ALLO</span> BEIRUT</xen><xar><span class="neon" data-edit="t16" data-edit-label="Text: ألو">ألو</span> بيروت</xar></h1>
+  <div class="ar arabic"><xen data-edit="t17" data-edit-label="Text (EN): الو بيروت">الو بيروت</xen><xar><span class="lat" data-edit="t18" data-edit-label="Text: ALLO BEIRUT">ALLO BEIRUT</span></xar></div>
+  <p class="tag"><xen data-edit="t19" data-edit-label="Text (EN): Hamra's sujuk & shawarma spot — big fl…">Hamra's sujuk & shawarma spot — big flavors, fair prices, cards accepted</xen><xar data-edit="t20" data-edit-label="Text (AR): شاورما وسجق الحمرا — طعمة كبيرة، سعر ع…">شاورما وسجق الحمرا — طعمة كبيرة، سعر عادل، وبنقبل بطاقات</xar></p>
   <div class="cta">
-   <a class="btn neon" href="tel:+96178789988" data-edit="t11" data-edit-label="Button / link — Call the corner">Call the corner</a>
-   <a class="btn wa" href="https://wa.me/96178789988" target="_blank" rel="noopener" data-edit="t12" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
-   <a class="btn ghost" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener" data-edit="t13" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+   <a class="btn neon" href="tel:+96178789988"><xen class="c" data-edit="t21" data-edit-label="Text (EN): Call the corner">Call the corner</xen><xar class="c" data-edit="t22" data-edit-label="Text (AR): إتّصلوا بالزاوية">إتّصلوا بالزاوية</xar></a>
+   <a class="btn wa" href="https://wa.me/96178789988" target="_blank" rel="noopener"><xen class="c" data-edit="t23" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar class="c" data-edit="t24" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+   <a class="btn ghost" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener"><xen class="c" data-edit="t25" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar class="c" data-edit="t26" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
   </div>
  </div>
 </header>
 
 <div class="clock">
  <div class="in">
-  <div class="h"><i></i><b data-edit="t14" data-edit-label="Text — 9 AM">9 AM</b><span data-edit="t15" data-edit-label="Text — doors open">doors open</span></div>
-  <div class="h"><i></i><b data-edit="t16" data-edit-label="Text — NOON">NOON</b><span data-edit="t17" data-edit-label="Text — lunch rush">lunch rush</span></div>
-  <div class="h"><i></i><b data-edit="t18" data-edit-label="Text — 6 PM">6 PM</b><span data-edit="t19" data-edit-label="Text — the spit peaks">the spit peaks</span></div>
-  <div class="h"><i></i><b data-edit="t20" data-edit-label="Text — 10 PM">10 PM</b><span data-edit="t21" data-edit-label="Text — night shift">night shift</span></div>
-  <div class="h"><i></i><b data-edit="t22" data-edit-label="Text — 1 AM">1 AM</b><span data-edit="t23" data-edit-label="Text — last call">last call</span></div>
-  <div class="h off"><i></i><b data-edit="t24" data-edit-label="Text — 2 AM">2 AM</b><span data-edit="t25" data-edit-label="Text — lights off">lights off</span></div>
+  <div class="h"><i></i><b><xen data-edit="t28" data-edit-label="Text (EN): 9 AM">9 AM</xen><xar data-edit="t30" data-edit-label="Text (AR): 9 الصبح">9 الصبح</xar></b><span><xen data-edit="t32" data-edit-label="Text (EN): doors open">doors open</xen><xar data-edit="t33" data-edit-label="Text (AR): بيفتح الباب">بيفتح الباب</xar></span></div>
+  <div class="h"><i></i><b><xen data-edit="t34" data-edit-label="Text (EN): NOON">NOON</xen><xar data-edit="t35" data-edit-label="Text (AR): الضهر">الضهر</xar></b><span><xen data-edit="t38" data-edit-label="Text (EN): lunch rush">lunch rush</xen><xar data-edit="t39" data-edit-label="Text (AR): زحمة الغدا">زحمة الغدا</xar></span></div>
+  <div class="h"><i></i><b><xen data-edit="t41" data-edit-label="Text (EN): 6 PM">6 PM</xen><xar data-edit="t42" data-edit-label="Text (AR): 6 المسا">6 المسا</xar></b><span><xen data-edit="t44" data-edit-label="Text (EN): the spit peaks">the spit peaks</xen><xar data-edit="t45" data-edit-label="Text (AR): ذروة السيخ">ذروة السيخ</xar></span></div>
+  <div class="h"><i></i><b><xen data-edit="t46" data-edit-label="Text (EN): 10 PM">10 PM</xen><xar data-edit="t47" data-edit-label="Text (AR): 10 الليل">10 الليل</xar></b><span><xen data-edit="t48" data-edit-label="Text (EN): night shift">night shift</xen><xar data-edit="t49" data-edit-label="Text (AR): وردية الليل">وردية الليل</xar></span></div>
+  <div class="h"><i></i><b><xen data-edit="t50" data-edit-label="Text (EN): 1 AM">1 AM</xen><xar data-edit="t51" data-edit-label="Text (AR): 1 بعد نصّ الليل">1 بعد نصّ الليل</xar></b><span><xen data-edit="t52" data-edit-label="Text (EN): last call">last call</xen><xar data-edit="t53" data-edit-label="Text (AR): آخر طلب">آخر طلب</xar></span></div>
+  <div class="h off"><i></i><b><xen data-edit="t54" data-edit-label="Text (EN): 2 AM">2 AM</xen><xar data-edit="t55" data-edit-label="Text (AR): 2 بعد نصّ الليل">2 بعد نصّ الليل</xar></b><span><xen data-edit="t56" data-edit-label="Text (EN): lights off">lights off</xen><xar data-edit="t57" data-edit-label="Text (AR): بتنطفي الأضوية">بتنطفي الأضوية</xar></span></div>
  </div>
 </div>
 
 <section id="story">
  <div class="wrap story">
   <div class="rv">
-   <span class="k" data-edit="t26" data-edit-label="Text — The corner">The corner</span>
-   <h2>The corner that <em data-edit="t27" data-edit-label="Text — never sleeps">never sleeps</em></h2>
-   <p data-edit="t28" data-edit-label="Text — On a neon-lit corner of Hamra, Allo Be…">On a neon-lit corner of Hamra, Allo Beirut answers the city's call from morning till 1 AM. The best sujuk shawarma some people have ever had, grilled platters built for sharing, lahm b'ajin straight from the oven — and yes, they take cards. Dine in, take away, or let the night decide.</p>
+   <span class="k"><xen data-edit="t58" data-edit-label="Text (EN): The corner">The corner</xen><xar data-edit="t59" data-edit-label="Text (AR): الزاوية">الزاوية</xar></span>
+   <h2><xen>The corner that <em data-edit="t27" data-edit-label="Text — never sleeps">never sleeps</em></xen><xar>الزاوية يلّي <em data-edit="t60" data-edit-label="Text: ما بتنام">ما بتنام</em></xar></h2>
+   <p><xen data-edit="t61" data-edit-label="Text (EN): On a neon-lit corner of Hamra, Allo Be…">On a neon-lit corner of Hamra, Allo Beirut answers the city's call from morning till 1 AM. The best sujuk shawarma some people have ever had, grilled platters built for sharing, lahm b'ajin straight from the oven — and yes, they take cards. Dine in, take away, or let the night decide.</xen><xar data-edit="t62" data-edit-label="Text (AR): على زاوية مضويّة بالنيون بالحمرا، ألو …">على زاوية مضويّة بالنيون بالحمرا، ألو بيروت بيردّ على نداء المدينة من الصبح لحدّ الساعة 1 بعد نصّ الليل. أطيب شاورما سجق داقها بعض الناس بحياتن، صواني مشاوي معمولة للمشاركة، ولحم بعجين دغري من الفرن — وإي، بيقبلوا بطاقات. محلّي، تيك أواي، أو خلّي الليل يقرّر.</xar></p>
    <div class="stats">
-    <div class="stat"><b data-edit="t29" data-edit-label="Text — ★ 4.2">★ 4.2</b><span data-edit="t30" data-edit-label="Text — on Google">on Google</span></div>
-    <div class="stat"><b data-edit="t31" data-edit-label="Text — 191">191</b><span data-edit="t32" data-edit-label="Text — reviews">reviews</span></div>
-    <div class="stat"><b data-edit="t33" data-edit-label="Text — 1 AM">1 AM</b><span data-edit="t34" data-edit-label="Text — still serving">still serving</span></div>
+    <div class="stat"><b data-edit="t29" data-edit-label="Text — ★ 4.2">★ 4.2</b><span><xen data-edit="t64" data-edit-label="Text (EN): on Google">on Google</xen><xar data-edit="t65" data-edit-label="Text (AR): على غوغل">على غوغل</xar></span></div>
+    <div class="stat"><b data-edit="t31" data-edit-label="Text — 191">191</b><span><xen data-edit="t67" data-edit-label="Text (EN): reviews">reviews</xen><xar data-edit="t68" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
+    <div class="stat"><b><xen data-edit="t70" data-edit-label="Text (EN): 1 AM">1 AM</xen><xar data-edit="t71" data-edit-label="Text (AR): 1 بعد نصّ الليل">1 بعد نصّ الليل</xar></b><span><xen data-edit="t72" data-edit-label="Text (EN): still serving">still serving</xen><xar data-edit="t74" data-edit-label="Text (AR): وبعدنا عم نقدّم">وبعدنا عم نقدّم</xar></span></div>
    </div>
   </div>
   <div class="ph rv"><img src="img/09.jpg" alt="" loading="lazy"></div>
@@ -206,31 +240,31 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
 
 <section class="sig" id="sig" style="padding-top:0">
  <div class="wrap">
-  <span class="k" data-edit="t35" data-edit-label="Text — Signatures">Signatures</span>
-  <h2 class="rv">What the night <em data-edit="t36" data-edit-label="Text — orders">orders</em></h2>
-  <div class="sig-grid"><div class="sg rv"><span class="n" data-edit="t37" data-edit-label="Text — 01">01</span><img src="img/07.jpg" alt="Sujuk Shawarma" loading="lazy"><div class="bd"><h3 data-edit="t38" data-edit-label="Heading — Sujuk Shawarma">Sujuk Shawarma</h3><p data-edit="t39" data-edit-label="Text — 'The best I've ever had' — an actual r…">'The best I've ever had' — an actual review. Come argue with it.</p></div></div><div class="sg rv"><span class="n" data-edit="t40" data-edit-label="Text — 02">02</span><img src="img/09.jpg" alt="Feast Platters" loading="lazy"><div class="bd"><h3 data-edit="t41" data-edit-label="Heading — Feast Platters">Feast Platters</h3><p data-edit="t42" data-edit-label="Text — Grills, wraps, mezze and lahm b'ajin m…">Grills, wraps, mezze and lahm b'ajin made for the whole table.</p></div></div><div class="sg rv"><span class="n" data-edit="t43" data-edit-label="Text — 03">03</span><img src="img/10.jpg" alt="Till 1 AM · Cards OK" loading="lazy"><div class="bd"><h3 data-edit="t44" data-edit-label="Heading — Till 1 AM · Cards OK">Till 1 AM · Cards OK</h3><p data-edit="t45" data-edit-label="Text — Late hours and card payments — rare an…">Late hours and card payments — rare and precious in Beirut.</p></div></div></div>
+  <span class="k"><xen data-edit="t76" data-edit-label="Text (EN): Signatures">Signatures</xen><xar data-edit="t78" data-edit-label="Text (AR): التواقيع">التواقيع</xar></span>
+  <h2 class="rv"><xen>What the night <em data-edit="t36" data-edit-label="Text — orders">orders</em></xen><xar>شو <em data-edit="t79" data-edit-label="Text: بيطلب">بيطلب</em> الليل</xar></h2>
+  <div class="sig-grid"><div class="sg rv"><span class="n" data-edit="t37" data-edit-label="Text — 01">01</span><img src="img/07.jpg" alt="Sujuk Shawarma" loading="lazy"><div class="bd"><h3><xen data-edit="t81" data-edit-label="Text (EN): Sujuk Shawarma">Sujuk Shawarma</xen><xar data-edit="t82" data-edit-label="Text (AR): شاورما سجق">شاورما سجق</xar></h3><p><xen data-edit="t84" data-edit-label="Text (EN): 'The best I've ever had' — an actual r…">'The best I've ever had' — an actual review. Come argue with it.</xen><xar data-edit="t85" data-edit-label="Text (AR): «أطيب وحدة داقيتها بحياتي» — تقييم حقي…">«أطيب وحدة داقيتها بحياتي» — تقييم حقيقي. تعوا ناقشوه.</xar></p></div></div><div class="sg rv"><span class="n" data-edit="t40" data-edit-label="Text — 02">02</span><img src="img/09.jpg" alt="Feast Platters" loading="lazy"><div class="bd"><h3><xen data-edit="t86" data-edit-label="Text (EN): Feast Platters">Feast Platters</xen><xar data-edit="t90" data-edit-label="Text (AR): صواني العزايم">صواني العزايم</xar></h3><p><xen data-edit="t91" data-edit-label="Text (EN): Grills, wraps, mezze and lahm b'ajin m…">Grills, wraps, mezze and lahm b'ajin made for the whole table.</xen><xar data-edit="t92" data-edit-label="Text (AR): مشاوي، لفّات، مازة ولحم بعجين — معمولي…">مشاوي، لفّات، مازة ولحم بعجين — معمولين للطاولة كلّها.</xar></p></div></div><div class="sg rv"><span class="n" data-edit="t43" data-edit-label="Text — 03">03</span><img src="img/10.jpg" alt="Till 1 AM · Cards OK" loading="lazy"><div class="bd"><h3><xen data-edit="t93" data-edit-label="Text (EN): Till 1 AM · Cards OK">Till 1 AM · Cards OK</xen><xar data-edit="t94" data-edit-label="Text (AR): لحدّ 1 بعد نصّ الليل · بطاقات">لحدّ 1 بعد نصّ الليل · بطاقات</xar></h3><p><xen data-edit="t95" data-edit-label="Text (EN): Late hours and card payments — rare an…">Late hours and card payments — rare and precious in Beirut.</xen><xar data-edit="t96" data-edit-label="Text (AR): دوام متأخّر ودفع بالبطاقة — شي نادر وث…">دوام متأخّر ودفع بالبطاقة — شي نادر وثمين ببيروت.</xar></p></div></div></div>
  </div>
 </section>
 
 <section class="nboard" id="carte">
  <div class="wrap">
-  <h2 class="rv" data-edit="t46" data-edit-label="Title — The night board">The night board</h2>
-  <p class="subt rv" data-edit="t47" data-edit-label="Text — Everything the corner cooks — morning …">Everything the corner cooks — morning till 1 AM</p>
+  <h2 class="rv"><xen data-edit="t97" data-edit-label="Text (EN): The night board">The night board</xen><xar data-edit="t98" data-edit-label="Text (AR): لوح الليل">لوح الليل</xar></h2>
+  <p class="subt rv"><xen data-edit="t99" data-edit-label="Text (EN): Everything the corner cooks — morning …">Everything the corner cooks — morning till 1 AM</xen><xar data-edit="t100" data-edit-label="Text (AR): كل شي بتطبخو الزاوية — من الصبح لحدّ 1…">كل شي بتطبخو الزاوية — من الصبح لحدّ 1 بعد نصّ الليل</xar></p>
   <div class="nb-grid rv">
    <div class="nb">
-    <h3 data-edit="t48" data-edit-label="Heading — On the board">On the board</h3>
+    <h3><xen data-edit="t101" data-edit-label="Text (EN): On the board">On the board</xen><xar data-edit="t102" data-edit-label="Text (AR): على اللوح">على اللوح</xar></h3>
     <div class="cats">
-     <span data-edit="t49" data-edit-label="Text — Daily dishes">Daily dishes</span><span data-edit="t50" data-edit-label="Text — Shawarma">Shawarma</span><span data-edit="t51" data-edit-label="Text — Falafel">Falafel</span><span data-edit="t52" data-edit-label="Text — Soup">Soup</span><span data-edit="t53" data-edit-label="Text — Hot mezza">Hot mezza</span><span data-edit="t54" data-edit-label="Text — Sandwiches">Sandwiches</span><span data-edit="t55" data-edit-label="Text — Burgers &amp; hotdogs">Burgers &amp; hotdogs</span><span data-edit="t56" data-edit-label="Text — Pizza">Pizza</span><span data-edit="t57" data-edit-label="Text — Beverages">Beverages</span><span data-edit="t58" data-edit-label="Text — Buy 1 get 1 deals">Buy 1 get 1 deals</span>
+     <span><xen data-edit="t103" data-edit-label="Text (EN): Daily dishes">Daily dishes</xen><xar data-edit="t104" data-edit-label="Text (AR): طبخة اليوم">طبخة اليوم</xar></span><span><xen data-edit="t105" data-edit-label="Text (EN): Shawarma">Shawarma</xen><xar data-edit="t106" data-edit-label="Text (AR): شاورما">شاورما</xar></span><span><xen data-edit="t107" data-edit-label="Text (EN): Falafel">Falafel</xen><xar data-edit="t108" data-edit-label="Text (AR): فلافل">فلافل</xar></span><span><xen data-edit="t109" data-edit-label="Text (EN): Soup">Soup</xen><xar data-edit="t110" data-edit-label="Text (AR): شوربة">شوربة</xar></span><span><xen data-edit="t111" data-edit-label="Text (EN): Hot mezza">Hot mezza</xen><xar data-edit="t112" data-edit-label="Text (AR): مازة سخنة">مازة سخنة</xar></span><span><xen data-edit="t113" data-edit-label="Text (EN): Sandwiches">Sandwiches</xen><xar data-edit="t114" data-edit-label="Text (AR): سندويشات">سندويشات</xar></span><span><xen data-edit="t115" data-edit-label="Text (EN): Burgers &amp; hotdogs">Burgers &amp; hotdogs</xen><xar data-edit="t116" data-edit-label="Text (AR): برغر وهوت دوغ">برغر وهوت دوغ</xar></span><span><xen data-edit="t117" data-edit-label="Text (EN): Pizza">Pizza</xen><xar data-edit="t118" data-edit-label="Text (AR): بيتزا">بيتزا</xar></span><span><xen data-edit="t119" data-edit-label="Text (EN): Beverages">Beverages</xen><xar data-edit="t120" data-edit-label="Text (AR): مشروبات">مشروبات</xar></span><span><xen data-edit="t121" data-edit-label="Text (EN): Buy 1 get 1 deals">Buy 1 get 1 deals</xen><xar data-edit="t122" data-edit-label="Text (AR): عروض إشتري 1 خود 1">عروض إشتري 1 خود 1</xar></span>
     </div>
-    <p class="note" data-edit="t59" data-edit-label="Text — Cooked through the night — dine in, ta…">Cooked through the night — dine in, take away, grab n' go. Cards accepted, always.</p>
+    <p class="note"><xen data-edit="t123" data-edit-label="Text (EN): Cooked through the night — dine in, ta…">Cooked through the night — dine in, take away, grab n' go. Cards accepted, always.</xen><xar data-edit="t124" data-edit-label="Text (AR): بينطبخ طول الليل — محلّي، تيك أواي، أو…">بينطبخ طول الليل — محلّي، تيك أواي، أو خدها وروح. بنقبل بطاقات، دايماً.</xar></p>
    </div>
    <div class="nb">
-    <h3 data-edit="t60" data-edit-label="Heading — Most ordered">Most ordered</h3>
-    <div class="mi"><div><b data-edit="t61" data-edit-label="Text — Grilled Chicken">Grilled Chicken</b><small data-edit="t62" data-edit-label="Text — off the grill, with the works">off the grill, with the works</small></div><span class="ld"></span><span class="pr" data-edit="t63" data-edit-label="Text — $10.50">$10.50</span></div>
-    <div class="mi"><div><b data-edit="t64" data-edit-label="Text — Arabic Shawarma — Chicken">Arabic Shawarma — Chicken</b><small data-edit="t65" data-edit-label="Text — the late-night classic">the late-night classic</small></div><span class="ld"></span><span class="pr" data-edit="t66" data-edit-label="Text — $11.75">$11.75</span></div>
-    <div class="mi"><div><b data-edit="t67" data-edit-label="Text — Arabic Shawarma — Beef">Arabic Shawarma — Beef</b><small data-edit="t68" data-edit-label="Text — carved generous">carved generous</small></div><span class="ld"></span><span class="pr" data-edit="t69" data-edit-label="Text — $13.75">$13.75</span></div>
-    <a class="obtn" href="https://allobeirut-lb.com" target="_blank" rel="noopener" data-edit="t70" data-edit-label="Button / link — Order online ↗">Order online ↗</a>
-    <p class="note" data-edit="t71" data-edit-label="Text — Full menu &amp; delivery on the orderi…">Full menu &amp; delivery on the ordering site — deals live now.</p>
+    <h3><xen data-edit="t125" data-edit-label="Text (EN): Most ordered">Most ordered</xen><xar data-edit="t126" data-edit-label="Text (AR): الأكثر طلباً">الأكثر طلباً</xar></h3>
+    <div class="mi"><div><b><xen data-edit="t127" data-edit-label="Text (EN): Grilled Chicken">Grilled Chicken</xen><xar data-edit="t128" data-edit-label="Text (AR): فرّوج مشوي">فرّوج مشوي</xar></b><small><xen data-edit="t129" data-edit-label="Text (EN): off the grill, with the works">off the grill, with the works</xen><xar data-edit="t130" data-edit-label="Text (AR): عن الشوّاية، مع كل الإضافات">عن الشوّاية، مع كل الإضافات</xar></small></div><span class="ld"></span><span class="pr" data-edit="t63" data-edit-label="Text — $10.50">$10.50</span></div>
+    <div class="mi"><div><b><xen data-edit="t131" data-edit-label="Text (EN): Arabic Shawarma — Chicken">Arabic Shawarma — Chicken</xen><xar data-edit="t132" data-edit-label="Text (AR): شاورما عربي — دجاج">شاورما عربي — دجاج</xar></b><small><xen data-edit="t133" data-edit-label="Text (EN): the late-night classic">the late-night classic</xen><xar data-edit="t134" data-edit-label="Text (AR): كلاسيك سهرات الليل">كلاسيك سهرات الليل</xar></small></div><span class="ld"></span><span class="pr" data-edit="t66" data-edit-label="Text — $11.75">$11.75</span></div>
+    <div class="mi"><div><b><xen data-edit="t135" data-edit-label="Text (EN): Arabic Shawarma — Beef">Arabic Shawarma — Beef</xen><xar data-edit="t136" data-edit-label="Text (AR): شاورما عربي — لحمة">شاورما عربي — لحمة</xar></b><small><xen data-edit="t137" data-edit-label="Text (EN): carved generous">carved generous</xen><xar data-edit="t138" data-edit-label="Text (AR): بتنقشّ بسخا">بتنقشّ بسخا</xar></small></div><span class="ld"></span><span class="pr" data-edit="t69" data-edit-label="Text — $13.75">$13.75</span></div>
+    <a class="obtn" href="https://allobeirut-lb.com" target="_blank" rel="noopener"><xen class="c" data-edit="t139" data-edit-label="Text (EN): Order online ↗">Order online ↗</xen><xar class="c" data-edit="t140" data-edit-label="Text (AR): إطلبوا أونلاين ↗">إطلبوا أونلاين ↗</xar></a>
+    <p class="note"><xen data-edit="t141" data-edit-label="Text (EN): Full menu &amp; delivery on the orderi…">Full menu &amp; delivery on the ordering site — deals live now.</xen><xar data-edit="t142" data-edit-label="Text (AR): اللائحة كاملة والتوصيل على موقع الطلبا…">اللائحة كاملة والتوصيل على موقع الطلبات — والعروض شغّالة هلّق.</xar></p>
    </div>
   </div>
  </div>
@@ -238,8 +272,8 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
 
 <section class="night-gal" id="gallery">
  <div class="wrap">
-  <span class="k" data-edit="t72" data-edit-label="Text — After dark">After dark</span>
-  <h2 class="rv">Shot on the <em data-edit="t73" data-edit-label="Text — night shift">night shift</em></h2>
+  <span class="k"><xen data-edit="t143" data-edit-label="Text (EN): After dark">After dark</xen><xar data-edit="t144" data-edit-label="Text (AR): بعد العتمة">بعد العتمة</xar></span>
+  <h2 class="rv"><xen>Shot on the <em data-edit="t73" data-edit-label="Text — night shift">night shift</em></xen><xar>مصوّرة بوردية <em data-edit="t145" data-edit-label="Text: الليل">الليل</em></xar></h2>
   <div class="ng"><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
  </div>
 </section>
@@ -247,33 +281,33 @@ footer{text-align:center;padding:0 5vw 110px;color:var(--dim);font-size:.78rem}
 <section class="texts" id="reviews" style="padding-top:0">
  <div class="wrap">
   <div class="head-row rv">
-   <span class="k" data-edit="t74" data-edit-label="Text — Received late">Received late</span>
-   <h2>Texts from the <em data-edit="t75" data-edit-label="Text — regulars">regulars</em></h2>
-   <p class="sub" data-edit="t76" data-edit-label="Text — Real Google reviews, delivered like th…">Real Google reviews, delivered like the 1 AM messages they basically are.</p>
+   <span class="k"><xen data-edit="t146" data-edit-label="Text (EN): Received late">Received late</xen><xar data-edit="t147" data-edit-label="Text (AR): وصلت متأخّر">وصلت متأخّر</xar></span>
+   <h2><xen>Texts from the <em data-edit="t75" data-edit-label="Text — regulars">regulars</em></xen><xar>رسائل من <em data-edit="t148" data-edit-label="Text: الزبائن">الزبائن</em></xar></h2>
+   <p class="sub"><xen data-edit="t149" data-edit-label="Text (EN): Real Google reviews, delivered like th…">Real Google reviews, delivered like the 1 AM messages they basically are.</xen><xar data-edit="t150" data-edit-label="Text (AR): تقييمات غوغل حقيقية، موصّلة متل رسايل …">تقييمات غوغل حقيقية، موصّلة متل رسايل الساعة 1 بعد نصّ الليل — لأنّها فعلاً هيك.</xar></p>
   </div>
-  <div class="chat"><div class="msg rv"><p data-edit="t77" data-edit-label="Text — “It was the best sujuk shawarma I have…">“It was the best sujuk shawarma I have ever had. The food is amazing and the employees are very kind.”</p><div class="meta"><b data-edit="t78" data-edit-label="Text — Google review">Google review</b><span data-edit="t79" data-edit-label="Text — 12:47 AM">12:47 AM</span></div></div><div class="msg rv"><p data-edit="t80" data-edit-label="Text — “I highly recommend this restaurant — …">“I highly recommend this restaurant — one of the few places in Beirut that accepts bank or credit cards. The food was incredibly good and service is quick.”</p><div class="meta"><b data-edit="t81" data-edit-label="Text — Google review">Google review</b><span data-edit="t82" data-edit-label="Text — 1:02 AM">1:02 AM</span></div></div><div class="msg rv"><p data-edit="t83" data-edit-label="Text — “The restaurant is clean with nice vib…">“The restaurant is clean with nice vibes, and the cashier is nice.”</p><div class="meta"><b data-edit="t84" data-edit-label="Text — Google review">Google review</b><span data-edit="t85" data-edit-label="Text — 11:58 PM">11:58 PM</span></div></div></div>
+  <div class="chat"><div class="msg rv"><p data-edit="t77" data-edit-label="Text — “It was the best sujuk shawarma I have…">“It was the best sujuk shawarma I have ever had. The food is amazing and the employees are very kind.”</p><div class="meta"><b><xen data-edit="t151" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t152" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></b><span><xen data-edit="t153" data-edit-label="Text (EN): 12:47 AM">12:47 AM</xen><xar data-edit="t154" data-edit-label="Text (AR): 12:47 بعد نصّ الليل">12:47 بعد نصّ الليل</xar></span></div></div><div class="msg rv"><p data-edit="t80" data-edit-label="Text — “I highly recommend this restaurant — …">“I highly recommend this restaurant — one of the few places in Beirut that accepts bank or credit cards. The food was incredibly good and service is quick.”</p><div class="meta"><b><xen data-edit="t155" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t156" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></b><span><xen data-edit="t157" data-edit-label="Text (EN): 1:02 AM">1:02 AM</xen><xar data-edit="t158" data-edit-label="Text (AR): 1:02 بعد نصّ الليل">1:02 بعد نصّ الليل</xar></span></div></div><div class="msg rv"><p data-edit="t83" data-edit-label="Text — “The restaurant is clean with nice vib…">“The restaurant is clean with nice vibes, and the cashier is nice.”</p><div class="meta"><b><xen data-edit="t159" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t160" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></b><span><xen data-edit="t161" data-edit-label="Text (EN): 11:58 PM">11:58 PM</xen><xar data-edit="t162" data-edit-label="Text (AR): 11:58 ليلاً">11:58 ليلاً</xar></span></div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
  <div class="vglow"></div>
- <span class="k" data-edit="t86" data-edit-label="Text — Say allo">Say allo</span>
- <h2>The night is <em data-edit="t87" data-edit-label="Text — young.">young.</em></h2>
+ <span class="k"><xen data-edit="t163" data-edit-label="Text (EN): Say allo">Say allo</xen><xar data-edit="t164" data-edit-label="Text (AR): قول ألو">قول ألو</xar></span>
+ <h2><xen>The night is <em data-edit="t87" data-edit-label="Text — young.">young.</em></xen><xar>الليل <em data-edit="t165" data-edit-label="Text: بعدو صغير.">بعدو صغير.</em></xar></h2>
  <a class="phone" href="tel:+96178789988" data-edit="t88" data-edit-label="Button / link — +961 78 789 988">+961 78 789 988</a>
- <p class="meta2"><b data-edit="t89" data-edit-label="Text — Omar Bin Abdul Aziz Street, Hamra, Bei…">Omar Bin Abdul Aziz Street, Hamra, Beirut, Lebanon</b><br>Open daily · 8:00 AM – 1:00 AM · cards accepted</p>
+ <p class="meta2"><xen><b data-edit="t89" data-edit-label="Text — Omar Bin Abdul Aziz Street, Hamra, Bei…">Omar Bin Abdul Aziz Street, Hamra, Beirut, Lebanon</b><br>Open daily · 8:00 AM – 1:00 AM · cards accepted</xen><xar><b data-edit="t166" data-edit-label="Text: شارع عمر بن عبد العزيز، الحمرا، بيروت،…">شارع عمر بن عبد العزيز، الحمرا، بيروت، لبنان</b><br>مفتوح كل يوم · 8:00 صباحاً – 1:00 بعد نصّ الليل · بنقبل بطاقات</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96178789988" target="_blank" rel="noopener" data-edit="t90" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn ghost ig" href="https://instagram.com/allobeirut.lb" target="_blank" rel="noopener" data-edit="t91" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn ghost" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener" data-edit="t92" data-edit-label="Button / link — Open in Google Maps ↗">Open in Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96178789988" target="_blank" rel="noopener"><xen class="c" data-edit="t167" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar class="c" data-edit="t168" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn ghost ig" href="https://instagram.com/allobeirut.lb" target="_blank" rel="noopener"><xen class="c" data-edit="t169" data-edit-label="Text (EN): Instagram">Instagram</xen><xar class="c" data-edit="t170" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn ghost" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener"><xen class="c" data-edit="t171" data-edit-label="Text (EN): Open in Google Maps ↗">Open in Google Maps ↗</xen><xar class="c" data-edit="t172" data-edit-label="Text (AR): إفتحوا خرائط غوغل ↗">إفتحوا خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96178789988" data-edit="t93" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96178789988" target="_blank" rel="noopener" data-edit="t94" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/allobeirut.lb" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener" data-edit="t95" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96178789988"><xen data-edit="t173" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t174" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96178789988" target="_blank" rel="noopener"><xen data-edit="t175" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t176" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/allobeirut.lb" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=18190628172264437023" target="_blank" rel="noopener"><xen data-edit="t177" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t178" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Allo Beirut Restaurant · Beirut, Lebanon</footer>
+<footer><xen data-edit="t179" data-edit-label="Text (EN): © Allo Beirut Restaurant · Beirut, Leb…">© Allo Beirut Restaurant · Beirut, Lebanon</xen><xar data-edit="t180" data-edit-label="Text (AR): © مطعم ألو بيروت · بيروت، لبنان">© مطعم ألو بيروت · بيروت، لبنان</xar></footer>
 
 <script>
 var nav=document.getElementById('nav');
@@ -282,5 +316,17 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t181" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"مطعم ألو بيروت — شاورما ومطعم لبناني في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

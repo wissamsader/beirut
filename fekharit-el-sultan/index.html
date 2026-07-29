@@ -134,36 +134,70 @@ footer{text-align:center;padding:28px 5vw 110px;font-size:.76rem;color:rgba(245,
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Amiri',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#C99C4F;color:#2C1626;border:1.5px solid #3B1E33;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <nav>
- <a class="brand" href="#" data-edit="t1" data-edit-label="Button / link — FEKHARIT EL SULTAN">FEKHARIT EL SULTAN</a>
+ <a class="brand" href="#"><xen data-edit="t1" data-edit-label="Text (EN): FEKHARIT EL SULTAN">FEKHARIT EL SULTAN</xen><xar data-edit="t2" data-edit-label="Text (AR): فخّارة السلطان">فخّارة السلطان</xar></a>
  <div class="links">
-  <a href="#oud" data-edit="t2" data-edit-label="Button / link — Oud nights">Oud nights</a><a href="#plates" data-edit="t3" data-edit-label="Button / link — The clay">The clay</a><a href="#menu" data-edit="t4" data-edit-label="Button / link — Menu">Menu</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Reserve">Reserve</a>
-  <a class="call" href="tel:+9613474297" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#oud"><xen data-edit="t3" data-edit-label="Text (EN): Oud nights">Oud nights</xen><xar data-edit="t4" data-edit-label="Text (AR): ليالي العود">ليالي العود</xar></a><a href="#plates"><xen data-edit="t5" data-edit-label="Text (EN): The clay">The clay</xen><xar data-edit="t6" data-edit-label="Text (AR): الفخّار">الفخّار</xar></a><a href="#menu"><xen data-edit="t7" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t9" data-edit-label="Text (AR): المنيو">المنيو</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Reserve">Reserve</xen><xar data-edit="t11" data-edit-label="Text (AR): الحجز">الحجز</xar></a>
+  <a class="call" href="tel:+9613474297"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="kick" data-edit="t7" data-edit-label="Text — Beirut · Lebanese kitchen &amp; tarab …">Beirut · Lebanese kitchen &amp; tarab house</span>
-  <h1>Fekharit <em data-edit="t8" data-edit-label="Text — el Sultan">el Sultan</em></h1>
-  <p class="arb" data-edit="t9" data-edit-label="Text — فخارة السلطان — “the Sultan's pottery”">فخارة السلطان — “the Sultan's pottery”</p>
-  <p class="tg" data-edit="t10" data-edit-label="Text — Lebanese classics baked in clay, serve…">Lebanese classics baked in clay, served with live oud — the Sultan's pottery, open till midnight.</p>
+  <span class="kick"><xen data-edit="t14" data-edit-label="Text (EN): Beirut · Lebanese kitchen &amp; tarab …">Beirut · Lebanese kitchen &amp; tarab house</xen><xar data-edit="t15" data-edit-label="Text (AR): بيروت · مطبخ لبناني وبيت طرب">بيروت · مطبخ لبناني وبيت طرب</xar></span>
+  <h1><xen>Fekharit <em data-edit="t8" data-edit-label="Text — el Sultan">el Sultan</em></xen><xar>فخّارة <em data-edit="t16" data-edit-label="Text: السلطان">السلطان</em></xar></h1>
+  <p class="arb"><xen data-edit="t17" data-edit-label="Text (EN): فخارة السلطان — “the Sultan's pottery”">فخارة السلطان — “the Sultan's pottery”</xen><xar><span class="lat" data-edit="t19" data-edit-label="Text: FEKHARIT EL SULTAN">FEKHARIT EL SULTAN</span> — فخّارة السلطان</xar></p>
+  <p class="tg"><xen data-edit="t20" data-edit-label="Text (EN): Lebanese classics baked in clay, serve…">Lebanese classics baked in clay, served with live oud — the Sultan's pottery, open till midnight.</xen><xar data-edit="t21" data-edit-label="Text (AR): كلاسيكيات لبنانية مشوية بالفخّار، مع ع…">كلاسيكيات لبنانية مشوية بالفخّار، مع عود على الهوا — فخّارة السلطان، مفتوحة لحدّ منتصف الليل.</xar></p>
   <div class="row">
-   <span class="tag f" data-edit="t11" data-edit-label="Text — ★ 4.6 · 205 reviews">★ 4.6 · 205 reviews</span>
-   <span class="tag" data-edit="t12" data-edit-label="Text — Live oud evenings">Live oud evenings</span>
-   <span class="tag" data-edit="t13" data-edit-label="Text — 9 AM — midnight daily">9 AM — midnight daily</span>
+   <span class="tag f"><xen data-edit="t22" data-edit-label="Text (EN): ★ 4.6 · 205 reviews">★ 4.6 · 205 reviews</xen><xar data-edit="t25" data-edit-label="Text (AR): ★ 4.6 · 205 تقييم">★ 4.6 · 205 تقييم</xar></span>
+   <span class="tag"><xen data-edit="t26" data-edit-label="Text (EN): Live oud evenings">Live oud evenings</xen><xar data-edit="t27" data-edit-label="Text (AR): سهرات عود حيّة">سهرات عود حيّة</xar></span>
+   <span class="tag"><xen data-edit="t28" data-edit-label="Text (EN): 9 AM — midnight daily">9 AM — midnight daily</xen><xar data-edit="t29" data-edit-label="Text (AR): 9 صباحاً — منتصف الليل كل يوم">9 صباحاً — منتصف الليل كل يوم</xar></span>
   </div>
   <div class="cta">
-   <a class="btn g" href="tel:+9613474297" data-edit="t14" data-edit-label="Button / link — Reserve · +961 3 474 297">Reserve · +961 3 474 297</a>
-   <a class="btn" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Directions">Directions</a>
+   <a class="btn g" href="tel:+9613474297"><xen data-edit="t30" data-edit-label="Text (EN): Reserve · +961 3 474 297">Reserve · +961 3 474 297</xen><xar data-edit="t31" data-edit-label="Text (AR): إحجزوا · +961 3 474 297">إحجزوا · +961 3 474 297</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener"><xen data-edit="t32" data-edit-label="Text (EN): Directions">Directions</xen><xar data-edit="t33" data-edit-label="Text (AR): الطريق">الطريق</xar></a>
   </div>
  </div>
  <div class="pot rv">
   <img src="img/06.jpg" alt="Fekharit el Sultan mezze in clay pots">
-  <span class="sig" data-edit="t16" data-edit-label="Text — everything arrives in clay">everything arrives in clay</span>
+  <span class="sig"><xen data-edit="t34" data-edit-label="Text (EN): everything arrives in clay">everything arrives in clay</xen><xar data-edit="t35" data-edit-label="Text (AR): كل شي بيوصل بالفخّار">كل شي بيوصل بالفخّار</xar></span>
  </div>
 </header>
 
@@ -176,11 +210,11 @@ footer{text-align:center;padding:28px 5vw 110px;font-size:.76rem;color:rgba(245,
 <section class="oud" id="oud">
  <div class="grid">
   <div class="rv">
-   <span class="k" data-edit="t17" data-edit-label="Text — The evenings">The evenings</span>
-   <h2>When the <em data-edit="t18" data-edit-label="Text — oud">oud</em> starts, nobody leaves</h2>
-   <p data-edit="t19" data-edit-label="Text — Fekharit el Sultan serves Lebanon in e…">Fekharit el Sultan serves Lebanon in earthenware: hummus in its variations, sfiha from the fern, octopus tender enough to make the reviews emotional — and on music nights, an oud and a voice that hold the whole room still. The owner hosts like the title is real, and by dessert you believe it.</p>
-   <p data-edit="t20" data-edit-label="Text — On music nights the room turns into a …">On music nights the room turns into a small tarab theatre — an oud player, a singer, and tables that forget the time. Reserve ahead; the sultan's court fills fast.</p>
-   <div class="program"><b data-edit="t21" data-edit-label="Text — The program">The program</b><span data-edit="t22" data-edit-label="Text — Live oud &amp; classical Arabic song e…">Live oud &amp; classical Arabic song evenings from 9 PM — announced on the door and by phone. Call to catch the next one.</span></div>
+   <span class="k"><xen data-edit="t37" data-edit-label="Text (EN): The evenings">The evenings</xen><xar data-edit="t38" data-edit-label="Text (AR): السهرات">السهرات</xar></span>
+   <h2><xen>When the <em data-edit="t18" data-edit-label="Text — oud">oud</em> starts, nobody leaves</xen><xar>لمّا يبلّش <em data-edit="t39" data-edit-label="Text: العود">العود</em>، ما حدا بيمشي</xar></h2>
+   <p><xen data-edit="t40" data-edit-label="Text (EN): Fekharit el Sultan serves Lebanon in e…">Fekharit el Sultan serves Lebanon in earthenware: hummus in its variations, sfiha from the fern, octopus tender enough to make the reviews emotional — and on music nights, an oud and a voice that hold the whole room still. The owner hosts like the title is real, and by dessert you believe it.</xen><xar data-edit="t41" data-edit-label="Text (AR): فخّارة السلطان بتقدّم لبنان بالفخّار: …">فخّارة السلطان بتقدّم لبنان بالفخّار: حمّص بكل أشكالو، صفيحة من الفرن، وأخطبوط طري لدرجة إنّو التقييمات صارت عاطفية — وبليالي الموسيقى، عود وصوت بيسكّتوا الصالة كلّها. صاحب المحلّ بيستقبل متل ما اللقب حقيقي، وبوقت الحلو بتصير مصدّق.</xar></p>
+   <p><xen data-edit="t42" data-edit-label="Text (EN): On music nights the room turns into a …">On music nights the room turns into a small tarab theatre — an oud player, a singer, and tables that forget the time. Reserve ahead; the sultan's court fills fast.</xen><xar data-edit="t43" data-edit-label="Text (AR): بليالي الموسيقى الصالة بتتحوّل لمسرح ط…">بليالي الموسيقى الصالة بتتحوّل لمسرح طرب صغير — عوّاد، ومطرب، وطاولات بتنسى الوقت. إحجزوا مسبقاً؛ بلاط السلطان بيمتلي بسرعة.</xar></p>
+   <div class="program"><b><xen data-edit="t44" data-edit-label="Text (EN): The program">The program</xen><xar data-edit="t45" data-edit-label="Text (AR): البرنامج">البرنامج</xar></b><span><xen data-edit="t47" data-edit-label="Text (EN): Live oud &amp; classical Arabic song e…">Live oud &amp; classical Arabic song evenings from 9 PM — announced on the door and by phone. Call to catch the next one.</xen><xar data-edit="t57" data-edit-label="Text (AR): سهرات عود وغناء عربي كلاسيكي من الساعة…">سهرات عود وغناء عربي كلاسيكي من الساعة 9 المسا — بتنعلن عالباب وبالتلفون. إتّصلوا لتلحقوا القادمة.</xar></span></div>
   </div>
   <div class="strings rv">
    <img src="img/01.jpg" alt="Fekharit el Sultan at night">
@@ -191,9 +225,9 @@ footer{text-align:center;padding:28px 5vw 110px;font-size:.76rem;color:rgba(245,
 
 <section class="plates" id="plates">
  <div class="wrap">
-  <h2 class="rv">Served in the <em data-edit="t24" data-edit-label="Text — sultan's clay">sultan's clay</em></h2>
-  <p class="sub" data-edit="t25" data-edit-label="Text — From hummus with shrimp to octopus tha…">From hummus with shrimp to octopus that melts</p>
-  <div class="p-grid"><div class="pc rv"><img src="img/06.jpg" alt="The clay mezze" loading="lazy"><h3 data-edit="t26" data-edit-label="Heading — The clay mezze">The clay mezze</h3><span class="no" data-edit="t27" data-edit-label="Text — from the kiln, № 1">from the kiln, № 1</span><p data-edit="t28" data-edit-label="Text — Kebbe, hummus and stews arriving in th…">Kebbe, hummus and stews arriving in the pots they cooked in.</p></div><div class="pc rv"><img src="img/03.jpg" alt="The octopus" loading="lazy"><h3 data-edit="t29" data-edit-label="Heading — The octopus">The octopus</h3><span class="no" data-edit="t30" data-edit-label="Text — from the kiln, № 2">from the kiln, № 2</span><p data-edit="t31" data-edit-label="Text — Tender, olive-oiled, gone before the s…">Tender, olive-oiled, gone before the second song.</p></div><div class="pc rv"><img src="img/04.jpg" alt="Grilled shrimp" loading="lazy"><h3 data-edit="t32" data-edit-label="Heading — Grilled shrimp">Grilled shrimp</h3><span class="no" data-edit="t33" data-edit-label="Text — from the kiln, № 3">from the kiln, № 3</span><p data-edit="t34" data-edit-label="Text — Charred shells, garlic butter, no surv…">Charred shells, garlic butter, no surviving witnesses.</p></div></div>
+  <h2 class="rv"><xen>Served in the <em data-edit="t24" data-edit-label="Text — sultan's clay">sultan's clay</em></xen><xar>بتنقدّم <em data-edit="t58" data-edit-label="Text: بفخّار السلطان">بفخّار السلطان</em></xar></h2>
+  <p class="sub"><xen data-edit="t59" data-edit-label="Text (EN): From hummus with shrimp to octopus tha…">From hummus with shrimp to octopus that melts</xen><xar data-edit="t60" data-edit-label="Text (AR): من الحمّص مع القريدس لحدّ الأخطبوط يلّ…">من الحمّص مع القريدس لحدّ الأخطبوط يلّي بيدوب</xar></p>
+  <div class="p-grid"><div class="pc rv"><img src="img/06.jpg" alt="The clay mezze" loading="lazy"><h3><xen data-edit="t61" data-edit-label="Text (EN): The clay mezze">The clay mezze</xen><xar data-edit="t62" data-edit-label="Text (AR): مازة الفخّار">مازة الفخّار</xar></h3><span class="no"><xen data-edit="t63" data-edit-label="Text (EN): from the kiln, № 1">from the kiln, № 1</xen><xar data-edit="t64" data-edit-label="Text (AR): من الفرن، رقم 1">من الفرن، رقم 1</xar></span><p><xen data-edit="t65" data-edit-label="Text (EN): Kebbe, hummus and stews arriving in th…">Kebbe, hummus and stews arriving in the pots they cooked in.</xen><xar data-edit="t66" data-edit-label="Text (AR): كبّة وحمّص ويخنات بتوصل بنفس الفخّارة …">كبّة وحمّص ويخنات بتوصل بنفس الفخّارة يلّي انطبخت فيها.</xar></p></div><div class="pc rv"><img src="img/03.jpg" alt="The octopus" loading="lazy"><h3><xen data-edit="t67" data-edit-label="Text (EN): The octopus">The octopus</xen><xar data-edit="t68" data-edit-label="Text (AR): الأخطبوط">الأخطبوط</xar></h3><span class="no"><xen data-edit="t69" data-edit-label="Text (EN): from the kiln, № 2">from the kiln, № 2</xen><xar data-edit="t70" data-edit-label="Text (AR): من الفرن، رقم 2">من الفرن، رقم 2</xar></span><p><xen data-edit="t71" data-edit-label="Text (EN): Tender, olive-oiled, gone before the s…">Tender, olive-oiled, gone before the second song.</xen><xar data-edit="t72" data-edit-label="Text (AR): طري، بزيت الزيتون، وبيخلص قبل الأغنية …">طري، بزيت الزيتون، وبيخلص قبل الأغنية التانية.</xar></p></div><div class="pc rv"><img src="img/04.jpg" alt="Grilled shrimp" loading="lazy"><h3><xen data-edit="t73" data-edit-label="Text (EN): Grilled shrimp">Grilled shrimp</xen><xar data-edit="t74" data-edit-label="Text (AR): قريدس مشوي">قريدس مشوي</xar></h3><span class="no"><xen data-edit="t75" data-edit-label="Text (EN): from the kiln, № 3">from the kiln, № 3</xen><xar data-edit="t76" data-edit-label="Text (AR): من الفرن، رقم 3">من الفرن، رقم 3</xar></span><p><xen data-edit="t77" data-edit-label="Text (EN): Charred shells, garlic butter, no surv…">Charred shells, garlic butter, no surviving witnesses.</xen><xar data-edit="t78" data-edit-label="Text (AR): قشور مشوّحة، زبدة بالثوم، وما بيضلّ ول…">قشور مشوّحة، زبدة بالثوم، وما بيضلّ ولا شاهد.</xar></p></div></div>
  </div>
 </section>
 
@@ -201,54 +235,66 @@ footer{text-align:center;padding:28px 5vw 110px;font-size:.76rem;color:rgba(245,
  <div class="grid">
   <div class="sheet rv"><img src="img/02.jpg" alt="Fekharit el Sultan menu"></div>
   <div class="rv">
-   <span class="k" data-edit="t35" data-edit-label="Text — The menu">The menu</span>
-   <h2>Breakfast, lunch &amp; the <em data-edit="t36" data-edit-label="Text — Fekharetna">Fekharetna</em> page</h2>
-   <p data-edit="t37" data-edit-label="Text — A full Lebanese day on one card — hot …">A full Lebanese day on one card — hot meza, sfiha from the fern, salads — and its own signature section of pottery-baked dishes.</p>
+   <span class="k"><xen data-edit="t79" data-edit-label="Text (EN): The menu">The menu</xen><xar data-edit="t80" data-edit-label="Text (AR): المنيو">المنيو</xar></span>
+   <h2><xen>Breakfast, lunch &amp; the <em data-edit="t36" data-edit-label="Text — Fekharetna">Fekharetna</em> page</xen><xar>ترويقة، غدا، وصفحة <em data-edit="t81" data-edit-label="Text: فخّارتنا">فخّارتنا</em></xar></h2>
+   <p><xen data-edit="t82" data-edit-label="Text (EN): A full Lebanese day on one card — hot …">A full Lebanese day on one card — hot meza, sfiha from the fern, salads — and its own signature section of pottery-baked dishes.</xen><xar data-edit="t83" data-edit-label="Text (AR): نهار لبناني كامل على كرت واحد — مازة س…">نهار لبناني كامل على كرت واحد — مازة سخنة، صفيحة من الفرن، سلطات — وصفحتها الخاصة بأطباق الفخّار.</xar></p>
    <ul>
-    <li><span data-edit="t38" data-edit-label="Text — Hummus — chtaimeh, pesto, shrimp">Hummus — chtaimeh, pesto, shrimp</span><span data-edit="t39" data-edit-label="Text — the range">the range</span></li>
-    <li><span data-edit="t40" data-edit-label="Text — Sfiha lahme from the fern">Sfiha lahme from the fern</span><span data-edit="t41" data-edit-label="Text — by the dozen">by the dozen</span></li>
-    <li><span data-edit="t42" data-edit-label="Text — Fekharetna — clay-baked mains">Fekharetna — clay-baked mains</span><span data-edit="t43" data-edit-label="Text — signature">signature</span></li>
-    <li><span data-edit="t44" data-edit-label="Text — Octopus &amp; fish of the day">Octopus &amp; fish of the day</span><span data-edit="t45" data-edit-label="Text — evenings">evenings</span></li>
+    <li><span><xen data-edit="t84" data-edit-label="Text (EN): Hummus — chtaimeh, pesto, shrimp">Hummus — chtaimeh, pesto, shrimp</xen><xar data-edit="t85" data-edit-label="Text (AR): حمّص — شتايمة، بيستو، قريدس">حمّص — شتايمة، بيستو، قريدس</xar></span><span><xen data-edit="t86" data-edit-label="Text (EN): the range">the range</xen><xar data-edit="t87" data-edit-label="Text (AR): كل الأنواع">كل الأنواع</xar></span></li>
+    <li><span><xen data-edit="t88" data-edit-label="Text (EN): Sfiha lahme from the fern">Sfiha lahme from the fern</xen><xar data-edit="t89" data-edit-label="Text (AR): صفيحة لحمة من الفرن">صفيحة لحمة من الفرن</xar></span><span><xen data-edit="t90" data-edit-label="Text (EN): by the dozen">by the dozen</xen><xar data-edit="t91" data-edit-label="Text (AR): بالدزينة">بالدزينة</xar></span></li>
+    <li><span><xen data-edit="t92" data-edit-label="Text (EN): Fekharetna — clay-baked mains">Fekharetna — clay-baked mains</xen><xar data-edit="t93" data-edit-label="Text (AR): فخّارتنا — أطباق الفخّار">فخّارتنا — أطباق الفخّار</xar></span><span><xen data-edit="t94" data-edit-label="Text (EN): signature">signature</xen><xar data-edit="t95" data-edit-label="Text (AR): التوقيع">التوقيع</xar></span></li>
+    <li><span><xen data-edit="t96" data-edit-label="Text (EN): Octopus &amp; fish of the day">Octopus &amp; fish of the day</xen><xar data-edit="t97" data-edit-label="Text (AR): أخطبوط وسمك اليوم">أخطبوط وسمك اليوم</xar></span><span><xen data-edit="t98" data-edit-label="Text (EN): evenings">evenings</xen><xar data-edit="t99" data-edit-label="Text (AR): بالسهرات">بالسهرات</xar></span></li>
    </ul>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">The court, <em data-edit="t46" data-edit-label="Text — photographed">photographed</em></h2>
- <p class="sub" data-edit="t47" data-edit-label="Text — Mashrabiya screens, warm brass, busy c…">Mashrabiya screens, warm brass, busy clay</p>
+ <h2 class="rv"><xen>The court, <em data-edit="t46" data-edit-label="Text — photographed">photographed</em></xen><xar>البلاط، <em data-edit="t100" data-edit-label="Text: بالصورة">بالصورة</em></xar></h2>
+ <p class="sub"><xen data-edit="t101" data-edit-label="Text (EN): Mashrabiya screens, warm brass, busy c…">Mashrabiya screens, warm brass, busy clay</xen><xar data-edit="t102" data-edit-label="Text (AR): مشربيات، نحاس دافي، وفخّار مشغول">مشربيات، نحاس دافي، وفخّار مشغول</xar></p>
  <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Praise for the <em data-edit="t48" data-edit-label="Text — sultan">sultan</em></h2>
+  <h2 class="rv"><xen>Praise for the <em data-edit="t48" data-edit-label="Text — sultan">sultan</em></xen><xar>مديح <em data-edit="t103" data-edit-label="Text: للسلطان">للسلطان</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t49" data-edit-label="Text — This place, the food, the service, the…">This place, the food, the service, the oud entertainer, the host, the owner are all second to none. Leave everything you're doing and come over for the most exciting evening you can ever imagine.</p><div class="who" data-edit="t50" data-edit-label="Text — Naj">Naj</div></div><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t51" data-edit-label="Text — The food was brilliant and the manager…">The food was brilliant and the manager's customer service was spectacular. We loved how tender the octopus was, the fried fish was perfectly crunchy. The fish of the day was cooked perfectly.</p><div class="who" data-edit="t52" data-edit-label="Text — Julia Zhang">Julia Zhang</div></div><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t53" data-edit-label="Text — The place is well-located, quiet, and …">The place is well-located, quiet, and the food was decent. The esfiha and meat were well-prepared, making for an overall good experience.</p><div class="who" data-edit="t54" data-edit-label="Text — Luiz Martins">Luiz Martins</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Your table is <em data-edit="t55" data-edit-label="Text — in the court.">in the court.</em></h2>
+ <h2 class="rv"><xen>Your table is <em data-edit="t55" data-edit-label="Text — in the court.">in the court.</em></xen><xar>طاولتك <em data-edit="t104" data-edit-label="Text: بالبلاط.">بالبلاط.</em></xar></h2>
  <a class="phone" href="tel:+9613474297" data-edit="t56" data-edit-label="Button / link — +961 3 474 297">+961 3 474 297</a>
- <p class="meta">Bechara El Khoury area, Beirut, Lebanon<br>Daily 9 AM - 12 AM</p>
+ <p class="meta"><xen>Bechara El Khoury area, Beirut, Lebanon<br>Daily 9 AM - 12 AM</xen><xar>منطقة بشارة الخوري، بيروت، لبنان<br>كل يوم 9 صباحاً - 12 منتصف الليل</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/9613474297" target="_blank" rel="noopener" data-edit="t57" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn ig" href="https://instagram.com/fekharitelsultan" target="_blank" rel="noopener" data-edit="t58" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener" data-edit="t59" data-edit-label="Button / link — Google Maps">Google Maps</a>
+  <a class="btn wa" href="https://wa.me/9613474297" target="_blank" rel="noopener"><xen data-edit="t105" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t106" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn ig" href="https://instagram.com/fekharitelsultan" target="_blank" rel="noopener"><xen data-edit="t107" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t108" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener"><xen data-edit="t109" data-edit-label="Text (EN): Google Maps">Google Maps</xen><xar data-edit="t110" data-edit-label="Text (AR): خرائط غوغل">خرائط غوغل</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9613474297" data-edit="t60" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/9613474297" target="_blank" rel="noopener" data-edit="t61" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/fekharitelsultan" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener" data-edit="t62" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+9613474297"><xen data-edit="t111" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t112" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/9613474297" target="_blank" rel="noopener"><xen data-edit="t113" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t114" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/fekharitelsultan" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=8906539656477232869" target="_blank" rel="noopener"><xen data-edit="t115" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t116" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Fekharit el Sultan · Beirut</footer>
+<footer><xen data-edit="t117" data-edit-label="Text (EN): © Fekharit el Sultan · Beirut">© Fekharit el Sultan · Beirut</xen><xar data-edit="t118" data-edit-label="Text (AR): © فخّارة السلطان · بيروت">© فخّارة السلطان · بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t119" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"فخّارة السلطان — مطعم لبناني وبيت طرب في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

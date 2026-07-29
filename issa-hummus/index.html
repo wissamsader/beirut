@@ -142,43 +142,77 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
 .sunrise::after{content:'';position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 100%,var(--sun) 0 38%,transparent 39%)}
 .sunrise b{z-index:2}
 @keyframes sunrays{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion: reduce){.sunrise::before{animation:none}}</style></head>
+@media (prefers-reduced-motion: reduce){.sunrise::before{animation:none}}</style><link href='https://fonts.googleapis.com/css2?family=Rakkas:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Rakkas',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:4px;cursor:pointer;
+  background:#DF7112;color:#FFF7E6;border:1.5px solid #33210E;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
+</head>
 <body>
 <div class="awning"></div>
 <div class="top">
- <span data-edit="t1" data-edit-label="Text — Beiruti breakfast house">Beiruti breakfast house</span>
+ <span><xen data-edit="t1" data-edit-label="Text (EN): Beiruti breakfast house">Beiruti breakfast house</xen><xar data-edit="t3" data-edit-label="Text (AR): بيت الترويقة البيروتية">بيت الترويقة البيروتية</xar></span>
  <a href="tel:+9611706268" data-edit="t2" data-edit-label="Button / link — +961 1 706 268">+961 1 706 268</a>
 </div>
 
 <header class="poster" id="top">
- <div class="sunrise rv"><b data-edit="t3" data-edit-label="Text — 7 AM">7 AM</b></div>
- <h1><span class="t1" data-edit="t4" data-edit-label="Text — ISSA">ISSA</span><br><span class="t2" data-edit="t5" data-edit-label="Text — HUMMUS">HUMMUS</span></h1>
- <div class="ar arabic" data-edit="t6" data-edit-label="Text — مطعم عيسى وأولاده">مطعم عيسى وأولاده</div>
- <p class="tag" data-edit="t7" data-edit-label="Text — Hajj Issa's foul, fatteh & hummus — Be…">Hajj Issa's foul, fatteh & hummus — Beirut's traditional Lebanese breakfast, done right since forever</p>
+ <div class="sunrise rv"><b><xen data-edit="t4" data-edit-label="Text (EN): 7 AM">7 AM</xen><xar data-edit="t5" data-edit-label="Text (AR): 7 صباحاً">7 صباحاً</xar></b></div>
+ <h1><span class="t1"><xen data-edit="t6" data-edit-label="Text (EN): ISSA">ISSA</xen><xar data-edit="t7" data-edit-label="Text (AR): عيسى">عيسى</xar></span><br><span class="t2"><xen data-edit="t8" data-edit-label="Text (EN): HUMMUS">HUMMUS</xen><xar data-edit="t9" data-edit-label="Text (AR): حمّص">حمّص</xar></span></h1>
+ <div class="ar arabic"><xen data-edit="t10" data-edit-label="Text (EN): مطعم عيسى وأولاده">مطعم عيسى وأولاده</xen><xar><span class="lat" data-edit="t11" data-edit-label="Text: ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</span></xar></div>
+ <p class="tag"><xen data-edit="t12" data-edit-label="Text (EN): Hajj Issa's foul, fatteh & hummus — Be…">Hajj Issa's foul, fatteh & hummus — Beirut's traditional Lebanese breakfast, done right since forever</xen><xar data-edit="t13" data-edit-label="Text (AR): فول وفتّة وحمّص عند الحاج عيسى — ترويق…">فول وفتّة وحمّص عند الحاج عيسى — ترويقة لبنانية أصيلة، متل ما لازم، من زمان</xar></p>
  <div class="badges">
-  <span class="badge o" data-edit="t8" data-edit-label="Text — ★ 4.2 ON GOOGLE">★ 4.2 ON GOOGLE</span>
-  <span class="badge" data-edit="t9" data-edit-label="Text — 389 REVIEWS">389 REVIEWS</span>
-  <span class="badge" data-edit="t10" data-edit-label="Text — SUNDAYS = PACKED">SUNDAYS = PACKED</span>
+  <span class="badge o"><xen data-edit="t14" data-edit-label="Text (EN): ★ 4.2 ON GOOGLE">★ 4.2 ON GOOGLE</xen><xar data-edit="t16" data-edit-label="Text (AR): ★ 4.2 على غوغل">★ 4.2 على غوغل</xar></span>
+  <span class="badge"><xen data-edit="t18" data-edit-label="Text (EN): 389 REVIEWS">389 REVIEWS</xen><xar data-edit="t20" data-edit-label="Text (AR): 389 تقييم">389 تقييم</xar></span>
+  <span class="badge"><xen data-edit="t22" data-edit-label="Text (EN): SUNDAYS = PACKED">SUNDAYS = PACKED</xen><xar data-edit="t24" data-edit-label="Text (AR): الأحد = زحمة">الأحد = زحمة</xar></span>
  </div>
  <div class="cta-row">
-  <a class="btn o" href="tel:+9611706268" data-edit="t11" data-edit-label="Button / link — Call ahead">Call ahead</a>
+  <a class="btn o" href="tel:+9611706268"><xen data-edit="t25" data-edit-label="Text (EN): Call ahead">Call ahead</xen><xar data-edit="t26" data-edit-label="Text (AR): إتّصلوا قبل ما تجوا">إتّصلوا قبل ما تجوا</xar></a>
   
-  <a class="btn" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener" data-edit="t12" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+  <a class="btn" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener"><xen data-edit="t27" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t28" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
  </div>
 </header>
 
-<div class="words"><div class="tt"><span data-edit="t13" data-edit-label="Text — FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SI…">FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SINCE FOREVER ✦ 7AM — 2PM ✦ SUNDAYS PACKED ✦ FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SINCE FOREVER ✦ 7AM — 2PM ✦ SUNDAYS PACKED ✦ </span></div></div>
+<div class="words"><div class="tt"><span><xen data-edit="t29" data-edit-label="Text (EN): FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SI…">FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SINCE FOREVER ✦ 7AM — 2PM ✦ SUNDAYS PACKED ✦ FOUL ✦ FATTEH ✦ HUMMUS ✦ MSABBAHA ✦ SINCE FOREVER ✦ 7AM — 2PM ✦ SUNDAYS PACKED ✦ </xen><xar data-edit="t30" data-edit-label="Text (AR): فول ✦ فتّة ✦ حمّص ✦ مسبّحة ✦ من زمان ✦…">فول ✦ فتّة ✦ حمّص ✦ مسبّحة ✦ من زمان ✦ 7 صباحاً — 2 بعد الظهر ✦ الأحد زحمة ✦ فول ✦ فتّة ✦ حمّص ✦ مسبّحة ✦ من زمان ✦ 7 صباحاً — 2 بعد الظهر ✦ الأحد زحمة ✦</xar></span></div></div>
 
 <section id="story">
  <div class="wrap">
   <div class="sign rv">
-   <span class="k" data-edit="t14" data-edit-label="Text — The house of Hajj Issa">The house of Hajj Issa</span>
-   <h2>Breakfast the way Beirut <em data-edit="t15" data-edit-label="Text — remembers it">remembers it</em></h2>
-   <p class="lead" data-edit="t16" data-edit-label="Text — Every Beirut morning has an address. A…">Every Beirut morning has an address. At Hajj Issa's, the foul simmers before sunrise, the fatteh comes drowning in golden ghee, and on Sundays the tables are packed shoulder to shoulder. This is traditional Lebanese breakfast — no shortcuts, no fuss, exactly as your grandfather had it.</p>
+   <span class="k"><xen data-edit="t31" data-edit-label="Text (EN): The house of Hajj Issa">The house of Hajj Issa</xen><xar data-edit="t32" data-edit-label="Text (AR): بيت الحاج عيسى">بيت الحاج عيسى</xar></span>
+   <h2><xen>Breakfast the way Beirut <em data-edit="t15" data-edit-label="Text — remembers it">remembers it</em></xen><xar>الترويقة متل ما بيروت <em data-edit="t33" data-edit-label="Text: بتتذكّرها">بتتذكّرها</em></xar></h2>
+   <p class="lead"><xen data-edit="t35" data-edit-label="Text (EN): Every Beirut morning has an address. A…">Every Beirut morning has an address. At Hajj Issa's, the foul simmers before sunrise, the fatteh comes drowning in golden ghee, and on Sundays the tables are packed shoulder to shoulder. This is traditional Lebanese breakfast — no shortcuts, no fuss, exactly as your grandfather had it.</xen><xar data-edit="t36" data-edit-label="Text (AR): كل صبح ببيروت إلو عنوان. عند الحاج عيس…">كل صبح ببيروت إلو عنوان. عند الحاج عيسى، الفول بيغلي قبل ما تطلع الشمس، والفتّة بتجي غارقة بالسمنة، ويوم الأحد الطاولات بتمتلي كتف لكتف. هيدي الترويقة اللبنانية الأصيلة — بلا طرق مختصرة وبلا تكلّف، بالضبط متل ما كان يوكل جدّك.</xar></p>
    <div class="row">
-    <div><b data-edit="t17" data-edit-label="Text — ★ 4.2">★ 4.2</b><span data-edit="t18" data-edit-label="Text — on Google">on Google</span></div>
-    <div><b data-edit="t19" data-edit-label="Text — 389">389</b><span data-edit="t20" data-edit-label="Text — reviews">reviews</span></div>
-    <div><b data-edit="t21" data-edit-label="Text — 7–2">7–2</b><span data-edit="t22" data-edit-label="Text — morning hours">morning hours</span></div>
+    <div><b data-edit="t17" data-edit-label="Text — ★ 4.2">★ 4.2</b><span><xen data-edit="t76" data-edit-label="Text (EN): on Google">on Google</xen><xar data-edit="t78" data-edit-label="Text (AR): على غوغل">على غوغل</xar></span></div>
+    <div><b data-edit="t19" data-edit-label="Text — 389">389</b><span><xen data-edit="t80" data-edit-label="Text (EN): reviews">reviews</xen><xar data-edit="t81" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
+    <div><b data-edit="t21" data-edit-label="Text — 7–2">7–2</b><span><xen data-edit="t83" data-edit-label="Text (EN): morning hours">morning hours</xen><xar data-edit="t84" data-edit-label="Text (AR): ساعات الصبح">ساعات الصبح</xar></span></div>
    </div>
   </div>
  </div>
@@ -186,18 +220,18 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
 
 <section class="crates" id="menu" style="padding-top:0">
  <div class="wrap">
-  <h2 class="rv">Off the <em data-edit="t23" data-edit-label="Text — morning">morning</em> stove</h2>
-  <p class="sub" data-edit="t24" data-edit-label="Text — Three things people cross the city for">Three things people cross the city for</p>
-  <div class="crate-grid"><div class="crate rv"><span class="tagp" data-edit="t25" data-edit-label="Text — THE GLORY">THE GLORY</span><img src="img/07.jpg" alt="Fatteh" loading="lazy"><div class="bd"><h3 data-edit="t26" data-edit-label="Heading — Fatteh">Fatteh</h3><p data-edit="t27" data-edit-label="Text — Warm chickpeas, yogurt, toasted bread …">Warm chickpeas, yogurt, toasted bread and sizzling ghee. The house glory.</p></div></div><div class="crate rv"><span class="tagp" data-edit="t28" data-edit-label="Text — NO SHORTCUTS">NO SHORTCUTS</span><img src="img/04.jpg" alt="Foul & Hummus" loading="lazy"><div class="bd"><h3 data-edit="t29" data-edit-label="Heading — Foul & Hummus">Foul & Hummus</h3><p data-edit="t30" data-edit-label="Text — Slow-cooked, hand-mashed, finished wit…">Slow-cooked, hand-mashed, finished with good olive oil.</p></div></div><div class="crate rv"><span class="tagp" data-edit="t31" data-edit-label="Text — 7 AM SHARP">7 AM SHARP</span><img src="img/06.jpg" alt="Sunrise Hours" loading="lazy"><div class="bd"><h3 data-edit="t32" data-edit-label="Heading — Sunrise Hours">Sunrise Hours</h3><p data-edit="t33" data-edit-label="Text — Open 7 AM – 2 PM. Come early — Sundays…">Open 7 AM – 2 PM. Come early — Sundays are jam-packed.</p></div></div></div>
+  <h2 class="rv"><xen>Off the <em data-edit="t23" data-edit-label="Text — morning">morning</em> stove</xen><xar>من عالطنجرة <em data-edit="t86" data-edit-label="Text: الصبح">الصبح</em></xar></h2>
+  <p class="sub"><xen data-edit="t87" data-edit-label="Text (EN): Three things people cross the city for">Three things people cross the city for</xen><xar data-edit="t88" data-edit-label="Text (AR): تلات أطباق الناس بتقطع بيروت كرمالن">تلات أطباق الناس بتقطع بيروت كرمالن</xar></p>
+  <div class="crate-grid"><div class="crate rv"><span class="tagp"><xen data-edit="t90" data-edit-label="Text (EN): THE GLORY">THE GLORY</xen><xar data-edit="t91" data-edit-label="Text (AR): المجد">المجد</xar></span><img src="img/07.jpg" alt="Fatteh" loading="lazy"><div class="bd"><h3><xen data-edit="t92" data-edit-label="Text (EN): Fatteh">Fatteh</xen><xar data-edit="t93" data-edit-label="Text (AR): فتّة">فتّة</xar></h3><p><xen data-edit="t94" data-edit-label="Text (EN): Warm chickpeas, yogurt, toasted bread …">Warm chickpeas, yogurt, toasted bread and sizzling ghee. The house glory.</xen><xar data-edit="t95" data-edit-label="Text (AR): حمّص سخن، لبن، خبز محمّص وسمنة عم تشقش…">حمّص سخن، لبن، خبز محمّص وسمنة عم تشقشق. مجد البيت.</xar></p></div></div><div class="crate rv"><span class="tagp"><xen data-edit="t96" data-edit-label="Text (EN): NO SHORTCUTS">NO SHORTCUTS</xen><xar data-edit="t97" data-edit-label="Text (AR): بلا طرق مختصرة">بلا طرق مختصرة</xar></span><img src="img/04.jpg" alt="Foul & Hummus" loading="lazy"><div class="bd"><h3><xen data-edit="t98" data-edit-label="Text (EN): Foul & Hummus">Foul & Hummus</xen><xar data-edit="t99" data-edit-label="Text (AR): فول وحمّص">فول وحمّص</xar></h3><p><xen data-edit="t100" data-edit-label="Text (EN): Slow-cooked, hand-mashed, finished wit…">Slow-cooked, hand-mashed, finished with good olive oil.</xen><xar data-edit="t101" data-edit-label="Text (AR): مسلوق على مهل، مهروس عاليد، ومغطّى بزي…">مسلوق على مهل، مهروس عاليد، ومغطّى بزيت زيتون منيح.</xar></p></div></div><div class="crate rv"><span class="tagp"><xen data-edit="t102" data-edit-label="Text (EN): 7 AM SHARP">7 AM SHARP</xen><xar data-edit="t103" data-edit-label="Text (AR): 7 الصبح بالضبط">7 الصبح بالضبط</xar></span><img src="img/06.jpg" alt="Sunrise Hours" loading="lazy"><div class="bd"><h3><xen data-edit="t104" data-edit-label="Text (EN): Sunrise Hours">Sunrise Hours</xen><xar data-edit="t105" data-edit-label="Text (AR): ساعات الشروق">ساعات الشروق</xar></h3><p><xen data-edit="t106" data-edit-label="Text (EN): Open 7 AM – 2 PM. Come early — Sundays…">Open 7 AM – 2 PM. Come early — Sundays are jam-packed.</xen><xar data-edit="t107" data-edit-label="Text (AR): مفتوح من 7 صباحاً لـ2 بعد الظهر. تعوا …">مفتوح من 7 صباحاً لـ2 بعد الظهر. تعوا بكّير — يوم الأحد بتمتلي.</xar></p></div></div></div>
  </div>
 </section>
 
 <section class="bigr" id="carte">
- <h2 class="rv">The <em data-edit="t34" data-edit-label="Text — whole">whole</em> board</h2>
- <p class="sub" data-edit="t35" data-edit-label="Text — Everything the hall serves — rung up l…">Everything the hall serves — rung up like a Sunday morning</p>
+ <h2 class="rv"><xen>The <em data-edit="t34" data-edit-label="Text — whole">whole</em> board</xen><xar>اللائحة <em data-edit="t108" data-edit-label="Text: كاملة">كاملة</em></xar></h2>
+ <p class="sub"><xen data-edit="t109" data-edit-label="Text (EN): Everything the hall serves — rung up l…">Everything the hall serves — rung up like a Sunday morning</xen><xar data-edit="t110" data-edit-label="Text (AR): كلّ شي بتقدّمو الصالة — محسوب متل صبحي…">كلّ شي بتقدّمو الصالة — محسوب متل صبحيّة أحد</xar></p>
  <div class="rcpt big rv">
-  <div class="hd" data-edit="t36" data-edit-label="Text — ISSA &amp; SONS — BEIRUT · الصالة · DA…">ISSA &amp; SONS — BEIRUT · الصالة · DAILY 7 AM – 2 PM</div>
-  <div class="msec">From the pot <span class="arabic" data-edit="t37" data-edit-label="Text — من التنجرة">من التنجرة</span></div>
+  <div class="hd"><xen data-edit="t111" data-edit-label="Text (EN): ISSA &amp; SONS — BEIRUT · الصالة · DA…">ISSA &amp; SONS — BEIRUT · الصالة · DAILY 7 AM – 2 PM</xen><xar data-edit="t112" data-edit-label="Text (AR): عيسى وأولاده — بيروت · الصالة · كل يوم…">عيسى وأولاده — بيروت · الصالة · كل يوم 7 صباحاً – 2 بعد الظهر</xar></div>
+  <div class="msec"><xen class="c">From the pot <span class="arabic" data-edit="t37" data-edit-label="Text — من التنجرة">من التنجرة</span></xen><xar class="c">من التنجرة <span class="arabic" data-edit="t113" data-edit-label="Text: على النار">على النار</span></xar></div>
   <div class="mrow"><span data-edit="t38" data-edit-label="Text — Foul — the classic">Foul — the classic</span><span class="ld"></span><span class="ar arabic" data-edit="t39" data-edit-label="Text — صحن فول">صحن فول</span></div>
   <div class="mrow"><span data-edit="t40" data-edit-label="Text — Foul Issa — the house special">Foul Issa — the house special</span><span class="ld"></span><span class="ar arabic" data-edit="t41" data-edit-label="Text — فول عيسى">فول عيسى</span></div>
   <div class="mrow"><span data-edit="t42" data-edit-label="Text — Foul with butter">Foul with butter</span><span class="ld"></span><span class="ar arabic" data-edit="t43" data-edit-label="Text — فول بالزبدة">فول بالزبدة</span></div>
@@ -205,59 +239,71 @@ footer{text-align:center;padding:28px 5vw 110px;font-weight:600;font-size:.8rem;
   <div class="mrow"><span data-edit="t46" data-edit-label="Text — Hummus bi tahini">Hummus bi tahini</span><span class="ld"></span><span class="ar arabic" data-edit="t47" data-edit-label="Text — حمص بطحينة">حمص بطحينة</span></div>
   <div class="mrow"><span data-edit="t48" data-edit-label="Text — Spiced hummus beans">Spiced hummus beans</span><span class="ld"></span><span class="ar arabic" data-edit="t49" data-edit-label="Text — حمص حب متبل">حمص حب متبل</span></div>
   <div class="mrow"><span data-edit="t50" data-edit-label="Text — Qudsiyeh">Qudsiyeh</span><span class="ld"></span><span class="ar arabic" data-edit="t51" data-edit-label="Text — قدسية">قدسية</span></div>
-  <div class="msec">Fatteh corner <span class="arabic" data-edit="t52" data-edit-label="Text — ركن الفتة">ركن الفتة</span></div>
+  <div class="msec"><xen class="c">Fatteh corner <span class="arabic" data-edit="t52" data-edit-label="Text — ركن الفتة">ركن الفتة</span></xen><xar class="c">ركن الفتّة <span class="arabic" data-edit="t114" data-edit-label="Text: سخنة">سخنة</span></xar></div>
   <div class="mrow"><span data-edit="t53" data-edit-label="Text — Fatteh bi laban">Fatteh bi laban</span><span class="ld"></span><span class="ar arabic" data-edit="t54" data-edit-label="Text — فتة بلبن">فتة بلبن</span></div>
   <div class="mrow"><span data-edit="t55" data-edit-label="Text — Fatteh bi tahini">Fatteh bi tahini</span><span class="ld"></span><span class="ar arabic" data-edit="t56" data-edit-label="Text — فتة بطحينة">فتة بطحينة</span></div>
   <div class="mrow"><span data-edit="t57" data-edit-label="Text — Fatteh with meat">Fatteh with meat</span><span class="ld"></span><span class="ar arabic" data-edit="t58" data-edit-label="Text — فتة مع لحمة">فتة مع لحمة</span></div>
   <div class="mrow"><span data-edit="t59" data-edit-label="Text — The big jat — feeds the table">The big jat — feeds the table</span><span class="ld"></span><span class="ar arabic" data-edit="t60" data-edit-label="Text — جاط فتة">جاط فتة</span></div>
-  <div class="msec">On the side <span class="arabic" data-edit="t61" data-edit-label="Text — عالجنب">عالجنب</span></div>
+  <div class="msec"><xen class="c">On the side <span class="arabic" data-edit="t61" data-edit-label="Text — عالجنب">عالجنب</span></xen><xar class="c">عالجنب <span class="arabic" data-edit="t115" data-edit-label="Text: إضافات">إضافات</span></xar></div>
   <div class="mrow"><span data-edit="t62" data-edit-label="Text — Fried eggs">Fried eggs</span><span class="ld"></span><span class="ar arabic" data-edit="t63" data-edit-label="Text — بيض مقلي">بيض مقلي</span></div>
   <div class="mrow"><span data-edit="t64" data-edit-label="Text — Fried eggs with meat">Fried eggs with meat</span><span class="ld"></span><span class="ar arabic" data-edit="t65" data-edit-label="Text — بيض مع لحمة">بيض مع لحمة</span></div>
   <div class="mrow"><span data-edit="t66" data-edit-label="Text — Labneh">Labneh</span><span class="ld"></span><span class="ar arabic" data-edit="t67" data-edit-label="Text — لبنة">لبنة</span></div>
   <div class="mrow"><span data-edit="t68" data-edit-label="Text — Fried halloum">Fried halloum</span><span class="ld"></span><span class="ar arabic" data-edit="t69" data-edit-label="Text — حلوم مقلي">حلوم مقلي</span></div>
-  <div class="msec">To go <span class="arabic" data-edit="t70" data-edit-label="Text — جاط للخارج">جاط للخارج</span></div>
+  <div class="msec"><xen class="c">To go <span class="arabic" data-edit="t70" data-edit-label="Text — جاط للخارج">جاط للخارج</span></xen><xar class="c">للبيت <span class="arabic" data-edit="t116" data-edit-label="Text: تيك أواي">تيك أواي</span></xar></div>
   <div class="mrow"><span data-edit="t71" data-edit-label="Text — Foul, msabbaha &amp; hummus — by the ½…">Foul, msabbaha &amp; hummus — by the ½ kilo &amp; kilo</span><span class="ld"></span><span class="ar arabic" data-edit="t72" data-edit-label="Text — عالوزن">عالوزن</span></div>
   <div class="mrow"><span data-edit="t73" data-edit-label="Text — Full service trays — small / medium / …">Full service trays — small / medium / large</span><span class="ld"></span><span class="ar arabic" data-edit="t74" data-edit-label="Text — السرفيس">السرفيس</span></div>
-  <div class="total">★ prices at the counter — they move with the market ★<br>thank you · come back Sunday</div>
+  <div class="total"><xen>★ prices at the counter — they move with the market ★<br>thank you · come back Sunday</xen><xar>★ الأسعار عالكاونتر — بتتغيّر مع السوق ★<br>شكراً · بترجعوا نهار الأحد</xar></div>
  </div>
 </section>
 
 <section class="market" id="gallery">
  <div class="wrap">
-  <h2 class="rv">The <em data-edit="t75" data-edit-label="Text — morning">morning</em> market</h2>
-  <p class="sub" data-edit="t76" data-edit-label="Text — Straight from the pot — no filters nee…">Straight from the pot — no filters needed</p>
+  <h2 class="rv"><xen>The <em data-edit="t75" data-edit-label="Text — morning">morning</em> market</xen><xar>سوق <em data-edit="t117" data-edit-label="Text: الصبح">الصبح</em></xar></h2>
+  <p class="sub"><xen data-edit="t118" data-edit-label="Text (EN): Straight from the pot — no filters nee…">Straight from the pot — no filters needed</xen><xar data-edit="t119" data-edit-label="Text (AR): دغري من عالطنجرة — بلا فلاتر">دغري من عالطنجرة — بلا فلاتر</xar></p>
   <div class="mgrid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
  </div>
 </section>
 
 <section class="receipts" id="reviews">
- <h2 class="rv">Paid in <em data-edit="t77" data-edit-label="Text — praise">praise</em></h2>
- <div class="r-grid"><div class="rcpt rv"><div class="hd" data-edit="t78" data-edit-label="Text — ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</div><p data-edit="t79" data-edit-label="Text — Hajj Issa serves delicious foul and fa…">Hajj Issa serves delicious foul and fatteh dishes. If you are a fan of traditional Lebanese breakfast or brunch, it's your must-go destination. Worth the drive — the taste is amazing.</p><div class="who"><span data-edit="t80" data-edit-label="Text — Google review">Google review</span><span>★★★★★</span></div></div><div class="rcpt rv"><div class="hd" data-edit="t81" data-edit-label="Text — ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</div><p data-edit="t82" data-edit-label="Text — One of the best places in Beirut to ge…">One of the best places in Beirut to get foul and hommos. Tastes great — Sundays it is absolutely jam-packed.</p><div class="who"><span data-edit="t83" data-edit-label="Text — Google review">Google review</span><span>★★★★★</span></div></div><div class="rcpt rv"><div class="hd" data-edit="t84" data-edit-label="Text — ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</div><p data-edit="t85" data-edit-label="Text — Delivery was super fast and the delive…">Delivery was super fast and the delivery man was really good.</p><div class="who"><span data-edit="t86" data-edit-label="Text — Google review">Google review</span><span>★★★★★</span></div></div></div>
+ <h2 class="rv"><xen>Paid in <em data-edit="t77" data-edit-label="Text — praise">praise</em></xen><xar>الدفع <em data-edit="t120" data-edit-label="Text: مديح">مديح</em></xar></h2>
+ <div class="r-grid"><div class="rcpt rv"><div class="hd"><xen data-edit="t121" data-edit-label="Text (EN): ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</xen><xar data-edit="t122" data-edit-label="Text (AR): عيسى وأولاده — بيروت">عيسى وأولاده — بيروت</xar></div><p data-edit="t79" data-edit-label="Text — Hajj Issa serves delicious foul and fa…">Hajj Issa serves delicious foul and fatteh dishes. If you are a fan of traditional Lebanese breakfast or brunch, it's your must-go destination. Worth the drive — the taste is amazing.</p><div class="who"><span><xen data-edit="t123" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t124" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></span><span>★★★★★</span></div></div><div class="rcpt rv"><div class="hd"><xen data-edit="t125" data-edit-label="Text (EN): ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</xen><xar data-edit="t126" data-edit-label="Text (AR): عيسى وأولاده — بيروت">عيسى وأولاده — بيروت</xar></div><p data-edit="t82" data-edit-label="Text — One of the best places in Beirut to ge…">One of the best places in Beirut to get foul and hommos. Tastes great — Sundays it is absolutely jam-packed.</p><div class="who"><span><xen data-edit="t127" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t128" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></span><span>★★★★★</span></div></div><div class="rcpt rv"><div class="hd"><xen data-edit="t129" data-edit-label="Text (EN): ISSA &amp; SONS — BEIRUT">ISSA &amp; SONS — BEIRUT</xen><xar data-edit="t130" data-edit-label="Text (AR): عيسى وأولاده — بيروت">عيسى وأولاده — بيروت</xar></div><p data-edit="t85" data-edit-label="Text — Delivery was super fast and the delive…">Delivery was super fast and the delivery man was really good.</p><div class="who"><span><xen data-edit="t131" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t132" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></span><span>★★★★★</span></div></div></div>
 </section>
 
 <section class="visit" id="visit">
- <span class="k" data-edit="t87" data-edit-label="Text — Come hungry">Come hungry</span>
- <h2 data-edit="t88" data-edit-label="Title — COME EARLY. SUNDAYS FILL FAST.">COME EARLY. SUNDAYS FILL FAST.</h2>
+ <span class="k"><xen data-edit="t133" data-edit-label="Text (EN): Come hungry">Come hungry</xen><xar data-edit="t134" data-edit-label="Text (AR): تعوا جوعانين">تعوا جوعانين</xar></span>
+ <h2><xen data-edit="t135" data-edit-label="Text (EN): COME EARLY. SUNDAYS FILL FAST.">COME EARLY. SUNDAYS FILL FAST.</xen><xar data-edit="t136" data-edit-label="Text (AR): تعوا بكّير. يوم الأحد بتمتلي بسرعة.">تعوا بكّير. يوم الأحد بتمتلي بسرعة.</xar></h2>
  <a class="phone" href="tel:+9611706268" data-edit="t89" data-edit-label="Button / link — +961 1 706 268">+961 1 706 268</a>
- <p class="meta">Barbour / Tariq el Jdideh area, Beirut, Lebanon (Plus code: VFFW+HHX)<br>Open daily · 7:00 AM – 2:00 PM (mornings only — come early!)</p>
+ <p class="meta"><xen>Barbour / Tariq el Jdideh area, Beirut, Lebanon (Plus code: VFFW+HHX)<br>Open daily · 7:00 AM – 2:00 PM (mornings only — come early!)</xen><xar>منطقة بربور / طريق الجديدة، بيروت، لبنان (Plus code: VFFW+HHX)<br>مفتوح كل يوم · 7:00 صباحاً – 2:00 بعد الظهر (الصبح بس — تعوا بكّير!)</xar></p>
  <div class="btns">
-  <a class="btn o" href="tel:+9611706268" data-edit="t90" data-edit-label="Button / link — Call +961 1 706 268">Call +961 1 706 268</a> <a class="btn ig" href="https://instagram.com/mataamissa" target="_blank" rel="noopener" data-edit="t91" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener" data-edit="t92" data-edit-label="Button / link — Open in Google Maps ↗">Open in Google Maps ↗</a>
+  <a class="btn o" href="tel:+9611706268"><xen data-edit="t137" data-edit-label="Text (EN): Call +961 1 706 268">Call +961 1 706 268</xen><xar data-edit="t138" data-edit-label="Text (AR): إتّصلوا +961 1 706 268">إتّصلوا +961 1 706 268</xar></a> <a class="btn ig" href="https://instagram.com/mataamissa" target="_blank" rel="noopener"><xen data-edit="t139" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t140" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener"><xen data-edit="t141" data-edit-label="Text (EN): Open in Google Maps ↗">Open in Google Maps ↗</xen><xar data-edit="t142" data-edit-label="Text (AR): إفتحوا خرائط غوغل ↗">إفتحوا خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611706268" data-edit="t93" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611706268"><xen data-edit="t143" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t144" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/mataamissa" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener" data-edit="t94" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=9201529888211975576" target="_blank" rel="noopener"><xen data-edit="t145" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t146" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Issa Restaurant — Hummus · Beirut, Lebanon</footer>
+<footer><xen data-edit="t147" data-edit-label="Text (EN): © Issa Restaurant — Hummus · Beirut, L…">© Issa Restaurant — Hummus · Beirut, Lebanon</xen><xar data-edit="t148" data-edit-label="Text (AR): © مطعم عيسى — حمّص · بيروت، لبنان">© مطعم عيسى — حمّص · بيروت، لبنان</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t149" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"مطعم عيسى وأولاده — فول وحمّص وفتّة في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

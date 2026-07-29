@@ -140,52 +140,86 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(40,33
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&family=Cairo:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'El Messiri',serif;--arb:'Cairo',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#0F6B66;color:#F6E8D6;border:1.5px solid #E07A2F;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <div class="stripes"></div>
 <nav>
- <a class="brand" href="#">KAHWET <span data-edit="t1" data-edit-label="Text — 60">60</span></a>
+ <a class="brand" href="#"><xen>KAHWET <span data-edit="t1" data-edit-label="Text — 60">60</span></xen><xar>قهوة <span data-edit="t2" data-edit-label="Text: 60">60</span></xar></a>
  <div class="links">
-  <a href="#capsule" data-edit="t2" data-edit-label="Button / link — The capsule">The capsule</a><a href="#roof" data-edit="t3" data-edit-label="Button / link — The rooftop">The rooftop</a><a href="#wheel" data-edit="t4" data-edit-label="Button / link — Breakfast">Breakfast</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96181196000" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#capsule"><xen data-edit="t3" data-edit-label="Text (EN): The capsule">The capsule</xen><xar data-edit="t4" data-edit-label="Text (AR): الكبسولة">الكبسولة</xar></a><a href="#roof"><xen data-edit="t5" data-edit-label="Text (EN): The rooftop">The rooftop</xen><xar data-edit="t6" data-edit-label="Text (AR): السطح">السطح</xar></a><a href="#wheel"><xen data-edit="t7" data-edit-label="Text (EN): Breakfast">Breakfast</xen><xar data-edit="t9" data-edit-label="Text (AR): الترويقة">الترويقة</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96181196000"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="year" data-edit="t7" data-edit-label="Text — Pasteur Street · tuned to the sixties">Pasteur Street · tuned to the sixties</span>
-  <h1>KAHWET <span data-edit="t8" data-edit-label="Text — 60">60</span></h1>
-  <p class="arb" data-edit="t9" data-edit-label="Text — قهوة الستّين — where the decade never …">قهوة الستّين — where the decade never ended</p>
-  <p class="tg" data-edit="t10" data-edit-label="Text — A rooftop café styled like Beirut in t…">A rooftop café styled like Beirut in the sixties — rakweh coffee, floral sofas, city views.</p>
+  <span class="year"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Pasteur Street · tuned to the sixties">Pasteur Street · tuned to the sixties</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): شارع باستور · معيّر على الستّينات">شارع باستور · معيّر على الستّينات</xar></span>
+  <h1><xen>KAHWET <span data-edit="t8" data-edit-label="Text — 60">60</span></xen><xar>قهوة <span data-edit="t16" data-edit-label="Text: 60">60</span></xar></h1>
+  <p class="arb"><xen data-edit="t17" data-edit-label="Text (EN): قهوة الستّين — where the decade never …">قهوة الستّين — where the decade never ended</xen><xar><span class="lat" data-edit="t18" data-edit-label="Text: KAHWET 60">KAHWET 60</span> — الستّينات ما خلصت هون</xar></p>
+  <p class="tg"><xen data-edit="t20" data-edit-label="Text (EN): A rooftop café styled like Beirut in t…">A rooftop café styled like Beirut in the sixties — rakweh coffee, floral sofas, city views.</xen><xar data-edit="t21" data-edit-label="Text (AR): مقهى على السطح مزيّن متل بيروت بالستّي…">مقهى على السطح مزيّن متل بيروت بالستّينات — قهوة بالركوة، كنبايات مورّدة، وإطلالة عالمدينة.</xar></p>
   <div class="dial">
-   <span class="dl t" data-edit="t11" data-edit-label="Text — ★ 4.8 · 337 reviews">★ 4.8 · 337 reviews</span>
-   <span class="dl o" data-edit="t12" data-edit-label="Text — Rooftop views">Rooftop views</span>
-   <span class="dl" data-edit="t13" data-edit-label="Text — Shisha done properly">Shisha done properly</span>
+   <span class="dl t"><xen data-edit="t22" data-edit-label="Text (EN): ★ 4.8 · 337 reviews">★ 4.8 · 337 reviews</xen><xar data-edit="t23" data-edit-label="Text (AR): ★ 4.8 · 337 تقييم">★ 4.8 · 337 تقييم</xar></span>
+   <span class="dl o"><xen data-edit="t24" data-edit-label="Text (EN): Rooftop views">Rooftop views</xen><xar data-edit="t25" data-edit-label="Text (AR): إطلالة من السطح">إطلالة من السطح</xar></span>
+   <span class="dl"><xen data-edit="t26" data-edit-label="Text (EN): Shisha done properly">Shisha done properly</xen><xar data-edit="t28" data-edit-label="Text (AR): أركيلة متل ما لازم">أركيلة متل ما لازم</xar></span>
   </div>
   <div class="cta">
-   <a class="btn t" href="tel:+96181196000" data-edit="t14" data-edit-label="Button / link — Call +961 81 196 000">Call +961 81 196 000</a>
-   <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+   <a class="btn t" href="tel:+96181196000"><xen data-edit="t29" data-edit-label="Text (EN): Call +961 81 196 000">Call +961 81 196 000</xen><xar data-edit="t30" data-edit-label="Text (AR): إتّصلوا +961 81 196 000">إتّصلوا +961 81 196 000</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener"><xen data-edit="t31" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t32" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
   </div>
  </div>
  <div class="tv rv">
-  <span class="knob" data-edit="t16" data-edit-label="Text — est. in spirit, 1960">est. in spirit, 1960</span>
+  <span class="knob"><xen data-edit="t33" data-edit-label="Text (EN): est. in spirit, 1960">est. in spirit, 1960</xen><xar data-edit="t34" data-edit-label="Text (AR): تأسّست بالروح، 1960">تأسّست بالروح، 1960</xar></span>
   <img src="img/01.jpg" alt="Kahwet 60 — pink wall and green shutters">
  </div>
 </header>
 
-<div class="dialstrip"><div class="tt"><span data-edit="t17" data-edit-label="Text — TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT …">TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ </span></div></div>
+<div class="dialstrip"><div class="tt"><span><xen data-edit="t35" data-edit-label="Text (EN): TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT …">TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ TURKISH COFFEE ✿ RAKWEH &amp; DELIGHT ✿ BREAKFAST WHEELS ✿ FLORAL SOFAS ✿ CITY VIEWS ✿ TAWLEH &amp; TARAB ✿ </xen><xar data-edit="t36" data-edit-label="Text (AR): قهوة تركية ✿ ركوة وملبّس ✿ صواني الترو…">قهوة تركية ✿ ركوة وملبّس ✿ صواني الترويقة ✿ كنبايات مورّدة ✿ إطلالة عالمدينة ✿ طاولة وطرب ✿ قهوة تركية ✿ ركوة وملبّس ✿ صواني الترويقة ✿ كنبايات مورّدة ✿ إطلالة عالمدينة ✿ طاولة وطرب ✿</xar></span></div></div>
 
 <section id="capsule">
  <div class="wrap cap2">
   <div class="rv">
-   <span class="k" data-edit="t18" data-edit-label="Text — The time capsule">The time capsule</span>
-   <h2>Beirut, <em data-edit="t19" data-edit-label="Text — 1960-something">1960-something</em>, preserved with love</h2>
-   <p data-edit="t20" data-edit-label="Text — Kahwet 60 turned a Pasteur-street roof…">Kahwet 60 turned a Pasteur-street rooftop into a time machine: pink walls and green shutters, floral sofas, copper rakwehs on crochet doilies, and a breakfast spread that arrives like a color TV test card. The decade never ended here — it just got a better view of the city.</p>
-   <p data-edit="t21" data-edit-label="Text — Floral sofas, wall clocks that all agr…">Floral sofas, wall clocks that all agree to disagree, copper rakwehs and Turkish delight on crochet doilies — every corner styled like your grandmother's best salon.</p>
+   <span class="k"><xen data-edit="t37" data-edit-label="Text (EN): The time capsule">The time capsule</xen><xar data-edit="t38" data-edit-label="Text (AR): كبسولة الزمن">كبسولة الزمن</xar></span>
+   <h2><xen>Beirut, <em data-edit="t19" data-edit-label="Text — 1960-something">1960-something</em>, preserved with love</xen><xar>بيروت، <em data-edit="t40" data-edit-label="Text: ستينات وشوي">ستينات وشوي</em>، محفوظة بمحبّة</xar></h2>
+   <p><xen data-edit="t42" data-edit-label="Text (EN): Kahwet 60 turned a Pasteur-street roof…">Kahwet 60 turned a Pasteur-street rooftop into a time machine: pink walls and green shutters, floral sofas, copper rakwehs on crochet doilies, and a breakfast spread that arrives like a color TV test card. The decade never ended here — it just got a better view of the city.</xen><xar data-edit="t50" data-edit-label="Text (AR): قهوة 60 حوّلت سطح على شارع باستور لآلة…">قهوة 60 حوّلت سطح على شارع باستور لآلة زمن: حيطان زهرية وشيش أخضر، كنبايات مورّدة، ركوات نحاس على مفارش كروشيه، وصينية ترويقة بتوصل متل شاشة تلفزيون ملوّن. العقد ما خلص هون — بس صار إلو إطلالة أحلى عالمدينة.</xar></p>
+   <p><xen data-edit="t52" data-edit-label="Text (EN): Floral sofas, wall clocks that all agr…">Floral sofas, wall clocks that all agree to disagree, copper rakwehs and Turkish delight on crochet doilies — every corner styled like your grandmother's best salon.</xen><xar data-edit="t53" data-edit-label="Text (AR): كنبايات مورّدة، ساعات حيط كلّها متّفقة…">كنبايات مورّدة، ساعات حيط كلّها متّفقة إنّها مختلفة، ركوات نحاس وملبّس على مفارش كروشيه — كل زاوية مزيّنة متل صالون ستّك الفخم.</xar></p>
    <div class="vinyl">
     <span class="disc"></span>
-    <div><b data-edit="t22" data-edit-label="Text — Now playing: the classics">Now playing: the classics</b><span data-edit="t23" data-edit-label="Text — Fairuz in the morning, tarab after dar…">Fairuz in the morning, tarab after dark — as the law requires.</span></div>
+    <div><b><xen data-edit="t54" data-edit-label="Text (EN): Now playing: the classics">Now playing: the classics</xen><xar data-edit="t55" data-edit-label="Text (AR): عم يشتغل هلّق: الكلاسيكيات">عم يشتغل هلّق: الكلاسيكيات</xar></b><span><xen data-edit="t56" data-edit-label="Text (EN): Fairuz in the morning, tarab after dar…">Fairuz in the morning, tarab after dark — as the law requires.</xen><xar data-edit="t57" data-edit-label="Text (AR): فيروز الصبح، وطرب بعد العتمة — متل ما …">فيروز الصبح، وطرب بعد العتمة — متل ما بيفرض القانون.</xar></span></div>
    </div>
   </div>
   <div class="ph rv"><img src="img/06.jpg" alt="Inside Kahwet 60"></div>
@@ -196,18 +230,18 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(40,33
  <div class="grid">
   <img class="rv" src="img/05.jpg" alt="Kahwet 60 rooftop tables">
   <div class="rv">
-   <span class="k" style="color:#fff" data-edit="t24" data-edit-label="Text — Sky-high vibes">Sky-high vibes</span>
-   <h2 data-edit="t25" data-edit-label="Title — A balcony over the whole city">A balcony over the whole city</h2>
-   <p data-edit="t26" data-edit-label="Text — The rooftop rail looks straight across…">The rooftop rail looks straight across Beirut's rooftops — orange juice at sunrise, shisha smoke curling at sunset, and that pink wall glowing behind you in every photo.</p>
+   <span class="k" style="color:#fff"><xen data-edit="t58" data-edit-label="Text (EN): Sky-high vibes">Sky-high vibes</xen><xar data-edit="t59" data-edit-label="Text (AR): أجواء فوق السطح">أجواء فوق السطح</xar></span>
+   <h2><xen data-edit="t60" data-edit-label="Text (EN): A balcony over the whole city">A balcony over the whole city</xen><xar data-edit="t61" data-edit-label="Text (AR): بلكون على المدينة كلّها">بلكون على المدينة كلّها</xar></h2>
+   <p><xen data-edit="t62" data-edit-label="Text (EN): The rooftop rail looks straight across…">The rooftop rail looks straight across Beirut's rooftops — orange juice at sunrise, shisha smoke curling at sunset, and that pink wall glowing behind you in every photo.</xen><xar data-edit="t63" data-edit-label="Text (AR): درابزين السطح بيطلّ دغري على سطوح بيرو…">درابزين السطح بيطلّ دغري على سطوح بيروت — عصير ليمون مع الشروق، دخان أركيلة مع الغروب، وهيداك الحيط الزهري عم يضوّي وراك بكل صورة.</xar></p>
   </div>
  </div>
 </section>
 
 <section class="wheel" id="wheel">
  <div class="wrap">
-  <h2 class="rv">The breakfast <em data-edit="t27" data-edit-label="Text — wheels">wheels</em></h2>
-  <p class="sub" data-edit="t28" data-edit-label="Text — Platters built like color TV test card…">Platters built like color TV test cards</p>
-  <div class="w-grid"><div class="wc rv"><img src="img/04.jpg" alt="The breakfast wheel" loading="lazy"><div class="bd"><span class="no" data-edit="t29" data-edit-label="Text — channel 1">channel 1</span><h3 data-edit="t30" data-edit-label="Heading — The breakfast wheel">The breakfast wheel</h3><p data-edit="t31" data-edit-label="Text — Cheeses, jams, zaatar and eggs arrange…">Cheeses, jams, zaatar and eggs arranged like a vintage clock face.</p></div></div><div class="wc rv"><img src="img/03.jpg" alt="Rakweh & delight" loading="lazy"><div class="bd"><span class="no" data-edit="t32" data-edit-label="Text — channel 2">channel 2</span><h3 data-edit="t33" data-edit-label="Heading — Rakweh & delight">Rakweh & delight</h3><p data-edit="t34" data-edit-label="Text — Turkish coffee in hammered copper, lok…">Turkish coffee in hammered copper, lokum on the side, always.</p></div></div><div class="wc rv"><img src="img/07.jpg" alt="Tea, poured properly" loading="lazy"><div class="bd"><span class="no" data-edit="t35" data-edit-label="Text — channel 3">channel 3</span><h3 data-edit="t36" data-edit-label="Heading — Tea, poured properly">Tea, poured properly</h3><p data-edit="t37" data-edit-label="Text — From silver pots onto balcony tables a…">From silver pots onto balcony tables above the rooftops.</p></div></div></div>
+  <h2 class="rv"><xen>The breakfast <em data-edit="t27" data-edit-label="Text — wheels">wheels</em></xen><xar>صواني <em data-edit="t64" data-edit-label="Text: الترويقة">الترويقة</em></xar></h2>
+  <p class="sub"><xen data-edit="t65" data-edit-label="Text (EN): Platters built like color TV test card…">Platters built like color TV test cards</xen><xar data-edit="t66" data-edit-label="Text (AR): صحون مرتّبة متل شاشة تلفزيون ملوّن">صحون مرتّبة متل شاشة تلفزيون ملوّن</xar></p>
+  <div class="w-grid"><div class="wc rv"><img src="img/04.jpg" alt="The breakfast wheel" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t67" data-edit-label="Text (EN): channel 1">channel 1</xen><xar data-edit="t68" data-edit-label="Text (AR): القناة 1">القناة 1</xar></span><h3><xen data-edit="t69" data-edit-label="Text (EN): The breakfast wheel">The breakfast wheel</xen><xar data-edit="t70" data-edit-label="Text (AR): صينية الترويقة">صينية الترويقة</xar></h3><p><xen data-edit="t71" data-edit-label="Text (EN): Cheeses, jams, zaatar and eggs arrange…">Cheeses, jams, zaatar and eggs arranged like a vintage clock face.</xen><xar data-edit="t72" data-edit-label="Text (AR): أجبان، مربّيات، زعتر وبيض مرتّبين متل …">أجبان، مربّيات، زعتر وبيض مرتّبين متل وجه ساعة قديمة.</xar></p></div></div><div class="wc rv"><img src="img/03.jpg" alt="Rakweh & delight" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t73" data-edit-label="Text (EN): channel 2">channel 2</xen><xar data-edit="t74" data-edit-label="Text (AR): القناة 2">القناة 2</xar></span><h3><xen data-edit="t75" data-edit-label="Text (EN): Rakweh & delight">Rakweh & delight</xen><xar data-edit="t76" data-edit-label="Text (AR): ركوة وملبّس">ركوة وملبّس</xar></h3><p><xen data-edit="t77" data-edit-label="Text (EN): Turkish coffee in hammered copper, lok…">Turkish coffee in hammered copper, lokum on the side, always.</xen><xar data-edit="t78" data-edit-label="Text (AR): قهوة تركية بنحاس مطروق، ولوكوم عالجنب،…">قهوة تركية بنحاس مطروق، ولوكوم عالجنب، دايماً.</xar></p></div></div><div class="wc rv"><img src="img/07.jpg" alt="Tea, poured properly" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t79" data-edit-label="Text (EN): channel 3">channel 3</xen><xar data-edit="t80" data-edit-label="Text (AR): القناة 3">القناة 3</xar></span><h3><xen data-edit="t81" data-edit-label="Text (EN): Tea, poured properly">Tea, poured properly</xen><xar data-edit="t82" data-edit-label="Text (AR): شاي، مصبوب متل ما لازم">شاي، مصبوب متل ما لازم</xar></h3><p><xen data-edit="t83" data-edit-label="Text (EN): From silver pots onto balcony tables a…">From silver pots onto balcony tables above the rooftops.</xen><xar data-edit="t84" data-edit-label="Text (AR): من براريد فضّة على طاولات البلكون فوق …">من براريد فضّة على طاولات البلكون فوق السطوح.</xar></p></div></div></div>
  </div>
 </section>
 
@@ -215,48 +249,60 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(40,33
  <div class="grid">
   <div class="sheet rv"><img src="img/02.jpg" alt="Kahwet 60 nostalgic menu card"></div>
   <div class="rv">
-   <span class="k" data-edit="t38" data-edit-label="Text — The menu card">The menu card</span>
-   <h2>Printed like an old <em data-edit="t39" data-edit-label="Text — exam sheet">exam sheet</em></h2>
-   <p data-edit="t40" data-edit-label="Text — The menu arrives looking like a 1960s …">The menu arrives looking like a 1960s school questionnaire — checkboxes, old-paper texture, Arabic handwriting. Tick what you want, hand it back, wait for the trays.</p>
+   <span class="k"><xen data-edit="t85" data-edit-label="Text (EN): The menu card">The menu card</xen><xar data-edit="t86" data-edit-label="Text (AR): كرت المنيو">كرت المنيو</xar></span>
+   <h2><xen>Printed like an old <em data-edit="t39" data-edit-label="Text — exam sheet">exam sheet</em></xen><xar>مطبوع متل <em data-edit="t87" data-edit-label="Text: ورقة امتحان قديمة">ورقة امتحان قديمة</em></xar></h2>
+   <p><xen data-edit="t88" data-edit-label="Text (EN): The menu arrives looking like a 1960s …">The menu arrives looking like a 1960s school questionnaire — checkboxes, old-paper texture, Arabic handwriting. Tick what you want, hand it back, wait for the trays.</xen><xar data-edit="t89" data-edit-label="Text (AR): المنيو بيوصل شكلو متل استبيان مدرسة من…">المنيو بيوصل شكلو متل استبيان مدرسة من الستّينات — مربّعات تأشير، ورق قديم، وخطّ عربي. أشّروا شو بدكن، رجّعوه، وانطروا الصواني.</xar></p>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">Scenes from the <em data-edit="t41" data-edit-label="Text — sixties">sixties</em></h2>
- <p class="sub" data-edit="t42" data-edit-label="Text — Shot yesterday. Feels like fifty years…">Shot yesterday. Feels like fifty years ago.</p>
+ <h2 class="rv"><xen>Scenes from the <em data-edit="t41" data-edit-label="Text — sixties">sixties</em></xen><xar>لقطات من <em data-edit="t90" data-edit-label="Text: الستّينات">الستّينات</em></xar></h2>
+ <p class="sub"><xen data-edit="t91" data-edit-label="Text (EN): Shot yesterday. Feels like fifty years…">Shot yesterday. Feels like fifty years ago.</xen><xar data-edit="t92" data-edit-label="Text (AR): مصوّرة مبارح. بتحسّها من خمسين سنة.">مصوّرة مبارح. بتحسّها من خمسين سنة.</xar></p>
  <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Postcards from <em data-edit="t43" data-edit-label="Text — guests">guests</em></h2>
+  <h2 class="rv"><xen>Postcards from <em data-edit="t43" data-edit-label="Text — guests">guests</em></xen><xar>بطاقات من <em data-edit="t93" data-edit-label="Text: الضيوف">الضيوف</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t44" data-edit-label="Text — The place has one of the best settings…">The place has one of the best settings and such a beautiful ambiance. I love the 60s vibe inside, it feels warm, stylish, and relaxed.</p><div class="who" data-edit="t45" data-edit-label="Text — shady deeb">shady deeb</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t46" data-edit-label="Text — We came for breakfast and loved it. De…">We came for breakfast and loved it. Delicious with a big variety of options, and the whole place takes you back to the beautiful 70s and 80s, very authentic and full of charm.</p><div class="who" data-edit="t47" data-edit-label="Text — Suzy Ghazali">Suzy Ghazali</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t48" data-edit-label="Text — Sky-high vibes at Kahwet 60! Amazing a…">Sky-high vibes at Kahwet 60! Amazing atmosphere, comfy seating, and the shisha game is strong. Decor is on point, perfect spot to chill and take in the views.</p><div class="who" data-edit="t49" data-edit-label="Text — Ragheed Kotob">Ragheed Kotob</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv" data-edit="t50" data-edit-label="Title — Turn the dial back.">Turn the dial back.</h2>
+ <h2 class="rv"><xen data-edit="t94" data-edit-label="Text (EN): Turn the dial back.">Turn the dial back.</xen><xar data-edit="t95" data-edit-label="Text (AR): رجّعوا العقرب لورا.">رجّعوا العقرب لورا.</xar></h2>
  <a class="phone" href="tel:+96181196000" data-edit="t51" data-edit-label="Button / link — +961 81 196 000">+961 81 196 000</a>
- <p class="meta">Pasteur Street (rooftop views), Gemmayze, Beirut, Lebanon<br>Open daily — breakfast till late night shisha</p>
+ <p class="meta"><xen>Pasteur Street (rooftop views), Gemmayze, Beirut, Lebanon<br>Open daily — breakfast till late night shisha</xen><xar>شارع باستور (إطلالة من السطح)، الجميزة، بيروت، لبنان<br>مفتوح كل يوم — من الترويقة لحدّ أركيلة الليل</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96181196000" target="_blank" rel="noopener" data-edit="t52" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn ig" href="https://instagram.com/kahwet60" target="_blank" rel="noopener" data-edit="t53" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener" data-edit="t54" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96181196000" target="_blank" rel="noopener"><xen data-edit="t96" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t97" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn ig" href="https://instagram.com/kahwet60" target="_blank" rel="noopener"><xen data-edit="t98" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t99" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener"><xen data-edit="t100" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t101" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96181196000" data-edit="t55" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96181196000" target="_blank" rel="noopener" data-edit="t56" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/kahwet60" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener" data-edit="t57" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96181196000"><xen data-edit="t102" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t103" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96181196000" target="_blank" rel="noopener"><xen data-edit="t104" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t105" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/kahwet60" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=13658006063078863045" target="_blank" rel="noopener"><xen data-edit="t106" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t107" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Kahwet 60 · Pasteur, Beirut</footer>
+<footer><xen data-edit="t108" data-edit-label="Text (EN): © Kahwet 60 · Pasteur, Beirut">© Kahwet 60 · Pasteur, Beirut</xen><xar data-edit="t109" data-edit-label="Text (AR): © قهوة 60 · باستور، بيروت">© قهوة 60 · باستور، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t110" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"قهوة 60 — مقهى ومطعم لبناني على شارع باستور، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

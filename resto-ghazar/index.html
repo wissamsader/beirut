@@ -123,36 +123,70 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,33
 <style data-fx-orn>.coast{overflow:hidden}
 .coast::after{content:'';position:absolute;top:-20%;left:-70%;width:42%;height:140%;background:linear-gradient(105deg,transparent,rgba(255,250,235,.55),transparent);transform:skewX(-18deg);animation:fxglint 14s ease-in-out infinite}
 @keyframes fxglint{0%,86%{left:-70%}97%,100%{left:140%}}
-@media (prefers-reduced-motion: reduce){.coast::after{animation:none}}</style></head>
+@media (prefers-reduced-motion: reduce){.coast::after{animation:none}}</style><link href='https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Alexandria:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Changa',serif;--arb:'Alexandria',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#A8341F;color:#EFE3D0;border:1.5px solid #D9A441;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
+</head>
 <body>
 
 <nav>
- <a class="brand" href="#" data-edit="t1" data-edit-label="Button / link — Resto Ghazar">Resto Ghazar</a>
+ <a class="brand" href="#"><xen data-edit="t1" data-edit-label="Text (EN): Resto Ghazar">Resto Ghazar</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم غازار">مطعم غازار</xar></a>
  <div class="links">
-  <a href="#dishes" data-edit="t2" data-edit-label="Button / link — The dishes">The dishes</a><a href="#story" data-edit="t3" data-edit-label="Button / link — Story">Story</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Photos">Photos</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+9611242708" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#dishes"><xen data-edit="t3" data-edit-label="Text (EN): The dishes">The dishes</xen><xar data-edit="t4" data-edit-label="Text (AR): الأطباق">الأطباق</xar></a><a href="#story"><xen data-edit="t5" data-edit-label="Text (EN): Story">Story</xen><xar data-edit="t6" data-edit-label="Text (AR): القصّة">القصّة</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Photos">Photos</xen><xar data-edit="t9" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+9611242708"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="kick" data-edit="t7" data-edit-label="Text — Bourj Hammoud · Armenian kitchen">Bourj Hammoud · Armenian kitchen</span>
-  <h1>Resto <em data-edit="t8" data-edit-label="Text — Ghazar">Ghazar</em></h1>
-  <p class="arm" data-edit="t9" data-edit-label="Text — ԳԱԶԱՐ · مطعم غازار">ԳԱԶԱՐ · مطعم غازار</p>
-  <p class="tg ser" data-edit="t10" data-edit-label="Text — Manti, itch and kebbe with cheese — Ar…">Manti, itch and kebbe with cheese — Armenian home cooking in the heart of Bourj Hammoud.</p>
+  <span class="kick"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Bourj Hammoud · Armenian kitchen">Bourj Hammoud · Armenian kitchen</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): برج حمّود · مطبخ أرمني">برج حمّود · مطبخ أرمني</xar></span>
+  <h1><xen>Resto <em data-edit="t8" data-edit-label="Text — Ghazar">Ghazar</em></xen><xar>مطعم <em data-edit="t16" data-edit-label="Text: غازار">غازار</em></xar></h1>
+  <p class="arm"><xen data-edit="t18" data-edit-label="Text (EN): ԳԱԶԱՐ · مطعم غازار">ԳԱԶԱՐ · مطعم غازار</xen><xar><span class="lat" data-edit="t19" data-edit-label="Text: ԳԱԶԱՐ · RESTO GHAZAR">ԳԱԶԱՐ · RESTO GHAZAR</span></xar></p>
+  <p class="tg ser"><xen data-edit="t20" data-edit-label="Text (EN): Manti, itch and kebbe with cheese — Ar…">Manti, itch and kebbe with cheese — Armenian home cooking in the heart of Bourj Hammoud.</xen><xar data-edit="t21" data-edit-label="Text (AR): منتي، إيتش وكبّة بالجبنة — أكل أرمني ب…">منتي، إيتش وكبّة بالجبنة — أكل أرمني بيتي بقلب برج حمّود.</xar></p>
   <div class="chips">
-   <span class="chip r" data-edit="t11" data-edit-label="Text — ★ 4.7 · 421 reviews">★ 4.7 · 421 reviews</span>
-   <span class="chip" data-edit="t12" data-edit-label="Text — Bourj Hammoud">Bourj Hammoud</span>
-   <span class="chip" data-edit="t13" data-edit-label="Text — Sunday lunch till 4">Sunday lunch till 4</span>
+   <span class="chip r"><xen data-edit="t22" data-edit-label="Text (EN): ★ 4.7 · 421 reviews">★ 4.7 · 421 reviews</xen><xar data-edit="t23" data-edit-label="Text (AR): ★ 4.7 · 421 تقييم">★ 4.7 · 421 تقييم</xar></span>
+   <span class="chip"><xen data-edit="t24" data-edit-label="Text (EN): Bourj Hammoud">Bourj Hammoud</xen><xar data-edit="t25" data-edit-label="Text (AR): برج حمّود">برج حمّود</xar></span>
+   <span class="chip"><xen data-edit="t26" data-edit-label="Text (EN): Sunday lunch till 4">Sunday lunch till 4</xen><xar data-edit="t27" data-edit-label="Text (AR): غدا الأحد لحدّ 4">غدا الأحد لحدّ 4</xar></span>
   </div>
   <div class="cta">
-   <a class="btn r" href="tel:+9611242708" data-edit="t14" data-edit-label="Button / link — Call +961 1 242 708">Call +961 1 242 708</a>
-   <a class="btn" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Find us ↗">Find us ↗</a>
+   <a class="btn r" href="tel:+9611242708"><xen data-edit="t28" data-edit-label="Text (EN): Call +961 1 242 708">Call +961 1 242 708</xen><xar data-edit="t30" data-edit-label="Text (AR): إتّصلوا +961 1 242 708">إتّصلوا +961 1 242 708</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener"><xen data-edit="t31" data-edit-label="Text (EN): Find us ↗">Find us ↗</xen><xar data-edit="t32" data-edit-label="Text (AR): لاقونا ↗">لاقونا ↗</xar></a>
   </div>
  </div>
  <div class="archwrap rv">
   <img class="arch" src="img/01.jpg" alt="Manti at Resto Ghazar">
-  <div class="coast" data-edit="t16" data-edit-label="Text — HOME-STYLE ARMENIAN">HOME-STYLE ARMENIAN</div>
+  <div class="coast"><xen class="c" data-edit="t33" data-edit-label="Text (EN): HOME-STYLE ARMENIAN">HOME-STYLE ARMENIAN</xen><xar class="c" data-edit="t35" data-edit-label="Text (AR): أرمني على أصولو">أرمني على أصولو</xar></div>
  </div>
 </header>
 
@@ -160,61 +194,73 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(38,33
 
 <section class="dishes" id="dishes">
  <div class="wrap">
-  <h2 class="rv">Order these <em data-edit="t17" data-edit-label="Text — first">first</em></h2>
-  <p class="sub" data-edit="t18" data-edit-label="Text — The plates Bourj Hammoud argues least …">The plates Bourj Hammoud argues least about</p>
-  <div class="d-grid"><div class="dc rv"><div class="im"><img src="img/01.jpg" alt="Manti in clay" loading="lazy"></div><span class="no" data-edit="t19" data-edit-label="Text — plate № 1">plate № 1</span><h3 data-edit="t20" data-edit-label="Heading — Manti in clay">Manti in clay</h3><p data-edit="t21" data-edit-label="Text — Tiny boats of dough, baked crisp, drow…">Tiny boats of dough, baked crisp, drowned in yogurt and paprika butter.</p></div><div class="dc rv"><div class="im"><img src="img/02.jpg" alt="Itch & mhammara" loading="lazy"></div><span class="no" data-edit="t22" data-edit-label="Text — plate № 2">plate № 2</span><h3 data-edit="t23" data-edit-label="Heading — Itch & mhammara">Itch & mhammara</h3><p data-edit="t24" data-edit-label="Text — The tangy bulgur classic beside its ho…">The tangy bulgur classic beside its hot pepper-walnut cousin.</p></div><div class="dc rv"><div class="im"><img src="img/06.jpg" alt="Kebbe with cheese" loading="lazy"></div><span class="no" data-edit="t25" data-edit-label="Text — plate № 3">plate № 3</span><h3 data-edit="t26" data-edit-label="Heading — Kebbe with cheese">Kebbe with cheese</h3><p data-edit="t27" data-edit-label="Text — The standout the reviews argue about —…">The standout the reviews argue about — order it before they sell out.</p></div></div>
+  <h2 class="rv"><xen>Order these <em data-edit="t17" data-edit-label="Text — first">first</em></xen><xar>إطلبوا هودي <em data-edit="t36" data-edit-label="Text: أوّل شي">أوّل شي</em></xar></h2>
+  <p class="sub"><xen data-edit="t44" data-edit-label="Text (EN): The plates Bourj Hammoud argues least …">The plates Bourj Hammoud argues least about</xen><xar data-edit="t45" data-edit-label="Text (AR): الأطباق يلّي برج حمّود ما بتختلف عليها">الأطباق يلّي برج حمّود ما بتختلف عليها</xar></p>
+  <div class="d-grid"><div class="dc rv"><div class="im"><img src="img/01.jpg" alt="Manti in clay" loading="lazy"></div><span class="no"><xen data-edit="t46" data-edit-label="Text (EN): plate № 1">plate № 1</xen><xar data-edit="t47" data-edit-label="Text (AR): الطبق رقم 1">الطبق رقم 1</xar></span><h3><xen data-edit="t48" data-edit-label="Text (EN): Manti in clay">Manti in clay</xen><xar data-edit="t49" data-edit-label="Text (AR): منتي بالفخّار">منتي بالفخّار</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): Tiny boats of dough, baked crisp, drow…">Tiny boats of dough, baked crisp, drowned in yogurt and paprika butter.</xen><xar data-edit="t51" data-edit-label="Text (AR): مراكب عجين صغيرة، مشوّحة بالفرن، وغارق…">مراكب عجين صغيرة، مشوّحة بالفرن، وغارقة باللبن وزبدة الفليفلة.</xar></p></div><div class="dc rv"><div class="im"><img src="img/02.jpg" alt="Itch & mhammara" loading="lazy"></div><span class="no"><xen data-edit="t52" data-edit-label="Text (EN): plate № 2">plate № 2</xen><xar data-edit="t53" data-edit-label="Text (AR): الطبق رقم 2">الطبق رقم 2</xar></span><h3><xen data-edit="t54" data-edit-label="Text (EN): Itch & mhammara">Itch & mhammara</xen><xar data-edit="t55" data-edit-label="Text (AR): إيتش ومحمّرة">إيتش ومحمّرة</xar></h3><p><xen data-edit="t56" data-edit-label="Text (EN): The tangy bulgur classic beside its ho…">The tangy bulgur classic beside its hot pepper-walnut cousin.</xen><xar data-edit="t57" data-edit-label="Text (AR): كلاسيك البرغل الحامض جنب ابن عمّو الحا…">كلاسيك البرغل الحامض جنب ابن عمّو الحارّ بالفليفلة والجوز.</xar></p></div><div class="dc rv"><div class="im"><img src="img/06.jpg" alt="Kebbe with cheese" loading="lazy"></div><span class="no"><xen data-edit="t58" data-edit-label="Text (EN): plate № 3">plate № 3</xen><xar data-edit="t59" data-edit-label="Text (AR): الطبق رقم 3">الطبق رقم 3</xar></span><h3><xen data-edit="t60" data-edit-label="Text (EN): Kebbe with cheese">Kebbe with cheese</xen><xar data-edit="t61" data-edit-label="Text (AR): كبّة بالجبنة">كبّة بالجبنة</xar></h3><p><xen data-edit="t62" data-edit-label="Text (EN): The standout the reviews argue about —…">The standout the reviews argue about — order it before they sell out.</xen><xar data-edit="t63" data-edit-label="Text (AR): النجم يلّي التقييمات عم تتناقش عليه — …">النجم يلّي التقييمات عم تتناقش عليه — إطلبوها قبل ما تخلص.</xar></p></div></div>
  </div>
 </section>
 
 <section id="story">
  <div class="wrap story">
   <div class="rv">
-   <span class="k" data-edit="t28" data-edit-label="Text — The house">The house</span>
-   <h2>Armenian food the way <em data-edit="t29" data-edit-label="Text — homes">homes</em> make it</h2>
-   <p data-edit="t30" data-edit-label="Text — Tucked into the lively streets of Bour…">Tucked into the lively streets of Bourj Hammoud, Resto Ghazar cooks the Armenian classics the way the neighborhood's grandmothers would grade them: manti crisped in clay, itch with proper tang, soujouk with fire in it, kebbe with cheese that shouldn't be legal. Bold, comforting, generous.</p>
-   <p data-edit="t31" data-edit-label="Text — Everything is generous, everything is …">Everything is generous, everything is honest, and the daily chalkboard outside decides what the kitchen is proudest of today.</p>
-   <div class="board"><b data-edit="t32" data-edit-label="Text — Today's board">Today's board</b><span data-edit="t33" data-edit-label="Text — Kharouf mehshi · salad + soft drink — …">Kharouf mehshi · salad + soft drink — the kind of handwritten offer that never makes it to an app. You have to walk past.</span></div>
+   <span class="k"><xen data-edit="t64" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t65" data-edit-label="Text (AR): البيت">البيت</xar></span>
+   <h2><xen>Armenian food the way <em data-edit="t29" data-edit-label="Text — homes">homes</em> make it</xen><xar>أكل أرمني متل ما بتعملو <em data-edit="t66" data-edit-label="Text: البيوت">البيوت</em></xar></h2>
+   <p><xen data-edit="t67" data-edit-label="Text (EN): Tucked into the lively streets of Bour…">Tucked into the lively streets of Bourj Hammoud, Resto Ghazar cooks the Armenian classics the way the neighborhood's grandmothers would grade them: manti crisped in clay, itch with proper tang, soujouk with fire in it, kebbe with cheese that shouldn't be legal. Bold, comforting, generous.</xen><xar data-edit="t68" data-edit-label="Text (AR): مخبّى بشوارع برج حمّود الحيويّة، مطعم …">مخبّى بشوارع برج حمّود الحيويّة، مطعم غازار بيطبخ الكلاسيكيات الأرمنية متل ما بتقيّمها ستّات الحيّ: منتي مشوّحة بالفخّار، إيتش بحموضة مضبوطة، سجق فيه نار، وكبّة بالجبنة ما لازم تكون قانونية. جريئة، مريحة، وبسخا.</xar></p>
+   <p><xen data-edit="t69" data-edit-label="Text (EN): Everything is generous, everything is …">Everything is generous, everything is honest, and the daily chalkboard outside decides what the kitchen is proudest of today.</xen><xar data-edit="t70" data-edit-label="Text (AR): كل شي بسخا، وكل شي صادق، واللوح المكتو…">كل شي بسخا، وكل شي صادق، واللوح المكتوب بالطبشور برّا بيقرّر شو المطبخ فخور فيه اليوم.</xar></p>
+   <div class="board"><b><xen data-edit="t71" data-edit-label="Text (EN): Today's board">Today's board</xen><xar data-edit="t72" data-edit-label="Text (AR): لوح اليوم">لوح اليوم</xar></b><span><xen data-edit="t73" data-edit-label="Text (EN): Kharouf mehshi · salad + soft drink — …">Kharouf mehshi · salad + soft drink — the kind of handwritten offer that never makes it to an app. You have to walk past.</xen><xar data-edit="t74" data-edit-label="Text (AR): خروف محشي · سلطة ومشروب غازي — نوع الع…">خروف محشي · سلطة ومشروب غازي — نوع العروض المكتوبة بخطّ اليد يلّي بتوصل عالتطبيقات. لازم تمرق من قدّامها.</xar></span></div>
   </div>
   <div class="ph rv"><img src="img/08.jpg" alt="Resto Ghazar interior"></div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">From the <em data-edit="t34" data-edit-label="Text — kitchen">kitchen</em></h2>
- <p class="sub" data-edit="t35" data-edit-label="Text — Manti, su böreği, lahmajun — all photo…">Manti, su böreği, lahmajun — all photographed at the restaurant</p>
+ <h2 class="rv"><xen>From the <em data-edit="t34" data-edit-label="Text — kitchen">kitchen</em></xen><xar>من <em data-edit="t75" data-edit-label="Text: المطبخ">المطبخ</em></xar></h2>
+ <p class="sub"><xen data-edit="t76" data-edit-label="Text (EN): Manti, su böreği, lahmajun — all photo…">Manti, su böreği, lahmajun — all photographed at the restaurant</xen><xar data-edit="t77" data-edit-label="Text (AR): منتي، سو بوريغ، لحم بعجين — كلّها مصوّ…">منتي، سو بوريغ، لحم بعجين — كلّها مصوّرة بالمطعم</xar></p>
  <div class="g-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a><a href="img/12.jpg" target="_blank"><img src="img/12.jpg" alt="" loading="lazy"></a><a href="img/16.jpg" target="_blank"><img src="img/16.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <span class="k" data-edit="t36" data-edit-label="Text — Word on the street">Word on the street</span>
-  <h2>What the neighborhood <em data-edit="t37" data-edit-label="Text — says">says</em></h2>
+  <span class="k"><xen data-edit="t78" data-edit-label="Text (EN): Word on the street">Word on the street</xen><xar data-edit="t79" data-edit-label="Text (AR): حكي الشارع">حكي الشارع</xar></span>
+  <h2><xen>What the neighborhood <em data-edit="t37" data-edit-label="Text — says">says</em></xen><xar>شو بيقول <em data-edit="t80" data-edit-label="Text: الحيّ">الحيّ</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><p data-edit="t38" data-edit-label="Text — A great spot for authentic Armenian fo…">A great spot for authentic Armenian food tucked away in the lively streets of Bourj Hammoud. The menu is packed with bold, comforting flavors. Standout dishes include the itch, mhammara, kebbe with cheese.</p><div class="who" data-edit="t39" data-edit-label="Text — Gino Haddad">Gino Haddad</div></div><div class="rc rv"><p data-edit="t40" data-edit-label="Text — Absolutely amazing experience! The tas…">Absolutely amazing experience! The taste of the food was outstanding — every dish.</p><div class="who" data-edit="t41" data-edit-label="Text — Hani Haddad">Hani Haddad</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Come hungry to <em data-edit="t42" data-edit-label="Text — Bourj Hammoud.">Bourj Hammoud.</em></h2>
+ <h2 class="rv"><xen>Come hungry to <em data-edit="t42" data-edit-label="Text — Bourj Hammoud.">Bourj Hammoud.</em></xen><xar>تعوا جوعانين على <em data-edit="t81" data-edit-label="Text: برج حمّود.">برج حمّود.</em></xar></h2>
  <a class="phone" href="tel:+9611242708" data-edit="t43" data-edit-label="Button / link — +961 1 242 708">+961 1 242 708</a>
- <p class="meta">Bourj Hammoud, Lebanon (VGRQ+JQM)<br>Mon-Sat 12 - 11:30 PM; Sun 12 - 4 PM</p>
+ <p class="meta"><xen>Bourj Hammoud, Lebanon (VGRQ+JQM)<br>Mon-Sat 12 - 11:30 PM; Sun 12 - 4 PM</xen><xar>برج حمّود، لبنان (VGRQ+JQM)<br>الإثنين-السبت 12 ظهراً - 11:30 ليلاً؛ الأحد 12 - 4 بعد الظهر</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+9611242708" data-edit="t44" data-edit-label="Button / link — Call +961 1 242 708">Call +961 1 242 708</a> <a class="btn ig" href="https://instagram.com/restoghazar" target="_blank" rel="noopener" data-edit="t45" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener" data-edit="t46" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn" href="tel:+9611242708"><xen data-edit="t82" data-edit-label="Text (EN): Call +961 1 242 708">Call +961 1 242 708</xen><xar data-edit="t83" data-edit-label="Text (AR): إتّصلوا +961 1 242 708">إتّصلوا +961 1 242 708</xar></a> <a class="btn ig" href="https://instagram.com/restoghazar" target="_blank" rel="noopener"><xen data-edit="t84" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t85" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener"><xen data-edit="t86" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t87" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611242708" data-edit="t47" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611242708"><xen data-edit="t88" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t89" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/restoghazar" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener" data-edit="t48" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=13185506498255631476" target="_blank" rel="noopener"><xen data-edit="t90" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t91" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Resto Ghazar · Bourj Hammoud, Lebanon</footer>
+<footer><xen data-edit="t92" data-edit-label="Text (EN): © Resto Ghazar · Bourj Hammoud, Lebano…">© Resto Ghazar · Bourj Hammoud, Lebanon</xen><xar data-edit="t93" data-edit-label="Text (AR): © مطعم غازار · برج حمّود، لبنان">© مطعم غازار · برج حمّود، لبنان</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t94" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"مطعم غازار — مطعم أرمني في برج حمّود"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

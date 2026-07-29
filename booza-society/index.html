@@ -121,47 +121,81 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&family=Cairo:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Baloo Bhaijaan 2',serif;--arb:'Cairo',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#E76D8F;color:#FFF9F0;border:1.5px solid #4A3226;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <nav>
  <a class="brand" href="#">B<span class="o1" data-edit="t1" data-edit-label="Text — o">o</span><span class="o2" data-edit="t2" data-edit-label="Text — o">o</span>za S<span class="o3" data-edit="t3" data-edit-label="Text — o">o</span>ciety</a>
  <div class="links">
-  <a href="#story" data-edit="t4" data-edit-label="Button / link — The maker">The maker</a><a href="#flavors" data-edit="t5" data-edit-label="Button / link — Flavors">Flavors</a><a href="#menu" data-edit="t6" data-edit-label="Button / link — The board">The board</a><a href="#visit" data-edit="t7" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96181359842" data-edit="t8" data-edit-label="Button / link — Call">Call</a>
+  <a href="#story"><xen data-edit="t4" data-edit-label="Text (EN): The maker">The maker</xen><xar data-edit="t5" data-edit-label="Text (AR): صاحب المحلّ">صاحب المحلّ</xar></a><a href="#flavors"><xen data-edit="t6" data-edit-label="Text (EN): Flavors">Flavors</xen><xar data-edit="t7" data-edit-label="Text (AR): النكهات">النكهات</xar></a><a href="#menu"><xen data-edit="t8" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t9" data-edit-label="Text (AR): اللوح">اللوح</xar></a><a href="#visit"><xen data-edit="t11" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t12" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96181359842"><xen data-edit="t13" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t14" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <img class="bg" src="img/05.jpg" alt="Booza Society booza">
  <div class="stamp">
-  <h1>BOOZA<br>SOCIETY</h1>
-  <p class="tag" data-edit="t9" data-edit-label="Text — Small-batch booza churned from whateve…">Small-batch booza churned from whatever fruit is in season — by one very dedicated owner.</p>
+  <h1><xen>BOOZA<br>SOCIETY</xen><xar>بوظة<br>سوسايتي</xar></h1>
+  <p class="tag"><xen data-edit="t15" data-edit-label="Text (EN): Small-batch booza churned from whateve…">Small-batch booza churned from whatever fruit is in season — by one very dedicated owner.</xen><xar data-edit="t16" data-edit-label="Text (AR): بوظة بكميات صغيرة بتنخضّ من أي فاكهة ب…">بوظة بكميات صغيرة بتنخضّ من أي فاكهة بموسمها — على إيد صاحب واحد كتير مهتمّ.</xar></p>
  </div>
  <div class="scoopchips">
-  <span class="scp"><b data-edit="t10" data-edit-label="Text — ★ 4.8">★ 4.8</b>121 reviews</span>
-  <span class="scp" data-edit="t11" data-edit-label="Text — Hamra · Jeanne d'Arc">Hamra · Jeanne d'Arc</span>
-  <span class="scp" data-edit="t12" data-edit-label="Text — Whatever fruit is in season">Whatever fruit is in season</span>
+  <span class="scp"><xen><b data-edit="t10" data-edit-label="Text — ★ 4.8">★ 4.8</b>121 reviews</xen><xar><b data-edit="t18" data-edit-label="Text: ★ 4.8">★ 4.8</b>121 تقييم</xar></span>
+  <span class="scp"><xen data-edit="t19" data-edit-label="Text (EN): Hamra · Jeanne d'Arc">Hamra · Jeanne d'Arc</xen><xar data-edit="t20" data-edit-label="Text (AR): الحمرا · جان دارك">الحمرا · جان دارك</xar></span>
+  <span class="scp"><xen data-edit="t21" data-edit-label="Text (EN): Whatever fruit is in season">Whatever fruit is in season</xen><xar data-edit="t23" data-edit-label="Text (AR): أي فاكهة بموسمها">أي فاكهة بموسمها</xar></span>
  </div>
 </header>
 
-<div class="ribbon" data-edit="t13" data-edit-label="Text — This week's churn depends on the fruit…">This week's churn depends on the fruit market — that's the whole philosophy 🍓</div>
+<div class="ribbon"><xen data-edit="t24" data-edit-label="Text (EN): This week's churn depends on the fruit…">This week's churn depends on the fruit market — that's the whole philosophy 🍓</xen><xar data-edit="t25" data-edit-label="Text (AR): خضّة هالأسبوع بتعتمد على سوق الخضرة — …">خضّة هالأسبوع بتعتمد على سوق الخضرة — وهيدي كل الفلسفة 🍓</xar></div>
 
 <div class="ctarow">
- <a class="btn b" href="tel:+96181359842" data-edit="t14" data-edit-label="Button / link — Call +961 81 359 842">Call +961 81 359 842</a>
- <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Get directions ↗">Get directions ↗</a>
+ <a class="btn b" href="tel:+96181359842"><xen data-edit="t26" data-edit-label="Text (EN): Call +961 81 359 842">Call +961 81 359 842</xen><xar data-edit="t27" data-edit-label="Text (AR): إتّصلوا +961 81 359 842">إتّصلوا +961 81 359 842</xar></a>
+ <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener"><xen data-edit="t28" data-edit-label="Text (EN): Get directions ↗">Get directions ↗</xen><xar data-edit="t29" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
 </div>
 
 <section id="story">
  <div class="wrap story">
   <div class="rv">
-   <span class="k" data-edit="t16" data-edit-label="Text — The maker">The maker</span>
-   <h2>One owner. One machine.<br><em data-edit="t17" data-edit-label="Text — Real fruit.">Real fruit.</em></h2>
-   <p data-edit="t18" data-edit-label="Text — Booza Society is a one-man institution…">Booza Society is a one-man institution on Jeanne d'Arc street: the owner in his chef's coat, a churning machine, and fruit bought like an argument with the season. Little sugar, natural everything, and flavors that appear and vanish with the market — plus oriental classics like sahlab & miskeh that taste like childhood.</p>
-   <p data-edit="t19" data-edit-label="Text — Little sugar, natural ingredients, and…">Little sugar, natural ingredients, and flavors that change with the season — when strawberries end, the strawberry ends. Nobody argues.</p>
+   <span class="k"><xen data-edit="t30" data-edit-label="Text (EN): The maker">The maker</xen><xar data-edit="t32" data-edit-label="Text (AR): صاحب المحلّ">صاحب المحلّ</xar></span>
+   <h2><xen>One owner. One machine.<br><em data-edit="t17" data-edit-label="Text — Real fruit.">Real fruit.</em></xen><xar>صاحب واحد. آلة وحدة.<br><em data-edit="t33" data-edit-label="Text: وفاكهة حقيقية.">وفاكهة حقيقية.</em></xar></h2>
+   <p><xen data-edit="t34" data-edit-label="Text (EN): Booza Society is a one-man institution…">Booza Society is a one-man institution on Jeanne d'Arc street: the owner in his chef's coat, a churning machine, and fruit bought like an argument with the season. Little sugar, natural everything, and flavors that appear and vanish with the market — plus oriental classics like sahlab & miskeh that taste like childhood.</xen><xar data-edit="t35" data-edit-label="Text (AR): بوظة سوسايتي مؤسّسة برجّال واحد على شا…">بوظة سوسايتي مؤسّسة برجّال واحد على شارع جان دارك: صاحب المحلّ بمريول الشيف، وآلة خضّ، وفاكهة بينشريها متل نقاش مع الموسم. سكّر قليل، وكل شي طبيعي، ونكهات بتظهر وبتختفي مع السوق — وكمان كلاسيكيات شرقية متل السحلب والمسكة بتطعمي متل الطفولة.</xar></p>
+   <p><xen data-edit="t36" data-edit-label="Text (EN): Little sugar, natural ingredients, and…">Little sugar, natural ingredients, and flavors that change with the season — when strawberries end, the strawberry ends. Nobody argues.</xen><xar data-edit="t37" data-edit-label="Text (AR): سكّر قليل، مكوّنات طبيعية، ونكهات بتتغ…">سكّر قليل، مكوّنات طبيعية، ونكهات بتتغيّر مع الموسم — لمّا يخلص الفريز، بتخلص نكهة الفريز. وما حدا بيناقش.</xar></p>
    <div class="owner">
     <img src="img/03.jpg" alt="The owner of Booza Society">
-    <div><b data-edit="t20" data-edit-label="Text — The man in the chef's coat">The man in the chef's coat</b><span data-edit="t21" data-edit-label="Text — He churns it, he scoops it, he'll talk…">He churns it, he scoops it, he'll talk you through every flavor.</span></div>
+    <div><b><xen data-edit="t39" data-edit-label="Text (EN): The man in the chef's coat">The man in the chef's coat</xen><xar data-edit="t49" data-edit-label="Text (AR): الرجّال بمريول الشيف">الرجّال بمريول الشيف</xar></b><span><xen data-edit="t50" data-edit-label="Text (EN): He churns it, he scoops it, he'll talk…">He churns it, he scoops it, he'll talk you through every flavor.</xen><xar data-edit="t51" data-edit-label="Text (AR): هوّي بيخضّها، هوّي بيغرفها، وبيشرحلك ك…">هوّي بيخضّها، هوّي بيغرفها، وبيشرحلك كل نكهة وحدة وحدة.</xar></span></div>
    </div>
   </div>
   <div class="ph rv"><img src="img/08.jpg" alt="Booza Society scoops"></div>
@@ -170,9 +204,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31
 
 <section class="flav" id="flavors">
  <div class="wrap">
-  <h2 class="rv">The <em data-edit="t22" data-edit-label="Text — society's">society's</em> favorites</h2>
-  <p class="sub" data-edit="t23" data-edit-label="Text — Membership requirement: order a scoop">Membership requirement: order a scoop</p>
-  <div class="f-grid"><div class="fc rv"><img src="img/05.jpg" alt="Seasonal fruit booza" loading="lazy"><div class="bd"><span class="dot" style="background:#E76D8F"></span><h3 data-edit="t24" data-edit-label="Heading — Seasonal fruit booza">Seasonal fruit booza</h3><p data-edit="t25" data-edit-label="Text — Mulberry in mulberry season, strawberr…">Mulberry in mulberry season, strawberry in strawberry season. No exceptions.</p></div></div><div class="fc rv"><img src="img/04.jpg" alt="Almond praline" loading="lazy"><div class="bd"><span class="dot" style="background:#D9A05B"></span><h3 data-edit="t26" data-edit-label="Heading — Almond praline">Almond praline</h3><p data-edit="t27" data-edit-label="Text — The nutty corner of the board — pralin…">The nutty corner of the board — praline, coconut, hazelnut, pistachio.</p></div></div><div class="fc rv"><img src="img/06.jpg" alt="Sahlab & miskeh" loading="lazy"><div class="bd"><span class="dot" style="background:#A8CBA0"></span><h3 data-edit="t28" data-edit-label="Heading — Sahlab & miskeh">Sahlab & miskeh</h3><p data-edit="t29" data-edit-label="Text — The oriental classics, chewy and flora…">The oriental classics, chewy and floral, exactly like the old souks.</p></div></div></div>
+  <h2 class="rv"><xen>The <em data-edit="t22" data-edit-label="Text — society's">society's</em> favorites</xen><xar>مفضّلات <em data-edit="t52" data-edit-label="Text: الجمعية">الجمعية</em></xar></h2>
+  <p class="sub"><xen data-edit="t53" data-edit-label="Text (EN): Membership requirement: order a scoop">Membership requirement: order a scoop</xen><xar data-edit="t54" data-edit-label="Text (AR): شرط العضوية: إطلب غرفة">شرط العضوية: إطلب غرفة</xar></p>
+  <div class="f-grid"><div class="fc rv"><img src="img/05.jpg" alt="Seasonal fruit booza" loading="lazy"><div class="bd"><span class="dot" style="background:#E76D8F"></span><h3><xen data-edit="t55" data-edit-label="Text (EN): Seasonal fruit booza">Seasonal fruit booza</xen><xar data-edit="t56" data-edit-label="Text (AR): بوظة فواكه موسمية">بوظة فواكه موسمية</xar></h3><p><xen data-edit="t57" data-edit-label="Text (EN): Mulberry in mulberry season, strawberr…">Mulberry in mulberry season, strawberry in strawberry season. No exceptions.</xen><xar data-edit="t58" data-edit-label="Text (AR): توت بموسم التوت، فريز بموسم الفريز. بل…">توت بموسم التوت، فريز بموسم الفريز. بلا استثناءات.</xar></p></div></div><div class="fc rv"><img src="img/04.jpg" alt="Almond praline" loading="lazy"><div class="bd"><span class="dot" style="background:#D9A05B"></span><h3><xen data-edit="t59" data-edit-label="Text (EN): Almond praline">Almond praline</xen><xar data-edit="t60" data-edit-label="Text (AR): برالين اللوز">برالين اللوز</xar></h3><p><xen data-edit="t61" data-edit-label="Text (EN): The nutty corner of the board — pralin…">The nutty corner of the board — praline, coconut, hazelnut, pistachio.</xen><xar data-edit="t62" data-edit-label="Text (AR): ركن المكسّرات باللوح — برالين، جوز اله…">ركن المكسّرات باللوح — برالين، جوز الهند، بندق، فستق.</xar></p></div></div><div class="fc rv"><img src="img/06.jpg" alt="Sahlab & miskeh" loading="lazy"><div class="bd"><span class="dot" style="background:#A8CBA0"></span><h3><xen data-edit="t63" data-edit-label="Text (EN): Sahlab & miskeh">Sahlab & miskeh</xen><xar data-edit="t64" data-edit-label="Text (AR): سحلب ومسكة">سحلب ومسكة</xar></h3><p><xen data-edit="t65" data-edit-label="Text (EN): The oriental classics, chewy and flora…">The oriental classics, chewy and floral, exactly like the old souks.</xen><xar data-edit="t66" data-edit-label="Text (AR): الكلاسيكيات الشرقية، مطّاطة وعطرة، بال…">الكلاسيكيات الشرقية، مطّاطة وعطرة، بالضبط متل الأسواق القديمة.</xar></p></div></div></div>
  </div>
 </section>
 
@@ -180,51 +214,63 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:rgba(51,38,31
  <div class="menu">
   <div class="board rv"><img src="img/02.jpg" alt="Booza Society flavor board"></div>
   <div class="rv">
-   <span class="k" data-edit="t30" data-edit-label="Text — The board">The board</span>
-   <h2>Today's flavors, <em data-edit="t31" data-edit-label="Text — chalked daily">chalked daily</em></h2>
-   <p data-edit="t32" data-edit-label="Text — Oriental classics next to chocolate wo…">Oriental classics next to chocolate work: sahlab &amp; miskeh, tamer &amp; loz, osmalieh — then almond praline, chocolate orange, pistachio.</p>
+   <span class="k"><xen data-edit="t67" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t68" data-edit-label="Text (AR): اللوح">اللوح</xar></span>
+   <h2><xen>Today's flavors, <em data-edit="t31" data-edit-label="Text — chalked daily">chalked daily</em></xen><xar>نكهات اليوم، <em data-edit="t69" data-edit-label="Text: مكتوبة بالطبشور">مكتوبة بالطبشور</em></xar></h2>
+   <p><xen data-edit="t70" data-edit-label="Text (EN): Oriental classics next to chocolate wo…">Oriental classics next to chocolate work: sahlab &amp; miskeh, tamer &amp; loz, osmalieh — then almond praline, chocolate orange, pistachio.</xen><xar data-edit="t71" data-edit-label="Text (AR): كلاسيكيات شرقية جنب شغل الشوكولا: سحلب…">كلاسيكيات شرقية جنب شغل الشوكولا: سحلب ومسكة، تمر ولوز، عثمليّة — وبعدين برالين اللوز، شوكولا بالبرتقال، فستق.</xar></p>
    <div class="fl">
-    <span data-edit="t33" data-edit-label="Text — Sahlab &amp; Miskeh">Sahlab &amp; Miskeh</span><span data-edit="t34" data-edit-label="Text — Osmalieh">Osmalieh</span><span data-edit="t35" data-edit-label="Text — Almond Praline">Almond Praline</span><span data-edit="t36" data-edit-label="Text — Chocolate Hazelnut">Chocolate Hazelnut</span><span data-edit="t37" data-edit-label="Text — Zaatar (yes, really)">Zaatar (yes, really)</span>
+    <span><xen data-edit="t72" data-edit-label="Text (EN): Sahlab &amp; Miskeh">Sahlab &amp; Miskeh</xen><xar data-edit="t73" data-edit-label="Text (AR): سحلب ومسكة">سحلب ومسكة</xar></span><span><xen data-edit="t74" data-edit-label="Text (EN): Osmalieh">Osmalieh</xen><xar data-edit="t75" data-edit-label="Text (AR): عثمليّة">عثمليّة</xar></span><span><xen data-edit="t76" data-edit-label="Text (EN): Almond Praline">Almond Praline</xen><xar data-edit="t77" data-edit-label="Text (AR): برالين اللوز">برالين اللوز</xar></span><span><xen data-edit="t78" data-edit-label="Text (EN): Chocolate Hazelnut">Chocolate Hazelnut</xen><xar data-edit="t79" data-edit-label="Text (AR): شوكولا بالبندق">شوكولا بالبندق</xar></span><span><xen data-edit="t80" data-edit-label="Text (EN): Zaatar (yes, really)">Zaatar (yes, really)</xen><xar data-edit="t81" data-edit-label="Text (AR): زعتر (إي، عنجد)">زعتر (إي، عنجد)</xar></span>
    </div>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">Scooped &amp; <em data-edit="t38" data-edit-label="Text — photographed">photographed</em></h2>
- <p class="sub" data-edit="t39" data-edit-label="Text — By the society's members, on Jeanne d'…">By the society's members, on Jeanne d'Arc street</p>
+ <h2 class="rv"><xen>Scooped &amp; <em data-edit="t38" data-edit-label="Text — photographed">photographed</em></xen><xar>مغروفة <em data-edit="t82" data-edit-label="Text: ومصوّرة">ومصوّرة</em></xar></h2>
+ <p class="sub"><xen data-edit="t83" data-edit-label="Text (EN): By the society's members, on Jeanne d'…">By the society's members, on Jeanne d'Arc street</xen><xar data-edit="t84" data-edit-label="Text (AR): من أعضاء الجمعية، على شارع جان دارك">من أعضاء الجمعية، على شارع جان دارك</xar></p>
  <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Members' <em data-edit="t40" data-edit-label="Text — testimony">testimony</em></h2>
+  <h2 class="rv"><xen>Members' <em data-edit="t40" data-edit-label="Text — testimony">testimony</em></xen><xar>شهادات <em data-edit="t85" data-edit-label="Text: الأعضاء">الأعضاء</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t41" data-edit-label="Text — The ice cream is genuinely delicious, …">The ice cream is genuinely delicious, and the owner prepares each flavor using whatever fruit is in season. Consistently excellent.</p><div class="who" data-edit="t42" data-edit-label="Text — Philip Tohme">Philip Tohme</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t43" data-edit-label="Text — This is the only place in Beirut I wil…">This is the only place in Beirut I will be coming to get ice cream from now on. A must-visit. The flavours are delicious and so thoughtfully made with little sugar. An incredible artisanal ice cream shop.</p><div class="who" data-edit="t44" data-edit-label="Text — Cam llly">Cam llly</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t45" data-edit-label="Text — Hands down one of the best ice cream s…">Hands down one of the best ice cream spots in Beirut. The owner is incredibly kind and crafts his ice cream using natural ingredients.</p><div class="who" data-edit="t46" data-edit-label="Text — Leila Joheir">Leila Joheir</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Join the <em data-edit="t47" data-edit-label="Text — society.">society.</em></h2>
+ <h2 class="rv"><xen>Join the <em data-edit="t47" data-edit-label="Text — society.">society.</em></xen><xar>إنضمّوا <em data-edit="t86" data-edit-label="Text: للجمعية.">للجمعية.</em></xar></h2>
  <a class="phone" href="tel:+96181359842" data-edit="t48" data-edit-label="Button / link — +961 81 359 842">+961 81 359 842</a>
- <p class="meta">Jeanne d'Arc Street, Hamra, Beirut, Lebanon<br>Mon-Sat 10 AM - 9:30 PM; Sun 5 - 9 PM</p>
+ <p class="meta"><xen>Jeanne d'Arc Street, Hamra, Beirut, Lebanon<br>Mon-Sat 10 AM - 9:30 PM; Sun 5 - 9 PM</xen><xar>شارع جان دارك، الحمرا، بيروت، لبنان<br>الإثنين-السبت 10 صباحاً - 9:30 مساءً؛ الأحد 5 - 9 مساءً</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96181359842" target="_blank" rel="noopener" data-edit="t49" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn ig" href="https://instagram.com/boozasociety" target="_blank" rel="noopener" data-edit="t50" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener" data-edit="t51" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96181359842" target="_blank" rel="noopener"><xen data-edit="t87" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t88" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn ig" href="https://instagram.com/boozasociety" target="_blank" rel="noopener"><xen data-edit="t89" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t90" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener"><xen data-edit="t91" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t92" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96181359842" data-edit="t52" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96181359842" target="_blank" rel="noopener" data-edit="t53" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/boozasociety" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener" data-edit="t54" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96181359842"><xen data-edit="t93" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t94" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96181359842" target="_blank" rel="noopener"><xen data-edit="t95" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t96" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/boozasociety" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=900501284145596412" target="_blank" rel="noopener"><xen data-edit="t97" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t98" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Booza Society · Hamra, Beirut</footer>
+<footer><xen data-edit="t99" data-edit-label="Text (EN): © Booza Society · Hamra, Beirut">© Booza Society · Hamra, Beirut</xen><xar data-edit="t100" data-edit-label="Text (AR): © بوظة سوسايتي · الحمرا، بيروت">© بوظة سوسايتي · الحمرا، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t101" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"بوظة سوسايتي — محلّ بوظة في الحمرا، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

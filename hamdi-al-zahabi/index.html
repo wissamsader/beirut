@@ -123,14 +123,48 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(246,
 <style data-fx-orn>.medal{overflow:hidden}
 .medal::after{content:'';position:absolute;top:-20%;left:-70%;width:45%;height:140%;background:linear-gradient(105deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-18deg);animation:fxglint 12s ease-in-out infinite}
 @keyframes fxglint{0%,84%{left:-70%}96%,100%{left:140%}}
-@media (prefers-reduced-motion: reduce){.medal::after{animation:none}}</style></head>
+@media (prefers-reduced-motion: reduce){.medal::after{animation:none}}</style><link href='https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Aref Ruqaa',serif;--arb:'Amiri',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#D4AF5E;color:#3A0F18;border:1.5px solid #4A1520;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
+</head>
 <body>
 
 <nav>
- <a class="brand" href="#" data-edit="t1" data-edit-label="Button / link — HAMDI AL ZAHABI">HAMDI AL ZAHABI</a>
+ <a class="brand" href="#"><xen data-edit="t1" data-edit-label="Text (EN): HAMDI AL ZAHABI">HAMDI AL ZAHABI</xen><xar data-edit="t2" data-edit-label="Text (AR): حمدي الذهبي">حمدي الذهبي</xar></a>
  <div class="links">
-  <a href="#vitrine" data-edit="t2" data-edit-label="Button / link — The vitrine">The vitrine</a><a href="#story" data-edit="t3" data-edit-label="Button / link — The name">The name</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Gallery">Gallery</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+9611311666" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#vitrine"><xen data-edit="t3" data-edit-label="Text (EN): The vitrine">The vitrine</xen><xar data-edit="t4" data-edit-label="Text (AR): الفاترينة">الفاترينة</xar></a><a href="#story"><xen data-edit="t5" data-edit-label="Text (EN): The name">The name</xen><xar data-edit="t6" data-edit-label="Text (AR): الإسم">الإسم</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Gallery">Gallery</xen><xar data-edit="t8" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t9" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t10" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+9611311666"><xen data-edit="t11" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t12" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
@@ -143,33 +177,33 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(246,
    <circle cx="50" cy="50" r="5" fill="#D4AF5E"/>
   </svg>
  </div>
- <h1 data-edit="t7" data-edit-label="Big title — HAMDI AL ZAHABI">HAMDI AL ZAHABI</h1>
- <p class="arb" data-edit="t8" data-edit-label="Text — حلويات حمدي الذهبي">حلويات حمدي الذهبي</p>
- <p class="mean" data-edit="t9" data-edit-label="Text — al-zahabi — “the golden one”">al-zahabi — “the golden one”</p>
- <p class="tg" data-edit="t10" data-edit-label="Text — Knafeh, baklava and halawet el jibn fr…">Knafeh, baklava and halawet el jibn from the family they call The Golden.</p>
+ <h1><xen data-edit="t13" data-edit-label="Text (EN): HAMDI AL ZAHABI">HAMDI AL ZAHABI</xen><xar data-edit="t14" data-edit-label="Text (AR): حمدي الذهبي">حمدي الذهبي</xar></h1>
+ <p class="arb"><xen data-edit="t15" data-edit-label="Text (EN): حلويات حمدي الذهبي">حلويات حمدي الذهبي</xen><xar><span class="lat" data-edit="t16" data-edit-label="Text: HAMDI AL ZAHABI SWEETS">HAMDI AL ZAHABI SWEETS</span></xar></p>
+ <p class="mean"><xen data-edit="t18" data-edit-label="Text (EN): al-zahabi — “the golden one”">al-zahabi — “the golden one”</xen><xar data-edit="t19" data-edit-label="Text (AR): الذهبي — لأنّو الإسم وعد">الذهبي — لأنّو الإسم وعد</xar></p>
+ <p class="tg"><xen data-edit="t20" data-edit-label="Text (EN): Knafeh, baklava and halawet el jibn fr…">Knafeh, baklava and halawet el jibn from the family they call The Golden.</xen><xar data-edit="t21" data-edit-label="Text (AR): كنافة، بقلاوة وحلاوة الجبن من العيلة ي…">كنافة، بقلاوة وحلاوة الجبن من العيلة يلّي بيسمّوها الذهبي.</xar></p>
  <div class="row">
-  <span class="pill f" data-edit="t11" data-edit-label="Text — ★ 4.4 · 220 reviews">★ 4.4 · 220 reviews</span>
-  <span class="pill" data-edit="t12" data-edit-label="Text — Barbour · Noueiri">Barbour · Noueiri</span>
-  <span class="pill" data-edit="t13" data-edit-label="Text — 7:30 AM — 10 PM daily">7:30 AM — 10 PM daily</span>
+  <span class="pill f"><xen data-edit="t22" data-edit-label="Text (EN): ★ 4.4 · 220 reviews">★ 4.4 · 220 reviews</xen><xar data-edit="t23" data-edit-label="Text (AR): ★ 4.4 · 220 تقييم">★ 4.4 · 220 تقييم</xar></span>
+  <span class="pill"><xen data-edit="t24" data-edit-label="Text (EN): Barbour · Noueiri">Barbour · Noueiri</xen><xar data-edit="t25" data-edit-label="Text (AR): بربور · النويري">بربور · النويري</xar></span>
+  <span class="pill"><xen data-edit="t26" data-edit-label="Text (EN): 7:30 AM — 10 PM daily">7:30 AM — 10 PM daily</xen><xar data-edit="t27" data-edit-label="Text (AR): 7:30 صباحاً — 10 ليلاً كل يوم">7:30 صباحاً — 10 ليلاً كل يوم</xar></span>
  </div>
  <div class="cta">
-  <a class="btn g" href="tel:+9611311666" data-edit="t14" data-edit-label="Button / link — Call +961 1 311 666">Call +961 1 311 666</a>
-  <a class="btn" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Directions">Directions</a>
+  <a class="btn g" href="tel:+9611311666"><xen data-edit="t28" data-edit-label="Text (EN): Call +961 1 311 666">Call +961 1 311 666</xen><xar data-edit="t30" data-edit-label="Text (AR): إتّصلوا +961 1 311 666">إتّصلوا +961 1 311 666</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener"><xen data-edit="t31" data-edit-label="Text (EN): Directions">Directions</xen><xar data-edit="t33" data-edit-label="Text (AR): الطريق">الطريق</xar></a>
  </div>
 </header>
 
 <div class="tray rv">
  <div class="fr">
   <img src="img/02.jpg" alt="Hamdi Al Zahabi Sweets sweets platter">
-  <span class="lbl" data-edit="t16" data-edit-label="Text — THE GOLDEN TRAY">THE GOLDEN TRAY</span>
+  <span class="lbl"><xen data-edit="t41" data-edit-label="Text (EN): THE GOLDEN TRAY">THE GOLDEN TRAY</xen><xar data-edit="t42" data-edit-label="Text (AR): الصينية الذهبية">الصينية الذهبية</xar></span>
  </div>
 </div>
 
 <section class="vit" id="vitrine">
  <div class="wrap">
-  <h2 class="rv">From the <em data-edit="t17" data-edit-label="Text — vitrine">vitrine</em></h2>
-  <p class="sub" data-edit="t18" data-edit-label="Text — Each piece made in-house, weighed in g…">Each piece made in-house, weighed in gold standards</p>
-  <div class="v-grid"><div class="vc rv"><img src="img/03.jpg" alt="Baklava, by the tray" loading="lazy"><span class="no" data-edit="t19" data-edit-label="Text — № 1 of the collection">№ 1 of the collection</span><h3 data-edit="t20" data-edit-label="Heading — Baklava, by the tray">Baklava, by the tray</h3><p data-edit="t21" data-edit-label="Text — Layered, buttered, glistening — sold b…">Layered, buttered, glistening — sold by the kilo, gone by the box.</p></div><div class="vc rv"><img src="img/04.jpg" alt="Maamoul & qarabij" loading="lazy"><span class="no" data-edit="t22" data-edit-label="Text — № 2 of the collection">№ 2 of the collection</span><h3 data-edit="t23" data-edit-label="Heading — Maamoul & qarabij">Maamoul & qarabij</h3><p data-edit="t24" data-edit-label="Text — Powdered rows of the classics, pressed…">Powdered rows of the classics, pressed in wooden moulds.</p></div><div class="vc rv"><img src="img/02.jpg" alt="Halawet el jibn" loading="lazy"><span class="no" data-edit="t25" data-edit-label="Text — № 3 of the collection">№ 3 of the collection</span><h3 data-edit="t26" data-edit-label="Heading — Halawet el jibn">Halawet el jibn</h3><p data-edit="t27" data-edit-label="Text — Soft cheese rolls with ashta — the pla…">Soft cheese rolls with ashta — the plate reviewers call perfect.</p></div></div>
+  <h2 class="rv"><xen>From the <em data-edit="t17" data-edit-label="Text — vitrine">vitrine</em></xen><xar>من <em data-edit="t43" data-edit-label="Text: الفاترينة">الفاترينة</em></xar></h2>
+  <p class="sub"><xen data-edit="t44" data-edit-label="Text (EN): Each piece made in-house, weighed in g…">Each piece made in-house, weighed in gold standards</xen><xar data-edit="t45" data-edit-label="Text (AR): كل قطعة معمولة بالمحلّ، وموزونة بمعايي…">كل قطعة معمولة بالمحلّ، وموزونة بمعايير الذهب</xar></p>
+  <div class="v-grid"><div class="vc rv"><img src="img/03.jpg" alt="Baklava, by the tray" loading="lazy"><span class="no"><xen data-edit="t46" data-edit-label="Text (EN): № 1 of the collection">№ 1 of the collection</xen><xar data-edit="t47" data-edit-label="Text (AR): رقم 1 من المجموعة">رقم 1 من المجموعة</xar></span><h3><xen data-edit="t48" data-edit-label="Text (EN): Baklava, by the tray">Baklava, by the tray</xen><xar data-edit="t49" data-edit-label="Text (AR): بقلاوة، بالصينية">بقلاوة، بالصينية</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): Layered, buttered, glistening — sold b…">Layered, buttered, glistening — sold by the kilo, gone by the box.</xen><xar data-edit="t51" data-edit-label="Text (AR): طبقات، سمنة، ولمعة — بتنباع بالكيلو، و…">طبقات، سمنة، ولمعة — بتنباع بالكيلو، وبتخلص بالعلبة.</xar></p></div><div class="vc rv"><img src="img/04.jpg" alt="Maamoul & qarabij" loading="lazy"><span class="no"><xen data-edit="t52" data-edit-label="Text (EN): № 2 of the collection">№ 2 of the collection</xen><xar data-edit="t53" data-edit-label="Text (AR): رقم 2 من المجموعة">رقم 2 من المجموعة</xar></span><h3><xen data-edit="t54" data-edit-label="Text (EN): Maamoul & qarabij">Maamoul & qarabij</xen><xar data-edit="t55" data-edit-label="Text (AR): معمول وقرابيج">معمول وقرابيج</xar></h3><p><xen data-edit="t56" data-edit-label="Text (EN): Powdered rows of the classics, pressed…">Powdered rows of the classics, pressed in wooden moulds.</xen><xar data-edit="t57" data-edit-label="Text (AR): صفوف مغطّاية بالسكّر البودرة، مضغوطة ب…">صفوف مغطّاية بالسكّر البودرة، مضغوطة بقوالب خشب.</xar></p></div><div class="vc rv"><img src="img/02.jpg" alt="Halawet el jibn" loading="lazy"><span class="no"><xen data-edit="t58" data-edit-label="Text (EN): № 3 of the collection">№ 3 of the collection</xen><xar data-edit="t59" data-edit-label="Text (AR): رقم 3 من المجموعة">رقم 3 من المجموعة</xar></span><h3><xen data-edit="t60" data-edit-label="Text (EN): Halawet el jibn">Halawet el jibn</xen><xar data-edit="t61" data-edit-label="Text (AR): حلاوة الجبن">حلاوة الجبن</xar></h3><p><xen data-edit="t62" data-edit-label="Text (EN): Soft cheese rolls with ashta — the pla…">Soft cheese rolls with ashta — the plate reviewers call perfect.</xen><xar data-edit="t63" data-edit-label="Text (AR): لفائف جبنة طريّة مع قشطة — الصحن يلّي …">لفائف جبنة طريّة مع قشطة — الصحن يلّي بيقولوا عنّو كامل.</xar></p></div></div>
  </div>
 </section>
 
@@ -178,53 +212,65 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.78rem;color:rgba(246,
 <section id="story">
  <div class="wrap story">
   <div class="rv">
-   <span class="k" data-edit="t28" data-edit-label="Text — The name">The name</span>
-   <h2>A family called <em data-edit="t29" data-edit-label="Text — The Golden">The Golden</em>, for a reason</h2>
-   <p data-edit="t30" data-edit-label="Text — In Barbour, the Zahabi name — “the gol…">In Barbour, the Zahabi name — “the golden” — is a promise kept daily: trays of knafeh leaving the oven, baklava glistening in rows, maamoul b'ashta and qarabij weighed out with the extraordinary generosity the neighborhood swears by. Everything perfect, everything golden, 7:30 in the morning till 10 at night.</p>
-   <p data-edit="t31" data-edit-label="Text — Mad ashta, qarabij, maamoul b'ashta, k…">Mad ashta, qarabij, maamoul b'ashta, knafeh at dawn — the counter serves Noueiri and Barbour the way a goldsmith serves a bride: precisely, generously, and never in a hurry.</p>
+   <span class="k"><xen data-edit="t64" data-edit-label="Text (EN): The name">The name</xen><xar data-edit="t65" data-edit-label="Text (AR): الإسم">الإسم</xar></span>
+   <h2><xen>A family called <em data-edit="t29" data-edit-label="Text — The Golden">The Golden</em>, for a reason</xen><xar>عيلة إسمها <em data-edit="t66" data-edit-label="Text: الذهبي">الذهبي</em>، ومش صدفة</xar></h2>
+   <p><xen data-edit="t67" data-edit-label="Text (EN): In Barbour, the Zahabi name — “the gol…">In Barbour, the Zahabi name — “the golden” — is a promise kept daily: trays of knafeh leaving the oven, baklava glistening in rows, maamoul b'ashta and qarabij weighed out with the extraordinary generosity the neighborhood swears by. Everything perfect, everything golden, 7:30 in the morning till 10 at night.</xen><xar data-edit="t68" data-edit-label="Text (AR): ببربور، إسم الذهبي وعد بينحفظ كل يوم: …">ببربور، إسم الذهبي وعد بينحفظ كل يوم: صواني كنافة طالعة من الفرن، بقلاوة عم تلمع بصفوف، معمول بقشطة وقرابيج بينوزنوا بسخا الحيّ كلّو بيحلف عليها. كل شي كامل، كل شي ذهبي، من 7:30 الصبح لحدّ 10 بالليل.</xar></p>
+   <p><xen data-edit="t69" data-edit-label="Text (EN): Mad ashta, qarabij, maamoul b'ashta, k…">Mad ashta, qarabij, maamoul b'ashta, knafeh at dawn — the counter serves Noueiri and Barbour the way a goldsmith serves a bride: precisely, generously, and never in a hurry.</xen><xar data-edit="t70" data-edit-label="Text (AR): مدّ قشطة، قرابيج، معمول بقشطة، وكنافة …">مدّ قشطة، قرابيج، معمول بقشطة، وكنافة مع الفجر — الكاونتر بيخدم النويري وبربور متل ما بيخدم الصايغ العروس: بدقّة، بسخا، وبلا استعجال.</xar></p>
   </div>
   <div class="ph rv">
    <img src="img/03.jpg" alt="Hamdi Al Zahabi Sweets baklava">
-   <div class="medal"><b>SINCE<br>ALWAYS</b></div>
+   <div class="medal"><b><xen>SINCE<br>ALWAYS</xen><xar>من<br>زمان</xar></b></div>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">The <em data-edit="t32" data-edit-label="Text — collection">collection</em></h2>
- <p class="sub" data-edit="t33" data-edit-label="Text — Photographed over the counter glass">Photographed over the counter glass</p>
+ <h2 class="rv"><xen>The <em data-edit="t32" data-edit-label="Text — collection">collection</em></xen><xar><em data-edit="t71" data-edit-label="Text: المجموعة">المجموعة</em></xar></h2>
+ <p class="sub"><xen data-edit="t72" data-edit-label="Text (EN): Photographed over the counter glass">Photographed over the counter glass</xen><xar data-edit="t73" data-edit-label="Text (AR): مصوّرة من فوق زجاج الكاونتر">مصوّرة من فوق زجاج الكاونتر</xar></p>
  <div class="g-grid"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Sworn <em data-edit="t34" data-edit-label="Text — testimonies">testimonies</em></h2>
+  <h2 class="rv"><xen>Sworn <em data-edit="t34" data-edit-label="Text — testimonies">testimonies</em></xen><xar>شهادات <em data-edit="t74" data-edit-label="Text: موثّقة">موثّقة</em></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t35" data-edit-label="Text — Amazing Arabic sweets! We're in love w…">Amazing Arabic sweets! We're in love with everything we tried — from knafeh to baklava to halawet el jibn to maamoul b ashta to maakroun! Everything tasted perfect!</p><div class="who" data-edit="t36" data-edit-label="Text — Rana Hodeib">Rana Hodeib</div></div><div class="rc rv"><span class="st">★ ★ ★ ★ ★</span><p data-edit="t37" data-edit-label="Text — Hamdi Al Zihabi brings Noueireh to lif…">Hamdi Al Zihabi brings Noueireh to life. The extraordinary generosity of staff, good prices, and unbeatable sweets — favourite being the Mad Ashta and Qarabij.</p><div class="who" data-edit="t38" data-edit-label="Text — SUNNY">SUNNY</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">Sweetness has an <em data-edit="t39" data-edit-label="Text — address.">address.</em></h2>
+ <h2 class="rv"><xen>Sweetness has an <em data-edit="t39" data-edit-label="Text — address.">address.</em></xen><xar>للحلو <em data-edit="t75" data-edit-label="Text: عنوان.">عنوان.</em></xar></h2>
  <a class="phone" href="tel:+9611311666" data-edit="t40" data-edit-label="Button / link — +961 1 311 666">+961 1 311 666</a>
- <p class="meta">Barbour (Noueiri), Beirut, Lebanon<br>Daily 7:30 AM - 10 PM</p>
+ <p class="meta"><xen>Barbour (Noueiri), Beirut, Lebanon<br>Daily 7:30 AM - 10 PM</xen><xar>بربور (النويري)، بيروت، لبنان<br>كل يوم 7:30 صباحاً - 10 ليلاً</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+9611311666" data-edit="t41" data-edit-label="Button / link — Call +961 1 311 666">Call +961 1 311 666</a> <a class="btn ig" href="https://instagram.com/alzahabisweets" target="_blank" rel="noopener" data-edit="t42" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener" data-edit="t43" data-edit-label="Button / link — Google Maps">Google Maps</a>
+  <a class="btn" href="tel:+9611311666"><xen data-edit="t76" data-edit-label="Text (EN): Call +961 1 311 666">Call +961 1 311 666</xen><xar data-edit="t77" data-edit-label="Text (AR): إتّصلوا +961 1 311 666">إتّصلوا +961 1 311 666</xar></a> <a class="btn ig" href="https://instagram.com/alzahabisweets" target="_blank" rel="noopener"><xen data-edit="t78" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t79" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener"><xen data-edit="t80" data-edit-label="Text (EN): Google Maps">Google Maps</xen><xar data-edit="t81" data-edit-label="Text (AR): خرائط غوغل">خرائط غوغل</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611311666" data-edit="t44" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611311666"><xen data-edit="t82" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t83" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/alzahabisweets" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener" data-edit="t45" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=9733118991455317910" target="_blank" rel="noopener"><xen data-edit="t84" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t85" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Hamdi Al Zahabi Sweets · Barbour, Beirut</footer>
+<footer><xen data-edit="t86" data-edit-label="Text (EN): © Hamdi Al Zahabi Sweets · Barbour, Be…">© Hamdi Al Zahabi Sweets · Barbour, Beirut</xen><xar data-edit="t87" data-edit-label="Text (AR): © حلويات حمدي الذهبي · بربور، بيروت">© حلويات حمدي الذهبي · بربور، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t88" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"حلويات حمدي الذهبي — حلويات عربية في بربور، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

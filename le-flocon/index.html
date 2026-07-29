@@ -121,15 +121,49 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.78rem;color:rgba(39,66,8
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Marhey:wght@400;700&family=Almarai:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Marhey',serif;--arb:'Almarai',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#E2647E;color:#FBF7EF;border:1.5px solid #274257;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <div class="scallop"></div>
 <nav>
- <a class="brand" href="#">LE <span data-edit="t1" data-edit-label="Text — FLOCON">FLOCON</span></a>
+ <a class="brand" href="#"><xen>LE <span data-edit="t1" data-edit-label="Text — FLOCON">FLOCON</span></xen><xar>لو <span data-edit="t2" data-edit-label="Text: فلوكون">فلوكون</span></xar></a>
  <div class="links">
-  <a href="#collection" data-edit="t2" data-edit-label="Button / link — The collection">The collection</a><a href="#atelier" data-edit="t3" data-edit-label="Button / link — The atelier">The atelier</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Vitrines">Vitrines</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96121333240" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#collection"><xen data-edit="t3" data-edit-label="Text (EN): The collection">The collection</xen><xar data-edit="t4" data-edit-label="Text (AR): المجموعة">المجموعة</xar></a><a href="#atelier"><xen data-edit="t5" data-edit-label="Text (EN): The atelier">The atelier</xen><xar data-edit="t6" data-edit-label="Text (AR): الأتيليه">الأتيليه</xar></a><a href="#gallery"><xen data-edit="t8" data-edit-label="Text (EN): Vitrines">Vitrines</xen><xar data-edit="t9" data-edit-label="Text (AR): الفاترينات">الفاترينات</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96121333240"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
@@ -139,88 +173,100 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.78rem;color:rgba(39,66,8
    <path d="M40 6v68M12 23l56 34M12 57l56-34M40 6l-7 9M40 6l7 9M40 74l-7-9M40 74l7-9M12 23l11 2M12 23l1-11M68 57l-11-2M68 57l-1 11M12 57l1 11M12 57l11-2M68 23l-1-11M68 23l-11 2"/>
   </svg>
  </div>
- <h1>LE <span data-edit="t7" data-edit-label="Text — FLOCON">FLOCON</span></h1>
- <p class="sub" data-edit="t8" data-edit-label="Text — Artisan Glacier · Sodeco">Artisan Glacier · Sodeco</p>
- <p class="tg" data-edit="t9" data-edit-label="Text — An artisan glacier where ice cream is …">An artisan glacier where ice cream is sculpted into fruit and salted caramel is the law.</p>
+ <h1><xen>LE <span data-edit="t7" data-edit-label="Text — FLOCON">FLOCON</span></xen><xar>لو <span data-edit="t14" data-edit-label="Text: فلوكون">فلوكون</span></xar></h1>
+ <p class="sub"><xen data-edit="t15" data-edit-label="Text (EN): Artisan Glacier · Sodeco">Artisan Glacier · Sodeco</xen><xar data-edit="t17" data-edit-label="Text (AR): بوظة حرفية · سوديكو">بوظة حرفية · سوديكو</xar></p>
+ <p class="tg"><xen data-edit="t19" data-edit-label="Text (EN): An artisan glacier where ice cream is …">An artisan glacier where ice cream is sculpted into fruit and salted caramel is the law.</xen><xar data-edit="t20" data-edit-label="Text (AR): أتيليه بوظة حرفية، البوظة فيه منحوتة ع…">أتيليه بوظة حرفية، البوظة فيه منحوتة على شكل فواكه، والكراميل المملّح قانون.</xar></p>
  <div class="chips">
-  <span class="chip b" data-edit="t10" data-edit-label="Text — ★ 4.8 · 130 reviews">★ 4.8 · 130 reviews</span>
-  <span class="chip" data-edit="t11" data-edit-label="Text — 10 AM — 10 PM daily">10 AM — 10 PM daily</span>
-  <span class="chip" data-edit="t12" data-edit-label="Text — Un voyage de saveurs">Un voyage de saveurs</span>
+  <span class="chip b"><xen data-edit="t21" data-edit-label="Text (EN): ★ 4.8 · 130 reviews">★ 4.8 · 130 reviews</xen><xar data-edit="t23" data-edit-label="Text (AR): ★ 4.8 · 130 تقييم">★ 4.8 · 130 تقييم</xar></span>
+  <span class="chip"><xen data-edit="t24" data-edit-label="Text (EN): 10 AM — 10 PM daily">10 AM — 10 PM daily</xen><xar data-edit="t25" data-edit-label="Text (AR): 10 صباحاً — 10 ليلاً كل يوم">10 صباحاً — 10 ليلاً كل يوم</xar></span>
+  <span class="chip"><xen data-edit="t27" data-edit-label="Text (EN): Un voyage de saveurs">Un voyage de saveurs</xen><xar data-edit="t28" data-edit-label="Text (AR): رحلة نكهات">رحلة نكهات</xar></span>
  </div>
  <div class="cta">
-  <a class="btn b" href="tel:+96121333240" data-edit="t13" data-edit-label="Button / link — Call +961 21 333 240">Call +961 21 333 240</a>
-  <a class="btn" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener" data-edit="t14" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+  <a class="btn b" href="tel:+96121333240"><xen data-edit="t29" data-edit-label="Text (EN): Call +961 21 333 240">Call +961 21 333 240</xen><xar data-edit="t30" data-edit-label="Text (AR): إتّصلوا +961 21 333 240">إتّصلوا +961 21 333 240</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener"><xen data-edit="t32" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t33" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
  </div>
 </header>
 
 <div class="plinth rv">
  <div class="fr">
   <img src="img/01.jpg" alt="Le Flocon Artisan Glacier storefront">
-  <p class="plq" data-edit="t15" data-edit-label="Text — EXHIBIT A — THE WHITE FACADE, SODECO">EXHIBIT A — THE WHITE FACADE, SODECO</p>
+  <p class="plq"><xen data-edit="t34" data-edit-label="Text (EN): EXHIBIT A — THE WHITE FACADE, SODECO">EXHIBIT A — THE WHITE FACADE, SODECO</xen><xar data-edit="t35" data-edit-label="Text (AR): القطعة أ — الواجهة البيضا، سوديكو">القطعة أ — الواجهة البيضا، سوديكو</xar></p>
  </div>
 </div>
 
 <section class="coll" id="collection">
  <div class="wrap">
-  <h2 class="rv">THE <span data-edit="t16" data-edit-label="Text — COLLECTION">COLLECTION</span></h2>
-  <p class="sub" data-edit="t17" data-edit-label="Text — Sculpted pieces, displayed chilled, ea…">Sculpted pieces, displayed chilled, eaten reverently</p>
-  <div class="c-grid"><div class="cc rv"><div class="imw"><img src="img/02.jpg" alt="The strawberry that isn't" loading="lazy"><span class="num" data-edit="t18" data-edit-label="Text — № 1">№ 1</span></div><h3 data-edit="t19" data-edit-label="Heading — The strawberry that isn't">The strawberry that isn't</h3><p data-edit="t20" data-edit-label="Text — A strawberry-shaped sorbet, almost too…">A strawberry-shaped sorbet, almost too beautiful to eat. Almost.</p><span class="pl" data-edit="t21" data-edit-label="Text — from the collection">from the collection</span></div><div class="cc rv"><div class="imw"><img src="img/04.jpg" alt="The pistachio dome" loading="lazy"><span class="num" data-edit="t22" data-edit-label="Text — № 2">№ 2</span></div><h3 data-edit="t23" data-edit-label="Heading — The pistachio dome">The pistachio dome</h3><p data-edit="t24" data-edit-label="Text — Plated with crushed nuts like a jewel …">Plated with crushed nuts like a jewel on display.</p><span class="pl" data-edit="t25" data-edit-label="Text — from the collection">from the collection</span></div><div class="cc rv"><div class="imw"><img src="img/07.jpg" alt="Tubs of the day" loading="lazy"><span class="num" data-edit="t26" data-edit-label="Text — № 3">№ 3</span></div><h3 data-edit="t27" data-edit-label="Heading — Tubs of the day">Tubs of the day</h3><p data-edit="t28" data-edit-label="Text — Salted caramel first — the rest compet…">Salted caramel first — the rest compete for second.</p><span class="pl" data-edit="t29" data-edit-label="Text — from the collection">from the collection</span></div></div>
+  <h2 class="rv"><xen>THE <span data-edit="t16" data-edit-label="Text — COLLECTION">COLLECTION</span></xen><xar><span data-edit="t36" data-edit-label="Text: المجموعة">المجموعة</span></xar></h2>
+  <p class="sub"><xen data-edit="t37" data-edit-label="Text (EN): Sculpted pieces, displayed chilled, ea…">Sculpted pieces, displayed chilled, eaten reverently</xen><xar data-edit="t38" data-edit-label="Text (AR): قطع منحوتة، معروضة عالبارد، وبتنوكل با…">قطع منحوتة، معروضة عالبارد، وبتنوكل باحترام</xar></p>
+  <div class="c-grid"><div class="cc rv"><div class="imw"><img src="img/02.jpg" alt="The strawberry that isn't" loading="lazy"><span class="num" data-edit="t18" data-edit-label="Text — № 1">№ 1</span></div><h3><xen data-edit="t40" data-edit-label="Text (EN): The strawberry that isn't">The strawberry that isn't</xen><xar data-edit="t41" data-edit-label="Text (AR): الفريز يلّي مش فريز">الفريز يلّي مش فريز</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): A strawberry-shaped sorbet, almost too…">A strawberry-shaped sorbet, almost too beautiful to eat. Almost.</xen><xar data-edit="t51" data-edit-label="Text (AR): سوربيه على شكل حبّة فريز، حلو لدرجة إن…">سوربيه على شكل حبّة فريز، حلو لدرجة إنّك ما بتقدر توكلو. تقريباً.</xar></p><span class="pl"><xen data-edit="t52" data-edit-label="Text (EN): from the collection">from the collection</xen><xar data-edit="t53" data-edit-label="Text (AR): من المجموعة">من المجموعة</xar></span></div><div class="cc rv"><div class="imw"><img src="img/04.jpg" alt="The pistachio dome" loading="lazy"><span class="num" data-edit="t22" data-edit-label="Text — № 2">№ 2</span></div><h3><xen data-edit="t54" data-edit-label="Text (EN): The pistachio dome">The pistachio dome</xen><xar data-edit="t55" data-edit-label="Text (AR): قبّة الفستق">قبّة الفستق</xar></h3><p><xen data-edit="t56" data-edit-label="Text (EN): Plated with crushed nuts like a jewel …">Plated with crushed nuts like a jewel on display.</xen><xar data-edit="t57" data-edit-label="Text (AR): مقدّمة مع فستق مجروش متل جوهرة بالعرض.">مقدّمة مع فستق مجروش متل جوهرة بالعرض.</xar></p><span class="pl"><xen data-edit="t58" data-edit-label="Text (EN): from the collection">from the collection</xen><xar data-edit="t59" data-edit-label="Text (AR): من المجموعة">من المجموعة</xar></span></div><div class="cc rv"><div class="imw"><img src="img/07.jpg" alt="Tubs of the day" loading="lazy"><span class="num" data-edit="t26" data-edit-label="Text — № 3">№ 3</span></div><h3><xen data-edit="t60" data-edit-label="Text (EN): Tubs of the day">Tubs of the day</xen><xar data-edit="t61" data-edit-label="Text (AR): علب اليوم">علب اليوم</xar></h3><p><xen data-edit="t62" data-edit-label="Text (EN): Salted caramel first — the rest compet…">Salted caramel first — the rest compete for second.</xen><xar data-edit="t63" data-edit-label="Text (AR): الكراميل المملّح أوّلاً — والباقي عم ي…">الكراميل المملّح أوّلاً — والباقي عم يتنافسوا عالمركز التاني.</xar></p><span class="pl"><xen data-edit="t64" data-edit-label="Text (EN): from the collection">from the collection</xen><xar data-edit="t65" data-edit-label="Text (AR): من المجموعة">من المجموعة</xar></span></div></div>
  </div>
 </section>
 
 <section id="atelier">
  <div class="atel">
   <div class="rv">
-   <span class="k" data-edit="t30" data-edit-label="Text — The atelier">The atelier</span>
-   <h2>Ice cream, treated like <span data-edit="t31" data-edit-label="Text — haute pâtisserie">haute pâtisserie</span></h2>
-   <p data-edit="t32" data-edit-label="Text — Le Flocon — “the snowflake” — is Sodec…">Le Flocon — “the snowflake” — is Sodeco's white-awninged atelier of frozen things: gelato churned in-house, sorbets shaped into the fruits they came from, pistachio domes plated like patisserie, and a salted caramel whose reputation precedes it by several streets. Un voyage de saveurs, ten to ten, daily.</p>
-   <p data-edit="t33" data-edit-label="Text — Behind the glass, the team sculpts fru…">Behind the glass, the team sculpts fruit-shaped pieces and builds teddy-bear cones for the brave. Everything is churned on site, in small batches, on a voyage de saveurs.</p>
+   <span class="k"><xen data-edit="t66" data-edit-label="Text (EN): The atelier">The atelier</xen><xar data-edit="t67" data-edit-label="Text (AR): الأتيليه">الأتيليه</xar></span>
+   <h2><xen>Ice cream, treated like <span data-edit="t31" data-edit-label="Text — haute pâtisserie">haute pâtisserie</span></xen><xar>بوظة، بتنعامل متل <span data-edit="t68" data-edit-label="Text: حلويات راقية">حلويات راقية</span></xar></h2>
+   <p><xen data-edit="t69" data-edit-label="Text (EN): Le Flocon — “the snowflake” — is Sodec…">Le Flocon — “the snowflake” — is Sodeco's white-awninged atelier of frozen things: gelato churned in-house, sorbets shaped into the fruits they came from, pistachio domes plated like patisserie, and a salted caramel whose reputation precedes it by several streets. Un voyage de saveurs, ten to ten, daily.</xen><xar data-edit="t70" data-edit-label="Text (AR): لو فلوكون — «ندفة الثلج» — أتيليه سودي…">لو فلوكون — «ندفة الثلج» — أتيليه سوديكو بالتنده البيضا للأشياء المجمّدة: جيلاتو بينخضّ بالمحلّ، سوربيه منحوت على شكل الفواكه يلّي جايي منها، قباب فستق مقدّمة متل الحلويات الفرنسية، وكراميل مملّح سمعتو بتسبقو بكم شارع. رحلة نكهات، من العشرة للعشرة، كل يوم.</xar></p>
+   <p><xen data-edit="t71" data-edit-label="Text (EN): Behind the glass, the team sculpts fru…">Behind the glass, the team sculpts fruit-shaped pieces and builds teddy-bear cones for the brave. Everything is churned on site, in small batches, on a voyage de saveurs.</xen><xar data-edit="t72" data-edit-label="Text (AR): ورا الزجاج، الفريق بينحت قطع على شكل ف…">ورا الزجاج، الفريق بينحت قطع على شكل فواكه وبيبني كورنيهات على شكل دبدوب للشجعان. كل شي بينخضّ بالمحلّ، بكميات صغيرة، برحلة نكهات.</xar></p>
    <div class="fam">
-    <span data-edit="t34" data-edit-label="Text — Salted caramel — the star">Salted caramel — the star</span><span data-edit="t35" data-edit-label="Text — Pistachio domes">Pistachio domes</span><span data-edit="t36" data-edit-label="Text — Fruit sorbets">Fruit sorbets</span><span data-edit="t37" data-edit-label="Text — Tartes glacées">Tartes glacées</span>
+    <span><xen data-edit="t73" data-edit-label="Text (EN): Salted caramel — the star">Salted caramel — the star</xen><xar data-edit="t74" data-edit-label="Text (AR): كراميل مملّح — النجم">كراميل مملّح — النجم</xar></span><span><xen data-edit="t75" data-edit-label="Text (EN): Pistachio domes">Pistachio domes</xen><xar data-edit="t76" data-edit-label="Text (AR): قباب الفستق">قباب الفستق</xar></span><span><xen data-edit="t77" data-edit-label="Text (EN): Fruit sorbets">Fruit sorbets</xen><xar data-edit="t78" data-edit-label="Text (AR): سوربيه فواكه">سوربيه فواكه</xar></span><span><xen data-edit="t79" data-edit-label="Text (EN): Tartes glacées">Tartes glacées</xen><xar data-edit="t80" data-edit-label="Text (AR): تارت مثلّجة">تارت مثلّجة</xar></span>
    </div>
   </div>
   <div class="ph rv">
    <img src="img/04.jpg" alt="Strawberry-shaped ice cream at Le Flocon Artisan Glacier">
-   <span class="tagf" data-edit="t38" data-edit-label="Text — shaped like the fruit itself">shaped like the fruit itself</span>
+   <span class="tagf"><xen data-edit="t81" data-edit-label="Text (EN): shaped like the fruit itself">shaped like the fruit itself</xen><xar data-edit="t82" data-edit-label="Text (AR): على شكل الفاكهة نفسها">على شكل الفاكهة نفسها</xar></span>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">THE <span data-edit="t39" data-edit-label="Text — VITRINES">VITRINES</span></h2>
- <p class="sub" data-edit="t40" data-edit-label="Text — Tubs, domes, tartes and the counter in…">Tubs, domes, tartes and the counter in powder blue</p>
+ <h2 class="rv"><xen>THE <span data-edit="t39" data-edit-label="Text — VITRINES">VITRINES</span></xen><xar><span data-edit="t83" data-edit-label="Text: الفاترينات">الفاترينات</span></xar></h2>
+ <p class="sub"><xen data-edit="t84" data-edit-label="Text (EN): Tubs, domes, tartes and the counter in…">Tubs, domes, tartes and the counter in powder blue</xen><xar data-edit="t85" data-edit-label="Text (AR): علب، قباب، تارت، والكاونتر بالأزرق الف…">علب، قباب، تارت، والكاونتر بالأزرق الفاتح</xar></p>
  <div class="g-grid"><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv" data-edit="t41" data-edit-label="Title — TASTING NOTES">TASTING NOTES</h2>
+  <h2 class="rv"><xen data-edit="t86" data-edit-label="Text (EN): TASTING NOTES">TASTING NOTES</xen><xar data-edit="t87" data-edit-label="Text (AR): ملاحظات التذوّق">ملاحظات التذوّق</xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t42" data-edit-label="Text — An absolute delight! A beautifully des…">An absolute delight! A beautifully designed artisan glacier with a cozy atmosphere and incredibly friendly, helpful staff who made the experience even more enjoyable.</p><div class="who" data-edit="t43" data-edit-label="Text — Mohammed Chaouk">Mohammed Chaouk</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t44" data-edit-label="Text — I stumbled upon Le Flocon and ended up…">I stumbled upon Le Flocon and ended up with something that looked too beautiful to eat — a strawberry shaped ice cream that felt like it was made for summer. Light, smooth, and full of flavor.</p><div class="who" data-edit="t45" data-edit-label="Text — Tahsine Reda">Tahsine Reda</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t46" data-edit-label="Text — The salted caramel is their most famou…">The salted caramel is their most famous flavor and deservedly so. They have some seating and you can enjoy your ice cream outside. Their staff is very friendly.</p><div class="who" data-edit="t47" data-edit-label="Text — Mike Aoun">Mike Aoun</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">COME FOR A <span data-edit="t48" data-edit-label="Text — FLOCON.">FLOCON.</span></h2>
+ <h2 class="rv"><xen>COME FOR A <span data-edit="t48" data-edit-label="Text — FLOCON.">FLOCON.</span></xen><xar>تعوا على <span data-edit="t88" data-edit-label="Text: فلوكون.">فلوكون.</span></xar></h2>
  <a class="phone" href="tel:+96121333240" data-edit="t49" data-edit-label="Button / link — +961 21 333 240">+961 21 333 240</a>
- <p class="meta">Sodeco / Achrafieh, Beirut, Lebanon (VGP9+Q8M)<br>Daily 10 AM - 10 PM</p>
+ <p class="meta"><xen>Sodeco / Achrafieh, Beirut, Lebanon (VGP9+Q8M)<br>Daily 10 AM - 10 PM</xen><xar>سوديكو / الأشرفية، بيروت، لبنان (VGP9+Q8M)<br>كل يوم 10 صباحاً - 10 ليلاً</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+96121333240" data-edit="t50" data-edit-label="Button / link — Call +961 21 333 240">Call +961 21 333 240</a> <a class="btn ig" href="https://instagram.com/lefloconartisanglacier" target="_blank" rel="noopener" data-edit="t51" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener" data-edit="t52" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn" href="tel:+96121333240"><xen data-edit="t89" data-edit-label="Text (EN): Call +961 21 333 240">Call +961 21 333 240</xen><xar data-edit="t90" data-edit-label="Text (AR): إتّصلوا +961 21 333 240">إتّصلوا +961 21 333 240</xar></a> <a class="btn ig" href="https://instagram.com/lefloconartisanglacier" target="_blank" rel="noopener"><xen data-edit="t91" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t92" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener"><xen data-edit="t93" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t94" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96121333240" data-edit="t53" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+96121333240"><xen data-edit="t95" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t96" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/lefloconartisanglacier" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener" data-edit="t54" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=12918767989546089897" target="_blank" rel="noopener"><xen data-edit="t97" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t98" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Le Flocon Artisan Glacier · Sodeco, Beirut</footer>
+<footer><xen data-edit="t99" data-edit-label="Text (EN): © Le Flocon Artisan Glacier · Sodeco, …">© Le Flocon Artisan Glacier · Sodeco, Beirut</xen><xar data-edit="t100" data-edit-label="Text (AR): © لو فلوكون — بوظة حرفية · سوديكو، بير…">© لو فلوكون — بوظة حرفية · سوديكو، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t101" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"لو فلوكون — بوظة حرفية في سوديكو، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

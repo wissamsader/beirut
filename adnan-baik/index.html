@@ -145,27 +145,61 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Lalezar:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Lalezar',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#17351A;color:#FFCF2E;border:1.5px solid #FFCF2E;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 <nav>
- <a class="brand" href="#top" data-edit="t1" data-edit-label="Button / link — Adnan Baik">Adnan Baik</a>
+ <a class="brand" href="#top"><xen data-edit="t1" data-edit-label="Text (EN): Adnan Baik">Adnan Baik</xen><xar data-edit="t2" data-edit-label="Text (AR): عدنان بيك">عدنان بيك</xar></a>
  <div class="links">
-  <a href="#about" data-edit="t2" data-edit-label="Button / link — The story">The story</a><a href="#ritual" data-edit="t3" data-edit-label="Button / link — The ritual">The ritual</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Golden">Golden</a><a href="#reviews" data-edit="t5" data-edit-label="Button / link — Hamra says">Hamra says</a><a href="#visit" data-edit="t6" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96178733133" data-edit="t7" data-edit-label="Button / link — Call">Call</a>
+  <a href="#about"><xen data-edit="t3" data-edit-label="Text (EN): The story">The story</xen><xar data-edit="t4" data-edit-label="Text (AR): القصّة">القصّة</xar></a><a href="#ritual"><xen data-edit="t5" data-edit-label="Text (EN): The ritual">The ritual</xen><xar data-edit="t6" data-edit-label="Text (AR): الطقس">الطقس</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Golden">Golden</xen><xar data-edit="t8" data-edit-label="Text (AR): الذهبي">الذهبي</xar></a><a href="#reviews"><xen data-edit="t9" data-edit-label="Text (EN): Hamra says">Hamra says</xen><xar data-edit="t10" data-edit-label="Text (AR): الحمرا بتقول">الحمرا بتقول</xar></a><a href="#visit"><xen data-edit="t11" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t12" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96178733133"><xen data-edit="t13" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t14" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero" id="top">
- <div class="echo" data-edit="t8" data-edit-label="Text — BROASTED">BROASTED</div>
- <div class="stick tl">4.7★<br>HAMRA<br>APPROVED</div>
- <div class="stick br">FRIED<br>TO ORDER</div>
- <h1><span data-edit="t9" data-edit-label="Text — ADNAN">ADNAN</span><span class="rd" data-edit="t10" data-edit-label="Text — BAIK">BAIK</span></h1>
- <div class="ar arabic" data-edit="t11" data-edit-label="Text — عدنان بيك">عدنان بيك</div>
- <p class="tag" data-edit="t12" data-edit-label="Text — Hamra's crispy broasted chicken — fres…">Hamra's crispy broasted chicken — fresh, fast & full of flavor</p>
+ <div class="echo"><xen data-edit="t15" data-edit-label="Text (EN): BROASTED">BROASTED</xen><xar data-edit="t16" data-edit-label="Text (AR): بروستد">بروستد</xar></div>
+ <div class="stick tl"><xen>4.7★<br>HAMRA<br>APPROVED</xen><xar>4.7★<br>الحمرا<br>موافقة</xar></div>
+ <div class="stick br"><xen>FRIED<br>TO ORDER</xen><xar>بينقلى<br>عالطلب</xar></div>
+ <h1><span><xen data-edit="t18" data-edit-label="Text (EN): ADNAN">ADNAN</xen><xar data-edit="t20" data-edit-label="Text (AR): عدنان">عدنان</xar></span><span class="rd"><xen data-edit="t22" data-edit-label="Text (EN): BAIK">BAIK</xen><xar data-edit="t23" data-edit-label="Text (AR): بيك">بيك</xar></span></h1>
+ <div class="ar arabic"><xen data-edit="t24" data-edit-label="Text (EN): عدنان بيك">عدنان بيك</xen><xar><span class="lat" data-edit="t26" data-edit-label="Text: ADNAN BAIK">ADNAN BAIK</span></xar></div>
+ <p class="tag"><xen data-edit="t28" data-edit-label="Text (EN): Hamra's crispy broasted chicken — fres…">Hamra's crispy broasted chicken — fresh, fast & full of flavor</xen><xar data-edit="t29" data-edit-label="Text (AR): بروستد الحمرا المقرمش — طازة، سريع، وم…">بروستد الحمرا المقرمش — طازة، سريع، ومليان طعمة</xar></p>
  <div class="cta">
-  <a class="btn rd" href="tel:+96178733133" data-edit="t13" data-edit-label="Button / link — Order the bucket">Order the bucket</a>
-  <a class="btn wa" href="https://wa.me/96178733133" target="_blank" rel="noopener" data-edit="t14" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
-  <a class="btn" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+  <a class="btn rd" href="tel:+96178733133"><xen data-edit="t31" data-edit-label="Text (EN): Order the bucket">Order the bucket</xen><xar data-edit="t32" data-edit-label="Text (AR): إطلبوا الدلو">إطلبوا الدلو</xar></a>
+  <a class="btn wa" href="https://wa.me/96178733133" target="_blank" rel="noopener"><xen data-edit="t34" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t35" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener"><xen data-edit="t36" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t38" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
  </div>
 </header>
 
@@ -175,15 +209,15 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
  <div class="wrap">
   <div class="ph rv">
    <img src="img/01.jpg" alt="Adnan Baik">
-   <span class="bulge" data-edit="t16" data-edit-label="Text — GOLDEN. ALWAYS.">GOLDEN. ALWAYS.</span>
+   <span class="bulge"><xen data-edit="t39" data-edit-label="Text (EN): GOLDEN. ALWAYS.">GOLDEN. ALWAYS.</xen><xar data-edit="t42" data-edit-label="Text (AR): ذهبي. دايماً.">ذهبي. دايماً.</xar></span>
   </div>
   <div class="rv">
-   <h2>GOLDEN, CRISPY, <em data-edit="t17" data-edit-label="Text — HAMRA-APPROVED">HAMRA-APPROVED</em></h2>
-   <p data-edit="t18" data-edit-label="Text — Craving that golden, crunchy, spiced-t…">Craving that golden, crunchy, spiced-to-the-bone broasted chicken? Adnan Baik brings the legendary baik-style bucket to Hamra — fresh every day, fried to order, with garlic sauce worth writing home about. And if something's ever not perfect, they call you and make it right. That's why Hamra gives them 4.7 stars.</p>
+   <h2><xen>GOLDEN, CRISPY, <em data-edit="t17" data-edit-label="Text — HAMRA-APPROVED">HAMRA-APPROVED</em></xen><xar>ذهبي، مقرمش، <em data-edit="t44" data-edit-label="Text: والحمرا موافقة">والحمرا موافقة</em></xar></h2>
+   <p><xen data-edit="t46" data-edit-label="Text (EN): Craving that golden, crunchy, spiced-t…">Craving that golden, crunchy, spiced-to-the-bone broasted chicken? Adnan Baik brings the legendary baik-style bucket to Hamra — fresh every day, fried to order, with garlic sauce worth writing home about. And if something's ever not perfect, they call you and make it right. That's why Hamra gives them 4.7 stars.</xen><xar data-edit="t48" data-edit-label="Text (AR): مشتهي هيداك البروستد الذهبي المقرمش ال…">مشتهي هيداك البروستد الذهبي المقرمش المتبّل للعظم؟ عدنان بيك جاب دلو البيك الأسطوري عالحمرا — طازة كل يوم، بينقلى عالطلب، ومع ثومية بتستاهل تحكي عنها. وإذا مرّة شي ما طلع تمام، بيتّصلوا فيك وبيصلّحوها. لهيك الحمرا بتعطيهن 4.7 نجمة.</xar></p>
    <div class="stats">
-    <div><b data-edit="t19" data-edit-label="Text — ★ 4.7">★ 4.7</b><span data-edit="t20" data-edit-label="Text — on Google">on Google</span></div>
-    <div><b data-edit="t21" data-edit-label="Text — 211">211</b><span data-edit="t22" data-edit-label="Text — reviews">reviews</span></div>
-    <div><b data-edit="t23" data-edit-label="Text — DAILY">DAILY</b><span data-edit="t24" data-edit-label="Text — fresh, never frozen">fresh, never frozen</span></div>
+    <div><b data-edit="t19" data-edit-label="Text — ★ 4.7">★ 4.7</b><span><xen data-edit="t50" data-edit-label="Text (EN): on Google">on Google</xen><xar data-edit="t52" data-edit-label="Text (AR): على غوغل">على غوغل</xar></span></div>
+    <div><b data-edit="t21" data-edit-label="Text — 211">211</b><span><xen data-edit="t54" data-edit-label="Text (EN): reviews">reviews</xen><xar data-edit="t55" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
+    <div><b><xen data-edit="t61" data-edit-label="Text (EN): DAILY">DAILY</xen><xar data-edit="t62" data-edit-label="Text (AR): كل يوم">كل يوم</xar></b><span><xen data-edit="t67" data-edit-label="Text (EN): fresh, never frozen">fresh, never frozen</xen><xar data-edit="t68" data-edit-label="Text (AR): طازة، مش مجمّد أبداً">طازة، مش مجمّد أبداً</xar></span></div>
    </div>
   </div>
  </div>
@@ -191,92 +225,104 @@ footer{background:var(--green);color:rgba(255,246,220,.7);text-align:center;padd
 
 <section class="ritual" id="ritual">
  <div class="wrap">
-  <h2 class="rv">THE BUCKET <em data-edit="t25" data-edit-label="Text — RITUAL">RITUAL</em></h2>
-  <p class="sub" data-edit="t26" data-edit-label="Text — Three moves. No skipping.">Three moves. No skipping.</p>
-  <div class="steps"><div class="step rv"><span class="n" data-edit="t27" data-edit-label="Text — 1">1</span><img src="img/01.jpg" alt="The Bucket" loading="lazy"><div class="bd"><h3 data-edit="t28" data-edit-label="Heading — The Bucket">The Bucket</h3><p data-edit="t29" data-edit-label="Text — Golden broasted chicken, fries, buns a…">Golden broasted chicken, fries, buns and garlic — the full ritual.</p></div></div><div class="step rv"><span class="n" data-edit="t30" data-edit-label="Text — 2">2</span><img src="img/06.jpg" alt="Crispy Chicken Sandwich" loading="lazy"><div class="bd"><h3 data-edit="t31" data-edit-label="Heading — Crispy Chicken Sandwich">Crispy Chicken Sandwich</h3><p data-edit="t32" data-edit-label="Text — Spicy, crunchy, dripping with flavor.">Spicy, crunchy, dripping with flavor.</p></div></div><div class="step rv"><span class="n" data-edit="t33" data-edit-label="Text — 3">3</span><img src="img/05.jpg" alt="Jumbo Shrimp" loading="lazy"><div class="bd"><h3 data-edit="t34" data-edit-label="Heading — Jumbo Shrimp">Jumbo Shrimp</h3><p data-edit="t35" data-edit-label="Text — The surprise hit — crispy fried shrimp…">The surprise hit — crispy fried shrimp platters.</p></div></div></div>
+  <h2 class="rv"><xen>THE BUCKET <em data-edit="t25" data-edit-label="Text — RITUAL">RITUAL</em></xen><xar>طقس <em data-edit="t69" data-edit-label="Text: الدلو">الدلو</em></xar></h2>
+  <p class="sub"><xen data-edit="t70" data-edit-label="Text (EN): Three moves. No skipping.">Three moves. No skipping.</xen><xar data-edit="t71" data-edit-label="Text (AR): تلات خطوات. ولا وحدة بتنشال.">تلات خطوات. ولا وحدة بتنشال.</xar></p>
+  <div class="steps"><div class="step rv"><span class="n" data-edit="t27" data-edit-label="Text — 1">1</span><img src="img/01.jpg" alt="The Bucket" loading="lazy"><div class="bd"><h3><xen data-edit="t72" data-edit-label="Text (EN): The Bucket">The Bucket</xen><xar data-edit="t73" data-edit-label="Text (AR): الدلو">الدلو</xar></h3><p><xen data-edit="t74" data-edit-label="Text (EN): Golden broasted chicken, fries, buns a…">Golden broasted chicken, fries, buns and garlic — the full ritual.</xen><xar data-edit="t75" data-edit-label="Text (AR): بروستد ذهبي، بطاطا، خبز وثومية — الطقس…">بروستد ذهبي، بطاطا، خبز وثومية — الطقس كامل.</xar></p></div></div><div class="step rv"><span class="n" data-edit="t30" data-edit-label="Text — 2">2</span><img src="img/06.jpg" alt="Crispy Chicken Sandwich" loading="lazy"><div class="bd"><h3><xen data-edit="t77" data-edit-label="Text (EN): Crispy Chicken Sandwich">Crispy Chicken Sandwich</xen><xar data-edit="t79" data-edit-label="Text (AR): سندويش كرسبي">سندويش كرسبي</xar></h3><p><xen data-edit="t81" data-edit-label="Text (EN): Spicy, crunchy, dripping with flavor.">Spicy, crunchy, dripping with flavor.</xen><xar data-edit="t83" data-edit-label="Text (AR): حارّ، مقرمش، وبيفيض طعمة.">حارّ، مقرمش، وبيفيض طعمة.</xar></p></div></div><div class="step rv"><span class="n" data-edit="t33" data-edit-label="Text — 3">3</span><img src="img/05.jpg" alt="Jumbo Shrimp" loading="lazy"><div class="bd"><h3><xen data-edit="t86" data-edit-label="Text (EN): Jumbo Shrimp">Jumbo Shrimp</xen><xar data-edit="t87" data-edit-label="Text (AR): قريدس جامبو">قريدس جامبو</xar></h3><p><xen data-edit="t88" data-edit-label="Text (EN): The surprise hit — crispy fried shrimp…">The surprise hit — crispy fried shrimp platters.</xen><xar data-edit="t89" data-edit-label="Text (AR): المفاجأة — صحون قريدس مقلي مقرمش.">المفاجأة — صحون قريدس مقلي مقرمش.</xar></p></div></div></div>
  </div>
 </section>
 
-<div class="mq"><div class="tt"><span data-edit="t36" data-edit-label="Text — BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦…">BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ </span></div></div>
+<div class="mq"><div class="tt"><span><xen data-edit="t90" data-edit-label="Text (EN): BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦…">BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ BROASTED ✦ THE BUCKET ✦ GARLIC SAUCE ✦ CRISPY SANDWICH ✦ JUMBO SHRIMP ✦ HAMRA ✦ 4.7 ★ ✦ </xen><xar data-edit="t91" data-edit-label="Text (AR): بروستد ✦ الدلو ✦ ثومية ✦ سندويش كرسبي …">بروستد ✦ الدلو ✦ ثومية ✦ سندويش كرسبي ✦ قريدس جامبو ✦ الحمرا ✦ 4.7 ★ ✦ بروستد ✦ الدلو ✦ ثومية ✦ سندويش كرسبي ✦ قريدس جامبو ✦ الحمرا ✦ 4.7 ★ ✦</xar></span></div></div>
 
 <section class="mboard" id="carte">
  <div class="wrap">
-  <h2 class="rv">THE <em data-edit="t37" data-edit-label="Text — BOARD">BOARD</em></h2>
-  <p class="sub" data-edit="t38" data-edit-label="Text — Straight off the screens above the cou…">Straight off the screens above the counter — regular or spicy 🌶</p>
+  <h2 class="rv"><xen>THE <em data-edit="t37" data-edit-label="Text — BOARD">BOARD</em></xen><xar><em data-edit="t92" data-edit-label="Text: اللوح">اللوح</em></xar></h2>
+  <p class="sub"><xen data-edit="t93" data-edit-label="Text (EN): Straight off the screens above the cou…">Straight off the screens above the counter — regular or spicy 🌶</xen><xar data-edit="t94" data-edit-label="Text (AR): دغري عن الشاشات فوق الكاونتر — عادي أو…">دغري عن الشاشات فوق الكاونتر — عادي أو حارّ 🌶</xar></p>
   <div class="mpanels rv">
    <div class="mpanel">
-    <h3 data-edit="t39" data-edit-label="Heading — Special Sandwiches">Special Sandwiches</h3>
-    <div class="mi"><div>Big Adnan Baik<small data-edit="t40" data-edit-label="Text — the double-decker legend">the double-decker legend</small></div><span class="pr" data-edit="t41" data-edit-label="Text — $8">$8</span></div>
-    <div class="mi"><div data-edit="t42" data-edit-label="Text — Zinger Burger">Zinger Burger</div><span class="pr" data-edit="t43" data-edit-label="Text — $5">$5</span></div>
-    <div class="mi"><div data-edit="t44" data-edit-label="Text — Musahab Burger">Musahab Burger</div><span class="pr" data-edit="t45" data-edit-label="Text — $5">$5</span></div>
-    <div class="mi"><div data-edit="t46" data-edit-label="Text — Zinger Twister">Zinger Twister</div><span class="pr" data-edit="t47" data-edit-label="Text — $5">$5</span></div>
-    <div class="mi"><div data-edit="t48" data-edit-label="Text — Mushab Wrap">Mushab Wrap</div><span class="pr" data-edit="t49" data-edit-label="Text — $5">$5</span></div>
-    <div class="mi"><div data-edit="t50" data-edit-label="Text — Crispy Twister">Crispy Twister</div><span class="pr" data-edit="t51" data-edit-label="Text — $5">$5</span></div>
-    <div class="mi"><div data-edit="t52" data-edit-label="Text — Shrimp Twister">Shrimp Twister</div><span class="pr" data-edit="t53" data-edit-label="Text — $5.5">$5.5</span></div>
-    <div class="foot" data-edit="t54" data-edit-label="Text — COMBO IT — FRIES &amp; KINZA COLA +$3">COMBO IT — FRIES &amp; KINZA COLA +$3</div>
+    <h3><xen data-edit="t95" data-edit-label="Text (EN): Special Sandwiches">Special Sandwiches</xen><xar data-edit="t96" data-edit-label="Text (AR): سندويشات سبيشال">سندويشات سبيشال</xar></h3>
+    <div class="mi"><div><xen>Big Adnan Baik<small data-edit="t40" data-edit-label="Text — the double-decker legend">the double-decker legend</small></xen><xar>بيغ عدنان بيك<small data-edit="t97" data-edit-label="Text: الدبل ديكر الأسطورة">الدبل ديكر الأسطورة</small></xar></div><span class="pr" data-edit="t41" data-edit-label="Text — $8">$8</span></div>
+    <div class="mi"><div><xen data-edit="t98" data-edit-label="Text (EN): Zinger Burger">Zinger Burger</xen><xar data-edit="t99" data-edit-label="Text (AR): زينجر برغر">زينجر برغر</xar></div><span class="pr" data-edit="t43" data-edit-label="Text — $5">$5</span></div>
+    <div class="mi"><div><xen data-edit="t100" data-edit-label="Text (EN): Musahab Burger">Musahab Burger</xen><xar data-edit="t101" data-edit-label="Text (AR): مسحّب برغر">مسحّب برغر</xar></div><span class="pr" data-edit="t45" data-edit-label="Text — $5">$5</span></div>
+    <div class="mi"><div><xen data-edit="t102" data-edit-label="Text (EN): Zinger Twister">Zinger Twister</xen><xar data-edit="t103" data-edit-label="Text (AR): زينجر تويستر">زينجر تويستر</xar></div><span class="pr" data-edit="t47" data-edit-label="Text — $5">$5</span></div>
+    <div class="mi"><div><xen data-edit="t104" data-edit-label="Text (EN): Mushab Wrap">Mushab Wrap</xen><xar data-edit="t105" data-edit-label="Text (AR): لفّة مسحّب">لفّة مسحّب</xar></div><span class="pr" data-edit="t49" data-edit-label="Text — $5">$5</span></div>
+    <div class="mi"><div><xen data-edit="t106" data-edit-label="Text (EN): Crispy Twister">Crispy Twister</xen><xar data-edit="t107" data-edit-label="Text (AR): كرسبي تويستر">كرسبي تويستر</xar></div><span class="pr" data-edit="t51" data-edit-label="Text — $5">$5</span></div>
+    <div class="mi"><div><xen data-edit="t108" data-edit-label="Text (EN): Shrimp Twister">Shrimp Twister</xen><xar data-edit="t109" data-edit-label="Text (AR): شريمب تويستر">شريمب تويستر</xar></div><span class="pr" data-edit="t53" data-edit-label="Text — $5.5">$5.5</span></div>
+    <div class="foot"><xen data-edit="t110" data-edit-label="Text (EN): COMBO IT — FRIES &amp; KINZA COLA +$3">COMBO IT — FRIES &amp; KINZA COLA +$3</xen><xar data-edit="t111" data-edit-label="Text (AR): خلّيها كومبو — بطاطا وكينزا كولا +$3">خلّيها كومبو — بطاطا وكينزا كولا +$3</xar></div>
    </div>
    <div class="mpanel">
-    <h3 data-edit="t55" data-edit-label="Heading — Meals — fries, garlic &amp; bunz in">Meals — fries, garlic &amp; bunz in</h3>
-    <div class="mi"><div>Broasted Meal<small data-edit="t56" data-edit-label="Text — 4 pcs, golden">4 pcs, golden</small></div></div>
-    <div class="mi"><div>Crispy Meal<small data-edit="t57" data-edit-label="Text — 5 pcs, the crunch">5 pcs, the crunch</small></div></div>
-    <div class="mi"><div>Musahab Meal<small data-edit="t58" data-edit-label="Text — 7 or 10 pcs">7 or 10 pcs</small></div></div>
-    <div class="mi"><div>Fried Fish Fillet<small data-edit="t59" data-edit-label="Text — 6 or 9 pcs · tarator &amp; cocktail sa…">6 or 9 pcs · tarator &amp; cocktail sauce</small></div></div>
-    <div class="mi"><div>Shrimp<small data-edit="t60" data-edit-label="Text — 10 pcs regular · 7 pcs jumbo">10 pcs regular · 7 pcs jumbo</small></div></div>
-    <div class="foot" data-edit="t61" data-edit-label="Text — PRICED AT THE COUNTER — ASK AWAY">PRICED AT THE COUNTER — ASK AWAY</div>
+    <h3><xen data-edit="t112" data-edit-label="Text (EN): Meals — fries, garlic &amp; bunz in">Meals — fries, garlic &amp; bunz in</xen><xar data-edit="t113" data-edit-label="Text (AR): وجبات — مع بطاطا وثومية وخبز">وجبات — مع بطاطا وثومية وخبز</xar></h3>
+    <div class="mi"><div><xen>Broasted Meal<small data-edit="t56" data-edit-label="Text — 4 pcs, golden">4 pcs, golden</small></xen><xar>وجبة بروستد<small data-edit="t114" data-edit-label="Text: 4 قطع، ذهبية">4 قطع، ذهبية</small></xar></div></div>
+    <div class="mi"><div><xen>Crispy Meal<small data-edit="t57" data-edit-label="Text — 5 pcs, the crunch">5 pcs, the crunch</small></xen><xar>وجبة كرسبي<small data-edit="t115" data-edit-label="Text: 5 قطع، القرمشة">5 قطع، القرمشة</small></xar></div></div>
+    <div class="mi"><div><xen>Musahab Meal<small data-edit="t58" data-edit-label="Text — 7 or 10 pcs">7 or 10 pcs</small></xen><xar>وجبة مسحّب<small data-edit="t116" data-edit-label="Text: 7 أو 10 قطع">7 أو 10 قطع</small></xar></div></div>
+    <div class="mi"><div><xen>Fried Fish Fillet<small data-edit="t59" data-edit-label="Text — 6 or 9 pcs · tarator &amp; cocktail sa…">6 or 9 pcs · tarator &amp; cocktail sauce</small></xen><xar>فيليه سمك مقلي<small data-edit="t117" data-edit-label="Text: 6 أو 9 قطع · طرطور وصوص كوكتيل">6 أو 9 قطع · طرطور وصوص كوكتيل</small></xar></div></div>
+    <div class="mi"><div><xen>Shrimp<small data-edit="t60" data-edit-label="Text — 10 pcs regular · 7 pcs jumbo">10 pcs regular · 7 pcs jumbo</small></xen><xar>قريدس<small data-edit="t118" data-edit-label="Text: 10 قطع عادي · 7 قطع جامبو">10 قطع عادي · 7 قطع جامبو</small></xar></div></div>
+    <div class="foot"><xen data-edit="t119" data-edit-label="Text (EN): PRICED AT THE COUNTER — ASK AWAY">PRICED AT THE COUNTER — ASK AWAY</xen><xar data-edit="t120" data-edit-label="Text (AR): الأسعار عالكاونتر — إسألوا براحتكن">الأسعار عالكاونتر — إسألوا براحتكن</xar></div>
    </div>
    <div class="mpanel">
-    <h3 data-edit="t62" data-edit-label="Heading — Family Boxes">Family Boxes</h3>
-    <div class="mi"><div>Broasted Family<small data-edit="t63" data-edit-label="Text — 12 or 16 pcs · fries, colslow, garlic,…">12 or 16 pcs · fries, colslow, garlic, bunz</small></div></div>
-    <div class="mi"><div>Crispy Family<small data-edit="t64" data-edit-label="Text — 10 · 15 · 20 pcs">10 · 15 · 20 pcs</small></div></div>
-    <div class="mi"><div>Musahab Albaik<small data-edit="t65" data-edit-label="Text — 24 or 32 pcs, the big rig">24 or 32 pcs, the big rig</small></div></div>
-    <div class="mi"><div>Mix Family<small data-edit="t66" data-edit-label="Text — broasted + crispy + musahab + shrimps">broasted + crispy + musahab + shrimps</small></div></div>
-    <div class="foot" data-edit="t67" data-edit-label="Text — FEEDS THE WHOLE TABLE. AND THEN SOME.">FEEDS THE WHOLE TABLE. AND THEN SOME.</div>
+    <h3><xen data-edit="t121" data-edit-label="Text (EN): Family Boxes">Family Boxes</xen><xar data-edit="t122" data-edit-label="Text (AR): علب العيلة">علب العيلة</xar></h3>
+    <div class="mi"><div><xen>Broasted Family<small data-edit="t63" data-edit-label="Text — 12 or 16 pcs · fries, colslow, garlic,…">12 or 16 pcs · fries, colslow, garlic, bunz</small></xen><xar>بروستد فاميلي<small data-edit="t123" data-edit-label="Text: 12 أو 16 قطعة · بطاطا، كول سلو، ثومية،…">12 أو 16 قطعة · بطاطا، كول سلو، ثومية، خبز</small></xar></div></div>
+    <div class="mi"><div><xen>Crispy Family<small data-edit="t64" data-edit-label="Text — 10 · 15 · 20 pcs">10 · 15 · 20 pcs</small></xen><xar>كرسبي فاميلي<small data-edit="t124" data-edit-label="Text: 10 · 15 · 20 قطعة">10 · 15 · 20 قطعة</small></xar></div></div>
+    <div class="mi"><div><xen>Musahab Albaik<small data-edit="t65" data-edit-label="Text — 24 or 32 pcs, the big rig">24 or 32 pcs, the big rig</small></xen><xar>مسحّب البيك<small data-edit="t125" data-edit-label="Text: 24 أو 32 قطعة، الحجم الكبير">24 أو 32 قطعة، الحجم الكبير</small></xar></div></div>
+    <div class="mi"><div><xen>Mix Family<small data-edit="t66" data-edit-label="Text — broasted + crispy + musahab + shrimps">broasted + crispy + musahab + shrimps</small></xen><xar>ميكس فاميلي<small data-edit="t126" data-edit-label="Text: بروستد + كرسبي + مسحّب + قريدس">بروستد + كرسبي + مسحّب + قريدس</small></xar></div></div>
+    <div class="foot"><xen data-edit="t127" data-edit-label="Text (EN): FEEDS THE WHOLE TABLE. AND THEN SOME.">FEEDS THE WHOLE TABLE. AND THEN SOME.</xen><xar data-edit="t128" data-edit-label="Text (AR): بتكفّي الطاولة كلّها. وبيفضل كمان.">بتكفّي الطاولة كلّها. وبيفضل كمان.</xar></div>
    </div>
   </div>
   <div class="starters rv">
-   <b data-edit="t68" data-edit-label="Text — Starters:">Starters:</b>
-   <span data-edit="t69" data-edit-label="Text — French fries">French fries</span><span data-edit="t70" data-edit-label="Text — Potato wedges">Potato wedges</span><span data-edit="t71" data-edit-label="Text — Curly fries">Curly fries</span><span data-edit="t72" data-edit-label="Text — Mozzarella sticks">Mozzarella sticks</span><span data-edit="t73" data-edit-label="Text — Crazy boneless">Crazy boneless</span><span data-edit="t74" data-edit-label="Text — Cheese balls">Cheese balls</span><span data-edit="t75" data-edit-label="Text — Musahab fingers">Musahab fingers</span>
+   <b><xen data-edit="t129" data-edit-label="Text (EN): Starters:">Starters:</xen><xar data-edit="t130" data-edit-label="Text (AR): مقبّلات:">مقبّلات:</xar></b>
+   <span><xen data-edit="t131" data-edit-label="Text (EN): French fries">French fries</xen><xar data-edit="t132" data-edit-label="Text (AR): بطاطا مقلية">بطاطا مقلية</xar></span><span><xen data-edit="t133" data-edit-label="Text (EN): Potato wedges">Potato wedges</xen><xar data-edit="t134" data-edit-label="Text (AR): بطاطا ويدجز">بطاطا ويدجز</xar></span><span><xen data-edit="t135" data-edit-label="Text (EN): Curly fries">Curly fries</xen><xar data-edit="t136" data-edit-label="Text (AR): بطاطا كيرلي">بطاطا كيرلي</xar></span><span><xen data-edit="t137" data-edit-label="Text (EN): Mozzarella sticks">Mozzarella sticks</xen><xar data-edit="t138" data-edit-label="Text (AR): أصابع موزاريلا">أصابع موزاريلا</xar></span><span><xen data-edit="t139" data-edit-label="Text (EN): Crazy boneless">Crazy boneless</xen><xar data-edit="t140" data-edit-label="Text (AR): كرايزي بونلس">كرايزي بونلس</xar></span><span><xen data-edit="t141" data-edit-label="Text (EN): Cheese balls">Cheese balls</xen><xar data-edit="t142" data-edit-label="Text (AR): كرات جبنة">كرات جبنة</xar></span><span><xen data-edit="t143" data-edit-label="Text (EN): Musahab fingers">Musahab fingers</xen><xar data-edit="t144" data-edit-label="Text (AR): أصابع مسحّب">أصابع مسحّب</xar></span>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
  <div class="wrap">
-  <h2 class="rv">EXHIBIT: <em data-edit="t76" data-edit-label="Text — GOLD">GOLD</em></h2>
+  <h2 class="rv"><xen>EXHIBIT: <em data-edit="t76" data-edit-label="Text — GOLD">GOLD</em></xen><xar>معرض: <em data-edit="t145" data-edit-label="Text: الذهب">الذهب</em></xar></h2>
   <div class="g-grid"><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a></div>
  </div>
 </section>
 
 <section class="burst-w" id="reviews">
  <div class="wrap">
-  <h2 class="rv" data-edit="t77" data-edit-label="Title — HAMRA HAS SPOKEN">HAMRA HAS SPOKEN</h2>
-  <div class="b-grid"><div class="brv rv"><p data-edit="t78" data-edit-label="Text — Great food, fast service, friendly sta…">Great food, fast service, friendly staff, and a clean place. Everything was fresh and tasty. Highly recommended!</p><div class="who" data-edit="t79" data-edit-label="Text — Google review">Google review</div></div><div class="brv rv"><p data-edit="t80" data-edit-label="Text — When my order was not good, I received…">When my order was not good, I received a call from the shop — they follow up on customer satisfaction and offered to send a new order.</p><div class="who" data-edit="t81" data-edit-label="Text — Google review">Google review</div></div><div class="brv rv"><p data-edit="t82" data-edit-label="Text — The fries were very good, and the garl…">The fries were very good, and the garlic sauce too.</p><div class="who" data-edit="t83" data-edit-label="Text — Google review">Google review</div></div></div>
+  <h2 class="rv"><xen data-edit="t146" data-edit-label="Text (EN): HAMRA HAS SPOKEN">HAMRA HAS SPOKEN</xen><xar data-edit="t147" data-edit-label="Text (AR): الحمرا قالت كلمتها">الحمرا قالت كلمتها</xar></h2>
+  <div class="b-grid"><div class="brv rv"><p data-edit="t78" data-edit-label="Text — Great food, fast service, friendly sta…">Great food, fast service, friendly staff, and a clean place. Everything was fresh and tasty. Highly recommended!</p><div class="who"><xen data-edit="t148" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t149" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div><div class="brv rv"><p data-edit="t80" data-edit-label="Text — When my order was not good, I received…">When my order was not good, I received a call from the shop — they follow up on customer satisfaction and offered to send a new order.</p><div class="who"><xen data-edit="t150" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t151" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div><div class="brv rv"><p data-edit="t82" data-edit-label="Text — The fries were very good, and the garl…">The fries were very good, and the garlic sauce too.</p><div class="who"><xen data-edit="t152" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t153" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2>THE BUCKET IS <em data-edit="t84" data-edit-label="Text — CALLING.">CALLING.</em></h2>
+ <h2><xen>THE BUCKET IS <em data-edit="t84" data-edit-label="Text — CALLING.">CALLING.</em></xen><xar>الدلو <em data-edit="t154" data-edit-label="Text: عم يناديك.">عم يناديك.</em></xar></h2>
  <a class="phone" href="tel:+96178733133" data-edit="t85" data-edit-label="Button / link — +961 78 733 133">+961 78 733 133</a>
- <p class="meta">Royal Garden Hotel bldg., Leon Street, Hamra, Ras Beirut, Lebanon<br>Open daily · 11:00 AM – 2:00 AM</p>
+ <p class="meta"><xen>Royal Garden Hotel bldg., Leon Street, Hamra, Ras Beirut, Lebanon<br>Open daily · 11:00 AM – 2:00 AM</xen><xar>بناية فندق رويال غاردن، شارع ليون، الحمرا، رأس بيروت، لبنان<br>مفتوح كل يوم · 11:00 صباحاً – 2:00 بعد نصّ الليل</xar></p>
  <div class="cta">
-  <a class="btn gr" href="tel:+96178733133" data-edit="t86" data-edit-label="Button / link — Yalla, call">Yalla, call</a>
-  <a class="btn wa" href="https://wa.me/96178733133" target="_blank" rel="noopener" data-edit="t87" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a>
-  <a class="btn" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener" data-edit="t88" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn gr" href="tel:+96178733133"><xen data-edit="t155" data-edit-label="Text (EN): Yalla, call">Yalla, call</xen><xar data-edit="t156" data-edit-label="Text (AR): يلّا، إتّصلوا">يلّا، إتّصلوا</xar></a>
+  <a class="btn wa" href="https://wa.me/96178733133" target="_blank" rel="noopener"><xen data-edit="t157" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t158" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener"><xen data-edit="t159" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t160" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96178733133" data-edit="t89" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96178733133" target="_blank" rel="noopener" data-edit="t90" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
- <a class="m" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener" data-edit="t91" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96178733133"><xen data-edit="t161" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t162" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96178733133" target="_blank" rel="noopener"><xen data-edit="t163" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t164" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+ <a class="m" href="https://maps.google.com/?cid=15304558156230227150" target="_blank" rel="noopener"><xen data-edit="t165" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t166" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Adnan Baik · Beirut, Lebanon</footer>
+<footer><xen data-edit="t167" data-edit-label="Text (EN): © Adnan Baik · Beirut, Lebanon">© Adnan Baik · Beirut, Lebanon</xen><xar data-edit="t168" data-edit-label="Text (AR): © عدنان بيك · بيروت، لبنان">© عدنان بيك · بيروت، لبنان</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t169" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"عدنان بيك — مطعم بروستد في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

@@ -126,38 +126,72 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Changa',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#E4642B;color:#191512;border:1.5px solid #221D1A;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <nav>
- <a class="brand" href="#">MASHA<span data-edit="t1" data-edit-label="Text — WISH">WISH</span></a>
+ <a class="brand" href="#"><xen>MASHA<span data-edit="t1" data-edit-label="Text — WISH">WISH</span></xen><xar>مشا<span data-edit="t2" data-edit-label="Text: ويش">ويش</span></xar></a>
  <div class="links">
-  <a href="#grill" data-edit="t2" data-edit-label="Button / link — The grill">The grill</a><a href="#menu" data-edit="t3" data-edit-label="Button / link — Menu">Menu</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Photos">Photos</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+9611449390" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#grill"><xen data-edit="t3" data-edit-label="Text (EN): The grill">The grill</xen><xar data-edit="t4" data-edit-label="Text (AR): الشوّاية">الشوّاية</xar></a><a href="#menu"><xen data-edit="t5" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t6" data-edit-label="Text (AR): المنيو">المنيو</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Photos">Photos</xen><xar data-edit="t8" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t9" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t10" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+9611449390"><xen data-edit="t11" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t12" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div class="smokebg"></div>
- <span class="kick" data-edit="t7" data-edit-label="Text — Family-owned · Mar Mikhael · Charcoal …">Family-owned · Mar Mikhael · Charcoal only</span>
- <h1 data-edit="t8" data-edit-label="Big title — MASHAWISH">MASHAWISH</h1>
- <p class="arb" data-edit="t9" data-edit-label="Text — مشاويش">مشاويش</p>
- <p class="tg" data-edit="t10" data-edit-label="Text — Family-run charcoal grill in Mar Mikha…">Family-run charcoal grill in Mar Mikhael — skewers, tawuk and smoke you can trust.</p>
+ <span class="kick"><xen data-edit="t13" data-edit-label="Text (EN): Family-owned · Mar Mikhael · Charcoal …">Family-owned · Mar Mikhael · Charcoal only</xen><xar data-edit="t14" data-edit-label="Text (AR): ملك عيلة · مار مخايل · فحم بس">ملك عيلة · مار مخايل · فحم بس</xar></span>
+ <h1><xen data-edit="t15" data-edit-label="Text (EN): MASHAWISH">MASHAWISH</xen><xar data-edit="t16" data-edit-label="Text (AR): مشاويش">مشاويش</xar></h1>
+ <p class="arb"><xen data-edit="t18" data-edit-label="Text (EN): مشاويش">مشاويش</xen><xar><span class="lat" data-edit="t20" data-edit-label="Text: MASHAWISH">MASHAWISH</span></xar></p>
+ <p class="tg"><xen data-edit="t21" data-edit-label="Text (EN): Family-run charcoal grill in Mar Mikha…">Family-run charcoal grill in Mar Mikhael — skewers, tawuk and smoke you can trust.</xen><xar data-edit="t23" data-edit-label="Text (AR): شوّاية فحم بإدارة عيلة بمار مخايل — أس…">شوّاية فحم بإدارة عيلة بمار مخايل — أسياخ، طاووق، ودخّان بتثق فيه.</xar></p>
  <div class="skew">
-  <span class="sk o" data-edit="t11" data-edit-label="Text — ★ 4.6 · 237 reviews">★ 4.6 · 237 reviews</span>
-  <span class="sk" data-edit="t12" data-edit-label="Text — Alexander Fleming St">Alexander Fleming St</span>
-  <span class="sk" data-edit="t13" data-edit-label="Text — Till midnight">Till midnight</span>
+  <span class="sk o"><xen data-edit="t24" data-edit-label="Text (EN): ★ 4.6 · 237 reviews">★ 4.6 · 237 reviews</xen><xar data-edit="t26" data-edit-label="Text (AR): ★ 4.6 · 237 تقييم">★ 4.6 · 237 تقييم</xar></span>
+  <span class="sk"><xen data-edit="t27" data-edit-label="Text (EN): Alexander Fleming St">Alexander Fleming St</xen><xar data-edit="t28" data-edit-label="Text (AR): شارع ألكسندر فليمنغ">شارع ألكسندر فليمنغ</xar></span>
+  <span class="sk"><xen data-edit="t30" data-edit-label="Text (EN): Till midnight">Till midnight</xen><xar data-edit="t31" data-edit-label="Text (AR): لحدّ منتصف الليل">لحدّ منتصف الليل</xar></span>
  </div>
  <div class="cta">
-  <a class="btn o" href="tel:+9611449390" data-edit="t14" data-edit-label="Button / link — Call +961 1 449 390">Call +961 1 449 390</a>
-  <a class="btn" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+  <a class="btn o" href="tel:+9611449390"><xen data-edit="t32" data-edit-label="Text (EN): Call +961 1 449 390">Call +961 1 449 390</xen><xar data-edit="t33" data-edit-label="Text (AR): إتّصلوا +961 1 449 390">إتّصلوا +961 1 449 390</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener"><xen data-edit="t34" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t35" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
  </div>
 </header>
 
 <div class="strip rv">
  <div class="frame">
   <img src="img/04.jpg" alt="Mashawish Grill Bar — on the charcoal">
-  <span class="lbl" data-edit="t16" data-edit-label="Text — LIVE FROM THE CHARCOAL">LIVE FROM THE CHARCOAL</span>
+  <span class="lbl"><xen data-edit="t36" data-edit-label="Text (EN): LIVE FROM THE CHARCOAL">LIVE FROM THE CHARCOAL</xen><xar data-edit="t37" data-edit-label="Text (AR): مباشرة من عالفحم">مباشرة من عالفحم</xar></span>
  </div>
 </div>
 
@@ -165,9 +199,9 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
 
 <section class="grill" id="grill">
  <div class="wrap">
-  <h2 class="rv">In order of <span data-edit="t17" data-edit-label="Text — smoke">smoke</span></h2>
-  <p class="sub" data-edit="t18" data-edit-label="Text — What the regulars order before the men…">What the regulars order before the menu arrives</p>
-  <div class="g3"><div class="gc rv"><span class="no" data-edit="t19" data-edit-label="Text — 01">01</span><img src="img/07.jpg" alt="Lahme over coals" loading="lazy"><h3 data-edit="t20" data-edit-label="Heading — Lahme over coals">Lahme over coals</h3><p data-edit="t21" data-edit-label="Text — Cubes of marinated beef dripping onto …">Cubes of marinated beef dripping onto live charcoal — the house signature.</p></div><div class="gc rv"><span class="no" data-edit="t22" data-edit-label="Text — 02">02</span><img src="img/04.jpg" alt="The vegetable grill" loading="lazy"><h3 data-edit="t23" data-edit-label="Heading — The vegetable grill">The vegetable grill</h3><p data-edit="t24" data-edit-label="Text — Eggplant and kousa charred sweet besid…">Eggplant and kousa charred sweet beside the meat.</p></div><div class="gc rv"><span class="no" data-edit="t25" data-edit-label="Text — 03">03</span><img src="img/09.jpg" alt="Makanek & starters" loading="lazy"><h3 data-edit="t26" data-edit-label="Heading — Makanek & starters">Makanek & starters</h3><p data-edit="t27" data-edit-label="Text — The little sausages that never survive…">The little sausages that never survive to the mains.</p></div></div>
+  <h2 class="rv"><xen>In order of <span data-edit="t17" data-edit-label="Text — smoke">smoke</span></xen><xar>حسب ترتيب <span data-edit="t38" data-edit-label="Text: الدخّان">الدخّان</span></xar></h2>
+  <p class="sub"><xen data-edit="t39" data-edit-label="Text (EN): What the regulars order before the men…">What the regulars order before the menu arrives</xen><xar data-edit="t40" data-edit-label="Text (AR): شو بيطلبوا الزبائن قبل ما يوصل المنيو">شو بيطلبوا الزبائن قبل ما يوصل المنيو</xar></p>
+  <div class="g3"><div class="gc rv"><span class="no" data-edit="t19" data-edit-label="Text — 01">01</span><img src="img/07.jpg" alt="Lahme over coals" loading="lazy"><h3><xen data-edit="t42" data-edit-label="Text (EN): Lahme over coals">Lahme over coals</xen><xar data-edit="t52" data-edit-label="Text (AR): لحمة عالجمر">لحمة عالجمر</xar></h3><p><xen data-edit="t53" data-edit-label="Text (EN): Cubes of marinated beef dripping onto …">Cubes of marinated beef dripping onto live charcoal — the house signature.</xen><xar data-edit="t54" data-edit-label="Text (AR): مكعّبات لحمة متبّلة عم تنقّط عالفحم — …">مكعّبات لحمة متبّلة عم تنقّط عالفحم — توقيع البيت.</xar></p></div><div class="gc rv"><span class="no" data-edit="t22" data-edit-label="Text — 02">02</span><img src="img/04.jpg" alt="The vegetable grill" loading="lazy"><h3><xen data-edit="t55" data-edit-label="Text (EN): The vegetable grill">The vegetable grill</xen><xar data-edit="t56" data-edit-label="Text (AR): مشاوي الخضرة">مشاوي الخضرة</xar></h3><p><xen data-edit="t57" data-edit-label="Text (EN): Eggplant and kousa charred sweet besid…">Eggplant and kousa charred sweet beside the meat.</xen><xar data-edit="t58" data-edit-label="Text (AR): باذنجان وكوسا مشوّحين حلوين جنب اللحمة…">باذنجان وكوسا مشوّحين حلوين جنب اللحمة.</xar></p></div><div class="gc rv"><span class="no" data-edit="t25" data-edit-label="Text — 03">03</span><img src="img/09.jpg" alt="Makanek & starters" loading="lazy"><h3><xen data-edit="t59" data-edit-label="Text (EN): Makanek & starters">Makanek & starters</xen><xar data-edit="t60" data-edit-label="Text (AR): مقانق ومقبّلات">مقانق ومقبّلات</xar></h3><p><xen data-edit="t61" data-edit-label="Text (EN): The little sausages that never survive…">The little sausages that never survive to the mains.</xen><xar data-edit="t62" data-edit-label="Text (AR): السجقات الصغيرة يلّي ما بتوصل للأطباق …">السجقات الصغيرة يلّي ما بتوصل للأطباق الرئيسية أبداً.</xar></p></div></div>
  </div>
 </section>
 
@@ -175,15 +209,15 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
  <div class="grid">
   <div class="board rv"><img src="img/02.jpg" alt="Mashawish Grill Bar chalkboard menu"></div>
   <div class="rv">
-   <span class="k" data-edit="t28" data-edit-label="Text — The chalkboard">The chalkboard</span>
-   <h2>Written in <span data-edit="t29" data-edit-label="Text — chalk">chalk</span>, priced with mercy</h2>
-   <p data-edit="t30" data-edit-label="Text — World grill on one side, Lebanese gril…">World grill on one side, Lebanese grill on the other, mezze holding the middle — exactly as chalked above the open kitchen.</p>
+   <span class="k"><xen data-edit="t63" data-edit-label="Text (EN): The chalkboard">The chalkboard</xen><xar data-edit="t64" data-edit-label="Text (AR): لوح الطبشور">لوح الطبشور</xar></span>
+   <h2><xen>Written in <span data-edit="t29" data-edit-label="Text — chalk">chalk</span>, priced with mercy</xen><xar>مكتوب <span data-edit="t65" data-edit-label="Text: بالطبشور">بالطبشور</span>، ومسعّر بالرحمة</xar></h2>
+   <p><xen data-edit="t66" data-edit-label="Text (EN): World grill on one side, Lebanese gril…">World grill on one side, Lebanese grill on the other, mezze holding the middle — exactly as chalked above the open kitchen.</xen><xar data-edit="t67" data-edit-label="Text (AR): مشاوي عالمي من جهة، ومشاوي لبنانية من …">مشاوي عالمي من جهة، ومشاوي لبنانية من الجهة التانية، والمازة بالنصّ — بالضبط متل ما هوّي مكتوب فوق المطبخ المفتوح.</xar></p>
    <ul>
-    <li><b data-edit="t31" data-edit-label="Text — Lahme skewers">Lahme skewers</b><span data-edit="t32" data-edit-label="Text — charcoal">charcoal</span></li>
-    <li><b data-edit="t33" data-edit-label="Text — Shish tawuk">Shish tawuk</b><span data-edit="t34" data-edit-label="Text — the favorite">the favorite</span></li>
-    <li><b data-edit="t35" data-edit-label="Text — Kebab / orfali">Kebab / orfali</b><span data-edit="t36" data-edit-label="Text — juicy">juicy</span></li>
-    <li><b data-edit="t37" data-edit-label="Text — Makanek &amp; spicy alay">Makanek &amp; spicy alay</b><span data-edit="t38" data-edit-label="Text — starters">starters</span></li>
-    <li><b data-edit="t39" data-edit-label="Text — Fattoush, raheb, hommus">Fattoush, raheb, hommus</b><span data-edit="t40" data-edit-label="Text — mezze">mezze</span></li>
+    <li><b><xen data-edit="t68" data-edit-label="Text (EN): Lahme skewers">Lahme skewers</xen><xar data-edit="t69" data-edit-label="Text (AR): أسياخ لحمة">أسياخ لحمة</xar></b><span><xen data-edit="t70" data-edit-label="Text (EN): charcoal">charcoal</xen><xar data-edit="t71" data-edit-label="Text (AR): عالفحم">عالفحم</xar></span></li>
+    <li><b><xen data-edit="t72" data-edit-label="Text (EN): Shish tawuk">Shish tawuk</xen><xar data-edit="t73" data-edit-label="Text (AR): شيش طاووق">شيش طاووق</xar></b><span><xen data-edit="t74" data-edit-label="Text (EN): the favorite">the favorite</xen><xar data-edit="t75" data-edit-label="Text (AR): المفضّل">المفضّل</xar></span></li>
+    <li><b><xen data-edit="t76" data-edit-label="Text (EN): Kebab / orfali">Kebab / orfali</xen><xar data-edit="t77" data-edit-label="Text (AR): كباب / أورفلي">كباب / أورفلي</xar></b><span><xen data-edit="t78" data-edit-label="Text (EN): juicy">juicy</xen><xar data-edit="t79" data-edit-label="Text (AR): طري">طري</xar></span></li>
+    <li><b><xen data-edit="t80" data-edit-label="Text (EN): Makanek &amp; spicy alay">Makanek &amp; spicy alay</xen><xar data-edit="t81" data-edit-label="Text (AR): مقانق وعلّاية حارّة">مقانق وعلّاية حارّة</xar></b><span><xen data-edit="t82" data-edit-label="Text (EN): starters">starters</xen><xar data-edit="t83" data-edit-label="Text (AR): مقبّلات">مقبّلات</xar></span></li>
+    <li><b><xen data-edit="t84" data-edit-label="Text (EN): Fattoush, raheb, hommus">Fattoush, raheb, hommus</xen><xar data-edit="t85" data-edit-label="Text (AR): فتّوش، راهب، حمّص">فتّوش، راهب، حمّص</xar></b><span><xen data-edit="t86" data-edit-label="Text (EN): mezze">mezze</xen><xar data-edit="t87" data-edit-label="Text (AR): مازة">مازة</xar></span></li>
    </ul>
   </div>
  </div>
@@ -191,41 +225,53 @@ footer{text-align:center;padding:0 5vw 110px;font-size:.8rem;color:var(--ash)}
 
 <section class="gal" id="gallery">
  <div class="wrap">
-  <h2 class="rv">The smoke <span data-edit="t41" data-edit-label="Text — reel">reel</span></h2>
-  <p class="sub" data-edit="t42" data-edit-label="Text — Drag through the coals ⟶">Drag through the coals ⟶</p>
+  <h2 class="rv"><xen>The smoke <span data-edit="t41" data-edit-label="Text — reel">reel</span></xen><xar>شريط <span data-edit="t88" data-edit-label="Text: الدخّان">الدخّان</span></xar></h2>
+  <p class="sub"><xen data-edit="t89" data-edit-label="Text (EN): Drag through the coals ⟶">Drag through the coals ⟶</xen><xar data-edit="t90" data-edit-label="Text (AR): إسحبوا بين الجمرات ⟶">إسحبوا بين الجمرات ⟶</xar></p>
  </div>
  <div class="g-scroll"><div class="g-in"><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv">Burned into <span data-edit="t43" data-edit-label="Text — memory">memory</span></h2>
+  <h2 class="rv"><xen>Burned into <span data-edit="t43" data-edit-label="Text — memory">memory</span></xen><xar>محفورة <span data-edit="t91" data-edit-label="Text: بالذاكرة">بالذاكرة</span></xar></h2>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t44" data-edit-label="Text — Excellent local spot and some of the b…">Excellent local spot and some of the best food I had in Beirut. Recommended by a local and I ended up eating here several times. Mixed grill on two nights and the lamb chops another night.</p><div class="who" data-edit="t45" data-edit-label="Text — Pe wi">Pe wi</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t46" data-edit-label="Text — One of the best Mashewe, meat skewers …">One of the best Mashewe, meat skewers and grills in general. The shish tawuk is so good! All in all delicious.</p><div class="who" data-edit="t47" data-edit-label="Text — Sary">Sary</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t48" data-edit-label="Text — Family owned, everything we tried was …">Family owned, everything we tried was great, great service. Recommended.</p><div class="who" data-edit="t49" data-edit-label="Text — Sarah Saleh">Sarah Saleh</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">FOLLOW THE <span data-edit="t50" data-edit-label="Text — SMOKE.">SMOKE.</span></h2>
+ <h2 class="rv"><xen>FOLLOW THE <span data-edit="t50" data-edit-label="Text — SMOKE.">SMOKE.</span></xen><xar>إتبعوا <span data-edit="t92" data-edit-label="Text: الدخّان.">الدخّان.</span></xar></h2>
  <a class="phone" href="tel:+9611449390" data-edit="t51" data-edit-label="Button / link — +961 1 449 390">+961 1 449 390</a>
- <p class="meta">Alexander Fleming Street, Mar Mikhael, Beirut, Lebanon<br>Mon-Sat 12 PM - 12 AM; Sun closed</p>
+ <p class="meta"><xen>Alexander Fleming Street, Mar Mikhael, Beirut, Lebanon<br>Mon-Sat 12 PM - 12 AM; Sun closed</xen><xar>شارع ألكسندر فليمنغ، مار مخايل، بيروت، لبنان<br>الإثنين-السبت 12 ظهراً - 12 منتصف الليل؛ الأحد مسكّر</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+9611449390" data-edit="t52" data-edit-label="Button / link — Call +961 1 449 390">Call +961 1 449 390</a> <a class="btn ig" href="https://instagram.com/mashawish.grill" target="_blank" rel="noopener" data-edit="t53" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener" data-edit="t54" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn" href="tel:+9611449390"><xen data-edit="t93" data-edit-label="Text (EN): Call +961 1 449 390">Call +961 1 449 390</xen><xar data-edit="t94" data-edit-label="Text (AR): إتّصلوا +961 1 449 390">إتّصلوا +961 1 449 390</xar></a> <a class="btn ig" href="https://instagram.com/mashawish.grill" target="_blank" rel="noopener"><xen data-edit="t95" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t96" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener"><xen data-edit="t97" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t98" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611449390" data-edit="t55" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611449390"><xen data-edit="t99" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t100" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/mashawish.grill" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener" data-edit="t56" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=4873248485410946626" target="_blank" rel="noopener"><xen data-edit="t101" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t102" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Mashawish Grill Bar · Mar Mikhael, Beirut</footer>
+<footer><xen data-edit="t103" data-edit-label="Text (EN): © Mashawish Grill Bar · Mar Mikhael, B…">© Mashawish Grill Bar · Mar Mikhael, Beirut</xen><xar data-edit="t104" data-edit-label="Text (AR): © مشاويش غريل بار · مار مخايل، بيروت">© مشاويش غريل بار · مار مخايل، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t105" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"مشاويش غريل بار — مطعم مشاوي في مار مخايل، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

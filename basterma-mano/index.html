@@ -150,64 +150,98 @@ footer{background:var(--ink);color:rgba(239,235,226,.55);text-align:center;font-
 </style>
 <style data-fx-orn>.stamp{animation:fxrestamp 13s ease-in-out infinite}
 @keyframes fxrestamp{0%,90%,100%{transform:rotate(8deg) scale(1)}94%{transform:rotate(8deg) scale(1.06)}97%{transform:rotate(7.4deg) scale(.995)}}
-@media (prefers-reduced-motion: reduce){.stamp{animation:none}}</style></head>
+@media (prefers-reduced-motion: reduce){.stamp{animation:none}}</style><link href='https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Reem Kufi',serif;--arb:'Noto Naskh Arabic',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:3px;cursor:pointer;
+  background:#C41E2F;color:#EFEBE2;border:1.5px solid #111110;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+html.ar .story p.body::first-letter{float:right;padding:4px 0 0 10px}
+</style>
+</head>
 <body>
 <div class="bar">
- <span data-edit="t1" data-edit-label="Text — EST. 1966 — BOURJ HAMMOUD">EST. 1966 — BOURJ HAMMOUD</span>
- <span class="mid" data-edit="t2" data-edit-label="Text — Shawarma restaurant · ★ 4.5 (4,345 rev…">Shawarma restaurant · ★ 4.5 (4,345 reviews)</span>
+ <span><xen data-edit="t1" data-edit-label="Text (EN): EST. 1966 — BOURJ HAMMOUD">EST. 1966 — BOURJ HAMMOUD</xen><xar data-edit="t2" data-edit-label="Text (AR): تأسّس 1966 — برج حمّود">تأسّس 1966 — برج حمّود</xar></span>
+ <span class="mid"><xen data-edit="t4" data-edit-label="Text (EN): Shawarma restaurant · ★ 4.5 (4,345 rev…">Shawarma restaurant · ★ 4.5 (4,345 reviews)</xen><xar data-edit="t6" data-edit-label="Text (AR): مطعم شاورما · ★ 4.5 (4,345 تقييم)">مطعم شاورما · ★ 4.5 (4,345 تقييم)</xar></span>
  <a href="tel:+9611268560" data-edit="t3" data-edit-label="Button / link — +961 1 268 560">+961 1 268 560</a>
 </div>
 
 <header class="mast">
- <div class="stamp arabic" data-edit="t4" data-edit-label="Text — بسترما مانو">بسترما مانو</div>
- <h1>BASTERMA<span class="out" data-edit="t5" data-edit-label="Text — MANO">MANO</span></h1>
+ <div class="stamp arabic"><xen data-edit="t8" data-edit-label="Text (EN): بسترما مانو">بسترما مانو</xen><xar><span class="lat" data-edit="t9" data-edit-label="Text: BASTERMA MANO">BASTERMA MANO</span></xar></div>
+ <h1><xen>BASTERMA<span class="out" data-edit="t5" data-edit-label="Text — MANO">MANO</span></xen><xar>بسترما<span class="out" data-edit="t10" data-edit-label="Text: مانو">مانو</span></xar></h1>
 </header>
 <div class="dateline">
- <div data-edit="t6" data-edit-label="Text — VOL. 59 — THREE GENERATIONS">VOL. 59 — THREE GENERATIONS</div>
- <div><b data-edit="t7" data-edit-label="Text — ★ 4.5">★ 4.5</b> / 4,345 REVIEWS</div>
- <div data-edit="t8" data-edit-label="Text — 10:00 AM – late (closes ~1–2 AM)">10:00 AM – late (closes ~1–2 AM)</div>
+ <div><xen data-edit="t11" data-edit-label="Text (EN): VOL. 59 — THREE GENERATIONS">VOL. 59 — THREE GENERATIONS</xen><xar data-edit="t13" data-edit-label="Text (AR): العدد 59 — ثلاثة أجيال">العدد 59 — ثلاثة أجيال</xar></div>
+ <div><xen><b data-edit="t7" data-edit-label="Text — ★ 4.5">★ 4.5</b> / 4,345 REVIEWS</xen><xar><b data-edit="t16" data-edit-label="Text: ★ 4.5">★ 4.5</b> / 4,345 تقييم</xar></div>
+ <div><xen data-edit="t18" data-edit-label="Text (EN): 10:00 AM – late (closes ~1–2 AM)">10:00 AM – late (closes ~1–2 AM)</xen><xar data-edit="t19" data-edit-label="Text (AR): 10:00 صباحاً – حتى وقت متأخّر (يسكّر ح…">10:00 صباحاً – حتى وقت متأخّر (يسكّر حوالي 1–2 بعد منتصف الليل)</xar></div>
 </div>
 
 <div class="lead">
  <div class="frame">
   <img src="img/02.jpg" alt="Basterma Mano">
-  <div class="capbar"><span class="tag" data-edit="t9" data-edit-label="Text — FIG. 001">FIG. 001</span><span class="txt" data-edit="t10" data-edit-label="Text — The spit at Arax Street — turning sinc…">The spit at Arax Street — turning since 1966. Photographed in Bourj Hammoud, Beirut.</span></div>
+  <div class="capbar"><span class="tag"><xen data-edit="t20" data-edit-label="Text (EN): FIG. 001">FIG. 001</xen><xar data-edit="t21" data-edit-label="Text (AR): صورة 001">صورة 001</xar></span><span class="txt"><xen data-edit="t22" data-edit-label="Text (EN): The spit at Arax Street — turning sinc…">The spit at Arax Street — turning since 1966. Photographed in Bourj Hammoud, Beirut.</xen><xar data-edit="t23" data-edit-label="Text (AR): السيخ في شارع أراكس — عم يدور من 1966.…">السيخ في شارع أراكس — عم يدور من 1966. تصوير في برج حمّود، بيروت.</xar></span></div>
  </div>
 </div>
 
 <section class="story" id="story">
  <div class="rv">
-  <span class="k" data-edit="t11" data-edit-label="Text — The record">The record</span>
-  <h2>Fifty-nine years on the <em data-edit="t12" data-edit-label="Text — same corner">same corner</em></h2>
-  <p class="body" data-edit="t13" data-edit-label="Text — Since 1966, Mano has been the beating …">Since 1966, Mano has been the beating heart of Bourj Hammoud. Three generations of one family curing basterma, hanging soujouk, and shaving shawarma off the spit the way it was always done. One street corner, one recipe book — and half of Beirut swearing it's the best sandwich in Lebanon.</p>
+  <span class="k"><xen data-edit="t24" data-edit-label="Text (EN): The record">The record</xen><xar data-edit="t25" data-edit-label="Text (AR): السجلّ">السجلّ</xar></span>
+  <h2><xen>Fifty-nine years on the <em data-edit="t12" data-edit-label="Text — same corner">same corner</em></xen><xar>تسعة وخمسون سنة على <em data-edit="t26" data-edit-label="Text: نفس الزاوية">نفس الزاوية</em></xar></h2>
+  <p class="body"><xen data-edit="t27" data-edit-label="Text (EN): Since 1966, Mano has been the beating …">Since 1966, Mano has been the beating heart of Bourj Hammoud. Three generations of one family curing basterma, hanging soujouk, and shaving shawarma off the spit the way it was always done. One street corner, one recipe book — and half of Beirut swearing it's the best sandwich in Lebanon.</xen><xar data-edit="t29" data-edit-label="Text (AR): من 1966، ومانو قلب برج حمّود النابض. ث…">من 1966، ومانو قلب برج حمّود النابض. ثلاثة أجيال من عيلة وحدة عم تكبّس البسترما، تعلّق السجق، وتقشّ الشاورما عن السيخ متل ما كانت تنعمل من زمان. زاوية شارع وحدة، دفتر وصفات واحد — ونص بيروت بتحلف إنّو أطيب سندويش بلبنان.</xar></p>
  </div>
  <div class="sideph rv">
-  <figure><img src="img/07.jpg" alt="" loading="lazy"><figcaption>ARCHIVE PRINT <span data-edit="t14" data-edit-label="Text — №2">№2</span></figcaption></figure>
-  <figure><img src="img/05.jpg" alt="" loading="lazy"><figcaption>ARCHIVE PRINT <span data-edit="t15" data-edit-label="Text — №3">№3</span></figcaption></figure>
+  <figure><img src="img/07.jpg" alt="" loading="lazy"><figcaption><xen class="c">ARCHIVE PRINT <span data-edit="t14" data-edit-label="Text — №2">№2</span></xen><xar class="c">طبعة من الأرشيف <span dir="ltr" data-edit="t30" data-edit-label="Text: №2">№2</span></xar></figcaption></figure>
+  <figure><img src="img/05.jpg" alt="" loading="lazy"><figcaption><xen class="c">ARCHIVE PRINT <span data-edit="t15" data-edit-label="Text — №3">№3</span></xen><xar class="c">طبعة من الأرشيف <span dir="ltr" data-edit="t32" data-edit-label="Text: №3">№3</span></xar></figcaption></figure>
  </div>
 </section>
 
 <section class="tl">
- <span class="k" data-edit="t16" data-edit-label="Text — Timeline">Timeline</span>
+ <span class="k"><xen data-edit="t33" data-edit-label="Text (EN): Timeline">Timeline</xen><xar data-edit="t35" data-edit-label="Text (AR): الخط الزمني">الخط الزمني</xar></span>
  <div class="tl-grid">
-  <div><b data-edit="t17" data-edit-label="Text — 1966">1966</b><p data-edit="t18" data-edit-label="Text — Mano opens on a street corner in Bourj…">Mano opens on a street corner in Bourj Hammoud. The basterma is cured in-house from day one.</p></div>
-  <div><b data-edit="t19" data-edit-label="Text — 1980s">1980s</b><p data-edit="t20" data-edit-label="Text — The soujouk recipe survives everything…">The soujouk recipe survives everything Beirut throws at it. The line outside doesn't get shorter.</p></div>
-  <div><b data-edit="t21" data-edit-label="Text — 2000s">2000s</b><p data-edit="t22" data-edit-label="Text — A second generation takes the knife. M…">A second generation takes the knife. Mano Bakery and Mano Burger join the family.</p></div>
-  <div><b data-edit="t23" data-edit-label="Text — TODAY">TODAY</b><p data-edit="t24" data-edit-label="Text — Three generations in. Half of Beirut s…">Three generations in. Half of Beirut still swears it's the best sandwich in Lebanon.</p></div>
+  <div><b data-edit="t17" data-edit-label="Text — 1966">1966</b><p><xen data-edit="t36" data-edit-label="Text (EN): Mano opens on a street corner in Bourj…">Mano opens on a street corner in Bourj Hammoud. The basterma is cured in-house from day one.</xen><xar data-edit="t37" data-edit-label="Text (AR): مانو بيفتح على زاوية شارع ببرج حمّود. …">مانو بيفتح على زاوية شارع ببرج حمّود. البسترما بتنكبّس بالمحلّ من أوّل يوم.</xar></p></div>
+  <div><b><xen data-edit="t38" data-edit-label="Text (EN): 1980s">1980s</xen><xar data-edit="t75" data-edit-label="Text (AR): الثمانينات">الثمانينات</xar></b><p><xen data-edit="t77" data-edit-label="Text (EN): The soujouk recipe survives everything…">The soujouk recipe survives everything Beirut throws at it. The line outside doesn't get shorter.</xen><xar data-edit="t78" data-edit-label="Text (AR): وصفة السجق بتضلّ متل ما هي رغم كلّ شي …">وصفة السجق بتضلّ متل ما هي رغم كلّ شي مرق على بيروت. والطابور عالباب ما قصر.</xar></p></div>
+  <div><b><xen data-edit="t79" data-edit-label="Text (EN): 2000s">2000s</xen><xar data-edit="t86" data-edit-label="Text (AR): الألفينات">الألفينات</xar></b><p><xen data-edit="t87" data-edit-label="Text (EN): A second generation takes the knife. M…">A second generation takes the knife. Mano Bakery and Mano Burger join the family.</xen><xar data-edit="t88" data-edit-label="Text (AR): الجيل التاني بيمسك السكّين. مانو بيكري…">الجيل التاني بيمسك السكّين. مانو بيكري ومانو برغر بينضمّوا للعيلة.</xar></p></div>
+  <div><b><xen data-edit="t89" data-edit-label="Text (EN): TODAY">TODAY</xen><xar data-edit="t90" data-edit-label="Text (AR): اليوم">اليوم</xar></b><p><xen data-edit="t91" data-edit-label="Text (EN): Three generations in. Half of Beirut s…">Three generations in. Half of Beirut still swears it's the best sandwich in Lebanon.</xen><xar data-edit="t92" data-edit-label="Text (AR): ثلاثة أجيال ونص بيروت لليوم بتحلف إنّو…">ثلاثة أجيال ونص بيروت لليوم بتحلف إنّو أطيب سندويش بلبنان.</xar></p></div>
  </div>
 </section>
 
-<div class="mq"><div class="tt"><span data-edit="t25" data-edit-label="Text — BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE …">BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE 1966 ✦ BOURJ HAMMOUD ✦ MANO BURGER ✦ MANO BAKERY ✦ BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE 1966 ✦ BOURJ HAMMOUD ✦ MANO BURGER ✦ MANO BAKERY ✦ </span></div></div>
+<div class="mq"><div class="tt"><span><xen data-edit="t93" data-edit-label="Text (EN): BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE …">BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE 1966 ✦ BOURJ HAMMOUD ✦ MANO BURGER ✦ MANO BAKERY ✦ BASTERMA ✦ SOUJOUK ✦ SHAWARMA ✦ SINCE 1966 ✦ BOURJ HAMMOUD ✦ MANO BURGER ✦ MANO BAKERY ✦ </xen><xar data-edit="t94" data-edit-label="Text (AR): بسترما ✦ سجق ✦ شاورما ✦ من 1966 ✦ برج …">بسترما ✦ سجق ✦ شاورما ✦ من 1966 ✦ برج حمّود ✦ مانو برغر ✦ مانو بيكري ✦ بسترما ✦ سجق ✦ شاورما ✦ من 1966 ✦ برج حمّود ✦ مانو برغر ✦ مانو بيكري ✦</xar></span></div></div>
 
 <section class="index" id="signatures">
- <h2 class="rv" data-edit="t26" data-edit-label="Title — The signatures">The signatures</h2>
- <span class="sub" data-edit="t27" data-edit-label="Text — An index of what to order — verified a…">An index of what to order — verified across three generations</span>
- <ul class="ix-list"><li class="ix rv"><span class="no" data-edit="t28" data-edit-label="Text — 01">01</span><div><h3 data-edit="t29" data-edit-label="Heading — Sujuk Shawarma">Sujuk Shawarma</h3><p data-edit="t30" data-edit-label="Text — The signature — spicy, juicy, unforget…">The signature — spicy, juicy, unforgettable. People fly home talking about it.</p></div><img src="img/07.jpg" alt="" loading="lazy"></li><li class="ix rv"><span class="no" data-edit="t31" data-edit-label="Text — 02">02</span><div><h3 data-edit="t32" data-edit-label="Heading — Basterma & Soujouk">Basterma & Soujouk</h3><p data-edit="t33" data-edit-label="Text — Cured in-house since 1966. Old Armenia…">Cured in-house since 1966. Old Armenian craft, no shortcuts.</p></div><img src="img/05.jpg" alt="" loading="lazy"></li><li class="ix rv"><span class="no" data-edit="t34" data-edit-label="Text — 03">03</span><div><h3 data-edit="t35" data-edit-label="Heading — Mano Burger & Bakery">Mano Burger & Bakery</h3><p data-edit="t36" data-edit-label="Text — The family grew: burgers grilled to pe…">The family grew: burgers grilled to perfection, bread always fresh.</p></div><img src="img/11.jpg" alt="" loading="lazy"></li></ul>
+ <h2 class="rv"><xen data-edit="t95" data-edit-label="Text (EN): The signatures">The signatures</xen><xar data-edit="t96" data-edit-label="Text (AR): التواقيع">التواقيع</xar></h2>
+ <span class="sub"><xen data-edit="t97" data-edit-label="Text (EN): An index of what to order — verified a…">An index of what to order — verified across three generations</xen><xar data-edit="t99" data-edit-label="Text (AR): فهرس شو بتطلب — مجرَّب عبر ثلاثة أجيال">فهرس شو بتطلب — مجرَّب عبر ثلاثة أجيال</xar></span>
+ <ul class="ix-list"><li class="ix rv"><span class="no" data-edit="t28" data-edit-label="Text — 01">01</span><div><h3><xen data-edit="t101" data-edit-label="Text (EN): Sujuk Shawarma">Sujuk Shawarma</xen><xar data-edit="t103" data-edit-label="Text (AR): شاورما سجق">شاورما سجق</xar></h3><p><xen data-edit="t104" data-edit-label="Text (EN): The signature — spicy, juicy, unforget…">The signature — spicy, juicy, unforgettable. People fly home talking about it.</xen><xar data-edit="t109" data-edit-label="Text (AR): التوقيع — حارّة، غنيّة، ما بتنتنسى. في…">التوقيع — حارّة، غنيّة، ما بتنتنسى. في ناس بترجع عبلدها وبعدها عم تحكي عنها.</xar></p></div><img src="img/07.jpg" alt="" loading="lazy"></li><li class="ix rv"><span class="no" data-edit="t31" data-edit-label="Text — 02">02</span><div><h3><xen data-edit="t110" data-edit-label="Text (EN): Basterma & Soujouk">Basterma & Soujouk</xen><xar data-edit="t111" data-edit-label="Text (AR): بسترما وسجق">بسترما وسجق</xar></h3><p><xen data-edit="t112" data-edit-label="Text (EN): Cured in-house since 1966. Old Armenia…">Cured in-house since 1966. Old Armenian craft, no shortcuts.</xen><xar data-edit="t113" data-edit-label="Text (AR): مكبوسة بالمحلّ من 1966. صنعة أرمنية قد…">مكبوسة بالمحلّ من 1966. صنعة أرمنية قديمة، بلا طرق مختصرة.</xar></p></div><img src="img/05.jpg" alt="" loading="lazy"></li><li class="ix rv"><span class="no" data-edit="t34" data-edit-label="Text — 03">03</span><div><h3><xen data-edit="t114" data-edit-label="Text (EN): Mano Burger & Bakery">Mano Burger & Bakery</xen><xar data-edit="t115" data-edit-label="Text (AR): مانو برغر وبيكري">مانو برغر وبيكري</xar></h3><p><xen data-edit="t116" data-edit-label="Text (EN): The family grew: burgers grilled to pe…">The family grew: burgers grilled to perfection, bread always fresh.</xen><xar data-edit="t117" data-edit-label="Text (AR): العيلة كبرت: برغر مشوي تمام، وخبز دايم…">العيلة كبرت: برغر مشوي تمام، وخبز دايماً طازة.</xar></p></div><img src="img/11.jpg" alt="" loading="lazy"></li></ul>
 </section>
 
 <section class="carte" id="menu">
- <h2 class="rv" data-edit="t37" data-edit-label="Title — The price list">The price list</h2>
- <span class="sub" data-edit="t38" data-edit-label="Text — Recorded from the board at Arax Street…">Recorded from the board at Arax Street — US dollars, halal, since 1966</span>
+ <h2 class="rv"><xen data-edit="t118" data-edit-label="Text (EN): The price list">The price list</xen><xar data-edit="t119" data-edit-label="Text (AR): لائحة الأسعار">لائحة الأسعار</xar></h2>
+ <span class="sub"><xen data-edit="t120" data-edit-label="Text (EN): Recorded from the board at Arax Street…">Recorded from the board at Arax Street — US dollars, halal, since 1966</xen><xar data-edit="t121" data-edit-label="Text (AR): منقولة عن اللوح بشارع أراكس — بالدولار…">منقولة عن اللوح بشارع أراكس — بالدولار الأميركي، حلال، من 1966</xar></span>
  <div class="carte-grid">
   <ul class="plist rv">
    <li><span class="en" data-edit="t39" data-edit-label="Text — Basterma">Basterma</span><span class="ld"></span><span class="ar arabic" data-edit="t40" data-edit-label="Text — بسترما">بسترما</span><b class="pr" data-edit="t41" data-edit-label="Text — $5.00">$5.00</b></li>
@@ -224,55 +258,67 @@ footer{background:var(--ink);color:rgba(239,235,226,.55);text-align:center;font-
    <li><span class="en" data-edit="t72" data-edit-label="Text — Beef Shawerma">Beef Shawerma</span><span class="ld"></span><span class="ar arabic" data-edit="t73" data-edit-label="Text — شاورما لحمة">شاورما لحمة</span><b class="pr" data-edit="t74" data-edit-label="Text — $5.00">$5.00</b></li>
   </ul>
   <div class="kilo rv">
-   <h3 data-edit="t75" data-edit-label="Heading — By the kilo">By the kilo</h3>
+   <h3><xen data-edit="t122" data-edit-label="Text (EN): By the kilo">By the kilo</xen><xar data-edit="t123" data-edit-label="Text (AR): بالكيلو">بالكيلو</xar></h3>
    <span class="halal arabic" data-edit="t76" data-edit-label="Text — حلال · HALAL">حلال · HALAL</span>
    <table>
-    <tr><th data-edit="t77" data-edit-label="Menu / table — Shawerma">Shawerma</th><th data-edit="t78" data-edit-label="Menu / table — Half KG">Half KG</th><th data-edit="t79" data-edit-label="Menu / table — One KG">One KG</th></tr>
+    <tr><th><xen data-edit="t124" data-edit-label="Text (EN): Shawerma">Shawerma</xen><xar data-edit="t125" data-edit-label="Text (AR): شاورما">شاورما</xar></th><th><xen data-edit="t126" data-edit-label="Text (EN): Half KG">Half KG</xen><xar data-edit="t127" data-edit-label="Text (AR): نصّ كيلو">نصّ كيلو</xar></th><th><xen data-edit="t128" data-edit-label="Text (EN): One KG">One KG</xen><xar data-edit="t129" data-edit-label="Text (AR): كيلو واحد">كيلو واحد</xar></th></tr>
     <tr><td data-edit="t80" data-edit-label="Menu / table — Soujouk">Soujouk</td><td data-edit="t81" data-edit-label="Menu / table — $14">$14</td><td data-edit="t82" data-edit-label="Menu / table — $28">$28</td></tr>
     <tr><td data-edit="t83" data-edit-label="Menu / table — Chicken">Chicken</td><td data-edit="t84" data-edit-label="Menu / table — $15">$15</td><td data-edit="t85" data-edit-label="Menu / table — $30">$30</td></tr>
    </table>
-   <p class="note" data-edit="t86" data-edit-label="Text — Beef by the kilo, spreads &amp; the ba…">Beef by the kilo, spreads &amp; the bakery counter — ask the family. Board prices, photographed in store.</p>
+   <p class="note"><xen data-edit="t130" data-edit-label="Text (EN): Beef by the kilo, spreads &amp; the ba…">Beef by the kilo, spreads &amp; the bakery counter — ask the family. Board prices, photographed in store.</xen><xar data-edit="t131" data-edit-label="Text (AR): اللحمة بالكيلو، المعاجين وكاونتر الفرن…">اللحمة بالكيلو، المعاجين وكاونتر الفرن — إسألوا العيلة. أسعار اللوح، مصوّرة بالمحلّ.</xar></p>
   </div>
  </div>
 </section>
 
 <section class="arch" id="gallery">
- <span class="k" data-edit="t87" data-edit-label="Text — The archive">The archive</span>
- <div class="arch-grid"><figure class="ph rv"><img src="img/07.jpg" alt="" loading="lazy"><figcaption data-edit="t88" data-edit-label="Caption — FIG. 002 — BOURJ HAMMOUD">FIG. 002 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/03.jpg" alt="" loading="lazy"><figcaption data-edit="t89" data-edit-label="Caption — FIG. 003 — BOURJ HAMMOUD">FIG. 003 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/05.jpg" alt="" loading="lazy"><figcaption data-edit="t90" data-edit-label="Caption — FIG. 004 — BOURJ HAMMOUD">FIG. 004 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/01.jpg" alt="" loading="lazy"><figcaption data-edit="t91" data-edit-label="Caption — FIG. 005 — BOURJ HAMMOUD">FIG. 005 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/11.jpg" alt="" loading="lazy"><figcaption data-edit="t92" data-edit-label="Caption — FIG. 006 — BOURJ HAMMOUD">FIG. 006 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/04.jpg" alt="" loading="lazy"><figcaption data-edit="t93" data-edit-label="Caption — FIG. 007 — BOURJ HAMMOUD">FIG. 007 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/06.jpg" alt="" loading="lazy"><figcaption data-edit="t94" data-edit-label="Caption — FIG. 008 — BOURJ HAMMOUD">FIG. 008 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/08.jpg" alt="" loading="lazy"><figcaption data-edit="t95" data-edit-label="Caption — FIG. 009 — BOURJ HAMMOUD">FIG. 009 — BOURJ HAMMOUD</figcaption></figure><figure class="ph rv"><img src="img/09.jpg" alt="" loading="lazy"><figcaption data-edit="t96" data-edit-label="Caption — FIG. 010 — BOURJ HAMMOUD">FIG. 010 — BOURJ HAMMOUD</figcaption></figure></div>
+ <span class="k"><xen data-edit="t132" data-edit-label="Text (EN): The archive">The archive</xen><xar data-edit="t133" data-edit-label="Text (AR): الأرشيف">الأرشيف</xar></span>
+ <div class="arch-grid"><figure class="ph rv"><img src="img/07.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t134" data-edit-label="Text (EN): FIG. 002 — BOURJ HAMMOUD">FIG. 002 — BOURJ HAMMOUD</xen><xar data-edit="t135" data-edit-label="Text (AR): صورة 002 — برج حمّود">صورة 002 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/03.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t136" data-edit-label="Text (EN): FIG. 003 — BOURJ HAMMOUD">FIG. 003 — BOURJ HAMMOUD</xen><xar data-edit="t137" data-edit-label="Text (AR): صورة 003 — برج حمّود">صورة 003 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/05.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t138" data-edit-label="Text (EN): FIG. 004 — BOURJ HAMMOUD">FIG. 004 — BOURJ HAMMOUD</xen><xar data-edit="t139" data-edit-label="Text (AR): صورة 004 — برج حمّود">صورة 004 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/01.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t140" data-edit-label="Text (EN): FIG. 005 — BOURJ HAMMOUD">FIG. 005 — BOURJ HAMMOUD</xen><xar data-edit="t141" data-edit-label="Text (AR): صورة 005 — برج حمّود">صورة 005 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/11.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t142" data-edit-label="Text (EN): FIG. 006 — BOURJ HAMMOUD">FIG. 006 — BOURJ HAMMOUD</xen><xar data-edit="t143" data-edit-label="Text (AR): صورة 006 — برج حمّود">صورة 006 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/04.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t144" data-edit-label="Text (EN): FIG. 007 — BOURJ HAMMOUD">FIG. 007 — BOURJ HAMMOUD</xen><xar data-edit="t145" data-edit-label="Text (AR): صورة 007 — برج حمّود">صورة 007 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/06.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t146" data-edit-label="Text (EN): FIG. 008 — BOURJ HAMMOUD">FIG. 008 — BOURJ HAMMOUD</xen><xar data-edit="t147" data-edit-label="Text (AR): صورة 008 — برج حمّود">صورة 008 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/08.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t148" data-edit-label="Text (EN): FIG. 009 — BOURJ HAMMOUD">FIG. 009 — BOURJ HAMMOUD</xen><xar data-edit="t149" data-edit-label="Text (AR): صورة 009 — برج حمّود">صورة 009 — برج حمّود</xar></figcaption></figure><figure class="ph rv"><img src="img/09.jpg" alt="" loading="lazy"><figcaption><xen data-edit="t150" data-edit-label="Text (EN): FIG. 010 — BOURJ HAMMOUD">FIG. 010 — BOURJ HAMMOUD</xen><xar data-edit="t151" data-edit-label="Text (AR): صورة 010 — برج حمّود">صورة 010 — برج حمّود</xar></figcaption></figure></div>
 </section>
 
 <section class="press" id="reviews">
- <span class="k" data-edit="t97" data-edit-label="Text — Press &amp; public record">Press &amp; public record</span>
- <div class="press-grid"><article class="clip rv"><p data-edit="t98" data-edit-label="Text — You can't visit Lebanon without trying…">You can't visit Lebanon without trying Mano Restaurant. It's truly one of the signature spots in the country! And their sujuk shawarma?</p><span data-edit="t99" data-edit-label="Text — — Google review">— Google review</span></article><article class="clip rv"><p data-edit="t100" data-edit-label="Text — The entire vacation I kept going back …">The entire vacation I kept going back to eat from MANO. Clean, with a variety of sandwiches to choose from. My personal favourite is the Beef Shawarma and Soujouk sandwich.</p><span data-edit="t101" data-edit-label="Text — — Google review">— Google review</span></article><article class="clip rv"><p data-edit="t102" data-edit-label="Text — This is the place to be for shawarma —…">This is the place to be for shawarma — meat, chicken and basterma. Food lovers, this is your place! Step in for a whole new world of flavors.</p><span data-edit="t103" data-edit-label="Text — — Google review">— Google review</span></article></div>
+ <span class="k"><xen data-edit="t152" data-edit-label="Text (EN): Press &amp; public record">Press &amp; public record</xen><xar data-edit="t153" data-edit-label="Text (AR): الصحافة والرأي العام">الصحافة والرأي العام</xar></span>
+ <div class="press-grid"><article class="clip rv"><p data-edit="t98" data-edit-label="Text — You can't visit Lebanon without trying…">You can't visit Lebanon without trying Mano Restaurant. It's truly one of the signature spots in the country! And their sujuk shawarma?</p><span><xen data-edit="t154" data-edit-label="Text (EN): — Google review">— Google review</xen><xar data-edit="t155" data-edit-label="Text (AR): — تقييم على غوغل">— تقييم على غوغل</xar></span></article><article class="clip rv"><p data-edit="t100" data-edit-label="Text — The entire vacation I kept going back …">The entire vacation I kept going back to eat from MANO. Clean, with a variety of sandwiches to choose from. My personal favourite is the Beef Shawarma and Soujouk sandwich.</p><span><xen data-edit="t156" data-edit-label="Text (EN): — Google review">— Google review</xen><xar data-edit="t157" data-edit-label="Text (AR): — تقييم على غوغل">— تقييم على غوغل</xar></span></article><article class="clip rv"><p data-edit="t102" data-edit-label="Text — This is the place to be for shawarma —…">This is the place to be for shawarma — meat, chicken and basterma. Food lovers, this is your place! Step in for a whole new world of flavors.</p><span><xen data-edit="t158" data-edit-label="Text (EN): — Google review">— Google review</xen><xar data-edit="t159" data-edit-label="Text (AR): — تقييم على غوغل">— تقييم على غوغل</xar></span></article></div>
 </section>
 
 <section class="visit" id="visit">
- <span class="k" data-edit="t104" data-edit-label="Text — File a visit">File a visit</span>
- <h2>Yalla — the <em data-edit="t105" data-edit-label="Text — spit">spit</em> is turning.</h2>
+ <span class="k"><xen data-edit="t160" data-edit-label="Text (EN): File a visit">File a visit</xen><xar data-edit="t161" data-edit-label="Text (AR): سجّل زيارتك">سجّل زيارتك</xar></span>
+ <h2><xen>Yalla — the <em data-edit="t105" data-edit-label="Text — spit">spit</em> is turning.</xen><xar>يلّا — <em data-edit="t162" data-edit-label="Text: السيخ">السيخ</em> عم يدور.</xar></h2>
  <a class="phone" href="tel:+9611268560" data-edit="t106" data-edit-label="Button / link — +961 1 268 560">+961 1 268 560</a>
  <div class="vrow">
-  <div><b data-edit="t107" data-edit-label="Text — Where">Where</b>Bourj Hammoud (Arax St. area), Beirut, Lebanon</div>
-  <div><b data-edit="t108" data-edit-label="Text — When">When</b>Open daily · 10:00 AM – late (closes ~1–2 AM)</div>
+  <div><xen><b data-edit="t107" data-edit-label="Text — Where">Where</b>Bourj Hammoud (Arax St. area), Beirut, Lebanon</xen><xar><b data-edit="t163" data-edit-label="Text: الوين">الوين</b>برج حمّود (منطقة شارع أراكس)، بيروت، لبنان</xar></div>
+  <div><xen><b data-edit="t108" data-edit-label="Text — When">When</b>Open daily · 10:00 AM – late (closes ~1–2 AM)</xen><xar><b data-edit="t164" data-edit-label="Text: الوقت">الوقت</b>مفتوح كل يوم · 10:00 صباحاً – حتى وقت متأخّر (يسكّر حوالي 1–2 بعد منتصف الليل)</xar></div>
  </div>
  <div class="btns">
-  <a class="btn red" href="tel:+9611268560" data-edit="t109" data-edit-label="Button / link — Call now">Call now</a>
-   <a class="btn ig" href="https://instagram.com/bastermamano" target="_blank" rel="noopener" data-edit="t110" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=268014654441024717" target="_blank" rel="noopener" data-edit="t111" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+  <a class="btn red" href="tel:+9611268560"><xen data-edit="t165" data-edit-label="Text (EN): Call now">Call now</xen><xar data-edit="t166" data-edit-label="Text (AR): إتّصلوا فيّنا">إتّصلوا فيّنا</xar></a>
+   <a class="btn ig" href="https://instagram.com/bastermamano" target="_blank" rel="noopener"><xen data-edit="t167" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t168" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=268014654441024717" target="_blank" rel="noopener"><xen data-edit="t169" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t170" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611268560" data-edit="t112" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611268560"><xen data-edit="t171" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t172" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/bastermamano" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=268014654441024717" target="_blank" rel="noopener" data-edit="t113" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=268014654441024717" target="_blank" rel="noopener"><xen data-edit="t173" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t174" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Basterma Mano · Beirut, Lebanon</footer>
+<footer><xen data-edit="t175" data-edit-label="Text (EN): © Basterma Mano · Beirut, Lebanon">© Basterma Mano · Beirut, Lebanon</xen><xar data-edit="t176" data-edit-label="Text (AR): © بسترما مانو · بيروت، لبنان">© بسترما مانو · بيروت، لبنان</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t177" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"بسترما مانو — مطعم شاورما في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

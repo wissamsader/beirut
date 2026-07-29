@@ -152,113 +152,147 @@ footer{text-align:center;padding:10px 5vw 110px;font-family:'Inter';font-size:.7
 </style>
 <style data-fx-orn>.orn{animation:fxtw 7s ease-in-out infinite}
 @keyframes fxtw{0%,100%{opacity:1}50%{opacity:.55}}
-@media (prefers-reduced-motion: reduce){.orn{animation:none}}</style></head>
+@media (prefers-reduced-motion: reduce){.orn{animation:none}}</style><link href='https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Aref Ruqaa',serif;--arb:'Noto Naskh Arabic',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#0E5C40;color:#F7F3E8;border:1.5px solid #B7924A;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
+</head>
 <body>
 <nav id="nav">
- <a href="#top" data-edit="t1" data-edit-label="Button / link — Zmrd">Zmrd</a><a href="#salon" data-edit="t2" data-edit-label="Button / link — The salon">The salon</a><a href="#table" data-edit="t3" data-edit-label="Button / link — La table">La table</a><a href="#oud" data-edit="t4" data-edit-label="Button / link — Oud nights">Oud nights</a><a href="#guestbook" data-edit="t5" data-edit-label="Button / link — Guestbook">Guestbook</a><a class="ph" href="tel:+96181017965" data-edit="t6" data-edit-label="Button / link — +961 81 017 965">+961 81 017 965</a>
+ <a href="#top"><xen data-edit="t1" data-edit-label="Text (EN): Zmrd">Zmrd</xen><xar data-edit="t2" data-edit-label="Text (AR): زمرد">زمرد</xar></a><a href="#salon"><xen data-edit="t3" data-edit-label="Text (EN): The salon">The salon</xen><xar data-edit="t4" data-edit-label="Text (AR): الصالون">الصالون</xar></a><a href="#table"><xen data-edit="t5" data-edit-label="Text (EN): La table">La table</xen><xar data-edit="t7" data-edit-label="Text (AR): الطاولة">الطاولة</xar></a><a href="#oud"><xen data-edit="t9" data-edit-label="Text (EN): Oud nights">Oud nights</xen><xar data-edit="t11" data-edit-label="Text (AR): ليالي العود">ليالي العود</xar></a><a href="#guestbook"><xen data-edit="t12" data-edit-label="Text (EN): Guestbook">Guestbook</xen><xar data-edit="t13" data-edit-label="Text (AR): دفتر الضيوف">دفتر الضيوف</xar></a><a class="ph" href="tel:+96181017965" data-edit="t6" data-edit-label="Button / link — +961 81 017 965">+961 81 017 965</a>
 </nav>
 
 <header class="hero" id="top">
  <span class="orn">✦ ✦ ✦</span>
- <div class="ar arabic" data-edit="t7" data-edit-label="Text — زمرد">زمرد</div>
- <h1>Zmrd <span class="it" data-edit="t8" data-edit-label="Text — Social Space">Social Space</span></h1>
- <p class="sub" data-edit="t9" data-edit-label="Text — A warm little corner of Beirut — homem…">A warm little corner of Beirut — homemade food, slow tea & good company in Furn El-Chebbak</p>
+ <div class="ar arabic"><xen data-edit="t14" data-edit-label="Text (EN): زمرد">زمرد</xen><xar><span class="lat" data-edit="t15" data-edit-label="Text: ZMRD">ZMRD</span></xar></div>
+ <h1><xen>Zmrd <span class="it" data-edit="t8" data-edit-label="Text — Social Space">Social Space</span></xen><xar>زمرد <span class="it" data-edit="t16" data-edit-label="Text: سوشل سبيس">سوشل سبيس</span></xar></h1>
+ <p class="sub"><xen data-edit="t17" data-edit-label="Text (EN): A warm little corner of Beirut — homem…">A warm little corner of Beirut — homemade food, slow tea & good company in Furn El-Chebbak</xen><xar data-edit="t18" data-edit-label="Text (AR): زاوية دافية صغيرة ببيروت — أكل بيتي، ش…">زاوية دافية صغيرة ببيروت — أكل بيتي، شاي على مهل، ورفقة حلوة بفرن الشبّاك</xar></p>
  <div class="line"></div>
  <div class="meta">
-  <span><b data-edit="t10" data-edit-label="Text — ★ 4.9">★ 4.9</b> on Google</span>
-  <span data-edit="t11" data-edit-label="Text — Furn El-Chebbak, Beirut">Furn El-Chebbak, Beirut</span>
-  <span data-edit="t12" data-edit-label="Text — Closed Sundays · call for daily …">Closed Sundays · call for daily …</span>
+  <span><xen><b data-edit="t10" data-edit-label="Text — ★ 4.9">★ 4.9</b> on Google</xen><xar><b data-edit="t19" data-edit-label="Text: ★ 4.9">★ 4.9</b> على غوغل</xar></span>
+  <span><xen data-edit="t20" data-edit-label="Text (EN): Furn El-Chebbak, Beirut">Furn El-Chebbak, Beirut</xen><xar data-edit="t21" data-edit-label="Text (AR): فرن الشبّاك، بيروت">فرن الشبّاك، بيروت</xar></span>
+  <span><xen data-edit="t23" data-edit-label="Text (EN): Closed Sundays · call for daily …">Closed Sundays · call for daily …</xen><xar data-edit="t25" data-edit-label="Text (AR): مسكّر يوم الأحد · إتّصلوا للدوام اليوم…">مسكّر يوم الأحد · إتّصلوا للدوام اليومي</xar></span>
  </div>
  <div class="cta">
-  <a class="btn em" href="tel:+96181017965" data-edit="t13" data-edit-label="Button / link — Reserve a corner">Reserve a corner</a>
-  <a class="btn wa" href="https://wa.me/96181017965" target="_blank" rel="noopener" data-edit="t14" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
-  <a class="btn line2" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — Find the house">Find the house</a>
+  <a class="btn em" href="tel:+96181017965"><xen data-edit="t26" data-edit-label="Text (EN): Reserve a corner">Reserve a corner</xen><xar data-edit="t27" data-edit-label="Text (AR): إحجزوا زاوية">إحجزوا زاوية</xar></a>
+  <a class="btn wa" href="https://wa.me/96181017965" target="_blank" rel="noopener"><xen data-edit="t28" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t29" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+  <a class="btn line2" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener"><xen data-edit="t30" data-edit-label="Text (EN): Find the house">Find the house</xen><xar data-edit="t32" data-edit-label="Text (AR): لاقوا البيت">لاقوا البيت</xar></a>
  </div>
 </header>
 
 <div class="shelf" id="salon">
- <div class="row"><div class="pol"><img src="img/04.jpg" alt="" loading="lazy"><span class="cap" data-edit="t16" data-edit-label="Text — the mezze table">the mezze table</span></div><div class="pol"><img src="img/03.jpg" alt="" loading="lazy"><span class="cap" data-edit="t17" data-edit-label="Text — tea, properly">tea, properly</span></div><div class="pol"><img src="img/01.jpg" alt="" loading="lazy"><span class="cap" data-edit="t18" data-edit-label="Text — walnut cake">walnut cake</span></div><div class="pol"><img src="img/02.jpg" alt="" loading="lazy"><span class="cap" data-edit="t19" data-edit-label="Text — the green corner">the green corner</span></div><div class="pol"><img src="img/07.jpg" alt="" loading="lazy"><span class="cap" data-edit="t20" data-edit-label="Text — friends by 9pm">friends by 9pm</span></div></div>
+ <div class="row"><div class="pol"><img src="img/04.jpg" alt="" loading="lazy"><span class="cap"><xen data-edit="t33" data-edit-label="Text (EN): the mezze table">the mezze table</xen><xar data-edit="t35" data-edit-label="Text (AR): طاولة المازة">طاولة المازة</xar></span></div><div class="pol"><img src="img/03.jpg" alt="" loading="lazy"><span class="cap"><xen data-edit="t36" data-edit-label="Text (EN): tea, properly">tea, properly</xen><xar data-edit="t37" data-edit-label="Text (AR): شاي، متل ما لازم">شاي، متل ما لازم</xar></span></div><div class="pol"><img src="img/01.jpg" alt="" loading="lazy"><span class="cap"><xen data-edit="t38" data-edit-label="Text (EN): walnut cake">walnut cake</xen><xar data-edit="t39" data-edit-label="Text (AR): كيكة الجوز">كيكة الجوز</xar></span></div><div class="pol"><img src="img/02.jpg" alt="" loading="lazy"><span class="cap"><xen data-edit="t40" data-edit-label="Text (EN): the green corner">the green corner</xen><xar data-edit="t41" data-edit-label="Text (AR): الزاوية الخضرا">الزاوية الخضرا</xar></span></div><div class="pol"><img src="img/07.jpg" alt="" loading="lazy"><span class="cap"><xen data-edit="t42" data-edit-label="Text (EN): friends by 9pm">friends by 9pm</xen><xar data-edit="t43" data-edit-label="Text (AR): الأصحاب من الساعة 9">الأصحاب من الساعة 9</xar></span></div></div>
 </div>
 
 <section class="statement">
- <span class="k" data-edit="t21" data-edit-label="Text — The salon">The salon</span>
- <h2 class="rv">A living room for the <em data-edit="t22" data-edit-label="Text — whole city">whole city</em></h2>
- <p class="rv" data-edit="t23" data-edit-label="Text — Zmrd is what happens when someone turn…">Zmrd is what happens when someone turns their living room into the warmest address in Furn El-Chebbak. Homemade mezze and cakes, tea poured from real teapots, pomegranate juice, and evenings when an oud appears and nobody wants to leave. 4.9 stars — because places made with this much care are rare.</p>
- <p class="stars rv"><b data-edit="t24" data-edit-label="Text — ★ 4.9">★ 4.9</b> — 84 reviews · because places made with this much care are rare</p>
+ <span class="k"><xen data-edit="t44" data-edit-label="Text (EN): The salon">The salon</xen><xar data-edit="t45" data-edit-label="Text (AR): الصالون">الصالون</xar></span>
+ <h2 class="rv"><xen>A living room for the <em data-edit="t22" data-edit-label="Text — whole city">whole city</em></xen><xar>صالون بيت <em data-edit="t46" data-edit-label="Text: للمدينة كلّها">للمدينة كلّها</em></xar></h2>
+ <p class="rv"><xen data-edit="t47" data-edit-label="Text (EN): Zmrd is what happens when someone turn…">Zmrd is what happens when someone turns their living room into the warmest address in Furn El-Chebbak. Homemade mezze and cakes, tea poured from real teapots, pomegranate juice, and evenings when an oud appears and nobody wants to leave. 4.9 stars — because places made with this much care are rare.</xen><xar data-edit="t51" data-edit-label="Text (AR): زمرد هوّي شو بيصير لمّا حدا يحوّل صالو…">زمرد هوّي شو بيصير لمّا حدا يحوّل صالون بيتو لأدفا عنوان بفرن الشبّاك. مازة وكيك بيتي، شاي مصبوب من براريد حقيقية، عصير رمّان، وسهرات بيطلع فيها العود وما حدا بيحبّ يمشي. 4.9 نجمة — لأنّو المحلّات المعمولة بهالقدّ من المحبّة نادرة.</xar></p>
+ <p class="stars rv"><xen><b data-edit="t24" data-edit-label="Text — ★ 4.9">★ 4.9</b> — 84 reviews · because places made with this much care are rare</xen><xar><b data-edit="t52" data-edit-label="Text: ★ 4.9">★ 4.9</b> — 84 تقييم · لأنّو المحلّات المعمولة بهالقدّ من المحبّة نادرة</xar></p>
 </section>
 
 <section class="table-w" id="table">
  <div class="table rv">
-  <h2 data-edit="t25" data-edit-label="Title — La Table">La Table</h2>
-  <p class="sub" data-edit="t26" data-edit-label="Text — everything homemade, everything unhurr…">everything homemade, everything unhurried</p>
-  <div class="dish"><h3>Homemade Everything <span>✦</span></h3><p data-edit="t27" data-edit-label="Text — Mezze, apricot crumble, walnut cake — …">Mezze, apricot crumble, walnut cake — like family made it, because they did.</p></div><div class="dish"><h3>Tea & Slow Evenings <span>✦</span></h3><p data-edit="t28" data-edit-label="Text — Pots of tea, fresh juices, and no one …">Pots of tea, fresh juices, and no one rushing you.</p></div><div class="dish"><h3>Oud Nights & Events <span>✦</span></h3><p data-edit="t29" data-edit-label="Text — Live oriental music, themed dinners, a…">Live oriental music, themed dinners, and a crowd that feels like friends.</p></div>
+  <h2><xen data-edit="t54" data-edit-label="Text (EN): La Table">La Table</xen><xar data-edit="t55" data-edit-label="Text (AR): الطاولة">الطاولة</xar></h2>
+  <p class="sub"><xen data-edit="t57" data-edit-label="Text (EN): everything homemade, everything unhurr…">everything homemade, everything unhurried</xen><xar data-edit="t58" data-edit-label="Text (AR): كل شي بيتي، وكل شي على مهل">كل شي بيتي، وكل شي على مهل</xar></p>
+  <div class="dish"><h3><xen>Homemade Everything <span>✦</span></xen><xar>كل شي بيتي <span>✦</span></xar></h3><p><xen data-edit="t60" data-edit-label="Text (EN): Mezze, apricot crumble, walnut cake — …">Mezze, apricot crumble, walnut cake — like family made it, because they did.</xen><xar data-edit="t63" data-edit-label="Text (AR): مازة، كرامبل مشمش، كيكة جوز — متل ما ب…">مازة، كرامبل مشمش، كيكة جوز — متل ما بتعمل العيلة، لأنّو فعلاً العيلة عاملتها.</xar></p></div><div class="dish"><h3><xen>Tea & Slow Evenings <span>✦</span></xen><xar>شاي وسهرات هادية <span>✦</span></xar></h3><p><xen data-edit="t64" data-edit-label="Text (EN): Pots of tea, fresh juices, and no one …">Pots of tea, fresh juices, and no one rushing you.</xen><xar data-edit="t65" data-edit-label="Text (AR): براريد شاي، عصايرطازة، وما حدا عم يستع…">براريد شاي، عصايرطازة، وما حدا عم يستعجلك.</xar></p></div><div class="dish"><h3><xen>Oud Nights & Events <span>✦</span></xen><xar>ليالي العود والفعاليات <span>✦</span></xar></h3><p><xen data-edit="t66" data-edit-label="Text (EN): Live oriental music, themed dinners, a…">Live oriental music, themed dinners, and a crowd that feels like friends.</xen><xar data-edit="t67" data-edit-label="Text (AR): موسيقى شرقية حيّة، عشوات بموضوع، وجمهو…">موسيقى شرقية حيّة، عشوات بموضوع، وجمهور بيحسّك بين أصحابك.</xar></p></div>
  </div>
 </section>
 
 <section class="oud" id="oud">
- <span class="k" data-edit="t30" data-edit-label="Text — Some evenings">Some evenings</span>
- <h2 class="rv">An oud appears, and <em data-edit="t31" data-edit-label="Text — nobody wants to leave">nobody wants to leave</em></h2>
- <p class="rv" data-edit="t32" data-edit-label="Text — Live oriental music, themed dinners, p…">Live oriental music, themed dinners, poetry between the tea rounds — evenings at Zmrd have a way of stretching past midnight without anyone noticing.</p>
- <div class="times rv" data-edit="t33" data-edit-label="Text — Live tarab &amp; oud evenings · check …">Live tarab &amp; oud evenings · check the phone for dates</div>
+ <span class="k"><xen data-edit="t68" data-edit-label="Text (EN): Some evenings">Some evenings</xen><xar data-edit="t69" data-edit-label="Text (AR): بعض السهرات">بعض السهرات</xar></span>
+ <h2 class="rv"><xen>An oud appears, and <em data-edit="t31" data-edit-label="Text — nobody wants to leave">nobody wants to leave</em></xen><xar>بيطلع العود، <em data-edit="t70" data-edit-label="Text: وما حدا بيحبّ يمشي">وما حدا بيحبّ يمشي</em></xar></h2>
+ <p class="rv"><xen data-edit="t71" data-edit-label="Text (EN): Live oriental music, themed dinners, p…">Live oriental music, themed dinners, poetry between the tea rounds — evenings at Zmrd have a way of stretching past midnight without anyone noticing.</xen><xar data-edit="t72" data-edit-label="Text (AR): موسيقى شرقية حيّة، عشوات بموضوع، وشعر …">موسيقى شرقية حيّة، عشوات بموضوع، وشعر بين جولات الشاي — سهرات زمرد بتمتدّ لبعد نصّ الليل وما حدا بينتبه.</xar></p>
+ <div class="times rv"><xen data-edit="t73" data-edit-label="Text (EN): Live tarab &amp; oud evenings · check …">Live tarab &amp; oud evenings · check the phone for dates</xen><xar data-edit="t74" data-edit-label="Text (AR): سهرات طرب وعود · إتّصلوا لتعرفوا الموا…">سهرات طرب وعود · إتّصلوا لتعرفوا المواعيد</xar></div>
 </section>
 
 <section class="prog" id="program">
  <div class="card rv">
-  <h2>The <em data-edit="t34" data-edit-label="Text — program">program</em></h2>
-  <p class="sub" data-edit="t35" data-edit-label="Text — what happens in the salon">what happens in the salon</p>
+  <h2><xen>The <em data-edit="t34" data-edit-label="Text — program">program</em></xen><xar><em data-edit="t75" data-edit-label="Text: البرنامج">البرنامج</em></xar></h2>
+  <p class="sub"><xen data-edit="t76" data-edit-label="Text (EN): what happens in the salon">what happens in the salon</xen><xar data-edit="t77" data-edit-label="Text (AR): شو بيصير بالصالون">شو بيصير بالصالون</xar></p>
   <div class="ev">
-   <div><h3 data-edit="t36" data-edit-label="Heading — Oud &amp; tarab nights">Oud &amp; tarab nights</h3><p data-edit="t37" data-edit-label="Text — Live oriental music in the living room…">Live oriental music in the living room — the old songs, close enough to touch. Tea keeps coming.</p></div>
-   <span class="tag2" data-edit="t38" data-edit-label="Text — Evenings">Evenings</span>
+   <div><h3><xen data-edit="t78" data-edit-label="Text (EN): Oud &amp; tarab nights">Oud &amp; tarab nights</xen><xar data-edit="t79" data-edit-label="Text (AR): ليالي عود وطرب">ليالي عود وطرب</xar></h3><p><xen data-edit="t80" data-edit-label="Text (EN): Live oriental music in the living room…">Live oriental music in the living room — the old songs, close enough to touch. Tea keeps coming.</xen><xar data-edit="t81" data-edit-label="Text (AR): موسيقى شرقية حيّة بصالون البيت — الأغا…">موسيقى شرقية حيّة بصالون البيت — الأغاني القديمة، قريبة لدرجة إنّك بتلمسها. والشاي ما بيوقف.</xar></p></div>
+   <span class="tag2"><xen data-edit="t82" data-edit-label="Text (EN): Evenings">Evenings</xen><xar data-edit="t83" data-edit-label="Text (AR): سهرات">سهرات</xar></span>
   </div>
   <div class="ev">
-   <div><h3 data-edit="t39" data-edit-label="Heading — Kitchens-of-the-world nights">Kitchens-of-the-world nights</h3><p data-edit="t40" data-edit-label="Text — A set menu around one cuisine, cooked …">A set menu around one cuisine, cooked with love — the last one was an Indonesian night with a live traditional show.</p></div>
-   <span class="tag2" data-edit="t41" data-edit-label="Text — Set menu · ~$20">Set menu · ~$20</span>
+   <div><h3><xen data-edit="t84" data-edit-label="Text (EN): Kitchens-of-the-world nights">Kitchens-of-the-world nights</xen><xar data-edit="t85" data-edit-label="Text (AR): ليالي مطابخ العالم">ليالي مطابخ العالم</xar></h3><p><xen data-edit="t86" data-edit-label="Text (EN): A set menu around one cuisine, cooked …">A set menu around one cuisine, cooked with love — the last one was an Indonesian night with a live traditional show.</xen><xar data-edit="t87" data-edit-label="Text (AR): قائمة محدّدة حول مطبخ واحد، مطبوخة بمح…">قائمة محدّدة حول مطبخ واحد، مطبوخة بمحبّة — آخر وحدة كانت ليلة إندونيسية مع عرض تقليدي حيّ.</xar></p></div>
+   <span class="tag2"><xen data-edit="t88" data-edit-label="Text (EN): Set menu · ~$20">Set menu · ~$20</xen><xar data-edit="t89" data-edit-label="Text (AR): قائمة محدّدة · ~$20">قائمة محدّدة · ~$20</xar></span>
   </div>
   <div class="ev">
-   <div><h3 data-edit="t42" data-edit-label="Heading — The homemade table, daily">The homemade table, daily</h3><p data-edit="t43" data-edit-label="Text — Mezze, apricot crumble, walnut cake, p…">Mezze, apricot crumble, walnut cake, pomegranate juice, pots of tea — like family made it, because they did.</p></div>
-   <span class="tag2" data-edit="t44" data-edit-label="Text — All day">All day</span>
+   <div><h3><xen data-edit="t90" data-edit-label="Text (EN): The homemade table, daily">The homemade table, daily</xen><xar data-edit="t91" data-edit-label="Text (AR): الطاولة البيتية، كل يوم">الطاولة البيتية، كل يوم</xar></h3><p><xen data-edit="t92" data-edit-label="Text (EN): Mezze, apricot crumble, walnut cake, p…">Mezze, apricot crumble, walnut cake, pomegranate juice, pots of tea — like family made it, because they did.</xen><xar data-edit="t93" data-edit-label="Text (AR): مازة، كرامبل مشمش، كيكة جوز، عصير رمّا…">مازة، كرامبل مشمش، كيكة جوز، عصير رمّان، وبراريد شاي — متل ما بتعمل العيلة، لأنّو فعلاً العيلة عاملتها.</xar></p></div>
+   <span class="tag2"><xen data-edit="t94" data-edit-label="Text (EN): All day">All day</xen><xar data-edit="t95" data-edit-label="Text (AR): طول النهار">طول النهار</xar></span>
   </div>
   <div class="ev">
-   <div><h3 data-edit="t45" data-edit-label="Heading — Your gathering">Your gathering</h3><p data-edit="t46" data-edit-label="Text — Book the salon for readings, small con…">Book the salon for readings, small concerts, birthdays that feel like home.</p></div>
-   <span class="tag2" data-edit="t47" data-edit-label="Text — By reservation">By reservation</span>
+   <div><h3><xen data-edit="t96" data-edit-label="Text (EN): Your gathering">Your gathering</xen><xar data-edit="t97" data-edit-label="Text (AR): مناسبتك إنت">مناسبتك إنت</xar></h3><p><xen data-edit="t98" data-edit-label="Text (EN): Book the salon for readings, small con…">Book the salon for readings, small concerts, birthdays that feel like home.</xen><xar data-edit="t99" data-edit-label="Text (AR): إحجزوا الصالون لأمسيات قراءة، حفلات صغ…">إحجزوا الصالون لأمسيات قراءة، حفلات صغيرة، وأعياد ميلاد بتحسّها ببيتك.</xar></p></div>
+   <span class="tag2"><xen data-edit="t100" data-edit-label="Text (EN): By reservation">By reservation</xen><xar data-edit="t101" data-edit-label="Text (AR): بالحجز">بالحجز</xar></span>
   </div>
-  <p class="rsvp">Programme on the door &amp; socials — <b data-edit="t48" data-edit-label="Text — reserve by WhatsApp">reserve by WhatsApp</b></p>
+  <p class="rsvp"><xen>Programme on the door &amp; socials — <b data-edit="t48" data-edit-label="Text — reserve by WhatsApp">reserve by WhatsApp</b></xen><xar>البرنامج عالباب وعالسوشال ميديا — <b data-edit="t102" data-edit-label="Text: الحجز عالواتساب">الحجز عالواتساب</b></xar></p>
  </div>
 </section>
 
 <section class="gal" id="gallery">
  <div class="wrap">
-  <h2 class="rv">Inside the <em data-edit="t49" data-edit-label="Text — green room">green room</em></h2>
+  <h2 class="rv"><xen>Inside the <em data-edit="t49" data-edit-label="Text — green room">green room</em></xen><xar>جوّا <em data-edit="t103" data-edit-label="Text: الغرفة الخضرا">الغرفة الخضرا</em></xar></h2>
   <div class="g-grid"><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/10.jpg" target="_blank"><img src="img/10.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a></div>
  </div>
 </section>
 
 <section class="guest" id="guestbook">
  <div class="wrap">
-  <h2 class="rv">The <em data-edit="t50" data-edit-label="Text — guestbook">guestbook</em></h2>
-  <p class="sub" data-edit="t51" data-edit-label="Text — left behind by people who stayed a lit…">left behind by people who stayed a little longer</p>
-  <div class="entry rv"><span class="no" data-edit="t52" data-edit-label="Text — entry no. 1">entry no. 1</span><div><p data-edit="t53" data-edit-label="Text — “ZMRD is a very nice place. The food a…">“ZMRD is a very nice place. The food and drinks were really delicious. The owners are very friendly people — I had a great time chatting with them.”</p><div class="who" data-edit="t54" data-edit-label="Text — Google review">Google review</div></div></div><div class="entry rv"><span class="no" data-edit="t55" data-edit-label="Text — entry no. 2">entry no. 2</span><div><p data-edit="t56" data-edit-label="Text — “The cutest, coziest space I've been t…">“The cutest, coziest space I've been to. Prices are quite affordable. We had tea in a pot, pomegranate juice, apricot crumble and walnut cake.”</p><div class="who" data-edit="t57" data-edit-label="Text — Google review">Google review</div></div></div><div class="entry rv"><span class="no" data-edit="t58" data-edit-label="Text — entry no. 3">entry no. 3</span><div><p data-edit="t59" data-edit-label="Text — “Everything was absolutely wonderful. …">“Everything was absolutely wonderful. The atmosphere felt authentic, warm, and truly special — you can tell a lot of care was put into every detail.”</p><div class="who" data-edit="t60" data-edit-label="Text — Google review">Google review</div></div></div>
+  <h2 class="rv"><xen>The <em data-edit="t50" data-edit-label="Text — guestbook">guestbook</em></xen><xar><em data-edit="t104" data-edit-label="Text: دفتر الضيوف">دفتر الضيوف</em></xar></h2>
+  <p class="sub"><xen data-edit="t105" data-edit-label="Text (EN): left behind by people who stayed a lit…">left behind by people who stayed a little longer</xen><xar data-edit="t106" data-edit-label="Text (AR): تركوها ناس قعدوا شوي أكتر">تركوها ناس قعدوا شوي أكتر</xar></p>
+  <div class="entry rv"><span class="no"><xen data-edit="t107" data-edit-label="Text (EN): entry no. 1">entry no. 1</xen><xar data-edit="t108" data-edit-label="Text (AR): تسجيل رقم 1">تسجيل رقم 1</xar></span><div><p data-edit="t53" data-edit-label="Text — “ZMRD is a very nice place. The food a…">“ZMRD is a very nice place. The food and drinks were really delicious. The owners are very friendly people — I had a great time chatting with them.”</p><div class="who"><xen data-edit="t109" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t110" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div></div><div class="entry rv"><span class="no"><xen data-edit="t111" data-edit-label="Text (EN): entry no. 2">entry no. 2</xen><xar data-edit="t112" data-edit-label="Text (AR): تسجيل رقم 2">تسجيل رقم 2</xar></span><div><p data-edit="t56" data-edit-label="Text — “The cutest, coziest space I've been t…">“The cutest, coziest space I've been to. Prices are quite affordable. We had tea in a pot, pomegranate juice, apricot crumble and walnut cake.”</p><div class="who"><xen data-edit="t113" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t114" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div></div><div class="entry rv"><span class="no"><xen data-edit="t115" data-edit-label="Text (EN): entry no. 3">entry no. 3</xen><xar data-edit="t116" data-edit-label="Text (AR): تسجيل رقم 3">تسجيل رقم 3</xar></span><div><p data-edit="t59" data-edit-label="Text — “Everything was absolutely wonderful. …">“Everything was absolutely wonderful. The atmosphere felt authentic, warm, and truly special — you can tell a lot of care was put into every detail.”</p><div class="who"><xen data-edit="t117" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t118" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
  <span class="orn">✦</span>
- <h2>Stay a <em data-edit="t61" data-edit-label="Text — little longer.">little longer.</em></h2>
+ <h2><xen>Stay a <em data-edit="t61" data-edit-label="Text — little longer.">little longer.</em></xen><xar>قعدوا <em data-edit="t119" data-edit-label="Text: شوي أكتر.">شوي أكتر.</em></xar></h2>
  <a class="phone" href="tel:+96181017965" data-edit="t62" data-edit-label="Button / link — +961 81 017 965">+961 81 017 965</a>
- <p class="meta">Elias Medawar Street, Abou Jawdeh bldg. (ground floor), Furn El-Chebbak, Beirut, Lebanon<br>Closed Sundays · call for daily hours</p>
+ <p class="meta"><xen>Elias Medawar Street, Abou Jawdeh bldg. (ground floor), Furn El-Chebbak, Beirut, Lebanon<br>Closed Sundays · call for daily hours</xen><xar>شارع إلياس مدوّر، بناية أبو جودة (الطابق الأرضي)، فرن الشبّاك، بيروت، لبنان<br>مسكّر يوم الأحد · إتّصلوا للدوام اليومي</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96181017965" target="_blank" rel="noopener" data-edit="t63" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn line2 ig" href="https://instagram.com/zmrd.socialspace" target="_blank" rel="noopener" data-edit="t64" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn line2" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener" data-edit="t65" data-edit-label="Button / link — Open in Google Maps ↗">Open in Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96181017965" target="_blank" rel="noopener"><xen data-edit="t120" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t121" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn line2 ig" href="https://instagram.com/zmrd.socialspace" target="_blank" rel="noopener"><xen data-edit="t122" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t123" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn line2" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener"><xen data-edit="t124" data-edit-label="Text (EN): Open in Google Maps ↗">Open in Google Maps ↗</xen><xar data-edit="t125" data-edit-label="Text (AR): إفتحوا خرائط غوغل ↗">إفتحوا خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96181017965" data-edit="t66" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96181017965" target="_blank" rel="noopener" data-edit="t67" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/zmrd.socialspace" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener" data-edit="t68" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96181017965"><xen data-edit="t126" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t127" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96181017965" target="_blank" rel="noopener"><xen data-edit="t128" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t129" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/zmrd.socialspace" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=859057842534210888" target="_blank" rel="noopener"><xen data-edit="t130" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t131" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Zmrd Social Space · Beirut, Lebanon</footer>
+<footer><xen data-edit="t132" data-edit-label="Text (EN): © Zmrd Social Space · Beirut, Lebanon">© Zmrd Social Space · Beirut, Lebanon</xen><xar data-edit="t133" data-edit-label="Text (AR): © زمرد سوشل سبيس · بيروت، لبنان">© زمرد سوشل سبيس · بيروت، لبنان</xar></footer>
 
 <script>
 var nav=document.getElementById('nav');
@@ -267,5 +301,17 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t134" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"زمرد سوشل سبيس — مقهى ومساحة اجتماعية في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

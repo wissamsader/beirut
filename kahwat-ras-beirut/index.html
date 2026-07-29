@@ -145,12 +145,46 @@ footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:ital
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'El Messiri',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#D89B3D;color:#1A120B;border:1.5px solid #1A120B;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+html.ar .hero h1 xar{font-size:.74em;line-height:1.05}html.ar .hero .tag xar{line-height:1.45}html.ar .hero .pre xar{letter-spacing:0}
+</style>
 </head>
 <body>
 <nav id="nav">
- <a class="brand" href="#top" data-edit="t1" data-edit-label="Button / link — Kahwat Ras Beirut">Kahwat Ras Beirut</a>
+ <a class="brand" href="#top"><xen data-edit="t1" data-edit-label="Text (EN): Kahwat Ras Beirut">Kahwat Ras Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): قهوة رأس بيروت">قهوة رأس بيروت</xar></a>
  <div class="links">
-  <a href="#story" data-edit="t2" data-edit-label="Button / link — The café">The café</a><a href="#carte" data-edit="t3" data-edit-label="Button / link — La carte">La carte</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Scenes">Scenes</a><a href="#tarab" data-edit="t5" data-edit-label="Button / link — Tarab nights">Tarab nights</a><a href="#visit" data-edit="t6" data-edit-label="Button / link — Visit">Visit</a>
+  <a href="#story"><xen data-edit="t3" data-edit-label="Text (EN): The café">The café</xen><xar data-edit="t4" data-edit-label="Text (AR): المقهى">المقهى</xar></a><a href="#carte"><xen data-edit="t5" data-edit-label="Text (EN): La carte">La carte</xen><xar data-edit="t6" data-edit-label="Text (AR): اللائحة">اللائحة</xar></a><a href="#gallery"><xen data-edit="t8" data-edit-label="Text (EN): Scenes">Scenes</xen><xar data-edit="t9" data-edit-label="Text (AR): لقطات">لقطات</xar></a><a href="#tarab"><xen data-edit="t10" data-edit-label="Text (EN): Tarab nights">Tarab nights</xen><xar data-edit="t12" data-edit-label="Text (AR): ليالي الطرب">ليالي الطرب</xar></a><a href="#visit"><xen data-edit="t13" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t14" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
   <a class="call" href="tel:+9613259200" data-edit="t7" data-edit-label="Button / link — +961 3 259 200">+961 3 259 200</a>
  </div>
 </nav>
@@ -159,37 +193,37 @@ footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:ital
  <img class="bg" src="img/07.jpg" alt="Kahwat Ras Beirut">
  <div class="vig"></div>
  <div class="hero-c">
-  <p class="pre" data-edit="t8" data-edit-label="Text — AVENUE DE PARIS — THE CORNICHE">AVENUE DE PARIS — THE CORNICHE</p>
-  <h1>KAHWAT<br>RAS BEIRUT</h1>
-  <div class="ar arabic" data-edit="t9" data-edit-label="Text — قهوة رأس بيروت">قهوة رأس بيروت</div>
-  <p class="tag" data-edit="t10" data-edit-label="Text — Sea-view Lebanese kitchen & kahwa on t…">Sea-view Lebanese kitchen & kahwa on the Corniche — where Beirut meets the Mediterranean</p>
+  <p class="pre"><xen data-edit="t15" data-edit-label="Text (EN): AVENUE DE PARIS — THE CORNICHE">AVENUE DE PARIS — THE CORNICHE</xen><xar data-edit="t17" data-edit-label="Text (AR): أفينيو دو باري — الكورنيش">أفينيو دو باري — الكورنيش</xar></p>
+  <h1><xen>KAHWAT<br>RAS BEIRUT</xen><xar data-edit="t18" data-edit-label="Text (AR): قهوة رأس بيروت">قهوة رأس بيروت</xar></h1>
+  <div class="ar arabic"><xen data-edit="t20" data-edit-label="Text (EN): قهوة رأس بيروت">قهوة رأس بيروت</xen><xar><span class="lat" data-edit="t21" data-edit-label="Text: KAHWAT RAS BEIRUT">KAHWAT RAS BEIRUT</span></xar></div>
+  <p class="tag"><xen data-edit="t22" data-edit-label="Text (EN): Sea-view Lebanese kitchen & kahwa on t…">Sea-view Lebanese kitchen & kahwa on the Corniche — where Beirut meets the Mediterranean</xen><xar data-edit="t24" data-edit-label="Text (AR): مطبخ لبناني وقهوة على الكورنيش بإطلالة…">مطبخ لبناني وقهوة على الكورنيش بإطلالة عالبحر — هون بيروت بتلاقي المتوسّط</xar></p>
   <div class="row">
-   <span class="st"><b data-edit="t11" data-edit-label="Text — ★ 4.8">★ 4.8</b> — 566 REVIEWS</span>
-   <span class="st" data-edit="t12" data-edit-label="Text — 8 AM — 2 AM">8 AM — 2 AM</span>
+   <span class="st"><xen><b data-edit="t11" data-edit-label="Text — ★ 4.8">★ 4.8</b> — 566 REVIEWS</xen><xar><b data-edit="t25" data-edit-label="Text: ★ 4.8">★ 4.8</b> — 566 تقييم</xar></span>
+   <span class="st"><xen data-edit="t26" data-edit-label="Text (EN): 8 AM — 2 AM">8 AM — 2 AM</xen><xar data-edit="t28" data-edit-label="Text (AR): 8 صباحاً — 2 بعد نصّ الليل">8 صباحاً — 2 بعد نصّ الليل</xar></span>
   </div>
   <div class="row">
-   <a class="btn solid" href="tel:+9613259200" data-edit="t13" data-edit-label="Button / link — CALL THE CAFÉ">CALL THE CAFÉ</a>
-   <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener" data-edit="t14" data-edit-label="Button / link — WhatsApp">WhatsApp</a>
-   <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link — FIND US ON THE CORNICHE">FIND US ON THE CORNICHE</a>
+   <a class="btn solid" href="tel:+9613259200"><xen data-edit="t30" data-edit-label="Text (EN): CALL THE CAFÉ">CALL THE CAFÉ</xen><xar data-edit="t31" data-edit-label="Text (AR): إتّصلوا بالمقهى">إتّصلوا بالمقهى</xar></a>
+   <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener"><xen data-edit="t33" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t34" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
+   <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener"><xen data-edit="t36" data-edit-label="Text (EN): FIND US ON THE CORNICHE">FIND US ON THE CORNICHE</xen><xar data-edit="t38" data-edit-label="Text (AR): لاقونا عالكورنيش">لاقونا عالكورنيش</xar></a>
   </div>
  </div>
 </header>
 
 <section id="story">
  <div class="wrap">
-  <div class="head rv"><h2>SCENE ONE — <em data-edit="t16" data-edit-label="Text — THE SEA">THE SEA</em></h2><span data-edit="t17" data-edit-label="Text — ext. corniche, golden hour">ext. corniche, golden hour</span></div>
+  <div class="head rv"><h2><xen>SCENE ONE — <em data-edit="t16" data-edit-label="Text — THE SEA">THE SEA</em></xen><xar>المشهد الأوّل — <em data-edit="t39" data-edit-label="Text: البحر">البحر</em></xar></h2><span><xen data-edit="t41" data-edit-label="Text (EN): ext. corniche, golden hour">ext. corniche, golden hour</xen><xar data-edit="t42" data-edit-label="Text (AR): خارجي. الكورنيش، وقت الغروب">خارجي. الكورنيش، وقت الغروب</xar></span></div>
   <div class="story-grid">
    <div class="rv">
-    <p class="lead" data-edit="t18" data-edit-label="Text — On the Avenue de Paris, where the Corn…">On the Avenue de Paris, where the Corniche meets the sea, Kahwat Ras Beirut serves Lebanon the way it tastes in memories — mezze on cool marble, soujouk with pomegranate, oriental nights with live music, and coffee that lasts until 2 AM. A 4.8-star love letter to the city.</p>
+    <p class="lead"><xen data-edit="t43" data-edit-label="Text (EN): On the Avenue de Paris, where the Corn…">On the Avenue de Paris, where the Corniche meets the sea, Kahwat Ras Beirut serves Lebanon the way it tastes in memories — mezze on cool marble, soujouk with pomegranate, oriental nights with live music, and coffee that lasts until 2 AM. A 4.8-star love letter to the city.</xen><xar data-edit="t45" data-edit-label="Text (AR): على أفينيو دو باري، وين الكورنيش بيلاق…">على أفينيو دو باري، وين الكورنيش بيلاقي البحر، قهوة رأس بيروت بتقدّم لبنان متل ما بينذكر بالذاكرة — مازة على رخام بارد، سجق بدبس الرمان، ليالي شرقية بموسيقى حيّة، وقهوة بتضلّ لحدّ الساعة 2 بعد نصّ الليل. رسالة حبّ لبيروت بتقييم 4.8 نجمة.</xar></p>
     <div class="stats">
-     <div><b data-edit="t19" data-edit-label="Text — ★ 4.8">★ 4.8</b><span data-edit="t20" data-edit-label="Text — 566 love letters">566 love letters</span></div>
-     <div><b data-edit="t21" data-edit-label="Text — 2 AM">2 AM</b><span data-edit="t22" data-edit-label="Text — the night ends late">the night ends late</span></div>
-     <div><b data-edit="t23" data-edit-label="Text — 1">1</b><span data-edit="t24" data-edit-label="Text — sea, right there">sea, right there</span></div>
+     <div><b data-edit="t19" data-edit-label="Text — ★ 4.8">★ 4.8</b><span><xen data-edit="t46" data-edit-label="Text (EN): 566 love letters">566 love letters</xen><xar data-edit="t47" data-edit-label="Text (AR): 566 رسالة حبّ">566 رسالة حبّ</xar></span></div>
+     <div><b><xen data-edit="t48" data-edit-label="Text (EN): 2 AM">2 AM</xen><xar data-edit="t49" data-edit-label="Text (AR): 2 بعد نصّ الليل">2 بعد نصّ الليل</xar></b><span><xen data-edit="t50" data-edit-label="Text (EN): the night ends late">the night ends late</xen><xar data-edit="t51" data-edit-label="Text (AR): السهرة بتطوّل">السهرة بتطوّل</xar></span></div>
+     <div><b data-edit="t23" data-edit-label="Text — 1">1</b><span><xen data-edit="t53" data-edit-label="Text (EN): sea, right there">sea, right there</xen><xar data-edit="t54" data-edit-label="Text (AR): والبحر، قدّامك">والبحر، قدّامك</xar></span></div>
     </div>
    </div>
    <div class="sea rv">
     <img src="img/06.jpg" alt="" loading="lazy">
-    <span class="cap" data-edit="t25" data-edit-label="Text — — the terrace, where the mezze meets t…">— the terrace, where the mezze meets the Mediterranean —</span>
+    <span class="cap"><xen data-edit="t55" data-edit-label="Text (EN): — the terrace, where the mezze meets t…">— the terrace, where the mezze meets the Mediterranean —</xen><xar data-edit="t56" data-edit-label="Text (AR): — التراس، وين المازة بتلاقي المتوسّط —">— التراس، وين المازة بتلاقي المتوسّط —</xar></span>
    </div>
   </div>
  </div>
@@ -197,95 +231,95 @@ footer{text-align:center;padding:30px 5vw 110px;color:var(--dim);font-style:ital
 
 <section class="carte" id="carte">
  <div class="wrap">
-  <div class="head rv"><h2 data-edit="t26" data-edit-label="Title — LA CARTE">LA CARTE</h2><span data-edit="t27" data-edit-label="Text — ما تستحي، كول">ما تستحي، كول</span></div>
-  <div class="dish-w"><div class="dish rv"><h3 data-edit="t28" data-edit-label="Heading — Osmaliyah Shawarma">Osmaliyah Shawarma</h3><span class="dots"></span><span class="no" data-edit="t29" data-edit-label="Text — №1">№1</span><p data-edit="t30" data-edit-label="Text — The dish reviewers can't stop writing …">The dish reviewers can't stop writing about — outstanding presentation, incredible taste.</p></div><div class="dish rv"><h3 data-edit="t31" data-edit-label="Heading — Mezze by the Sea">Mezze by the Sea</h3><span class="dots"></span><span class="no" data-edit="t32" data-edit-label="Text — №2">№2</span><p data-edit="t33" data-edit-label="Text — Labneh, olives, saj bread and the Medi…">Labneh, olives, saj bread and the Mediterranean breeze on the terrace.</p></div><div class="dish rv"><h3 data-edit="t34" data-edit-label="Heading — Oriental Nights">Oriental Nights</h3><span class="dots"></span><span class="no" data-edit="t35" data-edit-label="Text — №3">№3</span><p data-edit="t36" data-edit-label="Text — Live tarab and oud evenings — Beirut's…">Live tarab and oud evenings — Beirut's soul, on stage.</p></div></div>
+  <div class="head rv"><h2><xen data-edit="t58" data-edit-label="Text (EN): LA CARTE">LA CARTE</xen><xar data-edit="t60" data-edit-label="Text (AR): اللائحة">اللائحة</xar></h2><span data-edit="t27" data-edit-label="Text — ما تستحي، كول">ما تستحي، كول</span></div>
+  <div class="dish-w"><div class="dish rv"><h3><xen data-edit="t61" data-edit-label="Text (EN): Osmaliyah Shawarma">Osmaliyah Shawarma</xen><xar data-edit="t63" data-edit-label="Text (AR): شاورما عثمليّة">شاورما عثمليّة</xar></h3><span class="dots"></span><span class="no" data-edit="t29" data-edit-label="Text — №1">№1</span><p><xen data-edit="t64" data-edit-label="Text (EN): The dish reviewers can't stop writing …">The dish reviewers can't stop writing about — outstanding presentation, incredible taste.</xen><xar data-edit="t65" data-edit-label="Text (AR): الطبق يلّي ما بيبطّلو الزوّار يكتبو عن…">الطبق يلّي ما بيبطّلو الزوّار يكتبو عنّو — تقديم مميّز وطعمة ما بتنتنسى.</xar></p></div><div class="dish rv"><h3><xen data-edit="t67" data-edit-label="Text (EN): Mezze by the Sea">Mezze by the Sea</xen><xar data-edit="t69" data-edit-label="Text (AR): مازة عالبحر">مازة عالبحر</xar></h3><span class="dots"></span><span class="no" data-edit="t32" data-edit-label="Text — №2">№2</span><p><xen data-edit="t71" data-edit-label="Text (EN): Labneh, olives, saj bread and the Medi…">Labneh, olives, saj bread and the Mediterranean breeze on the terrace.</xen><xar data-edit="t73" data-edit-label="Text (AR): لبنة، زيتون، خبز صاج ونسمة المتوسّط عا…">لبنة، زيتون، خبز صاج ونسمة المتوسّط عالتراس.</xar></p></div><div class="dish rv"><h3><xen data-edit="t74" data-edit-label="Text (EN): Oriental Nights">Oriental Nights</xen><xar data-edit="t78" data-edit-label="Text (AR): ليالي شرقية">ليالي شرقية</xar></h3><span class="dots"></span><span class="no" data-edit="t35" data-edit-label="Text — №3">№3</span><p><xen data-edit="t79" data-edit-label="Text (EN): Live tarab and oud evenings — Beirut's…">Live tarab and oud evenings — Beirut's soul, on stage.</xen><xar data-edit="t80" data-edit-label="Text (AR): سهرات طرب وعود على الهوا — روح بيروت، …">سهرات طرب وعود على الهوا — روح بيروت، عالمسرح.</xar></p></div></div>
  </div>
  <div class="wrap2">
   <div class="carte-cols rv">
    <div>
-    <h3>MORNINGS <span class="arabic" data-edit="t37" data-edit-label="Text — الصبح">الصبح</span></h3>
+    <h3><xen class="c">MORNINGS <span class="arabic" data-edit="t37" data-edit-label="Text — الصبح">الصبح</span></xen><xar class="c">الصبح <span class="arabic" data-edit="t81" data-edit-label="Text: صباحيّات">صباحيّات</span></xar></h3>
     <ul>
-     <li data-edit="t38" data-edit-label="List item — Foul moudammas">Foul moudammas</li>
-     <li data-edit="t39" data-edit-label="List item — Mousabbaha">Mousabbaha</li>
-     <li>Mini manakeesh <small data-edit="t40" data-edit-label="Text — zaatar &amp; cheese">zaatar &amp; cheese</small></li>
-     <li data-edit="t41" data-edit-label="List item — Labneh &amp; fresh vegetables">Labneh &amp; fresh vegetables</li>
-     <li data-edit="t42" data-edit-label="List item — Omelet">Omelet</li>
-     <li data-edit="t43" data-edit-label="List item — Apricot jam, butter &amp; warm bread">Apricot jam, butter &amp; warm bread</li>
+     <li><xen data-edit="t82" data-edit-label="Text (EN): Foul moudammas">Foul moudammas</xen><xar data-edit="t83" data-edit-label="Text (AR): فول مدمّس">فول مدمّس</xar></li>
+     <li><xen data-edit="t84" data-edit-label="Text (EN): Mousabbaha">Mousabbaha</xen><xar data-edit="t85" data-edit-label="Text (AR): مسبّحة">مسبّحة</xar></li>
+     <li><xen>Mini manakeesh <small data-edit="t40" data-edit-label="Text — zaatar &amp; cheese">zaatar &amp; cheese</small></xen><xar>مناقيش صغيرة <small data-edit="t86" data-edit-label="Text: زعتر وجبنة">زعتر وجبنة</small></xar></li>
+     <li><xen data-edit="t87" data-edit-label="Text (EN): Labneh &amp; fresh vegetables">Labneh &amp; fresh vegetables</xen><xar data-edit="t88" data-edit-label="Text (AR): لبنة وخضرة طازة">لبنة وخضرة طازة</xar></li>
+     <li><xen data-edit="t89" data-edit-label="Text (EN): Omelet">Omelet</xen><xar data-edit="t90" data-edit-label="Text (AR): عجّة بيض">عجّة بيض</xar></li>
+     <li><xen data-edit="t91" data-edit-label="Text (EN): Apricot jam, butter &amp; warm bread">Apricot jam, butter &amp; warm bread</xen><xar data-edit="t92" data-edit-label="Text (AR): مربّى مشمش، زبدة وخبز سخن">مربّى مشمش، زبدة وخبز سخن</xar></li>
     </ul>
    </div>
    <div>
-    <h3>MEZZE <span class="arabic" data-edit="t44" data-edit-label="Text — المازة">المازة</span></h3>
+    <h3><xen class="c">MEZZE <span class="arabic" data-edit="t44" data-edit-label="Text — المازة">المازة</span></xen><xar class="c">المازة <span class="arabic" data-edit="t93" data-edit-label="Text: على الرخام">على الرخام</span></xar></h3>
     <ul>
-     <li data-edit="t45" data-edit-label="List item — Fattouch">Fattouch</li>
-     <li data-edit="t46" data-edit-label="List item — Hommos · Mouhammara">Hommos · Mouhammara</li>
-     <li data-edit="t47" data-edit-label="List item — Warak enab">Warak enab</li>
-     <li data-edit="t48" data-edit-label="List item — Batata harra">Batata harra</li>
-     <li data-edit="t49" data-edit-label="List item — Rkakat jabneh">Rkakat jabneh</li>
-     <li data-edit="t50" data-edit-label="List item — Makanek bi fakhara">Makanek bi fakhara</li>
-     <li data-edit="t51" data-edit-label="List item — Msakhan djej">Msakhan djej</li>
+     <li><xen data-edit="t94" data-edit-label="Text (EN): Fattouch">Fattouch</xen><xar data-edit="t95" data-edit-label="Text (AR): فتّوش">فتّوش</xar></li>
+     <li><xen data-edit="t96" data-edit-label="Text (EN): Hommos · Mouhammara">Hommos · Mouhammara</xen><xar data-edit="t97" data-edit-label="Text (AR): حمّص · محمّرة">حمّص · محمّرة</xar></li>
+     <li><xen data-edit="t98" data-edit-label="Text (EN): Warak enab">Warak enab</xen><xar data-edit="t99" data-edit-label="Text (AR): ورق عنب">ورق عنب</xar></li>
+     <li><xen data-edit="t100" data-edit-label="Text (EN): Batata harra">Batata harra</xen><xar data-edit="t101" data-edit-label="Text (AR): بطاطا حرّة">بطاطا حرّة</xar></li>
+     <li><xen data-edit="t102" data-edit-label="Text (EN): Rkakat jabneh">Rkakat jabneh</xen><xar data-edit="t103" data-edit-label="Text (AR): رقاقات جبنة">رقاقات جبنة</xar></li>
+     <li><xen data-edit="t104" data-edit-label="Text (EN): Makanek bi fakhara">Makanek bi fakhara</xen><xar data-edit="t105" data-edit-label="Text (AR): مقانق بالفخّارة">مقانق بالفخّارة</xar></li>
+     <li><xen data-edit="t106" data-edit-label="Text (EN): Msakhan djej">Msakhan djej</xen><xar data-edit="t107" data-edit-label="Text (AR): مسخّن دجاج">مسخّن دجاج</xar></li>
     </ul>
    </div>
    <div>
-    <h3>SWEET &amp; LATE <span class="arabic" data-edit="t52" data-edit-label="Text — حلو وسهر">حلو وسهر</span></h3>
+    <h3><xen class="c">SWEET &amp; LATE <span class="arabic" data-edit="t52" data-edit-label="Text — حلو وسهر">حلو وسهر</span></xen><xar class="c">حلو وسهر <span class="arabic" data-edit="t108" data-edit-label="Text: آخر الليل">آخر الليل</span></xar></h3>
     <ul>
-     <li data-edit="t53" data-edit-label="List item — Katayef">Katayef</li>
-     <li data-edit="t54" data-edit-label="List item — Kellaj">Kellaj</li>
-     <li data-edit="t55" data-edit-label="List item — Lebanese coffee">Lebanese coffee</li>
-     <li data-edit="t56" data-edit-label="List item — Tea, poured properly">Tea, poured properly</li>
-     <li>Soup &amp; lentils <small data-edit="t57" data-edit-label="Text — on cold evenings">on cold evenings</small></li>
+     <li><xen data-edit="t109" data-edit-label="Text (EN): Katayef">Katayef</xen><xar data-edit="t110" data-edit-label="Text (AR): قطايف">قطايف</xar></li>
+     <li><xen data-edit="t111" data-edit-label="Text (EN): Kellaj">Kellaj</xen><xar data-edit="t112" data-edit-label="Text (AR): كلّاج">كلّاج</xar></li>
+     <li><xen data-edit="t113" data-edit-label="Text (EN): Lebanese coffee">Lebanese coffee</xen><xar data-edit="t114" data-edit-label="Text (AR): قهوة لبنانية">قهوة لبنانية</xar></li>
+     <li><xen data-edit="t115" data-edit-label="Text (EN): Tea, poured properly">Tea, poured properly</xen><xar data-edit="t116" data-edit-label="Text (AR): شاي، مصبوب متل ما لازم">شاي، مصبوب متل ما لازم</xar></li>
+     <li><xen>Soup &amp; lentils <small data-edit="t57" data-edit-label="Text — on cold evenings">on cold evenings</small></xen><xar>شوربة وعدس <small data-edit="t117" data-edit-label="Text: بالليالي الباردة">بالليالي الباردة</small></xar></li>
     </ul>
    </div>
   </div>
  </div>
  <div class="wrap">
-  <p class="note" data-edit="t58" data-edit-label="Text — …and the mezze keeps coming until you …">…and the mezze keeps coming until you say stop. Nobody says stop. Feast-night set menus at the counter.</p>
+  <p class="note"><xen data-edit="t118" data-edit-label="Text (EN): …and the mezze keeps coming until you …">…and the mezze keeps coming until you say stop. Nobody says stop. Feast-night set menus at the counter.</xen><xar data-edit="t119" data-edit-label="Text (AR): …والمازة بتضلّ جايي لحدّ ما تقولوا كفى…">…والمازة بتضلّ جايي لحدّ ما تقولوا كفى. وما حدا بيقول كفى. قوائم ليالي العزايم عالكاونتر.</xar></p>
  </div>
 </section>
 
 <div class="strip-w" id="gallery">
  <div class="strip-head">
-  <div class="head rv"><h2>SCENES FROM <em data-edit="t59" data-edit-label="Text — THE CAFÉ">THE CAFÉ</em></h2><span data-edit="t60" data-edit-label="Text — 35mm, unedited">35mm, unedited</span></div>
+  <div class="head rv"><h2><xen>SCENES FROM <em data-edit="t59" data-edit-label="Text — THE CAFÉ">THE CAFÉ</em></xen><xar>لقطات من <em data-edit="t120" data-edit-label="Text: المقهى">المقهى</em></xar></h2><span><xen data-edit="t121" data-edit-label="Text (EN): 35mm, unedited">35mm, unedited</xen><xar data-edit="t122" data-edit-label="Text (AR): فيلم 35 ملم، بلا تعديل">فيلم 35 ملم، بلا تعديل</xar></span></div>
  </div>
  <div class="strip"><div class="inner"><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/02.jpg" target="_blank"><img src="img/02.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a></div></div>
- <p class="strip-hint" data-edit="t61" data-edit-label="Text — — drag the reel ⟶">— drag the reel ⟶</p>
+ <p class="strip-hint"><xen data-edit="t123" data-edit-label="Text (EN): — drag the reel ⟶">— drag the reel ⟶</xen><xar data-edit="t124" data-edit-label="Text (AR): — اسحبوا الشريط ⟶">— اسحبوا الشريط ⟶</xar></p>
 </div>
 
 <section class="tarab" id="tarab">
  <div class="wrap">
   <div class="vinyl rv"></div>
   <div class="rv">
-   <h2>ORIENTAL <em data-edit="t62" data-edit-label="Text — NIGHTS">NIGHTS</em></h2>
-   <p data-edit="t63" data-edit-label="Text — When the sun drops behind the lighthou…">When the sun drops behind the lighthouse, the oud comes out. Live tarab evenings — the old songs, sung the old way, with the windows open to the sea. Coffee turns to arak, and nobody checks the time.</p>
-   <div class="times"><span data-edit="t64" data-edit-label="Text — LIVE MUSIC EVENINGS">LIVE MUSIC EVENINGS</span><span data-edit="t65" data-edit-label="Text — OPEN TILL 2 AM">OPEN TILL 2 AM</span></div>
+   <h2><xen>ORIENTAL <em data-edit="t62" data-edit-label="Text — NIGHTS">NIGHTS</em></xen><xar>ليالي <em data-edit="t125" data-edit-label="Text: شرقية">شرقية</em></xar></h2>
+   <p><xen data-edit="t126" data-edit-label="Text (EN): When the sun drops behind the lighthou…">When the sun drops behind the lighthouse, the oud comes out. Live tarab evenings — the old songs, sung the old way, with the windows open to the sea. Coffee turns to arak, and nobody checks the time.</xen><xar data-edit="t127" data-edit-label="Text (AR): لمّا الشمس بتنزل ورا المنارة، بيطلع ال…">لمّا الشمس بتنزل ورا المنارة، بيطلع العود. سهرات طرب حيّة — الأغاني القديمة، مغنّية متل زمان، والشبابيك مفتوحة عالبحر. القهوة بتصير عرق، وما حدا بيراقب الساعة.</xar></p>
+   <div class="times"><span><xen data-edit="t128" data-edit-label="Text (EN): LIVE MUSIC EVENINGS">LIVE MUSIC EVENINGS</xen><xar data-edit="t129" data-edit-label="Text (AR): سهرات موسيقى حيّة">سهرات موسيقى حيّة</xar></span><span><xen data-edit="t130" data-edit-label="Text (EN): OPEN TILL 2 AM">OPEN TILL 2 AM</xen><xar data-edit="t131" data-edit-label="Text (AR): مفتوح لحدّ 2 بعد نصّ الليل">مفتوح لحدّ 2 بعد نصّ الليل</xar></span></div>
   </div>
  </div>
 </section>
 
 <section id="reviews">
  <div class="wrap">
-  <div class="head rv"><h2>POSTCARDS <em data-edit="t66" data-edit-label="Text — HOME">HOME</em></h2><span data-edit="t67" data-edit-label="Text — what the guests wrote">what the guests wrote</span></div>
-  <div class="cards"><div class="card rv"><span class="s">★★★★★</span><p data-edit="t68" data-edit-label="Text — Amazing experience. The food was absol…">Amazing experience. The food was absolutely delicious. The Osmaliyah Shawarma was outstanding — both the presentation and the taste were incredible.</p><div class="who" data-edit="t69" data-edit-label="Text — Google review">Google review</div></div><div class="card rv"><span class="s">★★★★★</span><p data-edit="t70" data-edit-label="Text — The view is wonderful, the food yummy,…">The view is wonderful, the food yummy, and the service is great. I recommend you come and enjoy the view.</p><div class="who" data-edit="t71" data-edit-label="Text — Google review">Google review</div></div><div class="card rv"><span class="s">★★★★★</span><p data-edit="t72" data-edit-label="Text — You can't go wrong with this place — a…">You can't go wrong with this place — a must visit every time we come from abroad. Lovely atmosphere, delightful food and outstanding staff with exceptional hospitality.</p><div class="who" data-edit="t73" data-edit-label="Text — Google review">Google review</div></div></div>
+  <div class="head rv"><h2><xen>POSTCARDS <em data-edit="t66" data-edit-label="Text — HOME">HOME</em></xen><xar>بطاقات <em data-edit="t132" data-edit-label="Text: بريدية">بريدية</em></xar></h2><span><xen data-edit="t133" data-edit-label="Text (EN): what the guests wrote">what the guests wrote</xen><xar data-edit="t134" data-edit-label="Text (AR): شو كتبوا الضيوف">شو كتبوا الضيوف</xar></span></div>
+  <div class="cards"><div class="card rv"><span class="s">★★★★★</span><p data-edit="t68" data-edit-label="Text — Amazing experience. The food was absol…">Amazing experience. The food was absolutely delicious. The Osmaliyah Shawarma was outstanding — both the presentation and the taste were incredible.</p><div class="who"><xen data-edit="t135" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t136" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div><div class="card rv"><span class="s">★★★★★</span><p data-edit="t70" data-edit-label="Text — The view is wonderful, the food yummy,…">The view is wonderful, the food yummy, and the service is great. I recommend you come and enjoy the view.</p><div class="who"><xen data-edit="t137" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t138" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div><div class="card rv"><span class="s">★★★★★</span><p data-edit="t72" data-edit-label="Text — You can't go wrong with this place — a…">You can't go wrong with this place — a must visit every time we come from abroad. Lovely atmosphere, delightful food and outstanding staff with exceptional hospitality.</p><div class="who"><xen data-edit="t139" data-edit-label="Text (EN): Google review">Google review</xen><xar data-edit="t140" data-edit-label="Text (AR): تقييم على غوغل">تقييم على غوغل</xar></div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <p class="pre" data-edit="t74" data-edit-label="Text — FINAL SCENE">FINAL SCENE</p>
- <h2>THE SEA IS <em data-edit="t75" data-edit-label="Text — WAITING.">WAITING.</em></h2>
+ <p class="pre"><xen data-edit="t141" data-edit-label="Text (EN): FINAL SCENE">FINAL SCENE</xen><xar data-edit="t142" data-edit-label="Text (AR): المشهد الأخير">المشهد الأخير</xar></p>
+ <h2><xen>THE SEA IS <em data-edit="t75" data-edit-label="Text — WAITING.">WAITING.</em></xen><xar>البحر <em data-edit="t143" data-edit-label="Text: ناطرك.">ناطرك.</em></xar></h2>
  <a class="phone" href="tel:+9613259200" data-edit="t76" data-edit-label="Button / link — +961 3 259 200">+961 3 259 200</a>
- <p class="meta"><b data-edit="t77" data-edit-label="Text — Avenue de Paris (Corniche), Ras Beirut…">Avenue de Paris (Corniche), Ras Beirut, Beirut, Lebanon</b><br>Open daily · 8:00 AM – 2:00 AM</p>
+ <p class="meta"><xen><b data-edit="t77" data-edit-label="Text — Avenue de Paris (Corniche), Ras Beirut…">Avenue de Paris (Corniche), Ras Beirut, Beirut, Lebanon</b><br>Open daily · 8:00 AM – 2:00 AM</xen><xar><b data-edit="t144" data-edit-label="Text: أفينيو دو باري (الكورنيش)، رأس بيروت، …">أفينيو دو باري (الكورنيش)، رأس بيروت، بيروت، لبنان</b><br>مفتوح كل يوم · 8:00 صباحاً – 2:00 بعد نصّ الليل</xar></p>
  <div class="btns">
-  <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener" data-edit="t78" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn line ig" href="https://instagram.com/kahwatrasbeirut" target="_blank" rel="noopener" data-edit="t79" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener" data-edit="t80" data-edit-label="Button / link — OPEN IN GOOGLE MAPS ↗">OPEN IN GOOGLE MAPS ↗</a>
+  <a class="btn wa" href="https://wa.me/9613259200" target="_blank" rel="noopener"><xen data-edit="t145" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t146" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn line ig" href="https://instagram.com/kahwatrasbeirut" target="_blank" rel="noopener"><xen data-edit="t147" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t148" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn line" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener"><xen data-edit="t149" data-edit-label="Text (EN): OPEN IN GOOGLE MAPS ↗">OPEN IN GOOGLE MAPS ↗</xen><xar data-edit="t150" data-edit-label="Text (AR): إفتحوا خرائط غوغل ↗">إفتحوا خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9613259200" data-edit="t81" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/9613259200" target="_blank" rel="noopener" data-edit="t82" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/kahwatrasbeirut" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener" data-edit="t83" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+9613259200"><xen data-edit="t151" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t152" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/9613259200" target="_blank" rel="noopener"><xen data-edit="t153" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t154" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/kahwatrasbeirut" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=16666286664096993867" target="_blank" rel="noopener"><xen data-edit="t155" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t156" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Kahwat Ras Beirut · Beirut, Lebanon</footer>
+<footer><xen data-edit="t157" data-edit-label="Text (EN): © Kahwat Ras Beirut · Beirut, Lebanon">© Kahwat Ras Beirut · Beirut, Lebanon</xen><xar data-edit="t158" data-edit-label="Text (AR): © قهوة رأس بيروت · بيروت، لبنان">© قهوة رأس بيروت · بيروت، لبنان</xar></footer>
 
 <script>
 var nav=document.getElementById('nav');
@@ -294,5 +328,17 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t159" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"قهوة رأس بيروت — مطعم لبناني في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

@@ -135,54 +135,88 @@ footer{text-align:center;padding:26px 5vw 110px;font-family:'Inter',sans-serif;f
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Amiri',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:4px;cursor:pointer;
+  background:#20304A;color:#FBF7EE;border:1.5px solid #C9A227;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <nav>
- <a class="brand" href="#">Le <span data-edit="t1" data-edit-label="Text — Professeur">Professeur</span></a>
+ <a class="brand" href="#"><xen>Le <span data-edit="t1" data-edit-label="Text — Professeur">Professeur</span></xen><xar>لو <span data-edit="t2" data-edit-label="Text: بروفيسور">بروفيسور</span></xar></a>
  <div class="links ui">
-  <a href="#curriculum" data-edit="t2" data-edit-label="Button / link — The classics">The classics</a><a href="#menu" data-edit="t3" data-edit-label="Button / link — Menu">Menu</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Photos">Photos</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+9611703666" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#curriculum"><xen data-edit="t3" data-edit-label="Text (EN): The classics">The classics</xen><xar data-edit="t4" data-edit-label="Text (AR): الكلاسيكيات">الكلاسيكيات</xar></a><a href="#menu"><xen data-edit="t5" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t6" data-edit-label="Text (AR): المنيو">المنيو</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Photos">Photos</xen><xar data-edit="t9" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+9611703666"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="lesson" data-edit="t7" data-edit-label="Text — Lesson № 1 — Beiruti breakfast, taught…">Lesson № 1 — Beiruti breakfast, taught daily since forever</span>
-  <h1>Le <em data-edit="t8" data-edit-label="Text — Professeur">Professeur</em></h1>
-  <p class="sub">Beirut's breakfast institution, where fatteh is a lesson and everyone passes. The fatteh arrives <u>drowning in golden ghee</u>, the foul has simmered since dawn, and the room has been full since it opened.</p>
+  <span class="lesson"><xen data-edit="t14" data-edit-label="Text (EN): Lesson № 1 — Beiruti breakfast, taught…">Lesson № 1 — Beiruti breakfast, taught daily since forever</xen><xar data-edit="t15" data-edit-label="Text (AR): الدرس رقم 1 — ترويقة بيروتية، بتتعلّم …">الدرس رقم 1 — ترويقة بيروتية، بتتعلّم كل يوم من زمان</xar></span>
+  <h1><xen>Le <em data-edit="t8" data-edit-label="Text — Professeur">Professeur</em></xen><xar>لو <em data-edit="t16" data-edit-label="Text: بروفيسور">بروفيسور</em></xar></h1>
+  <p class="sub"><xen>Beirut's breakfast institution, where fatteh is a lesson and everyone passes. The fatteh arrives <u>drowning in golden ghee</u>, the foul has simmered since dawn, and the room has been full since it opened.</xen><xar>مؤسّسة الترويقة ببيروت، وين الفتّة درس والكلّ بينجح. الفتّة بتوصل <u>غارقة بالسمنة الذهبية</u>، والفول عم يغلي من عند الفجر، والصالة مليانة من يوم ما فتحت.</xar></p>
   <div class="marks ui">
-   <span class="mark r" data-edit="t9" data-edit-label="Text — ★ 4.4 — 335 reviews">★ 4.4 — 335 reviews</span>
-   <span class="mark" data-edit="t10" data-edit-label="Text — Mar Elias · Msaytbeh">Mar Elias · Msaytbeh</span>
-   <span class="mark g" data-edit="t11" data-edit-label="Text — Open 7:30 AM — 3 PM">Open 7:30 AM — 3 PM</span>
+   <span class="mark r"><xen data-edit="t17" data-edit-label="Text (EN): ★ 4.4 — 335 reviews">★ 4.4 — 335 reviews</xen><xar data-edit="t18" data-edit-label="Text (AR): ★ 4.4 — 335 تقييم">★ 4.4 — 335 تقييم</xar></span>
+   <span class="mark"><xen data-edit="t20" data-edit-label="Text (EN): Mar Elias · Msaytbeh">Mar Elias · Msaytbeh</xen><xar data-edit="t21" data-edit-label="Text (AR): مار الياس · المصيطبة">مار الياس · المصيطبة</xar></span>
+   <span class="mark g"><xen data-edit="t22" data-edit-label="Text (EN): Open 7:30 AM — 3 PM">Open 7:30 AM — 3 PM</xen><xar data-edit="t23" data-edit-label="Text (AR): مفتوح 7:30 صباحاً — 3 بعد الظهر">مفتوح 7:30 صباحاً — 3 بعد الظهر</xar></span>
   </div>
   <div class="cta">
-   <a class="btn r" href="tel:+9611703666" data-edit="t12" data-edit-label="Button / link — Call +961 1 703 666">Call +961 1 703 666</a>
-   <a class="btn" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener" data-edit="t13" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+   <a class="btn r" href="tel:+9611703666"><xen data-edit="t24" data-edit-label="Text (EN): Call +961 1 703 666">Call +961 1 703 666</xen><xar data-edit="t25" data-edit-label="Text (AR): إتّصلوا +961 1 703 666">إتّصلوا +961 1 703 666</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener"><xen data-edit="t27" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t28" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
   </div>
  </div>
  <div class="ph rv">
   <span class="clip"></span>
   <img src="img/08.jpg" alt="Le Professeur breakfast spread">
-  <span class="note" data-edit="t14" data-edit-label="Text — attendance: full, again.">attendance: full, again.</span>
+  <span class="note"><xen data-edit="t29" data-edit-label="Text (EN): attendance: full, again.">attendance: full, again.</xen><xar data-edit="t30" data-edit-label="Text (AR): الحضور: كامل، من جديد.">الحضور: كامل، من جديد.</xar></span>
  </div>
 </header>
 
 <div class="board">
  <div class="in">
-  <div class="st"><b data-edit="t15" data-edit-label="Text — 7:30 AM">7:30 AM</b><span data-edit="t16" data-edit-label="Text — class begins">class begins</span></div>
-  <div class="st"><b data-edit="t17" data-edit-label="Text — Fatteh">Fatteh</b><span data-edit="t18" data-edit-label="Text — the thesis dish">the thesis dish</span></div>
-  <div class="st"><b data-edit="t19" data-edit-label="Text — ★ 4.4">★ 4.4</b><span data-edit="t20" data-edit-label="Text — 335 reviews">335 reviews</span></div>
-  <div class="st"><b data-edit="t21" data-edit-label="Text — Al Intabli">Al Intabli</b><span data-edit="t22" data-edit-label="Text — the old house">the old house</span></div>
-  <div class="st"><b data-edit="t23" data-edit-label="Text — Mar Elias">Mar Elias</b><span data-edit="t24" data-edit-label="Text — beirut proper">beirut proper</span></div>
+  <div class="st"><b><xen data-edit="t31" data-edit-label="Text (EN): 7:30 AM">7:30 AM</xen><xar data-edit="t32" data-edit-label="Text (AR): 7:30 صباحاً">7:30 صباحاً</xar></b><span><xen data-edit="t33" data-edit-label="Text (EN): class begins">class begins</xen><xar data-edit="t34" data-edit-label="Text (AR): بيبلّش الصفّ">بيبلّش الصفّ</xar></span></div>
+  <div class="st"><b><xen data-edit="t35" data-edit-label="Text (EN): Fatteh">Fatteh</xen><xar data-edit="t36" data-edit-label="Text (AR): الفتّة">الفتّة</xar></b><span><xen data-edit="t38" data-edit-label="Text (EN): the thesis dish">the thesis dish</xen><xar data-edit="t39" data-edit-label="Text (AR): طبق الأطروحة">طبق الأطروحة</xar></span></div>
+  <div class="st"><b data-edit="t19" data-edit-label="Text — ★ 4.4">★ 4.4</b><span><xen data-edit="t40" data-edit-label="Text (EN): 335 reviews">335 reviews</xen><xar data-edit="t41" data-edit-label="Text (AR): 335 تقييم">335 تقييم</xar></span></div>
+  <div class="st"><b><xen data-edit="t42" data-edit-label="Text (EN): Al Intabli">Al Intabli</xen><xar data-edit="t43" data-edit-label="Text (AR): الإنطبلي">الإنطبلي</xar></b><span><xen data-edit="t44" data-edit-label="Text (EN): the old house">the old house</xen><xar data-edit="t45" data-edit-label="Text (AR): البيت القديم">البيت القديم</xar></span></div>
+  <div class="st"><b><xen data-edit="t46" data-edit-label="Text (EN): Mar Elias">Mar Elias</xen><xar data-edit="t48" data-edit-label="Text (AR): مار الياس">مار الياس</xar></b><span><xen data-edit="t49" data-edit-label="Text (EN): beirut proper">beirut proper</xen><xar data-edit="t60" data-edit-label="Text (AR): قلب بيروت">قلب بيروت</xar></span></div>
  </div>
 </div>
 
 <section class="cur" id="curriculum">
  <div class="wrap">
-  <span class="k" data-edit="t25" data-edit-label="Text — Today's curriculum">Today's curriculum</span>
-  <h2>The <em data-edit="t26" data-edit-label="Text — required">required</em> reading</h2>
-  <div class="c-grid"><div class="cc rv"><img src="img/06.jpg" alt="Fatteh, the thesis" loading="lazy"><div class="bd"><span class="no" data-edit="t27" data-edit-label="Text — lesson 1">lesson 1</span><h3 data-edit="t28" data-edit-label="Heading — Fatteh, the thesis">Fatteh, the thesis</h3><p data-edit="t29" data-edit-label="Text — Warm chickpeas, yogurt, golden ghee — …">Warm chickpeas, yogurt, golden ghee — the dish every regular defends like a dissertation.</p></div></div><div class="cc rv"><img src="img/09.jpg" alt="Fatteh with qawarma" loading="lazy"><div class="bd"><span class="no" data-edit="t30" data-edit-label="Text — lesson 2">lesson 2</span><h3 data-edit="t31" data-edit-label="Heading — Fatteh with qawarma">Fatteh with qawarma</h3><p data-edit="t32" data-edit-label="Text — The old-school upgrade: preserved meat…">The old-school upgrade: preserved meat over the morning classic.</p></div></div><div class="cc rv"><img src="img/13.jpg" alt="Msabbaha & friends" loading="lazy"><div class="bd"><span class="no" data-edit="t33" data-edit-label="Text — lesson 3">lesson 3</span><h3 data-edit="t34" data-edit-label="Heading — Msabbaha & friends">Msabbaha & friends</h3><p data-edit="t35" data-edit-label="Text — Hand-mashed, olive-oiled, finished wit…">Hand-mashed, olive-oiled, finished with pickles from the big jars.</p></div></div></div>
+  <span class="k"><xen data-edit="t63" data-edit-label="Text (EN): Today's curriculum">Today's curriculum</xen><xar data-edit="t64" data-edit-label="Text (AR): منهج اليوم">منهج اليوم</xar></span>
+  <h2><xen>The <em data-edit="t26" data-edit-label="Text — required">required</em> reading</xen><xar>القراءة <em data-edit="t65" data-edit-label="Text: الإلزامية">الإلزامية</em></xar></h2>
+  <div class="c-grid"><div class="cc rv"><img src="img/06.jpg" alt="Fatteh, the thesis" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t66" data-edit-label="Text (EN): lesson 1">lesson 1</xen><xar data-edit="t67" data-edit-label="Text (AR): الدرس 1">الدرس 1</xar></span><h3><xen data-edit="t68" data-edit-label="Text (EN): Fatteh, the thesis">Fatteh, the thesis</xen><xar data-edit="t69" data-edit-label="Text (AR): الفتّة، الأطروحة">الفتّة، الأطروحة</xar></h3><p><xen data-edit="t70" data-edit-label="Text (EN): Warm chickpeas, yogurt, golden ghee — …">Warm chickpeas, yogurt, golden ghee — the dish every regular defends like a dissertation.</xen><xar data-edit="t71" data-edit-label="Text (AR): حمّص سخن، لبن، وسمنة ذهبية — الطبق يلّ…">حمّص سخن، لبن، وسمنة ذهبية — الطبق يلّي كل زبون بيدافع عنّو متل أطروحة دكتوراه.</xar></p></div></div><div class="cc rv"><img src="img/09.jpg" alt="Fatteh with qawarma" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t72" data-edit-label="Text (EN): lesson 2">lesson 2</xen><xar data-edit="t73" data-edit-label="Text (AR): الدرس 2">الدرس 2</xar></span><h3><xen data-edit="t74" data-edit-label="Text (EN): Fatteh with qawarma">Fatteh with qawarma</xen><xar data-edit="t75" data-edit-label="Text (AR): فتّة بالقاورما">فتّة بالقاورما</xar></h3><p><xen data-edit="t76" data-edit-label="Text (EN): The old-school upgrade: preserved meat…">The old-school upgrade: preserved meat over the morning classic.</xen><xar data-edit="t77" data-edit-label="Text (AR): الترقية القديمة: لحمة مكبوسة فوق كلاسي…">الترقية القديمة: لحمة مكبوسة فوق كلاسيك الصبح.</xar></p></div></div><div class="cc rv"><img src="img/13.jpg" alt="Msabbaha & friends" loading="lazy"><div class="bd"><span class="no"><xen data-edit="t78" data-edit-label="Text (EN): lesson 3">lesson 3</xen><xar data-edit="t79" data-edit-label="Text (AR): الدرس 3">الدرس 3</xar></span><h3><xen data-edit="t80" data-edit-label="Text (EN): Msabbaha & friends">Msabbaha & friends</xen><xar data-edit="t81" data-edit-label="Text (AR): مسبّحة ورفقاتها">مسبّحة ورفقاتها</xar></h3><p><xen data-edit="t82" data-edit-label="Text (EN): Hand-mashed, olive-oiled, finished wit…">Hand-mashed, olive-oiled, finished with pickles from the big jars.</xen><xar data-edit="t83" data-edit-label="Text (AR): مهروسة عاليد، مغطّاية بزيت الزيتون، وم…">مهروسة عاليد، مغطّاية بزيت الزيتون، ومع كبيس من المرطبانات الكبيرة.</xar></p></div></div></div>
  </div>
 </section>
 
@@ -193,56 +227,68 @@ footer{text-align:center;padding:26px 5vw 110px;font-family:'Inter',sans-serif;f
    <img src="img/02.jpg" alt="Le Professeur menu with prices">
   </div>
   <div class="rv">
-   <span class="k" data-edit="t36" data-edit-label="Text — The syllabus">The syllabus</span>
-   <h2>One page. <em data-edit="t37" data-edit-label="Text — Every classic.">Every classic.</em></h2>
-   <p data-edit="t38" data-edit-label="Text — The menu is a single sheet — eggs with…">The menu is a single sheet — eggs with meat, fatteh in every form, hummus, balila, foul. Pinned here exactly as it hangs in the shop.</p>
+   <span class="k"><xen data-edit="t84" data-edit-label="Text (EN): The syllabus">The syllabus</xen><xar data-edit="t85" data-edit-label="Text (AR): المنهاج">المنهاج</xar></span>
+   <h2><xen>One page. <em data-edit="t37" data-edit-label="Text — Every classic.">Every classic.</em></xen><xar>صفحة وحدة. <em data-edit="t86" data-edit-label="Text: وكل الكلاسيكيات.">وكل الكلاسيكيات.</em></xar></h2>
+   <p><xen data-edit="t87" data-edit-label="Text (EN): The menu is a single sheet — eggs with…">The menu is a single sheet — eggs with meat, fatteh in every form, hummus, balila, foul. Pinned here exactly as it hangs in the shop.</xen><xar data-edit="t88" data-edit-label="Text (AR): المنيو ورقة وحدة — بيض مع لحمة، فتّة ب…">المنيو ورقة وحدة — بيض مع لحمة، فتّة بكل أشكالها، حمّص، بليلة، فول. معلّقة هون بالضبط متل ما هيّي بالمحلّ.</xar></p>
    <ul>
-    <li><b data-edit="t39" data-edit-label="Text — Fatteh with meat">Fatteh with meat</b><span class="hand" data-edit="t40" data-edit-label="Text — the professor's pick">the professor's pick</span></li>
-    <li><b data-edit="t41" data-edit-label="Text — Foul &amp; msabbaha">Foul &amp; msabbaha</b><span class="hand" data-edit="t42" data-edit-label="Text — slow-simmered">slow-simmered</span></li>
-    <li><b data-edit="t43" data-edit-label="Text — Eggs with qawarma">Eggs with qawarma</b><span class="hand" data-edit="t44" data-edit-label="Text — old-school">old-school</span></li>
-    <li><b data-edit="t45" data-edit-label="Text — Hummus, always">Hummus, always</b><span class="hand" data-edit="t46" data-edit-label="Text — obviously">obviously</span></li>
+    <li><b><xen data-edit="t89" data-edit-label="Text (EN): Fatteh with meat">Fatteh with meat</xen><xar data-edit="t90" data-edit-label="Text (AR): فتّة مع لحمة">فتّة مع لحمة</xar></b><span class="hand"><xen data-edit="t91" data-edit-label="Text (EN): the professor's pick">the professor's pick</xen><xar data-edit="t92" data-edit-label="Text (AR): خيار البروفيسور">خيار البروفيسور</xar></span></li>
+    <li><b><xen data-edit="t93" data-edit-label="Text (EN): Foul &amp; msabbaha">Foul &amp; msabbaha</xen><xar data-edit="t94" data-edit-label="Text (AR): فول ومسبّحة">فول ومسبّحة</xar></b><span class="hand"><xen data-edit="t95" data-edit-label="Text (EN): slow-simmered">slow-simmered</xen><xar data-edit="t96" data-edit-label="Text (AR): مغليّة على مهل">مغليّة على مهل</xar></span></li>
+    <li><b><xen data-edit="t97" data-edit-label="Text (EN): Eggs with qawarma">Eggs with qawarma</xen><xar data-edit="t98" data-edit-label="Text (AR): بيض بالقاورما">بيض بالقاورما</xar></b><span class="hand"><xen data-edit="t99" data-edit-label="Text (EN): old-school">old-school</xen><xar data-edit="t100" data-edit-label="Text (AR): على الطريقة القديمة">على الطريقة القديمة</xar></span></li>
+    <li><b><xen data-edit="t101" data-edit-label="Text (EN): Hummus, always">Hummus, always</xen><xar data-edit="t102" data-edit-label="Text (AR): حمّص، دايماً">حمّص، دايماً</xar></b><span class="hand"><xen data-edit="t103" data-edit-label="Text (EN): obviously">obviously</xen><xar data-edit="t104" data-edit-label="Text (AR): طبعاً">طبعاً</xar></span></li>
    </ul>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">Field <em data-edit="t47" data-edit-label="Text — notes">notes</em></h2>
- <p class="sub2 ui" data-edit="t48" data-edit-label="Text — Photographs taped in by the regulars">Photographs taped in by the regulars</p>
+ <h2 class="rv"><xen>Field <em data-edit="t47" data-edit-label="Text — notes">notes</em></xen><xar>ملاحظات <em data-edit="t105" data-edit-label="Text: ميدانية">ميدانية</em></xar></h2>
+ <p class="sub2 ui"><xen data-edit="t106" data-edit-label="Text (EN): Photographs taped in by the regulars">Photographs taped in by the regulars</xen><xar data-edit="t107" data-edit-label="Text (AR): صور ملزوقة من الزبائن الدائمين">صور ملزوقة من الزبائن الدائمين</xar></p>
  <div class="g-grid"><a href="img/05.jpg" target="_blank"><img src="img/05.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/06.jpg" target="_blank"><img src="img/06.jpg" alt="" loading="lazy"></a><a href="img/09.jpg" target="_blank"><img src="img/09.jpg" alt="" loading="lazy"></a><a href="img/13.jpg" target="_blank"><img src="img/13.jpg" alt="" loading="lazy"></a><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/11.jpg" target="_blank"><img src="img/11.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <span class="k" data-edit="t49" data-edit-label="Text — Margin notes">Margin notes</span>
-  <h2>What the class <em data-edit="t50" data-edit-label="Text — wrote back">wrote back</em></h2>
+  <span class="k"><xen data-edit="t108" data-edit-label="Text (EN): Margin notes">Margin notes</xen><xar data-edit="t109" data-edit-label="Text (AR): ملاحظات عالهامش">ملاحظات عالهامش</xar></span>
+  <h2><xen>What the class <em data-edit="t50" data-edit-label="Text — wrote back">wrote back</em></xen><xar>شو كتب <em data-edit="t110" data-edit-label="Text: الصفّ">الصفّ</em></xar></h2>
   <div class="r-grid"><div class="note rv"><span class="grade" data-edit="t51" data-edit-label="Text — A+">A+</span><p data-edit="t52" data-edit-label="Text — This place has been around for ages, a…">This place has been around for ages, and you can tell from the moment you walk in that it's a long time favorite for a lot of people. There's always a steady flow of customers, from early morning until closing.</p><div class="who" data-edit="t53" data-edit-label="Text — — Daan">— Daan</div></div><div class="note rv"><span class="grade" data-edit="t54" data-edit-label="Text — A+">A+</span><p data-edit="t55" data-edit-label="Text — One thing is for sure, the name Le Pro…">One thing is for sure, the name Le Professeur has earned its reputation - fatte, foul, balila, hummus and eggs, served all morning and into lunchtime.</p><div class="who" data-edit="t56" data-edit-label="Text — — Gino Haddad">— Gino Haddad</div></div><div class="note rv"><span class="grade" data-edit="t57" data-edit-label="Text — A+">A+</span><p data-edit="t58" data-edit-label="Text — Awesome Lebanese breakfast place. We g…">Awesome Lebanese breakfast place. We got several items of the menu including the fettah, the msoubaha, the hummus.</p><div class="who" data-edit="t59" data-edit-label="Text — — Ali Elreichouni">— Ali Elreichouni</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <span class="k2" data-edit="t60" data-edit-label="Text — Final exam — attendance required">Final exam — attendance required</span>
- <h2>Breakfast is a <em data-edit="t61" data-edit-label="Text — discipline.">discipline.</em></h2>
+ <span class="k2"><xen data-edit="t111" data-edit-label="Text (EN): Final exam — attendance required">Final exam — attendance required</xen><xar data-edit="t112" data-edit-label="Text (AR): الامتحان النهائي — الحضور إلزامي">الامتحان النهائي — الحضور إلزامي</xar></span>
+ <h2><xen>Breakfast is a <em data-edit="t61" data-edit-label="Text — discipline.">discipline.</em></xen><xar>الترويقة <em data-edit="t113" data-edit-label="Text: مادة أساسية.">مادة أساسية.</em></xar></h2>
  <a class="phone" href="tel:+9611703666" data-edit="t62" data-edit-label="Button / link — +961 1 703 666">+961 1 703 666</a>
- <p class="meta">Mar Elias district (Msaytbeh), Beirut, Lebanon · Located in Al Intabli<br>Mon-Sat 7:30 AM - 3 PM; Sun 7:30 AM - 2 PM</p>
+ <p class="meta"><xen>Mar Elias district (Msaytbeh), Beirut, Lebanon · Located in Al Intabli<br>Mon-Sat 7:30 AM - 3 PM; Sun 7:30 AM - 2 PM</xen><xar>منطقة مار الياس (المصيطبة)، بيروت، لبنان · جوّا الإنطبلي<br>الإثنين-السبت 7:30 صباحاً - 3 بعد الظهر؛ الأحد 7:30 صباحاً - 2 بعد الظهر</xar></p>
  <div class="cta">
-  <a class="btn" href="tel:+9611703666" data-edit="t63" data-edit-label="Button / link — Call +961 1 703 666">Call +961 1 703 666</a> <a class="btn ig" href="https://instagram.com/professeurrestaurant_" target="_blank" rel="noopener" data-edit="t64" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener" data-edit="t65" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn" href="tel:+9611703666"><xen data-edit="t114" data-edit-label="Text (EN): Call +961 1 703 666">Call +961 1 703 666</xen><xar data-edit="t115" data-edit-label="Text (AR): إتّصلوا +961 1 703 666">إتّصلوا +961 1 703 666</xar></a> <a class="btn ig" href="https://instagram.com/professeurrestaurant_" target="_blank" rel="noopener"><xen data-edit="t116" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t117" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener"><xen data-edit="t118" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t119" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611703666" data-edit="t66" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611703666"><xen data-edit="t120" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t121" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/professeurrestaurant_" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener" data-edit="t67" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=15620771462229711291" target="_blank" rel="noopener"><xen data-edit="t122" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t123" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Le Professeur · Beirut, Lebanon</footer>
+<footer><xen data-edit="t124" data-edit-label="Text (EN): © Le Professeur · Beirut, Lebanon">© Le Professeur · Beirut, Lebanon</xen><xar data-edit="t125" data-edit-label="Text (AR): © لو بروفيسور · بيروت، لبنان">© لو بروفيسور · بيروت، لبنان</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t126" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"لو بروفيسور — مطعم ترويقة في بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

@@ -138,26 +138,60 @@ footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Alexandria:wght@400;700&family=Almarai:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Alexandria',serif;--arb:'Almarai',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:2px;cursor:pointer;
+  background:#C3311C;color:#F5EFDF;border:1.5px solid #1C130D;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 <header class="front" id="top">
  <div class="bar">
-  <span data-edit="t1" data-edit-label="Text — Tariq el Jdideh classic">Tariq el Jdideh classic</span>
-  <a href="tel:+9611309422" data-edit="t2" data-edit-label="Button / link — CALL +961 1 309 422">CALL +961 1 309 422</a>
+  <span><xen data-edit="t1" data-edit-label="Text (EN): Tariq el Jdideh classic">Tariq el Jdideh classic</xen><xar data-edit="t2" data-edit-label="Text (AR): كلاسيك طريق الجديدة">كلاسيك طريق الجديدة</xar></span>
+  <a href="tel:+9611309422"><xen data-edit="t3" data-edit-label="Text (EN): CALL +961 1 309 422">CALL +961 1 309 422</xen><xar data-edit="t4" data-edit-label="Text (AR): إتّصلوا +961 1 309 422">إتّصلوا +961 1 309 422</xar></a>
  </div>
  <div class="inner">
-  <div class="ar arabic" data-edit="t3" data-edit-label="Text — مطعم الصوصة">مطعم الصوصة</div>
-  <h1 data-edit="t4" data-edit-label="Big title — AL SOUSSA">AL SOUSSA</h1>
-  <p class="sub" data-edit="t5" data-edit-label="Text — Shawarma, farouj & home-cooked Beiruti…">Shawarma, farouj & home-cooked Beiruti meals in the heart of Tariq el Jdideh</p>
+  <div class="ar arabic"><xen data-edit="t5" data-edit-label="Text (EN): مطعم الصوصة">مطعم الصوصة</xen><xar><span class="lat" data-edit="t6" data-edit-label="Text: AL SOUSSA">AL SOUSSA</span></xar></div>
+  <h1><xen data-edit="t7" data-edit-label="Text (EN): AL SOUSSA">AL SOUSSA</xen><xar data-edit="t8" data-edit-label="Text (AR): الصّوصة">الصّوصة</xar></h1>
+  <p class="sub"><xen data-edit="t9" data-edit-label="Text (EN): Shawarma, farouj & home-cooked Beiruti…">Shawarma, farouj & home-cooked Beiruti meals in the heart of Tariq el Jdideh</xen><xar data-edit="t10" data-edit-label="Text (AR): شاورما وفرّوج وطبخ بيتي بيروتي بقلب طر…">شاورما وفرّوج وطبخ بيتي بيروتي بقلب طريق الجديدة</xar></p>
   <div class="chips">
-   <span class="chip inv" data-edit="t6" data-edit-label="Text — ★ 4.0 GOOGLE">★ 4.0 GOOGLE</span>
-   <span class="chip" data-edit="t7" data-edit-label="Text — 434 REVIEWS">434 REVIEWS</span>
-   <span class="chip" data-edit="t8" data-edit-label="Text — TAKEAWAY + DINE IN">TAKEAWAY + DINE IN</span>
+   <span class="chip inv"><xen data-edit="t24" data-edit-label="Text (EN): ★ 4.0 GOOGLE">★ 4.0 GOOGLE</xen><xar data-edit="t26" data-edit-label="Text (AR): ★ 4.0 غوغل">★ 4.0 غوغل</xar></span>
+   <span class="chip"><xen data-edit="t28" data-edit-label="Text (EN): 434 REVIEWS">434 REVIEWS</xen><xar data-edit="t30" data-edit-label="Text (AR): 434 تقييم">434 تقييم</xar></span>
+   <span class="chip"><xen data-edit="t31" data-edit-label="Text (EN): TAKEAWAY + DINE IN">TAKEAWAY + DINE IN</xen><xar data-edit="t32" data-edit-label="Text (AR): تيك أواي + محلّي">تيك أواي + محلّي</xar></span>
   </div>
   <div class="cta">
-   <a class="btn cream" href="tel:+9611309422" data-edit="t9" data-edit-label="Button / link — Call the kitchen">Call the kitchen</a>
+   <a class="btn cream" href="tel:+9611309422"><xen data-edit="t33" data-edit-label="Text (EN): Call the kitchen">Call the kitchen</xen><xar data-edit="t35" data-edit-label="Text (AR): إتّصلوا بالمطبخ">إتّصلوا بالمطبخ</xar></a>
    
-   <a class="btn line" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener" data-edit="t10" data-edit-label="Button / link — Directions ↗">Directions ↗</a>
+   <a class="btn line" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener"><xen data-edit="t37" data-edit-label="Text (EN): Directions ↗">Directions ↗</xen><xar data-edit="t38" data-edit-label="Text (AR): الطريق ↗">الطريق ↗</xar></a>
   </div>
  </div>
  <div class="spread"><span data-edit="t11" data-edit-label="Text — T">T</span><span data-edit="t12" data-edit-label="Text — A">A</span><span data-edit="t13" data-edit-label="Text — R">R</span><span data-edit="t14" data-edit-label="Text — I">I</span><span data-edit="t15" data-edit-label="Text — Q">Q</span><span>·</span><span data-edit="t16" data-edit-label="Text — E">E</span><span data-edit="t17" data-edit-label="Text — L">L</span><span>·</span><span data-edit="t18" data-edit-label="Text — J">J</span><span data-edit="t19" data-edit-label="Text — D">D</span><span data-edit="t20" data-edit-label="Text — I">I</span><span data-edit="t21" data-edit-label="Text — D">D</span><span data-edit="t22" data-edit-label="Text — E">E</span><span data-edit="t23" data-edit-label="Text — H">H</span></div>
@@ -173,13 +207,13 @@ footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.
 <section id="story">
  <div class="wrap story-grid">
   <div class="rv">
-   <span class="k" data-edit="t24" data-edit-label="Text — The neighborhood's kitchen">The neighborhood's kitchen</span>
-   <h2>THE NEIGHBORHOOD'S <em data-edit="t25" data-edit-label="Text — KITCHEN">KITCHEN</em></h2>
-   <p data-edit="t26" data-edit-label="Text — In the heart of Tariq el Jdideh, Al So…">In the heart of Tariq el Jdideh, Al Soussa does what great neighborhood restaurants do: everything, and all of it well. Shawarma carved fresh all day, farouj off the grill, home-cooked meals to take away, and Arabic sweets to finish. Big portions, honest prices, and hummus people call the best they've ever had.</p>
+   <span class="k"><xen data-edit="t40" data-edit-label="Text (EN): The neighborhood's kitchen">The neighborhood's kitchen</xen><xar data-edit="t41" data-edit-label="Text (AR): مطبخ الحيّ">مطبخ الحيّ</xar></span>
+   <h2><xen>THE NEIGHBORHOOD'S <em data-edit="t25" data-edit-label="Text — KITCHEN">KITCHEN</em></xen><xar>مطبخ <em data-edit="t43" data-edit-label="Text: الحيّ">الحيّ</em></xar></h2>
+   <p><xen data-edit="t44" data-edit-label="Text (EN): In the heart of Tariq el Jdideh, Al So…">In the heart of Tariq el Jdideh, Al Soussa does what great neighborhood restaurants do: everything, and all of it well. Shawarma carved fresh all day, farouj off the grill, home-cooked meals to take away, and Arabic sweets to finish. Big portions, honest prices, and hummus people call the best they've ever had.</xen><xar data-edit="t46" data-edit-label="Text (AR): بقلب طريق الجديدة، الصوصة بتعمل يلّي ب…">بقلب طريق الجديدة، الصوصة بتعمل يلّي بتعملو مطاعم الحيّ الكبيرة: كل شي، وكلّو منيح. شاورما بتنقشّ طازة طول النهار، فرّوج عالفحم، طبخ بيتي جاهز للبيت، وحلويات عربية بالآخر. صحون كبيرة، أسعار عادلة، وحمّص الناس بتقول إنّو أطيب حمّص داقتو بحياتها.</xar></p>
    <div class="stats">
-    <div><b data-edit="t27" data-edit-label="Text — ★ 4.0">★ 4.0</b><span data-edit="t28" data-edit-label="Text — on Google">on Google</span></div>
-    <div><b data-edit="t29" data-edit-label="Text — 434">434</b><span data-edit="t30" data-edit-label="Text — reviews">reviews</span></div>
-    <div><b data-edit="t31" data-edit-label="Text — ALL DAY">ALL DAY</b><span data-edit="t32" data-edit-label="Text — spit turning">spit turning</span></div>
+    <div><b data-edit="t27" data-edit-label="Text — ★ 4.0">★ 4.0</b><span><xen data-edit="t87" data-edit-label="Text (EN): on Google">on Google</xen><xar data-edit="t88" data-edit-label="Text (AR): على غوغل">على غوغل</xar></span></div>
+    <div><b data-edit="t29" data-edit-label="Text — 434">434</b><span><xen data-edit="t90" data-edit-label="Text (EN): reviews">reviews</xen><xar data-edit="t92" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
+    <div><b><xen data-edit="t94" data-edit-label="Text (EN): ALL DAY">ALL DAY</xen><xar data-edit="t96" data-edit-label="Text (AR): طول النهار">طول النهار</xar></b><span><xen data-edit="t98" data-edit-label="Text (EN): spit turning">spit turning</xen><xar data-edit="t100" data-edit-label="Text (AR): والسيخ عم يدور">والسيخ عم يدور</xar></span></div>
    </div>
   </div>
   <div class="ph rv"><img src="img/03.jpg" alt="" loading="lazy"></div>
@@ -188,12 +222,12 @@ footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.
 
 <section class="boardw" id="menu">
  <div class="wrap">
-  <span class="k" data-edit="t33" data-edit-label="Text — Today's board">Today's board</span>
-  <h2 class="rv">EVERYTHING, <em data-edit="t34" data-edit-label="Text — AND ALL OF IT WELL">AND ALL OF IT WELL</em></h2>
-  <div class="mb"><div class="item rv"><h3 data-edit="t35" data-edit-label="Heading — Shawarma & Garlic Mayo">Shawarma & Garlic Mayo</h3><span class="dots"></span><span class="no" data-edit="t36" data-edit-label="Text — №1">№1</span><p data-edit="t37" data-edit-label="Text — Carved fresh from the spit all day lon…">Carved fresh from the spit all day long — with their famous toum.</p></div><div class="item rv"><h3 data-edit="t38" data-edit-label="Heading — Farouj Mashwi">Farouj Mashwi</h3><span class="dots"></span><span class="no" data-edit="t39" data-edit-label="Text — №2">№2</span><p data-edit="t40" data-edit-label="Text — Grilled chicken that disappears fast a…">Grilled chicken that disappears fast at family gatherings.</p></div><div class="item rv"><h3 data-edit="t41" data-edit-label="Heading — Home-Cooked Daily">Home-Cooked Daily</h3><span class="dots"></span><span class="no" data-edit="t42" data-edit-label="Text — №3">№3</span><p data-edit="t43" data-edit-label="Text — Real yakhnehs and daily plates, ready …">Real yakhnehs and daily plates, ready to take home.</p></div><div class="item rv"><h3 data-edit="t44" data-edit-label="Heading — Arabic Sweets">Arabic Sweets</h3><span class="dots"></span><span class="no" data-edit="t45" data-edit-label="Text — №4">№4</span><p data-edit="t46" data-edit-label="Text — Something golden and syrupy to finish …">Something golden and syrupy to finish — as tradition demands.</p></div></div>
+  <span class="k"><xen data-edit="t102" data-edit-label="Text (EN): Today's board">Today's board</xen><xar data-edit="t103" data-edit-label="Text (AR): لوح اليوم">لوح اليوم</xar></span>
+  <h2 class="rv"><xen>EVERYTHING, <em data-edit="t34" data-edit-label="Text — AND ALL OF IT WELL">AND ALL OF IT WELL</em></xen><xar>كل شي، <em data-edit="t107" data-edit-label="Text: وكلّو منيح">وكلّو منيح</em></xar></h2>
+  <div class="mb"><div class="item rv"><h3><xen data-edit="t111" data-edit-label="Text (EN): Shawarma & Garlic Mayo">Shawarma & Garlic Mayo</xen><xar data-edit="t112" data-edit-label="Text (AR): شاورما مع ثوم">شاورما مع ثوم</xar></h3><span class="dots"></span><span class="no" data-edit="t36" data-edit-label="Text — №1">№1</span><p><xen data-edit="t113" data-edit-label="Text (EN): Carved fresh from the spit all day lon…">Carved fresh from the spit all day long — with their famous toum.</xen><xar data-edit="t114" data-edit-label="Text (AR): بتنقشّ طازة عن السيخ طول النهار — مع ا…">بتنقشّ طازة عن السيخ طول النهار — مع الثومية المشهورة تبعن.</xar></p></div><div class="item rv"><h3><xen data-edit="t115" data-edit-label="Text (EN): Farouj Mashwi">Farouj Mashwi</xen><xar data-edit="t124" data-edit-label="Text (AR): فرّوج مشوي">فرّوج مشوي</xar></h3><span class="dots"></span><span class="no" data-edit="t39" data-edit-label="Text — №2">№2</span><p><xen data-edit="t125" data-edit-label="Text (EN): Grilled chicken that disappears fast a…">Grilled chicken that disappears fast at family gatherings.</xen><xar data-edit="t126" data-edit-label="Text (AR): فرّوج عالفحم بيخلص بسرعة بعزايم العيلة…">فرّوج عالفحم بيخلص بسرعة بعزايم العيلة.</xar></p></div><div class="item rv"><h3><xen data-edit="t127" data-edit-label="Text (EN): Home-Cooked Daily">Home-Cooked Daily</xen><xar data-edit="t128" data-edit-label="Text (AR): طبخ بيتي كل يوم">طبخ بيتي كل يوم</xar></h3><span class="dots"></span><span class="no" data-edit="t42" data-edit-label="Text — №3">№3</span><p><xen data-edit="t129" data-edit-label="Text (EN): Real yakhnehs and daily plates, ready …">Real yakhnehs and daily plates, ready to take home.</xen><xar data-edit="t130" data-edit-label="Text (AR): يخنات حقيقية وطبخة اليوم، جاهزة تاخدها…">يخنات حقيقية وطبخة اليوم، جاهزة تاخدها عالبيت.</xar></p></div><div class="item rv"><h3><xen data-edit="t131" data-edit-label="Text (EN): Arabic Sweets">Arabic Sweets</xen><xar data-edit="t132" data-edit-label="Text (AR): حلويات عربية">حلويات عربية</xar></h3><span class="dots"></span><span class="no" data-edit="t45" data-edit-label="Text — №4">№4</span><p><xen data-edit="t133" data-edit-label="Text (EN): Something golden and syrupy to finish …">Something golden and syrupy to finish — as tradition demands.</xen><xar data-edit="t134" data-edit-label="Text (AR): شي ذهبي ومقطّر بالآخر — متل ما بتقول ا…">شي ذهبي ومقطّر بالآخر — متل ما بتقول العادة.</xar></p></div></div>
   <div class="mb2 rv">
    <div class="mcol">
-    <h3>Mashawi — by the ½ kilo <span class="arabic" data-edit="t47" data-edit-label="Text — مشاوي">مشاوي</span></h3>
+    <h3><xen class="c">Mashawi — by the ½ kilo <span class="arabic" data-edit="t47" data-edit-label="Text — مشاوي">مشاوي</span></xen><xar class="c">مشاوي — بنصّ الكيلو <span class="arabic" data-edit="t135" data-edit-label="Text: عالفحم">عالفحم</span></xar></h3>
     <div class="mrow2"><span data-edit="t48" data-edit-label="Text — Chakaf — lamb off the coals">Chakaf — lamb off the coals</span><span class="dots"></span><span class="ar arabic" data-edit="t49" data-edit-label="Text — شقف">شقف</span></div>
     <div class="mrow2"><span data-edit="t50" data-edit-label="Text — Kafta">Kafta</span><span class="dots"></span><span class="ar arabic" data-edit="t51" data-edit-label="Text — كفتة">كفتة</span></div>
     <div class="mrow2"><span data-edit="t52" data-edit-label="Text — Taouk — classic &amp; white">Taouk — classic &amp; white</span><span class="dots"></span><span class="ar arabic" data-edit="t53" data-edit-label="Text — طاووق">طاووق</span></div>
@@ -206,7 +240,7 @@ footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.
     <div class="mrow2"><span data-edit="t66" data-edit-label="Text — Mixed grill — the family platter">Mixed grill — the family platter</span><span class="dots"></span><span class="ar arabic" data-edit="t67" data-edit-label="Text — مشكل">مشكل</span></div>
    </div>
    <div class="mcol">
-    <h3>Raw bar &amp; the stove <span class="arabic" data-edit="t68" data-edit-label="Text — نيّة ويومي">نيّة ويومي</span></h3>
+    <h3><xen class="c">Raw bar &amp; the stove <span class="arabic" data-edit="t68" data-edit-label="Text — نيّة ويومي">نيّة ويومي</span></xen><xar class="c">نيّة ويومي <span class="arabic" data-edit="t136" data-edit-label="Text: من عالطنجرة">من عالطنجرة</span></xar></h3>
     <div class="mrow2"><span data-edit="t69" data-edit-label="Text — Kibbeh nayyeh">Kibbeh nayyeh</span><span class="dots"></span><span class="ar arabic" data-edit="t70" data-edit-label="Text — كبة نية">كبة نية</span></div>
     <div class="mrow2"><span data-edit="t71" data-edit-label="Text — Habra nayyeh">Habra nayyeh</span><span class="dots"></span><span class="ar arabic" data-edit="t72" data-edit-label="Text — هبرة نية">هبرة نية</span></div>
     <div class="mrow2"><span data-edit="t73" data-edit-label="Text — Frakeh">Frakeh</span><span class="dots"></span><span class="ar arabic" data-edit="t74" data-edit-label="Text — فراكة">فراكة</span></div>
@@ -218,47 +252,47 @@ footer p{text-align:center;font-size:.8rem;font-weight:500;color:rgba(28,19,13,.
    </div>
   </div>
   <div class="daily rv"><span data-edit="t85" data-edit-label="Text — Ask about the daily dish">Ask about the daily dish</span><span class="arabic" data-edit="t86" data-edit-label="Text — اسأل عن الطبق اليومي">اسأل عن الطبق اليومي</span></div>
-  <p class="note" data-edit="t87" data-edit-label="Text — Portions by the half kilo, prices at t…">Portions by the half kilo, prices at the counter. Plus daily home-cooked yakhnehs, Arabic sweets, and whatever the family decided to make this morning.</p>
+  <p class="note"><xen data-edit="t137" data-edit-label="Text (EN): Portions by the half kilo, prices at t…">Portions by the half kilo, prices at the counter. Plus daily home-cooked yakhnehs, Arabic sweets, and whatever the family decided to make this morning.</xen><xar data-edit="t138" data-edit-label="Text (AR): الصحون بنصّ الكيلو، والأسعار عالكاونتر…">الصحون بنصّ الكيلو، والأسعار عالكاونتر. وكمان يخنات بيتية كل يوم، حلويات عربية، وشو ما قرّرت العيلة تطبخ هالصبح.</xar></p>
  </div>
 </section>
 
 <section class="window" id="gallery">
  <div class="wrap">
-  <span class="k" data-edit="t88" data-edit-label="Text — The shop window">The shop window</span>
-  <h2 class="rv">FRESH <em data-edit="t89" data-edit-label="Text — TODAY">TODAY</em></h2>
-  <div class="win-grid"><div class="win rv"><img src="img/02.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t90" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t91" data-edit-label="Text — №01">№01</span></div></div><div class="win rv"><img src="img/03.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t92" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t93" data-edit-label="Text — №02">№02</span></div></div><div class="win rv"><img src="img/05.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t94" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t95" data-edit-label="Text — №03">№03</span></div></div><div class="win rv"><img src="img/04.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t96" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t97" data-edit-label="Text — №04">№04</span></div></div><div class="win rv"><img src="img/07.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t98" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t99" data-edit-label="Text — №05">№05</span></div></div><div class="win rv"><img src="img/10.jpg" alt="" loading="lazy"><div class="cap"><span data-edit="t100" data-edit-label="Text — FRESH TODAY">FRESH TODAY</span><span data-edit="t101" data-edit-label="Text — №06">№06</span></div></div></div>
+  <span class="k"><xen data-edit="t139" data-edit-label="Text (EN): The shop window">The shop window</xen><xar data-edit="t140" data-edit-label="Text (AR): الفاترينة">الفاترينة</xar></span>
+  <h2 class="rv"><xen>FRESH <em data-edit="t89" data-edit-label="Text — TODAY">TODAY</em></xen><xar>طازة <em data-edit="t141" data-edit-label="Text: اليوم">اليوم</em></xar></h2>
+  <div class="win-grid"><div class="win rv"><img src="img/02.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t142" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t143" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t91" data-edit-label="Text — №01">№01</span></div></div><div class="win rv"><img src="img/03.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t144" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t145" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t93" data-edit-label="Text — №02">№02</span></div></div><div class="win rv"><img src="img/05.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t146" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t147" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t95" data-edit-label="Text — №03">№03</span></div></div><div class="win rv"><img src="img/04.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t148" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t149" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t97" data-edit-label="Text — №04">№04</span></div></div><div class="win rv"><img src="img/07.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t150" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t151" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t99" data-edit-label="Text — №05">№05</span></div></div><div class="win rv"><img src="img/10.jpg" alt="" loading="lazy"><div class="cap"><span><xen data-edit="t152" data-edit-label="Text (EN): FRESH TODAY">FRESH TODAY</xen><xar data-edit="t153" data-edit-label="Text (AR): طازة اليوم">طازة اليوم</xar></span><span data-edit="t101" data-edit-label="Text — №06">№06</span></div></div></div>
  </div>
 </section>
 
 <section class="tickets" id="reviews">
  <div class="wrap">
-  <span class="k" data-edit="t102" data-edit-label="Text — Order tickets">Order tickets</span>
-  <h2 class="rv" data-edit="t103" data-edit-label="Title — THE REGULARS SAY">THE REGULARS SAY</h2>
-  <div class="t-grid"><div class="tick rv"><p data-edit="t104" data-edit-label="Text — “The hummus was the best I have ever h…">“The hummus was the best I have ever had. I highly recommend it. The gentleman working there was very sweet and kind, and the prices were very good.”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div><div class="tick rv"><p data-edit="t105" data-edit-label="Text — “As well as shawarma, there are severa…">“As well as shawarma, there are several fast food options, home-cooked meals to take away, and traditional Arab sweets. The shawarma with garlic mayonnaise was my favourite.”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div><div class="tick rv"><p data-edit="t106" data-edit-label="Text — “We ordered farouj and grilled chicken…">“We ordered farouj and grilled chicken to go — it was amazing! Despite the huge amount we ordered, my family scarfed it down. Amazing for gatherings!”</p><div class="who">Google review · <span class="s">★★★★★</span></div></div></div>
+  <span class="k"><xen data-edit="t154" data-edit-label="Text (EN): Order tickets">Order tickets</xen><xar data-edit="t155" data-edit-label="Text (AR): طلبيّات">طلبيّات</xar></span>
+  <h2 class="rv"><xen data-edit="t156" data-edit-label="Text (EN): THE REGULARS SAY">THE REGULARS SAY</xen><xar data-edit="t157" data-edit-label="Text (AR): شو بيقولوا الزبائن">شو بيقولوا الزبائن</xar></h2>
+  <div class="t-grid"><div class="tick rv"><p data-edit="t104" data-edit-label="Text — “The hummus was the best I have ever h…">“The hummus was the best I have ever had. I highly recommend it. The gentleman working there was very sweet and kind, and the prices were very good.”</p><div class="who"><xen>Google review · <span class="s">★★★★★</span></xen><xar>تقييم على غوغل · <span class="s">★★★★★</span></xar></div></div><div class="tick rv"><p data-edit="t105" data-edit-label="Text — “As well as shawarma, there are severa…">“As well as shawarma, there are several fast food options, home-cooked meals to take away, and traditional Arab sweets. The shawarma with garlic mayonnaise was my favourite.”</p><div class="who"><xen>Google review · <span class="s">★★★★★</span></xen><xar>تقييم على غوغل · <span class="s">★★★★★</span></xar></div></div><div class="tick rv"><p data-edit="t106" data-edit-label="Text — “We ordered farouj and grilled chicken…">“We ordered farouj and grilled chicken to go — it was amazing! Despite the huge amount we ordered, my family scarfed it down. Amazing for gatherings!”</p><div class="who"><xen>Google review · <span class="s">★★★★★</span></xen><xar>تقييم على غوغل · <span class="s">★★★★★</span></xar></div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <span class="k" data-edit="t107" data-edit-label="Text — Dinner plans">Dinner plans</span>
- <h2>DINNER IS <em data-edit="t108" data-edit-label="Text — SOLVED.">SOLVED.</em></h2>
+ <span class="k"><xen data-edit="t158" data-edit-label="Text (EN): Dinner plans">Dinner plans</xen><xar data-edit="t159" data-edit-label="Text (AR): خطّة العشا">خطّة العشا</xar></span>
+ <h2><xen>DINNER IS <em data-edit="t108" data-edit-label="Text — SOLVED.">SOLVED.</em></xen><xar>العشا <em data-edit="t160" data-edit-label="Text: محلول.">محلول.</em></xar></h2>
  <a class="phone" href="tel:+9611309422" data-edit="t109" data-edit-label="Button / link — +961 1 309 422">+961 1 309 422</a>
- <p class="meta"><b data-edit="t110" data-edit-label="Text — Tariq el Jdideh, Beirut, Lebanon">Tariq el Jdideh, Beirut, Lebanon</b><br>Open daily · 10:00 AM – 12:00 AM</p>
+ <p class="meta"><xen><b data-edit="t110" data-edit-label="Text — Tariq el Jdideh, Beirut, Lebanon">Tariq el Jdideh, Beirut, Lebanon</b><br>Open daily · 10:00 AM – 12:00 AM</xen><xar><b data-edit="t161" data-edit-label="Text: طريق الجديدة، بيروت، لبنان">طريق الجديدة، بيروت، لبنان</b><br>مفتوح كل يوم · 10:00 صباحاً – 12:00 منتصف الليل</xar></p>
  <div class="cta">
-  <a class="btn red" href="tel:+9611309422" data-edit="t111" data-edit-label="Button / link — Call now">Call now</a>
-   <a class="btn dark ig" href="https://instagram.com/soussa.restaurant" target="_blank" rel="noopener" data-edit="t112" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn dark" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener" data-edit="t113" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn red" href="tel:+9611309422"><xen data-edit="t162" data-edit-label="Text (EN): Call now">Call now</xen><xar data-edit="t163" data-edit-label="Text (AR): إتّصلوا فيّنا">إتّصلوا فيّنا</xar></a>
+   <a class="btn dark ig" href="https://instagram.com/soussa.restaurant" target="_blank" rel="noopener"><xen data-edit="t164" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t165" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn dark" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener"><xen data-edit="t166" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t167" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+9611309422" data-edit="t114" data-edit-label="Button / link — Call">Call</a>
+ <a class="c" href="tel:+9611309422"><xen data-edit="t168" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t169" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  <a class="g" href="https://instagram.com/soussa.restaurant" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener" data-edit="t115" data-edit-label="Button / link — Map">Map</a>
+ <a class="m" href="https://maps.google.com/?cid=1900605204450157923" target="_blank" rel="noopener"><xen data-edit="t170" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t171" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
 <footer>
  <div class="spread2"><span data-edit="t116" data-edit-label="Text — A">A</span><span data-edit="t117" data-edit-label="Text — L">L</span><span>·</span><span data-edit="t118" data-edit-label="Text — S">S</span><span data-edit="t119" data-edit-label="Text — O">O</span><span data-edit="t120" data-edit-label="Text — U">U</span><span data-edit="t121" data-edit-label="Text — S">S</span><span data-edit="t122" data-edit-label="Text — S">S</span><span data-edit="t123" data-edit-label="Text — A">A</span></div>
- <p data-edit="t124" data-edit-label="Text — © Al Soussa Restaurant · Beirut, Leban…">© Al Soussa Restaurant · Beirut, Lebanon</p>
+ <p><xen data-edit="t172" data-edit-label="Text (EN): © Al Soussa Restaurant · Beirut, Leban…">© Al Soussa Restaurant · Beirut, Lebanon</xen><xar data-edit="t173" data-edit-label="Text (AR): © مطعم الصوصة · بيروت، لبنان">© مطعم الصوصة · بيروت، لبنان</xar></p>
 </footer>
 
 <script>
@@ -266,5 +300,17 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t174" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"مطعم الصوصة — شاورما ومشاوي في طريق الجديدة، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>

@@ -127,47 +127,81 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48
 
 /*igbtn*/.bar a.g,.mbar a.g{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px}.bar a.g svg,.mbar a.g svg{width:17px;height:17px;display:block}
 </style>
+<link href='https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;700&family=Tajawal:wght@400;700&display=swap' rel='stylesheet'>
+<style>
+/* ---- Arabic second language (English stays the default) ---- */
+:root{--arh:'Baloo Bhaijaan 2',serif;--arb:'Tajawal',sans-serif}
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;font-family:var(--arb);
+     letter-spacing:normal;word-spacing:normal;text-transform:none;font-style:normal}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+/* .c = the wrapped element is a flex/grid container, so the pair must not become a
+   single item — display:contents keeps the original children as the real items */
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh);font-weight:700}
+/* display sizes: Arabic needs a tighter leading than the 1.4 body default, or a
+   two-line hero title grows past the top of its own section (kahwat catch) */
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,blockquote) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+/* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
+   Arabic name (so both scripts stay on the page in both languages) */
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+  font-size:12.5px;line-height:1;padding:9px 15px;border-radius:999px;cursor:pointer;
+  background:#1273A6;color:#FFF6E8;border:1.5px solid #0B4763;-webkit-appearance:none;
+  box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
+.lngt:active{transform:scale(.94)}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+
+</style>
 </head>
 <body>
 
 <div class="awn"></div>
 <nav>
- <a class="brand" href="#">CHUBBY <span data-edit="t1" data-edit-label="Text — FISH">FISH</span></a>
+ <a class="brand" href="#"><xen>CHUBBY <span data-edit="t1" data-edit-label="Text — FISH">FISH</span></xen><xar>تشابي <span data-edit="t2" data-edit-label="Text: فيش">فيش</span></xar></a>
  <div class="links">
-  <a href="#catch" data-edit="t2" data-edit-label="Button / link — The catch">The catch</a><a href="#menu" data-edit="t3" data-edit-label="Button / link — Menu">Menu</a><a href="#gallery" data-edit="t4" data-edit-label="Button / link — Photos">Photos</a><a href="#visit" data-edit="t5" data-edit-label="Button / link — Visit">Visit</a>
-  <a class="call" href="tel:+96179061466" data-edit="t6" data-edit-label="Button / link — Call">Call</a>
+  <a href="#catch"><xen data-edit="t3" data-edit-label="Text (EN): The catch">The catch</xen><xar data-edit="t4" data-edit-label="Text (AR): الصيد">الصيد</xar></a><a href="#menu"><xen data-edit="t5" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t6" data-edit-label="Text (AR): المنيو">المنيو</xar></a><a href="#gallery"><xen data-edit="t7" data-edit-label="Text (EN): Photos">Photos</xen><xar data-edit="t9" data-edit-label="Text (AR): الصور">الصور</xar></a><a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): الزيارة">الزيارة</xar></a>
+  <a class="call" href="tel:+96179061466"><xen data-edit="t12" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t13" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
  </div>
 </nav>
 
 <header class="hero">
  <div>
-  <span class="kick" data-edit="t7" data-edit-label="Text — Pasteur St · Gemmayze · till 2:30 AM w…">Pasteur St · Gemmayze · till 2:30 AM weekends</span>
-  <h1>CHUBBY<span data-edit="t8" data-edit-label="Text — FISH">FISH</span></h1>
-  <p class="tg" data-edit="t9" data-edit-label="Text — Handrolls, sashimi and a fish burger w…">Handrolls, sashimi and a fish burger with a fan club — on Pasteur till way past midnight.</p>
+  <span class="kick"><xen data-edit="t14" data-edit-label="Text (EN): Pasteur St · Gemmayze · till 2:30 AM w…">Pasteur St · Gemmayze · till 2:30 AM weekends</xen><xar data-edit="t15" data-edit-label="Text (AR): شارع باستور · الجميزة · لحدّ 2:30 الصب…">شارع باستور · الجميزة · لحدّ 2:30 الصبح بالويكند</xar></span>
+  <h1><xen>CHUBBY<span data-edit="t8" data-edit-label="Text — FISH">FISH</span></xen><xar>تشابي<span data-edit="t16" data-edit-label="Text: فيش">فيش</span></xar></h1>
+  <p class="tg"><xen data-edit="t18" data-edit-label="Text (EN): Handrolls, sashimi and a fish burger w…">Handrolls, sashimi and a fish burger with a fan club — on Pasteur till way past midnight.</xen><xar data-edit="t19" data-edit-label="Text (AR): هاندرول، ساشيمي، وفيش برغر إلو جمهور —…">هاندرول، ساشيمي، وفيش برغر إلو جمهور — على باستور لبعد نصّ الليل بكتير.</xar></p>
   <div class="chips">
-   <span class="chip c" data-edit="t10" data-edit-label="Text — ★ 4.8 · 92 reviews">★ 4.8 · 92 reviews</span>
-   <span class="chip s" data-edit="t11" data-edit-label="Text — Handrolls &amp; sashimi">Handrolls &amp; sashimi</span>
-   <span class="chip" data-edit="t12" data-edit-label="Text — Vinyl on the walls">Vinyl on the walls</span>
+   <span class="chip c"><xen data-edit="t20" data-edit-label="Text (EN): ★ 4.8 · 92 reviews">★ 4.8 · 92 reviews</xen><xar data-edit="t21" data-edit-label="Text (AR): ★ 4.8 · 92 تقييم">★ 4.8 · 92 تقييم</xar></span>
+   <span class="chip s"><xen data-edit="t22" data-edit-label="Text (EN): Handrolls &amp; sashimi">Handrolls &amp; sashimi</xen><xar data-edit="t23" data-edit-label="Text (AR): هاندرول وساشيمي">هاندرول وساشيمي</xar></span>
+   <span class="chip"><xen data-edit="t24" data-edit-label="Text (EN): Vinyl on the walls">Vinyl on the walls</xen><xar data-edit="t25" data-edit-label="Text (AR): أسطوانات فينيل عالحيطان">أسطوانات فينيل عالحيطان</xar></span>
   </div>
   <div class="cta">
-   <a class="btn s" href="tel:+96179061466" data-edit="t13" data-edit-label="Button / link — Call +961 79 061 466">Call +961 79 061 466</a>
-   <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener" data-edit="t14" data-edit-label="Button / link — Swim over ↗">Swim over ↗</a>
+   <a class="btn s" href="tel:+96179061466"><xen data-edit="t27" data-edit-label="Text (EN): Call +961 79 061 466">Call +961 79 061 466</xen><xar data-edit="t28" data-edit-label="Text (AR): إتّصلوا +961 79 061 466">إتّصلوا +961 79 061 466</xar></a>
+   <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener"><xen data-edit="t29" data-edit-label="Text (EN): Swim over ↗">Swim over ↗</xen><xar data-edit="t30" data-edit-label="Text (AR): إسبحوا لعنّا ↗">إسبحوا لعنّا ↗</xar></a>
   </div>
  </div>
  <div class="tank rv">
   <img src="img/05.jpg" alt="Chubby Fish handroll counter">
-  <span class="fish" data-edit="t15" data-edit-label="Text — fresh daily!">fresh daily!</span>
+  <span class="fish"><xen data-edit="t31" data-edit-label="Text (EN): fresh daily!">fresh daily!</xen><xar data-edit="t33" data-edit-label="Text (AR): طازة كل يوم!">طازة كل يوم!</xar></span>
  </div>
 </header>
 
 <div class="wave"></div>
-<div class="mq"><div class="tt"><span data-edit="t16" data-edit-label="Text — SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SA…">SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ </span></div></div>
+<div class="mq"><div class="tt"><span><xen data-edit="t34" data-edit-label="Text (EN): SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SA…">SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ SPICY CRAB HANDROLL ✦ FISH BURGER ✦ SASHIMI ✦ NIGIRI ✦ TRUFFLE MISO ✦ LATE NIGHTS ✦ </xen><xar data-edit="t35" data-edit-label="Text (AR): هاندرول سلطعون حارّ ✦ فيش برغر ✦ ساشيم…">هاندرول سلطعون حارّ ✦ فيش برغر ✦ ساشيمي ✦ نيغيري ✦ ترافل ميسو ✦ سهرات ✦ هاندرول سلطعون حارّ ✦ فيش برغر ✦ ساشيمي ✦ نيغيري ✦ ترافل ميسو ✦ سهرات ✦</xar></span></div></div>
 
 <section class="catch" id="catch">
  <div class="wrap">
-  <h2 class="rv">Today's <em data-edit="t17" data-edit-label="Text — catch">catch</em></h2>
-  <p class="sub" data-edit="t18" data-edit-label="Text — The plates that made a fish chubby">The plates that made a fish chubby</p>
-  <div class="c-grid"><div class="cc rv"><img src="img/05.jpg" alt="The handroll six" loading="lazy"><div class="bd"><h3 data-edit="t19" data-edit-label="Heading — The handroll six">The handroll six</h3><p data-edit="t20" data-edit-label="Text — Spicy salmon, tempura ebi, spicy crab,…">Spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu — the full lineup.</p></div></div><div class="cc rv"><img src="img/04.jpg" alt="The fish burger" loading="lazy"><div class="bd"><h3 data-edit="t21" data-edit-label="Heading — The fish burger">The fish burger</h3><p data-edit="t22" data-edit-label="Text — Crisp, rich, gone in five bites. The d…">Crisp, rich, gone in five bites. The dish reviewers lead with.</p></div></div><div class="cc rv"><img src="img/03.jpg" alt="Late-night pours" loading="lazy"><div class="bd"><h3 data-edit="t23" data-edit-label="Heading — Late-night pours">Late-night pours</h3><p data-edit="t24" data-edit-label="Text — Cocktails and cold ones until 2:30 on …">Cocktails and cold ones until 2:30 on the weekend.</p></div></div></div>
+  <h2 class="rv"><xen>Today's <em data-edit="t17" data-edit-label="Text — catch">catch</em></xen><xar><em data-edit="t43" data-edit-label="Text: صيد">صيد</em> اليوم</xar></h2>
+  <p class="sub"><xen data-edit="t45" data-edit-label="Text (EN): The plates that made a fish chubby">The plates that made a fish chubby</xen><xar data-edit="t46" data-edit-label="Text (AR): الصحون يلّي خلّت السمكة تسمن">الصحون يلّي خلّت السمكة تسمن</xar></p>
+  <div class="c-grid"><div class="cc rv"><img src="img/05.jpg" alt="The handroll six" loading="lazy"><div class="bd"><h3><xen data-edit="t47" data-edit-label="Text (EN): The handroll six">The handroll six</xen><xar data-edit="t48" data-edit-label="Text (AR): الستّة هاندرول">الستّة هاندرول</xar></h3><p><xen data-edit="t49" data-edit-label="Text (EN): Spicy salmon, tempura ebi, spicy crab,…">Spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu — the full lineup.</xen><xar data-edit="t50" data-edit-label="Text (AR): سلمون حارّ، إيبي تمبورا، سلطعون حارّ، …">سلمون حارّ، إيبي تمبورا، سلطعون حارّ، نيغيتورو، هاماتشي، واغيو — الطقم كامل.</xar></p></div></div><div class="cc rv"><img src="img/04.jpg" alt="The fish burger" loading="lazy"><div class="bd"><h3><xen data-edit="t51" data-edit-label="Text (EN): The fish burger">The fish burger</xen><xar data-edit="t52" data-edit-label="Text (AR): الفيش برغر">الفيش برغر</xar></h3><p><xen data-edit="t53" data-edit-label="Text (EN): Crisp, rich, gone in five bites. The d…">Crisp, rich, gone in five bites. The dish reviewers lead with.</xen><xar data-edit="t54" data-edit-label="Text (AR): مقرمش، غني، وبيخلص بخمس لقمات. الطبق ي…">مقرمش، غني، وبيخلص بخمس لقمات. الطبق يلّي بتبلّش فيه كل التقييمات.</xar></p></div></div><div class="cc rv"><img src="img/03.jpg" alt="Late-night pours" loading="lazy"><div class="bd"><h3><xen data-edit="t55" data-edit-label="Text (EN): Late-night pours">Late-night pours</xen><xar data-edit="t56" data-edit-label="Text (AR): كاسات السهرة">كاسات السهرة</xar></h3><p><xen data-edit="t57" data-edit-label="Text (EN): Cocktails and cold ones until 2:30 on …">Cocktails and cold ones until 2:30 on the weekend.</xen><xar data-edit="t58" data-edit-label="Text (AR): كوكتيلات ومشروبات باردة لحدّ 2:30 بالو…">كوكتيلات ومشروبات باردة لحدّ 2:30 بالويكند.</xar></p></div></div></div>
  </div>
 </section>
 
@@ -175,56 +209,68 @@ footer{text-align:center;padding:26px 5vw 110px;font-size:.8rem;color:rgba(18,48
  <div class="grid">
   <div class="sheet rv"><img src="img/02.jpg" alt="Chubby Fish checklist menu"></div>
   <div class="rv">
-   <span class="k" data-edit="t25" data-edit-label="Text — The menu">The menu</span>
-   <h2>Tick the boxes, <em data-edit="t26" data-edit-label="Text — pass it back">pass it back</em></h2>
-   <p data-edit="t27" data-edit-label="Text — Ordering here works like a sushi bar s…">Ordering here works like a sushi bar should — a pencil, a checklist, and zero regrets. Sides, greens, handrolls by the six.</p>
+   <span class="k"><xen data-edit="t59" data-edit-label="Text (EN): The menu">The menu</xen><xar data-edit="t60" data-edit-label="Text (AR): المنيو">المنيو</xar></span>
+   <h2><xen>Tick the boxes, <em data-edit="t26" data-edit-label="Text — pass it back">pass it back</em></xen><xar>أشّروا عالمربّعات، <em data-edit="t61" data-edit-label="Text: ورجّعوا الورقة">ورجّعوا الورقة</em></xar></h2>
+   <p><xen data-edit="t62" data-edit-label="Text (EN): Ordering here works like a sushi bar s…">Ordering here works like a sushi bar should — a pencil, a checklist, and zero regrets. Sides, greens, handrolls by the six.</xen><xar data-edit="t63" data-edit-label="Text (AR): الطلب هون بيشتغل متل ما لازم بأي سوشي …">الطلب هون بيشتغل متل ما لازم بأي سوشي بار — قلم، ولستة، وصفر ندم. أطباق جانبية، خضرة، وهاندرول بالستّة.</xar></p>
    <ul>
-    <li data-edit="t28" data-edit-label="List item — 6x handrolls — spicy salmon, tempura e…">6x handrolls — spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu</li>
-    <li data-edit="t29" data-edit-label="List item — Sashimi &amp; nigiri — salmon, chutoro…">Sashimi &amp; nigiri — salmon, chutoro, otoro, scallop</li>
-    <li data-edit="t30" data-edit-label="List item — Truffle miso soup &amp; fresh crab sal…">Truffle miso soup &amp; fresh crab salad</li>
-    <li data-edit="t31" data-edit-label="List item — The fish burger everyone writes home a…">The fish burger everyone writes home about</li>
+    <li><xen class="c" data-edit="t64" data-edit-label="Text (EN): 6x handrolls — spicy salmon, tempura e…">6x handrolls — spicy salmon, tempura ebi, spicy crab, negitoro, hamachi, wagyu</xen><xar class="c" data-edit="t65" data-edit-label="Text (AR): 6 هاندرول — سلمون حارّ، إيبي تمبورا، س…">6 هاندرول — سلمون حارّ، إيبي تمبورا، سلطعون حارّ، نيغيتورو، هاماتشي، واغيو</xar></li>
+    <li><xen class="c" data-edit="t66" data-edit-label="Text (EN): Sashimi &amp; nigiri — salmon, chutoro…">Sashimi &amp; nigiri — salmon, chutoro, otoro, scallop</xen><xar class="c" data-edit="t67" data-edit-label="Text (AR): ساشيمي ونيغيري — سلمون، تشوتورو، أوتور…">ساشيمي ونيغيري — سلمون، تشوتورو، أوتورو، سكالوب</xar></li>
+    <li><xen class="c" data-edit="t68" data-edit-label="Text (EN): Truffle miso soup &amp; fresh crab sal…">Truffle miso soup &amp; fresh crab salad</xen><xar class="c" data-edit="t69" data-edit-label="Text (AR): شوربة ميسو بالكمأة وسلطة سلطعون طازة">شوربة ميسو بالكمأة وسلطة سلطعون طازة</xar></li>
+    <li><xen class="c" data-edit="t70" data-edit-label="Text (EN): The fish burger everyone writes home a…">The fish burger everyone writes home about</xen><xar class="c" data-edit="t71" data-edit-label="Text (AR): الفيش برغر يلّي الكلّ عم يحكي عنّو">الفيش برغر يلّي الكلّ عم يحكي عنّو</xar></li>
    </ul>
   </div>
  </div>
 </section>
 
 <section class="gal" id="gallery">
- <h2 class="rv">Through the <em data-edit="t32" data-edit-label="Text — porthole">porthole</em></h2>
- <p class="sub" data-edit="t33" data-edit-label="Text — Amber lights, records, and very fresh …">Amber lights, records, and very fresh fish</p>
+ <h2 class="rv"><xen>Through the <em data-edit="t32" data-edit-label="Text — porthole">porthole</em></xen><xar>من <em data-edit="t72" data-edit-label="Text: الكوّة">الكوّة</em></xar></h2>
+ <p class="sub"><xen data-edit="t73" data-edit-label="Text (EN): Amber lights, records, and very fresh …">Amber lights, records, and very fresh fish</xen><xar data-edit="t74" data-edit-label="Text (AR): أضوية عنبرية، أسطوانات، وسمك طازة كتير">أضوية عنبرية، أسطوانات، وسمك طازة كتير</xar></p>
  <div class="g-grid"><a href="img/01.jpg" target="_blank"><img src="img/01.jpg" alt="" loading="lazy"></a><a href="img/03.jpg" target="_blank"><img src="img/03.jpg" alt="" loading="lazy"></a><a href="img/04.jpg" target="_blank"><img src="img/04.jpg" alt="" loading="lazy"></a><a href="img/07.jpg" target="_blank"><img src="img/07.jpg" alt="" loading="lazy"></a><a href="img/08.jpg" target="_blank"><img src="img/08.jpg" alt="" loading="lazy"></a></div>
 </section>
 
 <section class="rev">
  <div class="wrap">
-  <h2 class="rv" data-edit="t34" data-edit-label="Title — Overheard at the counter">Overheard at the counter</h2>
-  <p class="sub" data-edit="t35" data-edit-label="Text — Between tracks, between handrolls">Between tracks, between handrolls</p>
+  <h2 class="rv"><xen data-edit="t75" data-edit-label="Text (EN): Overheard at the counter">Overheard at the counter</xen><xar data-edit="t76" data-edit-label="Text (AR): مسموع عند الكاونتر">مسموع عند الكاونتر</xar></h2>
+  <p class="sub"><xen data-edit="t77" data-edit-label="Text (EN): Between tracks, between handrolls">Between tracks, between handrolls</xen><xar data-edit="t78" data-edit-label="Text (AR): بين أغنية وأغنية، وبين هاندرول وهاندرو…">بين أغنية وأغنية، وبين هاندرول وهاندرول</xar></p>
   <div class="r-grid"><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t36" data-edit-label="Text — New handrolls bar and more. Loved this…">New handrolls bar and more. Loved this place. The fish burger is to die for.</p><div class="who" data-edit="t37" data-edit-label="Text — Talaviews">Talaviews</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t38" data-edit-label="Text — The food is bursting with flavor, so m…">The food is bursting with flavor, so much packed into every bite. The service is excellent, and the music creates a great atmosphere.</p><div class="who" data-edit="t39" data-edit-label="Text — Stephanie Abou Chakra">Stephanie Abou Chakra</div></div><div class="rc rv"><span class="st">★★★★★</span><p data-edit="t40" data-edit-label="Text — Tried almost everything. Kudos to the …">Tried almost everything. Kudos to the spicy crab handroll. The staff are friendly and welcoming. The service is exquisite.</p><div class="who" data-edit="t41" data-edit-label="Text — Georges Kassab">Georges Kassab</div></div></div>
  </div>
 </section>
 
 <section class="visit" id="visit">
- <h2 class="rv">The night is<br><em data-edit="t42" data-edit-label="Text — still young.">still young.</em></h2>
- <span class="late" data-edit="t43" data-edit-label="Text — Fri &amp; Sat till 2:30 AM">Fri &amp; Sat till 2:30 AM</span><br>
+ <h2 class="rv"><xen>The night is<br><em data-edit="t42" data-edit-label="Text — still young.">still young.</em></xen><xar>الليل<br><em data-edit="t79" data-edit-label="Text: بعدو صغير.">بعدو صغير.</em></xar></h2>
+ <span class="late"><xen data-edit="t80" data-edit-label="Text (EN): Fri &amp; Sat till 2:30 AM">Fri &amp; Sat till 2:30 AM</xen><xar data-edit="t81" data-edit-label="Text (AR): الجمعة والسبت لحدّ 2:30 الصبح">الجمعة والسبت لحدّ 2:30 الصبح</xar></span><br>
  <a class="phone" href="tel:+96179061466" data-edit="t44" data-edit-label="Button / link — +961 79 061 466">+961 79 061 466</a>
- <p class="meta">Pasteur Street, Gemmayze, Beirut, Lebanon<br>Tue-Thu 1 PM - 12 AM; Fri-Sat 1 PM - 2:30 AM; Sun 1 PM - 12 AM; Mon 7 PM - 12 AM</p>
+ <p class="meta"><xen>Pasteur Street, Gemmayze, Beirut, Lebanon<br>Tue-Thu 1 PM - 12 AM; Fri-Sat 1 PM - 2:30 AM; Sun 1 PM - 12 AM; Mon 7 PM - 12 AM</xen><xar>شارع باستور، الجميزة، بيروت، لبنان<br>الثلاثاء-الخميس 1 ظهراً - 12 منتصف الليل؛ الجمعة-السبت 1 ظهراً - 2:30 الصبح؛ الأحد 1 ظهراً - 12؛ الإثنين 7 مساءً - 12</xar></p>
  <div class="cta">
-  <a class="btn wa" href="https://wa.me/96179061466" target="_blank" rel="noopener" data-edit="t45" data-edit-label="Button / link — Message on WhatsApp">Message on WhatsApp</a> <a class="btn ig" href="https://instagram.com/chubbychubbyfish" target="_blank" rel="noopener" data-edit="t46" data-edit-label="Button / link — Instagram">Instagram</a>
-  <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener" data-edit="t47" data-edit-label="Button / link — Google Maps ↗">Google Maps ↗</a>
+  <a class="btn wa" href="https://wa.me/96179061466" target="_blank" rel="noopener"><xen data-edit="t82" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t83" data-edit-label="Text (AR): راسلونا عالواتساب">راسلونا عالواتساب</xar></a> <a class="btn ig" href="https://instagram.com/chubbychubbyfish" target="_blank" rel="noopener"><xen data-edit="t84" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t85" data-edit-label="Text (AR): إنستغرام">إنستغرام</xar></a>
+  <a class="btn" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener"><xen data-edit="t86" data-edit-label="Text (EN): Google Maps ↗">Google Maps ↗</xen><xar data-edit="t87" data-edit-label="Text (AR): خرائط غوغل ↗">خرائط غوغل ↗</xar></a>
  </div>
 </section>
 
 <div class="mbar">
- <a class="c" href="tel:+96179061466" data-edit="t48" data-edit-label="Button / link — Call">Call</a>
- <a class="w" href="https://wa.me/96179061466" target="_blank" rel="noopener" data-edit="t49" data-edit-label="Button / link — WhatsApp">WhatsApp</a><a class="g" href="https://instagram.com/chubbychubbyfish" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
- <a class="m" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener" data-edit="t50" data-edit-label="Button / link — Map">Map</a>
+ <a class="c" href="tel:+96179061466"><xen data-edit="t88" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t89" data-edit-label="Text (AR): إتّصال">إتّصال</xar></a>
+ <a class="w" href="https://wa.me/96179061466" target="_blank" rel="noopener"><xen data-edit="t90" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t91" data-edit-label="Text (AR): واتساب">واتساب</xar></a><a class="g" href="https://instagram.com/chubbychubbyfish" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.2"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+ <a class="m" href="https://maps.google.com/?cid=2381358263495031486" target="_blank" rel="noopener"><xen data-edit="t92" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t93" data-edit-label="Text (AR): الخريطة">الخريطة</xar></a>
 </div>
 
-<footer>© Chubby Fish · Gemmayze, Beirut</footer>
+<footer><xen data-edit="t94" data-edit-label="Text (EN): © Chubby Fish · Gemmayze, Beirut">© Chubby Fish · Gemmayze, Beirut</xen><xar data-edit="t95" data-edit-label="Text (AR): © تشابي فيش · الجميزة، بيروت">© تشابي فيش · الجميزة، بيروت</xar></footer>
 
 <script>
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){el.classList.add('in')})},1100);
 </script>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-edit="t96" data-edit-label="Button: عربي">عربي</button>
+
+<script>(function(){var h=document.documentElement,b=document.getElementById('lngt'),
+t={en:document.title,ar:"تشابي فيش — مأكولات بحرية وهاندرول بار في الجميزة، بيروت"},done=false;
+function fix(){if(done)return;done=true;
+ var s=document.querySelectorAll('xar');
+ for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+  var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+ h.lang=on?'ar':'en';document.title=on?t.ar:t.en;
+ b.textContent=on?'English':'عربي';b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});
+})();</script>
 </body>
 </html>
