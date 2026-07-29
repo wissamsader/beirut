@@ -168,12 +168,12 @@ html.ar xar b,html.ar xar strong{font-weight:700}
 /* .lat = the site's own Latin wordmark, shown where the EN page carries the decorative
    Arabic name (so both scripts stay on the page in both languages) */
 html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
-.lngt{position:fixed;left:12px;bottom:18px;z-index:9999;font-family:var(--arb);font-weight:700;
+.lngt{position:fixed;right:13px;top:calc(95px + env(safe-area-inset-top));z-index:9999;font-family:var(--arb);font-weight:700;
   font-size:12.5px;line-height:1;padding:9px 15px;border-radius:4px;cursor:pointer;
   background:#DF7112;color:#FFF7E6;border:1.5px solid #33210E;-webkit-appearance:none;
   box-shadow:0 3px 14px rgba(0,0,0,.20);letter-spacing:.01em;min-width:56px;text-align:center}
 .lngt:active{transform:scale(.94)}
-@media(max-width:760px){.lngt{font-size:12px;padding:8px 13px;bottom:calc(84px + env(safe-area-inset-bottom))}}
+@media(max-width:760px){.lngt{font-size:12px;padding:8px 12px}}
 
 </style>
 </head>
