@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Badguer · Der Melkonian, Bourj Hammoud</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Mulish:wght@400;600;700&family=Markazi+Text:wght@500;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Markazi Text';--arb:'Almarai';
+  --pink:#E4AFA6;--pink-d:#D89C92;--plaster:#F4E3DE;--ink:#43222E;
+  --olive:#66714B;--olive-d:#4C5637;--brass:#B08A4A;--line:rgba(67,34,46,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--plaster);color:var(--ink);font:400 17px/1.75 'Mulish',system-ui,sans-serif}
+.wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:800;line-height:1.08}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 11.5px/1.4 'Mulish',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#9A5A48}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;cursor:pointer;
+  background:var(--ink);color:#F6E8E3;border:1.5px solid #2B121B;border-radius:3px;
+  -webkit-appearance:none;box-shadow:0 4px 14px rgba(67,34,46,.35);min-width:58px;text-align:center}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: the pink house, balcony rail across the facade ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:60px 4vw 44px;
+  background:
+    radial-gradient(120% 60% at 50% -8%,rgba(67,34,46,.16),transparent 60%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+    linear-gradient(180deg,var(--pink-d),var(--pink) 44%,var(--pink-d))}
+.house{position:relative;width:min(940px,95vw);text-align:center}
+.plaque{display:inline-block;background:var(--plaster);border:1.5px solid var(--ink);
+  padding:clamp(18px,3vw,28px) clamp(20px,4vw,44px);box-shadow:0 12px 30px rgba(67,34,46,.25);position:relative}
+.plaque::before{content:"";position:absolute;inset:5px;border:1px solid rgba(176,138,74,.65);pointer-events:none}
+.plaque h1{font-size:clamp(42px,7.6vw,72px);letter-spacing:.02em}
+.plaque h1 xar{font-weight:700}
+.sub{margin-top:8px;color:#6E4738;font-size:clamp(14px,1.8vw,16.5px);line-height:1.6;max-width:52ch}
+.plate{display:inline-flex;align-items:baseline;gap:7px;margin-top:12px;background:var(--olive);color:#F3F0E0;
+  padding:6px 12px;border-radius:2px;font:700 12.5px/1 'Mulish',sans-serif}
+.floorband{position:relative;margin-top:clamp(20px,3.4vh,34px)}
+.winrow{display:flex;align-items:flex-end;justify-content:center;gap:clamp(12px,2.6vw,30px)}
+.win{flex:0 0 clamp(90px,17vw,170px);height:clamp(180px,26vh,250px);border:3px solid var(--ink);
+  background:repeating-linear-gradient(180deg,var(--olive) 0 8px,var(--olive-d) 8px 11px);
+  box-shadow:inset 0 0 0 2px rgba(255,255,255,.12),0 10px 26px rgba(67,34,46,.22);border-radius:2px 2px 0 0}
+.door{flex:0 0 min(400px,58vw);border:3px solid var(--ink);background:var(--plaster);
+  padding:8px;border-radius:3px 3px 0 0;box-shadow:0 14px 34px rgba(67,34,46,.28);position:relative}
+.door img{width:100%;height:clamp(240px,34vh,330px);object-fit:cover}
+.lamp{position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;
+  background:radial-gradient(circle at 50% 42%,#FFE9B0 0 34%,var(--brass) 60%,#7C5C28 100%);
+  border:2px solid var(--ink);animation:lampbr 7s ease-in-out infinite}
+@keyframes lampbr{0%,100%{box-shadow:0 0 10px 2px rgba(255,225,150,.45)}50%{box-shadow:0 0 20px 7px rgba(255,225,150,.75)}}
+@media(prefers-reduced-motion:reduce){.lamp{animation:none}}
+.rail{position:absolute;left:0;right:0;bottom:-6px;height:clamp(64px,9vh,84px);z-index:3;
+  background:
+    linear-gradient(180deg,var(--ink) 0 7px,transparent 7px calc(100% - 9px),var(--ink) calc(100% - 9px)),
+    repeating-linear-gradient(90deg,var(--ink) 0 5px,transparent 5px 27px);
+  filter:drop-shadow(0 6px 10px rgba(67,34,46,.35))}
+.slabline{position:relative;height:16px;margin-top:6px;background:linear-gradient(180deg,#B9776B,#9E5F53);
+  box-shadow:0 8px 18px rgba(67,34,46,.3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:clamp(16px,2.6vh,24px)}
+.chip{border:1.5px solid var(--ink);border-radius:999px;padding:6px 13px;
+  font:700 12px/1.4 'Mulish',sans-serif;color:var(--ink);background:rgba(244,227,222,.66)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:#ECD5CE}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hd{font-size:clamp(28px,4vw,44px);margin:8px 0 18px}
+.two p{color:#5C3A2E;margin-bottom:15px}
+.frame{border:1.5px solid var(--ink);padding:10px;background:#FBF1EC;border-radius:2px;
+  box-shadow:0 12px 30px rgba(67,34,46,.16)}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover}
+.cap{font:600 12px/1.55 'Mulish',sans-serif;color:#96604F;margin-top:9px;letter-spacing:.02em}
+.floors{border:1.5px solid var(--ink);background:#FBF1EC;box-shadow:0 14px 34px rgba(67,34,46,.16)}
+.floor{display:grid;grid-template-columns:150px 1fr;gap:clamp(16px,3vw,36px);align-items:start;
+  padding:clamp(22px,3.4vw,36px)}
+.floor + .floor{border-top:9px solid transparent;
+  border-image:repeating-linear-gradient(90deg,var(--ink) 0 5px,transparent 5px 22px) 9}
+.fl{font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(30px,4vw,44px);color:#9A5A48;line-height:1}
+.floor h3{font-size:22px;margin-bottom:8px}
+.floor p{color:#5C3A2E;font-size:15.5px;line-height:1.7}
+.gloss{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,2.4vw,24px)}
+.gl{background:#FBF1EC;border:1.5px solid var(--ink);padding:18px 20px 15px;position:relative}
+.gl::before{content:"";position:absolute;top:0;left:0;bottom:0;width:6px;background:var(--olive)}
+.gl h3{font-size:19px;margin-bottom:4px}
+.gl p{font-size:14.5px;color:#5C3A2E;line-height:1.65}
+.note{margin-top:18px;font-size:14.5px;color:#7A4E3E}
+.spread{border:1.5px solid var(--ink);background:#FBF1EC;padding:10px;box-shadow:0 16px 40px rgba(67,34,46,.2)}
+.spread img{width:100%;height:clamp(300px,52vh,520px);object-fit:cover}
+.revs{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(16px,2.6vw,28px);align-items:stretch}
+.rev-c{background:#FBF1EC;border:1.5px solid var(--ink);padding:26px 24px 20px;position:relative}
+.rev-c::before{content:"";position:absolute;top:-6px;left:18px;right:18px;height:6px;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 4px,transparent 4px 18px)}
+.rev-c q{display:block;quotes:none;font-size:16.5px;line-height:1.75;color:#4A2A1F}
+.rev-c.big q{font-family:'Playfair Display',serif;font-weight:500;font-style:italic;font-size:clamp(19px,2.4vw,25px);line-height:1.55}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Mulish',sans-serif;
+  color:#9A5A48;letter-spacing:.08em;text-transform:uppercase}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#5C3A2E}
+.ad,.ph,.ph2{font-size:16.5px;color:#4A2A1F}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#F6E8E3;
+  padding:13px 20px;border-radius:2px;text-decoration:none;font:700 15px/1 'Mulish',sans-serif;
+  border:1.5px solid #2B121B;margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--ink)}
+footer{padding:36px 0 128px;color:#96604F;font-size:13.5px;text-align:center;background:#ECD5CE}
+
+/* ---------- sticky bar: the balustrade, buttons between balusters ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:10px;
+  background:
+    linear-gradient(180deg,var(--ink) 0 5px,transparent 5px calc(100% - 5px),var(--ink) calc(100% - 5px)),
+    repeating-linear-gradient(90deg,rgba(246,232,227,.2) 0 3px,transparent 3px 16px),
+    #2E141E;
+  padding:11px 12px calc(11px + env(safe-area-inset-bottom));
+  box-shadow:0 -10px 26px rgba(43,18,27,.5)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:9px 4px 10px;background:var(--plaster);color:var(--ink);border:1.5px solid var(--ink);
+  border-radius:3px 3px 0 0;text-decoration:none;font:700 12px/1.2 'Mulish',sans-serif;min-height:54px}
+.bar a:active{background:#EBD3CB}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:var(--olive);color:#F3F0E0;border-color:var(--olive-d)}
+@media(max-width:880px){
+  .two,.visit,.revs{grid-template-columns:1fr}
+  .gloss{grid-template-columns:1fr}
+  .floor{grid-template-columns:1fr;gap:6px}
+  body{padding-bottom:82px}
+  .win{flex-basis:clamp(64px,16vw,110px);height:clamp(140px,20vh,190px)}
+  .door{flex-basis:min(330px,56vw)}
+  .door img{height:clamp(200px,26vh,260px)}
+}
+@media(max-width:430px){
+  .bar{gap:6px}
+  .bar a{font-size:10.5px}
+  .win{flex-basis:15vw}
+}
+</style>
+<style data-mobfix>@media(max-width:430px){header p{padding-inline:18px}}</style>
+<style data-mobfix2>@media(max-width:430px){.mfx{padding-inline:18px}}</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="house">
+    <div class="plaque">
+      <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Nor Marash · Bourj Hammoud">Nor Marash · Bourj Hammoud</xen><xar data-edit="t2" data-edit-label="Text (AR): نور مراش · برج حمود">نور مراش · برج حمود</xar></p>
+      <h1><xen data-edit="t3" data-edit-label="Text (EN): BADGUER">BADGUER</xen><xar data-edit="t4" data-edit-label="Text (AR): بادغير">بادغير</xar></h1>
+      <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): A 1930 pink house where an all-female …">A 1930 pink house where an all-female kitchen cooks Armenian family food downstairs, and the upper floor keeps the crafts alive.</xen><xar data-edit="t6" data-edit-label="Text (AR): بيت زهري من سنة 1930، فيه مطبخ كلّه نس…">بيت زهري من سنة 1930، فيه مطبخ كلّه نساء بيطبخ أكل أرمني بيتي تحت، والطابق الفوقاني مخلّي الحرف عايشة.</xar></p>
+      <p class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 4.6">4.6</span> <span><xen>from <span class="num" data-edit="t8" data-edit-label="Text: 235">235</span> Google reviews</xen><xar>من <span class="num" data-edit="t9" data-edit-label="Text: 235">235</span> تقييم على غوغل</xar></span></p>
+    </div>
+    <div class="floorband">
+      <div class="winrow">
+        <div class="win" aria-hidden="true"></div>
+        <div class="door">
+          <span class="lamp" aria-hidden="true"></span>
+          <img src="img/04.jpg" alt="An Armenian spread of soujouk, sarma, cheese boereg and mezze on a patterned cloth">
+        </div>
+        <div class="win" aria-hidden="true"></div>
+      </div>
+      <div class="rail" aria-hidden="true"></div>
+    </div>
+    <div class="slabline" aria-hidden="true"></div>
+    <div class="chips">
+      <span class="chip"><xen class="c" data-edit="t10" data-edit-label="Text (EN): All-female kitchen">All-female kitchen</xen><xar class="c" data-edit="t11" data-edit-label="Text (AR): مطبخ كلّه نساء">مطبخ كلّه نساء</xar></span>
+      <span class="chip"><xen class="c" data-edit="t12" data-edit-label="Text (EN): The pink house, est. 1930">The pink house, est. 1930</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): البيت الزهري، بناء 1930">البيت الزهري، بناء 1930</xar></span>
+      <span class="chip"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Exhibitions upstairs">Exhibitions upstairs</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): معارض فوق">معارض فوق</xar></span>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t16" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t17" data-edit-label="Text (AR): البيت">البيت</xar></p>
+      <h2><xen data-edit="t18" data-edit-label="Text (EN): A home that never stopped being one">A home that never stopped being one</xen><xar data-edit="t19" data-edit-label="Text (AR): بيت ما بطّل يكون بيت">بيت ما بطّل يكون بيت</xar></h2>
+      <p><xen data-edit="t20" data-edit-label="Text (EN): Badguer lives inside a 1930 pink house…">Badguer lives inside a 1930 pink house on Der Melkonian street in Nor Marash. The Mangassarian family opened it in 2012 as a non-profit, and the architect and urban planner Arpi Mangassarian still runs it, room by room.</xen><xar data-edit="t21" data-edit-label="Text (AR): بادغير عايش جوّا بيت زهري من سنة 1930 …">بادغير عايش جوّا بيت زهري من سنة 1930 بشارع دير ملكونيان بنور مراش. عيلة منكاساريان فتحته سنة 2012 كجمعية لا تبغي الربح، والمهندسة المعمارية أربي منكاساريان بعدها مديرته، غرفة غرفة.</xar></p>
+      <p><xen data-edit="t22" data-edit-label="Text (EN): The ground floor is the restaurant: wo…">The ground floor is the restaurant: women of the neighbourhood cooking the Armenian dishes of their own kitchens, mante and soubeureg and harissa, served on embroidered cloth. Upstairs, the same house hosts exhibitions, crafts and workshops from Bourj Hammoud's ateliers.</xen><xar data-edit="t23" data-edit-label="Text (AR): الطابق الأرضي هو المطعم: نساء الحي عم …">الطابق الأرضي هو المطعم: نساء الحي عم يطبخوا أكلات بيوتهن الأرمنية، منتي وسوبوريك وهريسة، عالمفارش المطرّزة. وفوق، نفس البيت بيستضيف معارض وحرف وورش من محترفات برج حمود.</xar></p>
+      <p><xen data-edit="t24" data-edit-label="Text (EN): Guides and listings still print badgue…">Guides and listings still print badguer.org next to the name. That address answers nobody now, and this page is built to take its place.</xen><xar data-edit="t25" data-edit-label="Text (AR): الأدلّة والمواقع بعدها بتطبع badguer.o…">الأدلّة والمواقع بعدها بتطبع badguer.org حدّ الاسم. هيدا العنوان ما عاد يردّ على حدا، وهيدي الصفحة معمولة تاخد محلّه.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The dining room set with Badguer placemats, saj bread and blue plates">
+        <p class="cap"><xen data-edit="t26" data-edit-label="Text (EN): The dining room, set for lunch on the …">The dining room, set for lunch on the printed Badguer placemats.</xen><xar data-edit="t27" data-edit-label="Text (AR): غرفة الطعام، محضّرة للغدا على مفارش با…">غرفة الطعام، محضّرة للغدا على مفارش بادغير المطبوعة.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t28" data-edit-label="Text (EN): One house, two floors">One house, two floors</xen><xar data-edit="t29" data-edit-label="Text (AR): بيت واحد، طابقين">بيت واحد، طابقين</xar></p>
+    <h2 class="hd" style="margin-bottom:28px"><xen data-edit="t30" data-edit-label="Text (EN): What happens behind the balcony rail">What happens behind the balcony rail</xen><xar data-edit="t31" data-edit-label="Text (AR): شو بيصير ورا درابزين البلكون">شو بيصير ورا درابزين البلكون</xar></h2>
+    <div class="floors">
+      <div class="floor rev">
+        <p class="fl num" data-edit="t32" data-edit-label="Text: GF">GF</p>
+        <div>
+          <h3><xen data-edit="t33" data-edit-label="Text (EN): The kitchen and the tables">The kitchen and the tables</xen><xar data-edit="t34" data-edit-label="Text (AR): المطبخ والطاولات">المطبخ والطاولات</xar></h3>
+          <p><xen data-edit="t35" data-edit-label="Text (EN): The all-female kitchen cooks the long …">The all-female kitchen cooks the long Armenian menu of the house, from yogurt kebab to kebab karaz, and the rooms fill like a family lunch. Some evenings an oud or a guitar joins from the corner.</xen><xar data-edit="t36" data-edit-label="Text (AR): المطبخ النسائي بيطبخ لائحة البيت الأرم…">المطبخ النسائي بيطبخ لائحة البيت الأرمنية الطويلة، من كباب اللبن لكباب الكرز، والغرف بتعبّي متل غدا عيلة. وبعض الليالي بينضم عود أو غيتار من الزاوية.</xar></p>
+        </div>
+      </div>
+      <div class="floor rev">
+        <p class="fl num" data-edit="t37" data-edit-label="Text: F1">F1</p>
+        <div>
+          <h3><xen data-edit="t38" data-edit-label="Text (EN): The exhibition floor">The exhibition floor</xen><xar data-edit="t39" data-edit-label="Text (AR): طابق المعارض">طابق المعارض</xar></h3>
+          <p><xen data-edit="t40" data-edit-label="Text (EN): Upstairs the house turns into a galler…">Upstairs the house turns into a gallery of Bourj Hammoud's own hands: weaving, embroidery, crafts and rotating exhibitions, one flight of stairs above your table.</xen><xar data-edit="t41" data-edit-label="Text (AR): فوق، البيت بيصير غاليري لإيدين برج حمو…">فوق، البيت بيصير غاليري لإيدين برج حمود: حياكة، تطريز، حرف ومعارض متبدّلة، على درج واحد فوق طاولتك.</xar></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t42" data-edit-label="Text (EN): Off their own printed menu">Off their own printed menu</xen><xar data-edit="t43" data-edit-label="Text (AR): من لائحتهن المطبوعة نفسها">من لائحتهن المطبوعة نفسها</xar></p>
+  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t44" data-edit-label="Text (EN): A short glossary of the kitchen">A short glossary of the kitchen</xen><xar data-edit="t45" data-edit-label="Text (AR): قاموس صغير من المطبخ">قاموس صغير من المطبخ</xar></h2>
+  <div class="gloss">
+    <div class="gl rev"><h3 data-edit="t46" data-edit-label="Heading: Mante">Mante</h3>
+      <p><xen data-edit="t47" data-edit-label="Text (EN): Tiny open dumplings, baked and drowned…">Tiny open dumplings, baked and drowned in yogurt. The plate the house is photographed with.</xen><xar data-edit="t48" data-edit-label="Text (AR): شيشبرك أرمني صغير مفتوح، مشوي ومغطّس ب…">شيشبرك أرمني صغير مفتوح، مشوي ومغطّس باللبن. الصحن يلّي البيت بينصوّر معه.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t49" data-edit-label="Heading: Soubeureg">Soubeureg</h3>
+      <p><xen data-edit="t50" data-edit-label="Text (EN): Layered cheese pastry, cut in squares,…">Layered cheese pastry, cut in squares, crisp on top and molten inside.</xen><xar data-edit="t51" data-edit-label="Text (AR): رقاقات جبنة مطبّقة، مقطّعة مربعات، مقر…">رقاقات جبنة مطبّقة، مقطّعة مربعات، مقرمشة من فوق وذايبة من جوّا.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t52" data-edit-label="Heading: Kebab karaz">Kebab karaz</h3>
+      <p><xen data-edit="t53" data-edit-label="Text (EN): Meatballs simmered with sour cherries,…">Meatballs simmered with sour cherries, the Aleppo-Armenian classic.</xen><xar data-edit="t54" data-edit-label="Text (AR): كباب بالكرز الحامض، الكلاسيكية الحلبية…">كباب بالكرز الحامض، الكلاسيكية الحلبية الأرمنية.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t55" data-edit-label="Heading: Harissa">Harissa</h3>
+      <p><xen data-edit="t56" data-edit-label="Text (EN): Wheat and chicken beaten into one slow…">Wheat and chicken beaten into one slow, patient pot.</xen><xar data-edit="t57" data-edit-label="Text (AR): هريسة القمح والدجاج، طبخة بطيئة على مه…">هريسة القمح والدجاج، طبخة بطيئة على مهل الدار.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t58" data-edit-label="Heading: Djinguelov hats">Djinguelov hats</h3>
+      <p><xen data-edit="t59" data-edit-label="Text (EN): The herb bread of Artsakh, a thin fold…">The herb bread of Artsakh, a thin fold packed with greens.</xen><xar data-edit="t60" data-edit-label="Text (AR): خبز الأعشاب الأرمني، رقيق ومحشي خضرة ع…">خبز الأعشاب الأرمني، رقيق ومحشي خضرة عالسكين.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t61" data-edit-label="Heading: Vosbov kufte">Vosbov kufte</h3>
+      <p><xen data-edit="t62" data-edit-label="Text (EN): Lentil kufte, the meatless one, shaped…">Lentil kufte, the meatless one, shaped by hand.</xen><xar data-edit="t63" data-edit-label="Text (AR): كفتة العدس، النسخة الصيامية، مكبوسة عا…">كفتة العدس، النسخة الصيامية، مكبوسة عالإيد.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t64" data-edit-label="Heading: Ghapama">Ghapama</h3>
+      <p><xen data-edit="t65" data-edit-label="Text (EN): A whole stuffed pumpkin for five or si…">A whole stuffed pumpkin for five or six people, ordered ahead.</xen><xar data-edit="t66" data-edit-label="Text (AR): يقطينة محشية كاملة لخمسة أو ستة أشخاص،…">يقطينة محشية كاملة لخمسة أو ستة أشخاص، بتنطلب سلف.</xar></p></div>
+    <div class="gl rev"><h3 data-edit="t67" data-edit-label="Heading: Nazoug">Nazoug</h3>
+      <p><xen data-edit="t68" data-edit-label="Text (EN): The sweet layered pastry that closes a…">The sweet layered pastry that closes an Armenian table.</xen><xar data-edit="t69" data-edit-label="Text (AR): حلو الرقاقات يلّي بيسكّر السفرة الأرمن…">حلو الرقاقات يلّي بيسكّر السفرة الأرمنية.</xar></p></div>
+  </div>
+  <p class="note"><xen data-edit="t70" data-edit-label="Text (EN): All of it is on the menu card photogra…">All of it is on the menu card photographed at the table, from mante plates to frozen manti to take home. Prices are printed there in the house's own hand, so ask for the card.</xen><xar data-edit="t71" data-edit-label="Text (AR): كل شي موجود على كرت اللائحة المصوّر عا…">كل شي موجود على كرت اللائحة المصوّر عالطاولة، من صحون المنتي للمنتي المجلّد لياخدوه عالبيت. الأسعار مطبوعة هونيك بخط البيت، فاطلب الكرت.</xar></p>
+  <div class="frame rev" style="max-width:540px;margin:28px auto 0"><img src="img/03.jpg" loading="lazy" alt="A bowl of mante under yogurt and sumac, served with pickles" style="height:clamp(220px,32vh,300px)">
+    <p class="cap"><xen data-edit="t72" data-edit-label="Text (EN): The mante, photographed at the table b…">The mante, photographed at the table by a guest.</xen><xar data-edit="t73" data-edit-label="Text (AR): المنتي، مصوّرة عالطاولة من ضيف.">المنتي، مصوّرة عالطاولة من ضيف.</xar></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t74" data-edit-label="Text (EN): Sunday at the pink house">Sunday at the pink house</xen><xar data-edit="t75" data-edit-label="Text (AR): الأحد بالبيت الزهري">الأحد بالبيت الزهري</xar></p>
+    <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t76" data-edit-label="Text (EN): The table, from above">The table, from above</xen><xar data-edit="t77" data-edit-label="Text (AR): السفرة، من فوق">السفرة، من فوق</xar></h2>
+    <div class="spread rev"><img src="img/07.jpg" loading="lazy" alt="A full Armenian table from above: kibbeh, pastries, dips and salads on lace cloth">
+      <p class="cap"><xen data-edit="t78" data-edit-label="Text (EN): Lahmajun, kufte, boereg and the rest o…">Lahmajun, kufte, boereg and the rest of the table, on the house lace.</xen><xar data-edit="t79" data-edit-label="Text (AR): لحم بعجين، كفتة، بوريك وباقي السفرة، ع…">لحم بعجين، كفتة، بوريك وباقي السفرة، على دانتيل البيت.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t80" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t81" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t82" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t83" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
+  <div class="revs">
+    <div class="rev-c rev"><q dir="ltr" data-edit="t84" data-edit-label="Quote: Wonderful authentic Armenian food, the…">Wonderful authentic Armenian food, the place is great, the old house transformed into a cozy restaurant. Food choices are wide, the taste is great. The host is of a nice welcoming character.</q><cite data-edit="t85" data-edit-label="Credit: Kamel Lawand">Kamel Lawand</cite></div>
+    <div class="rev-c big rev"><q dir="ltr" data-edit="t86" data-edit-label="Quote: It felt like being invited to someone'…">It felt like being invited to someone's grandma's house.</q><cite data-edit="t87" data-edit-label="Credit: Wadih Antoun">Wadih Antoun</cite></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap visit">
+    <div>
+      <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t89" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></p>
+      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t90" data-edit-label="Text (EN): Lunch through late evening">Lunch through late evening</xen><xar data-edit="t91" data-edit-label="Text (AR): من الغدا لآخر السهرة">من الغدا لآخر السهرة</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t92" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t93" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t94" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t95" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t96" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t97" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t98" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t99" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t100" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t101" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t102" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t103" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t105" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t106" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t108" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t109" data-edit-label="Menu / table: 11:30 AM–11:30 PM">11:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t110" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t111" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t112" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t113" data-edit-label="Text (EN): Sunday starts at noon. Big tables and …">Sunday starts at noon. Big tables and the ghapama are worth calling ahead for.</xen><xar data-edit="t114" data-edit-label="Text (AR): الأحد بيبلّش عالظهر. الطاولات الكبيرة …">الأحد بيبلّش عالظهر. الطاولات الكبيرة والغاباما بيستاهلوا تلفون سلف.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t115" data-edit-label="Text (EN): Find the pink house">Find the pink house</xen><xar data-edit="t116" data-edit-label="Text (AR): لاقي البيت الزهري">لاقي البيت الزهري</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t117" data-edit-label="Text (EN): Der Melkonian street, Nor Marash">Der Melkonian street, Nor Marash</xen><xar data-edit="t118" data-edit-label="Text (AR): شارع دير ملكونيان، نور مراش">شارع دير ملكونيان، نور مراش</xar></h3>
+      <p class="k"><xen data-edit="t119" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t120" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t121" data-edit-label="Text: Der Melkonian St, Nor Marash, Bourj Ha…">Der Melkonian St, Nor Marash, Bourj Hammoud</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t122" data-edit-label="Text (EN): Phone">Phone</xen><xar data-edit="t123" data-edit-label="Text (AR): الهاتف">الهاتف</xar></p>
+      <p class="ph num" data-edit="t124" data-edit-label="Text: +961 1 240 214">+961 1 240 214</p>
+      <p class="k" style="margin-top:14px"><xen data-edit="t125" data-edit-label="Text (EN): Mobile, printed on their menu">Mobile, printed on their menu</xen><xar data-edit="t126" data-edit-label="Text (AR): الخليوي، مطبوع على لائحتهن">الخليوي، مطبوع على لائحتهن</xar></p>
+      <p class="ph2 num" data-edit="t127" data-edit-label="Text: +961 3 652 235">+961 3 652 235</p>
+      <p class="cap"><xen data-edit="t128" data-edit-label="Text (EN): The first is the house landline: call …">The first is the house landline: call it to book, and ask for WhatsApp on the mobile if you prefer to write.</xen><xar data-edit="t129" data-edit-label="Text (AR): الأول خط البيت الأرضي: اتصل فيه للحجز،…">الأول خط البيت الأرضي: اتصل فيه للحجز، واسأل عن واتساب عالخليوي إذا بتحب تكتب.</xar></p>
+      <p style="margin-top:22px">
+        <a class="btn" href="tel:+9611240214"><xen data-edit="t130" data-edit-label="Text (EN): Call the house">Call the house</xen><xar data-edit="t131" data-edit-label="Text (AR): اتصل بالبيت">اتصل بالبيت</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=1635583243947852084" target="_blank" rel="noopener"><xen data-edit="t132" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t133" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn o" href="https://www.instagram.com/badguer/" target="_blank" rel="noopener" data-edit="t134" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/Badguer/" target="_blank" rel="noopener" data-edit="t135" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t136" data-edit-label="Text (EN): Badguer, Der Melkonian street, Nor Mar…">Badguer, Der Melkonian street, Nor Marash, Bourj Hammoud.</xen><xar data-edit="t137" data-edit-label="Text (AR): بادغير، شارع دير ملكونيان، نور مراش، ب…">بادغير، شارع دير ملكونيان، نور مراش، برج حمود.</xar></p>
+  <p style="margin-top:8px" class="mfx"><xen data-edit="t138" data-edit-label="Text (EN): Downstairs they cook, upstairs they we…">Downstairs they cook, upstairs they weave, and the balcony holds the whole story.</xen><xar data-edit="t139" data-edit-label="Text (AR): تحت عم يطبخوا، فوق عم يحيكوا، والبلكون…">تحت عم يطبخوا، فوق عم يحيكوا، والبلكون شايل القصة كلها.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+9611240214"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t140" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t141" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://www.google.com/maps?cid=1635583243947852084" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t142" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t143" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/badguer/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t144" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="https://www.facebook.com/Badguer/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t145" data-edit-label="Text: Facebook">Facebook</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="بادغير · دير ملكونيان، برج حمود" data-edit="t146" data-edit-label="Button: عربي">عربي</button>
+</body></html>

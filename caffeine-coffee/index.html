@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caffeine Coffee Beirut · Alexander Fleming, Beirut</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&family=Archivo:wght@400;500;700&family=Lalezar&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Lalezar';--arb:'Noto Kufi Arabic';
+  --ink:#140D08;--wall:#1C120C;--panel:#241710;--line:rgba(255,164,38,.28);
+  --amber:#FFA426;--amber-hot:#FFC46B;--copper:#8A5A33;--cream:#F4E9DA;--smoke:#C9B8A4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--cream);font:400 17px/1.75 'Archivo',system-ui,sans-serif}
+.wrap{width:min(1160px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Tilt Neon',system-ui,sans-serif;font-weight:400;line-height:1.1}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 11.5px/1.5 'Archivo',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--amber)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
+  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
+  background:#0E0906;color:var(--amber);border:1.5px solid var(--amber);border-radius:3px;
+  box-shadow:0 0 12px rgba(255,164,38,.35),0 4px 14px rgba(0,0,0,.5);-webkit-appearance:none}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: a bent neon tube sign, wired to the wall ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:
+   radial-gradient(58% 40% at 50% 30%,rgba(255,164,38,.16),transparent 70%),
+   linear-gradient(180deg,#0D0805 0%,var(--wall) 55%,#0D0805 100%)}
+header::before{content:"";position:absolute;inset:0;opacity:.6;
+  background:repeating-linear-gradient(90deg,transparent 0 138px,rgba(0,0,0,.34) 138px 140px)}
+.sign{position:relative;z-index:2;width:min(760px,92vw);text-align:center;padding-top:8px}
+.mount{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:min(430px,72vw);height:3px;
+  background:linear-gradient(90deg,transparent,#3A2A1D 14%,#3A2A1D 86%,transparent)}
+.mount i{position:absolute;top:-3px;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#8F8577,#3A332B 75%);box-shadow:0 1px 3px rgba(0,0,0,.7)}
+.mount i.m1{left:6%}.mount i.m2{left:50%}.mount i.m3{right:6%}
+.neon{font-family:'Tilt Neon',sans-serif;font-size:clamp(52px,11vw,118px);line-height:1;color:#FFE9C9;
+  text-shadow:0 0 7px rgba(255,196,107,.9),0 0 22px rgba(255,164,38,.75),0 0 60px rgba(255,140,20,.5);
+  animation:brglow 7s ease-in-out infinite}
+@keyframes brglow{0%,100%{text-shadow:0 0 6px rgba(255,196,107,.8),0 0 18px rgba(255,164,38,.6),0 0 46px rgba(255,140,20,.38)}
+50%{text-shadow:0 0 8px rgba(255,196,107,.95),0 0 26px rgba(255,164,38,.85),0 0 70px rgba(255,140,20,.6)}}
+@media(prefers-reduced-motion:reduce){.neon{animation:none}}
+.neon-ar{display:block;font-family:var(--arh),sans-serif;font-size:clamp(24px,4.6vw,44px);color:#FFD9A0;
+  text-shadow:0 0 6px rgba(255,196,107,.8),0 0 18px rgba(255,164,38,.55);margin-top:4px}
+.caps{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.caps b{width:16px;height:7px;border-radius:4px;background:linear-gradient(180deg,#7C7264,#3A332B);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.cord{width:2px;height:clamp(26px,5vh,48px);margin:2px auto 0;
+  background:linear-gradient(180deg,#4A3826,#2A1E14)}
+.tbox{width:64px;height:22px;margin:0 auto;border-radius:3px;border:1px solid #3A2A1D;
+  background:linear-gradient(180deg,#2E2015,#1A100A);box-shadow:0 4px 10px rgba(0,0,0,.5)}
+.steel{display:inline-flex;align-items:baseline;gap:9px;margin-top:18px;padding:8px 16px;border-radius:2px;
+  background:linear-gradient(180deg,#2E2418,#1D1610);border:1px solid var(--copper);
+  font:700 13px/1 'Archivo',sans-serif;color:var(--cream);letter-spacing:.05em}
+.steel span b{color:var(--amber-hot)}
+.subline{margin:14px auto 0;max-width:56ch;color:var(--smoke);font-size:clamp(14.5px,1.9vw,17px);line-height:1.7}
+.ledge{margin:clamp(18px,3vh,30px) auto 0;width:min(460px,80vw)}
+.ledge .pane{border:1px solid var(--copper);border-radius:4px;padding:8px;background:#0F0A06;
+  box-shadow:0 18px 44px rgba(0,0,0,.55)}
+.ledge img{width:100%;height:clamp(160px,23vh,230px);object-fit:cover;border-radius:2px}
+.ledge .bar-under{height:8px;margin:0 14px;border-radius:0 0 6px 6px;
+  background:linear-gradient(180deg,#3A2A1D,#241A10)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 13px;
+  font:500 12.5px/1.5 'Archivo',sans-serif;color:#EAD9BF;background:rgba(255,164,38,.07)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:var(--wall)}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hd{font-size:clamp(27px,4vw,44px);margin:8px 0 18px;color:#FFEFD8}
+.two p{color:#D8C9B4;margin-bottom:15px}
+.frame{border:1px solid var(--copper);padding:10px;background:#0F0A06;border-radius:4px}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
+.cap{font:500 12.5px/1.55 'Archivo',sans-serif;color:#9A8A75;margin-top:9px;letter-spacing:.02em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:var(--panel);border:1px solid rgba(255,164,38,.16);border-radius:5px;overflow:hidden}
+.card img{width:100%;height:215px;object-fit:cover}
+.card .t{padding:15px 16px 19px}
+.card h3{font-size:21px;margin-bottom:6px;color:#FFE9C9}
+.card p{color:#C4B29B;font-size:14.5px;line-height:1.65}
+.board{background:var(--cream);color:#2A1C10;border-radius:6px;padding:clamp(22px,3.6vw,42px);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:clamp(20px,3vw,40px);align-items:start}
+.board .k{color:#A15B14}
+.board h2{font-size:clamp(25px,3.4vw,38px);color:#241608;margin:6px 0 14px}
+.exl{margin-top:6px}
+.exl li{list-style:none;display:flex;justify-content:space-between;gap:12px;padding:9px 2px;
+  border-bottom:1px dashed rgba(42,28,16,.3);font:500 15.5px/1.5 'Archivo',sans-serif}
+.exl li i{font-style:normal;color:#A15B14;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.note{margin-top:16px;font-size:14.5px;color:#6B5236}
+.boardimg{border:1px solid rgba(42,28,16,.3);padding:8px;background:#fff;border-radius:3px}
+.boardimg img{width:100%;height:auto}
+.appband{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,3.4vw,46px);
+  align-items:center;border:1px solid var(--line);border-radius:6px;
+  background:linear-gradient(120deg,#241710,#170F09);padding:clamp(22px,3.6vw,42px)}
+.appband h2{font-size:clamp(24px,3.4vw,38px);color:#FFEFD8;margin-bottom:10px}
+.appband p{color:#D8C9B4;margin-bottom:12px}
+.stores{display:flex;flex-wrap:wrap;gap:10px}
+.abtn{display:inline-flex;align-items:center;gap:9px;background:var(--amber);color:#241608;
+  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 14.5px/1 'Archivo',sans-serif;
+  border:1px solid #B36F14}
+.abtn.o{background:transparent;color:var(--cream);border-color:var(--line)}
+.applist{border-left:2px solid var(--amber);padding:6px 0 6px 20px}
+.applist li{list-style:none;padding:7px 0;color:#E2D3BC;font-size:15px}
+.applist li b{color:var(--amber-hot)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal a{display:block;border:1px solid rgba(255,164,38,.2);border-radius:3px;overflow:hidden;background:#0F0A06;padding:5px}
+.gal img{width:100%;height:185px;object-fit:cover;border-radius:1px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.rev-c{background:var(--panel);border:1px solid rgba(255,164,38,.16);border-radius:5px;padding:22px 20px 18px;position:relative}
+.rev-c::before{content:"";position:absolute;top:-1px;left:20px;width:40px;height:3px;background:var(--amber);
+  box-shadow:0 0 8px rgba(255,164,38,.7)}
+.rev-c q{display:block;quotes:none;font-size:15.5px;line-height:1.7;color:#EADDC8}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Archivo',sans-serif;color:var(--amber);letter-spacing:.08em}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(255,164,38,.14);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#D8C9B4}
+.ad,.ph{font-size:16.5px;color:#F0E4D2}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--amber);color:#241608;
+  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 15px/1 'Archivo',sans-serif;
+  border:1px solid #B36F14;margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--cream);border-color:var(--line)}
+footer{padding:36px 0 128px;color:#9A8A75;font-size:13.5px;text-align:center;background:#0D0805}
+
+/* ---------- sticky bar: the neon conduit rail ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:1px;
+  background:#0E0906;border-top:2px solid var(--amber);
+  box-shadow:0 -2px 14px rgba(255,164,38,.35),0 -12px 30px rgba(0,0,0,.6);
+  padding:0 0 env(safe-area-inset-bottom)}
+.bar::before{content:"";position:absolute;top:-5px;left:12%;width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#8F8577,#3A332B 75%)}
+.bar::after{content:"";position:absolute;top:-5px;right:12%;width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#8F8577,#3A332B 75%)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:11px 4px 12px;background:linear-gradient(180deg,#1C120C,#120B07);color:var(--cream);
+  text-decoration:none;font:700 12px/1.2 'Archivo',sans-serif;letter-spacing:.02em;min-height:58px}
+.bar a:active{background:#2A1C12}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:linear-gradient(180deg,var(--amber),#D97F12);color:#241608}
+.bar a.sq{flex:0 0 58px}
+@media(max-width:880px){
+  .two,.visit,.board,.appband{grid-template-columns:1fr}
+  .grid3,.revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:70px}
+  .ledge img{height:150px}
+}
+@media(max-width:430px){
+  .bar a{font-size:10.5px}
+  .chips{gap:6px}
+}
+</style>
+<style data-mobfix>@media(max-width:430px){p.subline{padding-inline:18px}}</style>
+<style data-mobfix2>@media(max-width:430px){.mfx{padding-inline:18px}}</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="sign">
+    <div class="mount"><i class="m1"></i><i class="m2"></i><i class="m3"></i></div>
+    <h1 class="neon">CAFFEINE<span class="neon-ar" aria-hidden="true" data-edit="t1" data-edit-label="Text: كافيين">كافيين</span></h1>
+    <div class="caps" aria-hidden="true"><b></b><b></b></div>
+    <div class="cord" aria-hidden="true"></div>
+    <div class="tbox" aria-hidden="true"></div>
+    <p class="steel"><span class="num" data-edit="t2" data-edit-label="Text: 4.7 ★">4.7 ★</span><span><xen class="c">from <span class="num" data-edit="t3" data-edit-label="Text: 167">167</span> Google reviews</xen><xar class="c">من <span class="num" data-edit="t4" data-edit-label="Text: 167">167</span> تقييم على غوغل</xar></span></p>
+    <p class="subline"><xen data-edit="t5" data-edit-label="Text (EN): A roastery and brew bar on Alexander F…">A roastery and brew bar on Alexander Fleming street: beans roasted in the room, forty ways to drink them, and the lights stay on past midnight.</xen><xar data-edit="t6" data-edit-label="Text (AR): محمصة وبار قهوة بشارع ألكسندر فلمنغ: ا…">محمصة وبار قهوة بشارع ألكسندر فلمنغ: البن بيتحمّص بالمحل، أربعين طريقة تشربو، والضو بيضل شعلان لبعد نص الليل.</xar></p>
+    <div class="ledge">
+      <div class="pane"><img src="img/01.jpg" alt="The roasting machine and wooden bar inside Caffeine Coffee Beirut"></div>
+      <div class="bar-under" aria-hidden="true"></div>
+    </div>
+    <div class="chips">
+      <span class="chip"><xen class="c" data-edit="t7" data-edit-label="Text (EN): Cold brew">Cold brew</xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): كولد برو">كولد برو</xar></span>
+      <span class="chip"><xen class="c" data-edit="t9" data-edit-label="Text (EN): Pour over">Pour over</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): بور أوفر">بور أوفر</xar></span>
+      <span class="chip"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Cakes">Cakes</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): كيك">كيك</xar></span>
+      <span class="chip"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Cocktails after dark">Cocktails after dark</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): كوكتيلات بالليل">كوكتيلات بالليل</xar></span>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t15" data-edit-label="Text (EN): The roastery">The roastery</xen><xar data-edit="t16" data-edit-label="Text (AR): المحمصة">المحمصة</xar></p>
+      <h2><xen data-edit="t17" data-edit-label="Text (EN): Roasted here, poured here">Roasted here, poured here</xen><xar data-edit="t18" data-edit-label="Text (AR): محمّصة هون، مسكوبة هون">محمّصة هون، مسكوبة هون</xar></h2>
+      <p><xen data-edit="t19" data-edit-label="Text (EN): Caffeine is not a cafe that buys its b…">Caffeine is not a cafe that buys its beans, it is a roastery that happens to have chairs. The machine sits in the room with you, the bar runs a full pour over line, and the mark on their menu carries the year 2015 under a horseshoe and a star.</xen><xar data-edit="t20" data-edit-label="Text (AR): كافيين مش قهوة عم تشتري بنّها، هيدي مح…">كافيين مش قهوة عم تشتري بنّها، هيدي محمصة صدفة عندها كراسي. المكنة قاعدة بالغرفة معك، البار شغّال خط بور أوفر كامل، وشعارهن على المنيو حامل سنة 2015 تحت حدوة حصان ونجمة.</xar></p>
+      <p><xen data-edit="t21" data-edit-label="Text (EN): The board runs past forty drinks, from…">The board runs past forty drinks, from Turkish coffee to affogato, and the cold brew is the one people name in their reviews. There is a second counter inside AUB West Hall for the students, a coffee academy for anyone who wants to learn the bar, and a wholesale line for the shops they supply.</xen><xar data-edit="t22" data-edit-label="Text (AR): اللائحة بتقطع الأربعين مشروب، من القهو…">اللائحة بتقطع الأربعين مشروب، من القهوة التركية للأفوغاتو، والكولد برو هو يلّي الناس بتسمّيه بتقييماتها. في كاونتر تاني جوّا الـ West Hall بالـ AUB للطلاب، وأكاديمية قهوة ليلّي بدو يتعلم البار، وخط جملة للمحلات يلّي بيموّنوها.</xar></p>
+      <p><xen data-edit="t23" data-edit-label="Text (EN): Late is the point: the room works unti…">Late is the point: the room works until 11:30 on weeknights and half past midnight on the weekend, and the espresso machine does not close before the door does.</xen><xar data-edit="t24" data-edit-label="Text (AR): السهرة هي الفكرة: المحل شغّال لحد 11:3…">السهرة هي الفكرة: المحل شغّال لحد 11:30 أيام الأسبوع و12:30 بعد نص الليل بالويكند، ومكنة الإسبريسو ما بتسكّر قبل الباب.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/08.jpg" loading="lazy" alt="The Peace and Love shelf and reading corner inside the shop">
+        <p class="cap"><xen data-edit="t25" data-edit-label="Text (EN): The Peace and Love corner, carved in w…">The Peace and Love corner, carved in wood above the shelf.</xen><xar data-edit="t26" data-edit-label="Text (AR): زاوية الـ Peace and Love، محفورة بالخش…">زاوية الـ Peace and Love، محفورة بالخشب فوق الرف.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t27" data-edit-label="Text (EN): From the bar">From the bar</xen><xar data-edit="t28" data-edit-label="Text (AR): من عالبار">من عالبار</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t29" data-edit-label="Text (EN): Three cups that explain the place">Three cups that explain the place</xen><xar data-edit="t30" data-edit-label="Text (AR): تلات فناجين بيشرحوا المحل">تلات فناجين بيشرحوا المحل</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="Latte art rosetta in a wide cup with a wooden spoon">
+        <div class="t"><h3><xen data-edit="t31" data-edit-label="Text (EN): The flat white">The flat white</xen><xar data-edit="t32" data-edit-label="Text (AR): الفلات وايت">الفلات وايت</xar></h3>
+        <p><xen data-edit="t33" data-edit-label="Text (EN): Poured slow over their own roast, the …">Poured slow over their own roast, the rosetta is the barista's signature on top.</xen><xar data-edit="t34" data-edit-label="Text (AR): مسكوب عالمهل فوق تحميصهن، والرسمة عالو…">مسكوب عالمهل فوق تحميصهن، والرسمة عالوش توقيع الباريستا.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="A cappuccino dusted with chocolate in a red cup">
+        <div class="t"><h3><xen data-edit="t35" data-edit-label="Text (EN): The red cup cappuccino">The red cup cappuccino</xen><xar data-edit="t36" data-edit-label="Text (AR): كابتشينو الفنجان الأحمر">كابتشينو الفنجان الأحمر</xar></h3>
+        <p><xen data-edit="t37" data-edit-label="Text (EN): Chocolate dust on the foam, served on …">Chocolate dust on the foam, served on the wooden tables by the window.</xen><xar data-edit="t38" data-edit-label="Text (AR): رشّة شوكولا عالرغوة، بينقدّم عالطاولات…">رشّة شوكولا عالرغوة، بينقدّم عالطاولات الخشب حد الشباك.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/06.jpg" loading="lazy" alt="A glass teapot and a white cup on the counter">
+        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): The slow pot">The slow pot</xen><xar data-edit="t40" data-edit-label="Text (AR): الإبريق الرايق">الإبريق الرايق</xar></h3>
+        <p><xen data-edit="t41" data-edit-label="Text (EN): Tea and filter brews come in glass, fo…">Tea and filter brews come in glass, for the people who stay a whole chapter.</xen><xar data-edit="t42" data-edit-label="Text (AR): الشاي والفلتر بيجوا بإبريق زجاج، ليلّي…">الشاي والفلتر بيجوا بإبريق زجاج، ليلّي ناوي يقعد فصل كامل.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="board">
+    <div>
+      <p class="k"><xen data-edit="t43" data-edit-label="Text (EN): Off their own menu book">Off their own menu book</xen><xar data-edit="t44" data-edit-label="Text (AR): من دفتر المنيو تبعهن">من دفتر المنيو تبعهن</xar></p>
+      <h2><xen data-edit="t45" data-edit-label="Text (EN): The Exclusive column">The Exclusive column</xen><xar data-edit="t46" data-edit-label="Text (AR): عامود الإكسكلوسيف">عامود الإكسكلوسيف</xar></h2>
+      <ul class="exl">
+        <li><span data-edit="t47" data-edit-label="Text: Forest Brew">Forest Brew</span><i><xen class="c" data-edit="t48" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t49" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t50" data-edit-label="Text: Carbon">Carbon</span><i><xen class="c" data-edit="t51" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t52" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t53" data-edit-label="Text: Winter Latte">Winter Latte</span><i><xen class="c" data-edit="t54" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t55" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t56" data-edit-label="Text: Punk Shot">Punk Shot</span><i><xen class="c" data-edit="t57" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t58" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t59" data-edit-label="Text: Loser">Loser</span><i><xen class="c" data-edit="t60" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t61" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t62" data-edit-label="Text: Billie Jean">Billie Jean</span><i><xen class="c" data-edit="t63" data-edit-label="Text (EN): exclusive">exclusive</xen><xar class="c" data-edit="t64" data-edit-label="Text (AR): إكسكلوسيف">إكسكلوسيف</xar></i></li>
+        <li><span data-edit="t65" data-edit-label="Text: Chemex · V60 · Aeropress · Syphon">Chemex · V60 · Aeropress · Syphon</span><i><xen class="c" data-edit="t66" data-edit-label="Text (EN): pour over">pour over</xen><xar class="c" data-edit="t67" data-edit-label="Text (AR): بور أوفر">بور أوفر</xar></i></li>
+        <li><span data-edit="t68" data-edit-label="Text: Zebra Mocha · Library Mix">Zebra Mocha · Library Mix</span><i><xen class="c" data-edit="t69" data-edit-label="Text (EN): house drinks">house drinks</xen><xar class="c" data-edit="t70" data-edit-label="Text (AR): مشاريب البيت">مشاريب البيت</xar></i></li>
+      </ul>
+      <p class="note"><xen data-edit="t71" data-edit-label="Text (EN): All names copied straight from the lea…">All names copied straight from the leather menu book in their photos. Prices move with the market, so ask at the counter or message them for today's list.</xen><xar data-edit="t72" data-edit-label="Text (AR): كل الأسامي منقولة متل ما هيي من دفتر ا…">كل الأسامي منقولة متل ما هيي من دفتر المنيو الجلد بصورهن. الأسعار بتتحرك مع السوق، فاسأل عالكاونتر أو ابعتلهن رسالة للائحة اليوم.</xar></p>
+    </div>
+    <div class="boardimg rev"><img src="img/02.jpg" loading="lazy" alt="The leather bound menu book of Caffeine Coffee Roaster">
+      <p class="cap" style="color:#6B5236"><xen data-edit="t73" data-edit-label="Text (EN): The book itself, photographed on their…">The book itself, photographed on their counter.</xen><xar data-edit="t74" data-edit-label="Text (AR): الدفتر نفسه، مصوّر على الكاونتر عندهن.">الدفتر نفسه، مصوّر على الكاونتر عندهن.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="appband rev">
+      <div>
+        <p class="k"><xen data-edit="t75" data-edit-label="Text (EN): On your phone">On your phone</xen><xar data-edit="t76" data-edit-label="Text (AR): على تلفونك">على تلفونك</xar></p>
+        <h2><xen data-edit="t77" data-edit-label="Text (EN): They built an app before a website">They built an app before a website</xen><xar data-edit="t78" data-edit-label="Text (AR): عملوا تطبيق قبل الموقع">عملوا تطبيق قبل الموقع</xar></h2>
+        <p><xen data-edit="t79" data-edit-label="Text (EN): Caffeine Coffee Roaster is on the App …">Caffeine Coffee Roaster is on the App Store: order ahead, collect your usuals, and walk in when the cup is ready. This page is the address the app never had.</xen><xar data-edit="t80" data-edit-label="Text (AR): تطبيق Caffeine Coffee Roaster موجود عا…">تطبيق Caffeine Coffee Roaster موجود عالآب ستور: اطلب قبل ما توصل، احفظ مشروبك المعتاد، وفوت عالمحل والفنجان جاهز. هيدي الصفحة هي العنوان يلّي التطبيق ما كان عندو.</xar></p>
+        <div class="stores">
+          <a class="abtn" href="https://apps.apple.com/us/app/caffeine-coffee-roaster/id6476100534" target="_blank" rel="noopener"><xen class="c" data-edit="t81" data-edit-label="Text (EN): Get the iPhone app">Get the iPhone app</xen><xar class="c" data-edit="t82" data-edit-label="Text (AR): نزّل تطبيق الآيفون">نزّل تطبيق الآيفون</xar></a>
+          <a class="abtn o" href="https://www.instagram.com/caffeinebeirut/" target="_blank" rel="noopener" data-edit="t83" data-edit-label="Button / link: @caffeinebeirut">@caffeinebeirut</a>
+        </div>
+      </div>
+      <ul class="applist">
+        <li><b><xen class="c" data-edit="t84" data-edit-label="Text (EN): Roastery">Roastery</xen><xar class="c" data-edit="t85" data-edit-label="Text (AR): محمصة">محمصة</xar></b> · <xen class="c" data-edit="t86" data-edit-label="Text (EN): beans roasted in the shop">beans roasted in the shop</xen><xar class="c" data-edit="t87" data-edit-label="Text (AR): بن بيتحمّص بالمحل">بن بيتحمّص بالمحل</xar></li>
+        <li><b><xen class="c" data-edit="t88" data-edit-label="Text (EN): Academy">Academy</xen><xar class="c" data-edit="t89" data-edit-label="Text (AR): أكاديمية">أكاديمية</xar></b> · <xen class="c" data-edit="t90" data-edit-label="Text (EN): barista courses at the bar">barista courses at the bar</xen><xar class="c" data-edit="t91" data-edit-label="Text (AR): دورات باريستا عالبار">دورات باريستا عالبار</xar></li>
+        <li><b><xen class="c" data-edit="t92" data-edit-label="Text (EN): AUB outlet">AUB outlet</xen><xar class="c" data-edit="t93" data-edit-label="Text (AR): فرع الجامعة">فرع الجامعة</xar></b> · <xen class="c" data-edit="t94" data-edit-label="Text (EN): West Hall, 2nd floor">West Hall, 2nd floor</xen><xar class="c" data-edit="t95" data-edit-label="Text (AR): الويست هول، الطابق التاني">الويست هول، الطابق التاني</xar></li>
+        <li><b><xen class="c" data-edit="t96" data-edit-label="Text (EN): Wholesale">Wholesale</xen><xar class="c" data-edit="t97" data-edit-label="Text (AR): جملة">جملة</xar></b> · <xen class="c" data-edit="t98" data-edit-label="Text (EN): supply for cafes and offices">supply for cafes and offices</xen><xar class="c" data-edit="t99" data-edit-label="Text (AR): تموين للمقاهي والمكاتب">تموين للمقاهي والمكاتب</xar></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t100" data-edit-label="Text (EN): Under the sign">Under the sign</xen><xar data-edit="t101" data-edit-label="Text (AR): تحت الإشارة">تحت الإشارة</xar></p>
+  <h2 class="hd" style="margin:8px 0 24px"><xen data-edit="t102" data-edit-label="Text (EN): Photographs from the shop">Photographs from the shop</xen><xar data-edit="t103" data-edit-label="Text (AR): صور من المحل">صور من المحل</xar></h2>
+  <div class="gal">
+    <a href="img/01.jpg" target="_blank" rel="noopener" class="g"><img src="img/01.jpg" loading="lazy" alt="The roaster and bar stools inside the shop"></a>
+    <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="Latte art in a wide ceramic cup"></a>
+    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="Cappuccino in a red cup on wood"></a>
+    <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="The wooden shelf corner with books and plants"></a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t104" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t105" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t106" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t107" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <div class="revs">
+      <div class="rev-c rev"><q dir="ltr" data-edit="t108" data-edit-label="Quote: If you are looking for a spot that sea…">If you are looking for a spot that seamlessly transitions from professional focus to after-hours relaxation, this place is a nice choice .</q><cite data-edit="t109" data-edit-label="Credit: GSN Reviews">GSN Reviews</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t110" data-edit-label="Quote: Had a great overall experience! The st…">Had a great overall experience! The staff were very welcoming and friendly, they recommend coffee based on your liking.</q><cite data-edit="t111" data-edit-label="Credit: Dana Diab">Dana Diab</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t112" data-edit-label="Quote: Caffeine coffee roasters in Mar Mikhae…">Caffeine coffee roasters in Mar Mikhael is my absolute favorite coffee shop in Beirut! I usually get the iced coffee which is the best in town in my opinion but any of their espresso drinks will hit the spot.</q><cite data-edit="t113" data-edit-label="Credit: Sima Dajani">Sima Dajani</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="visit">
+    <div>
+      <p class="k"><xen data-edit="t114" data-edit-label="Text (EN): Open late, every day">Open late, every day</xen><xar data-edit="t115" data-edit-label="Text (AR): فاتحين لوقت متأخر، كل يوم">فاتحين لوقت متأخر، كل يوم</xar></p>
+      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t116" data-edit-label="Text (EN): The week at the bar">The week at the bar</xen><xar data-edit="t117" data-edit-label="Text (AR): الأسبوع عالبار">الأسبوع عالبار</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t118" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t119" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t120" data-edit-label="Menu / table: 8:30 AM–11:30 PM">8:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t121" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t122" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t123" data-edit-label="Menu / table: 8:30 AM–11:30 PM">8:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t124" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t125" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t126" data-edit-label="Menu / table: 8:30 AM–11:30 PM">8:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t127" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t128" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t129" data-edit-label="Menu / table: 8:30 AM–11:30 PM">8:30 AM–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t130" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t131" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t132" data-edit-label="Menu / table: 8:30 AM–12:30 AM">8:30 AM–12:30 AM</td></tr>
+        <tr><td><xen data-edit="t133" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t134" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t135" data-edit-label="Menu / table: 8:30 AM–12:30 AM">8:30 AM–12:30 AM</td></tr>
+        <tr><td><xen data-edit="t136" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t137" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t138" data-edit-label="Menu / table: 8:30 AM–12:30 AM">8:30 AM–12:30 AM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t139" data-edit-label="Text (EN): Friday through Sunday the tube glows u…">Friday through Sunday the tube glows until half past midnight.</xen><xar data-edit="t140" data-edit-label="Text (AR): من الجمعة للأحد، النيون بيضل شعلان لحد…">من الجمعة للأحد، النيون بيضل شعلان لحد 12:30 بالليل.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t141" data-edit-label="Text (EN): Find the glow">Find the glow</xen><xar data-edit="t142" data-edit-label="Text (AR): دوّر عالضو">دوّر عالضو</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px;color:#FFE9C9"><xen data-edit="t143" data-edit-label="Text (EN): Alexander Fleming street">Alexander Fleming street</xen><xar data-edit="t144" data-edit-label="Text (AR): شارع ألكسندر فلمنغ">شارع ألكسندر فلمنغ</xar></h3>
+      <p class="k"><xen data-edit="t145" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t146" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t147" data-edit-label="Text: Alexander Fleming, Beirut, Lebanon">Alexander Fleming, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t148" data-edit-label="Text (EN): Phone">Phone</xen><xar data-edit="t149" data-edit-label="Text (AR): الهاتف">الهاتف</xar></p>
+      <p class="ph num" data-edit="t150" data-edit-label="Text: +961 1 446 360">+961 1 446 360</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t151" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t152" data-edit-label="Text (AR): واتساب">واتساب</xar></p>
+      <p class="ph2 num" style="font-size:16.5px;color:#F0E4D2" data-edit="t153" data-edit-label="Text: +961 81 004 127">+961 81 004 127</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96181004127?text=Hello%20Caffeine%2C%20I%20would%20like%20to%20order%20coffee." target="_blank" rel="noopener"><xen data-edit="t154" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t155" data-edit-label="Text (AR): راسلنا عالواتساب">راسلنا عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=6178596105702699922" target="_blank" rel="noopener"><xen data-edit="t156" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t157" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn o" href="https://www.instagram.com/caffeinebeirut/" target="_blank" rel="noopener" data-edit="t158" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/caffeinebeirut/" target="_blank" rel="noopener" data-edit="t159" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t160" data-edit-label="Text (EN): Caffeine Coffee Beirut, Alexander Flem…">Caffeine Coffee Beirut, Alexander Fleming street, Beirut.</xen><xar data-edit="t161" data-edit-label="Text (AR): كافيين كوفي بيروت، شارع ألكسندر فلمنغ،…">كافيين كوفي بيروت، شارع ألكسندر فلمنغ، بيروت.</xar></p>
+  <p style="margin-top:8px" class="mfx"><xen data-edit="t162" data-edit-label="Text (EN): Roastery, brew bar and academy, open u…">Roastery, brew bar and academy, open until the small hours.</xen><xar data-edit="t163" data-edit-label="Text (AR): محمصة وبار قهوة وأكاديمية، فاتحين لساع…">محمصة وبار قهوة وأكاديمية، فاتحين لساعات الليل الصغيرة.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+9611446360"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t164" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t165" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96181004127?text=Hello%20Caffeine%2C%20I%20would%20like%20to%20order%20coffee." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t167" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=6178596105702699922" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t168" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t169" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/caffeinebeirut/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t170" data-edit-label="Text: IG">IG</span></a>
+  <a class="sq" href="https://www.facebook.com/caffeinebeirut/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t171" data-edit-label="Text: FB">FB</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="كافيين كوفي بيروت · ألكسندر فلمنغ، بيروت" data-edit="t172" data-edit-label="Button: عربي">عربي</button>
+</body></html>

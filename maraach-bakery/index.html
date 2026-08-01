@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maraach Bakery · Maraach Street, Bourj Hammoud</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Zilla+Slab:wght@400;500;600&family=Katibeh&family=Lateef:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Katibeh';--arb:'Lateef';
+  --kraft:#C49B62;--kraft-d:#A87E48;--kraft-dd:#8F6836;--canvas:#F6EDD9;
+  --ox:#8E2F23;--ox-d:#6E2118;--leaf:#46572F;--ink:#33210E;--wood:#6E4B26;--wood-d:#4E3316;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#F1E4C9;color:var(--ink);font:400 17px/1.75 'Zilla Slab',Georgia,serif}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3,.dsp{font-family:'Caprasimo',Georgia,serif;font-weight:400;line-height:1.06;letter-spacing:.005em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:600 11.5px/1.6 'Zilla Slab',serif;letter-spacing:.26em;text-transform:uppercase;color:var(--ox)}
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:#E7D6B4}
+
+/* language chip: a small painted tag, top right */
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
+  font:700 14px/1 var(--arb),serif;padding:9px 15px;min-width:58px;text-align:center;
+  background:var(--ox);color:#F6EDD9;border:2px solid var(--ox-d);border-radius:3px 3px 10px 10px;
+  box-shadow:0 4px 0 var(--ox-d),0 8px 18px rgba(51,33,14,.35);-webkit-appearance:none}
+.lngt:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ox-d)}
+
+/* ---------- HERO: a hand-lettered cloth banner hanging from a wooden rail,
+     on a kraft-paper wall that fills the frame edge to edge ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
+  background:
+   radial-gradient(120% 90% at 50% 8%,rgba(255,240,205,.30),transparent 58%),
+   radial-gradient(140% 120% at 50% 108%,rgba(79,52,20,.32),transparent 60%),
+   repeating-linear-gradient(104deg,rgba(255,246,220,.05) 0 1px,transparent 1px 6px),
+   repeating-linear-gradient(0deg,rgba(79,52,20,.05) 0 1px,transparent 1px 34px),
+   linear-gradient(180deg,#CCA26A,var(--kraft) 46%,#B58A50)}
+.rail{position:relative;width:100%;height:26px;margin-top:calc(34px + env(safe-area-inset-top));
+  background:linear-gradient(180deg,#835B2F,var(--wood) 45%,var(--wood-d));
+  box-shadow:0 6px 14px rgba(51,33,14,.35)}
+.rail::before,.rail::after{content:"";position:absolute;top:-7px;width:40px;height:40px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#8F6534,var(--wood-d) 72%);box-shadow:0 4px 8px rgba(51,33,14,.4)}
+.rail::before{left:clamp(8px,4vw,60px)}
+.rail::after{right:clamp(8px,4vw,60px)}
+.strap{width:10px;height:clamp(26px,4vh,44px);background:linear-gradient(90deg,var(--ox-d),var(--ox) 50%,var(--ox-d));
+  box-shadow:0 3px 6px rgba(51,33,14,.3)}
+.straps{display:flex;gap:min(46vw,420px)}
+.banner{position:relative;width:min(640px,88vw);background:
+   repeating-linear-gradient(45deg,rgba(51,33,14,.025) 0 2px,transparent 2px 5px),
+   linear-gradient(180deg,#FBF4E4,var(--canvas) 55%,#EBDFC2);
+  border:2px solid #D8C69E;border-radius:4px;
+  padding:clamp(22px,3.8vh,36px) clamp(18px,3.4vw,38px) clamp(18px,3vh,30px);text-align:center;
+  box-shadow:0 22px 44px rgba(51,33,14,.32)}
+.banner::before{content:"";position:absolute;inset:9px;border:2px dashed rgba(142,47,35,.4);border-radius:2px;pointer-events:none}
+.grom{position:absolute;top:8px;width:16px;height:16px;border-radius:50%;background:#F1E4C9;
+  border:4px solid #93702F;box-shadow:inset 0 1px 2px rgba(51,33,14,.5)}
+.grom.g1{left:10px}.grom.g2{right:10px}
+.banner .over{font:600 clamp(12px,1.8vw,14px)/1.5 'Zilla Slab',serif;letter-spacing:.4em;text-transform:uppercase;color:var(--leaf);margin-right:-.4em}
+.banner h1{font-size:clamp(52px,10vw,96px);color:var(--ox);text-shadow:0 3px 0 rgba(110,33,24,.18)}
+html.ar .banner h1 xar{font-size:clamp(64px,12vw,116px);line-height:1;display:block}
+.swash{width:min(300px,64%);margin:6px auto 0;color:var(--ox)}
+.swash svg{display:block;width:100%;height:auto}
+.banner .sub{margin-top:10px;color:#5C452A;font-size:clamp(14px,1.8vw,16.5px);line-height:1.6;font-weight:500}
+.heroline{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2.4vw,26px);flex-wrap:wrap;
+  margin-top:clamp(18px,3vh,30px);padding-inline:5vw}
+.badge{width:112px;height:112px;border-radius:50%;flex:0 0 auto;position:relative;
+  background:var(--leaf);color:#F1E9CF;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font:600 12px/1.2 'Zilla Slab',serif;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 10px 22px rgba(51,33,14,.3);animation:pls 12s ease-in-out infinite}
+.badge b{font:400 34px/1 'Caprasimo',serif;letter-spacing:0;display:block}
+.badge::before{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(241,233,207,.65);border-radius:50%}
+@keyframes pls{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media(prefers-reduced-motion:reduce){.badge{animation:none}}
+.tapepic{position:relative;width:min(420px,78vw);background:#FBF4E4;padding:9px;border-radius:2px;
+  box-shadow:0 16px 34px rgba(51,33,14,.3)}
+.tapepic img{width:100%;height:clamp(160px,23vh,220px);object-fit:cover}
+.tapepic .tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:110px;height:22px;
+  background:rgba(214,188,138,.85);box-shadow:0 2px 5px rgba(51,33,14,.2)}
+.ratestamp{flex:0 0 auto;border:2.5px solid var(--ox);color:var(--ox);border-radius:6px;padding:10px 16px;
+  font:600 13.5px/1.5 'Zilla Slab',serif;text-align:center;background:rgba(251,244,228,.6)}
+.ratestamp b{display:block;font-size:22px;letter-spacing:.02em}
+.tagrow{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:clamp(16px,2.6vh,26px);padding-inline:6vw}
+.tag{background:rgba(251,244,228,.85);border:1.5px solid var(--kraft-dd);border-radius:3px 3px 12px 12px;
+  padding:7px 14px;font:600 12.5px/1.5 'Zilla Slab',serif;color:#5C452A;letter-spacing:.04em;
+  box-shadow:0 3px 0 rgba(143,104,54,.5)}
+
+/* ---------- sections ---------- */
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hd{font-size:clamp(26px,3.8vw,42px);margin:8px 0 18px}
+.two p{color:#4E3A22;margin-bottom:15px}
+.frame{background:#FBF4E4;padding:10px;border-radius:2px;position:relative;
+  box-shadow:0 16px 36px rgba(51,33,14,.22)}
+.frame .tape{position:absolute;top:-10px;left:26px;width:96px;height:22px;
+  background:rgba(214,188,138,.85);box-shadow:0 2px 5px rgba(51,33,14,.2)}
+.frame img{width:100%;height:clamp(250px,40vh,410px);object-fit:cover}
+.cap{font:500 12.5px/1.6 'Zilla Slab',serif;color:#8A6A3E;margin-top:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.sleeve{background:#FBF4E4;border:1.5px solid #D8C69E;border-radius:3px;overflow:hidden;
+  box-shadow:0 10px 26px rgba(51,33,14,.16)}
+.sleeve img{width:100%;height:210px;object-fit:cover}
+.sleeve .t{padding:14px 16px 18px;border-top:2px dashed rgba(142,47,35,.35)}
+.sleeve h3{font-size:20px;margin-bottom:6px;color:var(--ox)}
+.sleeve p{color:#5C452A;font-size:14.5px;line-height:1.65}
+.street{max-width:860px;margin-inline:auto;text-align:center}
+.signpost{display:inline-flex;flex-direction:column;gap:8px;margin-top:20px}
+.signpost .arm{background:var(--leaf);color:#F1E9CF;border:2px solid #33401F;border-radius:3px;
+  padding:10px 26px;font:600 15px/1.4 'Zilla Slab',serif;letter-spacing:.2em;text-transform:uppercase;
+  box-shadow:0 6px 16px rgba(51,33,14,.3)}
+.signpost .arm.ar{font:500 26px/1.15 var(--arh),serif;letter-spacing:0;text-transform:none;background:var(--ox);border-color:#5E1B12}
+.street p.body{margin-top:22px;color:#4E3A22}
+.boardlist{max-width:760px;margin-inline:auto;background:linear-gradient(180deg,#FBF4E4,#F0E5C8);
+  border:2px solid var(--kraft-dd);border-radius:4px;padding:clamp(22px,3.6vw,40px);
+  box-shadow:0 14px 34px rgba(51,33,14,.2)}
+.boardlist ul{list-style:none}
+.boardlist li{display:flex;align-items:baseline;gap:12px;padding:11px 2px;border-bottom:1px dashed rgba(110,75,38,.4);
+  font:500 16px/1.5 'Zilla Slab',serif}
+.boardlist li:last-child{border-bottom:0}
+.boardlist li i{font-style:normal;color:var(--ox);font-weight:600}
+.note{margin-top:16px;font-size:14.5px;color:#6E522E;text-align:center}
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.6vw,28px)}
+.rev-c{background:#FBF4E4;border-radius:3px;padding:24px 22px 20px;position:relative;
+  box-shadow:0 12px 28px rgba(51,33,14,.18)}
+.rev-c::before{content:"";position:absolute;top:-9px;left:24px;width:86px;height:18px;
+  background:rgba(214,188,138,.85);box-shadow:0 2px 5px rgba(51,33,14,.2)}
+.rev-c q{display:block;quotes:none;font-size:16.5px;line-height:1.7;color:#3E2D16}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:600 12.5px/1 'Zilla Slab',serif;
+  color:var(--ox);letter-spacing:.12em;text-transform:uppercase}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal a{display:block;background:#FBF4E4;padding:6px;border-radius:2px;box-shadow:0 8px 20px rgba(51,33,14,.16)}
+.gal img{width:100%;height:180px;object-fit:cover}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px dashed rgba(110,75,38,.4);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#5C452A}
+.ad,.ph{font-size:16.5px;color:#33210E}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--ox);color:#F6EDD9;
+  padding:13px 20px;border-radius:3px;text-decoration:none;font:600 15px/1 'Zilla Slab',serif;
+  border:2px solid var(--ox-d);margin:6px 8px 0 0;box-shadow:0 3px 0 var(--ox-d)}
+.btn.o{background:#FBF4E4;color:var(--ox)}
+footer{padding:36px 7vw 132px;color:#8A6A3E;font-size:13.5px;text-align:center;background:#E2D0AA}
+
+/* ---------- sticky bar: canvas tabs hanging from a wooden rod ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;align-items:stretch;
+  background:linear-gradient(180deg,#835B2F,var(--wood) 40%,var(--wood-d));
+  padding:9px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -10px 26px rgba(51,33,14,.45)}
+.bar::before{content:"";position:absolute;left:0;right:0;top:4px;height:2px;background:rgba(246,237,217,.35)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:9px 4px 11px;background:linear-gradient(180deg,#FBF4E4,#EFE3C4);color:#4E3A22;
+  border:1.5px solid #D8C69E;border-radius:2px 2px 11px 11px;
+  text-decoration:none;font:600 12px/1.2 'Zilla Slab',serif;min-height:56px}
+.bar a:active{background:#EFE3C4}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:linear-gradient(180deg,#9E3A2C,var(--ox));color:#F6EDD9;border-color:var(--ox-d)}
+.bar a.sq{flex:0 0 58px}
+@media(max-width:880px){
+  .two,.visit{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:86px}
+  .straps{gap:min(40vw,300px)}
+  .heroline{gap:14px}
+  .badge{width:96px;height:96px}
+  .badge b{font-size:28px}
+  .tapepic img{height:clamp(140px,19vh,180px)}
+}
+@media(max-width:430px){
+  .bar a{font-size:10.5px}
+  .banner .over{letter-spacing:.26em;margin-right:-.26em}
+}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="rail"></div>
+  <div class="straps"><span class="strap"></span><span class="strap"></span></div>
+  <div class="banner">
+    <span class="grom g1"></span><span class="grom g2"></span>
+    <p class="over"><xen data-edit="t1" data-edit-label="Text (EN): Furn · Bourj Hammoud">Furn · Bourj Hammoud</xen><xar data-edit="t2" data-edit-label="Text (AR): فرن · برج حمود">فرن · برج حمود</xar></p>
+    <h1><xen data-edit="t3" data-edit-label="Text (EN): MARAACH">MARAACH</xen><xar data-edit="t4" data-edit-label="Text (AR): أفران معراش">أفران معراش</xar></h1>
+    <div class="swash"><svg viewBox="0 0 300 16" fill="none" aria-hidden="true"><path d="M4 10 C 60 2, 150 14, 296 6" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></div>
+    <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): Hand-lettered over the ovens since 197…">Hand-lettered over the ovens since 1975: manoushe on thin lahm-baajine dough, baked on Maraach Street in the Armenian quarter.</xen><xar data-edit="t6" data-edit-label="Text (AR): مكتوبة بخط اليد فوق الأفران من الـ1975…">مكتوبة بخط اليد فوق الأفران من الـ1975: منقوشة على عجينة لحم بعجين رقيقة، عالفرن بشارع معراش بالحي الأرمني.</xar></p>
+  </div>
+  <div class="heroline">
+    <div class="badge"><span><xen data-edit="t7" data-edit-label="Text (EN): Since">Since</xen><xar data-edit="t8" data-edit-label="Text (AR): من الـ">من الـ</xar></span><b class="num" data-edit="t9" data-edit-label="Text: 1975">1975</b><span><xen data-edit="t10" data-edit-label="Text (EN): the ovens">the ovens</xen><xar data-edit="t11" data-edit-label="Text (AR): الأفران">الأفران</xar></span></div>
+    <div class="tapepic"><span class="tape"></span><img src="img/01.jpg" alt="Lahm b'ajine straight from the oven with a lemon wedge"></div>
+    <div class="ratestamp"><b class="num" data-edit="t12" data-edit-label="Text: 4.4 ★">4.4 ★</b><span><xen><span class="num" data-edit="t13" data-edit-label="Text: 68">68</span> Google reviews</xen><xar><span class="num" data-edit="t14" data-edit-label="Text: 68">68</span> تقييم غوغل</xar></span></div>
+  </div>
+  <div class="tagrow">
+    <span class="tag"><xen data-edit="t15" data-edit-label="Text (EN): Manoushe">Manoushe</xen><xar data-edit="t16" data-edit-label="Text (AR): منقوشة">منقوشة</xar></span>
+    <span class="tag"><xen data-edit="t17" data-edit-label="Text (EN): Lahm b'ajine">Lahm b'ajine</xen><xar data-edit="t18" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></span>
+    <span class="tag"><xen data-edit="t19" data-edit-label="Text (EN): Cheese &amp; mozzarella">Cheese &amp; mozzarella</xen><xar data-edit="t20" data-edit-label="Text (AR): جبنة وموزاريلا">جبنة وموزاريلا</xar></span>
+    <span class="tag"><xen data-edit="t21" data-edit-label="Text (EN): From 5 in the morning">From 5 in the morning</xen><xar data-edit="t22" data-edit-label="Text (AR): من الـ5 الصبح">من الـ5 الصبح</xar></span>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t23" data-edit-label="Text (EN): The furn">The furn</xen><xar data-edit="t24" data-edit-label="Text (AR): الفرن">الفرن</xar></p>
+      <h2><xen data-edit="t25" data-edit-label="Text (EN): Fifty years on one street">Fifty years on one street</xen><xar data-edit="t26" data-edit-label="Text (AR): خمسين سنة على شارع واحد">خمسين سنة على شارع واحد</xar></h2>
+      <p><xen data-edit="t27" data-edit-label="Text (EN): Afran Maraach has been on Maraach Stre…">Afran Maraach has been on Maraach Street since 1975, in the middle of Bourj Hammoud's bakeries, gold shops and coffee stands. The street carries the name of Marash, the Armenian city the quarter's families came from, and the furn carries the street's name in two alphabets.</xen><xar data-edit="t28" data-edit-label="Text (AR): أفران معراش عشارع معراش من الـ1975، بق…">أفران معراش عشارع معراش من الـ1975، بقلب برج حمود بين الأفران ومحلات الدهب وبسطات القهوة. الشارع حامل اسم مدينة مرعش الأرمنية يلي إجت منها عيل الحي، والفرن حامل اسم الشارع بحرفين.</xar></p>
+      <p><xen data-edit="t29" data-edit-label="Text (EN): What made its name is the dough: manou…">What made its name is the dough: manoushe rolled on the thin lahm-baajine base, so the edge snaps instead of folding. One reviewer put it plainly: you can taste the quality of the ingredients in every bite.</xen><xar data-edit="t30" data-edit-label="Text (AR): يلي عمل اسمو هوي العجين: منقوشة مفرودة…">يلي عمل اسمو هوي العجين: منقوشة مفرودة على قاعدة لحم بعجين رقيقة، لتقرمش الطرف بدل ما يطوي. واحد من المقيّمين قالها بوضوح: بتحس بجودة المكونات بكل قضمة.</xar></p>
+      <p><xen data-edit="t31" data-edit-label="Text (EN): The counter starts at five in the morn…">The counter starts at five in the morning, every day of the week, and the last manoushe goes out at three in the afternoon.</xen><xar data-edit="t32" data-edit-label="Text (AR): الكاونتر بيبلش الخمسة الصبح، كل يوم با…">الكاونتر بيبلش الخمسة الصبح، كل يوم بالأسبوع، وآخر منقوشة بتطلع الساعة تلاتة العصر.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><span class="tape"></span><img src="img/11.jpg" loading="lazy" alt="The long wooden counter at the furn, manoushe lined up toward the oven">
+        <p class="cap"><xen data-edit="t33" data-edit-label="Text (EN): The long counter, dough at one end and…">The long counter, dough at one end and the oven at the other.</xen><xar data-edit="t34" data-edit-label="Text (AR): الكاونتر الطويل، العجين بأول والفرن با…">الكاونتر الطويل، العجين بأول والفرن بالآخر.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t35" data-edit-label="Text (EN): Off the peel">Off the peel</xen><xar data-edit="t36" data-edit-label="Text (AR): عن اللوح">عن اللوح</xar></p>
+    <h2 class="hd rev"><xen data-edit="t37" data-edit-label="Text (EN): Three things wrapped in paper">Three things wrapped in paper</xen><xar data-edit="t38" data-edit-label="Text (AR): تلات أشيا ملفوفين بورق">تلات أشيا ملفوفين بورق</xar></h2>
+    <div class="grid3">
+      <div class="sleeve rev"><img src="img/01.jpg" loading="lazy" alt="Lahm b'ajine with a charred edge and a lemon wedge">
+        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): Lahm b'ajine">Lahm b'ajine</xen><xar data-edit="t40" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></h3>
+        <p><xen data-edit="t41" data-edit-label="Text (EN): 'A must have,' wrote Mike Gadban, 'try…">"A must have," wrote Mike Gadban, "try and repeat, then try again then repeat."</xen><xar data-edit="t42" data-edit-label="Text (AR): «ما فيك ما تجربها»، كتب مايك غضبان، «ج…">«ما فيك ما تجربها»، كتب مايك غضبان، «جرّب وعيد، وبعدين جرّب كمان وعيد».</xar></p></div>
+      </div>
+      <div class="sleeve rev"><img src="img/02.jpg" loading="lazy" alt="Za'atar manoushe stacked after baking">
+        <div class="t"><h3><xen data-edit="t43" data-edit-label="Text (EN): Za'atar, thin and crisp">Za'atar, thin and crisp</xen><xar data-edit="t44" data-edit-label="Text (AR): زعتر، رقيق ومقرمش">زعتر، رقيق ومقرمش</xar></h3>
+        <p><xen data-edit="t45" data-edit-label="Text (EN): The classic, on that same thin dough t…">The classic, on that same thin dough that made the reviews.</xen><xar data-edit="t46" data-edit-label="Text (AR): الكلاسيكية، على نفس العجينة الرقيقة يل…">الكلاسيكية، على نفس العجينة الرقيقة يلي عبّت التقييمات.</xar></p></div>
+      </div>
+      <div class="sleeve rev"><img src="img/07.jpg" loading="lazy" alt="A cheese pide golden from the oven on the wooden counter">
+        <div class="t"><h3><xen data-edit="t47" data-edit-label="Text (EN): Cheese, the long way">Cheese, the long way</xen><xar data-edit="t48" data-edit-label="Text (AR): جبنة، عالطولاني">جبنة، عالطولاني</xar></h3>
+        <p><xen data-edit="t49" data-edit-label="Text (EN): Mozzarella and cheese bakes shaped lik…">Mozzarella and cheese bakes shaped like boats, blistered at the tips.</xen><xar data-edit="t50" data-edit-label="Text (AR): موزاريلا وجبنة عشكل قوارب، محمّرة عالأ…">موزاريلا وجبنة عشكل قوارب، محمّرة عالأطراف.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="street rev">
+    <p class="k"><xen data-edit="t51" data-edit-label="Text (EN): The street and the name">The street and the name</xen><xar data-edit="t52" data-edit-label="Text (AR): الشارع والاسم">الشارع والاسم</xar></p>
+    <h2 class="hd"><xen data-edit="t53" data-edit-label="Text (EN): Marash, spelled in dough">Marash, spelled in dough</xen><xar data-edit="t54" data-edit-label="Text (AR): مرعش، متهجّاية بالعجين">مرعش، متهجّاية بالعجين</xar></h2>
+    <div class="signpost">
+      <span class="arm" data-edit="t55" data-edit-label="Text: Maraach Street · Bourj Hammoud">Maraach Street · Bourj Hammoud</span>
+      <span class="arm ar" data-edit="t56" data-edit-label="Text: أفران معراش · برج حمود">أفران معراش · برج حمود</span>
+    </div>
+    <p class="body"><xen data-edit="t57" data-edit-label="Text (EN): Bourj Hammoud's streets are named afte…">Bourj Hammoud's streets are named after the towns the Armenian community left behind, and Maraach is one of them. A furn that has held its corner of that street for fifty years is not just selling breakfast: it is one of the reasons the street still smells like a morning.</xen><xar data-edit="t58" data-edit-label="Text (AR): شوارع برج حمود مسمّاية على المدن يلي ت…">شوارع برج حمود مسمّاية على المدن يلي تركها المجتمع الأرمني وراه، ومعراش وحدة منهن. فرن حافظ على زاويتو بهالشارع خمسين سنة مش بس عم يبيع ترويقة: هوي سبب من الأسباب يلي خلّت ريحة الشارع تضل ريحة صباح.</xar></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k" style="text-align:center"><xen data-edit="t59" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t60" data-edit-label="Text (AR): اللوحة">اللوحة</xar></p>
+    <h2 class="hd rev" style="text-align:center"><xen data-edit="t61" data-edit-label="Text (EN): What the oven does">What the oven does</xen><xar data-edit="t62" data-edit-label="Text (AR): شو بيعمل الفرن">شو بيعمل الفرن</xar></h2>
+    <div class="boardlist rev">
+      <ul>
+        <li><span><xen data-edit="t63" data-edit-label="Text (EN): Manoushe on lahm-baajine dough">Manoushe on lahm-baajine dough</xen><xar data-edit="t64" data-edit-label="Text (AR): منقوشة على عجينة لحم بعجين">منقوشة على عجينة لحم بعجين</xar></span><i><xen data-edit="t65" data-edit-label="Text (EN): the house signature">the house signature</xen><xar data-edit="t66" data-edit-label="Text (AR): توقيع البيت">توقيع البيت</xar></i></li>
+        <li><span><xen data-edit="t67" data-edit-label="Text (EN): Lahm b'ajine">Lahm b'ajine</xen><xar data-edit="t68" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></span><i><xen data-edit="t69" data-edit-label="Text (EN): the reviewers' pick">the reviewers' pick</xen><xar data-edit="t70" data-edit-label="Text (AR): خيار المقيّمين">خيار المقيّمين</xar></i></li>
+        <li><span><xen data-edit="t71" data-edit-label="Text (EN): Za'atar and cheese manakish">Za'atar and cheese manakish</xen><xar data-edit="t72" data-edit-label="Text (AR): مناقيش زعتر وجبنة">مناقيش زعتر وجبنة</xar></span><i><xen data-edit="t73" data-edit-label="Text (EN): every morning">every morning</xen><xar data-edit="t74" data-edit-label="Text (AR): كل صبح">كل صبح</xar></i></li>
+        <li><span><xen data-edit="t75" data-edit-label="Text (EN): Mozzarella and pizza bakes">Mozzarella and pizza bakes</xen><xar data-edit="t76" data-edit-label="Text (AR): موزاريلا وبيتزا عالفرن">موزاريلا وبيتزا عالفرن</xar></span><i><xen data-edit="t77" data-edit-label="Text (EN): for the kids' half">for the kids' half</xen><xar data-edit="t78" data-edit-label="Text (AR): لقسم الولاد">لقسم الولاد</xar></i></li>
+      </ul>
+      <p class="note"><xen data-edit="t79" data-edit-label="Text (EN): Prices are at the counter, or one What…">Prices are at the counter, or one WhatsApp message away: the number answers while the oven is hot.</xen><xar data-edit="t80" data-edit-label="Text (AR): الأسعار عالكاونتر، أو على بعد رسالة وا…">الأسعار عالكاونتر، أو على بعد رسالة واتساب: الرقم بيرد طول ما الفرن شغّال.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t81" data-edit-label="Text (EN): Two named reviews">Two named reviews</xen><xar data-edit="t82" data-edit-label="Text (AR): تقييمان بالاسم">تقييمان بالاسم</xar></p>
+  <h2 class="hd rev"><xen data-edit="t83" data-edit-label="Text (EN): Taped to the wall">Taped to the wall</xen><xar data-edit="t84" data-edit-label="Text (AR): ملزّقين عالحيط">ملزّقين عالحيط</xar></h2>
+  <div class="revs">
+    <div class="rev-c rev"><q dir="ltr" data-edit="t85" data-edit-label="Quote: One of the best authentic bakeries in …">One of the best authentic bakeries in Beirut! Their dough is incredibly thin and perfectly crispy, and you can really taste the quality of the ingredients in every bite.</q><cite data-edit="t86" data-edit-label="Credit: Daan">Daan</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t87" data-edit-label="Quote: One of the best furn mana2ish in Leban…">One of the best furn mana2ish in Lebanon a must have lahem b ajen there and all the rest try and repeat then try again then repeat.</q><cite data-edit="t88" data-edit-label="Credit: Mike Gadban">Mike Gadban</cite></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t89" data-edit-label="Text (EN): From the counter">From the counter</xen><xar data-edit="t90" data-edit-label="Text (AR): من الكاونتر">من الكاونتر</xar></p>
+    <h2 class="hd rev"><xen data-edit="t91" data-edit-label="Text (EN): Four photographs">Four photographs</xen><xar data-edit="t92" data-edit-label="Text (AR): أربع صور">أربع صور</xar></h2>
+    <div class="gal rev">
+      <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="A spread of manakish, spinach, cheese and cocktail"></a>
+      <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="Cheese, za'atar and lahm b'ajine side by side"></a>
+      <a href="img/02.jpg" target="_blank" rel="noopener" class="g"><img src="img/02.jpg" loading="lazy" alt="Za'atar manakish stacked in the tray"></a>
+      <a href="img/10.jpg" target="_blank" rel="noopener" class="g"><img src="img/10.jpg" loading="lazy" alt="Lahm b'ajine and cheese braids with lemon"></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="visit">
+    <div>
+      <p class="k"><xen data-edit="t93" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t94" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="hd"><xen data-edit="t95" data-edit-label="Text (EN): Five to three, seven days">Five to three, seven days</xen><xar data-edit="t96" data-edit-label="Text (AR): من الخمسة للتلاتة، سبع أيام">من الخمسة للتلاتة، سبع أيام</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t97" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t98" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t99" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t101" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t102" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t103" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t104" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t105" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t106" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t107" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t108" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t109" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t110" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t111" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t112" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t113" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t114" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t115" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t116" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t117" data-edit-label="Menu / table: 5 AM–3 PM">5 AM–3 PM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t118" data-edit-label="Text (EN): Go before ten if you want to watch the…">Go before ten if you want to watch the first trays; go before three if you just want to eat.</xen><xar data-edit="t119" data-edit-label="Text (AR): روح قبل العشرة إذا بدك تتفرج عأول الصو…">روح قبل العشرة إذا بدك تتفرج عأول الصواني؛ وقبل التلاتة إذا بس بدك تاكل.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t120" data-edit-label="Text (EN): Find the banner">Find the banner</xen><xar data-edit="t121" data-edit-label="Text (AR): لاقي اليافطة">لاقي اليافطة</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t122" data-edit-label="Text (EN): Maraach Street, Bourj Hammoud">Maraach Street, Bourj Hammoud</xen><xar data-edit="t123" data-edit-label="Text (AR): شارع معراش، برج حمود">شارع معراش، برج حمود</xar></h3>
+      <p class="k"><xen data-edit="t124" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t125" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t126" data-edit-label="Text: Maraach Street, Bourj Hammoud, Lebanon">Maraach Street, Bourj Hammoud, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t127" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t128" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t129" data-edit-label="Text: +961 70 454 534">+961 70 454 534</p>
+      <p style="font-size:14px;color:#8A6A3E;margin-top:6px"><xen>Second line at the counter: <span class="num" data-edit="t130" data-edit-label="Text: 03 062 341">03 062 341</span>.</xen><xar>خط تاني عالكاونتر: <span class="num" data-edit="t131" data-edit-label="Text: 03 062 341">03 062 341</span>.</xar></p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96170454534?text=Hello%20Afran%20Maraach%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t132" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t133" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=17249953133555318806" target="_blank" rel="noopener"><xen data-edit="t134" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t135" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:14px">
+        <a class="btn o" href="https://www.instagram.com/afranmaraach/" target="_blank" rel="noopener" data-edit="t136" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/afranmaraach/" target="_blank" rel="noopener" data-edit="t137" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t138" data-edit-label="Text (EN): Afran Maraach, Maraach Street, Bourj H…">Afran Maraach, Maraach Street, Bourj Hammoud. Since 1975.</xen><xar data-edit="t139" data-edit-label="Text (AR): أفران معراش، شارع معراش، برج حمود. من …">أفران معراش، شارع معراش، برج حمود. من الـ1975.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t140" data-edit-label="Text (EN): Every day from 5 in the morning until …">Every day from 5 in the morning until 3 in the afternoon.</xen><xar data-edit="t141" data-edit-label="Text (AR): كل يوم من الـ5 الصبح للـ3 العصر.">كل يوم من الـ5 الصبح للـ3 العصر.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96170454534"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t142" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t143" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96170454534?text=Hello%20Afran%20Maraach%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t144" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t145" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=17249953133555318806" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t146" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t147" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/afranmaraach/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t148" data-edit-label="Text: IG">IG</span></a>
+  <a class="sq" href="https://www.facebook.com/afranmaraach/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V14h2.7v8z"/></svg><span data-edit="t149" data-edit-label="Text: FB">FB</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="أفران معراش · شارع معراش، برج حمود" data-edit="t150" data-edit-label="Button: عربي">عربي</button>
+</body></html>

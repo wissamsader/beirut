@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>T-Marbouta · Hamra Square, Beirut</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Karla:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Aref Ruqaa';--arb:'Noto Naskh Arabic';
+  --paper:#F4EFE2;--paper2:#EAE3D1;--ink:#26221A;--olive:#66732B;--olive-d:#49531E;
+  --wood:#5C4632;--wood-d:#3E2F21;--wood-l:#7A5F45;--brass:#B98A3B;--brass-l:#D9B06A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.75 'Karla',system-ui,sans-serif;padding-bottom:64px}
+h1,h2,h3,.dsp{font-family:'Fraunces',serif;font-weight:800;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+.k{font:700 11.5px/1.4 'Karla',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--olive-d)}
+section{padding-block:clamp(54px,8vh,92px)}
+
+/* language chip: a small brass drawer pull, top right */
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
+  font:700 13px/1 var(--arb),serif;padding:10px 16px;min-width:58px;text-align:center;
+  background:linear-gradient(180deg,var(--brass-l),var(--brass));color:#2B1F0E;
+  border:1px solid #8A6524;border-radius:3px;box-shadow:0 3px 0 #8A6524,0 8px 18px rgba(38,34,26,.3);
+  -webkit-appearance:none}
+.lngt:active{transform:translateY(2px);box-shadow:0 1px 0 #8A6524}
+
+/* ---------- HERO: one walnut catalogue drawer, pulled open on the room ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:
+   repeating-linear-gradient(0deg,rgba(38,34,26,.045) 0 1px,transparent 1px 88px),
+   linear-gradient(180deg,#EFE9D8,var(--paper) 55%,#E7DFC9)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;
+  background:linear-gradient(180deg,var(--wood-d),#2C2015)}
+.cab{position:relative;width:min(880px,92vw);margin:clamp(24px,4vh,48px) auto;
+  background:linear-gradient(175deg,var(--wood-l),var(--wood) 40%,var(--wood-d));
+  border:1px solid #2C2015;border-radius:8px;
+  box-shadow:0 34px 70px rgba(44,32,21,.45),inset 0 1px 0 rgba(255,255,255,.14);
+  padding:clamp(14px,2.4vw,22px)}
+.toprail{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+  padding:4px 6px 14px;border-bottom:1px solid rgba(233,224,200,.22)}
+.toprail .k{color:#E4D9BC}
+.screw{width:9px;height:9px;border-radius:50%;flex:0 0 auto;
+  background:radial-gradient(circle at 35% 30%,var(--brass-l),#8A6524 78%);box-shadow:0 1px 2px rgba(0,0,0,.5)}
+.plate{display:inline-flex;align-items:baseline;gap:7px;background:linear-gradient(180deg,var(--brass-l),var(--brass));
+  color:#2B1F0E;padding:6px 12px;border-radius:2px;font:700 13px/1 'Karla',sans-serif;border:1px solid #8A6524}
+.face{position:relative;margin-top:16px;padding:clamp(22px,4.2vw,44px) clamp(16px,3vw,36px) clamp(18px,3vw,30px);
+  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.14));
+  border:1px solid rgba(233,224,200,.2);border-radius:5px;text-align:center}
+.lbl{display:inline-block;background:var(--paper);border:2px solid var(--brass);border-radius:3px;
+  box-shadow:0 0 0 5px rgba(185,138,59,.28),0 10px 26px rgba(0,0,0,.35);
+  padding:clamp(18px,3.4vw,30px) clamp(20px,4vw,46px)}
+.lbl h1{font-size:clamp(42px,8.6vw,86px);color:var(--ink)}
+.lbl h1 b{color:var(--olive);font-weight:800}
+.sub{margin-top:10px;color:#5A5340;font-size:clamp(14.5px,1.9vw,17.5px);line-height:1.6}
+.pull{width:118px;height:30px;margin:20px auto 0;border-radius:0 0 60px 60px;
+  background:linear-gradient(180deg,var(--brass-l),var(--brass) 60%,#8A6524);
+  border:1px solid #8A6524;border-top:0;box-shadow:0 6px 12px rgba(0,0,0,.35)}
+.stamp{position:absolute;top:-24px;left:clamp(6px,2vw,20px);width:74px;height:74px;border-radius:50%;
+  background:var(--olive);color:#F1ECD9;display:flex;align-items:center;justify-content:center;
+  font:700 34px/1 var(--arh),serif;box-shadow:0 8px 18px rgba(38,34,26,.35);border:2px solid #3C4519}
+.stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(241,236,217,.75);
+  animation:ringspin 90s linear infinite}
+@keyframes ringspin{to{transform:rotate(360deg)}}
+.slot{margin-top:16px;background:#33261A;border:1px solid rgba(233,224,200,.16);border-radius:5px;
+  padding:10px;box-shadow:inset 0 10px 24px rgba(0,0,0,.5)}
+.slot img{width:100%;height:clamp(170px,24vh,240px);object-fit:cover;border-radius:3px}
+.minirow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.mini{background:linear-gradient(180deg,var(--wood-l),var(--wood-d));border:1px solid #2C2015;border-radius:4px;
+  padding:12px 8px 14px;text-align:center;color:#F1ECD9;font:700 13.5px/1.5 'Karla',sans-serif}
+.mini i{display:block;width:34px;height:5px;margin:8px auto 0;border-radius:3px;
+  background:linear-gradient(180deg,var(--brass-l),#8A6524);font-style:normal}
+
+/* ---------- sections ---------- */
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
+.two h2,.h2{font-size:clamp(27px,4vw,44px);margin:8px 0 18px}
+.two p{margin-bottom:15px;color:#3E3829}
+.quotebox{margin:18px 0 0;padding:16px 20px;background:var(--paper2);border-left:4px solid var(--olive);
+  font-family:'Fraunces',serif;font-size:19px;line-height:1.6}
+.frame{background:#fff;border:1px solid #D8CFB4;padding:10px;border-radius:4px;box-shadow:0 16px 34px rgba(38,34,26,.12)}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
+.cap{font:500 12.5px/1.55 'Karla',sans-serif;color:#7C7458;margin-top:9px;letter-spacing:.02em}
+.band{background:var(--olive-d);color:#F1ECD9}
+.band .k{color:#CFDA9C}
+.band .h2{color:#F7F4E6}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:#55621F;border:1px solid rgba(241,236,217,.14);border-radius:5px;overflow:hidden}
+.card img{width:100%;height:215px;object-fit:cover}
+.card .t{padding:15px 16px 19px}
+.card h3{font-size:20px;margin-bottom:6px;color:#F7F4E6}
+.card p{color:#DCE3BC;font-size:14.5px;line-height:1.65}
+
+/* the card catalogue of mezze */
+.cat{background:#fff;border:1px solid #D8CFB4;border-radius:6px;padding:clamp(22px,3.6vw,42px);
+  box-shadow:0 18px 40px rgba(38,34,26,.1)}
+.catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.cdrw{background:linear-gradient(180deg,#F7F3E7,#EDE6D2);border:1px solid #D8CFB4;border-radius:4px;
+  padding:13px 12px 15px;text-align:center;font:700 15px/1.5 'Karla',sans-serif;color:#3E3829;position:relative}
+.cdrw small{display:block;font:500 12.5px/1.5 'Karla',sans-serif;color:#8A8166;letter-spacing:.02em}
+.cdrw::after{content:"";display:block;width:26px;height:4px;margin:9px auto 0;border-radius:3px;
+  background:linear-gradient(180deg,var(--brass-l),#8A6524)}
+.note{margin-top:18px;font-size:14.5px;color:#6B6349}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal a{display:block;border:1px solid #D8CFB4;background:#fff;padding:6px;border-radius:3px}
+.gal img{width:100%;height:185px;object-fit:cover;border-radius:2px}
+
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.6vw,28px)}
+.rev-c{background:#fff;border:1px solid #D8CFB4;border-radius:5px;padding:22px 24px;position:relative}
+.rev-c::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--olive);border-radius:5px 0 0 5px}
+.rev-c q{display:block;quotes:none;font-size:17px;line-height:1.7;color:#3E3829}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 13px/1 'Karla',sans-serif;color:var(--olive-d);letter-spacing:.05em}
+
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid #DCD3B8;font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#6B6349}
+.ad,.ph{font-size:16.5px;color:#26221A}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--olive);color:#F7F4E6;padding:13px 20px;
+  border-radius:3px;text-decoration:none;font:700 15px/1 'Karla',sans-serif;border:1px solid var(--olive-d);margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--ink);border-color:#B9AE8C}
+.tripline{margin-top:20px;display:inline-block;background:var(--paper2);border:1px solid #D8CFB4;border-radius:3px;
+  padding:10px 14px;font:500 13.5px/1.5 'Karla',sans-serif;color:#5A5340}
+footer{padding:36px 20px 130px;background:var(--wood-d);color:#CBBFA4;font-size:13.5px;text-align:center}
+
+/* ---------- sticky bar: a row of small card drawers ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:6px;
+  background:linear-gradient(180deg,var(--wood),var(--wood-d));padding:7px 8px calc(7px + env(safe-area-inset-bottom));
+  box-shadow:0 -10px 26px rgba(38,34,26,.4);border-top:1px solid rgba(233,224,200,.25)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:8px 4px 9px;background:linear-gradient(180deg,#6E5238,#4A3826);color:#F1ECD9;text-decoration:none;
+  font:700 11.5px/1.2 'Karla',sans-serif;border:1px solid #2C2015;border-radius:4px;min-height:56px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.bar a::after{content:"";width:26px;height:4px;border-radius:2px;margin-top:2px;
+  background:linear-gradient(180deg,var(--brass-l),#8A6524)}
+.bar a:active{background:#3B2C1D}
+.bar a.w{background:linear-gradient(180deg,#77862F,var(--olive-d));border-color:#39420F}
+.bar svg{width:18px;height:18px;fill:currentColor}
+
+@media(max-width:860px){
+  .two,.visit{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .catgrid{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .revs{grid-template-columns:1fr}
+  .stamp{width:58px;height:58px;font-size:26px;top:-18px}
+  .slot img{height:150px}
+}
+@media(max-width:430px){
+  .minirow{gap:7px}
+  .mini{font-size:12px;padding:10px 5px 12px}
+}
+@media(prefers-reduced-motion:reduce){.stamp::before{animation:none}}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="cab">
+    <div class="toprail">
+      <span class="screw"></span>
+      <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Hamra Square, ground floor">Hamra Square, ground floor</xen><xar data-edit="t2" data-edit-label="Text (AR): ساحة الحمرا، الطابق الأرضي">ساحة الحمرا، الطابق الأرضي</xar></span>
+      <span class="plate"><span class="num" data-edit="t3" data-edit-label="Text: 4.5 ★">4.5 ★</span><span><xen><span class="num" data-edit="t4" data-edit-label="Text: 2,293">2,293</span> Google reviews</xen><xar><span class="num" data-edit="t5" data-edit-label="Text: 2,293">2,293</span> تقييم على غوغل</xar></span></span>
+      <span class="screw"></span>
+    </div>
+    <div class="face">
+      <div class="stamp" data-edit="t6" data-edit-label="Text: ة">ة</div>
+      <div class="lbl">
+        <h1>T-MAR<b data-edit="t7" data-edit-label="Text: BOUTA">BOUTA</b></h1>
+        <p class="sub"><xen data-edit="t8" data-edit-label="Text (EN): Lebanese kitchen, library shelves and …">Lebanese kitchen, library shelves and a green terrace, one floor under the noise of Hamra.</xen><xar data-edit="t9" data-edit-label="Text (AR): مطبخ لبناني، رفوف كتب وتراس أخضر، طابق…">مطبخ لبناني، رفوف كتب وتراس أخضر، طابق واحد تحت ضجّة الحمرا.</xar></p>
+      </div>
+      <div class="pull"></div>
+    </div>
+    <div class="slot"><img src="img/01.jpg" alt="The T-Marbouta dining room, olive green walls and a long wooden bar"></div>
+    <div class="minirow">
+      <div class="mini"><xen data-edit="t10" data-edit-label="Text (EN): Coffee">Coffee</xen><xar data-edit="t11" data-edit-label="Text (AR): قهوة">قهوة</xar><i></i></div>
+      <div class="mini"><xen data-edit="t12" data-edit-label="Text (EN): Books">Books</xen><xar data-edit="t13" data-edit-label="Text (AR): كتاب">كتاب</xar><i></i></div>
+      <div class="mini"><xen data-edit="t14" data-edit-label="Text (EN): People">People</xen><xar data-edit="t15" data-edit-label="Text (AR): ناس">ناس</xar><i></i></div>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t16" data-edit-label="Text (EN): The place">The place</xen><xar data-edit="t17" data-edit-label="Text (AR): المحل">المحل</xar></p>
+      <h2><xen data-edit="t18" data-edit-label="Text (EN): Hamra's living room since university d…">Hamra's living room since university days</xen><xar data-edit="t19" data-edit-label="Text (AR): صالون الحمرا من أيام الجامعة">صالون الحمرا من أيام الجامعة</xar></h2>
+      <p><xen data-edit="t20" data-edit-label="Text (EN): Down the stairs of Hamra Square Center…">Down the stairs of Hamra Square Center there is a room that half of Beirut seems to have studied in, argued in, or eaten a full mezze in. Long wooden tables, olive walls, a bar on one side and a wall of books on the other.</xen><xar data-edit="t21" data-edit-label="Text (AR): تحت درج سنتر ساحة الحمرا في قاعة، نص ب…">تحت درج سنتر ساحة الحمرا في قاعة، نص بيروت كأنه درس فيها أو تناقش فيها أو أكل فيها مازة كاملة. طاولات خشب طويلة، حيطان زيتونية، بار من جهة وحيط كتب من الجهة التانية.</xar></p>
+      <p><xen data-edit="t22" data-edit-label="Text (EN): Their own menu prints the idea in thre…">Their own menu prints the idea in three words, and it is exactly what the room feels like:</xen><xar data-edit="t23" data-edit-label="Text (AR): المنيو تبعهن طابع الفكرة بتلات كلمات، …">المنيو تبعهن طابع الفكرة بتلات كلمات، وهيدا بالضبط إحساس المكان:</xar></p>
+      <div class="quotebox"><span class="num" dir="rtl" data-edit="t24" data-edit-label="Text: قهوة، كتاب وناس">قهوة، كتاب وناس</span> · <xen data-edit="t25" data-edit-label="Text (EN): coffee, a book and people">coffee, a book and people</xen><xar data-edit="t26" data-edit-label="Text (AR): قهوة، كتاب وناس">قهوة، كتاب وناس</xar></div>
+      <p style="margin-top:16px"><xen data-edit="t27" data-edit-label="Text (EN): The kitchen behind it is serious: cold…">The kitchen behind it is serious: cold and hot mezze, grills, saj, and a lentil soup with its own corner of the menu. There are readings and screenings some evenings, and a delivery line for the days you cannot leave the desk.</xen><xar data-edit="t28" data-edit-label="Text (AR): والمطبخ ورا كل هيدا جدّي: مازة باردة و…">والمطبخ ورا كل هيدا جدّي: مازة باردة وسخنة، مشاوي، وصحن عدس إلو زاوية خاصة عالمنيو. في أمسيات قراءة وعروض أفلام، وفي خط دليفري للأيام يلي ما فيك تترك المكتب.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/10.jpg" loading="lazy" alt="Kebab with saffron rice, bread and grilled tomato sauce">
+        <p class="cap"><xen data-edit="t29" data-edit-label="Text (EN): Kebab on saffron rice, the way it land…">Kebab on saffron rice, the way it lands on the long tables.</xen><xar data-edit="t30" data-edit-label="Text (AR): كباب على رز بزعفران، متل ما بيوصل عالط…">كباب على رز بزعفران، متل ما بيوصل عالطاولات الطويلة.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t31" data-edit-label="Text (EN): From the kitchen">From the kitchen</xen><xar data-edit="t32" data-edit-label="Text (AR): من المطبخ">من المطبخ</xar></p>
+    <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t33" data-edit-label="Text (EN): Three plates people keep coming back f…">Three plates people keep coming back for</xen><xar data-edit="t34" data-edit-label="Text (AR): تلات صحون الناس بترجعلها دايماً">تلات صحون الناس بترجعلها دايماً</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/12.jpg" loading="lazy" alt="Hummus with pine nuts in a clay bowl">
+        <div class="t"><h3><xen data-edit="t35" data-edit-label="Text (EN): Hummus in the clay bowl">Hummus in the clay bowl</xen><xar data-edit="t36" data-edit-label="Text (AR): حمص بصحن الفخار">حمص بصحن الفخار</xar></h3>
+        <p><xen data-edit="t37" data-edit-label="Text (EN): Smooth, with olive oil pooling in the …">Smooth, with olive oil pooling in the middle, the first thing on almost every table.</xen><xar data-edit="t38" data-edit-label="Text (AR): ناعم، والزيت متجمّع بنصّو، أول شي بينز…">ناعم، والزيت متجمّع بنصّو، أول شي بينزل تقريباً على كل طاولة.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="Batata harra, fried potato cubes with red spice and herbs">
+        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): Batata harra">Batata harra</xen><xar data-edit="t40" data-edit-label="Text (AR): بطاطا حارة">بطاطا حارة</xar></h3>
+        <p><xen data-edit="t41" data-edit-label="Text (EN): Fried potato cubes, red pepper and cor…">Fried potato cubes, red pepper and coriander, straight from their hot mezze list.</xen><xar data-edit="t42" data-edit-label="Text (AR): مكعبات بطاطا مقلية، فليفلة حمرا وكزبرة…">مكعبات بطاطا مقلية، فليفلة حمرا وكزبرة، من لائحة المازة السخنة عندهن.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/13.jpg" loading="lazy" alt="Tabbouleh with a romaine leaf and diced tomato">
+        <div class="t"><h3><xen data-edit="t43" data-edit-label="Text (EN): Tabbouleh">Tabbouleh</xen><xar data-edit="t44" data-edit-label="Text (AR): تبولة">تبولة</xar></h3>
+        <p><xen data-edit="t45" data-edit-label="Text (EN): Chopped fine and dressed sharp, served…">Chopped fine and dressed sharp, served with romaine leaves to scoop it.</xen><xar data-edit="t46" data-edit-label="Text (AR): مفرومة ناعم وحامضها مظبوط، بتيجي مع ور…">مفرومة ناعم وحامضها مظبوط، بتيجي مع ورق خس لتغرف فيها.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cat rev">
+    <p class="k"><xen data-edit="t47" data-edit-label="Text (EN): The card catalogue">The card catalogue</xen><xar data-edit="t48" data-edit-label="Text (AR): فهرس البطاقات">فهرس البطاقات</xar></p>
+    <h2 class="h2"><xen data-edit="t49" data-edit-label="Text (EN): Pull a drawer, pick a mezze">Pull a drawer, pick a mezze</xen><xar data-edit="t50" data-edit-label="Text (AR): اسحب جارور، نقّي مازة">اسحب جارور، نقّي مازة</xar></h2>
+    <p style="max-width:64ch;color:#5A5340"><xen data-edit="t51" data-edit-label="Text (EN): A few names off the board that hangs b…">A few names off the board that hangs by the bar, the long version has whole pages of cold mezze, hot mezze, salads, platters and saj.</xen><xar data-edit="t52" data-edit-label="Text (AR): كم اسم عن اللوحة المعلّقة حد البار، وا…">كم اسم عن اللوحة المعلّقة حد البار، والنسخة الطويلة فيها صفحات كاملة مازة باردة وسخنة وسلطات وصواني وصاج.</xar></p>
+    <div class="catgrid">
+      <div class="cdrw">Mdardarah<small><xen data-edit="t53" data-edit-label="Text (EN): lentils, rice, fried onion">lentils, rice, fried onion</xen><xar data-edit="t54" data-edit-label="Text (AR): عدس ورز وبصل مقلي">عدس ورز وبصل مقلي</xar></small></div>
+      <div class="cdrw">Fatteh<small><xen data-edit="t55" data-edit-label="Text (EN): the breakfast that is a lunch">the breakfast that is a lunch</xen><xar data-edit="t56" data-edit-label="Text (AR): ترويقة بتقوم مقام غدا">ترويقة بتقوم مقام غدا</xar></small></div>
+      <div class="cdrw">Yalangi<small><xen data-edit="t57" data-edit-label="Text (EN): stuffed eggplant and zucchini">stuffed eggplant and zucchini</xen><xar data-edit="t58" data-edit-label="Text (AR): باتنجان وكوسى محشي">باتنجان وكوسى محشي</xar></small></div>
+      <div class="cdrw">Kibbe mloukiyeh<small><xen data-edit="t59" data-edit-label="Text (EN): with eggplant, walnut, pomegranate">with eggplant, walnut, pomegranate</xen><xar data-edit="t60" data-edit-label="Text (AR): مع باتنجان وجوز ورمان">مع باتنجان وجوز ورمان</xar></small></div>
+      <div class="cdrw">Shankleesh<small><xen data-edit="t61" data-edit-label="Text (EN): aged, rolled in thyme">aged, rolled in thyme</xen><xar data-edit="t62" data-edit-label="Text (AR): معتّق ومدحرج بالزعتر">معتّق ومدحرج بالزعتر</xar></small></div>
+      <div class="cdrw">Arayes kafta<small><xen data-edit="t63" data-edit-label="Text (EN): grilled bread, spiced meat">grilled bread, spiced meat</xen><xar data-edit="t64" data-edit-label="Text (AR): خبز مشوي محشي كفتة">خبز مشوي محشي كفتة</xar></small></div>
+      <div class="cdrw">Chicken mousakhan rolls<small><xen data-edit="t65" data-edit-label="Text (EN): sumac onions, rolled and fried">sumac onions, rolled and fried</xen><xar data-edit="t66" data-edit-label="Text (AR): بصل بسماق، ملفوف ومقلي">بصل بسماق، ملفوف ومقلي</xar></small></div>
+      <div class="cdrw">Kabab halabi<small><xen data-edit="t67" data-edit-label="Text (EN): off the platters and grills page">off the platters and grills page</xen><xar data-edit="t68" data-edit-label="Text (AR): من صفحة الصواني والمشاوي">من صفحة الصواني والمشاوي</xar></small></div>
+      <div class="cdrw">Lentil soup<small><xen data-edit="t69" data-edit-label="Text (EN): it has its own corner of the menu">it has its own corner of the menu</xen><xar data-edit="t70" data-edit-label="Text (AR): إلها زاويتها الخاصة عالمنيو">إلها زاويتها الخاصة عالمنيو</xar></small></div>
+    </div>
+    <p class="note"><xen>Prices are on the board at the counter, or call and they will read you today's list. Delivery: <span class="num" data-edit="t71" data-edit-label="Text: 70 577 598">70 577 598</span>.</xen><xar>الأسعار على اللوحة عند الكاونتر، أو تلفن وبيقرأولك لائحة اليوم. دليفري: <span class="num" data-edit="t72" data-edit-label="Text: 70 577 598">70 577 598</span>.</xar></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t73" data-edit-label="Text (EN): Around the room">Around the room</xen><xar data-edit="t74" data-edit-label="Text (AR): جولة بالمكان">جولة بالمكان</xar></p>
+    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t75" data-edit-label="Text (EN): Photographs from the tables">Photographs from the tables</xen><xar data-edit="t76" data-edit-label="Text (AR): صور من عالطاولات">صور من عالطاولات</xar></h2>
+    <div class="gal">
+      <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="A spread of mezze with sausages in a skillet"></a>
+      <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="Plates with fries, olives and a grilled saj wrap"></a>
+      <a href="img/15.jpg" target="_blank" rel="noopener" class="g"><img src="img/15.jpg" loading="lazy" alt="Rolled wraps with herbed fries"></a>
+      <a href="img/14.jpg" target="_blank" rel="noopener" class="g"><img src="img/14.jpg" loading="lazy" alt="Fried kibbe with lemon and lettuce"></a>
+      <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="A salad topped with shaved cured meat"></a>
+      <a href="img/11.jpg" target="_blank" rel="noopener" class="g"><img src="img/11.jpg" loading="lazy" alt="A cold drink and a glass of ayran on a wooden table"></a>
+      <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="A mixed grill platter with salads and fries"></a>
+      <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="An omelette with vegetables and small plates"></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t77" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t78" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t79" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t80" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
+  <div class="revs">
+    <div class="rev-c rev"><q dir="ltr" data-edit="t81" data-edit-label="Quote: Me and my friends had a lunch at T-Mar…">Me and my friends had a lunch at T-Marbouta. I love this place since university days.</q><cite data-edit="t82" data-edit-label="Credit: Leila Joheir">Leila Joheir</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t83" data-edit-label="Quote: If you want to experience real Lebanes…">If you want to experience real Lebanese cuisine, T-Marbouta is definitely worth visiting. We are a family of five, and this was our third visit.</q><cite data-edit="t84" data-edit-label="Credit: Bahar Nurjanova">Bahar Nurjanova</cite></div>
+  </div>
+  <p class="tripline rev"><xen data-edit="t85" data-edit-label="Text (EN): Tripadvisor ranks it around #10 of 755…">Tripadvisor ranks it around #10 of 755 Beirut restaurants, at 4.4 of 5.</xen><xar data-edit="t86" data-edit-label="Text (AR): تريب أدفايزر مصنّفو حوالي رقم 10 من أص…">تريب أدفايزر مصنّفو حوالي رقم 10 من أصل 755 مطعم ببيروت، بعلامة 4.4 من 5.</xar></p>
+</section>
+
+<section class="band">
+  <div class="wrap visit">
+    <div>
+      <p class="k"><xen data-edit="t87" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t88" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="h2" style="margin-bottom:16px"><xen data-edit="t89" data-edit-label="Text (EN): Open every day of the week">Open every day of the week</xen><xar data-edit="t90" data-edit-label="Text (AR): فاتحين كل أيام الأسبوع">فاتحين كل أيام الأسبوع</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t91" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t92" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t93" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t94" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t95" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t96" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t97" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t98" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t99" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t101" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t102" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t103" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t104" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t105" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t106" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t107" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t108" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+        <tr><td><xen data-edit="t109" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t110" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t111" data-edit-label="Menu / table: 9 AM–11 PM">9 AM–11 PM</td></tr>
+      </table>
+      <p class="cap" style="color:#CFDA9C"><xen data-edit="t112" data-edit-label="Text (EN): Fourteen hours a day, breakfast throug…">Fourteen hours a day, breakfast through late dinner.</xen><xar data-edit="t113" data-edit-label="Text (AR): أربعتعشر ساعة باليوم، من الترويقة للعش…">أربعتعشر ساعة باليوم، من الترويقة للعشا المتأخر.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t114" data-edit-label="Text (EN): Find the drawer">Find the drawer</xen><xar data-edit="t115" data-edit-label="Text (AR): لاقونا">لاقونا</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px;color:#F7F4E6"><xen data-edit="t116" data-edit-label="Text (EN): Hamra Square Center, ground floor">Hamra Square Center, ground floor</xen><xar data-edit="t117" data-edit-label="Text (AR): سنتر ساحة الحمرا، الطابق الأرضي">سنتر ساحة الحمرا، الطابق الأرضي</xar></h3>
+      <p class="k"><xen data-edit="t118" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t119" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" style="color:#F1ECD9" data-edit="t120" data-edit-label="Text: HAMRA SQUARE, GROUND FLOOR, Beirut, Le…">HAMRA SQUARE, GROUND FLOOR, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:18px"><xen data-edit="t121" data-edit-label="Text (EN): Phone">Phone</xen><xar data-edit="t122" data-edit-label="Text (AR): الهاتف">الهاتف</xar></p>
+      <p class="ph num" style="color:#F1ECD9" data-edit="t123" data-edit-label="Text: +961 1 350 274">+961 1 350 274</p>
+      <p class="cap" style="color:#CFDA9C"><xen data-edit="t124" data-edit-label="Text (EN): It is a landline, call and ask for the…">It is a landline, call and ask for the WhatsApp number. Cultural events: culturalevents.tmarbouta@gmail.com</xen><xar data-edit="t125" data-edit-label="Text (AR): هيدا خط أرضي، تلفن واسأل عن رقم الواتس…">هيدا خط أرضي، تلفن واسأل عن رقم الواتساب. للنشاطات الثقافية: culturalevents.tmarbouta@gmail.com</xar></p>
+      <p style="margin-top:20px">
+        <a class="btn" href="https://www.google.com/maps?cid=14271266695681195094" target="_blank" rel="noopener"><xen data-edit="t126" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t127" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn o" style="color:#F1ECD9;border-color:rgba(241,236,217,.4)" href="https://www.instagram.com/tmarbouta/" target="_blank" rel="noopener" data-edit="t128" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" style="color:#F1ECD9;border-color:rgba(241,236,217,.4)" href="https://www.facebook.com/tmarbouta/" target="_blank" rel="noopener" data-edit="t129" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t130" data-edit-label="Text (EN): T-Marbouta, Hamra Square Center, groun…">T-Marbouta, Hamra Square Center, ground floor, Beirut.</xen><xar data-edit="t131" data-edit-label="Text (AR): تي مربوطة، سنتر ساحة الحمرا، الطابق ال…">تي مربوطة، سنتر ساحة الحمرا، الطابق الأرضي، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t132" data-edit-label="Text (EN): Coffee, a book and people, every day f…">Coffee, a book and people, every day from 9 in the morning.</xen><xar data-edit="t133" data-edit-label="Text (AR): قهوة، كتاب وناس، كل يوم من الساعة 9 ال…">قهوة، كتاب وناس، كل يوم من الساعة 9 الصبح.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+9611350274"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t134" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t135" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://www.google.com/maps?cid=14271266695681195094" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t136" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t137" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/tmarbouta/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t138" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="https://www.facebook.com/tmarbouta/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V14h2.7v8z"/></svg><span data-edit="t139" data-edit-label="Text: Facebook">Facebook</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="تي مربوطة · ساحة الحمرا، بيروت" data-edit="t140" data-edit-label="Button: عربي">عربي</button>
+</body></html>

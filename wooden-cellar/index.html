@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wooden Cellar · Pharoun Street, Mar Mikhael</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Amiri';--arb:'Noto Naskh Arabic';
+  --wine:#3A141C;--wine2:#4A1B25;--velvet:#5C2230;--lace:#F1E6D2;--brass:#C9A15E;
+  --leafd:#2C3E31;--line:rgba(201,161,94,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--wine);color:var(--lace);font:400 17px/1.8 'Lora',Georgia,serif}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3,.dsp{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;line-height:1.05}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:500 11.5px/1.5 'Lora',serif;letter-spacing:.3em;text-transform:uppercase;color:var(--brass)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 12.5px/1 var(--arb),serif;padding:10px 16px;border-radius:999px;cursor:pointer;
+  background:var(--brass);color:#2E1116;border:1px solid #8F6E38;-webkit-appearance:none;
+  box-shadow:0 4px 16px rgba(0,0,0,.45);min-width:58px;text-align:center}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: the velvet banquette against the cellar wall ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  background:
+   radial-gradient(60% 42% at 50% 12%,rgba(201,161,94,.14),transparent 70%),
+   linear-gradient(180deg,#2E0F16 0%,var(--wine) 52%,#30101A 100%)}
+header::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:repeating-linear-gradient(90deg,transparent 0 120px,rgba(0,0,0,.16) 120px 122px)}
+.lustre{position:relative;z-index:2;width:150px;height:88px;margin-bottom:4px}
+.lustre .arm{position:absolute;left:50%;top:0;width:2px;height:34px;background:var(--brass);transform:translateX(-50%)}
+.lustre .bow{position:absolute;left:50%;top:30px;width:120px;height:34px;transform:translateX(-50%);
+  border:2px solid var(--brass);border-top:0;border-radius:0 0 70px 70px}
+.lustre .bulb{position:absolute;top:58px;width:12px;height:16px;border-radius:50% 50% 60% 60%;
+  background:#F3D9A0;box-shadow:0 0 14px 5px rgba(243,217,160,.45);animation:brth 7s ease-in-out infinite}
+.lustre .bulb.b1{left:12px}.lustre .bulb.b2{left:69px;top:64px}.lustre .bulb.b3{right:12px}
+@keyframes brth{0%,100%{box-shadow:0 0 10px 3px rgba(243,217,160,.30)}50%{box-shadow:0 0 18px 7px rgba(243,217,160,.55)}}
+@media(prefers-reduced-motion:reduce){.lustre .bulb{animation:none}}
+.gallery2{position:relative;z-index:2;display:flex;gap:clamp(14px,2.6vw,30px);justify-content:center;
+  margin:6px 0 26px;flex-wrap:nowrap}
+.hung{width:min(300px,42vw)}
+.hung .cord{width:1.5px;height:26px;background:var(--brass);margin:0 auto}
+.hung .gilt{border:3px double var(--brass);padding:7px;background:#2A0D13;box-shadow:0 16px 36px rgba(0,0,0,.5)}
+.hung img{width:100%;height:clamp(150px,24vh,220px);object-fit:cover}
+.banq{position:relative;z-index:2;width:min(900px,94vw)}
+.backrest{position:relative;background:
+   radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.10),transparent 46%),
+   linear-gradient(180deg,#6B2839,var(--velvet) 55%,#4E1D2A);
+  border:2px solid #7A3245;border-bottom:0;border-radius:26px 26px 0 0;
+  padding:clamp(24px,4.4vh,40px) clamp(18px,4vw,44px) clamp(18px,3vh,26px);text-align:center;
+  box-shadow:inset 0 0 0 8px rgba(241,230,210,.05)}
+.backrest::before{content:"";position:absolute;inset:10px 10px 0 10px;border:1.5px solid rgba(241,230,210,.35);
+  border-bottom:0;border-radius:18px 18px 0 0;pointer-events:none}
+.backrest::after{content:"";position:absolute;left:26px;right:26px;bottom:10px;height:12px;pointer-events:none;
+  background:radial-gradient(circle at 8px 6px,rgba(241,230,210,.4) 0 2.5px,transparent 3px);
+  background-size:56px 12px;background-position:center}
+.plaque{display:inline-block;background:linear-gradient(180deg,#DDB877,#B98F4C);color:#2E1116;
+  border:1px solid #8F6E38;border-radius:2px;padding:7px 16px;font:700 12px/1.4 'Lora',serif;
+  letter-spacing:.22em;text-transform:uppercase;position:relative;overflow:hidden}
+.plaque i{position:absolute;top:0;left:-45%;width:32%;height:100%;font-size:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:glint 13s ease-in-out infinite}
+@keyframes glint{0%,86%{transform:translateX(0)}100%{transform:translateX(460%)}}
+@media(prefers-reduced-motion:reduce){.plaque i{animation:none}}
+.banq h1{font-size:clamp(42px,7vw,74px);margin-top:12px;color:var(--lace)}
+.banq h1 em{font-style:italic;color:var(--brass)}
+.sub{margin:10px auto 0;max-width:56ch;color:#D9C6B0;font-size:clamp(14.5px,1.9vw,17px);line-height:1.7}
+.meta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:15px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:5px 13px;
+  font:500 12px/1.5 'Lora',serif;color:#E4D4BC;background:rgba(201,161,94,.08)}
+.pill.gold{background:var(--brass);color:#2E1116;border-color:#8F6E38;font-weight:700}
+.seat{height:34px;background:linear-gradient(180deg,#7A3245,#5C2230);border:2px solid #7A3245;
+  border-radius:8px 8px 3px 3px;box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.floorline{height:16px;width:100%;background:linear-gradient(180deg,#20090E,transparent)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(58px,8vh,98px)}
+.band{background:var(--wine2)}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hd{font-size:clamp(28px,4.2vw,46px);margin:8px 0 18px;color:var(--lace)}
+.two p{color:#DCC9B2;margin-bottom:15px}
+.frame{border:3px double var(--brass);padding:9px;background:#2A0D13}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover}
+.cap{font:italic 500 13px/1.6 'Lora',serif;color:#B49B7E;margin-top:9px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:#30101A;border:1px solid var(--line);overflow:hidden}
+.card img{width:100%;height:230px;object-fit:cover}
+.card .t{padding:16px 17px 20px;border-top:1px solid var(--line)}
+.card h3{font-size:22px;margin-bottom:6px;color:var(--lace)}
+.card p{color:#C9B195;font-size:14.5px;line-height:1.7}
+.menuboard{background:var(--lace);color:#3A2417;padding:clamp(24px,3.8vw,44px);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(20px,3vw,40px);align-items:start}
+.menuboard h2{font-size:clamp(27px,3.8vw,42px);color:#2E1116;margin:6px 0 14px}
+.menuboard .k{color:#8F5A2B}
+.sign li{list-style:none;padding:9px 2px;border-bottom:1px dashed rgba(58,36,23,.3);
+  font:500 16px/1.5 'Lora',serif;display:flex;justify-content:space-between;gap:12px}
+.sign li b{font-family:'Cormorant Garamond',serif;font-size:19px}
+.sign li span{color:#8F5A2B;font-style:italic;font-size:14px;text-align:right}
+.note{margin-top:16px;font-size:14.5px;color:#6E4A2E}
+.boardimg{border:1.5px solid rgba(58,36,23,.35);padding:8px;background:#fff}
+.boardimg img{width:100%;height:auto}
+.evening{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.eve{border:1px solid var(--line);padding:24px 22px;background:rgba(0,0,0,.18);position:relative}
+.eve::before{content:"";position:absolute;top:-1px;left:22px;width:44px;height:3px;background:var(--brass)}
+.eve h3{font-size:21px;color:var(--lace);margin-bottom:8px}
+.eve p{color:#C9B195;font-size:14.5px;line-height:1.7}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal a{display:block;border:1px solid var(--line);overflow:hidden;background:#2A0D13;padding:6px}
+.gal img{width:100%;height:200px;object-fit:cover}
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.6vw,30px)}
+.rev-c{border:1px solid var(--line);padding:24px 22px 20px;background:rgba(0,0,0,.16)}
+.rev-c q{display:block;quotes:none;font:italic 500 16.5px/1.75 'Lora',serif;color:#EADBC4}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Lora',serif;color:var(--brass);letter-spacing:.14em;text-transform:uppercase}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(201,161,94,.22);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#D9C6B0}
+.ad,.ph{font-size:16.5px;color:#EADBC4}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--brass);color:#2E1116;
+  padding:13px 22px;text-decoration:none;font:700 14px/1 'Lora',serif;letter-spacing:.06em;
+  border:1px solid #8F6E38;margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--lace);border-color:var(--line)}
+footer{padding:36px 7vw 132px;color:#B49B7E;font-size:13.5px;text-align:center;background:#30101A}
+
+/* ---------- sticky bar: the banquette seat, piped and tufted ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:0;
+  background:linear-gradient(180deg,#6B2839,#4E1D2A);
+  border-top:2px solid rgba(241,230,210,.5);
+  padding:7px 8px calc(7px + env(safe-area-inset-bottom));
+  box-shadow:0 -12px 30px rgba(0,0,0,.55)}
+.bar::before{content:"";position:absolute;top:3px;left:0;right:0;height:6px;pointer-events:none;
+  background:radial-gradient(circle at 7px 3px,rgba(241,230,210,.35) 0 2px,transparent 2.6px);
+  background-size:52px 6px}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:10px 4px 11px;background:transparent;color:var(--lace);
+  border-right:1px solid rgba(241,230,210,.16);
+  text-decoration:none;font:700 12px/1.2 'Lora',serif;letter-spacing:.04em;min-height:56px}
+.bar a:last-child{border-right:0}
+.bar a:active{background:rgba(0,0,0,.25)}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:linear-gradient(180deg,#DDB877,#B98F4C);color:#2E1116;margin:-3px 2px;border:1px solid #8F6E38}
+.bar a.sq{flex:0 0 58px}
+@media(max-width:880px){
+  .two,.visit,.menuboard{grid-template-columns:1fr}
+  .grid3,.evening,.revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:82px}
+  .hung img{height:130px}
+  .banq h1{font-size:clamp(34px,9vw,46px)}
+}
+@media(max-width:430px){
+  .bar a{font-size:10.5px}
+}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="lustre" aria-hidden="true"><span class="arm"></span><span class="bow"></span><span class="bulb b1"></span><span class="bulb b2"></span><span class="bulb b3"></span></div>
+  <div class="gallery2">
+    <figure class="hung"><div class="cord"></div>
+      <div class="gilt"><img src="img/01.jpg" alt="The Wooden Cellar shopfront with its blue doors and flowers"></div>
+    </figure>
+    <figure class="hung"><div class="cord"></div>
+      <div class="gilt"><img src="img/08.jpg" alt="A set wooden table inside the cellar under the lamps"></div>
+    </figure>
+  </div>
+  <div class="banq">
+    <div class="backrest">
+      <span class="plaque"><i></i><xen class="c" data-edit="t1" data-edit-label="Text (EN): Pharoun Street · Mar Mikhael">Pharoun Street · Mar Mikhael</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): شارع فرعون · مار مخايل">شارع فرعون · مار مخايل</xar></span>
+      <h1><xen class="c">The Wooden <em data-edit="t3" data-edit-label="Text: Cellar">Cellar</em></xen><xar class="c">ذا وودن <em data-edit="t4" data-edit-label="Text: سيلار">سيلار</em></xar></h1>
+      <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): An Italian and French room of old wood…">An Italian and French room of old wood, lace and wine, where the pasta is rolled by hand and someone is usually singing.</xen><xar data-edit="t6" data-edit-label="Text (AR): غرفة إيطالية وفرنسية من خشب عتيق ودانت…">غرفة إيطالية وفرنسية من خشب عتيق ودانتيل ونبيذ، المعكرونة فيها بتنعجن باليد، وغالبًا في حدا عم يغنّي.</xar></p>
+      <div class="meta">
+        <span class="pill gold"><xen class="c"><span class="num" data-edit="t7" data-edit-label="Text: 4.7">4.7</span> · <span class="num" data-edit="t8" data-edit-label="Text: 434">434</span> Google reviews</xen><xar class="c"><span class="num" data-edit="t9" data-edit-label="Text: 4.7">4.7</span> · <span class="num" data-edit="t10" data-edit-label="Text: 434">434</span> تقييم على غوغل</xar></span>
+        <span class="pill"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Handmade pasta">Handmade pasta</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): معكرونة شغل يد">معكرونة شغل يد</xar></span>
+        <span class="pill"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Wood-fired pizza">Wood-fired pizza</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): بيتزا عالحطب">بيتزا عالحطب</xar></span>
+        <span class="pill"><xen class="c" data-edit="t15" data-edit-label="Text (EN): Lebanese wine">Lebanese wine</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): نبيذ لبناني">نبيذ لبناني</xar></span>
+      </div>
+    </div>
+    <div class="seat" aria-hidden="true"></div>
+  </div>
+  <div class="floorline" aria-hidden="true"></div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t17" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t18" data-edit-label="Text (AR): الغرفة">الغرفة</xar></p>
+      <h2><xen data-edit="t19" data-edit-label="Text (EN): A cellar dressed like a grandmother's …">A cellar dressed like a grandmother's salon</xen><xar data-edit="t20" data-edit-label="Text (AR): قبو ملبّس متل صالون الستّ">قبو ملبّس متل صالون الستّ</xar></h2>
+      <p><xen data-edit="t21" data-edit-label="Text (EN): Behind the blue doors on Pharoun stree…">Behind the blue doors on Pharoun street, the Wooden Cellar stacks its walls with bottles, lace, lamps and flowers, and serves Italian and French plates in the middle of it: risotto, wood-fired pizza, pasta rolled in the kitchen, tiramisu at the end.</xen><xar data-edit="t22" data-edit-label="Text (AR): ورا البواب الزرق بشارع فرعون، الوودن س…">ورا البواب الزرق بشارع فرعون، الوودن سيلار معبّي حيطانه قناني ودانتيل ولمبات وورد، وبيقدّم بالنص صحون إيطالية وفرنسية: ريزوتو، بيتزا عالحطب، معكرونة معجونة بالمطبخ، وتيراميسو عالآخر.</xar></p>
+      <p><xen data-edit="t23" data-edit-label="Text (EN): On the good nights there is a live sin…">On the good nights there is a live singer between the tables, and in December the whole room turns into a Christmas set. It is the kind of place people describe by the evening they had, not by the dish.</xen><xar data-edit="t24" data-edit-label="Text (AR): بالليالي الحلوة في مغنّي حي بين الطاول…">بالليالي الحلوة في مغنّي حي بين الطاولات، وبكانون الأول الغرفة كلها بتصير مسرح ميلادي. من المحلات يلّي الناس بتوصفها بالسهرة، مش بالصحن.</xar></p>
+      <p><xen data-edit="t25" data-edit-label="Text (EN): They also keep a cellar of Lebanese wi…">They also keep a cellar of Lebanese wine, and will send bottles anywhere in the country.</xen><xar data-edit="t26" data-edit-label="Text (AR): وعندن كمان قبو نبيذ لبناني، وبيوصّلوا …">وعندن كمان قبو نبيذ لبناني، وبيوصّلوا القناني على كل لبنان.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/03.jpg" loading="lazy" alt="A charcuterie and cheese board with fruit, served at the table">
+        <p class="cap"><xen data-edit="t27" data-edit-label="Text (EN): The cheese and charcuterie board, on t…">The cheese and charcuterie board, on the lace.</xen><xar data-edit="t28" data-edit-label="Text (AR): لوح الجبنة والشاركوتري، فوق الدانتيل.">لوح الجبنة والشاركوتري، فوق الدانتيل.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t29" data-edit-label="Text (EN): Three doors of the same house">Three doors of the same house</xen><xar data-edit="t30" data-edit-label="Text (AR): تلات بواب لنفس البيت">تلات بواب لنفس البيت</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t31" data-edit-label="Text (EN): The room, the garden, the door at nigh…">The room, the garden, the door at night</xen><xar data-edit="t32" data-edit-label="Text (AR): الغرفة، الجنينة، والباب بالليل">الغرفة، الجنينة، والباب بالليل</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="The main dining room set for the evening">
+        <div class="t"><h3><xen data-edit="t33" data-edit-label="Text (EN): The Pharoun room">The Pharoun room</xen><xar data-edit="t34" data-edit-label="Text (AR): غرفة فرعون">غرفة فرعون</xar></h3>
+        <p><xen data-edit="t35" data-edit-label="Text (EN): Old chairs, hanging lamps, shelves of …">Old chairs, hanging lamps, shelves of bottles. Ask for the long table if you come as a family.</xen><xar data-edit="t36" data-edit-label="Text (AR): كراسي عتيقة، لمبات مدلاية، رفوف قناني.…">كراسي عتيقة، لمبات مدلاية، رفوف قناني. اطلب الطاولة الطويلة إذا جايين عيلة.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="The garden terrace tables under the trees">
+        <div class="t"><h3><xen data-edit="t37" data-edit-label="Text (EN): The garden">The garden</xen><xar data-edit="t38" data-edit-label="Text (AR): الجنينة">الجنينة</xar></h3>
+        <p><xen data-edit="t39" data-edit-label="Text (EN): Tables under real trees, a few steps f…">Tables under real trees, a few steps from the street. Summer evenings start out here.</xen><xar data-edit="t40" data-edit-label="Text (AR): طاولات تحت شجر حقيقي، على خطوتين من ال…">طاولات تحت شجر حقيقي، على خطوتين من الشارع. سهرات الصيف بتبلّش هون.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/06.jpg" loading="lazy" alt="The cellar door at night dressed in red lights">
+        <div class="t"><h3><xen data-edit="t41" data-edit-label="Text (EN): The door at night">The door at night</xen><xar data-edit="t42" data-edit-label="Text (AR): الباب بالليل">الباب بالليل</xar></h3>
+        <p><xen data-edit="t43" data-edit-label="Text (EN): Fairy lights over the blue frame. If i…">Fairy lights over the blue frame. If it glows, the kitchen is on until midnight.</xen><xar data-edit="t44" data-edit-label="Text (AR): ضواني صغار فوق البرواز الأزرق. إذا شعل…">ضواني صغار فوق البرواز الأزرق. إذا شعلانة، المطبخ شغّال لنص الليل.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="menuboard">
+    <div>
+      <p class="k"><xen data-edit="t45" data-edit-label="Text (EN): Painted on their street sign">Painted on their street sign</xen><xar data-edit="t46" data-edit-label="Text (AR): مرسومة على لوحة الشارع">مرسومة على لوحة الشارع</xar></p>
+      <h2><xen data-edit="t47" data-edit-label="Text (EN): What the easel promises">What the easel promises</xen><xar data-edit="t48" data-edit-label="Text (AR): شو بيوعد الحامل الخشب">شو بيوعد الحامل الخشب</xar></h2>
+      <ul class="sign">
+        <li><b data-edit="t49" data-edit-label="Text: Pasta">Pasta</b><span><xen class="c" data-edit="t50" data-edit-label="Text (EN): rolled and cut by hand">rolled and cut by hand</xen><xar class="c" data-edit="t51" data-edit-label="Text (AR): معجونة ومقطّعة باليد">معجونة ومقطّعة باليد</xar></span></li>
+        <li><b data-edit="t52" data-edit-label="Text: Pizza">Pizza</b><span><xen class="c" data-edit="t53" data-edit-label="Text (EN): out of the wood fire">out of the wood fire</xen><xar class="c" data-edit="t54" data-edit-label="Text (AR): من نار الحطب">من نار الحطب</xar></span></li>
+        <li><b data-edit="t55" data-edit-label="Text: Cheese">Cheese</b><span><xen class="c" data-edit="t56" data-edit-label="Text (EN): boards built for sharing">boards built for sharing</xen><xar class="c" data-edit="t57" data-edit-label="Text (AR): ألواح معمولة للتشارك">ألواح معمولة للتشارك</xar></span></li>
+        <li><b data-edit="t58" data-edit-label="Text: Salad · Steak">Salad · Steak</b><span><xen class="c" data-edit="t59" data-edit-label="Text (EN): the French side of the house">the French side of the house</xen><xar class="c" data-edit="t60" data-edit-label="Text (AR): الجهة الفرنسية من البيت">الجهة الفرنسية من البيت</xar></span></li>
+        <li><b data-edit="t61" data-edit-label="Text: Prosecco · Wine">Prosecco · Wine</b><span><xen class="c" data-edit="t62" data-edit-label="Text (EN): and then more wine, as the sign says">and then more wine, as the sign says</xen><xar class="c" data-edit="t63" data-edit-label="Text (AR): وبعدين نبيذ كمان، متل ما بتقول اللوحة">وبعدين نبيذ كمان، متل ما بتقول اللوحة</xar></span></li>
+      </ul>
+      <p class="note"><xen data-edit="t64" data-edit-label="Text (EN): The categories above are copied from t…">The categories above are copied from their own pink easel on the pavement. For today's plates and today's bottles, message them on WhatsApp before you come.</xen><xar data-edit="t65" data-edit-label="Text (AR): الفئات المكتوبة فوق منقولة عن لوحتهن ا…">الفئات المكتوبة فوق منقولة عن لوحتهن الزهر عالرصيف. لصحون اليوم وقناني اليوم، راسلهن عالواتساب قبل ما تجي.</xar></p>
+    </div>
+    <div class="boardimg rev"><img src="img/02.jpg" loading="lazy" alt="The pink French Italian Restaurant easel sign on the pavement">
+      <p class="cap" style="color:#6E4A2E"><xen data-edit="t66" data-edit-label="Text (EN): The easel on Pharoun street, photograp…">The easel on Pharoun street, photographed as it stands.</xen><xar data-edit="t67" data-edit-label="Text (AR): الحامل بشارع فرعون، مصوّر متل ما هو.">الحامل بشارع فرعون، مصوّر متل ما هو.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t68" data-edit-label="Text (EN): Evenings at the cellar">Evenings at the cellar</xen><xar data-edit="t69" data-edit-label="Text (AR): سهرات القبو">سهرات القبو</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t70" data-edit-label="Text (EN): Come for dinner, stay for the third gl…">Come for dinner, stay for the third glass</xen><xar data-edit="t71" data-edit-label="Text (AR): تعا عالعشا، وضلّ للكاس التالت">تعا عالعشا، وضلّ للكاس التالت</xar></h2>
+    <div class="evening">
+      <div class="eve rev"><h3><xen data-edit="t72" data-edit-label="Text (EN): The live nights">The live nights</xen><xar data-edit="t73" data-edit-label="Text (AR): ليالي الغنّية">ليالي الغنّية</xar></h3>
+        <p><xen data-edit="t74" data-edit-label="Text (EN): A singer between the tables, wine open…">A singer between the tables, wine open on the lace, nobody checking the time. Guests keep writing about these nights in their reviews.</xen><xar data-edit="t75" data-edit-label="Text (AR): مغنّي بين الطاولات، نبيذ مفتوح عالدانت…">مغنّي بين الطاولات، نبيذ مفتوح عالدانتيل، وما حدا عم يطّلع عالساعة. الزوار بعدن عم يكتبوا عن هالليالي بتقييماتهن.</xar></p></div>
+      <div class="eve rev"><h3><xen data-edit="t76" data-edit-label="Text (EN): The seasons">The seasons</xen><xar data-edit="t77" data-edit-label="Text (AR): المواسم">المواسم</xar></h3>
+        <p><xen data-edit="t78" data-edit-label="Text (EN): In December the room goes full Christm…">In December the room goes full Christmas, lights and all. The dressing changes, the risotto does not.</xen><xar data-edit="t79" data-edit-label="Text (AR): بكانون الأول الغرفة بتلبس الميلاد كلّه…">بكانون الأول الغرفة بتلبس الميلاد كلّه، ضواني وكل شي. الديكور بيتغيّر، الريزوتو لأ.</xar></p></div>
+      <div class="eve rev"><h3><xen data-edit="t80" data-edit-label="Text (EN): The second room">The second room</xen><xar data-edit="t81" data-edit-label="Text (AR): الغرفة التانية">الغرفة التانية</xar></h3>
+        <p><xen data-edit="t82" data-edit-label="Text (EN): On Monot street they run a sister room…">On Monot street they run a sister room called The Royal Cellar, same family, same cellar thinking.</xen><xar data-edit="t83" data-edit-label="Text (AR): بشارع مونو عندن غرفة شقيقة اسمها ذا رو…">بشارع مونو عندن غرفة شقيقة اسمها ذا رويال سيلار، نفس العيلة، نفس عقل القبو.</xar></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t84" data-edit-label="Text (EN): Between the walls">Between the walls</xen><xar data-edit="t85" data-edit-label="Text (AR): بين الحيطان">بين الحيطان</xar></p>
+  <h2 class="hd" style="margin:8px 0 24px"><xen data-edit="t86" data-edit-label="Text (EN): Photographs from the cellar">Photographs from the cellar</xen><xar data-edit="t87" data-edit-label="Text (AR): صور من القبو">صور من القبو</xar></h2>
+  <div class="gal">
+    <a href="img/01.jpg" target="_blank" rel="noopener" class="g"><img src="img/01.jpg" loading="lazy" alt="The shopfront with flowers around the blue doors"></a>
+    <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="A wood-fired pizza with mortadella and pistachio"></a>
+    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The garden tables under the trees"></a>
+    <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="Cheese board with fruit and cold cuts"></a>
+    <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="The door at night in red lights"></a>
+    <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="The dining room set under hanging lamps"></a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): Two evenings, retold">Two evenings, retold</xen><xar data-edit="t89" data-edit-label="Text (AR): سهرتين، محكيّين">سهرتين، محكيّين</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t90" data-edit-label="Text (EN): From the Google reviews">From the Google reviews</xen><xar data-edit="t91" data-edit-label="Text (AR): من تقييمات غوغل">من تقييمات غوغل</xar></h2>
+    <div class="revs">
+      <div class="rev-c rev"><q dir="ltr" data-edit="t92" data-edit-label="Quote: One of the best nights I've spent in B…">One of the best nights I've spent in Beirut The vibes are just awesome, such a nice cozy place to spend time in. We went there and there was a live singer which was also great to sit and listen to while eating delicious meals and drinking wine. Will definitely go back again</q><cite data-edit="t93" data-edit-label="Credit: NAD">NAD</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t94" data-edit-label="Quote: Wooden Cellar is a lovely Italian plac…">Wooden Cellar is a lovely Italian place in the heart of Mar Mikhael. I visited last January, and the theme was Christmas.</q><cite data-edit="t95" data-edit-label="Credit: Leila Joheir">Leila Joheir</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="visit">
+    <div>
+      <p class="k"><xen data-edit="t96" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t97" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></p>
+      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t98" data-edit-label="Text (EN): Lunch through midnight">Lunch through midnight</xen><xar data-edit="t99" data-edit-label="Text (AR): من الغدا لنص الليل">من الغدا لنص الليل</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t101" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t102" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t103" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t105" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t106" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t107" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t108" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t109" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t110" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t111" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t112" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t113" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t114" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t115" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t117" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t118" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t120" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t121" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t122" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t123" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+        <tr><td><xen data-edit="t124" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t125" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t126" data-edit-label="Text: 1 PM–12 AM">1 PM–12 AM</span></xen><xar class="c" data-edit="t127" data-edit-label="Text (AR): 1 م إلى 12 ص">1 م إلى 12 ص</xar></td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t128" data-edit-label="Text (EN): Wine deliveries across Lebanon are arr…">Wine deliveries across Lebanon are arranged by message.</xen><xar data-edit="t129" data-edit-label="Text (AR): توصيل النبيذ على كل لبنان بينظّم بالرس…">توصيل النبيذ على كل لبنان بينظّم بالرسائل.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t130" data-edit-label="Text (EN): Find the blue doors">Find the blue doors</xen><xar data-edit="t131" data-edit-label="Text (AR): لاقي البواب الزرق">لاقي البواب الزرق</xar></p>
+      <h3 style="font-size:23px;margin:6px 0 14px"><xen data-edit="t132" data-edit-label="Text (EN): Pharoun street, Mar Mikhael">Pharoun street, Mar Mikhael</xen><xar data-edit="t133" data-edit-label="Text (AR): شارع فرعون، مار مخايل">شارع فرعون، مار مخايل</xar></h3>
+      <p class="k" style="margin-top:16px"><xen data-edit="t134" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t135" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t136" data-edit-label="Text: Pharoun, Beirut, Lebanon">Pharoun, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t137" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t138" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t139" data-edit-label="Text: +961 76 808 392">+961 76 808 392</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96176808392?text=Hello%20Wooden%20Cellar%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t140" data-edit-label="Text (EN): Book on WhatsApp">Book on WhatsApp</xen><xar data-edit="t141" data-edit-label="Text (AR): احجز عالواتساب">احجز عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=6032574484535501318" target="_blank" rel="noopener"><xen data-edit="t142" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t143" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn o" href="https://www.instagram.com/thewoodencellar/" target="_blank" rel="noopener" data-edit="t144" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/thewoodencellarleb/" target="_blank" rel="noopener" data-edit="t145" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t146" data-edit-label="Text (EN): The Wooden Cellar, Pharoun street, Mar…">The Wooden Cellar, Pharoun street, Mar Mikhael, Beirut.</xen><xar data-edit="t147" data-edit-label="Text (AR): ذا وودن سيلار، شارع فرعون، مار مخايل، …">ذا وودن سيلار، شارع فرعون، مار مخايل، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t148" data-edit-label="Text (EN): A second room, The Royal Cellar, keeps…">A second room, The Royal Cellar, keeps the same spirit on Monot.</xen><xar data-edit="t149" data-edit-label="Text (AR): غرفة تانية، ذا رويال سيلار، حاملة نفس …">غرفة تانية، ذا رويال سيلار، حاملة نفس الروح بمونو.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96176808392"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t151" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96176808392?text=Hello%20Wooden%20Cellar%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t153" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=6032574484535501318" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t154" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t155" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/thewoodencellar/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t156" data-edit-label="Text: IG">IG</span></a>
+  <a class="sq" href="https://www.facebook.com/thewoodencellarleb/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t157" data-edit-label="Text: FB">FB</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ذا وودن سيلار · شارع فرعون، مار مخايل" data-edit="t158" data-edit-label="Button: عربي">عربي</button>
+</body></html>

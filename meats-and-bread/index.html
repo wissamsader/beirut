@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meats &amp; Bread · Naccache, Antelias</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=Kufam:wght@700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Kufam';--arb:'Noto Sans Arabic';
+  --iron:#120E0B;--coal:#1C1510;--bar:#2B211A;--barhi:#3A2D22;
+  --ember:#E4572E;--flame:#FF9B54;--ash:#EFE4D3;--dust:#B9A893;--wood:#9A6B3F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--iron);color:var(--ash);font:400 17px/1.75 'Source Sans 3',system-ui,sans-serif}
+.wrap{width:min(1160px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3,.dsp{font-family:'Big Shoulders Display',system-ui,sans-serif;font-weight:800;line-height:1.02;letter-spacing:.01em;text-transform:uppercase}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 12px/1 'Source Sans 3',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--flame)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;cursor:pointer;
+  background:var(--ember);color:#180C06;border:1.5px solid #180C06;-webkit-appearance:none;
+  border-radius:2px;box-shadow:0 4px 16px rgba(0,0,0,.5);min-width:58px;text-align:center}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: the charcoal grid, an iron grill grate over live coals ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(16px,2.6vh,26px);
+  overflow:hidden;background:linear-gradient(180deg,#0C0907 0%,var(--iron) 55%,#0C0907 100%);padding:clamp(20px,4vh,40px) 5vw}
+.toprail{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.tag{border:1px solid rgba(228,87,46,.55);color:var(--ash);padding:7px 13px;border-radius:2px;
+  font:600 12.5px/1 'Source Sans 3',sans-serif;letter-spacing:.14em;text-transform:uppercase;background:rgba(228,87,46,.09)}
+.tag b{color:var(--flame);font-weight:700}
+.grate{position:relative;width:min(880px,92vw);height:clamp(300px,42vh,400px);border-radius:6px;
+  border:11px solid #241C15;box-shadow:0 34px 80px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.05);
+  background:#0A0705;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.glow{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(38% 30% at 22% 82%,rgba(228,87,46,.55),transparent 70%),
+             radial-gradient(30% 26% at 58% 88%,rgba(255,155,84,.42),transparent 70%),
+             radial-gradient(26% 22% at 84% 80%,rgba(228,87,46,.38),transparent 70%);
+  animation:emberbreathe 7s ease-in-out infinite}
+@keyframes emberbreathe{0%,100%{opacity:.66}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.glow{animation:none}}
+.bars{position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg,#31261D 0 7px,#20180F 7px 20px,#0E0A06 20px 24px,rgba(0,0,0,0) 24px 46px)}
+.bars::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),transparent 26%,transparent 74%,rgba(0,0,0,.5))}
+.plate{position:relative;z-index:3;background:linear-gradient(180deg,#3A2D22,#241B13);
+  border:2px solid var(--ember);border-radius:4px;padding:clamp(18px,3.4vh,30px) clamp(22px,4.5vw,46px);
+  text-align:center;box-shadow:0 18px 46px rgba(0,0,0,.65)}
+.plate::before,.plate::after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#EFE4D3,#6E5A46 70%);top:8px;left:8px;box-shadow:0 1px 2px #000}
+.plate::after{left:auto;right:8px}
+.plate h1{font-size:clamp(44px,8.6vw,84px);color:var(--ash)}
+.plate h1 b{color:var(--flame)}
+.plate .sub{margin-top:8px;color:var(--dust);font-size:clamp(14px,1.8vw,17px);line-height:1.5}
+.coalrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.coal{display:inline-flex;align-items:center;gap:8px;background:#1B140E;border:1px solid #33271D;
+  border-radius:999px;padding:8px 15px;font:600 13px/1 'Source Sans 3',sans-serif;color:var(--ash)}
+.coal i{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--flame),var(--ember));flex:none}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:var(--coal)}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(26px,4vw,54px);align-items:start}
+.two h2,.hd h2{font-size:clamp(30px,4.4vw,52px);margin:10px 0 18px;color:var(--ash)}
+.two p{color:#CDBFAC;margin-bottom:15px}
+.frame{border:1px solid rgba(228,87,46,.4);padding:10px;background:#0D0906;border-radius:4px}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
+.cap{font:600 12px/1.6 'Source Sans 3',sans-serif;color:#8E7F6C;margin-top:9px;letter-spacing:.03em}
+.hd{margin-bottom:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:#171129;background:#17110C;border:1px solid #2C221A;border-radius:5px;overflow:hidden}
+.card .im{position:relative}
+.card img{width:100%;height:230px;object-fit:cover}
+.card .im::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+  background:repeating-linear-gradient(90deg,var(--ember) 0 26px,transparent 26px 40px)}
+.card .t{padding:16px 17px 20px}
+.card h3{font-size:24px;color:var(--ash);margin-bottom:6px;letter-spacing:.03em}
+.card p{color:#A99B87;font-size:14.5px;line-height:1.65}
+.ladder{border:1px solid #2C221A;border-radius:6px;overflow:hidden}
+.rung{display:grid;grid-template-columns:86px 1fr;gap:0;border-bottom:1px solid #2C221A;background:#150F0A}
+.rung:last-child{border-bottom:0}
+.rung .no{display:flex;align-items:center;justify-content:center;
+  font:800 30px/1 'Big Shoulders Display',sans-serif;color:var(--flame);
+  background:repeating-linear-gradient(135deg,#1D1610 0 10px,#171008 10px 20px);border-right:1px solid #2C221A}
+.rung .tx{padding:18px 20px}
+.rung h3{font-size:21px;color:var(--ash);letter-spacing:.04em}
+.rung p{color:#A99B87;font-size:14.5px;margin-top:4px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal a{display:block;border:1px solid #2C221A;border-radius:3px;overflow:hidden}
+.gal img{width:100%;height:200px;object-fit:cover}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,24px)}
+.rev-c{background:#150F0A;border:1px solid #2C221A;border-top:3px solid var(--ember);border-radius:4px;padding:20px}
+.rev-c q{display:block;font-size:15.5px;line-height:1.7;color:#DCCFBB}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Source Sans 3',sans-serif;color:var(--flame);letter-spacing:.08em;text-transform:uppercase}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid #2C221A;font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:var(--dust)}
+.ad,.ph{font-size:16.5px;color:#EADDC8}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--ember);color:#180C06;
+  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 15px/1 'Source Sans 3',sans-serif;
+  border:1.5px solid #180C06;margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--ash);border-color:rgba(228,87,46,.6)}
+footer{padding:34px 0 128px;color:#7E7160;font-size:13.5px;text-align:center;background:var(--coal)}
+
+/* ---------- sticky bar: grate bars over an ember gap ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:3px;
+  background:linear-gradient(90deg,var(--ember),var(--flame),var(--ember));
+  padding:3px 3px calc(3px + env(safe-area-inset-bottom));box-shadow:0 -12px 34px rgba(0,0,0,.6)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:10px 4px 11px;background:linear-gradient(180deg,#2B211A,#150F0A);color:var(--ash);
+  text-decoration:none;font:700 12px/1.2 'Source Sans 3',sans-serif;letter-spacing:.03em;min-height:56px;border-radius:2px}
+.bar a:active{background:#3A2D22}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:linear-gradient(180deg,var(--ember),#B93E1D);color:#1B0E07}
+@media(max-width:860px){
+  .two,.visit{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .revs{grid-template-columns:1fr}
+  .grate{height:clamp(250px,34vh,320px)}
+  .plate h1{font-size:clamp(38px,11vw,64px)}
+  .rung{grid-template-columns:60px 1fr}
+  body{padding-bottom:70px}
+}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="toprail">
+    <span class="tag"><xen data-edit="t1" data-edit-label="Text (EN): Naccache, Antelias">Naccache, Antelias</xen><xar data-edit="t2" data-edit-label="Text (AR): النقاش، أنطلياس">النقاش، أنطلياس</xar></span>
+    <span class="tag"><b class="num" data-edit="t3" data-edit-label="Text: 4.9">4.9</b> <span><xen>from <span class="num" data-edit="t4" data-edit-label="Text: 126">126</span> Google reviews</xen><xar>من <span class="num" data-edit="t5" data-edit-label="Text: 126">126</span> تقييم على غوغل</xar></span></span>
+  </div>
+  <div class="grate">
+    <div class="glow"></div>
+    <div class="bars"></div>
+    <div class="plate">
+      <h1>MEATS <b data-edit="t6" data-edit-label="Text: &amp;">&amp;</b> BREAD</h1>
+      <p class="sub"><xen data-edit="t7" data-edit-label="Text (EN): Hardcore BBQ. Ribs, wings and burgers …">Hardcore BBQ. Ribs, wings and burgers off a real fire, in Naccache.</xen><xar data-edit="t8" data-edit-label="Text (AR): باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن…">باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن نار حقيقية، بالنقاش.</xar></p>
+    </div>
+  </div>
+  <div class="coalrow">
+    <span class="coal"><i></i><span><xen data-edit="t9" data-edit-label="Text (EN): Open 7 days from noon">Open 7 days from noon</xen><xar data-edit="t10" data-edit-label="Text (AR): فاتحين 7 أيام من الضهر">فاتحين 7 أيام من الضهر</xar></span></span>
+    <span class="coal"><i></i><span><xen data-edit="t11" data-edit-label="Text (EN): Baby backs, wings, smash stacks">Baby backs, wings, smash stacks</xen><xar data-edit="t12" data-edit-label="Text (AR): ريبس وأجنحة وسماش برغر">ريبس وأجنحة وسماش برغر</xar></span></span>
+    <span class="coal"><i></i><span><xen data-edit="t13" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t14" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></span></span>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t15" data-edit-label="Text (EN): The smokehouse">The smokehouse</xen><xar data-edit="t16" data-edit-label="Text (AR): المحل">المحل</xar></p>
+      <h2><xen data-edit="t17" data-edit-label="Text (EN): A grill room on the Naccache side of A…">A grill room on the Naccache side of Antelias</xen><xar data-edit="t18" data-edit-label="Text (AR): قاعة مشاوي على طرف النقاش بأنطلياس">قاعة مشاوي على طرف النقاش بأنطلياس</xar></h2>
+      <p><xen data-edit="t19" data-edit-label="Text (EN): Meats &amp; Bread calls itself hardcor…">Meats &amp; Bread calls itself hardcore BBQ, and the plates back it up: racks of baby back ribs rubbed and cooked until the bone pulls clean, fried and butterscotch-glazed wings, and burgers people keep naming in their reviews.</xen><xar data-edit="t20" data-edit-label="Text (AR): ميتس أند بريد بيسمّوا حالن 'هاردكور با…">ميتس أند بريد بيسمّوا حالن "هاردكور باربكيو"، والصحون بتثبت: ريبس متتبلة ومطبوخة لحد ما العظمة تنسحب نظيفة، أجنحة مقلية وبصلصة الباترسكوتش، وبرغر الناس عم تسمّيه بتقييماتها.</xar></p>
+      <p><xen data-edit="t21" data-edit-label="Text (EN): The room is wood tables under hanging …">The room is wood tables under hanging bulbs, a white brick wall with the name up in lights, and a long counter at the back. It reads more workshop than restaurant, which is exactly the point.</xen><xar data-edit="t22" data-edit-label="Text (AR): القاعة طاولات خشب تحت لمبات معلّقة، حي…">القاعة طاولات خشب تحت لمبات معلّقة، حيط أبيض عليه الاسم مضوّي، وكاونتر طويل بالآخر. جوّها ورشة أكتر ما هي مطعم، وهيدا هو المطلوب.</xar></p>
+      <p><xen data-edit="t23" data-edit-label="Text (EN): A 4.9 out of 5 from 126 Google reviews…">A 4.9 out of 5 from 126 Google reviews, and until now, no website to send anyone to.</xen><xar data-edit="t24" data-edit-label="Text (AR): 4.9 من 5 من 126 تقييم على غوغل، ولليوم…">4.9 من 5 من 126 تقييم على غوغل، ولليوم ما في موقع تبعتلن ياه لحدا.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/01.jpg" alt="The wood tables and hanging bulbs inside Meats and Bread">
+        <p class="cap"><xen data-edit="t25" data-edit-label="Text (EN): The dining room: long wood tables, the…">The dining room: long wood tables, the name in lights on the back wall.</xen><xar data-edit="t26" data-edit-label="Text (AR): القاعة: طاولات خشب طويلة، والاسم مضوّي…">القاعة: طاولات خشب طويلة، والاسم مضوّي عالحيط.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="hd">
+      <p class="k"><xen data-edit="t27" data-edit-label="Text (EN): Off the grate">Off the grate</xen><xar data-edit="t28" data-edit-label="Text (AR): عن الشبكة">عن الشبكة</xar></p>
+      <h2><xen data-edit="t29" data-edit-label="Text (EN): Three plates people drive out for">Three plates people drive out for</xen><xar data-edit="t30" data-edit-label="Text (AR): تلات صحون الناس بتقطع مشوار لعندن">تلات صحون الناس بتقطع مشوار لعندن</xar></h2>
+    </div>
+    <div class="grid3">
+      <div class="card rev">
+        <div class="im"><img src="img/03.jpg" loading="lazy" alt="A full rack of ribs with spice dust on a white plate"></div>
+        <div class="t"><h3><xen data-edit="t31" data-edit-label="Text (EN): The rack of ribs">The rack of ribs</xen><xar data-edit="t32" data-edit-label="Text (AR): صحن الريبس">صحن الريبس</xar></h3>
+        <p><xen data-edit="t33" data-edit-label="Text (EN): A whole rack, barked and dusted, with …">A whole rack, barked and dusted, with the pickles on the side. The Cajun-style baby backs are the ones the reviews name.</xen><xar data-edit="t34" data-edit-label="Text (AR): راك كامل، بقشرة التتبيلة، والكبيس عالج…">راك كامل، بقشرة التتبيلة، والكبيس عالجنب. الريبس عالطريقة الكاجون هنّي يلّي التقييمات بتسمّيهن.</xar></p></div>
+      </div>
+      <div class="card rev">
+        <div class="im"><img src="img/02.jpg" loading="lazy" alt="Fried chicken pieces with herbs in a white bowl"></div>
+        <div class="t"><h3><xen data-edit="t35" data-edit-label="Text (EN): Wings and fried bird">Wings and fried bird</xen><xar data-edit="t36" data-edit-label="Text (AR): أجنحة ودجاج مقلي">أجنحة ودجاج مقلي</xar></h3>
+        <p><xen data-edit="t37" data-edit-label="Text (EN): Fried crisp and tossed. The butterscot…">Fried crisp and tossed. The butterscotch wings show up by name in the five-star reviews.</xen><xar data-edit="t38" data-edit-label="Text (AR): مقلية مقرمشة ومقلّبة بالصوص. أجنحة الب…">مقلية مقرمشة ومقلّبة بالصوص. أجنحة الباترسكوتش مذكورة بالاسم بتقييمات الخمس نجوم.</xar></p></div>
+      </div>
+      <div class="card rev">
+        <div class="im"><img src="img/10.jpg" loading="lazy" alt="A grilled steak plate with asparagus and potatoes"></div>
+        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): From the butcher side">From the butcher side</xen><xar data-edit="t40" data-edit-label="Text (AR): من قسم اللحمة">من قسم اللحمة</xar></h3>
+        <p><xen data-edit="t41" data-edit-label="Text (EN): Steaks and grill plates done over the …">Steaks and grill plates done over the same fire, with sides that are not an afterthought.</xen><xar data-edit="t42" data-edit-label="Text (AR): ستيك وصحون مشاوي عنفس النار، ومقبّلات …">ستيك وصحون مشاوي عنفس النار، ومقبّلات مش محطوطة ع الماشي.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="hd">
+    <p class="k"><xen data-edit="t43" data-edit-label="Text (EN): Straight from the reviews">Straight from the reviews</xen><xar data-edit="t44" data-edit-label="Text (AR): مباشرة من التقييمات">مباشرة من التقييمات</xar></p>
+    <h2><xen data-edit="t45" data-edit-label="Text (EN): The order, as written by the people wh…">The order, as written by the people who ate it</xen><xar data-edit="t46" data-edit-label="Text (AR): الطلبيّة، متل ما كتبوها يلّي أكلوها">الطلبيّة، متل ما كتبوها يلّي أكلوها</xar></h2>
+  </div>
+  <div class="ladder rev">
+    <div class="rung"><div class="no num" data-edit="t47" data-edit-label="Text: 01">01</div><div class="tx"><h3><xen data-edit="t48" data-edit-label="Text (EN): Start with the best-seller burgers">Start with the best-seller burgers</xen><xar data-edit="t49" data-edit-label="Text (AR): بلّش بالبرغر الأكتر مبيعاً">بلّش بالبرغر الأكتر مبيعاً</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): 'The best-seller burgers are popular f…">"The best-seller burgers are popular for a reason, juicy and flavorful," writes TonY in his review.</xen><xar data-edit="t51" data-edit-label="Text (AR): 'برغر الأكتر مبيعاً إلن شعبيتن لسبب، ط…">"برغر الأكتر مبيعاً إلن شعبيتن لسبب، طريين ومليانين طعمة"، بيكتب توني بتقييمه.</xar></p></div></div>
+    <div class="rung"><div class="no num" data-edit="t52" data-edit-label="Text: 02">02</div><div class="tx"><h3><xen data-edit="t53" data-edit-label="Text (EN): Then the Cajun-style baby backs">Then the Cajun-style baby backs</xen><xar data-edit="t54" data-edit-label="Text (AR): بعدين ريبس الكاجون">بعدين ريبس الكاجون</xar></h3><p><xen data-edit="t55" data-edit-label="Text (EN): Bacel's five-star table ordered the ba…">Bacel's five-star table ordered the baby backs with elotes and kale, butterscotch wings and the WTF Burger, all in one sitting.</xen><xar data-edit="t56" data-edit-label="Text (AR): طاولة باسل بالخمس نجوم طلبت الريبس مع …">طاولة باسل بالخمس نجوم طلبت الريبس مع الإيلوتس والكايل، أجنحة الباترسكوتش والـ WTF برغر، بقعدة وحدة.</xar></p></div></div>
+    <div class="rung"><div class="no num" data-edit="t57" data-edit-label="Text: 03">03</div><div class="tx"><h3><xen data-edit="t58" data-edit-label="Text (EN): Keep going, the menu is wide">Keep going, the menu is wide</xen><xar data-edit="t59" data-edit-label="Text (AR): كفّي، اللائحة عريضة">كفّي، اللائحة عريضة</xar></h3><p><xen data-edit="t60" data-edit-label="Text (EN): 'I tried a wide range of dishes, and o…">"I tried a wide range of dishes, and overall it was a very solid experience," is how a third reviewer sums the place up.</xen><xar data-edit="t61" data-edit-label="Text (AR): 'جرّبت تشكيلة واسعة من الأطباق، وبالمج…">"جرّبت تشكيلة واسعة من الأطباق، وبالمجمل كانت تجربة متينة"، هيك بيلخّصها تقييم تالت.</xar></p></div></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="hd">
+      <p class="k"><xen data-edit="t62" data-edit-label="Text (EN): The room and the plates">The room and the plates</xen><xar data-edit="t63" data-edit-label="Text (AR): القاعة والصحون">القاعة والصحون</xar></p>
+      <h2><xen data-edit="t64" data-edit-label="Text (EN): Photographs from Naccache">Photographs from Naccache</xen><xar data-edit="t65" data-edit-label="Text (AR): صور من النقاش">صور من النقاش</xar></h2>
+    </div>
+    <div class="gal">
+      <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="The counter and back bar of the restaurant"></a>
+      <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="The white brick wall with the Meats and Bread sign and neon squiggles"></a>
+      <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="Fried kibbeh-style starters with a green dip"></a>
+      <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="Glazed wings in bowls on the wood table"></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="hd">
+    <p class="k"><xen data-edit="t66" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t67" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+    <h2><xen data-edit="t68" data-edit-label="Text (EN): Three of the 126 reviews">Three of the 126 reviews</xen><xar data-edit="t69" data-edit-label="Text (AR): تلاتة من الـ 126 تقييم">تلاتة من الـ 126 تقييم</xar></h2>
+  </div>
+  <div class="revs">
+    <div class="rev-c rev"><q dir="ltr" data-edit="t70" data-edit-label="Quote: Had a lovely lunch at Meats &amp; Brea…">Had a lovely lunch at Meats &amp; Bread. The aesthetic of the restaurant is very inviting, and the staff made us feel right at home. Food-wise, the best-seller burgers are popular for a reason, juicy and flavorful.</q><cite data-edit="t71" data-edit-label="Credit: TonY NouH">TonY NouH</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t72" data-edit-label="Quote: A staggering 5 star review. This place…">A staggering 5 star review. This place is more than just a restaurant, it's an experience. We ordered the Cajun-Style Baby Backs, Elotes &amp; Kale, Butterscotch Wings, and the WTF Burger.</q><cite data-edit="t73" data-edit-label="Credit: Bacel Alhashem">Bacel Alhashem</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t74" data-edit-label="Quote: Serious meat lovers' spot! I tried a w…">Serious meat lovers' spot! I tried a wide range of dishes at Meats &amp; Bread, and overall it was a very solid experience.</q><cite data-edit="t75" data-edit-label="Credit: anthonysargi">anthonysargi</cite></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap visit">
+    <div>
+      <p class="k"><xen data-edit="t76" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t77" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 style="font-size:clamp(26px,3.8vw,42px);margin:8px 0 18px"><xen data-edit="t78" data-edit-label="Text (EN): Noon to nearly midnight">Noon to nearly midnight</xen><xar data-edit="t79" data-edit-label="Text (AR): من الضهر لقريب نص الليل">من الضهر لقريب نص الليل</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t80" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t81" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t82" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t83" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t84" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t85" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t86" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t87" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t88" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t89" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t90" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t91" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t92" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t93" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t94" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t95" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t96" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t97" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t98" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t99" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t100" data-edit-label="Menu / table: 12–8 PM">12–8 PM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t101" data-edit-label="Text (EN): Sunday closes earlier, at eight in the…">Sunday closes earlier, at eight in the evening.</xen><xar data-edit="t102" data-edit-label="Text (AR): الأحد بيسكّر أبكر، الساعة تمانة المسا.">الأحد بيسكّر أبكر، الساعة تمانة المسا.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t103" data-edit-label="Text (EN): Find the grill">Find the grill</xen><xar data-edit="t104" data-edit-label="Text (AR): لاقونا">لاقونا</xar></p>
+      <h3 class="dsp" style="font-size:26px;margin:6px 0 14px"><xen data-edit="t105" data-edit-label="Text (EN): Z4, Naccache, Antelias">Z4, Naccache, Antelias</xen><xar data-edit="t106" data-edit-label="Text (AR): Z4، النقاش، أنطلياس">Z4، النقاش، أنطلياس</xar></h3>
+      <p class="k"><xen data-edit="t107" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t108" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t109" data-edit-label="Text: Z4, Naccache, Antelias, Beirut, Lebano…">Z4, Naccache, Antelias, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t110" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t111" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t112" data-edit-label="Text: +961 76 814 418">+961 76 814 418</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96176814418?text=Hello%20Meats%20and%20Bread%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t113" data-edit-label="Text (EN): WhatsApp the counter">WhatsApp the counter</xen><xar data-edit="t114" data-edit-label="Text (AR): واتساب عالكاونتر">واتساب عالكاونتر</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=9517138512087092330" target="_blank" rel="noopener"><xen data-edit="t115" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t116" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p class="cap" style="margin-top:16px"><xen data-edit="t117" data-edit-label="Text (EN): Sunday lunch fills the long tables fir…">Sunday lunch fills the long tables first, come early or write ahead.</xen><xar data-edit="t118" data-edit-label="Text (AR): غدا الأحد بيعبّي الطاولات الطويلة أول …">غدا الأحد بيعبّي الطاولات الطويلة أول شي، تعا بكير أو ابعت رسالة قبل.</xar></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t119" data-edit-label="Text (EN): Meats &amp; Bread, hardcore BBQ, Nacca…">Meats &amp; Bread, hardcore BBQ, Naccache, Antelias.</xen><xar data-edit="t120" data-edit-label="Text (AR): ميتس أند بريد، هاردكور باربكيو، النقاش…">ميتس أند بريد، هاردكور باربكيو، النقاش، أنطلياس.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t121" data-edit-label="Text (EN): Seven days a week, from noon, over a r…">Seven days a week, from noon, over a real fire.</xen><xar data-edit="t122" data-edit-label="Text (AR): سبع أيام بالأسبوع، من الضهر، عنار حقيق…">سبع أيام بالأسبوع، من الضهر، عنار حقيقية.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96176814418"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t123" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t124" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96176814418?text=Hello%20Meats%20and%20Bread%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t125" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t126" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=9517138512087092330" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t127" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t128" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+
+  <a class="w" href="https://www.instagram.com/meatsandbread.lb/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
+    Instagram</a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ميتس أند بريد · النقاش، أنطلياس" data-edit="t129" data-edit-label="Button: عربي">عربي</button>
+</body></html>

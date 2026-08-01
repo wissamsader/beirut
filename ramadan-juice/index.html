@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ramadan Juice · Ghobeiry Square, Beirut</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Plus+Jakarta+Sans:wght@400;500;700&family=Mada:wght@600;900&family=Readex+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Mada';--arb:'Readex Pro';
+  --cream:#FBF4E2;--cream-d:#F3E8CE;--white:#FFFDF7;
+  --flesh:#F58A1F;--flesh2:#E8740D;--rind:#C85E08;--ink:#3A2413;--chest:#6E3414;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.75 'Plus Jakarta Sans',system-ui,sans-serif}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Calistoga',serif;font-weight:400;line-height:1.1;letter-spacing:.004em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 11.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--rind)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:999px;cursor:pointer;
+  background:var(--flesh);color:#3A1B02;border:1.5px solid var(--rind);
+  box-shadow:0 6px 16px rgba(58,36,19,.3);min-width:58px;text-align:center;-webkit-appearance:none}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: one enormous citrus half, cropped by the left edge, turning slowly on cream ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;
+  background:radial-gradient(120% 90% at 85% 0%,#FFFBEE 0%,var(--cream) 52%,#F3E5C4 100%)}
+.wheel{position:absolute;z-index:1;left:max(-340px,-26vw);top:50%;transform:translateY(-50%);
+  width:clamp(520px,58vw,780px);aspect-ratio:1;border-radius:50%;
+  background:
+   repeating-conic-gradient(from 8deg,rgba(255,253,247,0) 0deg 31deg,rgba(255,253,247,.95) 31deg 36deg),
+   conic-gradient(#F58A1F 0deg 36deg,#EF7C10 36deg 72deg,#F79A2E 72deg 108deg,#EE760C 108deg 144deg,#F58A1F 144deg 180deg,#F0800F 180deg 216deg,#F79A2E 216deg 252deg,#EE760C 252deg 288deg,#F58A1F 288deg 324deg,#F0800F 324deg 360deg);
+  border:16px solid #FFFDF7;outline:22px solid var(--flesh2);outline-offset:0;
+  box-shadow:0 30px 70px rgba(110,52,20,.28),inset 0 0 0 4px rgba(255,253,247,.7);
+  animation:citspin 90s linear infinite}
+.wheel::after{content:"";position:absolute;inset:41%;border-radius:50%;background:#FFFDF7;
+  box-shadow:0 0 0 6px rgba(200,94,8,.25)}
+@keyframes citspin{to{transform:translateY(-50%) rotate(360deg)}}
+.hcopy{position:relative;z-index:3;margin-left:auto;width:min(620px,92%);
+  padding:clamp(24px,4vh,52px) 6vw clamp(220px,30vh,280px) 0;text-align:right}
+.arname{font:900 clamp(58px,9vw,116px)/1.15 var(--arh),sans-serif;color:var(--chest)}
+.hcopy h1{font-size:clamp(28px,4.2vw,50px);color:var(--flesh2);margin-top:2px}
+.sub{color:#7A5230;font-size:clamp(15px,1.9vw,18px);max-width:44ch;margin-left:auto;margin-top:12px}
+.pips{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end;margin-top:18px}
+.pip{background:var(--white);border:1.5px solid rgba(200,94,8,.5);border-radius:999px;padding:8px 14px;
+  font:700 12.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A4A10}
+.pip.full{background:var(--flesh);border-color:var(--rind);color:#3A1B02}
+.rate{margin-top:16px;font-size:13px;color:#8A6A42}
+.rate b{font:400 18px/1 'Calistoga',serif;color:var(--chest)}
+.hpane{position:absolute;z-index:3;right:6vw;bottom:clamp(22px,4.4vh,42px);width:min(360px,46%);
+  background:var(--white);border:2px solid var(--rind);border-radius:14px;padding:8px;
+  box-shadow:0 22px 44px rgba(110,52,20,.24)}
+.hpane img{width:100%;height:clamp(140px,19vh,185px);object-fit:cover;border-radius:9px}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.white-b{background:var(--white)}
+.deep-b{background:var(--chest);color:#FBEBD8}
+.deep-b .k{color:#F5B26A}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hh{font-size:clamp(26px,3.9vw,43px);margin:8px 0 18px;color:var(--chest)}
+.two p{color:#6E4B28;margin-bottom:15px}
+.frame{background:var(--white);border:2px solid rgba(200,94,8,.45);border-radius:14px;padding:9px;
+  box-shadow:0 18px 38px rgba(110,52,20,.16)}
+.frame img{width:100%;height:clamp(260px,40vh,420px);object-fit:cover;border-radius:9px}
+.cap{font:500 12px/1.6 'Plus Jakarta Sans',sans-serif;color:#9A6F3E;margin-top:8px;letter-spacing:.03em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.2vw,24px)}
+.card{background:var(--white);border:1.5px solid rgba(110,52,20,.18);border-radius:14px;overflow:hidden;
+  box-shadow:0 12px 26px rgba(110,52,20,.12)}
+.card img{width:100%;height:225px;object-fit:cover}
+.card .t{padding:15px 17px 19px}
+.card h3{font-size:19px;margin-bottom:6px;color:var(--chest)}
+.card p{color:#7A5230;font-size:14.5px;line-height:1.65}
+.menu{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,3.4vw,44px);align-items:start}
+.flav{columns:2;column-gap:26px;margin-top:16px}
+.flav li{list-style:none;padding:8px 0;border-bottom:1px dashed rgba(110,52,20,.3);
+  font:500 15.5px/1.4 'Plus Jakarta Sans',sans-serif;break-inside:avoid;color:#553517}
+.note{margin-top:16px;font-size:14px;color:#8A5A28}
+.mframe{background:var(--white);border:2px solid rgba(200,94,8,.45);border-radius:14px;padding:9px}
+.mframe img{width:100%;height:clamp(340px,46vh,470px);object-fit:cover;object-position:top;border-radius:9px}
+.since{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px);margin-top:26px}
+.brc{background:rgba(251,235,216,.08);border:1.5px solid rgba(245,178,106,.4);border-radius:14px;padding:20px 20px 18px}
+.brc h3{font-size:19px;color:#F5B26A;margin-bottom:6px}
+.brc p{font-size:14px;color:#EBD2B4;line-height:1.7}
+.dayrail{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px);margin-top:34px}
+.dr{border-top:3px solid #F5B26A;padding-top:14px}
+.dr b{display:block;font:400 20px/1.2 'Calistoga',serif;color:#FBEBD8}
+.dr span{display:block;font-size:13.5px;color:#EBD2B4;line-height:1.65;margin-top:5px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.gal a{display:block;border:2px solid rgba(200,94,8,.4);border-radius:12px;overflow:hidden;background:var(--white);padding:5px}
+.gal img{width:100%;height:185px;object-fit:cover;border-radius:8px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(110,52,20,.18);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#7A5230}
+.ad,.ph{font-size:16.5px;color:#4A2E12}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--flesh);color:#3A1B02;
+  padding:13px 20px;border-radius:999px;text-decoration:none;font:700 15px/1 'Plus Jakarta Sans',sans-serif;
+  border:1.5px solid var(--rind);margin:6px 8px 0 0;box-shadow:0 5px 0 rgba(110,52,20,.28)}
+.btn.o{background:transparent;color:var(--chest);border-color:rgba(110,52,20,.4);box-shadow:none}
+footer{padding:36px 6vw 132px;color:#9A6F3E;font-size:13.5px;text-align:center;background:var(--cream-d)}
+
+/* ---------- sticky bar: the citrus rail, segment arcs peeking over the lip ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
+  background:var(--white);border-top:2px solid var(--rind);
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px rgba(110,52,20,.22)}
+.bar::before{content:"";position:absolute;left:0;right:0;top:-13px;height:13px;pointer-events:none;
+  background:radial-gradient(circle at 17px 14px,var(--flesh) 12px,transparent 13px) repeat-x;
+  background-size:38px 13px}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:8px 4px 9px;min-height:56px;text-decoration:none;border-radius:11px;
+  background:var(--cream);border:1.5px solid rgba(200,94,8,.45);color:#8A4A10;
+  font:700 11.5px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:.03em}
+.bar a:active{background:var(--cream-d)}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:linear-gradient(180deg,#F79A2E,#E8740D);border-color:var(--rind);color:#3A1B02}
+@media(max-width:880px){
+  .two,.visit,.menu{grid-template-columns:1fr}
+  .grid3,.since,.dayrail{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .flav{columns:1}
+  body{padding-bottom:76px}
+  .wheel{left:-42vw;top:34%;width:min(94vw,420px)}
+  .hcopy{width:100%;padding:34px 6vw 230px;text-align:right}
+  .arname{font-size:clamp(50px,14vw,72px)}
+  .hcopy h1{font-size:clamp(24px,7vw,34px)}
+  .hpane{right:6vw;left:auto;width:min(320px,70%)}
+  .hpane img{height:clamp(120px,15vh,150px)}
+}
+@media(max-width:430px){.bar a{font-size:10px}}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="wheel" aria-hidden="true"></div>
+  <div class="hcopy">
+    <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Ghobeiry Square · Airport Road">Ghobeiry Square · Airport Road</xen><xar data-edit="t2" data-edit-label="Text (AR): ساحة الغبيري · طريق المطار">ساحة الغبيري · طريق المطار</xar></p>
+    <p class="arname" data-edit="t3" data-edit-label="Text: عصير رمضان">عصير رمضان</p>
+    <h1><xen class="c" data-edit="t4" data-edit-label="Text (EN): RAMADAN JUICE">RAMADAN JUICE</xen><xar class="c" data-edit="t5" data-edit-label="Text (AR): محل العصير تبع الساحة">محل العصير تبع الساحة</xar></h1>
+    <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Squeezed on the square since 1987. Fre…">Squeezed on the square since 1987. Fresh fruit in the window, ashta cocktails in the glass, and the blenders running from seven in the morning until half past two at night.</xen><xar data-edit="t7" data-edit-label="Text (AR): معصور عالساحة من سنة 1987. فواكه طازجة…">معصور عالساحة من سنة 1987. فواكه طازجة بالواجهة، كوكتيلات عالقشطة بالكاسة، والخلاطات شغّالة من 7 الصبح لـ 2:30 بالليل.</xar></p>
+    <div class="pips">
+      <span class="pip full"><xen data-edit="t8" data-edit-label="Text (EN): Since 1987">Since 1987</xen><xar data-edit="t9" data-edit-label="Text (AR): من سنة 1987">من سنة 1987</xar></span>
+      <span class="pip"><xen data-edit="t10" data-edit-label="Text (EN): Open 7 AM to 2:30 AM">Open 7 AM to 2:30 AM</xen><xar data-edit="t11" data-edit-label="Text (AR): فاتحين من 7 الصبح لـ 2:30 الليل">فاتحين من 7 الصبح لـ 2:30 الليل</xar></span>
+      <span class="pip"><xen data-edit="t12" data-edit-label="Text (EN): Three branches">Three branches</xen><xar data-edit="t13" data-edit-label="Text (AR): تلات فروع">تلات فروع</xar></span>
+    </div>
+    <p class="rate"><b class="num" data-edit="t14" data-edit-label="Text: 4.3">4.3</b> · <xen><span class="num" data-edit="t15" data-edit-label="Text: 180">180</span> Google reviews</xen><xar><span class="num" data-edit="t16" data-edit-label="Text: 180">180</span> تقييم على غوغل</xar></p>
+  </div>
+  <div class="hpane">
+    <img src="img/04.jpg" alt="A tall fruit cocktail stacked with coconut, grapes and watermelon at the counter">
+    <p class="cap"><xen data-edit="t17" data-edit-label="Text (EN): One of their towers, built to order.">One of their towers, built to order.</xen><xar data-edit="t18" data-edit-label="Text (AR): برج من أبراجهن، بينبنى عالطلب.">برج من أبراجهن، بينبنى عالطلب.</xar></p>
+  </div>
+</header>
+
+<section class="white-b">
+  <div class="wrap two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t19" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t20" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></p>
+      <h2><xen data-edit="t21" data-edit-label="Text (EN): Thirty-eight years on the same square">Thirty-eight years on the same square</xen><xar data-edit="t22" data-edit-label="Text (AR): تمانية وتلاتين سنة عنفس الساحة">تمانية وتلاتين سنة عنفس الساحة</xar></h2>
+      <p><xen data-edit="t23" data-edit-label="Text (EN): Ramadan Juice has been squeezing on Gh…">Ramadan Juice has been squeezing on Ghobeiry Square, on the airport road side of Beirut, since 1987. The formula has not moved: a wall of fruit, a row of blenders, and cocktails layered with ashta, cream and nuts.</xen><xar data-edit="t24" data-edit-label="Text (AR): عصير رمضان عم يعصر على ساحة الغبيري، م…">عصير رمضان عم يعصر على ساحة الغبيري، من جهة طريق المطار، من سنة 1987. المعادلة ما تغيّرت: حيط فواكه، صف خلاطات، وكوكتيلات مطبّقة قشطة وكريما ومكسرات.</xar></p>
+      <p><xen data-edit="t25" data-edit-label="Text (EN): It is the kind of counter that serves …">It is the kind of counter that serves schoolkids in the morning, taxi drivers at midnight, and whole families in the hours between. The day barely closes: seven in the morning to two thirty at night, every day of the week.</xen><xar data-edit="t26" data-edit-label="Text (AR): هيدا نوع الكاونتر يلّي بيخدم تلامذة ال…">هيدا نوع الكاونتر يلّي بيخدم تلامذة الصبح، وشوفيرية التاكسي عند نص الليل، والعيل الكاملة بالساعات يلّي بيناتهن. النهار بالكاد بيسكّر: من 7 الصبح لـ 2:30 بالليل، كل يوم.</xar></p>
+      <p><xen data-edit="t27" data-edit-label="Text (EN): Two more branches carry the name, in K…">Two more branches carry the name, in Khaldeh and in Hamra, but the square is where it started.</xen><xar data-edit="t28" data-edit-label="Text (AR): في فرعين كمان حاملين الاسم، بخلدة وبال…">في فرعين كمان حاملين الاسم، بخلدة وبالحمرا، بس الساحة هي البداية.</xar></p>
+    </div>
+    <div>
+      <div class="frame"><img src="img/01.jpg" loading="lazy" alt="The Ramadan Juice storefront on Ghobeiry Square with its pink signs">
+        <p class="cap"><xen data-edit="t29" data-edit-label="Text (EN): The shop on the square, signs in both …">The shop on the square, signs in both scripts.</xen><xar data-edit="t30" data-edit-label="Text (AR): المحل عالساحة، واللافتات بالحرفين.">المحل عالساحة، واللافتات بالحرفين.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="k"><xen data-edit="t31" data-edit-label="Text (EN): In the glass">In the glass</xen><xar data-edit="t32" data-edit-label="Text (AR): بالكاسة">بالكاسة</xar></p>
+    <h2 class="hh"><xen data-edit="t33" data-edit-label="Text (EN): What the blenders build">What the blenders build</xen><xar data-edit="t34" data-edit-label="Text (AR): شو بتعمّر الخلاطات">شو بتعمّر الخلاطات</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="A fruit cup with strawberries, pineapple and cream, up close">
+        <div class="t"><h3><xen data-edit="t35" data-edit-label="Text (EN): The fruit cup">The fruit cup</xen><xar data-edit="t36" data-edit-label="Text (AR): كاسة الفواكه">كاسة الفواكه</xar></h3>
+        <p><xen data-edit="t37" data-edit-label="Text (EN): Cut fruit stacked over cream, eaten wi…">Cut fruit stacked over cream, eaten with a spoon and no regrets.</xen><xar data-edit="t38" data-edit-label="Text (AR): فواكه مقطّعة فوق الكريما، بتنأكل بالمع…">فواكه مقطّعة فوق الكريما، بتنأكل بالمعلقة وبلا ندم.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/09.jpg" loading="lazy" alt="Two ashta cocktails topped with fruit on a table">
+        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): Ashta cocktails">Ashta cocktails</xen><xar data-edit="t40" data-edit-label="Text (AR): كوكتيل عالقشطة">كوكتيل عالقشطة</xar></h3>
+        <p><xen data-edit="t41" data-edit-label="Text (EN): The house move since 1987: layered jui…">The house move since 1987: layered juice, ashta, honeyed nuts on top.</xen><xar data-edit="t42" data-edit-label="Text (AR): حركة البيت من الـ 1987: عصير مطبّق، قش…">حركة البيت من الـ 1987: عصير مطبّق، قشطة، ومكسرات بالعسل من فوق.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="The fruit wall and fridge stocked with ready cups">
+        <div class="t"><h3><xen data-edit="t43" data-edit-label="Text (EN): The fruit wall">The fruit wall</xen><xar data-edit="t44" data-edit-label="Text (AR): حيط الفواكه">حيط الفواكه</xar></h3>
+        <p><xen data-edit="t45" data-edit-label="Text (EN): Pineapples, mangoes and citrus stacked…">Pineapples, mangoes and citrus stacked in the window, the day's stock in plain sight.</xen><xar data-edit="t46" data-edit-label="Text (AR): أناناس ومانغا وحمضيات مرصوصة بالواجهة،…">أناناس ومانغا وحمضيات مرصوصة بالواجهة، مونة النهار قدام عيونك.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="white-b">
+  <div class="wrap menu">
+    <div class="rev">
+      <p class="k"><xen data-edit="t47" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t48" data-edit-label="Text (AR): اللوحة">اللوحة</xar></p>
+      <h2 class="hh"><xen data-edit="t49" data-edit-label="Text (EN): Off their own printed menu">Off their own printed menu</xen><xar data-edit="t50" data-edit-label="Text (AR): من منيوهن المطبوع نفسه">من منيوهن المطبوع نفسه</xar></h2>
+      <ul class="flav">
+        <li><xen class="c" data-edit="t51" data-edit-label="Text (EN): Cocktail juice">Cocktail juice</xen><xar class="c" data-edit="t52" data-edit-label="Text (AR): عصير كوكتيل">عصير كوكتيل</xar></li>
+        <li><xen class="c" data-edit="t53" data-edit-label="Text (EN): Banana and milk">Banana and milk</xen><xar class="c" data-edit="t54" data-edit-label="Text (AR): موز عالحليب">موز عالحليب</xar></li>
+        <li><xen class="c" data-edit="t55" data-edit-label="Text (EN): Fresh mango">Fresh mango</xen><xar class="c" data-edit="t56" data-edit-label="Text (AR): مانغا فريش">مانغا فريش</xar></li>
+        <li><xen class="c" data-edit="t57" data-edit-label="Text (EN): Strawberry">Strawberry</xen><xar class="c" data-edit="t58" data-edit-label="Text (AR): فريز">فريز</xar></li>
+        <li><xen class="c" data-edit="t59" data-edit-label="Text (EN): Guava">Guava</xen><xar class="c" data-edit="t60" data-edit-label="Text (AR): جوافة">جوافة</xar></li>
+        <li><xen class="c" data-edit="t61" data-edit-label="Text (EN): Orange">Orange</xen><xar class="c" data-edit="t62" data-edit-label="Text (AR): برتقال">برتقال</xar></li>
+        <li><xen class="c" data-edit="t63" data-edit-label="Text (EN): Carrot">Carrot</xen><xar class="c" data-edit="t64" data-edit-label="Text (AR): جزر">جزر</xar></li>
+        <li><xen class="c" data-edit="t65" data-edit-label="Text (EN): Apple">Apple</xen><xar class="c" data-edit="t66" data-edit-label="Text (AR): تفاح">تفاح</xar></li>
+        <li><xen class="c" data-edit="t67" data-edit-label="Text (EN): Grapefruit">Grapefruit</xen><xar class="c" data-edit="t68" data-edit-label="Text (AR): غريفون">غريفون</xar></li>
+        <li><xen class="c" data-edit="t69" data-edit-label="Text (EN): Lemonade">Lemonade</xen><xar class="c" data-edit="t70" data-edit-label="Text (AR): ليموناضة">ليموناضة</xar></li>
+        <li><xen class="c" data-edit="t71" data-edit-label="Text (EN): Jallab">Jallab</xen><xar class="c" data-edit="t72" data-edit-label="Text (AR): جلاب">جلاب</xar></li>
+      </ul>
+      <p class="note"><xen data-edit="t73" data-edit-label="Text (EN): The names are copied from the menu pho…">The names are copied from the menu photographed here. Prices move with the fruit season, so ask at the counter or send a WhatsApp message.</xen><xar data-edit="t74" data-edit-label="Text (AR): الأسامي منقولة عن المنيو المصوّر هون. …">الأسامي منقولة عن المنيو المصوّر هون. الأسعار بتتحرك مع موسم الفواكه، فاسأل عالكاونتر أو ابعت رسالة واتساب.</xar></p>
+    </div>
+    <div>
+      <div class="mframe rev"><img src="img/02.jpg" loading="lazy" alt="The printed juice menu page from the shop">
+        <p class="cap" style="padding:6px 6px 2px"><xen data-edit="t75" data-edit-label="Text (EN): Their menu page, photographed in the s…">Their menu page, photographed in the shop.</xen><xar data-edit="t76" data-edit-label="Text (AR): صفحة المنيو تبعهن، مصوّرة بالمحل.">صفحة المنيو تبعهن، مصوّرة بالمحل.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep-b">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t77" data-edit-label="Text (EN): Since 1987">Since 1987</xen><xar data-edit="t78" data-edit-label="Text (AR): من سنة 1987">من سنة 1987</xar></p>
+    <h2 class="hh" style="color:#FBEBD8"><xen data-edit="t79" data-edit-label="Text (EN): Three counters, one name">Three counters, one name</xen><xar data-edit="t80" data-edit-label="Text (AR): تلات كاونترات، اسم واحد">تلات كاونترات، اسم واحد</xar></h2>
+    <div class="since">
+      <div class="brc rev"><h3><xen data-edit="t81" data-edit-label="Text (EN): Ghobeiry Square">Ghobeiry Square</xen><xar data-edit="t82" data-edit-label="Text (AR): ساحة الغبيري">ساحة الغبيري</xar></h3><p><xen data-edit="t83" data-edit-label="Text (EN): This shop, on Tarik el Matar. The orig…">This shop, on Tarik el Matar. The original.</xen><xar data-edit="t84" data-edit-label="Text (AR): هالمحل، عطريق المطار. الأصلي.">هالمحل، عطريق المطار. الأصلي.</xar></p></div>
+      <div class="brc rev"><h3><xen data-edit="t85" data-edit-label="Text (EN): Khaldeh">Khaldeh</xen><xar data-edit="t86" data-edit-label="Text (AR): خلدة">خلدة</xar></h3><p><xen data-edit="t87" data-edit-label="Text (EN): South along the coast.">South along the coast.</xen><xar data-edit="t88" data-edit-label="Text (AR): عالجنوب مع الساحل.">عالجنوب مع الساحل.</xar><br><span class="num" data-edit="t89" data-edit-label="Text: 71 916 695">71 916 695</span></p></div>
+      <div class="brc rev"><h3><xen data-edit="t90" data-edit-label="Text (EN): Hamra, Spears">Hamra, Spears</xen><xar data-edit="t91" data-edit-label="Text (AR): الحمرا، سبيرز">الحمرا، سبيرز</xar></h3><p><xen data-edit="t92" data-edit-label="Text (EN): The west-Beirut counter.">The west-Beirut counter.</xen><xar data-edit="t93" data-edit-label="Text (AR): كاونتر بيروت الغربية.">كاونتر بيروت الغربية.</xar><br><span class="num" data-edit="t94" data-edit-label="Text: 01 358 079">01 358 079</span></p></div>
+    </div>
+    <div class="dayrail">
+      <div class="dr rev"><b class="num" data-edit="t95" data-edit-label="Text: 7 AM">7 AM</b><span><xen data-edit="t96" data-edit-label="Text (EN): Oranges split and pressed for the firs…">Oranges split and pressed for the first commuters.</xen><xar data-edit="t97" data-edit-label="Text (AR): البرتقال بينشق وبينعصر لأول الرايحين ع…">البرتقال بينشق وبينعصر لأول الرايحين عالشغل.</xar></span></div>
+      <div class="dr rev"><b><xen class="c" data-edit="t98" data-edit-label="Text (EN): Evening">Evening</xen><xar class="c" data-edit="t99" data-edit-label="Text (AR): المسا">المسا</xar></b><span><xen data-edit="t100" data-edit-label="Text (EN): Families take the tables and the tower…">Families take the tables and the towers come out.</xen><xar data-edit="t101" data-edit-label="Text (AR): العيل بتقعد عالطاولات والأبراج بتطلع.">العيل بتقعد عالطاولات والأبراج بتطلع.</xar></span></div>
+      <div class="dr rev"><b class="num" data-edit="t102" data-edit-label="Text: 2:30 AM">2:30 AM</b><span><xen data-edit="t103" data-edit-label="Text (EN): The last blender stops long after the …">The last blender stops long after the square goes dark.</xen><xar data-edit="t104" data-edit-label="Text (AR): آخر خلاط بيوقف بعد ما تعتم الساحة بزما…">آخر خلاط بيوقف بعد ما تعتم الساحة بزمان.</xar></span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="k"><xen data-edit="t105" data-edit-label="Text (EN): From the square">From the square</xen><xar data-edit="t106" data-edit-label="Text (AR): من الساحة">من الساحة</xar></p>
+    <h2 class="hh"><xen data-edit="t107" data-edit-label="Text (EN): Photographs from the shop">Photographs from the shop</xen><xar data-edit="t108" data-edit-label="Text (AR): صور من المحل">صور من المحل</xar></h2>
+    <div class="gal">
+      <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="A layered fruit cocktail tower at night"></a>
+      <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The stocked fruit display and fridge"></a>
+      <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="Fruit cup with strawberry and pineapple"></a>
+      <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="Ashta cocktails ready on the table"></a>
+    </div>
+  </div>
+</section>
+
+<section class="white-b">
+  <div class="wrap visit">
+    <div>
+      <p class="k"><xen data-edit="t109" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t110" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="hh"><xen data-edit="t111" data-edit-label="Text (EN): Nineteen hours a day">Nineteen hours a day</xen><xar data-edit="t112" data-edit-label="Text (AR): تسعتعش ساعة بالنهار">تسعتعش ساعة بالنهار</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t113" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t114" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t115" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t117" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t118" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t119" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t120" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t121" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t122" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t123" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t124" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t125" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t126" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t127" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t128" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t129" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t130" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+        <tr><td><xen data-edit="t131" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t132" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t133" data-edit-label="Menu / table: 7 AM–2:30 AM">7 AM–2:30 AM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t134" data-edit-label="Text (EN): The same nineteen and a half hours, al…">The same nineteen and a half hours, all seven days.</xen><xar data-edit="t135" data-edit-label="Text (AR): نفس التسعتعش ساعة ونص، كل السبع تيام.">نفس التسعتعش ساعة ونص، كل السبع تيام.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t136" data-edit-label="Text (EN): Find the shop">Find the shop</xen><xar data-edit="t137" data-edit-label="Text (AR): لاقي المحل">لاقي المحل</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t138" data-edit-label="Text (EN): On Ghobeiry Square">On Ghobeiry Square</xen><xar data-edit="t139" data-edit-label="Text (AR): على ساحة الغبيري">على ساحة الغبيري</xar></h3>
+      <p class="k"><xen data-edit="t140" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t141" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t142" data-edit-label="Text: ساحة الغبيري (Ghobeiry Square), Beirut…">ساحة الغبيري (Ghobeiry Square), Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t143" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t144" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t145" data-edit-label="Text: +961 70 550 355">+961 70 550 355</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96170550355?text=Hello%20Ramadan%20Juice%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t146" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t147" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=581593799645884549" target="_blank" rel="noopener"><xen data-edit="t148" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t149" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:14px">
+        <a class="btn o" href="https://www.instagram.com/ramadanjuice/" target="_blank" rel="noopener" data-edit="t150" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/RAMADAN.JUICE1987/" target="_blank" rel="noopener" data-edit="t151" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t152" data-edit-label="Text (EN): Ramadan Juice, Ghobeiry Square, Beirut…">Ramadan Juice, Ghobeiry Square, Beirut. Fresh juice and ashta cocktails since 1987.</xen><xar data-edit="t153" data-edit-label="Text (AR): عصير رمضان، ساحة الغبيري، بيروت. عصير …">عصير رمضان، ساحة الغبيري، بيروت. عصير طازج وكوكتيل عالقشطة من سنة 1987.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t154" data-edit-label="Text (EN): Khaldeh and Hamra carry the same name.">Khaldeh and Hamra carry the same name.</xen><xar data-edit="t155" data-edit-label="Text (AR): خلدة والحمرا حاملين نفس الاسم.">خلدة والحمرا حاملين نفس الاسم.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96170550355"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t156" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t157" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96170550355?text=Hello%20Ramadan%20Juice%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t158" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t159" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=581593799645884549" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t160" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t161" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/ramadanjuice/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t162" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="https://www.facebook.com/RAMADAN.JUICE1987/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t163" data-edit-label="Text: Facebook">Facebook</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="عصير رمضان · ساحة الغبيري، بيروت" data-edit="t164" data-edit-label="Button: عربي">عربي</button>
+</body></html>

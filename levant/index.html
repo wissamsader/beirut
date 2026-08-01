@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Levant · Gouraud Street, Gemmayze</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Aref Ruqaa';--arb:'Tajawal';
+  --paper:#F6EDDC;--paper2:#EFE3CC;--ink:#221A12;--ox:#C05A2E;--china:#A63A2E;--wood:#7A4B2A;
+  --line:rgba(34,26,18,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:400 17.5px/1.75 'Crimson Pro',Georgia,serif}
+.wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Abril Fatface',serif;font-weight:400;line-height:1.05;letter-spacing:.005em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:600 12px/1.5 'Crimson Pro',serif;letter-spacing:.3em;text-transform:uppercase;color:var(--ox)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:999px;cursor:pointer;
+  background:var(--china);color:#F9EFDB;border:1.5px solid #6E2620;-webkit-appearance:none;
+  box-shadow:0 4px 14px rgba(34,26,18,.3);min-width:58px;text-align:center}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: a full bentwood chair beside the round marble table, china-red room ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+  background:radial-gradient(70% 48% at 50% 16%,rgba(246,237,220,.16),transparent 70%),
+             linear-gradient(180deg,#B04234 0%,#9E372A 52%,#8A2C21 100%)}
+header::before{content:"";position:absolute;inset:14px;border:1.5px solid rgba(246,237,220,.5);pointer-events:none}
+header::after{content:"";position:absolute;inset:20px;border:1px solid rgba(246,237,220,.28);pointer-events:none}
+.cafe{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(18px,4.5vw,64px);
+  flex-wrap:wrap;padding-inline:5vw;margin-top:clamp(8px,1.6vh,22px)}
+.chairobj{width:min(460px,86vw);display:flex;flex-direction:column}
+.hoop{position:relative;width:100%;height:clamp(190px,28vh,250px)}
+.hoop .arc{position:absolute;inset:0;border:14px solid var(--wood);border-bottom:0;
+  border-radius:calc(min(460px,86vw)/2) calc(min(460px,86vw)/2) 0 0;
+  box-shadow:inset 0 3px 5px rgba(255,244,222,.35),0 8px 16px rgba(70,14,8,.4)}
+.hoop .arc.in{inset:28px 50px 0 50px;border-width:9px;
+  border-radius:calc(min(460px,86vw)/2) calc(min(460px,86vw)/2) 0 0}
+.hoop .cane{position:absolute;left:13%;right:13%;top:54%;bottom:6px;border-radius:10px;
+  background:radial-gradient(rgba(74,42,20,.20) 1.3px,transparent 1.4px) 0 0/9px 9px}
+.hoop .inner{position:absolute;inset:42px 11% 10px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center}
+.hoop h1{font-size:clamp(50px,9.6vw,84px);color:var(--paper);text-shadow:0 3px 10px rgba(70,14,8,.5)}
+.hoop h1 xar{font-weight:700}
+.hoop .tag{font:600 clamp(13px,1.8vw,16px)/1.4 'Crimson Pro',serif;color:#F3D9A0;letter-spacing:.14em;text-transform:uppercase}
+.seatbar{height:14px;background:linear-gradient(180deg,#8A5731,#6E4423);border-radius:7px;
+  box-shadow:inset 0 2px 4px rgba(255,244,222,.35),0 4px 8px rgba(70,14,8,.3)}
+.seat2{width:76%;height:20px;margin:4px auto 0;border-radius:50%;position:relative;
+  background:radial-gradient(rgba(74,42,20,.25) 1.2px,transparent 1.3px) 0 0/8px 8px,
+             linear-gradient(180deg,#96613A,#6E4423);
+  box-shadow:inset 0 2px 3px rgba(255,244,222,.35),0 5px 10px rgba(70,14,8,.35)}
+.legs{position:relative;width:72%;margin:0 auto;height:clamp(48px,7vh,66px)}
+.legs i{position:absolute;top:0;width:13px;height:100%;border-radius:7px;
+  background:linear-gradient(90deg,#5E381E,#8A5731 55%,#4A2A14);box-shadow:0 4px 8px rgba(70,14,8,.35)}
+.legs i.l1{left:2px;transform:rotate(9deg);transform-origin:top center}
+.legs i.l2{right:2px;transform:rotate(-9deg);transform-origin:top center}
+.legs .str{position:absolute;left:9%;right:9%;top:52%;height:8px;border-radius:5px;
+  background:linear-gradient(180deg,#8A5731,#5E381E)}
+.rosette{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:46px;height:46px;
+  animation:spinros 90s linear infinite}
+.rosette i{position:absolute;left:50%;top:50%;width:15px;height:15px;margin:-7.5px;border-radius:50% 0;
+  background:var(--paper);opacity:.92}
+.rosette i:nth-child(1){transform:rotate(0deg) translateY(-13px)}
+.rosette i:nth-child(2){transform:rotate(45deg) translateY(-13px)}
+.rosette i:nth-child(3){transform:rotate(90deg) translateY(-13px)}
+.rosette i:nth-child(4){transform:rotate(135deg) translateY(-13px)}
+.rosette i:nth-child(5){transform:rotate(180deg) translateY(-13px)}
+.rosette i:nth-child(6){transform:rotate(225deg) translateY(-13px)}
+.rosette i:nth-child(7){transform:rotate(270deg) translateY(-13px)}
+.rosette i:nth-child(8){transform:rotate(315deg) translateY(-13px)}
+.rosette b{position:absolute;inset:15px;border-radius:50%;background:#8A2C21;border:2px solid var(--paper)}
+@keyframes spinros{to{transform:translateX(-50%) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.rosette{animation:none}}
+.tabletop{position:relative;width:min(360px,66vw);aspect-ratio:1;flex:0 0 auto}
+.tabletop .rim{position:absolute;inset:0;border-radius:50%;background:var(--wood);
+  box-shadow:0 22px 46px rgba(70,14,8,.4),inset 0 3px 6px rgba(255,244,222,.35)}
+.tabletop .ph{position:absolute;inset:11px;border-radius:50%;overflow:hidden;border:2px solid #5E381E}
+.tabletop .ph img{width:100%;height:100%;object-fit:cover}
+.heroline{margin:clamp(16px,2.6vh,26px) 6vw 26px;text-align:center;position:relative;z-index:2}
+.heroline .sub{font-size:clamp(15px,2vw,18px);color:#F6E7D0;max-width:52ch}
+.heroline .plate{display:inline-flex;align-items:baseline;gap:7px;margin-top:10px;background:var(--ink);color:var(--paper);
+  padding:6px 13px;border-radius:999px;font:600 12.5px/1.4 'Crimson Pro',serif;box-shadow:0 8px 18px rgba(70,14,8,.4)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:var(--paper2)}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+h2.hd{font-size:clamp(28px,4.2vw,46px);margin:8px 0 18px}
+.two p{color:#4A3A26;margin-bottom:15px}
+.frame{border:1.5px solid var(--ink);padding:10px;background:#FBF4E4;box-shadow:6px 6px 0 rgba(192,90,46,.2)}
+.frame img{width:100%;height:clamp(240px,38vh,400px);object-fit:cover}
+.cap{font:italic 500 13.5px/1.6 'Crimson Pro',serif;color:#8A6E4C;margin-top:9px}
+.menucard{background:#FBF4E4;border:1.5px solid var(--ink);position:relative;padding:clamp(24px,4vw,48px)}
+.menucard::before{content:"";position:absolute;inset:8px;border:1px solid rgba(192,90,46,.5);pointer-events:none}
+.menucard h2{font-size:clamp(26px,3.8vw,42px);text-align:center;margin-bottom:6px}
+.menucard .k{display:block;text-align:center}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px);margin-top:26px}
+.mcol h3{font:600 13px/1.5 'Crimson Pro',serif;letter-spacing:.26em;text-transform:uppercase;color:var(--ink);
+  border-block:1.5px solid var(--ink);padding:7px 0;text-align:center;margin-bottom:12px;font-family:'Crimson Pro',serif}
+.mcol li{list-style:none;display:flex;align-items:baseline;gap:8px;padding:6.5px 0;font-size:15.5px}
+.mcol li .nm{color:#59452E}
+.mcol li .dots{flex:1;border-bottom:1.5px dotted rgba(34,26,18,.4);transform:translateY(-4px)}
+.mcol li .pr{color:var(--ox);font-weight:600;white-space:nowrap}
+.mnote{margin-top:22px;text-align:center;font-size:14.5px;color:#8A6E4C}
+.gloss{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.gcard{background:#FBF4E4;border:1.5px solid var(--ink);padding:20px 20px 18px;position:relative}
+.gcard::before{content:"";position:absolute;top:10px;right:10px;width:10px;height:10px;border-radius:50% 0;background:var(--china)}
+.gcard h3{font-size:23px;margin-bottom:6px}
+.gcard .arname{font:700 15px/1.4 var(--arb),sans-serif;color:var(--ox)}
+.gcard p{color:#59452E;font-size:14.5px;line-height:1.65;margin-top:7px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:#FBF4E4;border:1.5px solid var(--ink);overflow:hidden}
+.card img{width:100%;height:225px;object-fit:cover}
+.card .t{padding:15px 16px 19px;border-top:1.5px solid var(--ink)}
+.card h3{font-size:21px;margin-bottom:6px}
+.card p{color:#59452E;font-size:14.5px;line-height:1.65}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal a{display:block;border:1.5px solid var(--ink);background:#FBF4E4;padding:6px}
+.gal img{width:100%;height:200px;object-fit:cover}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.rev-c{background:#FBF4E4;border:1.5px solid var(--ink);padding:22px 20px 18px}
+.rev-c q{display:block;quotes:none;font:italic 500 16px/1.7 'Crimson Pro',serif;color:#3B2D1B}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:600 12.5px/1 'Crimson Pro',serif;color:var(--china);letter-spacing:.16em;text-transform:uppercase}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px dotted rgba(34,26,18,.35);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#59452E}
+.ad,.ph{font-size:16.5px;color:#3B2D1B}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--china);color:#F9EFDB;
+  padding:13px 21px;border-radius:999px;text-decoration:none;font:600 15px/1 'Crimson Pro',serif;
+  border:1.5px solid #6E2620;margin:6px 8px 0 0}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--ink)}
+footer{padding:36px 7vw 128px;color:#8A6E4C;font-size:14px;text-align:center;background:var(--paper2)}
+
+/* ---------- sticky bar: the bentwood rail, cane-seat buttons ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:9px;
+  background:var(--paper);border-top:3px double var(--wood);
+  padding:9px 10px calc(9px + env(safe-area-inset-bottom));
+  box-shadow:0 -10px 26px rgba(34,26,18,.22)}
+.bar::before{content:"";position:absolute;top:2.5px;left:0;right:0;height:1.5px;background:var(--wood);opacity:.55}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:9px 4px 10px;background:#FBF4E4;color:var(--ink);border:1.5px solid var(--wood);border-radius:999px;
+  text-decoration:none;font:600 12.5px/1.2 'Crimson Pro',serif;min-height:54px}
+.bar a:active{background:var(--paper2)}
+.bar svg{width:18px;height:18px;fill:currentColor}
+.bar a.w{background:var(--china);color:#F9EFDB;border-color:#6E2620}
+.bar a.sq{flex:0 0 58px}
+@media(max-width:880px){
+  .two,.visit{grid-template-columns:1fr}
+  .mgrid,.gloss,.grid3,.revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:82px}
+  .chairobj{width:min(380px,80vw)}
+  .hoop{height:clamp(160px,24vh,200px)}
+  .hoop h1{font-size:clamp(42px,12vw,56px)}
+  .legs{height:34px}
+  .tabletop{width:min(300px,58vw)}
+}
+@media(max-width:430px){
+  .bar{gap:6px}
+  .bar a{font-size:11px}
+}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="cafe">
+    <div class="chairobj">
+      <div class="hoop">
+        <span class="rosette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span>
+        <div class="arc" aria-hidden="true"></div>
+        <div class="arc in" aria-hidden="true"></div>
+        <div class="cane" aria-hidden="true"></div>
+        <div class="inner">
+          <h1><xen class="c" data-edit="t1" data-edit-label="Text (EN): Levant">Levant</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): ليڤانت">ليڤانت</xar></h1>
+          <p class="tag"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Sweet moments · Gouraud street">Sweet moments · Gouraud street</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): لحظات حلوة · شارع غورو">لحظات حلوة · شارع غورو</xar></p>
+        </div>
+      </div>
+      <div class="seatbar" aria-hidden="true"></div>
+      <div class="seat2" aria-hidden="true"></div>
+      <div class="legs" aria-hidden="true"><i class="l1"></i><i class="l2"></i><span class="str"></span></div>
+    </div>
+    <div class="tabletop">
+      <div class="rim" aria-hidden="true"></div>
+      <div class="ph"><img src="img/03.jpg" alt="Two lattes and slices of cake on patterned plates, on the marble table"></div>
+    </div>
+  </div>
+  <div class="heroline">
+    <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): An old Gemmayze house pouring Lebanese…">An old Gemmayze house pouring Lebanese coffee on patterned china, with sfouf and nammoura instead of muffins.</xen><xar data-edit="t6" data-edit-label="Text (AR): بيت جميزاوي عتيق بيسكب قهوة لبنانية عل…">بيت جميزاوي عتيق بيسكب قهوة لبنانية على صحون مزخرفة، مع صفوف ونمورة بدل المافِن.</xar></p>
+    <p class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 5.0">5.0</span> <span><xen>across <span class="num" data-edit="t8" data-edit-label="Text: 138">138</span> Google reviews</xen><xar>على <span class="num" data-edit="t9" data-edit-label="Text: 138">138</span> تقييم بغوغل</xar></span></p>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t10" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t11" data-edit-label="Text (AR): البيت">البيت</xar></p>
+      <h2 class="hd"><xen data-edit="t12" data-edit-label="Text (EN): An ahwe with its original bones">An ahwe with its original bones</xen><xar data-edit="t13" data-edit-label="Text (AR): قهوة محافظة على عضمها الأصلي">قهوة محافظة على عضمها الأصلي</xar></h2>
+      <p><xen data-edit="t14" data-edit-label="Text (EN): Levant, trading as Levant Sweet Moment…">Levant, trading as Levant Sweet Moments, sits on Gouraud street in Gemmayze behind a glass door: cement tiles, a red velvet sofa, a gallery wall of frames, and the old café chairs everyone's grandparents sat on.</xen><xar data-edit="t15" data-edit-label="Text (AR): ليڤانت، والاسم التجاري ليڤانت سويت موم…">ليڤانت، والاسم التجاري ليڤانت سويت مومنتس، قاعدة بشارع غورو بالجميزة ورا باب زجاج: بلاط مرسوم، كنباية قطيفة حمرا، حيط برواز فوق برواز، وكراسي القهوة العتيقة يلّي قعدوا عليها جدودنا كلنا.</xar></p>
+      <p><xen data-edit="t16" data-edit-label="Text (EN): The coffee is Lebanese at heart, rakwe…">The coffee is Lebanese at heart, rakwe and all, next to a proper espresso machine, and the sweets lean the same way: sfouf b debs, nammoura, meghli, and modern takes on the classics.</xen><xar data-edit="t17" data-edit-label="Text (AR): القهوة لبنانية القلب، بالركوة وكل شي، …">القهوة لبنانية القلب، بالركوة وكل شي، وحدّها مكنة إسبريسو مظبوطة، والحلو ماشي عنفس الخط: صفوف بدبس، نمورة، مغلي، ولمسات حديثة عالكلاسيكيات.</xar></p>
+      <p><xen data-edit="t18" data-edit-label="Text (EN): One hundred and thirty eight people ha…">One hundred and thirty eight people have reviewed it on Google. The average is a straight five.</xen><xar data-edit="t19" data-edit-label="Text (AR): مية وتمنية وتلاتين شخص قيّموها على غوغ…">مية وتمنية وتلاتين شخص قيّموها على غوغل. والمعدّل خمسة عالمسطرة.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The red velvet sofa under the gallery wall of frames">
+        <p class="cap"><xen data-edit="t20" data-edit-label="Text (EN): The red sofa under the picture wall.">The red sofa under the picture wall.</xen><xar data-edit="t21" data-edit-label="Text (AR): الكنباية الحمرا تحت حيط الصور.">الكنباية الحمرا تحت حيط الصور.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="menucard rev">
+      <p class="k"><xen data-edit="t22" data-edit-label="Text (EN): Transcribed from the printed card">Transcribed from the printed card</xen><xar data-edit="t23" data-edit-label="Text (AR): منقولة عن الكرت المطبوع">منقولة عن الكرت المطبوع</xar></p>
+      <h2><xen data-edit="t24" data-edit-label="Text (EN): The card, as it hangs">The card, as it hangs</xen><xar data-edit="t25" data-edit-label="Text (AR): الكرت، متل ما هو معلّق">الكرت، متل ما هو معلّق</xar></h2>
+      <div class="mgrid">
+        <div class="mcol">
+          <h3><xen class="c" data-edit="t26" data-edit-label="Text (EN): Coffee">Coffee</xen><xar class="c" data-edit="t27" data-edit-label="Text (AR): قهوة">قهوة</xar></h3>
+          <ul>
+            <li><span class="nm" data-edit="t28" data-edit-label="Text: Espresso">Espresso</span><span class="dots"></span><span class="pr num" data-edit="t29" data-edit-label="Text: $2.50 / 3.00">$2.50 / 3.00</span></li>
+            <li><span class="nm" data-edit="t30" data-edit-label="Text: Americano">Americano</span><span class="dots"></span><span class="pr num" data-edit="t31" data-edit-label="Text: $3.50">$3.50</span></li>
+            <li><span class="nm" data-edit="t32" data-edit-label="Text: Cappuccino · Latte">Cappuccino · Latte</span><span class="dots"></span><span class="pr num" data-edit="t33" data-edit-label="Text: $4.00">$4.00</span></li>
+            <li><span class="nm" data-edit="t34" data-edit-label="Text: Cortado">Cortado</span><span class="dots"></span><span class="pr num" data-edit="t35" data-edit-label="Text: $3.75">$3.75</span></li>
+            <li><span class="nm" data-edit="t36" data-edit-label="Text: Rakwe S / M / L">Rakwe S / M / L</span><span class="dots"></span><span class="pr num" data-edit="t37" data-edit-label="Text: $2.50 / 4 / 5.50">$2.50 / 4 / 5.50</span></li>
+            <li><span class="nm" data-edit="t38" data-edit-label="Text: Pour over · French press">Pour over · French press</span><span class="dots"></span><span class="pr num" data-edit="t39" data-edit-label="Text: $4.00 to 6.00">$4.00 to 6.00</span></li>
+          </ul>
+        </div>
+        <div class="mcol">
+          <h3><xen class="c" data-edit="t40" data-edit-label="Text (EN): Hot cups">Hot cups</xen><xar class="c" data-edit="t41" data-edit-label="Text (AR): مشروبات سخنة">مشروبات سخنة</xar></h3>
+          <ul>
+            <li><span class="nm" data-edit="t42" data-edit-label="Text: Matcha latte">Matcha latte</span><span class="dots"></span><span class="pr num" data-edit="t43" data-edit-label="Text: $4.50">$4.50</span></li>
+            <li><span class="nm" data-edit="t44" data-edit-label="Text: Hot chocolate">Hot chocolate</span><span class="dots"></span><span class="pr num" data-edit="t45" data-edit-label="Text: $4.50">$4.50</span></li>
+            <li><span class="nm" data-edit="t46" data-edit-label="Text: Tea">Tea</span><span class="dots"></span><span class="pr num" data-edit="t47" data-edit-label="Text: $3.50">$3.50</span></li>
+            <li><span class="nm" data-edit="t48" data-edit-label="Text: Mate">Mate</span><span class="dots"></span><span class="pr num" data-edit="t49" data-edit-label="Text: $3.00">$3.00</span></li>
+            <li><span class="nm" data-edit="t50" data-edit-label="Text: Zhourat · Yansoun · Erfe">Zhourat · Yansoun · Erfe</span><span class="dots"></span><span class="pr num" data-edit="t51" data-edit-label="Text: $3.00">$3.00</span></li>
+            <li><span class="nm" data-edit="t52" data-edit-label="Text: White coffee">White coffee</span><span class="dots"></span><span class="pr num" data-edit="t53" data-edit-label="Text: $3.00">$3.00</span></li>
+          </ul>
+        </div>
+        <div class="mcol">
+          <h3><xen class="c" data-edit="t54" data-edit-label="Text (EN): Cold, and extras">Cold, and extras</xen><xar class="c" data-edit="t55" data-edit-label="Text (AR): بارد، وإضافات">بارد، وإضافات</xar></h3>
+          <ul>
+            <li><span class="nm" data-edit="t56" data-edit-label="Text: Lemonade · Wared · Toot">Lemonade · Wared · Toot</span><span class="dots"></span><span class="pr num" data-edit="t57" data-edit-label="Text: $3.50">$3.50</span></li>
+            <li><span class="nm" data-edit="t58" data-edit-label="Text: Rose lemonade">Rose lemonade</span><span class="dots"></span><span class="pr num" data-edit="t59" data-edit-label="Text: $4.00">$4.00</span></li>
+            <li><span class="nm" data-edit="t60" data-edit-label="Text: Water, still / sparkling">Water, still / sparkling</span><span class="dots"></span><span class="pr num" data-edit="t61" data-edit-label="Text: $1.50 / 2.00">$1.50 / 2.00</span></li>
+            <li><span class="nm" data-edit="t62" data-edit-label="Text: Iced, any cup">Iced, any cup</span><span class="dots"></span><span class="pr num" data-edit="t63" data-edit-label="Text: +$0.50">+$0.50</span></li>
+            <li><span class="nm" data-edit="t64" data-edit-label="Text: Almond or coconut milk">Almond or coconut milk</span><span class="dots"></span><span class="pr num" data-edit="t65" data-edit-label="Text: +$1.50">+$1.50</span></li>
+            <li><span class="nm" data-edit="t66" data-edit-label="Text: Rose · vanilla · caramel · honey">Rose · vanilla · caramel · honey</span><span class="dots"></span><span class="pr num" data-edit="t67" data-edit-label="Text: +$0.50">+$0.50</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mnote"><xen data-edit="t68" data-edit-label="Text (EN): Copied line by line from the card they…">Copied line by line from the card they print, cakes and the day's sweets are on the counter. If a price moves, the counter wins.</xen><xar data-edit="t69" data-edit-label="Text (AR): منقولة سطر سطر عن الكرت يلّي بيطبعوه، …">منقولة سطر سطر عن الكرت يلّي بيطبعوه، والقوالب وحلويات اليوم عالكاونتر. وإذا تحرّك سعر، الكلمة للكاونتر.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t70" data-edit-label="Text (EN): For the newcomers">For the newcomers</xen><xar data-edit="t71" data-edit-label="Text (AR): لليلّي جايين أول مرة">لليلّي جايين أول مرة</xar></p>
+  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t72" data-edit-label="Text (EN): A small glossary of the cups">A small glossary of the cups</xen><xar data-edit="t73" data-edit-label="Text (AR): قاموس صغير للفناجين">قاموس صغير للفناجين</xar></h2>
+  <div class="gloss">
+    <div class="gcard rev"><h3 data-edit="t74" data-edit-label="Heading: Rakwe">Rakwe</h3><p class="arname" data-edit="t75" data-edit-label="Text: ركوة">ركوة</p>
+      <p><xen data-edit="t76" data-edit-label="Text (EN): The long-handled pot Lebanese coffee i…">The long-handled pot Lebanese coffee is brewed in, carried to the table and poured cup by cup. Order it small, medium or large.</xen><xar data-edit="t77" data-edit-label="Text (AR): الإبريق أبو إيد طويلة يلّي بتنطبخ فيه …">الإبريق أبو إيد طويلة يلّي بتنطبخ فيه القهوة اللبنانية، بينحمل عالطاولة وبينسكب فنجان فنجان. بتطلبها صغيرة، وسط أو كبيرة.</xar></p></div>
+    <div class="gcard rev"><h3 data-edit="t78" data-edit-label="Heading: White coffee">White coffee</h3><p class="arname" data-edit="t79" data-edit-label="Text: قهوة بيضا">قهوة بيضا</p>
+      <p><xen data-edit="t80" data-edit-label="Text (EN): No coffee in it at all: orange-blossom…">No coffee in it at all: orange-blossom water and hot water, the cup Beirut ends its evenings on.</xen><xar data-edit="t81" data-edit-label="Text (AR): ما فيها قهوة أساسًا: ماء زهر ومي سخنة،…">ما فيها قهوة أساسًا: ماء زهر ومي سخنة، الفنجان يلّي بيروت بتسكّر فيه سهراتها.</xar></p></div>
+    <div class="gcard rev"><h3 data-edit="t82" data-edit-label="Heading: Zhourat · Yansoun · Erfe">Zhourat · Yansoun · Erfe</h3><p class="arname" data-edit="t83" data-edit-label="Text: زهورات · يانسون · قرفة">زهورات · يانسون · قرفة</p>
+      <p><xen data-edit="t84" data-edit-label="Text (EN): The herbal side of the card: dried-flo…">The herbal side of the card: dried-flower infusion, anise, and the cinnamon cup made for cold Gemmayze nights.</xen><xar data-edit="t85" data-edit-label="Text (AR): الجهة العشبية من الكرت: منقوع زهورات م…">الجهة العشبية من الكرت: منقوع زهورات مجفّفة، يانسون، وفنجان القرفة المعمول لليالي الجميزة الباردة.</xar></p></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t86" data-edit-label="Text (EN): On the marble">On the marble</xen><xar data-edit="t87" data-edit-label="Text (AR): عالرخام">عالرخام</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t88" data-edit-label="Text (EN): Three things they do slowly">Three things they do slowly</xen><xar data-edit="t89" data-edit-label="Text (AR): تلات أشيا بيعملوها عالمهل">تلات أشيا بيعملوها عالمهل</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="Rakwe poured beside a slice of cake on a patterned plate">
+        <div class="t"><h3><xen data-edit="t90" data-edit-label="Text (EN): The rakwe ritual">The rakwe ritual</xen><xar data-edit="t91" data-edit-label="Text (AR): طقس الركوة">طقس الركوة</xar></h3>
+        <p><xen data-edit="t92" data-edit-label="Text (EN): Copper pot, patterned saucer, a square…">Copper pot, patterned saucer, a square of something sweet on the side.</xen><xar data-edit="t93" data-edit-label="Text (AR): ركوة نحاس، صحن مزخرف، وقطعة حلو صغيرة …">ركوة نحاس، صحن مزخرف، وقطعة حلو صغيرة عالجنب.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="A pour over server and a red patterned cup of filter coffee">
+        <div class="t"><h3><xen data-edit="t94" data-edit-label="Text (EN): The slow filter">The slow filter</xen><xar data-edit="t95" data-edit-label="Text (AR): الفلتر عالمهل">الفلتر عالمهل</xar></h3>
+        <p><xen data-edit="t96" data-edit-label="Text (EN): Pour over and French press for the one…">Pour over and French press for the ones who want the long answer.</xen><xar data-edit="t97" data-edit-label="Text (AR): پور أوڤر وفرنش برس لِيلّي بدّن الجواب …">پور أوڤر وفرنش برس لِيلّي بدّن الجواب الطويل.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/09.jpg" loading="lazy" alt="Milk being poured into a patterned cup of coffee">
+        <div class="t"><h3><xen data-edit="t98" data-edit-label="Text (EN): The milk work">The milk work</xen><xar data-edit="t99" data-edit-label="Text (AR): شغل الحليب">شغل الحليب</xar></h3>
+        <p><xen data-edit="t100" data-edit-label="Text (EN): Flat whites and lattes on china that h…">Flat whites and lattes on china that has never seen a paper cup.</xen><xar data-edit="t101" data-edit-label="Text (AR): فلات وايت ولاتيه على صحون عمرها ما شاف…">فلات وايت ولاتيه على صحون عمرها ما شافت كباية كرتون.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t102" data-edit-label="Text (EN): Through the glass door">Through the glass door</xen><xar data-edit="t103" data-edit-label="Text (AR): من ورا باب الزجاج">من ورا باب الزجاج</xar></p>
+  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t104" data-edit-label="Text (EN): Photographs from Levant">Photographs from Levant</xen><xar data-edit="t105" data-edit-label="Text (AR): صور من ليڤانت">صور من ليڤانت</xar></h2>
+  <div class="gal">
+    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The green counter and tiled floor of the cafe"></a>
+    <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="Espresso pouring into a patterned cup"></a>
+    <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="A latte held in front of the pastry counter"></a>
+    <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="Rakwe coffee poured at the table"></a>
+    <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="Filter coffee served on patterned china"></a>
+    <a href="img/09.jpg" target="_blank" rel="noopener" class="g"><img src="img/09.jpg" loading="lazy" alt="Milk poured into a coffee cup"></a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t106" data-edit-label="Text (EN): Guest book">Guest book</xen><xar data-edit="t107" data-edit-label="Text (AR): دفتر الزوار">دفتر الزوار</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t108" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t109" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <div class="revs">
+      <div class="rev-c rev"><q dir="ltr" data-edit="t110" data-edit-label="Quote: Levant is a lovely coffee shop in the …">Levant is a lovely coffee shop in the heart of Gouraud Street. The place is charming and beautifully designed.</q><cite data-edit="t111" data-edit-label="Credit: Leila Joheir">Leila Joheir</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t112" data-edit-label="Quote: i love their iced coffee. wouldnt get …">i love their iced coffee. wouldnt get the hot latte again it's quite strong for my liking but still, well done.</q><cite data-edit="t113" data-edit-label="Credit: k">k</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t114" data-edit-label="Quote: Super friendly staff. Love the ambianc…">Super friendly staff. Love the ambiance. Coffee and food are 10/10. Levant is now my go-to coffee place. I think it's a must-try for tourists.</q><cite data-edit="t115" data-edit-label="Credit: Nancy Miski">Nancy Miski</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="visit">
+    <div>
+      <p class="k"><xen data-edit="t116" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t117" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></p>
+      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t118" data-edit-label="Text (EN): Morning coffee to evening erfe">Morning coffee to evening erfe</xen><xar data-edit="t119" data-edit-label="Text (AR): من قهوة الصبح لقرفة المسا">من قهوة الصبح لقرفة المسا</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t120" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t121" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t122" data-edit-label="Text: 8 AM–10 PM">8 AM–10 PM</span></xen><xar class="c" data-edit="t123" data-edit-label="Text (AR): 8 ص إلى 10 م">8 ص إلى 10 م</xar></td></tr>
+        <tr><td><xen data-edit="t124" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t125" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t126" data-edit-label="Text: 8 AM–10 PM">8 AM–10 PM</span></xen><xar class="c" data-edit="t127" data-edit-label="Text (AR): 8 ص إلى 10 م">8 ص إلى 10 م</xar></td></tr>
+        <tr><td><xen data-edit="t128" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t129" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t130" data-edit-label="Text: 8 AM–10 PM">8 AM–10 PM</span></xen><xar class="c" data-edit="t131" data-edit-label="Text (AR): 8 ص إلى 10 م">8 ص إلى 10 م</xar></td></tr>
+        <tr><td><xen data-edit="t132" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t133" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t134" data-edit-label="Text: 8 AM–10 PM">8 AM–10 PM</span></xen><xar class="c" data-edit="t135" data-edit-label="Text (AR): 8 ص إلى 10 م">8 ص إلى 10 م</xar></td></tr>
+        <tr><td><xen data-edit="t136" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t137" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t138" data-edit-label="Text: 8:30 AM–10:30 PM">8:30 AM–10:30 PM</span></xen><xar class="c" data-edit="t139" data-edit-label="Text (AR): 8:30 ص إلى 10:30 م">8:30 ص إلى 10:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t140" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t141" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t142" data-edit-label="Text: 8:30 AM–10:30 PM">8:30 AM–10:30 PM</span></xen><xar class="c" data-edit="t143" data-edit-label="Text (AR): 8:30 ص إلى 10:30 م">8:30 ص إلى 10:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t144" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t145" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t146" data-edit-label="Text: 8:30 AM–10:30 PM">8:30 AM–10:30 PM</span></xen><xar class="c" data-edit="t147" data-edit-label="Text (AR): 8:30 ص إلى 10:30 م">8:30 ص إلى 10:30 م</xar></td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t148" data-edit-label="Text (EN): Weekdays open half an hour earlier tha…">Weekdays open half an hour earlier than the weekend.</xen><xar data-edit="t149" data-edit-label="Text (AR): أيام الأسبوع بيفتحوا نص ساعة قبل الويك…">أيام الأسبوع بيفتحوا نص ساعة قبل الويكند.</xar></p>
+      <p class="cap"><xen data-edit="t150" data-edit-label="Text (EN): A second Levant counter runs inside Br…">A second Levant counter runs inside Brazzaville, weekdays ten to six.</xen><xar data-edit="t151" data-edit-label="Text (AR): في كاونتر تاني لليڤانت جوّا برازاڤيل، …">في كاونتر تاني لليڤانت جوّا برازاڤيل، أيام الأسبوع من عشرة لستة.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t152" data-edit-label="Text (EN): Find the glass door">Find the glass door</xen><xar data-edit="t153" data-edit-label="Text (AR): لاقي باب الزجاج">لاقي باب الزجاج</xar></p>
+      <h3 style="font-size:24px;margin:6px 0 14px"><xen data-edit="t154" data-edit-label="Text (EN): Gouraud street, Gemmayze">Gouraud street, Gemmayze</xen><xar data-edit="t155" data-edit-label="Text (AR): شارع غورو، الجميزة">شارع غورو، الجميزة</xar></h3>
+      <p class="k" style="margin-top:16px"><xen data-edit="t156" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t157" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t158" data-edit-label="Text: Gemmayze, Gouraud, Beirut, Lebanon">Gemmayze, Gouraud, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t159" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t160" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t161" data-edit-label="Text: +961 81 850 281">+961 81 850 281</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96181850281?text=Hello%20Levant%2C%20is%20there%20a%20table%20free%20right%20now%3F" target="_blank" rel="noopener"><xen data-edit="t162" data-edit-label="Text (EN): Message on WhatsApp">Message on WhatsApp</xen><xar data-edit="t163" data-edit-label="Text (AR): راسلنا عالواتساب">راسلنا عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=941944857780831062" target="_blank" rel="noopener"><xen data-edit="t164" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t165" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn o" href="https://www.instagram.com/levant.beirut/" target="_blank" rel="noopener" data-edit="t166" data-edit-label="Button / link: Instagram">Instagram</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t167" data-edit-label="Text (EN): Levant, Sweet Moments, Gouraud street,…">Levant, Sweet Moments, Gouraud street, Gemmayze, Beirut.</xen><xar data-edit="t168" data-edit-label="Text (AR): ليڤانت، سويت مومنتس، شارع غورو، الجميز…">ليڤانت، سويت مومنتس، شارع غورو، الجميزة، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t169" data-edit-label="Text (EN): Sit where the chairs have already hear…">Sit where the chairs have already heard everything.</xen><xar data-edit="t170" data-edit-label="Text (AR): قعود مطرح ما الكراسي سمعت كل شي من زما…">قعود مطرح ما الكراسي سمعت كل شي من زمان.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96181850281"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t171" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t172" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96181850281?text=Hello%20Levant%2C%20is%20there%20a%20table%20free%20right%20now%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t173" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t174" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=941944857780831062" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t175" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t176" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/levant.beirut/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t177" data-edit-label="Text: IG">IG</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ليڤانت · شارع غورو، الجميزة" data-edit="t178" data-edit-label="Button: عربي">عربي</button>
+</body></html>

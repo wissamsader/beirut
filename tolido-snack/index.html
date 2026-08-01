@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tolido Snack · Afif El Taybi, Beirut</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Squada+One&family=Asap:wght@400;500;700&family=Changa:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Changa';--arb:'Tajawal';
+  --felt:#17150F;--felt2:#201D15;--ridge:rgba(255,255,255,.05);
+  --plastic:#F5F1E4;--red:#C4342B;--red-d:#93251E;--gold:#C9A254;--cream:#F3EDDD;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:#26221A;font:400 17px/1.75 'Asap',system-ui,sans-serif}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Squada One',system-ui,sans-serif;font-weight:400;line-height:1.05;letter-spacing:.02em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 11.5px/1.5 'Asap',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--red)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
+  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
+  background:var(--red);color:#FFF6EC;border:1.5px solid var(--red-d);border-radius:2px;
+  box-shadow:0 4px 14px rgba(147,37,30,.35);-webkit-appearance:none}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: the changeable-letter menu board, ridges and slide-in letters ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:
+   radial-gradient(70% 50% at 50% 0%,rgba(201,162,84,.14),transparent 70%),
+   linear-gradient(180deg,#EDE5D0,var(--cream) 48%,#EAE2CC)}
+.lboard{position:relative;z-index:2;width:min(680px,92vw);margin-block:clamp(18px,3.4vh,36px)}
+.lb-frame{border:6px solid #B9933F;border-radius:6px;background:linear-gradient(180deg,#D8B565,#A8842F);
+  padding:6px;box-shadow:0 26px 56px rgba(38,34,26,.35)}
+.lb-face{position:relative;background:
+   repeating-linear-gradient(180deg,var(--felt) 0 12px,var(--felt2) 12px 13px);
+  border:2px solid #0C0B08;border-radius:3px;padding:clamp(18px,3.4vw,32px) clamp(14px,3vw,30px);
+  text-align:center;overflow:hidden}
+.lb-face::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.05) 47%,transparent 54%)}
+.row{margin:7px auto;display:block}
+.row .in{display:inline-block;padding:3px 12px;background:rgba(0,0,0,.32);border-radius:2px;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.7),inset 0 -1px 0 var(--ridge)}
+.row.small .in{font:700 clamp(11px,1.8vw,13.5px)/1.7 'Asap',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.row.name .in{font-family:'Squada One',sans-serif;font-size:clamp(56px,12vw,110px);line-height:1;color:var(--plastic);
+  letter-spacing:.06em;text-shadow:0 2px 0 rgba(0,0,0,.65),0 -1px 0 rgba(255,255,255,.12)}
+.row.red .in{font:700 clamp(13px,2.2vw,17px)/1.7 'Asap',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#FF7A6E}
+.row.white .in{font:700 clamp(12px,2vw,15px)/1.7 'Asap',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--plastic)}
+.row.arline .in{font-family:var(--arh),sans-serif;font-weight:700;font-size:clamp(22px,4vw,34px);line-height:1.5;color:var(--gold)}
+.lb-ledge{width:calc(100% - 40px);margin:0 auto;height:14px;border-radius:0 0 8px 8px;
+  background:linear-gradient(180deg,#A8842F,#7C5F1D);box-shadow:0 10px 22px rgba(38,34,26,.3)}
+.heropane{margin:clamp(16px,2.8vh,26px) auto 0;width:min(430px,80vw)}
+.heropane .fr{border:3px solid #B9933F;background:#FFFDF6;padding:7px;border-radius:4px;
+  box-shadow:0 16px 36px rgba(38,34,26,.22)}
+.heropane img{width:100%;height:clamp(150px,21vh,205px);object-fit:cover;border-radius:2px}
+.heropane .cap{text-align:center}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.band{background:#EAE2CC}
+.bandk{background:var(--felt);color:var(--cream)}
+.bandk .k{color:var(--gold)}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hd{font-size:clamp(30px,4.4vw,50px);margin:8px 0 18px}
+.two p{color:#4A4433;margin-bottom:15px}
+.frame{border:3px solid #B9933F;padding:9px;background:#FFFDF6;border-radius:4px}
+.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
+.cap{font:500 12.5px/1.55 'Asap',sans-serif;color:#847A5E;margin-top:9px;letter-spacing:.02em}
+.years{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,22px)}
+.yr{background:repeating-linear-gradient(180deg,var(--felt) 0 11px,var(--felt2) 11px 12px);
+  border:2px solid #0C0B08;border-radius:4px;padding:20px 16px 18px;text-align:center;color:var(--cream);
+  box-shadow:0 3px 0 #0C0B08}
+.yr b{display:block;font-family:'Squada One',sans-serif;font-size:clamp(34px,4.6vw,52px);line-height:1;color:var(--gold)}
+.yr span{display:block;margin-top:8px;font:700 12px/1.6 'Asap',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#D8CFB4}
+.yr small{display:block;margin-top:6px;font:500 13px/1.6 'Asap',sans-serif;color:#9C937A;text-transform:none;letter-spacing:0}
+.menupanel{background:repeating-linear-gradient(180deg,var(--felt) 0 12px,var(--felt2) 12px 13px);
+  border:4px solid #B9933F;border-radius:6px;color:var(--cream);
+  padding:clamp(24px,3.8vw,44px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,300px);
+  gap:clamp(20px,3.2vw,42px);align-items:start;box-shadow:0 22px 48px rgba(38,34,26,.3)}
+.menupanel h2{font-size:clamp(28px,4vw,46px);color:var(--plastic);margin:6px 0 14px}
+.menupanel ul li{list-style:none;display:flex;align-items:baseline;gap:10px;padding:9px 2px;
+  border-bottom:1px dashed rgba(245,241,228,.2);font:700 15.5px/1.5 'Asap',sans-serif;color:var(--plastic)}
+.menupanel ul li .dots{flex:1;border-bottom:1px dotted rgba(245,241,228,.3);transform:translateY(-4px)}
+.menupanel ul li .pr{color:var(--gold)}
+.boost{margin-top:18px;border:2px dashed var(--gold);border-radius:4px;padding:14px 16px;
+  font:700 14.5px/1.6 'Asap',sans-serif;color:#FFE9B0}
+.note{margin-top:14px;font:500 13.5px/1.6 'Asap',sans-serif;color:#B8AE8F}
+.menuimg{border:2px solid #B9933F;padding:7px;background:#0C0B08;border-radius:4px}
+.menuimg img{width:100%;height:auto;border-radius:2px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.card{background:#FFFDF6;border:1px solid #D3C8A6;border-radius:5px;overflow:hidden;box-shadow:0 2px 0 #D3C8A6}
+.card img{width:100%;height:220px;object-fit:cover}
+.card .t{padding:15px 16px 19px;border-top:3px solid var(--red)}
+.card h3{font-size:24px;margin-bottom:6px}
+.card p{color:#4A4433;font-size:14.5px;line-height:1.65}
+.bannerbox{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3.2vw,42px);align-items:center}
+.bannerbox .frame img{height:auto}
+.bannerbox h2{font-size:clamp(28px,4vw,46px);margin-bottom:12px;color:var(--plastic)}
+.bannerbox p{color:#D8CFB4;margin-bottom:12px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gal a{display:block;border:1px solid #D3C8A6;background:#FFFDF6;padding:6px;border-radius:3px}
+.gal img{width:100%;height:185px;object-fit:cover;border-radius:1px}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
+.rev-c{background:#FFFDF6;border:1px solid #D3C8A6;border-radius:4px;padding:22px 20px 18px;position:relative}
+.rev-c::before{content:"";position:absolute;top:-2px;left:20px;width:46px;height:4px;background:var(--red);border-radius:0 0 3px 3px}
+.rev-c q{display:block;quotes:none;font-size:15px;line-height:1.7;color:#3A3527}
+.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Asap',sans-serif;color:var(--red);letter-spacing:.06em}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px dashed rgba(38,34,26,.2);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#4A4433}
+.ad,.ph{font-size:16.5px;color:#26221A}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--red);color:#FFF6EC;
+  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 15px/1 'Asap',sans-serif;
+  border:1.5px solid var(--red-d);margin:6px 8px 0 0}
+.btn.o{background:transparent;color:#26221A;border-color:#B9AE8C}
+footer{padding:36px 0 130px;color:#847A5E;font-size:13.5px;text-align:center;background:#EAE2CC}
+
+/* ---------- sticky bar: a strip of the letter board, tiles slid into the tracks ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:7px;
+  background:repeating-linear-gradient(180deg,#141210 0 10px,#1D1A14 10px 11px);
+  border-top:3px solid #B9933F;
+  padding:7px 9px calc(7px + env(safe-area-inset-bottom));
+  box-shadow:0 -10px 26px rgba(0,0,0,.45)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:9px 4px 10px;background:var(--plastic);color:#26221A;border-radius:2px;
+  border:1px solid #0C0B08;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18),0 2px 4px rgba(0,0,0,.4);
+  text-decoration:none;font:700 12px/1.2 'Asap',sans-serif;letter-spacing:.04em;min-height:56px}
+.bar a:active{transform:translateY(1px)}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.w{background:var(--red);color:#FFF6EC;border-color:var(--red-d)}
+.bar a.sq{flex:0 0 58px}
+@media(max-width:880px){
+  .two,.visit,.menupanel,.bannerbox{grid-template-columns:1fr}
+  .grid3,.revs{grid-template-columns:1fr}
+  .years{grid-template-columns:repeat(2,1fr)}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:82px}
+  .heropane img{height:140px}
+}
+@media(max-width:430px){
+  .bar{gap:5px}
+  .bar a{font-size:10.5px}
+  .row.small .in{letter-spacing:.18em}
+}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <div class="lboard">
+    <div class="lb-frame">
+      <div class="lb-face">
+        <span class="row small"><span class="in"><xen class="c" data-edit="t1" data-edit-label="Text (EN): Family owned · since 1971">Family owned · since 1971</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): ملك العيلة · من سنة 1971">ملك العيلة · من سنة 1971</xar></span></span>
+        <h1 class="row name"><span class="in" data-edit="t3" data-edit-label="Text: TOLIDO">TOLIDO</span></h1>
+        <span class="row arline" aria-hidden="true"><span class="in" data-edit="t4" data-edit-label="Text: سناك توليدو">سناك توليدو</span></span>
+        <span class="row white"><span class="in"><xen class="c" data-edit="t5" data-edit-label="Text (EN): Burgers · Steaks · Subs">Burgers · Steaks · Subs</xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): برغر · ستيك · صب">برغر · ستيك · صب</xar></span></span>
+        <span class="row red"><span class="in"><xen class="c" data-edit="t7" data-edit-label="Text (EN): Facing Beirut Arab University">Facing Beirut Arab University</xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): مقابل جامعة بيروت العربية">مقابل جامعة بيروت العربية</xar></span></span>
+        <span class="row small"><span class="in"><span class="num" data-edit="t9" data-edit-label="Text: ★ 4.5">★ 4.5</span> · <xen class="c"><span class="num" data-edit="t10" data-edit-label="Text: 135">135</span> Google reviews</xen><xar class="c"><span class="num" data-edit="t11" data-edit-label="Text: 135">135</span> تقييم على غوغل</xar></span></span>
+      </div>
+    </div>
+    <div class="lb-ledge" aria-hidden="true"></div>
+    <figure class="heropane">
+      <div class="fr"><img src="img/03.jpg" alt="A Tolido tray with a burger, fries and coleslaw on the wooden table"></div>
+      <figcaption class="cap"><xen data-edit="t12" data-edit-label="Text (EN): A tray as it lands: burger, fries, sla…">A tray as it lands: burger, fries, slaw, branded cup.</xen><xar data-edit="t13" data-edit-label="Text (AR): الصينية متل ما بتوصل: برغر، بطاطا، سلو…">الصينية متل ما بتوصل: برغر، بطاطا، سلو، وكاسة عليها الاسم.</xar></figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t14" data-edit-label="Text (EN): The snack">The snack</xen><xar data-edit="t15" data-edit-label="Text (AR): السناك">السناك</xar></p>
+      <h2><xen data-edit="t16" data-edit-label="Text (EN): Fifty-four years behind the same count…">Fifty-four years behind the same counter</xen><xar data-edit="t17" data-edit-label="Text (AR): أربعة وخمسين سنة ورا نفس الكاونتر">أربعة وخمسين سنة ورا نفس الكاونتر</xar></h2>
+      <p><xen data-edit="t18" data-edit-label="Text (EN): Tolido has been flipping burgers on Af…">Tolido has been flipping burgers on Afif El Taybi street since 1971, the year printed in the starburst on their own banner. It faces Beirut Arab University, which means three generations of students have graduated on its eggs-and-cheese burgers.</xen><xar data-edit="t19" data-edit-label="Text (AR): توليدو عم يقلّب برغر بشارع عفيف الطيبي…">توليدو عم يقلّب برغر بشارع عفيف الطيبي من سنة 1971، السنة المطبوعة بنجمة لوحتهن نفسها. والمحل مقابل جامعة بيروت العربية، يعني تلات أجيال طلاب تخرّجوا على برغر البيض والجبنة تبعو.</xar></p>
+      <p><xen data-edit="t20" data-edit-label="Text (EN): The room still looks the part: red sto…">The room still looks the part: red stools at the counter, framed photos on the walls, the grill working in the open. The menu is burgers, sizzling steaks and fresh subs, built on bread the reviews keep complimenting by name.</xen><xar data-edit="t21" data-edit-label="Text (AR): والمحل بعدو محافظ على شكلو: كراسي حمرا…">والمحل بعدو محافظ على شكلو: كراسي حمرا عالكاونتر، صور مبروزة عالحيطان، والصاج شغّال قدام عينك. المنيو برغر وستيك عم يقرقع وصبات طازة، على خبز التقييمات بتمدحو بالاسم.</xar></p>
+      <p><xen data-edit="t22" data-edit-label="Text (EN): Nothing about it is fast fashion. The …">Nothing about it is fast fashion. The same families order the same sandwiches for decades, and the owners still know them at the door.</xen><xar data-edit="t23" data-edit-label="Text (AR): ما في شي فيه موضة سريعة. نفس العيلات ب…">ما في شي فيه موضة سريعة. نفس العيلات بتطلب نفس السندويشات من عشرات السنين، وأصحاب المحل بعدن بيعرفوهن من عالباب.</xar></p>
+    </div>
+    <div>
+      <div class="frame rev"><img src="img/06.jpg" loading="lazy" alt="The Tolido dining room with red stools and framed pictures">
+        <p class="cap"><xen data-edit="t24" data-edit-label="Text (EN): The room: wood, red stools, the wall o…">The room: wood, red stools, the wall of frames.</xen><xar data-edit="t25" data-edit-label="Text (AR): القاعة: خشب، كراسي حمرا، وحيط البراويز…">القاعة: خشب، كراسي حمرا، وحيط البراويز.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t26" data-edit-label="Text (EN): Measured in customers">Measured in customers</xen><xar data-edit="t27" data-edit-label="Text (AR): مقيسة بالزباين">مقيسة بالزباين</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t28" data-edit-label="Text (EN): The loyalty board">The loyalty board</xen><xar data-edit="t29" data-edit-label="Text (AR): لوحة الوفا">لوحة الوفا</xar></h2>
+    <div class="years">
+      <div class="yr rev"><b class="num" data-edit="t30" data-edit-label="Text: 1971">1971</b><span><xen class="c" data-edit="t31" data-edit-label="Text (EN): The opening">The opening</xen><xar class="c" data-edit="t32" data-edit-label="Text (AR): الافتتاح">الافتتاح</xar></span><small><xen class="c" data-edit="t33" data-edit-label="Text (EN): printed on their own banner">printed on their own banner</xen><xar class="c" data-edit="t34" data-edit-label="Text (AR): مطبوعة على لوحتهن">مطبوعة على لوحتهن</xar></small></div>
+      <div class="yr rev"><b class="num" data-edit="t35" data-edit-label="Text: 29">29</b><span><xen class="c" data-edit="t36" data-edit-label="Text (EN): years ago">years ago</xen><xar class="c" data-edit="t37" data-edit-label="Text (AR): سنة صارلها">سنة صارلها</xar></span><small><xen class="c" data-edit="t38" data-edit-label="Text (EN): Rasha ate here as a child, and came ba…">Rasha ate here as a child, and came back</xen><xar class="c" data-edit="t39" data-edit-label="Text (AR): رشا أكلت هون وهيي طفلة، ورجعت">رشا أكلت هون وهيي طفلة، ورجعت</xar></small></div>
+      <div class="yr rev"><b class="num" data-edit="t40" data-edit-label="Text: 20">20</b><span><xen class="c" data-edit="t41" data-edit-label="Text (EN): years of one order">years of one order</xen><xar class="c" data-edit="t42" data-edit-label="Text (AR): سنة عنفس الطلبية">سنة عنفس الطلبية</xar></span><small><xen class="c" data-edit="t43" data-edit-label="Text (EN): Ahmad's eggs and cheese burger">Ahmad's eggs and cheese burger</xen><xar class="c" data-edit="t44" data-edit-label="Text (AR): برغر البيض والجبنة تبع أحمد">برغر البيض والجبنة تبع أحمد</xar></small></div>
+      <div class="yr rev"><b class="num" data-edit="t45" data-edit-label="Text: 15">15</b><span><xen class="c" data-edit="t46" data-edit-label="Text (EN): years and counting">years and counting</xen><xar class="c" data-edit="t47" data-edit-label="Text (AR): سنة وعم تزيد">سنة وعم تزيد</xar></span><small><xen class="c" data-edit="t48" data-edit-label="Text (EN): Jad grew up with the place">Jad grew up with the place</xen><xar class="c" data-edit="t49" data-edit-label="Text (AR): جاد كبر مع المحل">جاد كبر مع المحل</xar></small></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="menupanel rev">
+    <div>
+      <p class="k" style="color:var(--gold)"><xen data-edit="t50" data-edit-label="Text (EN): Off their printed menu">Off their printed menu</xen><xar data-edit="t51" data-edit-label="Text (AR): من منيوهن المطبوع">من منيوهن المطبوع</xar></p>
+      <h2><xen data-edit="t52" data-edit-label="Text (EN): The board, in LBP">The board, in LBP</xen><xar data-edit="t53" data-edit-label="Text (AR): اللوحة، بالليرة">اللوحة، بالليرة</xar></h2>
+      <ul>
+        <li><span data-edit="t54" data-edit-label="Text: Lebanese Burger">Lebanese Burger</span><span class="dots"></span><span class="pr num" data-edit="t55" data-edit-label="Text: 500,000">500,000</span></li>
+        <li><span data-edit="t56" data-edit-label="Text: Mushroom Burger">Mushroom Burger</span><span class="dots"></span><span class="pr num" data-edit="t57" data-edit-label="Text: 550,000">550,000</span></li>
+        <li><span data-edit="t58" data-edit-label="Text: Cheese Fusion">Cheese Fusion</span><span class="dots"></span><span class="pr num" data-edit="t59" data-edit-label="Text: 750,000">750,000</span></li>
+        <li><span data-edit="t60" data-edit-label="Text: Mozzarella Burger">Mozzarella Burger</span><span class="dots"></span><span class="pr num" data-edit="t61" data-edit-label="Text: 700,000">700,000</span></li>
+        <li><span data-edit="t62" data-edit-label="Text: Caramelized Burger">Caramelized Burger</span><span class="dots"></span><span class="pr num" data-edit="t63" data-edit-label="Text: 550,000">550,000</span></li>
+        <li><span data-edit="t64" data-edit-label="Text: Real Steak">Real Steak</span><span class="dots"></span><span class="pr num" data-edit="t65" data-edit-label="Text: 550,000">550,000</span></li>
+        <li><span data-edit="t66" data-edit-label="Text: Kosra Chilli Steak">Kosra Chilli Steak</span><span class="dots"></span><span class="pr num" data-edit="t67" data-edit-label="Text: 550,000">550,000</span></li>
+        <li><span data-edit="t68" data-edit-label="Text: Tolido Chicken">Tolido Chicken</span><span class="dots"></span><span class="pr num" data-edit="t69" data-edit-label="Text: 500,000">500,000</span></li>
+        <li><span data-edit="t70" data-edit-label="Text: Chicken Fajita">Chicken Fajita</span><span class="dots"></span><span class="pr num" data-edit="t71" data-edit-label="Text: 500,000">500,000</span></li>
+        <li><span data-edit="t72" data-edit-label="Text: Tawook">Tawook</span><span class="dots"></span><span class="pr num" data-edit="t73" data-edit-label="Text: 500,000">500,000</span></li>
+        <li><span data-edit="t74" data-edit-label="Text: Escalope">Escalope</span><span class="dots"></span><span class="pr num" data-edit="t75" data-edit-label="Text: 500,000">500,000</span></li>
+      </ul>
+      <p class="boost"><xen data-edit="t76" data-edit-label="Text (EN): Boost your meal: coleslaw, Russian sal…">Boost your meal: coleslaw, Russian salad and fries added to any sandwich or burger for 350,000, exactly as their menu prints it.</xen><xar data-edit="t77" data-edit-label="Text (AR): بوست يور ميل: سلو وسلطة روسية وبطاطا ع…">بوست يور ميل: سلو وسلطة روسية وبطاطا عأي سندويش أو برغر بـ 350,000، حرفيًا متل ما مطبوعة عالمنيو.</xar></p>
+      <p class="note"><xen data-edit="t78" data-edit-label="Text (EN): Copied from the black and gold menu in…">Copied from the black and gold menu in their photos. Doubling the patty and extra mozzarella are printed add-ons too.</xen><xar data-edit="t79" data-edit-label="Text (AR): منقولة عن المنيو الأسود والذهبي بصورهن…">منقولة عن المنيو الأسود والذهبي بصورهن. تدبيل اللحمة وإضافة الموزاريلا كمان مطبوعين كإضافات.</xar></p>
+    </div>
+    <div class="menuimg rev"><img src="img/02.jpg" loading="lazy" alt="The Tolido printed menu of burgers, steaks and sandwiches">
+      <p class="cap" style="color:#B8AE8F"><xen data-edit="t80" data-edit-label="Text (EN): Their menu, photographed as printed.">Their menu, photographed as printed.</xen><xar data-edit="t81" data-edit-label="Text (AR): المنيو تبعهن، مصوّر متل ما هو.">المنيو تبعهن، مصوّر متل ما هو.</xar></p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t82" data-edit-label="Text (EN): Off the grill">Off the grill</xen><xar data-edit="t83" data-edit-label="Text (AR): من عالصاج">من عالصاج</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t84" data-edit-label="Text (EN): Three plates with a fan club">Three plates with a fan club</xen><xar data-edit="t85" data-edit-label="Text (AR): تلات صحون إلها جمهور">تلات صحون إلها جمهور</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="A stacked beef burger with tomato, onion and sauce">
+        <div class="t"><h3><xen data-edit="t86" data-edit-label="Text (EN): The burger">The burger</xen><xar data-edit="t87" data-edit-label="Text (AR): البرغر">البرغر</xar></h3>
+        <p><xen data-edit="t88" data-edit-label="Text (EN): The same build since the seventies: be…">The same build since the seventies: beef, tomato, onion, the house sauce.</xen><xar data-edit="t89" data-edit-label="Text (AR): نفس التركيبة من السبعينات: لحمة، بندور…">نفس التركيبة من السبعينات: لحمة، بندورة، بصل، وصوص البيت.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="A chicken sub loaded with cheese and corn">
+        <div class="t"><h3><xen data-edit="t90" data-edit-label="Text (EN): The chicken sub">The chicken sub</xen><xar data-edit="t91" data-edit-label="Text (AR): صب الدجاج">صب الدجاج</xar></h3>
+        <p><xen data-edit="t92" data-edit-label="Text (EN): Named in the reviews for its bread, st…">Named in the reviews for its bread, stuffed until the wrapper barely closes.</xen><xar data-edit="t93" data-edit-label="Text (AR): مذكور بالتقييمات بسبب خبزه، ومحشي لدرج…">مذكور بالتقييمات بسبب خبزه، ومحشي لدرجة الورقة بالكاد بتسكّر عليه.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="Spiced fries with a side of ketchup">
+        <div class="t"><h3><xen data-edit="t94" data-edit-label="Text (EN): The spiced fries">The spiced fries</xen><xar data-edit="t95" data-edit-label="Text (AR): البطاطا المتبلة">البطاطا المتبلة</xar></h3>
+        <p><xen data-edit="t96" data-edit-label="Text (EN): Dusted red and salted hot, the side th…">Dusted red and salted hot, the side that turns into a main.</xen><xar data-edit="t97" data-edit-label="Text (AR): مرشوشة أحمر ومملحة عالسخن، الجانبية يل…">مرشوشة أحمر ومملحة عالسخن، الجانبية يلّي بتتحول لطبق رئيسي.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bandk">
+  <div class="wrap">
+    <div class="bannerbox">
+      <div class="frame rev" style="border-color:#B9933F;background:#0C0B08"><img src="img/08.jpg" loading="lazy" alt="The Tolido banner announcing that they open on Sundays, printed with Since 1971">
+        <p class="cap" style="color:#B8AE8F"><xen data-edit="t98" data-edit-label="Text (EN): Their own banner, kept as they printed…">Their own banner, kept as they printed it.</xen><xar data-edit="t99" data-edit-label="Text (AR): لوحتهن نفسها، متل ما طبعوها.">لوحتهن نفسها، متل ما طبعوها.</xar></p>
+      </div>
+      <div class="rev">
+        <p class="k"><xen data-edit="t100" data-edit-label="Text (EN): Straight from their banner">Straight from their banner</xen><xar data-edit="t101" data-edit-label="Text (AR): مباشرة من لوحتهن">مباشرة من لوحتهن</xar></p>
+        <h2><xen data-edit="t102" data-edit-label="Text (EN): Come in, we're open Sunday">Come in, we're open Sunday</xen><xar data-edit="t103" data-edit-label="Text (AR): فوتوا، نحنا فاتحين الأحد">فوتوا، نحنا فاتحين الأحد</xar></h2>
+        <p><xen data-edit="t104" data-edit-label="Text (EN): The banner on the wall says it in both…">The banner on the wall says it in both languages, with the Since 1971 starburst in the corner: Sunday is a working day at Tolido, from half past noon.</xen><xar data-edit="t105" data-edit-label="Text (AR): اللوحة عالحيط بتقولها باللغتين، مع نجم…">اللوحة عالحيط بتقولها باللغتين، مع نجمة Since 1971 بالزاوية: الأحد يوم شغل بتوليدو، من الساعة 12:30.</xar></p>
+        <p><xen data-edit="t106" data-edit-label="Text (EN): Whatever day you land on, the kitchen …">Whatever day you land on, the kitchen runs until a quarter to eleven at night.</xen><xar data-edit="t107" data-edit-label="Text (AR): وأي يوم ما جيت، المطبخ شغّال لحد 10:45…">وأي يوم ما جيت، المطبخ شغّال لحد 10:45 بالليل.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <p class="k"><xen data-edit="t108" data-edit-label="Text (EN): From the counter">From the counter</xen><xar data-edit="t109" data-edit-label="Text (AR): من عالكاونتر">من عالكاونتر</xar></p>
+  <h2 class="hd" style="margin:8px 0 24px"><xen data-edit="t110" data-edit-label="Text (EN): Photographs from Tolido">Photographs from Tolido</xen><xar data-edit="t111" data-edit-label="Text (AR): صور من توليدو">صور من توليدو</xar></h2>
+  <div class="gal">
+    <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="A tray with burger, fries and coleslaw"></a>
+    <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="The beef burger up close"></a>
+    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The chicken sub with cheese"></a>
+    <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="The dining room and counter"></a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t112" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t113" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+    <h2 class="hd" style="margin:8px 0 26px"><xen data-edit="t114" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t115" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <div class="revs">
+      <div class="rev-c rev"><q dir="ltr" data-edit="t116" data-edit-label="Quote: I&rsquo;ve been eating here for more t…">I&rsquo;ve been eating here for more than 15 years. I grew up with this place. The flavors have never changed, and the quality has stayed consistent throughout the years. I really love this restaurant and its staff.</q><cite data-edit="t117" data-edit-label="Credit: Jad ElSaheb">Jad ElSaheb</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t118" data-edit-label="Quote: I used to go there as a child 29 years…">I used to go there as a child 29 years ago then I left Lebanon and still miss eating at Tolido 😭 when I came back many years ago and I tried their food it&rsquo;s still amazing as before and the owners are sooooo nice.</q><cite data-edit="t119" data-edit-label="Credit: Rasha Abdelbaqi">Rasha Abdelbaqi</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t120" data-edit-label="Quote: The best eggs and cheese burger you ca…">The best eggs and cheese burger you can eat . The same quality and tatse since the first time i ate it 20 years ago. Chicken sub is great and the bread is very tasty.</q><cite data-edit="t121" data-edit-label="Credit: Ahmad Arakji">Ahmad Arakji</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="visit">
+    <div>
+      <p class="k"><xen data-edit="t122" data-edit-label="Text (EN): The week">The week</xen><xar data-edit="t123" data-edit-label="Text (AR): الأسبوع">الأسبوع</xar></p>
+      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t124" data-edit-label="Text (EN): Noon to 10:45 at night">Noon to 10:45 at night</xen><xar data-edit="t125" data-edit-label="Text (AR): من الظهر لـ 10:45 بالليل">من الظهر لـ 10:45 بالليل</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t126" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t127" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t128" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t129" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t130" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t131" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t132" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t133" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t134" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t135" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t136" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t137" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t138" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t139" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t140" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t141" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t142" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t143" data-edit-label="Menu / table: 12–10:45 PM">12–10:45 PM</td></tr>
+        <tr><td><xen data-edit="t144" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t145" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t146" data-edit-label="Menu / table: 12:30–10:45 PM">12:30–10:45 PM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t147" data-edit-label="Text (EN): Sunday starts half an hour later, as t…">Sunday starts half an hour later, as the banner promises.</xen><xar data-edit="t148" data-edit-label="Text (AR): الأحد بيبلّش نص ساعة متأخر، متل ما الل…">الأحد بيبلّش نص ساعة متأخر، متل ما اللوحة واعدة.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t149" data-edit-label="Text (EN): Find the board">Find the board</xen><xar data-edit="t150" data-edit-label="Text (AR): دوّر عاللوحة">دوّر عاللوحة</xar></p>
+      <h3 style="font-size:26px;margin:6px 0 14px"><xen data-edit="t151" data-edit-label="Text (EN): Afif El Taybi, Tariq El Jdide">Afif El Taybi, Tariq El Jdide</xen><xar data-edit="t152" data-edit-label="Text (AR): عفيف الطيبي، طريق الجديدة">عفيف الطيبي، طريق الجديدة</xar></h3>
+      <p class="k"><xen data-edit="t153" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t154" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t155" data-edit-label="Text: Afif El Taybi, Beirut, Lebanon">Afif El Taybi, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t156" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t157" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t158" data-edit-label="Text: +961 70 696 265">+961 70 696 265</p>
+      <p style="margin-top:22px">
+        <a class="btn" href="https://wa.me/96170696265?text=Hello%20Tolido%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t159" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t160" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=9824509286275673996" target="_blank" rel="noopener"><xen data-edit="t161" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t162" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn o" href="https://www.instagram.com/tolidodiner/" target="_blank" rel="noopener" data-edit="t163" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/TolidoDiner/" target="_blank" rel="noopener" data-edit="t164" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t165" data-edit-label="Text (EN): Tolido Snack, Afif El Taybi street, Ta…">Tolido Snack, Afif El Taybi street, Tariq El Jdide, Beirut.</xen><xar data-edit="t166" data-edit-label="Text (AR): سناك توليدو، شارع عفيف الطيبي، طريق ال…">سناك توليدو، شارع عفيف الطيبي، طريق الجديدة، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t167" data-edit-label="Text (EN): Since 1971, same grill, same families.">Since 1971, same grill, same families.</xen><xar data-edit="t168" data-edit-label="Text (AR): من الـ 1971، نفس الصاج، نفس العيلات.">من الـ 1971، نفس الصاج، نفس العيلات.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+96170696265"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t169" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t170" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96170696265?text=Hello%20Tolido%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t171" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t172" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=9824509286275673996" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t173" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t174" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/tolidodiner/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t175" data-edit-label="Text: IG">IG</span></a>
+  <a class="sq" href="https://www.facebook.com/TolidoDiner/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t176" data-edit-label="Text: FB">FB</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="سناك توليدو · عفيف الطيبي، بيروت" data-edit="t177" data-edit-label="Button: عربي">عربي</button>
+</body></html>

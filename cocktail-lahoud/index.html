@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cocktail Lahoud · Armenia Street, Dawra, Beirut</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Red+Hat+Text:wght@400;500;700&family=Reem+Kufi+Fun:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --arh:'Reem Kufi Fun';--arb:'IBM Plex Sans Arabic';
+  --berry:#7E2149;--berry-d:#5E1836;--berry-x:#43112A;
+  --foam:#FFF6E9;--foam-d:#F3E2CC;--avo:#7FA05A;--gold:#E9B04C;--ink:#3A1526;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--berry);color:var(--foam);font:400 17px/1.75 'Red Hat Text',system-ui,sans-serif}
+.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Righteous',system-ui,sans-serif;font-weight:400;line-height:1.1;letter-spacing:.012em}
+a{color:inherit}
+img{display:block;max-width:100%}
+.k{font:700 11.5px/1 'Red Hat Text',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+
+.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+  font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:999px;cursor:pointer;
+  background:var(--foam);color:var(--berry-d);border:1.5px solid var(--foam-d);
+  box-shadow:0 6px 16px rgba(67,17,42,.45);min-width:58px;text-align:center;-webkit-appearance:none}
+.lngt:active{transform:scale(.94)}
+
+/* ---------- HERO: milk-foam rings, stacked like the collars of a layered cocktail, on berry ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:
+   radial-gradient(2px 2px at 18% 30%,rgba(255,246,233,.2) 45%,transparent 55%),
+   radial-gradient(1.6px 1.6px at 78% 22%,rgba(255,246,233,.16) 45%,transparent 55%),
+   radial-gradient(2px 2px at 64% 74%,rgba(255,246,233,.13) 45%,transparent 55%),
+   radial-gradient(130% 100% at 50% -12%,#96305C 0%,var(--berry) 52%,#571731 100%)}
+.hk{position:relative;z-index:2;margin-bottom:clamp(14px,2.4vh,24px)}
+.ring{position:relative;z-index:2;background:linear-gradient(180deg,#FFFBF2,var(--foam) 55%,#F6E7D2);
+  border-radius:50% / 46%;box-shadow:0 18px 40px rgba(67,17,42,.5),inset 0 -10px 22px rgba(214,178,134,.4);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ring::before{content:"";position:absolute;left:7%;right:7%;top:-8px;height:16px;pointer-events:none;
+  background:radial-gradient(circle at 8px 9px,#FFFBF2 7px,transparent 8px) repeat-x;background-size:20px 16px}
+.r1{width:min(300px,64vw);height:clamp(78px,11vh,96px);animation:foampulse 12.5s ease-in-out infinite}
+@keyframes foampulse{0%,100%{transform:scale(1)}50%{transform:scale(1.033)}}
+.r1 .in{font:700 12px/1.5 'Red Hat Text',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#8A4A22}
+.r2{width:min(660px,88vw);height:clamp(170px,25vh,225px);margin-top:clamp(12px,2vh,20px);padding:0 6%}
+.r2 .arname{font:700 clamp(30px,4.6vw,52px)/1.25 var(--arh),sans-serif;color:var(--berry-d)}
+.r2 h1{font-size:clamp(30px,4.8vw,54px);color:var(--berry);margin-top:2px}
+.r3{width:min(480px,76vw);height:clamp(150px,22vh,200px);margin-top:clamp(12px,2vh,20px);padding:10px}
+.r3 .oval{width:92%;height:82%;border-radius:50%/48%;overflow:hidden;border:4px solid #FFFBF2;
+  box-shadow:inset 0 0 0 1px rgba(138,74,34,.4)}
+.r3 .oval img{width:100%;height:100%;object-fit:cover}
+.hsub{position:relative;z-index:2;margin-top:clamp(14px,2.6vh,24px);max-width:52ch;color:#F2D9C2;
+  font-size:clamp(14.5px,1.8vw,17px);padding-inline:6vw}
+.hmeta{position:relative;z-index:2;display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.hm{border:1.5px solid rgba(255,246,233,.4);background:rgba(67,17,42,.5);border-radius:999px;
+  padding:8px 14px;font:700 12px/1 'Red Hat Text',sans-serif;letter-spacing:.06em;color:#F6E7D2}
+.hm b{color:var(--gold)}
+
+/* ---------- sections ---------- */
+section{padding-block:clamp(56px,8vh,96px)}
+.foam-b{background:var(--foam);color:var(--ink)}
+.foam-b .k{color:#A34A24}
+.deep-b{background:var(--berry-x)}
+.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
+.two h2,.hh{font-size:clamp(26px,3.9vw,43px);margin:8px 0 18px}
+.foam-b p{color:#5E3A28}
+.frame{background:#FFFBF2;border:2px solid rgba(126,33,73,.35);border-radius:16px;padding:9px;
+  box-shadow:0 18px 38px rgba(67,17,42,.18)}
+.frame img{width:100%;height:clamp(300px,44vh,450px);object-fit:cover;border-radius:10px}
+.cap{font:500 12px/1.6 'Red Hat Text',sans-serif;color:#9A6A4A;margin-top:8px;letter-spacing:.03em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.2vw,24px)}
+.card{background:#FFFBF2;border:1.5px solid rgba(126,33,73,.22);border-radius:16px;overflow:hidden;
+  box-shadow:0 12px 26px rgba(67,17,42,.14)}
+.card img{width:100%;height:215px;object-fit:cover}
+.card .t{padding:15px 17px 19px}
+.card h3{font-size:19px;margin-bottom:6px;color:var(--berry)}
+.card p{color:#6E4630;font-size:14.5px;line-height:1.65}
+.press{border:2px solid rgba(233,176,76,.5);border-radius:18px;padding:clamp(24px,4vw,46px);
+  background:radial-gradient(100% 140% at 50% -30%,rgba(233,176,76,.16),transparent 60%);text-align:center}
+.press .big{font:400 clamp(20px,2.9vw,30px)/1.5 'Righteous',sans-serif;color:var(--foam);max-width:34ch;margin-inline:auto}
+.press .src{margin-top:12px;font:700 12px/1 'Red Hat Text',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.brs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px}
+.br{border:1.5px solid rgba(255,246,233,.4);border-radius:999px;padding:9px 16px;font-size:13.5px;color:#F6E7D2;background:rgba(255,246,233,.07)}
+.br b{color:var(--gold)}
+.gloss{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,3.4vw,44px);align-items:start}
+.gl{margin-top:14px}
+.gl li{list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:baseline;
+  padding:11px 2px;border-bottom:1px dashed rgba(126,33,73,.3);font:500 16px/1.4 'Red Hat Text',sans-serif;color:#4A2A18}
+.gl li b{font-family:'Righteous',sans-serif;font-weight:400;color:var(--berry)}
+.gl li span:last-child{font-size:12.5px;color:#9A6A4A;letter-spacing:.05em;text-transform:uppercase;text-align:right}
+.note{margin-top:14px;font-size:14px;color:#8A5A3A}
+.mframe{background:#FFFBF2;border:2px solid rgba(126,33,73,.35);border-radius:16px;padding:9px}
+.mframe img{width:100%;height:clamp(320px,44vh,450px);object-fit:cover;object-position:top;border-radius:10px}
+.revs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.6vw,28px)}
+.rev-c{background:rgba(255,246,233,.06);border:1.5px solid rgba(255,246,233,.25);border-radius:16px;padding:22px 22px 20px}
+.rev-c q{display:block;font-size:16px;line-height:1.75;color:#FBEBDD}
+.rev-c cite{display:block;margin-top:12px;font:700 12.5px/1 'Red Hat Text',sans-serif;font-style:normal;color:var(--gold);letter-spacing:.16em;text-transform:uppercase}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
+.gal a{display:block;border:2px solid rgba(126,33,73,.3);border-radius:14px;overflow:hidden;background:#FFFBF2;padding:5px}
+.gal img{width:100%;height:185px;object-fit:cover;border-radius:9px}
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(126,33,73,.2);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#6E4630}
+.ad,.ph{font-size:16.5px;color:#3A1526}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--berry);color:var(--foam);
+  padding:13px 20px;border-radius:999px;text-decoration:none;font:700 15px/1 'Red Hat Text',sans-serif;
+  border:1.5px solid var(--berry-d);margin:6px 8px 0 0;box-shadow:0 5px 0 rgba(67,17,42,.3)}
+.btn.o{background:transparent;color:var(--berry);border-color:rgba(126,33,73,.45);box-shadow:none}
+footer{padding:36px 6vw 132px;color:#D6A9BC;font-size:13.5px;text-align:center;background:var(--berry-x)}
+
+/* ---------- sticky bar: the foam counter, a bubble crown over berry buttons ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
+  background:linear-gradient(180deg,#FFFBF2,var(--foam-d));
+  padding:9px 10px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px rgba(67,17,42,.4)}
+.bar::before{content:"";position:absolute;left:0;right:0;top:-10px;height:11px;pointer-events:none;
+  background:radial-gradient(circle at 10px 11px,#FFFBF2 9px,transparent 10px) repeat-x;background-size:24px 11px}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  padding:8px 4px 9px;min-height:56px;text-decoration:none;border-radius:12px;
+  background:var(--berry);border:1.5px solid var(--berry-d);color:var(--foam);
+  font:700 11.5px/1.2 'Red Hat Text',sans-serif;letter-spacing:.04em}
+.bar a:active{background:var(--berry-d)}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.map{background:linear-gradient(180deg,#F0BC5E,#D89A34);border-color:#B8801E;color:#43290A}
+@media(max-width:880px){
+  .two,.visit,.gloss{grid-template-columns:1fr}
+  .grid3,.revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  body{padding-bottom:76px}
+  .r2{height:clamp(150px,20vh,180px)}
+  .r3{height:clamp(130px,18vh,160px)}
+  .hsub{font-size:14px}
+}
+@media(max-width:430px){.bar a{font-size:10.5px}.r2 h1{font-size:26px}.r2 .arname{font-size:26px}}
+</style>
+<meta name="robots" content="noindex,nofollow">
+<style data-mech>*{-webkit-tap-highlight-color:transparent}
+html,body{overflow-x:clip}
+.num{direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+.rev{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}
+.rev.on{opacity:1;transform:none}
+/* ---- Arabic second language (English stays the default) ---- */
+xen{display:inline}
+xar{display:none;direction:rtl;unicode-bidi:isolate;letter-spacing:normal;word-spacing:normal;
+    text-transform:none;font-style:normal;font-family:var(--arb,'Noto Naskh Arabic',serif)}
+html.ar xen{display:none}
+html.ar xar{display:inline}
+xen.c{display:contents}
+html.ar xen.c{display:none}
+html.ar xar.c{display:contents}
+html.ar .ar-r{text-align:right}
+html.ar :is(h1,h2,h3,h4,h5,h6) xar{font-family:var(--arh,var(--arb,'Noto Kufi Arabic',sans-serif));font-weight:700}
+html.ar h1 xar{line-height:1.16}
+html.ar :is(h2,h3) xar{line-height:1.3}
+html.ar :is(h4,h5,h6) xar{line-height:1.4}
+html.ar :is(p,li,dd,dt,blockquote,figcaption,td,th) xar{line-height:1.85}
+html.ar xar b,html.ar xar strong{font-weight:700}
+html.ar xar .lat{direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}
+.rev{opacity:1;transform:none}}
+</style>
+<script data-mech>
+document.addEventListener('DOMContentLoaded',function(){
+var n=document.querySelectorAll('.rev');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+n.forEach(function(e){io.observe(e)});}
+setTimeout(function(){document.querySelectorAll('.rev').forEach(function(e){e.classList.add('on')})},1100);
+var h=document.documentElement,b=document.getElementById('lngt');if(!b)return;
+var ten=document.title,tar=b.getAttribute('data-ar-title')||ten,done=false;
+function fix(){if(done)return;done=true;var s=document.querySelectorAll('xar');
+for(var i=0;i<s.length;i++){var p=s[i].parentElement;if(!p)continue;
+var a=getComputedStyle(p).textAlign;if(a=='left'||a=='start')p.classList.add('ar-r');}}
+b.addEventListener('click',function(){fix();var on=h.classList.toggle('ar');
+h.lang=on?'ar':'en';document.title=on?tar:ten;
+b.textContent=on?'English':'عربي';
+b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى العربية');});});
+</script>
+</head>
+<body>
+
+<header>
+  <p class="k hk"><xen data-edit="t1" data-edit-label="Text (EN): Armenia Street, Dawra, Beirut">Armenia Street, Dawra, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع أرمينيا، الدورة، بيروت">شارع أرمينيا، الدورة، بيروت</xar></p>
+  <div class="ring r1"><span class="in"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Squeezing since 1975">Squeezing since 1975</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): عم نعصر من الـ 1975">عم نعصر من الـ 1975</xar></span></div>
+  <div class="ring r2">
+    <p class="arname" data-edit="t5" data-edit-label="Text: كوكتيل لحود">كوكتيل لحود</p>
+    <h1><xen class="c" data-edit="t6" data-edit-label="Text (EN): Cocktail Lahoud">Cocktail Lahoud</xen><xar class="c" data-edit="t7" data-edit-label="Text (AR): خمسين سنة كوكتيل">خمسين سنة كوكتيل</xar></h1>
+  </div>
+  <div class="ring r3">
+    <div class="oval"><img src="img/02.jpg" alt="A carved fruit centrepiece with avocado, melon and strawberries at Cocktail Lahoud"></div>
+  </div>
+  <p class="hsub"><xen data-edit="t8" data-edit-label="Text (EN): Fifty years of fruit cocktails on Arme…">Fifty years of fruit cocktails on Armenia Street: avocado over ashta, orange squeezed while you watch, and foam collars on every glass.</xen><xar data-edit="t9" data-edit-label="Text (AR): خمسين سنة كوكتيل فواكه بشارع أرمينيا: …">خمسين سنة كوكتيل فواكه بشارع أرمينيا: أفوكادو فوق القشطة، برتقال بينعصر قدام عينك، وطوق رغوة على كل كاسة.</xar></p>
+  <div class="hmeta">
+    <span class="hm"><b class="num" data-edit="t10" data-edit-label="Text: 4.5">4.5</b> · <xen class="c"><span class="num" data-edit="t11" data-edit-label="Text: 78">78</span> reviews</xen><xar class="c"><span class="num" data-edit="t12" data-edit-label="Text: 78">78</span> تقييم</xar></span>
+    <span class="hm"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Open 8 AM to 3 AM">Open 8 AM to 3 AM</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): فاتحين من 8 الصبح لـ 3 الليل">فاتحين من 8 الصبح لـ 3 الليل</xar></span>
+  </div>
+</header>
+
+<section class="foam-b">
+  <div class="wrap two">
+    <div class="rev">
+      <p class="k"><xen data-edit="t15" data-edit-label="Text (EN): The house">The house</xen><xar data-edit="t16" data-edit-label="Text (AR): البيت">البيت</xar></p>
+      <h2><xen data-edit="t17" data-edit-label="Text (EN): A family name written in neon">A family name written in neon</xen><xar data-edit="t18" data-edit-label="Text (AR): اسم عيلة مكتوب بالنيون">اسم عيلة مكتوب بالنيون</xar></h2>
+      <p><xen data-edit="t19" data-edit-label="Text (EN): Cocktail Lahoud has been squeezing on …">Cocktail Lahoud has been squeezing on Armenia Street in Dawra since 1975, and they put the date right under the sign. Fifty years later the counter still does the same trick: real fruit, cut in front of you, layered into glasses that arrive looking like presents.</xen><xar data-edit="t20" data-edit-label="Text (AR): كوكتيل لحود عم يعصر بشارع أرمينيا بالد…">كوكتيل لحود عم يعصر بشارع أرمينيا بالدورة من سنة 1975، وحاطين التاريخ تحت اللافتة دغري. بعد خمسين سنة، الكاونتر بعده بيعمل نفس الحركة: فواكه حقيقية، بتنقطع قدامك، وبتتطبّق بكاسات بتوصل شكلها هدايا.</xar></p>
+      <p><xen data-edit="t21" data-edit-label="Text (EN): The room surprises people: bright, mod…">The room surprises people: bright, modern and minimal, a second branch in Zouk Mosbeh, and a reputation that made Beirut.com's list of the fruit cocktails worth crossing town for.</xen><xar data-edit="t22" data-edit-label="Text (AR): الصالة بتفاجئ الناس: مضوية، عصرية وبسي…">الصالة بتفاجئ الناس: مضوية، عصرية وبسيطة، مع فرع تاني بذوق مصبح، وسمعة وصّلتهن على لائحة Beirut.com للكوكتيلات يلّي بتستاهل تقطع البلد كرمالها.</xar></p>
+    </div>
+    <div>
+      <div class="frame"><img src="img/06.jpg" loading="lazy" alt="The glowing Cocktail Lahoud sign at night, with Squeezing since 1975 underneath">
+        <p class="cap"><xen data-edit="t23" data-edit-label="Text (EN): The night sign: the founding year is p…">The night sign: the founding year is painted right on it.</xen><xar data-edit="t24" data-edit-label="Text (AR): لافتة الليل: سنة التأسيس مرسومة عليها …">لافتة الليل: سنة التأسيس مرسومة عليها دغري.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="k"><xen data-edit="t25" data-edit-label="Text (EN): From the counter">From the counter</xen><xar data-edit="t26" data-edit-label="Text (AR): من الكاونتر">من الكاونتر</xar></p>
+    <h2 class="hh" style="color:var(--foam)"><xen data-edit="t27" data-edit-label="Text (EN): Three reasons the line forms">Three reasons the line forms</xen><xar data-edit="t28" data-edit-label="Text (AR): تلات أسباب للدور عالباب">تلات أسباب للدور عالباب</xar></h2>
+    <div class="grid3">
+      <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="Two layered avocado cocktails on crystal plates">
+        <div class="t"><h3><xen data-edit="t29" data-edit-label="Text (EN): The avocado cocktail">The avocado cocktail</xen><xar data-edit="t30" data-edit-label="Text (AR): كوكتيل الأفوكادو">كوكتيل الأفوكادو</xar></h3>
+        <p><xen data-edit="t31" data-edit-label="Text (EN): The one the reviews rave about: thick …">The one the reviews rave about: thick avocado cream layered with fruit, big enough to be dinner.</xen><xar data-edit="t32" data-edit-label="Text (AR): يلّي التقييمات بتتغزل فيه: كريما أفوكا…">يلّي التقييمات بتتغزل فيه: كريما أفوكادو كتيمة مطبّقة مع فواكه، بيكفي يكون عشا.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="The fruit vitrine stacked with pineapple, pomegranate and ginger">
+        <div class="t"><h3><xen data-edit="t33" data-edit-label="Text (EN): The fruit wall">The fruit wall</xen><xar data-edit="t34" data-edit-label="Text (AR): حيط الفواكه">حيط الفواكه</xar></h3>
+        <p><xen data-edit="t35" data-edit-label="Text (EN): Pomegranates, pineapples, even fresh g…">Pomegranates, pineapples, even fresh ginger: the day's stock sits in the window, not in a fridge out back.</xen><xar data-edit="t36" data-edit-label="Text (AR): رمان وأناناس وحتى زنجبيل طازج: مونة ال…">رمان وأناناس وحتى زنجبيل طازج: مونة النهار بالواجهة، مش ببراد مخبى ورا.</xar></p></div>
+      </div>
+      <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="The bright modern seating room with yellow and pink chairs">
+        <div class="t"><h3><xen data-edit="t37" data-edit-label="Text (EN): The bright room">The bright room</xen><xar data-edit="t38" data-edit-label="Text (AR): الصالة المضوية">الصالة المضوية</xar></h3>
+        <p><xen data-edit="t39" data-edit-label="Text (EN): Clean tables and colour-pop chairs: a …">Clean tables and colour-pop chairs: a 1975 name in a room that feels brand new.</xen><xar data-edit="t40" data-edit-label="Text (AR): طاولات نضيفة وكراسي بألوان فرحانة: اسم…">طاولات نضيفة وكراسي بألوان فرحانة: اسم من الـ 1975 بصالة حاسس إنها جديدة عالعلبة.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep-b">
+  <div class="wrap">
+    <div class="press rev">
+      <p class="k" style="margin-bottom:16px"><xen data-edit="t41" data-edit-label="Text (EN): On the record">On the record</xen><xar data-edit="t42" data-edit-label="Text (AR): موثّق">موثّق</xar></p>
+      <p class="big"><xen data-edit="t43" data-edit-label="Text (EN): Listed among the seven fruit cocktails…">Listed among the seven fruit cocktails worth trying in Lebanon.</xen><xar data-edit="t44" data-edit-label="Text (AR): مذكورين بين سبع كوكتيلات فواكه بتستاهل…">مذكورين بين سبع كوكتيلات فواكه بتستاهل التجربة بلبنان.</xar></p>
+      <p class="src" data-edit="t45" data-edit-label="Text: Beirut.com">Beirut.com</p>
+      <div class="brs">
+        <span class="br"><b><xen class="c" data-edit="t46" data-edit-label="Text (EN): Dawra">Dawra</xen><xar class="c" data-edit="t47" data-edit-label="Text (AR): الدورة">الدورة</xar></b> · <span class="num" data-edit="t48" data-edit-label="Text: 01 265 206">01 265 206</span></span>
+        <span class="br"><b><xen class="c" data-edit="t49" data-edit-label="Text (EN): Zouk Mosbeh">Zouk Mosbeh</xen><xar class="c" data-edit="t50" data-edit-label="Text (AR): ذوق مصبح">ذوق مصبح</xar></b> · <span class="num" data-edit="t51" data-edit-label="Text: 81 100 996">81 100 996</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="foam-b">
+  <div class="wrap gloss">
+    <div class="rev">
+      <p class="k"><xen data-edit="t52" data-edit-label="Text (EN): The glass, decoded">The glass, decoded</xen><xar data-edit="t53" data-edit-label="Text (AR): الكاسة، مفكّكة">الكاسة، مفكّكة</xar></p>
+      <h2 class="hh" style="color:var(--berry)"><xen data-edit="t54" data-edit-label="Text (EN): What to order the first time">What to order the first time</xen><xar data-edit="t55" data-edit-label="Text (AR): شو تطلب أول مرة">شو تطلب أول مرة</xar></h2>
+      <ul class="gl">
+        <li><b><xen class="c" data-edit="t56" data-edit-label="Text (EN): Avocado cocktail">Avocado cocktail</xen><xar class="c" data-edit="t57" data-edit-label="Text (AR): كوكتيل أفوكادو">كوكتيل أفوكادو</xar></b><span><xen class="c" data-edit="t58" data-edit-label="Text (EN): the famous one">the famous one</xen><xar class="c" data-edit="t59" data-edit-label="Text (AR): المشهور">المشهور</xar></span></li>
+        <li><b><xen class="c" data-edit="t60" data-edit-label="Text (EN): Ashta w 3asal">Ashta w 3asal</xen><xar class="c" data-edit="t61" data-edit-label="Text (AR): قشطة وعسل">قشطة وعسل</xar></b><span><xen class="c" data-edit="t62" data-edit-label="Text (EN): cream and honey">cream and honey</xen><xar class="c" data-edit="t63" data-edit-label="Text (AR): عالطريقة القديمة">عالطريقة القديمة</xar></span></li>
+        <li><b><xen class="c" data-edit="t64" data-edit-label="Text (EN): Fresh orange">Fresh orange</xen><xar class="c" data-edit="t65" data-edit-label="Text (AR): برتقال فريش">برتقال فريش</xar></b><span><xen class="c" data-edit="t66" data-edit-label="Text (EN): squeezed in front of you">squeezed in front of you</xen><xar class="c" data-edit="t67" data-edit-label="Text (AR): بينعصر قدامك">بينعصر قدامك</xar></span></li>
+        <li><b><xen class="c" data-edit="t68" data-edit-label="Text (EN): Fruit plates">Fruit plates</xen><xar class="c" data-edit="t69" data-edit-label="Text (AR): صحون فواكه">صحون فواكه</xar></b><span><xen class="c" data-edit="t70" data-edit-label="Text (EN): carved, not just cut">carved, not just cut</xen><xar class="c" data-edit="t71" data-edit-label="Text (AR): منحوتة مش بس مقطّعة">منحوتة مش بس مقطّعة</xar></span></li>
+      </ul>
+      <p class="note"><xen data-edit="t72" data-edit-label="Text (EN): Prices are on the counter card, photog…">Prices are on the counter card, photographed here. The shop number is a landline: call, and ask them for a WhatsApp number if you want to order ahead.</xen><xar data-edit="t73" data-edit-label="Text (AR): الأسعار على كرت الكاونتر، مصوّر هون. ر…">الأسعار على كرت الكاونتر، مصوّر هون. رقم المحل أرضي: اتصل، واطلب منهن رقم واتساب إذا بدك تطلب سلف.</xar></p>
+    </div>
+    <div>
+      <div class="mframe rev"><img src="img/01.jpg" loading="lazy" alt="The Cocktail Lahoud counter card with the purple cup logo">
+        <p class="cap" style="padding:6px 6px 2px"><xen data-edit="t74" data-edit-label="Text (EN): Their counter card, purple cup and all…">Their counter card, purple cup and all.</xen><xar data-edit="t75" data-edit-label="Text (AR): كرت الكاونتر تبعهن، مع الكاسة البنفسجي…">كرت الكاونتر تبعهن، مع الكاسة البنفسجية وكل شي.</xar></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="k"><xen data-edit="t76" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t77" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+    <h2 class="hh" style="color:var(--foam)"><xen data-edit="t78" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t79" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
+    <div class="revs">
+      <div class="rev-c rev"><q dir="ltr" data-edit="t80" data-edit-label="Quote: It appears to be nice and well run wit…">It appears to be nice and well run with well prepared and fresh fruit.</q><cite data-edit="t81" data-edit-label="Credit: T. GeBrim">T. GeBrim</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t82" data-edit-label="Quote: Tastiest fruit Cocktail with fresh fru…">Tastiest fruit Cocktail with fresh fruit amazing, quick. Professional staff. Not expensive. Beautiful presentation. We got the large avocado cocktail and didn't regret it. Come check it out!!! The other Cocktail is supposedly a healthier one.</q><cite data-edit="t83" data-edit-label="Credit: Joshua Knight">Joshua Knight</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="foam-b">
+  <div class="wrap">
+    <p class="k"><xen data-edit="t84" data-edit-label="Text (EN): From the shop">From the shop</xen><xar data-edit="t85" data-edit-label="Text (AR): من المحل">من المحل</xar></p>
+    <h2 class="hh" style="color:var(--berry)"><xen data-edit="t86" data-edit-label="Text (EN): Photographs off their counter">Photographs off their counter</xen><xar data-edit="t87" data-edit-label="Text (AR): صور من عندن">صور من عندن</xar></h2>
+    <div class="gal">
+      <a href="img/02.jpg" target="_blank" rel="noopener" class="g"><img src="img/02.jpg" loading="lazy" alt="The carved fruit centrepiece"></a>
+      <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="Avocado cocktails on crystal plates"></a>
+      <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="The stocked fruit vitrine"></a>
+      <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="The neon sign at night"></a>
+    </div>
+  </div>
+</section>
+
+<section class="foam-b" style="padding-top:0">
+  <div class="wrap visit">
+    <div>
+      <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t89" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="hh" style="color:var(--berry)"><xen data-edit="t90" data-edit-label="Text (EN): Morning juice, midnight cocktails">Morning juice, midnight cocktails</xen><xar data-edit="t91" data-edit-label="Text (AR): عصير الصبح، وكوكتيل نص الليل">عصير الصبح، وكوكتيل نص الليل</xar></h2>
+      <table class="hrs">
+        <tr><td><xen data-edit="t92" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t93" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t94" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t95" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t96" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t97" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t98" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t99" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t100" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t101" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t102" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t103" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t105" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t106" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t108" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t109" data-edit-label="Menu / table: 8 AM–3 AM">8 AM–3 AM</td></tr>
+        <tr><td><xen data-edit="t110" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t111" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t112" data-edit-label="Menu / table: 9 AM–3 AM">9 AM–3 AM</td></tr>
+      </table>
+      <p class="cap"><xen data-edit="t113" data-edit-label="Text (EN): Sunday starts one hour later.">Sunday starts one hour later.</xen><xar data-edit="t114" data-edit-label="Text (AR): الأحد بيبلّش ساعة أبطأ.">الأحد بيبلّش ساعة أبطأ.</xar></p>
+    </div>
+    <div>
+      <p class="k"><xen data-edit="t115" data-edit-label="Text (EN): Find the counter">Find the counter</xen><xar data-edit="t116" data-edit-label="Text (AR): لاقي الكاونتر">لاقي الكاونتر</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px;color:var(--berry)"><xen data-edit="t117" data-edit-label="Text (EN): Armenia Street, Dawra">Armenia Street, Dawra</xen><xar data-edit="t118" data-edit-label="Text (AR): شارع أرمينيا، الدورة">شارع أرمينيا، الدورة</xar></h3>
+      <p class="k"><xen data-edit="t119" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t120" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t121" data-edit-label="Text: Armenia Street, Dawra, Beirut, Lebanon">Armenia Street, Dawra, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t122" data-edit-label="Text (EN): Phone, landline">Phone, landline</xen><xar data-edit="t123" data-edit-label="Text (AR): الهاتف، خط أرضي">الهاتف، خط أرضي</xar></p>
+      <p class="ph num" data-edit="t124" data-edit-label="Text: +961 1 265 206">+961 1 265 206</p>
+      <p class="cap"><xen data-edit="t125" data-edit-label="Text (EN): It rings at the counter: call, and ask…">It rings at the counter: call, and ask for their WhatsApp if you want to order ahead.</xen><xar data-edit="t126" data-edit-label="Text (AR): بيرن عند الكاونتر: اتصل، واسأل عن واتس…">بيرن عند الكاونتر: اتصل، واسأل عن واتسابهن إذا بدك تطلب سلف.</xar></p>
+      <p style="margin-top:20px">
+        <a class="btn" href="tel:+9611265206"><xen data-edit="t127" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t128" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=2026445504478351939" target="_blank" rel="noopener"><xen data-edit="t129" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t130" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </p>
+      <p style="margin-top:14px">
+        <a class="btn o" href="https://www.instagram.com/cocktail.lahoud/" target="_blank" rel="noopener" data-edit="t131" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/cocktaillahoud/" target="_blank" rel="noopener" data-edit="t132" data-edit-label="Button / link: Facebook">Facebook</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><xen data-edit="t133" data-edit-label="Text (EN): Cocktail Lahoud, Armenia Street, Dawra…">Cocktail Lahoud, Armenia Street, Dawra, Beirut. Squeezing since 1975.</xen><xar data-edit="t134" data-edit-label="Text (AR): كوكتيل لحود، شارع أرمينيا، الدورة، بير…">كوكتيل لحود، شارع أرمينيا، الدورة، بيروت. عم نعصر من الـ 1975.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t135" data-edit-label="Text (EN): A second counter pours in Zouk Mosbeh.">A second counter pours in Zouk Mosbeh.</xen><xar data-edit="t136" data-edit-label="Text (AR): وفي كاونتر تاني عم يسكب بذوق مصبح.">وفي كاونتر تاني عم يسكب بذوق مصبح.</xar></p>
+</footer>
+
+<nav class="bar">
+  <a href="tel:+9611265206"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t137" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t138" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="map" href="https://www.google.com/maps?cid=2026445504478351939" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t139" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t140" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/cocktail.lahoud/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t141" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="https://www.facebook.com/cocktaillahoud/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5H16.7V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t142" data-edit-label="Text: Facebook">Facebook</span></a>
+</nav>
+
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="كوكتيل لحود · شارع أرمينيا، الدورة، بيروت" data-edit="t143" data-edit-label="Button: عربي">عربي</button>
+</body></html>
