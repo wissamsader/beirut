@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Safsouf Sweets · Tarik El Jdideh, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prata&family=Mulish:wght@400;600;800&family=Scheherazade+New:wght@400;700&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Prata&family=Mulish:wght@400;600;800&family=Scheherazade+New:wght@400;700&family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Scheherazade New';--arb:'Vazirmatn';
@@ -28,53 +28,7 @@ section{padding-block:clamp(54px,8vh,92px)}
   box-shadow:0 6px 16px rgba(51,35,43,.3);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the counter scale, pan up top, dial, base ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  background:
-   repeating-linear-gradient(90deg,rgba(51,35,43,.03) 0 1px,transparent 1px 72px),
-   linear-gradient(180deg,#F2EADC,var(--cream) 55%,#EDE3D0)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--rose)}
-.scale{position:relative;z-index:2;width:min(600px,92vw);margin:clamp(14px,2.4vh,30px) auto;
-  display:flex;flex-direction:column;align-items:center}
-/* the pan, holding the tray photo */
-.pan{width:100%;position:relative}
-.pan .dish{position:relative;border-radius:16px 16px 60px 60px;overflow:hidden;
-  border:3px solid var(--brass-d);
-  background:linear-gradient(180deg,#E2C284,var(--brass));
-  box-shadow:0 18px 40px rgba(51,35,43,.3),inset 0 2px 0 rgba(255,255,255,.55);padding:9px}
-.pan .dish img{width:100%;height:clamp(140px,20vh,195px);object-fit:cover;border-radius:9px 9px 52px 52px}
-.pan .lipline{width:64%;height:12px;margin:0 auto;border-radius:0 0 12px 12px;
-  background:linear-gradient(180deg,var(--brass-d),#7A5A24)}
-/* the dial head */
-.head{width:min(430px,84%);margin-top:10px;background:#fff;border:2px solid var(--rose);
-  border-radius:14px;box-shadow:0 0 0 5px #fff,0 0 0 6px rgba(194,54,123,.35),0 20px 44px rgba(51,35,43,.18);
-  padding:clamp(14px,2.6vw,22px) clamp(16px,3vw,26px) clamp(12px,2.2vw,18px);text-align:center;position:relative}
-.dial{position:relative;width:168px;height:86px;margin:0 auto;overflow:hidden}
-.dial .arc{position:absolute;inset:0 0 -82px 0;border-radius:50%;border:3px solid var(--cream2);
-  background:
-   conic-gradient(from 310deg at 50% 100%,transparent 0 9deg,rgba(51,35,43,.55) 9deg 11deg,transparent 11deg 19deg,rgba(51,35,43,.55) 19deg 21deg,transparent 21deg 29deg,rgba(51,35,43,.55) 29deg 31deg,transparent 31deg 39deg,rgba(51,35,43,.55) 39deg 41deg,transparent 41deg 49deg,rgba(51,35,43,.55) 49deg 51deg,transparent 51deg 59deg,rgba(51,35,43,.55) 59deg 61deg,transparent 61deg 69deg,rgba(51,35,43,.55) 69deg 71deg,transparent 71deg 79deg,rgba(51,35,43,.55) 79deg 81deg,transparent 81deg 89deg,rgba(51,35,43,.55) 89deg 91deg,transparent 91deg 99deg,rgba(51,35,43,.55) 99deg 101deg,transparent 101deg 360deg),
-   radial-gradient(circle at 50% 100%,#FDF9F2 0 58%,#F5EDDF 59% 100%)}
-.dial .needle{position:absolute;left:50%;bottom:0;width:4px;height:72px;margin-left:-2px;border-radius:3px 3px 0 0;
-  background:var(--rose);transform-origin:50% 100%;transform:rotate(8deg);
-  animation:weigh 13s ease-in-out infinite;box-shadow:0 0 8px rgba(194,54,123,.4)}
-@keyframes weigh{0%,100%{transform:rotate(8deg)}50%{transform:rotate(9.6deg)}}
-.dial .pivot{position:absolute;left:50%;bottom:-9px;width:22px;height:22px;margin-left:-11px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#E2C284,var(--brass-d) 75%);border:2px solid #7A5A24}
-.head .reading{margin-top:10px;font:800 15px/1.4 'Mulish',sans-serif;color:var(--ink)}
 .head .reading .num{color:var(--rose);font-size:19px}
-/* the body plate */
-.bodyplate{width:min(520px,92%);margin-top:12px;background:linear-gradient(180deg,#fff,#FBF6EC);
-  border:1px solid #DCCFB6;border-radius:10px;box-shadow:0 22px 48px rgba(51,35,43,.16);
-  padding:clamp(16px,3vw,26px) clamp(16px,3vw,28px);text-align:center}
-.bodyplate .arname{display:block;font:700 clamp(30px,6.2vw,50px)/1.25 var(--arh),serif;color:var(--rose-d)}
-.bodyplate h1{font-size:clamp(24px,4.2vw,36px);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
-.sub{margin:8px auto 0;max-width:46ch;color:#6E5D52;font-size:clamp(14px,1.8vw,16px);line-height:1.65}
-.kilos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
-.kg{border:1.5px solid var(--pist);color:var(--pist-d);border-radius:999px;padding:6px 13px;
-  font:800 12px/1.4 'Mulish',sans-serif;background:rgba(127,160,90,.08)}
-.foot{width:min(340px,64%);height:16px;margin-top:10px;border-radius:0 0 12px 12px;
-  background:linear-gradient(180deg,#D8CBB2,#BCAC8D);border:1px solid #A6956F;border-top:0}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -143,12 +97,67 @@ footer{padding:36px 20px 130px;background:#241820;color:#C4AEB8;font-size:13.5px
   .two,.visit,.plcols{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .pan .dish img{height:140px}
-  .dial{width:140px;height:78px}
-  .dial .needle{height:64px}
-  .bar a{font-size:10px}
+  .bar a{font-size:10px}}
+
+/* ---------- HERO: the shop's own awning, its seams and scalloped valance, name across the canvas ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;background:#2A1520}
+.canopy{position:relative;flex:0 0 auto;height:clamp(330px,60vh,540px);
+  background:
+    linear-gradient(180deg,rgba(52,6,28,.42) 0%,rgba(52,6,28,.10) 12%,rgba(255,255,255,.16) 52%,rgba(255,255,255,.05) 66%,rgba(60,8,32,.30) 100%),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.10) 0 2px,rgba(88,14,48,.32) 2px 5px,transparent 5px 178px),
+    linear-gradient(180deg,#C2367B 0%,#A8215F 62%,#8E1750 100%)}
+.canopy::after{content:"";position:absolute;left:0;right:0;bottom:0;height:26%;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(52,6,28,.34))}
+.painted{position:absolute;z-index:3;left:0;right:0;top:clamp(40px,8vh,86px);text-align:center;padding:0 5vw}
+.arword{font-family:var(--arh),serif;font-weight:700;color:#FBEFE0;opacity:.92;
+  font-size:clamp(28px,4.6vw,68px);line-height:1.12;direction:rtl;
+  text-shadow:0 2px 6px rgba(70,8,38,.5)}
+.latword{margin-top:clamp(4px,1vh,12px);font-family:'Abril Fatface',serif;font-weight:400;
+  font-size:clamp(44px,8.8vw,134px);line-height:.9;color:#FDF6EA;letter-spacing:-.012em;
+  text-shadow:0 4px 14px rgba(60,6,32,.45)}
+.latword i{display:block;margin-top:clamp(8px,1.4vh,16px);font:800 clamp(12px,1.5vw,20px)/1 'Mulish',sans-serif;
+  font-style:normal;letter-spacing:.62em;color:#F6D9E7;text-shadow:none;padding-left:.62em}
+.valance{position:absolute;left:0;right:0;bottom:0;z-index:4}
+.strip{background:linear-gradient(180deg,#FBF5E9,#F0E4D1);color:#8E1750;text-align:center;
+  padding:clamp(10px,1.6vh,17px) 5vw;border-top:3px solid rgba(142,23,80,.35);
+  font:800 clamp(10.5px,1.15vw,14px)/1 'Mulish',sans-serif;letter-spacing:.3em;text-transform:uppercase}
+.scal{display:block;height:clamp(20px,2.8vh,34px);
+  background:radial-gradient(circle at 50% 0,#F0E4D1 66%,transparent 67%);
+  background-size:clamp(44px,4.8vw,70px) 100%;filter:drop-shadow(0 7px 7px rgba(52,6,28,.34))}
+
+/* the lit shopfront under the awning */
+.under2{position:relative;z-index:2;flex:1 1 auto;display:flex;align-items:center;gap:clamp(18px,3vw,48px);
+  padding:clamp(30px,5vh,56px) 6vw clamp(20px,3.4vh,40px);
+  background:
+    radial-gradient(74% 130% at 32% 0%,rgba(255,214,160,.20),transparent 64%),
+    linear-gradient(180deg,#3A1C2A 0%,#26121C 100%)}
+.rd{display:inline-flex;align-items:center;gap:10px;background:#7FA05A;color:#12210C;
+  padding:8px 14px;border-radius:2px;font:700 12.5px/1 'Mulish',sans-serif}
+.rd b{font-family:'Abril Fatface',serif;font-weight:400;font-size:16px;color:#12210C}
+.tellb{margin-top:14px;color:#F0E4DC;max-width:62ch;font:400 clamp(14.5px,1.62vw,19px)/1.55 'Mulish',sans-serif}
+.kilos2{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.kgt{border:1px solid rgba(201,161,90,.6);border-radius:2px;padding:6px 11px;background:rgba(201,161,90,.10);
+  color:#F1DFC4;font:600 clamp(11px,1.1vw,13px)/1 'Mulish',sans-serif;letter-spacing:.05em}
+.lit{flex:1 1 auto;min-width:0}
+.vitrine{flex:0 0 auto;width:clamp(150px,22vw,330px);padding:clamp(6px,.8vw,11px);border-radius:2px;
+  background:linear-gradient(180deg,#C9A15A,#9C7635);
+  box-shadow:0 18px 34px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.24)}
+.vitrine img{width:100%;height:clamp(104px,17vh,182px);object-fit:cover}
+@media(max-width:860px){
+  .canopy{height:clamp(270px,44vh,360px)}
+  .under2{flex-direction:column;align-items:flex-start;gap:14px;padding:22px 6vw 20px}
+  .vitrine{width:min(230px,52vw)}
+  .vitrine img{height:clamp(84px,12vh,120px)}
+  .tellb{font-size:15px}
 }
-@media(prefers-reduced-motion:reduce){.dial .needle{animation:none}}
+@media(max-width:430px){
+  .latword{font-size:clamp(38px,12vw,52px)}
+  .latword i{font-size:11px;letter-spacing:.45em;padding-left:.45em}
+  .arword{font-size:clamp(26px,8.4vw,36px)}
+  .strip{font-size:9.5px;letter-spacing:.2em}
+  .kgt{font-size:10.5px;padding:5px 8px}
+}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -197,32 +206,28 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="scale">
-    <div class="pan">
-      <div class="dish"><img src="img/04.jpg" alt="Trays of maamoul madd and sfouf cut into squares"></div>
-      <div class="lipline"></div>
+  <div class="canopy">
+    <div class="painted">
+      <p class="arword" data-edit="t1" data-edit-label="Text: حلويات صفصوف">حلويات صفصوف</p>
+      <h1 class="latword">SAFSOUF<i data-edit="t2" data-edit-label="Text: SWEETS">SWEETS</i></h1>
     </div>
-    <div class="head">
-      <div class="dial">
-        <span class="arc"></span>
-        <span class="needle"></span>
-        <span class="pivot"></span>
-      </div>
-      <p class="reading"><span class="num" data-edit="t1" data-edit-label="Text: 4.4 ★">4.4 ★</span> · <xen><span class="num" data-edit="t2" data-edit-label="Text: 1,721">1,721</span> Google reviews on the scale</xen><xar><span class="num" data-edit="t3" data-edit-label="Text: 1,721">1,721</span> تقييم على غوغل بالميزان</xar></p>
+    <div class="valance">
+      <p class="strip"><xen data-edit="t3" data-edit-label="Text (EN): Beiruti sweets, sold by the kilo">Beiruti sweets, sold by the kilo</xen><xar data-edit="t4" data-edit-label="Text (AR): حلويات بيروتية، عالكيلو">حلويات بيروتية، عالكيلو</xar></p>
+      <span class="scal" aria-hidden="true"></span>
     </div>
-    <div class="bodyplate">
-      <span class="k"><xen data-edit="t4" data-edit-label="Text (EN): Beiruti sweets, sold by the kilo">Beiruti sweets, sold by the kilo</xen><xar data-edit="t5" data-edit-label="Text (AR): حلويات بيروتية، عالكيلو">حلويات بيروتية، عالكيلو</xar></span>
-      <span class="arname" data-edit="t6" data-edit-label="Text: حلويات صفصوف">حلويات صفصوف</span>
-      <h1 data-edit="t7" data-edit-label="Big title: Safsouf Sweets">Safsouf Sweets</h1>
-      <p class="sub"><xen data-edit="t8" data-edit-label="Text (EN): The Tarik El Jdideh counter where knef…">The Tarik El Jdideh counter where knefeh, maamoul madd and baklawa go onto the scale at six in the morning and come off boxed with string.</xen><xar data-edit="t9" data-edit-label="Text (AR): كاونتر طريق الجديدة، وين الكنافة ومعمو…">كاونتر طريق الجديدة، وين الكنافة ومعمول المد والبقلاوة بيطلعوا عالميزان من الساعة 6 الصبح وبينزلوا معلّبين بالخيطان.</xar></p>
-      <div class="kilos">
-        <span class="kg"><xen data-edit="t10" data-edit-label="Text (EN): Knefeh">Knefeh</xen><xar data-edit="t11" data-edit-label="Text (AR): كنافة">كنافة</xar></span>
-        <span class="kg"><xen data-edit="t12" data-edit-label="Text (EN): Maamoul madd">Maamoul madd</xen><xar data-edit="t13" data-edit-label="Text (AR): معمول مد">معمول مد</xar></span>
-        <span class="kg"><xen data-edit="t14" data-edit-label="Text (EN): Sfouf">Sfouf</xen><xar data-edit="t15" data-edit-label="Text (AR): صفوف">صفوف</xar></span>
-        <span class="kg"><xen data-edit="t16" data-edit-label="Text (EN): Baklawa">Baklawa</xen><xar data-edit="t17" data-edit-label="Text (AR): بقلاوة">بقلاوة</xar></span>
+  </div>
+  <div class="under2">
+    <div class="lit">
+      <p class="rd"><b class="num" data-edit="t5" data-edit-label="Text: 4.4 ★">4.4 ★</b><span><xen><span class="num" data-edit="t6" data-edit-label="Text: 1,721">1,721</span> Google reviews on the scale</xen><xar><span class="num" data-edit="t7" data-edit-label="Text: 1,721">1,721</span> تقييم على غوغل بالميزان</xar></span></p>
+      <p class="tellb"><xen data-edit="t8" data-edit-label="Text (EN): The Tarik El Jdideh counter where knef…">The Tarik El Jdideh counter where knefeh, maamoul madd and baklawa go onto the scale at six in the morning and come off boxed with string.</xen><xar data-edit="t9" data-edit-label="Text (AR): كاونتر طريق الجديدة، وين الكنافة ومعمو…">كاونتر طريق الجديدة، وين الكنافة ومعمول المد والبقلاوة بيطلعوا عالميزان من الساعة 6 الصبح وبينزلوا معلّبين بالخيطان.</xar></p>
+      <div class="kilos2">
+        <span class="kgt"><xen data-edit="t10" data-edit-label="Text (EN): Knefeh">Knefeh</xen><xar data-edit="t11" data-edit-label="Text (AR): كنافة">كنافة</xar></span>
+        <span class="kgt"><xen data-edit="t12" data-edit-label="Text (EN): Maamoul madd">Maamoul madd</xen><xar data-edit="t13" data-edit-label="Text (AR): معمول مد">معمول مد</xar></span>
+        <span class="kgt"><xen data-edit="t14" data-edit-label="Text (EN): Sfouf">Sfouf</xen><xar data-edit="t15" data-edit-label="Text (AR): صفوف">صفوف</xar></span>
+        <span class="kgt"><xen data-edit="t16" data-edit-label="Text (EN): Baklawa">Baklawa</xen><xar data-edit="t17" data-edit-label="Text (AR): بقلاوة">بقلاوة</xar></span>
       </div>
     </div>
-    <div class="foot"></div>
+    <div class="vitrine"><img src="img/04.jpg" alt="Trays of maamoul madd and sfouf cut into squares"></div>
   </div>
 </header>
 

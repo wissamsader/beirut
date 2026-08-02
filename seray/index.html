@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Seray · Palladium Building, Downtown Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;600;700&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:wght@500;600;700&family=Mulish:wght@400;600;700&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Amiri';--arb:'Noto Naskh Arabic';
   --vir:#123B2F;--mar:#0C2A20;--ivory:#F7F3E8;--gold:#C29B4A;--ink:#22312B;
+  --garnet:#6B1220;--garnet-d:#3E070F;--marb:#EDE7DA;--marb-v:#BDB4A2;--brass2:#D9AE5C;--coal2:#FF6A18;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--vir);color:#EAE4D4;font:400 16.5px/1.8 'Mulish',system-ui,sans-serif}
@@ -25,41 +26,79 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(0,0,0,.4);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: a paper doily set on green marble ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;
+/* ---------- HERO: a brass ember tray set on the marble console ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   background:
-   linear-gradient(112deg,transparent 42%,rgba(247,243,232,.05) 46%,transparent 51%),
-   linear-gradient(76deg,transparent 62%,rgba(247,243,232,.04) 66%,transparent 72%),
-   linear-gradient(104deg,transparent 22%,rgba(12,42,32,.6) 30%,transparent 44%),
-   linear-gradient(180deg,#16453A 0%,var(--vir) 55%,#0B241C 100%)}
-.doilyw{position:relative;z-index:2;width:clamp(150px,20vh,210px);aspect-ratio:1/1;margin-top:calc(10px + env(safe-area-inset-top))}
-.doilyw::before{content:"";position:absolute;inset:-11px;border-radius:50%;background:var(--ivory);
-  -webkit-mask:repeating-conic-gradient(#000 0 8deg,transparent 8deg 16deg);
-  mask:repeating-conic-gradient(#000 0 8deg,transparent 8deg 16deg);opacity:.92}
-.doily{position:absolute;inset:0;border-radius:50%;background:var(--ivory);color:var(--ink);
-  box-shadow:0 24px 50px rgba(0,0,0,.5);display:flex;flex-direction:column;align-items:center;
-  justify-content:center;text-align:center;padding:16%}
-.doily::before{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+   linear-gradient(112deg,transparent 40%,rgba(247,243,232,.05) 45%,transparent 51%),
+   linear-gradient(74deg,transparent 60%,rgba(247,243,232,.04) 65%,transparent 72%),
+   radial-gradient(70% 46% at 50% 76%,rgba(255,132,44,.2),transparent 66%),
+   radial-gradient(120% 90% at 50% 20%,#7C1727,#5A0F1C 52%,#33060D 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
   background:
-   repeating-conic-gradient(rgba(18,59,47,.28) 0 1.6deg,transparent 1.6deg 10deg);
-  -webkit-mask:radial-gradient(closest-side,transparent 84%,#000 85% 94%,transparent 95%);
-  mask:radial-gradient(closest-side,transparent 84%,#000 85% 94%,transparent 95%)}
-.doily::after{content:"";position:absolute;inset:8%;border-radius:50%;pointer-events:none;
-  border:1px solid rgba(18,59,47,.35)}
-.cupc{width:clamp(46px,7vh,64px);height:auto;color:var(--gold);
-  animation:cupglow 7s ease-in-out infinite}
-@keyframes cupglow{0%,100%{filter:drop-shadow(0 0 0 rgba(194,155,74,0))}50%{filter:drop-shadow(0 0 9px rgba(194,155,74,.75))}}
-.ht2{position:relative;z-index:2;text-align:center;margin-top:clamp(20px,3.6vh,34px);padding-inline:6vw}
-.ht2 .k{letter-spacing:.44em}
-.ht2 h1{font-size:clamp(64px,13vw,148px);color:var(--ivory);letter-spacing:.16em;line-height:1;
-  margin-top:12px;text-indent:.16em}
-.ht2 .sub{margin:12px auto 0;max-width:52ch;color:#C9C4B2;font-size:clamp(14px,1.9vw,16.5px)}
-.ht2 .rt{margin-top:12px;font:700 13px/1.5 'Mulish',sans-serif;color:#93A197}
-.ht2 .rt b{color:var(--gold)}
-.plinth{position:relative;z-index:2;margin-top:clamp(18px,3.4vh,30px);display:flex;gap:9px;flex-wrap:wrap;justify-content:center;padding-inline:6vw}
-.chip{border:1px solid rgba(194,155,74,.55);border-radius:999px;padding:7px 14px;
-  font:600 12px/1 'Mulish',sans-serif;letter-spacing:.08em;color:var(--ivory)}
+   linear-gradient(102deg,transparent 18%,rgba(247,243,232,.11) 20%,transparent 21.6%),
+   linear-gradient(86deg,transparent 66%,rgba(247,243,232,.09) 68%,transparent 69.4%),
+   linear-gradient(120deg,transparent 40%,rgba(247,243,232,.07) 41.4%,transparent 42.6%)}
+/* the marble console the tray stands on */
+.console{position:absolute;left:0;right:0;bottom:0;height:clamp(140px,21vh,192px);z-index:2;
+  background:
+   linear-gradient(104deg,transparent 23.4%,rgba(122,114,98,.55) 24%,rgba(160,152,136,.3) 24.6%,transparent 25.2%),
+   linear-gradient(72deg,transparent 53.6%,rgba(122,114,98,.45) 54.1%,transparent 54.8%),
+   linear-gradient(126deg,transparent 71.6%,rgba(122,114,98,.4) 72.2%,transparent 72.9%),
+   linear-gradient(96deg,transparent 38%,rgba(140,132,116,.3) 38.5%,transparent 39.1%),
+   linear-gradient(180deg,#F6F2E8,#E7E0D1 34%,#D6CDBB 78%,#C2B8A4);
+  box-shadow:0 -24px 50px rgba(0,0,0,.42)}
+.console::before{content:"";position:absolute;left:0;right:0;top:0;height:clamp(9px,1.2vw,14px);
+  background:linear-gradient(180deg,#F0D296,var(--gold) 46%,#8C6624);
+  box-shadow:0 4px 12px rgba(0,0,0,.32)}
+/* the ember tray, small and exact, dead centre on the console lip */
+.tray{position:absolute;left:50%;transform:translateX(-50%);z-index:4;
+  bottom:calc(clamp(140px,21vh,192px) + clamp(14px,1.8vh,20px));
+  width:clamp(196px,19vw,276px)}
+.tray .pool{display:block;position:absolute;left:-58%;right:-58%;top:34%;height:clamp(120px,15vh,180px);
+  background:radial-gradient(closest-side,rgba(255,150,50,.55),rgba(255,120,30,0) 76%);filter:blur(8px)}
+.tray .bowl{display:block;position:relative;height:clamp(70px,8.4vh,98px);border-radius:6px 6px 40% 40%/6px 6px 62% 62%;
+  background:linear-gradient(180deg,#E9C883 0 8%,#BE8C31 34%,#7E5518 74%,#4A2E0A);
+  box-shadow:0 22px 42px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,240,200,.8),inset 0 -10px 18px rgba(0,0,0,.4);overflow:hidden}
+.tray .coals{display:block;position:absolute;left:9px;right:9px;top:9px;height:clamp(30px,3.8vh,44px);border-radius:6px;
+  background:
+   radial-gradient(circle 11px at 10% 62%,#FFDA92,#F0691A 54%,rgba(123,28,5,.9) 88%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 10px at 25% 34%,#FFE7B0,#FF7A1E 52%,rgba(110,23,4,.9) 86%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 12px at 41% 66%,#FFCF74,#E85C12 56%,rgba(102,20,3,.9) 88%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 10px at 57% 32%,#FFE2A2,#F26A16 52%,rgba(112,25,5,.9) 86%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 12px at 73% 64%,#FFD07E,#E45C0F 56%,rgba(94,18,3,.9) 88%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 10px at 90% 38%,#FFDD98,#EE6413 52%,rgba(104,21,4,.9) 86%,rgba(0,0,0,0) 100%),
+   linear-gradient(180deg,#3A1608,#150703);
+  box-shadow:0 0 30px rgba(255,120,30,.9),inset 0 2px 6px rgba(0,0,0,.6);
+  animation:emberglow 7s ease-in-out infinite}
+@keyframes emberglow{0%,100%{filter:brightness(.9)}50%{filter:brightness(1.16)}}
+@media(prefers-reduced-motion:reduce){.tray .coals{animation:none}}
+.tray .legs{display:block;position:absolute;left:12%;right:12%;top:100%;height:clamp(14px,1.8vh,20px);
+  background:linear-gradient(90deg,#7E5518 0 6px,transparent 6px calc(100% - 6px),#7E5518 calc(100% - 6px));
+  filter:drop-shadow(0 5px 6px rgba(0,0,0,.45))}
+.tray .legs::after{content:"";position:absolute;left:-24%;right:-24%;bottom:-6px;height:14px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(70,52,30,.42),rgba(70,52,30,0) 76%)}
+.doilyw{position:absolute;left:50%;transform:translateX(-50%);top:clamp(28px,5.4vh,64px);z-index:3;
+  width:clamp(76px,8vh,104px);aspect-ratio:1}
+.doilyw::before{display:none}
+.doily{position:absolute;inset:0;border-radius:50%;background:transparent;color:var(--gold);
+  border:1px solid rgba(217,174,92,.6);box-shadow:none;
+  display:flex;align-items:center;justify-content:center}
+.doily::before{content:"";position:absolute;inset:6px;border-radius:50%;border:1px solid rgba(217,174,92,.34)}
+.doily::after{display:none}
+.cupc{width:52%;height:auto;color:var(--brass2);animation:cupglow 7s ease-in-out infinite}
+@keyframes cupglow{0%,100%{filter:drop-shadow(0 0 0 rgba(217,174,92,0))}50%{filter:drop-shadow(0 0 9px rgba(217,174,92,.75))}}
+.ht2{position:absolute;left:0;right:0;top:clamp(150px,22vh,214px);z-index:3;text-align:center;padding-inline:6vw}
+.ht2 .k{letter-spacing:.44em;color:#E2B872}
+.ht2 h1{font-family:'Cinzel',serif;font-weight:900;font-size:clamp(60px,12.4vw,164px);
+  color:#FBF6EA;letter-spacing:.13em;line-height:1;margin-top:16px;text-indent:.13em;
+  text-shadow:0 2px 0 rgba(255,255,255,.22),0 -2px 0 rgba(60,6,14,.7),0 26px 54px rgba(0,0,0,.6)}
+.ht2 .sub{margin:20px auto 0;max-width:48ch;color:#EBD3C4;font-size:clamp(14.5px,1.7vw,17px);line-height:1.7}
+.ht2 .rt{margin-top:14px;font:700 13px/1.5 'Mulish',sans-serif;color:#D6B0A4}
+.ht2 .rt b{color:var(--brass2)}
+.plinth{position:absolute;left:0;right:0;bottom:clamp(24px,3.4vh,40px);z-index:5;
+  display:flex;gap:9px;flex-wrap:wrap;justify-content:center;padding-inline:6vw}
+.chip{border:1px solid rgba(140,102,36,.5);border-radius:999px;padding:8px 15px;
+  font:600 12px/1 'Mulish',sans-serif;letter-spacing:.08em;color:#4A3A22;background:rgba(255,255,255,.5)}
 
 section{padding-block:clamp(56px,8vh,96px)}
 .two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(26px,4vw,56px);align-items:start}
@@ -148,8 +187,13 @@ footer{padding:36px 0 132px;color:#7E8B80;font-size:13px;text-align:center;backg
   .rsteps{gap:30px}
   body{padding-bottom:78px}
 }
+@media(max-width:880px){
+  .ht2{top:clamp(120px,17vh,160px)}
+  .console{height:clamp(118px,17vh,150px)}
+  .tray{width:clamp(150px,44vw,200px)}
+  .doilyw{top:22px;width:66px}
+}
 @media(max-width:430px){
-  .doilyw{margin-top:calc(30px + env(safe-area-inset-top))}
   .ht2 h1{letter-spacing:.1em;text-indent:.1em}
 }
 </style>
@@ -201,6 +245,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="console" aria-hidden="true"></div>
   <div class="doilyw">
     <div class="doily">
       <svg class="cupc" viewBox="0 0 58 58" aria-hidden="true"><path d="M12 20h26v10a11 11 0 0 1-11 11h-4a11 11 0 0 1-11-11zm26 3h5a6 6 0 0 1 0 12h-4.2a11 11 0 0 0 1-4H43a3 3 0 0 0 0-7h-5zM10 45h30v3H10z" fill="currentColor"/><path d="M21 8c-2 3 2 4 0 7m6-7c-2 3 2 4 0 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
@@ -211,6 +256,11 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     <h1><xen data-edit="t3" data-edit-label="Text (EN): SERAY">SERAY</xen><xar data-edit="t4" data-edit-label="Text (AR): سراي">سراي</xar></h1>
     <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): Marble halls, family platters and a fi…">Marble halls, family platters and a fish counter on ice, in the Palladium Building.</xen><xar data-edit="t6" data-edit-label="Text (AR): قاعات رخام وصواني عالعيلة وسمك عالتلج،…">قاعات رخام وصواني عالعيلة وسمك عالتلج، ببناية البالاديوم.</xar></p>
     <p class="rt"><b class="num" data-edit="t7" data-edit-label="Text: ★ 4.4">★ 4.4</b> · <span><xen><span class="num" data-edit="t8" data-edit-label="Text: 564">564</span> Google reviews</xen><xar><span class="num" data-edit="t9" data-edit-label="Text: 564">564</span> تقييم على غوغل</xar></span></p>
+  </div>
+  <div class="tray" aria-hidden="true">
+    <span class="pool"></span>
+    <span class="bowl"><span class="coals"></span></span>
+    <span class="legs"></span>
   </div>
   <div class="plinth">
     <span class="chip"><xen data-edit="t10" data-edit-label="Text (EN): Open noon to midnight">Open noon to midnight</xen><xar data-edit="t11" data-edit-label="Text (AR): من الضهر لنص الليل">من الضهر لنص الليل</xar></span>

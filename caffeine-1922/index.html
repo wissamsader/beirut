@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Caffeine 1922 By Bassem Saab · Mar Elias, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Jost:wght@400;500;700&family=Lalezar&family=Mada:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poiret+One&family=Jost:wght@400;500;700&family=Lalezar&family=Mada:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Lalezar';--arb:'Mada';
@@ -25,48 +25,60 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(0,0,0,.5);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the red wall of the shop, a giant sleeved cup leaving the frame ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;overflow:hidden;
+/* ---------- HERO: the roaster's tin, low and heavy, on the paper of the counter ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;color:#2E1D14;
   background:
-   radial-gradient(46% 60% at 8% 0%,rgba(217,174,98,.3),transparent 70%),
-   repeating-linear-gradient(0deg,transparent 0 88px,rgba(0,0,0,.05) 88px 90px),
-   linear-gradient(180deg,#93352A,#7E271D 55%,#6C1F16)}
-.hcw{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
-  align-items:center;gap:clamp(10px,2vw,30px);width:min(1240px,100%);margin-inline:auto;
-  padding:clamp(60px,8vh,84px) 0 clamp(26px,4vh,44px) 7vw}
-.ht .k{color:var(--gld);letter-spacing:.3em}
-.ht h1{font-size:clamp(42px,6.6vw,78px);color:var(--cream);letter-spacing:.03em;margin-top:10px;line-height:1.05}
-.ht h1 b{font-family:inherit;font-weight:400;color:var(--gld)}
-.ht .by{font:700 11.5px/1 'Jost',sans-serif;letter-spacing:.3em;text-transform:uppercase;margin-top:12px;color:#E8C79B}
-.ht .sub{margin:14px 0 0;max-width:44ch;color:#F3DCC4;font-size:clamp(14px,1.8vw,16.5px)}
+   radial-gradient(1.5px 1.5px at 12px 17px,rgba(90,62,34,.14),transparent 60%) 0 0/37px 41px,
+   radial-gradient(1.2px 1.2px at 28px 8px,rgba(140,100,50,.1),transparent 60%) 0 0/53px 47px,
+   linear-gradient(168deg,#FBF4E4 0%,#F2E7CF 54%,#E4D5B7 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 50% 116%,rgba(120,86,42,.24),transparent 62%)}
+.hcw{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;padding-inline:6vw}
+.ht{width:min(560px,52%)}
+.ht .k{display:block;color:#A63E2A;letter-spacing:.3em}
+.ht h1{margin-top:12px;font-family:'Abril Fatface',serif;font-weight:400;line-height:.98;
+  font-size:clamp(42px,6.6vw,94px);color:#33221A;letter-spacing:-.005em}
+.ht h1 b{color:#A63E2A;font-weight:400}
+html.ar .ht h1{font-size:clamp(38px,5.4vw,74px)}
+.by{margin-top:10px;font:700 12px/1.5 'Jost',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#7A5A34}
+.ht .sub{margin-top:16px;max-width:42ch;color:#4E3A2A;font-size:clamp(14.5px,1.7vw,17px);line-height:1.7}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
-.chip{border:1px solid rgba(217,174,98,.6);border-radius:999px;padding:6px 13px;
-  font:500 12px/1 'Jost',sans-serif;letter-spacing:.06em;color:var(--cream)}
-.rt{margin-top:16px;font:700 13.5px/1.5 'Jost',sans-serif;color:#E8C79B}
-.rt b{color:var(--gld)}
-.pane{margin-top:20px;width:min(360px,72vw);background:#4A150E;padding:8px;
-  border:1px solid rgba(217,174,98,.5);border-radius:4px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
-.pane img{width:100%;height:clamp(130px,17vh,170px);object-fit:cover;border-radius:2px}
-.cupw{position:relative;height:100%;min-height:420px}
-.cup{position:absolute;top:50%;right:max(-120px,-14vw);transform:translateY(-50%);
-  width:clamp(340px,36vw,520px);filter:drop-shadow(-24px 30px 50px rgba(0,0,0,.45))}
-.lid{height:44px;background:linear-gradient(180deg,#4A3527,#33231A);border-radius:14px 14px 5px 5px;
-  width:88%;margin:0 auto;position:relative}
-.lid::before{content:"";position:absolute;top:10px;left:14%;width:40px;height:9px;border-radius:5px;background:#241812}
-.lid::after{content:"";position:absolute;left:1%;right:1%;bottom:-7px;height:12px;border-radius:7px;
-  background:linear-gradient(180deg,#5A4130,#3B2A1E)}
-.body{clip-path:polygon(4% 0,96% 0,87% 100%,13% 100%);background:linear-gradient(180deg,#F6EFDF,#E5D6B8);
-  padding:30px 0 34px;text-align:center;color:#3A2A18}
-.body .kk{font:700 11px/1 'Jost',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--rust)}
-.slv{margin:16px 0;padding:clamp(22px,3.4vh,32px) 18px;position:relative;color:#2B1C10;
-  background:repeating-linear-gradient(90deg,var(--flute) 0 8px,var(--kraft) 8px 16px);
-  border-top:4px solid #8A6538;border-bottom:4px solid #8A6538;box-shadow:inset 0 8px 16px rgba(58,36,14,.28)}
-.slv .y1922{font:400 clamp(54px,6.4vw,86px)/1 'Poiret One',cursive;color:#2B1C10;letter-spacing:.06em}
-.slv .roast{font:700 10.5px/1 'Jost',sans-serif;letter-spacing:.3em;text-transform:uppercase;margin-top:10px;color:#4E381F}
-.ring{position:absolute;top:-44px;left:-30px;width:104px;height:104px;color:var(--gld);
-  animation:ringspin 90s linear infinite;z-index:3}
-@keyframes ringspin{to{transform:rotate(360deg)}}
+.chip{border:1.5px solid rgba(166,62,42,.5);color:#8A3524;border-radius:99px;padding:7px 14px;
+  font:600 12px/1 'Jost',sans-serif;letter-spacing:.06em;background:rgba(255,255,255,.5)}
+.ht .rt{margin-top:16px;font:600 13.5px/1.6 'Jost',sans-serif;color:#6E5238}
+.ht .rt b{color:#B07A22;font-size:16.5px}
+/* the tin */
+.cupw{position:absolute;z-index:2;right:clamp(12px,3.4vw,58px);bottom:clamp(-140px,-16vh,-88px);
+  width:clamp(268px,36vw,506px)}
+.cup{position:relative;width:100%;height:clamp(430px,72vh,700px);
+  border-radius:24px 24px 16px 16px/34px 34px 22px 22px;
+  background:linear-gradient(100deg,#7A5518 0 4%,#C09742 14%,#E9CE86 28%,#C9A24E 48%,#8A6222 76%,#B78F3C 100%);
+  box-shadow:0 44px 84px rgba(70,44,18,.42),inset 0 -30px 50px rgba(50,30,8,.28),
+             inset 26px 0 44px rgba(46,26,4,.34),inset -30px 0 46px rgba(46,26,4,.4)}
+.lid{position:absolute;left:-14px;right:-14px;top:-26px;height:50px;border-radius:12px;
+  background:linear-gradient(100deg,#6E4A14,#DCB964 32%,#8A6222 74%,#C9A24E);
+  box-shadow:0 8px 18px rgba(70,44,18,.4),inset 0 3px 0 rgba(255,240,200,.4)}
+.lid::after{content:"";position:absolute;left:12%;right:12%;top:16px;height:4px;border-radius:3px;
+  background:rgba(60,38,10,.35)}
+.body{position:absolute;inset:0;overflow:hidden;border-radius:inherit}
+.kk{position:absolute;left:0;right:0;top:9%;text-align:center;
+  font:700 11px/1 'Jost',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#5A3D12}
+.slv{position:absolute;left:7%;right:7%;top:22%;padding:clamp(16px,2.6vw,28px) 18px clamp(18px,3vw,30px);
+  background:linear-gradient(180deg,#FCF6E8,#F0E3C8);border-block:3px solid #A63E2A;text-align:center;
+  box-shadow:0 12px 26px rgba(70,44,18,.3)}
+.ring{display:block;width:clamp(52px,7vw,80px);height:clamp(52px,7vw,80px);margin:0 auto;color:#A63E2A;
+  animation:ringturn 90s linear infinite}
+@keyframes ringturn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ring{animation:none}}
+.y1922{margin-top:8px;font:400 clamp(30px,4.4vw,56px)/1 'Abril Fatface',serif;color:#33221A;letter-spacing:.03em}
+.roast{margin-top:6px;font:700 10.5px/1.4 'Jost',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#7A5A34}
+/* the brass tray, propped against the tin */
+.pane{position:absolute;z-index:4;right:clamp(250px,33vw,520px);bottom:clamp(24px,4.6vh,56px);width:min(330px,31vw);
+  padding:9px;background:#FCF6E8;border:1px solid rgba(176,122,34,.55);
+  box-shadow:0 22px 44px rgba(70,44,18,.32)}
+.pane img{width:100%;height:clamp(128px,18vh,182px);object-fit:cover;display:block}
+
 
 section{padding-block:clamp(56px,8vh,96px)}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(26px,4vw,56px);align-items:start}
@@ -148,21 +160,25 @@ footer{padding:36px 0 132px;color:#8A7A62;font-size:13px;text-align:center;backg
   .stamps,.steps{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .hcw{grid-template-columns:1fr;padding-top:72px;padding-bottom:0;gap:0}
-  .cupw{min-height:300px;margin-top:-8px}
-  .cup{width:min(300px,72vw);right:-52px;top:44%}
-  .lid{height:34px}
-  .body{padding:22px 0 26px}
-  .slv{padding:18px 14px}
-  .slv .y1922{font-size:46px}
-  .ring{width:78px;height:78px;top:-32px;left:-20px}
-  .pane{width:min(320px,80vw)}
+  .ht{width:min(520px,62%)}
   body{padding-bottom:78px}
 }
 @media(max-width:430px){
   .stamps,.steps{grid-template-columns:1fr}
   .hcw{padding-top:66px}
   .cupw{min-height:260px}
+}
+@media(max-width:700px){
+  header{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;
+    padding-top:clamp(24px,4.5vh,44px)}
+  .hcw{width:100%}
+  .ht{width:100%}
+  .cupw{right:3vw;bottom:-11vh;width:54vw}
+  .cup{height:38vh}
+  .pane{left:4vw;right:auto;bottom:3vh;width:44vw;padding:7px}
+  .pane img{height:92px}
+  .slv{left:6%;right:6%;top:20%;padding:12px 8px 14px}
+  .y1922{font-size:clamp(24px,7vw,34px)}
 }
 </style>
 <meta name="robots" content="noindex,nofollow">
@@ -224,22 +240,22 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
         <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Retail and wholesale">Retail and wholesale</xen><xar data-edit="t14" data-edit-label="Text (AR): مفرّق وجملة">مفرّق وجملة</xar></span>
       </div>
       <p class="rt"><b class="num" data-edit="t15" data-edit-label="Text: ★ 4.5">★ 4.5</b> · <span><xen><span class="num" data-edit="t16" data-edit-label="Text: 358">358</span> Google reviews</xen><xar><span class="num" data-edit="t17" data-edit-label="Text: 358">358</span> تقييم على غوغل</xar></span></p>
-      <div class="pane"><img src="img/09.jpg" alt="A Turkish coffee set on a brass tray: rakwa, patterned cup and sweets"></div>
     </div>
-    <div class="cupw" aria-hidden="false">
-      <div class="cup">
-        <div class="lid" aria-hidden="true"></div>
-        <div class="body">
-          <p class="kk"><xen data-edit="t18" data-edit-label="Text (EN): Mar Elias roast">Mar Elias roast</xen><xar data-edit="t19" data-edit-label="Text (AR): تحميص مار الياس">تحميص مار الياس</xar></p>
-          <div class="slv">
-            <svg class="ring" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="44" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="48" cy="48" r="31" fill="none" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor"><circle cx="48" cy="10" r="2.6"/><circle cx="86" cy="48" r="2.6"/><circle cx="48" cy="86" r="2.6"/><circle cx="10" cy="48" r="2.6"/><circle cx="75" cy="21" r="2"/><circle cx="75" cy="75" r="2"/><circle cx="21" cy="75" r="2"/><circle cx="21" cy="21" r="2"/></g><path d="M48 34c-8 7-8 15 0 22 8-7 8-15 0-22zm0 6c3.4 3.6 3.4 6.4 0 10-3.4-3.6-3.4-6.4 0-10z" fill="currentColor"/></svg>
-            <p class="y1922 num" data-edit="t20" data-edit-label="Text: 1922">1922</p>
-            <p class="roast"><xen data-edit="t21" data-edit-label="Text (EN): Saab roasters">Saab roasters</xen><xar data-edit="t22" data-edit-label="Text (AR): محمصة صعب">محمصة صعب</xar></p>
-          </div>
+  </div>
+  <div class="cupw">
+    <div class="cup">
+      <div class="lid" aria-hidden="true"></div>
+      <div class="body">
+        <p class="kk"><xen data-edit="t18" data-edit-label="Text (EN): Mar Elias roast">Mar Elias roast</xen><xar data-edit="t19" data-edit-label="Text (AR): تحميص مار الياس">تحميص مار الياس</xar></p>
+        <div class="slv">
+          <svg class="ring" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="44" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="48" cy="48" r="31" fill="none" stroke="currentColor" stroke-width="1.4"/><g fill="currentColor"><circle cx="48" cy="10" r="2.6"/><circle cx="86" cy="48" r="2.6"/><circle cx="48" cy="86" r="2.6"/><circle cx="10" cy="48" r="2.6"/><circle cx="75" cy="21" r="2"/><circle cx="75" cy="75" r="2"/><circle cx="21" cy="75" r="2"/><circle cx="21" cy="21" r="2"/></g><path d="M48 34c-8 7-8 15 0 22 8-7 8-15 0-22zm0 6c3.4 3.6 3.4 6.4 0 10-3.4-3.6-3.4-6.4 0-10z" fill="currentColor"/></svg>
+          <p class="y1922 num" data-edit="t20" data-edit-label="Text: 1922">1922</p>
+          <p class="roast"><xen data-edit="t21" data-edit-label="Text (EN): Saab roasters">Saab roasters</xen><xar data-edit="t22" data-edit-label="Text (AR): محمصة صعب">محمصة صعب</xar></p>
         </div>
       </div>
     </div>
   </div>
+  <div class="pane"><img src="img/09.jpg" alt="A Turkish coffee set on a brass tray: rakwa, patterned cup and sweets"></div>
 </header>
 
 <section class="wrap">

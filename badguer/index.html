@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Badguer · Der Melkonian, Bourj Hammoud</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Mulish:wght@400;600;700&family=Markazi+Text:wght@500;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700;6..96,800&family=Mulish:wght@400;600;700&family=Markazi+Text:wght@500;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Markazi Text';--arb:'Almarai';
-  --pink:#E4AFA6;--pink-d:#D89C92;--plaster:#F4E3DE;--ink:#43222E;
+  --pink:#E4AFA6;--pink-d:#D89C92;--plaster:#F6E9E4;--ink:#43222E;--wax:#7E2033;
   --olive:#66714B;--olive-d:#4C5637;--brass:#B08A4A;--line:rgba(67,34,46,.2);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--plaster);color:var(--ink);font:400 17px/1.75 'Mulish',system-ui,sans-serif}
 .wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:800;line-height:1.08}
+h1,h2,h3{font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:700;line-height:1.1}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.4 'Mulish',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#9A5A48}
@@ -26,45 +26,90 @@ img{display:block;max-width:100%}
   -webkit-appearance:none;box-shadow:0 4px 14px rgba(67,34,46,.35);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the pink house, balcony rail across the facade ---------- */
+/* ---------- HERO: the sealed invitation, lying on the pink house plaster ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;padding:60px 4vw 44px;
+  display:flex;align-items:flex-end;justify-content:center;padding:0 3vw 0;--flap:clamp(122px,21vh,192px);
   background:
-    radial-gradient(120% 60% at 50% -8%,rgba(67,34,46,.16),transparent 60%),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
-    linear-gradient(180deg,var(--pink-d),var(--pink) 44%,var(--pink-d))}
-.house{position:relative;width:min(940px,95vw);text-align:center}
-.plaque{display:inline-block;background:var(--plaster);border:1.5px solid var(--ink);
-  padding:clamp(18px,3vw,28px) clamp(20px,4vw,44px);box-shadow:0 12px 30px rgba(67,34,46,.25);position:relative}
-.plaque::before{content:"";position:absolute;inset:5px;border:1px solid rgba(176,138,74,.65);pointer-events:none}
-.plaque h1{font-size:clamp(42px,7.6vw,72px);letter-spacing:.02em}
-.plaque h1 xar{font-weight:700}
-.sub{margin-top:8px;color:#6E4738;font-size:clamp(14px,1.8vw,16.5px);line-height:1.6;max-width:52ch}
-.plate{display:inline-flex;align-items:baseline;gap:7px;margin-top:12px;background:var(--olive);color:#F3F0E0;
-  padding:6px 12px;border-radius:2px;font:700 12.5px/1 'Mulish',sans-serif}
-.floorband{position:relative;margin-top:clamp(20px,3.4vh,34px)}
-.winrow{display:flex;align-items:flex-end;justify-content:center;gap:clamp(12px,2.6vw,30px)}
-.win{flex:0 0 clamp(90px,17vw,170px);height:clamp(180px,26vh,250px);border:3px solid var(--ink);
-  background:repeating-linear-gradient(180deg,var(--olive) 0 8px,var(--olive-d) 8px 11px);
-  box-shadow:inset 0 0 0 2px rgba(255,255,255,.12),0 10px 26px rgba(67,34,46,.22);border-radius:2px 2px 0 0}
-.door{flex:0 0 min(400px,58vw);border:3px solid var(--ink);background:var(--plaster);
-  padding:8px;border-radius:3px 3px 0 0;box-shadow:0 14px 34px rgba(67,34,46,.28);position:relative}
-.door img{width:100%;height:clamp(240px,34vh,330px);object-fit:cover}
-.lamp{position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;
-  background:radial-gradient(circle at 50% 42%,#FFE9B0 0 34%,var(--brass) 60%,#7C5C28 100%);
-  border:2px solid var(--ink);animation:lampbr 7s ease-in-out infinite}
-@keyframes lampbr{0%,100%{box-shadow:0 0 10px 2px rgba(255,225,150,.45)}50%{box-shadow:0 0 20px 7px rgba(255,225,150,.75)}}
-@media(prefers-reduced-motion:reduce){.lamp{animation:none}}
-.rail{position:absolute;left:0;right:0;bottom:-6px;height:clamp(64px,9vh,84px);z-index:3;
+    radial-gradient(58% 44% at 26% 12%,rgba(255,246,238,.55),transparent 68%),
+    radial-gradient(90% 70% at 92% 96%,rgba(103,52,44,.34),transparent 62%),
+    repeating-linear-gradient(96deg,rgba(255,255,255,.055) 0 3px,transparent 3px 11px),
+    repeating-linear-gradient(2deg,rgba(120,60,52,.05) 0 2px,transparent 2px 14px),
+    linear-gradient(178deg,#E7B0A2,#DA9C8E 44%,#BE7B6E)}
+header::before{content:"";position:absolute;left:7%;top:-4%;width:210px;height:290px;
+  background:linear-gradient(180deg,rgba(255,250,244,.42),rgba(255,250,244,0));
+  transform:skewX(-9deg);filter:blur(2px)}
+header::after{content:"";position:absolute;left:0;right:0;top:104px;height:14px;
+  background:linear-gradient(180deg,rgba(255,244,238,.5) 0 3px,rgba(120,60,52,.16) 3px 5px,
+    rgba(255,244,238,.34) 5px 9px,rgba(120,60,52,.13) 9px 10px,transparent 10px);
+  box-shadow:0 9px 16px rgba(120,60,52,.16)}
+
+.env{position:relative;width:min(1090px,94vw);margin:0 0 -40px;z-index:2}
+.flap{position:relative;height:var(--flap);
+  background:linear-gradient(180deg,#E9DAC5,#F3E9DA);
+  clip-path:polygon(0 100%,50% 0,100% 100%);
+  filter:drop-shadow(0 3px 0 rgba(67,34,46,.26)) drop-shadow(0 -5px 9px rgba(67,34,46,.24))}
+.body{position:relative;background:linear-gradient(178deg,#FBF4E8,#F2E7D6 62%,#EADCC7);
+  border-top:1px solid rgba(67,34,46,.16);
+  box-shadow:0 -14px 44px rgba(67,34,46,.34),inset 0 1px 0 rgba(255,255,255,.8);
+  padding:clamp(52px,6.6vh,74px) clamp(20px,3.4vw,46px) clamp(80px,12.4vh,118px);
+  display:grid;grid-template-columns:clamp(200px,23vw,286px) 1fr;
+  gap:clamp(20px,3vw,42px);align-items:start}
+.lcol{position:relative}
+.win{border:1px solid rgba(67,34,46,.5);padding:5px;background:#fff;
+  box-shadow:inset 0 0 0 4px rgba(140,150,120,.14),0 6px 16px rgba(67,34,46,.16)}
+.win img{width:100%;height:clamp(158px,23vh,228px);object-fit:cover}
+.ek{font:700 11px/1.5 'Mulish',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#9A5A48}
+h1.card{font-family:'Bodoni Moda',Didot,Georgia,serif;font-weight:700;
+  font-size:clamp(38px,6.2vw,80px);line-height:1;letter-spacing:.035em;margin:9px 0 12px;color:var(--ink)}
+h1.card xar{letter-spacing:0;font-weight:700}
+.sub{color:#6A4234;font-size:clamp(14.5px,1.75vw,17px);line-height:1.65;max-width:46ch;margin:0}
+.route{list-style:none;margin:17px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.route li{position:relative;padding-left:24px;font:700 11.5px/1.7 'Mulish',sans-serif;
+  letter-spacing:.17em;text-transform:uppercase;color:#5A3A2E}
+.route li::before{content:"";position:absolute;left:0;top:.62em;width:14px;height:1.5px;background:var(--olive)}
+
+.stamp{position:absolute;right:clamp(20px,3.4vw,46px);top:clamp(54px,7vh,76px);z-index:3;
+  width:clamp(96px,10vw,132px);padding:9px 8px 10px;text-align:center;
   background:
-    linear-gradient(180deg,var(--ink) 0 7px,transparent 7px calc(100% - 9px),var(--ink) calc(100% - 9px)),
-    repeating-linear-gradient(90deg,var(--ink) 0 5px,transparent 5px 27px);
-  filter:drop-shadow(0 6px 10px rgba(67,34,46,.35))}
-.slabline{position:relative;height:16px;margin-top:6px;background:linear-gradient(180deg,#B9776B,#9E5F53);
-  box-shadow:0 8px 18px rgba(67,34,46,.3)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:clamp(16px,2.6vh,24px)}
-.chip{border:1.5px solid var(--ink);border-radius:999px;padding:6px 13px;
-  font:700 12px/1.4 'Mulish',sans-serif;color:var(--ink);background:rgba(244,227,222,.66)}
+    radial-gradient(circle at 50% 0,transparent 4px,#F6EBD6 4.5px) 0 0/13px 13px repeat-x,
+    radial-gradient(circle at 50% 100%,transparent 4px,#F6EBD6 4.5px) 0 100%/13px 13px repeat-x,
+    radial-gradient(circle at 0 50%,transparent 4px,#F6EBD6 4.5px) 0 0/13px 13px repeat-y,
+    radial-gradient(circle at 100% 50%,transparent 4px,#F6EBD6 4.5px) 100% 0/13px 13px repeat-y,
+    #F6EBD6;
+  filter:drop-shadow(0 5px 12px rgba(67,34,46,.24))}
+.stamp i{display:block;font-style:normal;font-family:'Bodoni Moda',Georgia,serif;font-weight:700;
+  font-size:clamp(26px,2.8vw,36px);line-height:1;color:var(--ink)}
+.stamp em{display:block;font-style:normal;font:600 8.5px/1.35 'Mulish',sans-serif;
+  letter-spacing:.1em;text-transform:uppercase;color:#7B4F3E;margin-top:6px;
+  border-top:1px solid rgba(67,34,46,.3);padding-top:6px}
+
+.seal{position:absolute;right:clamp(-30px,-2vw,-18px);bottom:clamp(-34px,-3vw,-22px);z-index:5;
+  width:clamp(76px,8.2vw,104px);aspect-ratio:1;border-radius:49% 51% 52% 48%/51% 49% 51% 49%;
+  background:radial-gradient(circle at 38% 32%,#B24A4E,#7E2033 52%,#5A1424 100%);
+  box-shadow:0 8px 18px rgba(67,34,46,.4),inset 0 -4px 10px rgba(0,0,0,.35),
+    inset 0 4px 8px rgba(255,255,255,.22);overflow:hidden}
+.seal::before{content:"";position:absolute;inset:19%;border-radius:50%;
+  border:2px dashed rgba(255,255,255,.34);box-shadow:inset 0 0 12px rgba(0,0,0,.45)}
+.seal::after{content:"";position:absolute;top:0;left:-46%;width:38%;height:100%;
+  background:linear-gradient(102deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:sealgl 12s ease-in-out infinite}
+@keyframes sealgl{0%,86%{transform:translateX(0)}100%{transform:translateX(400%)}}
+@media(prefers-reduced-motion:reduce){.seal::after{animation:none}}
+
+@media(max-width:880px){
+  header{padding:0 0 0}
+  .env{width:100%;margin-bottom:-40px}
+  .body{grid-template-columns:1fr;gap:26px;padding:44px 20px 68px}
+  .stamp{position:static;width:120px;margin:0 0 14px auto}
+  .seal{width:74px;right:-16px;bottom:-26px}
+  .win img{height:150px}
+}
+@media(max-width:430px){
+  .flap{height:74px}
+  .body{padding:40px 16px 62px}
+  .seal{width:62px;right:-12px;bottom:-22px}
+  .route li{letter-spacing:.11em}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -189,29 +234,26 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="house">
-    <div class="plaque">
-      <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Nor Marash · Bourj Hammoud">Nor Marash · Bourj Hammoud</xen><xar data-edit="t2" data-edit-label="Text (AR): نور مراش · برج حمود">نور مراش · برج حمود</xar></p>
-      <h1><xen data-edit="t3" data-edit-label="Text (EN): BADGUER">BADGUER</xen><xar data-edit="t4" data-edit-label="Text (AR): بادغير">بادغير</xar></h1>
-      <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): A 1930 pink house where an all-female …">A 1930 pink house where an all-female kitchen cooks Armenian family food downstairs, and the upper floor keeps the crafts alive.</xen><xar data-edit="t6" data-edit-label="Text (AR): بيت زهري من سنة 1930، فيه مطبخ كلّه نس…">بيت زهري من سنة 1930، فيه مطبخ كلّه نساء بيطبخ أكل أرمني بيتي تحت، والطابق الفوقاني مخلّي الحرف عايشة.</xar></p>
-      <p class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 4.6">4.6</span> <span><xen>from <span class="num" data-edit="t8" data-edit-label="Text: 235">235</span> Google reviews</xen><xar>من <span class="num" data-edit="t9" data-edit-label="Text: 235">235</span> تقييم على غوغل</xar></span></p>
-    </div>
-    <div class="floorband">
-      <div class="winrow">
-        <div class="win" aria-hidden="true"></div>
-        <div class="door">
-          <span class="lamp" aria-hidden="true"></span>
+  <div class="env">
+    <div class="flap" aria-hidden="true"></div>
+    <div class="body">
+      <p class="stamp"><i class="num" data-edit="t1" data-edit-label="Text: 4.6">4.6</i><em><xen>from <span class="num" data-edit="t2" data-edit-label="Text: 235">235</span> Google reviews</xen><xar>من <span class="num" data-edit="t3" data-edit-label="Text: 235">235</span> تقييم على غوغل</xar></em></p>
+      <div class="lcol">
+        <div class="win">
           <img src="img/04.jpg" alt="An Armenian spread of soujouk, sarma, cheese boereg and mezze on a patterned cloth">
         </div>
-        <div class="win" aria-hidden="true"></div>
+        <span class="seal" aria-hidden="true"></span>
       </div>
-      <div class="rail" aria-hidden="true"></div>
-    </div>
-    <div class="slabline" aria-hidden="true"></div>
-    <div class="chips">
-      <span class="chip"><xen class="c" data-edit="t10" data-edit-label="Text (EN): All-female kitchen">All-female kitchen</xen><xar class="c" data-edit="t11" data-edit-label="Text (AR): مطبخ كلّه نساء">مطبخ كلّه نساء</xar></span>
-      <span class="chip"><xen class="c" data-edit="t12" data-edit-label="Text (EN): The pink house, est. 1930">The pink house, est. 1930</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): البيت الزهري، بناء 1930">البيت الزهري، بناء 1930</xar></span>
-      <span class="chip"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Exhibitions upstairs">Exhibitions upstairs</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): معارض فوق">معارض فوق</xar></span>
+      <div>
+        <p class="ek"><xen data-edit="t4" data-edit-label="Text (EN): Nor Marash · Bourj Hammoud">Nor Marash · Bourj Hammoud</xen><xar data-edit="t5" data-edit-label="Text (AR): نور مراش · برج حمود">نور مراش · برج حمود</xar></p>
+        <h1 class="card"><xen data-edit="t6" data-edit-label="Text (EN): BADGUER">BADGUER</xen><xar data-edit="t7" data-edit-label="Text (AR): بادغير">بادغير</xar></h1>
+        <p class="sub"><xen data-edit="t8" data-edit-label="Text (EN): A 1930 pink house where an all-female …">A 1930 pink house where an all-female kitchen cooks Armenian family food downstairs, and the upper floor keeps the crafts alive.</xen><xar data-edit="t9" data-edit-label="Text (AR): بيت زهري من سنة 1930، فيه مطبخ كلّه نس…">بيت زهري من سنة 1930، فيه مطبخ كلّه نساء بيطبخ أكل أرمني بيتي تحت، والطابق الفوقاني مخلّي الحرف عايشة.</xar></p>
+        <ul class="route">
+          <li><xen class="c" data-edit="t10" data-edit-label="Text (EN): All-female kitchen">All-female kitchen</xen><xar class="c" data-edit="t11" data-edit-label="Text (AR): مطبخ كلّه نساء">مطبخ كلّه نساء</xar></li>
+          <li><xen class="c" data-edit="t12" data-edit-label="Text (EN): The pink house, est. 1930">The pink house, est. 1930</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): البيت الزهري، بناء 1930">البيت الزهري، بناء 1930</xar></li>
+          <li><xen class="c" data-edit="t14" data-edit-label="Text (EN): Exhibitions upstairs">Exhibitions upstairs</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): معارض فوق">معارض فوق</xar></li>
+        </ul>
+      </div>
     </div>
   </div>
 </header>

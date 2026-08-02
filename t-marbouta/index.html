@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>T-Marbouta · Hamra Square, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Karla:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Karla:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Aref Ruqaa';--arb:'Noto Naskh Arabic';
@@ -28,53 +28,7 @@ section{padding-block:clamp(54px,8vh,92px)}
   border:1px solid #8A6524;border-radius:3px;box-shadow:0 3px 0 #8A6524,0 8px 18px rgba(38,34,26,.3);
   -webkit-appearance:none}
 .lngt:active{transform:translateY(2px);box-shadow:0 1px 0 #8A6524}
-
-/* ---------- HERO: one walnut catalogue drawer, pulled open on the room ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  background:
-   repeating-linear-gradient(0deg,rgba(38,34,26,.045) 0 1px,transparent 1px 88px),
-   linear-gradient(180deg,#EFE9D8,var(--paper) 55%,#E7DFC9)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;
-  background:linear-gradient(180deg,var(--wood-d),#2C2015)}
-.cab{position:relative;width:min(880px,92vw);margin:clamp(24px,4vh,48px) auto;
-  background:linear-gradient(175deg,var(--wood-l),var(--wood) 40%,var(--wood-d));
-  border:1px solid #2C2015;border-radius:8px;
-  box-shadow:0 34px 70px rgba(44,32,21,.45),inset 0 1px 0 rgba(255,255,255,.14);
-  padding:clamp(14px,2.4vw,22px)}
-.toprail{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-  padding:4px 6px 14px;border-bottom:1px solid rgba(233,224,200,.22)}
 .toprail .k{color:#E4D9BC}
-.screw{width:9px;height:9px;border-radius:50%;flex:0 0 auto;
-  background:radial-gradient(circle at 35% 30%,var(--brass-l),#8A6524 78%);box-shadow:0 1px 2px rgba(0,0,0,.5)}
-.plate{display:inline-flex;align-items:baseline;gap:7px;background:linear-gradient(180deg,var(--brass-l),var(--brass));
-  color:#2B1F0E;padding:6px 12px;border-radius:2px;font:700 13px/1 'Karla',sans-serif;border:1px solid #8A6524}
-.face{position:relative;margin-top:16px;padding:clamp(22px,4.2vw,44px) clamp(16px,3vw,36px) clamp(18px,3vw,30px);
-  background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.14));
-  border:1px solid rgba(233,224,200,.2);border-radius:5px;text-align:center}
-.lbl{display:inline-block;background:var(--paper);border:2px solid var(--brass);border-radius:3px;
-  box-shadow:0 0 0 5px rgba(185,138,59,.28),0 10px 26px rgba(0,0,0,.35);
-  padding:clamp(18px,3.4vw,30px) clamp(20px,4vw,46px)}
-.lbl h1{font-size:clamp(42px,8.6vw,86px);color:var(--ink)}
-.lbl h1 b{color:var(--olive);font-weight:800}
-.sub{margin-top:10px;color:#5A5340;font-size:clamp(14.5px,1.9vw,17.5px);line-height:1.6}
-.pull{width:118px;height:30px;margin:20px auto 0;border-radius:0 0 60px 60px;
-  background:linear-gradient(180deg,var(--brass-l),var(--brass) 60%,#8A6524);
-  border:1px solid #8A6524;border-top:0;box-shadow:0 6px 12px rgba(0,0,0,.35)}
-.stamp{position:absolute;top:-24px;left:clamp(6px,2vw,20px);width:74px;height:74px;border-radius:50%;
-  background:var(--olive);color:#F1ECD9;display:flex;align-items:center;justify-content:center;
-  font:700 34px/1 var(--arh),serif;box-shadow:0 8px 18px rgba(38,34,26,.35);border:2px solid #3C4519}
-.stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1.5px dashed rgba(241,236,217,.75);
-  animation:ringspin 90s linear infinite}
-@keyframes ringspin{to{transform:rotate(360deg)}}
-.slot{margin-top:16px;background:#33261A;border:1px solid rgba(233,224,200,.16);border-radius:5px;
-  padding:10px;box-shadow:inset 0 10px 24px rgba(0,0,0,.5)}
-.slot img{width:100%;height:clamp(170px,24vh,240px);object-fit:cover;border-radius:3px}
-.minirow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
-.mini{background:linear-gradient(180deg,var(--wood-l),var(--wood-d));border:1px solid #2C2015;border-radius:4px;
-  padding:12px 8px 14px;text-align:center;color:#F1ECD9;font:700 13.5px/1.5 'Karla',sans-serif}
-.mini i{display:block;width:34px;height:5px;margin:8px auto 0;border-radius:3px;
-  background:linear-gradient(180deg,var(--brass-l),#8A6524);font-style:normal}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -147,15 +101,85 @@ footer{padding:36px 20px 130px;background:var(--wood-d);color:#CBBFA4;font-size:
   .grid3{grid-template-columns:1fr}
   .catgrid{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(2,1fr)}
-  .revs{grid-template-columns:1fr}
-  .stamp{width:58px;height:58px;font-size:26px;top:-18px}
-  .slot img{height:150px}
+  .revs{grid-template-columns:1fr}}
+
+/* ---------- HERO: the A-frame chalk board on the pavement, under the shop window ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  background:
+    repeating-linear-gradient(90deg,rgba(60,54,40,.07) 0 2px,transparent 2px 268px),
+    repeating-linear-gradient(180deg,rgba(60,54,40,.06) 0 2px,transparent 2px 150px),
+    linear-gradient(180deg,#B6AE9C 0%,#C7C0AF 40%,#D2CBBA 100%)}
+header::after{content:"";position:absolute;left:0;right:0;top:29%;height:120px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(40,42,24,.30),transparent)}
+/* the shop's own front above the pavement */
+.fw{position:absolute;z-index:2;left:0;right:0;top:0;height:29%;
+  background:linear-gradient(180deg,#6E7B2E 0%,#5A6626 62%,#414A1B 100%);
+  border-bottom:clamp(6px,.7vw,10px) solid #E4DCC6;box-shadow:0 10px 0 rgba(0,0,0,.16)}
+.fw::after{content:"";position:absolute;inset:0;opacity:.4;
+  background:repeating-linear-gradient(92deg,rgba(255,255,255,.07) 0 3px,transparent 3px 14px)}
+.place{position:absolute;z-index:3;left:6vw;top:clamp(30px,5.2vh,58px);color:#F2EEDC;
+  font:700 clamp(11px,1.15vw,13px)/1.5 'Karla',sans-serif;letter-spacing:.24em;text-transform:uppercase}
+.rate{position:absolute;z-index:3;left:6vw;top:clamp(60px,9.4vh,104px);display:inline-flex;align-items:center;gap:10px;
+  background:#2C3312;color:#EFEADA;padding:10px 15px;border-radius:2px;font:500 13px/1 'Karla',sans-serif}
+.rate b{font-family:'Big Shoulders Display',sans-serif;font-weight:800;font-size:19px;color:#D6D96F}
+.win{position:absolute;z-index:3;right:6vw;top:clamp(24px,4.2vh,46px);width:clamp(210px,28vw,410px);
+  padding:clamp(7px,.85vw,12px);background:linear-gradient(180deg,#6E5540,#4A3827);
+  border-radius:2px;box-shadow:0 16px 28px rgba(30,32,16,.38),inset 0 0 0 1px rgba(255,255,255,.14)}
+.win img{width:100%;height:clamp(112px,17vh,166px);object-fit:cover;
+  box-shadow:inset 0 0 30px rgba(20,20,10,.5)}
+
+/* the board itself: low, heavy, cut by the bottom edge */
+.aframe{position:absolute;z-index:4;left:6vw;bottom:0;width:min(1160px,82vw)}
+.hinge{position:absolute;left:16%;right:16%;top:clamp(-16px,-2vh,-10px);height:clamp(12px,1.7vh,20px);border-radius:4px 4px 0 0;
+  background:linear-gradient(180deg,#7A5F45,#4E3A28);box-shadow:0 -3px 8px rgba(30,24,12,.3)}
+.slate{position:relative;overflow:hidden;border:clamp(14px,1.9vw,26px) solid;border-image:none;
+  border-color:#6B5238 #7A5F45 #4E3A28 #7A5F45;border-radius:5px;
+  padding:clamp(22px,3.4vw,48px) clamp(22px,3.4vw,50px) clamp(30px,4.6vw,62px);
+  min-height:clamp(330px,55vh,520px);
+  background:
+    radial-gradient(120% 90% at 30% 20%,rgba(255,255,255,.05),transparent 60%),
+    linear-gradient(180deg,#1D251E 0%,#141B16 60%,#10160F 100%);
+  box-shadow:0 -14px 34px rgba(30,24,12,.34),inset 0 0 60px rgba(0,0,0,.5)}
+.slate::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background:repeating-linear-gradient(102deg,rgba(255,255,255,.035) 0 1px,transparent 1px 5px)}
+.chalkname{position:relative;z-index:2;font-family:'Big Shoulders Display',sans-serif;font-weight:800;
+  font-size:clamp(46px,9.6vw,150px);line-height:.9;color:#F4F1E4;letter-spacing:.012em;
+  text-shadow:0 0 2px rgba(255,255,255,.35),0 2px 0 rgba(255,255,255,.08)}
+.chalksub{position:relative;z-index:2;margin-top:clamp(12px,1.8vw,22px);max-width:min(62%,700px);
+  font:500 clamp(15px,1.75vw,21px)/1.55 'Caveat',cursive;color:#DCD9C6;font-size:clamp(17px,2.1vw,26px)}
+.bullets{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:clamp(12px,2vw,30px);margin-top:clamp(14px,2vw,26px)}
+.bullets span{display:inline-flex;align-items:center;gap:9px;color:#EDE9D6;
+  font:700 clamp(12px,1.25vw,16px)/1 'Karla',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.bullets span::before{content:"";width:9px;height:9px;border-radius:50%;background:#D6D96F;
+  box-shadow:0 0 8px rgba(214,217,111,.6)}
+.taa{position:absolute;z-index:2;right:clamp(20px,3.4vw,54px);top:50%;transform:translateY(-50%);
+  display:grid;place-items:center;width:clamp(96px,15vw,220px);height:clamp(96px,15vw,220px);
+  border:3px solid rgba(244,241,228,.55);border-radius:50%;color:#F4F1E4;
+  font:400 clamp(52px,8vw,124px)/1 var(--arh),serif;padding-bottom:.12em;
+  animation:taapulse 12.5s ease-in-out infinite}
+@keyframes taapulse{0%,100%{transform:translateY(-50%) scale(1)}50%{transform:translateY(-50%) scale(1.032)}}
+.leg{position:absolute;bottom:-40px;width:clamp(14px,1.6vw,22px);height:66px;border-radius:2px;
+  background:linear-gradient(90deg,#4E3A28,#7A5F45 55%,#42301F)}
+.ll{left:12%}.lr{right:12%}
+@media(max-width:980px){
+  .taa{display:none}
+  .chalksub{max-width:100%}
+}
+@media(max-width:860px){
+  .fw{height:24%}
+  header::after{top:24%}
+  .win{width:min(230px,42vw);top:clamp(20px,3.4vh,36px)}
+  .win img{height:clamp(78px,12vh,110px)}
+  .aframe{left:4vw;width:92vw}
+  .slate{min-height:clamp(250px,40vh,340px);padding:22px 20px 34px}
 }
 @media(max-width:430px){
-  .minirow{gap:7px}
-  .mini{font-size:12px;padding:10px 5px 12px}
+  .chalkname{font-size:clamp(38px,12vw,54px)}
+  .chalksub{font-size:17px}
+  .bullets{gap:12px}
+  .bullets span{font-size:11.5px}
+  .place{font-size:10.5px;letter-spacing:.18em}
 }
-@media(prefers-reduced-motion:reduce){.stamp::before{animation:none}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -204,27 +228,24 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="cab">
-    <div class="toprail">
-      <span class="screw"></span>
-      <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Hamra Square, ground floor">Hamra Square, ground floor</xen><xar data-edit="t2" data-edit-label="Text (AR): ساحة الحمرا، الطابق الأرضي">ساحة الحمرا، الطابق الأرضي</xar></span>
-      <span class="plate"><span class="num" data-edit="t3" data-edit-label="Text: 4.5 ★">4.5 ★</span><span><xen><span class="num" data-edit="t4" data-edit-label="Text: 2,293">2,293</span> Google reviews</xen><xar><span class="num" data-edit="t5" data-edit-label="Text: 2,293">2,293</span> تقييم على غوغل</xar></span></span>
-      <span class="screw"></span>
-    </div>
-    <div class="face">
-      <div class="stamp" data-edit="t6" data-edit-label="Text: ة">ة</div>
-      <div class="lbl">
-        <h1>T-MAR<b data-edit="t7" data-edit-label="Text: BOUTA">BOUTA</b></h1>
-        <p class="sub"><xen data-edit="t8" data-edit-label="Text (EN): Lebanese kitchen, library shelves and …">Lebanese kitchen, library shelves and a green terrace, one floor under the noise of Hamra.</xen><xar data-edit="t9" data-edit-label="Text (AR): مطبخ لبناني، رفوف كتب وتراس أخضر، طابق…">مطبخ لبناني، رفوف كتب وتراس أخضر، طابق واحد تحت ضجّة الحمرا.</xar></p>
+  <div class="fw">
+    <p class="place"><xen data-edit="t1" data-edit-label="Text (EN): Hamra Square, ground floor">Hamra Square, ground floor</xen><xar data-edit="t2" data-edit-label="Text (AR): ساحة الحمرا، الطابق الأرضي">ساحة الحمرا، الطابق الأرضي</xar></p>
+    <p class="rate"><b class="num" data-edit="t3" data-edit-label="Text: 4.5 ★">4.5 ★</b><span><xen><span class="num" data-edit="t4" data-edit-label="Text: 2,293">2,293</span> Google reviews</xen><xar><span class="num" data-edit="t5" data-edit-label="Text: 2,293">2,293</span> تقييم على غوغل</xar></span></p>
+    <div class="win"><img src="img/01.jpg" alt="The T-Marbouta dining room, olive green walls and a long wooden bar"></div>
+  </div>
+  <div class="aframe">
+    <span class="hinge" aria-hidden="true"></span>
+    <div class="slate">
+      <p class="chalkname" data-edit="t6" data-edit-label="Text: T-MARBOUTA">T-MARBOUTA</p>
+      <span class="taa" aria-hidden="true" data-edit="t7" data-edit-label="Text: ة">ة</span>
+      <p class="chalksub"><xen data-edit="t8" data-edit-label="Text (EN): Lebanese kitchen, library shelves and …">Lebanese kitchen, library shelves and a green terrace, one floor under the noise of Hamra.</xen><xar data-edit="t9" data-edit-label="Text (AR): مطبخ لبناني، رفوف كتب وتراس أخضر، طابق…">مطبخ لبناني، رفوف كتب وتراس أخضر، طابق واحد تحت ضجّة الحمرا.</xar></p>
+      <div class="bullets">
+        <span><xen data-edit="t10" data-edit-label="Text (EN): Coffee">Coffee</xen><xar data-edit="t11" data-edit-label="Text (AR): قهوة">قهوة</xar></span>
+        <span><xen data-edit="t12" data-edit-label="Text (EN): Books">Books</xen><xar data-edit="t13" data-edit-label="Text (AR): كتاب">كتاب</xar></span>
+        <span><xen data-edit="t14" data-edit-label="Text (EN): People">People</xen><xar data-edit="t15" data-edit-label="Text (AR): ناس">ناس</xar></span>
       </div>
-      <div class="pull"></div>
     </div>
-    <div class="slot"><img src="img/01.jpg" alt="The T-Marbouta dining room, olive green walls and a long wooden bar"></div>
-    <div class="minirow">
-      <div class="mini"><xen data-edit="t10" data-edit-label="Text (EN): Coffee">Coffee</xen><xar data-edit="t11" data-edit-label="Text (AR): قهوة">قهوة</xar><i></i></div>
-      <div class="mini"><xen data-edit="t12" data-edit-label="Text (EN): Books">Books</xen><xar data-edit="t13" data-edit-label="Text (AR): كتاب">كتاب</xar><i></i></div>
-      <div class="mini"><xen data-edit="t14" data-edit-label="Text (EN): People">People</xen><xar data-edit="t15" data-edit-label="Text (AR): ناس">ناس</xar><i></i></div>
-    </div>
+    <span class="leg ll" aria-hidden="true"></span><span class="leg lr" aria-hidden="true"></span>
   </div>
 </header>
 

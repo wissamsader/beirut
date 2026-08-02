@@ -28,54 +28,71 @@ img{display:block;max-width:100%}
   border-top:4px solid #EAD9B8;border-radius:2px;box-shadow:0 4px 14px rgba(46,39,30,.35);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: a small stair-riser sign hanging from a rail, sandstone edge to edge ---------- */
+/* ---------- HERO: the streetlamp outside the furn at three in the morning. An enormous
+     sodium cone, cropped by the top edge, landing heavy on the pavement. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;
   background:
-   radial-gradient(80% 60% at 50% 108%,rgba(46,39,30,.18),transparent 60%),
-   radial-gradient(70% 40% at 50% 0%,rgba(255,244,220,.35),transparent 70%),
-   repeating-linear-gradient(0deg,transparent 0 90px,rgba(120,94,56,.16) 90px 92px),
-   repeating-linear-gradient(90deg,transparent 0 230px,rgba(120,94,56,.09) 230px 232px),
-   linear-gradient(180deg,#DDBF95,var(--sand) 56%,#CFAE7C)}
-.rail{position:absolute;left:0;right:0;top:clamp(58px,9vh,84px);height:10px;z-index:1;
-  background:linear-gradient(180deg,#4A4137,var(--iron));box-shadow:0 4px 10px rgba(46,39,30,.35)}
-.rail::before,.rail::after{content:"";position:absolute;top:-7px;width:8px;height:24px;background:var(--iron);border-radius:2px}
-.rail::before{left:8%}
-.rail::after{right:8%}
-.hang{position:relative;z-index:2;display:flex;align-items:flex-start;justify-content:center;
-  gap:clamp(22px,5vw,72px);margin-top:clamp(63px,9.6vh,90px);width:100%;padding-inline:5vw}
-.pend{transform-origin:top center;animation:pendsway 14s ease-in-out infinite;width:min(400px,56vw)}
+   repeating-linear-gradient(0deg,rgba(190,214,255,.02) 0 1px,rgba(0,0,0,0) 1px 5px),
+   linear-gradient(180deg,#1B2540 0%,#141C33 54%,#101728 100%)}
+.cone{position:absolute;z-index:1;inset:0;pointer-events:none;
+  clip-path:polygon(27% 0,33.5% 0,80% 100%,-10% 100%);
+  background:linear-gradient(180deg,rgba(255,204,112,.48) 0%,rgba(255,186,80,.20) 40%,
+             rgba(255,176,66,.08) 72%,rgba(255,170,60,.02) 100%)}
+.arm{position:absolute;z-index:4;left:0;top:5px;width:30%;height:8px;
+  background:linear-gradient(180deg,#453E33,#1A1813)}
+.lamphead{position:absolute;z-index:4;left:30%;top:-18px;transform:translateX(-50%);
+  width:clamp(116px,14vw,188px);height:46px;
+  border-radius:7px 7px 30px 30px/7px 7px 24px 24px;
+  background:linear-gradient(180deg,#4A4238,#242019 62%,#141210)}
+.lamphead::after{content:"";position:absolute;left:13%;right:13%;bottom:-7px;height:15px;border-radius:50%;
+  background:radial-gradient(ellipse at 50% 28%,#FFF8E2,#FFC44E 54%,rgba(255,170,60,.25) 100%);
+  box-shadow:0 0 44px 18px rgba(255,196,96,.75),0 0 160px 70px rgba(255,172,62,.34);
+  animation:sod 9s ease-in-out infinite}
+@keyframes sod{0%,100%{opacity:1}50%{opacity:.9}}
+.pave{position:absolute;left:0;right:0;bottom:0;height:29%;z-index:2;pointer-events:none;
+  background:
+   repeating-linear-gradient(90deg,rgba(255,214,150,.05) 0 1px,rgba(0,0,0,0) 1px 128px),
+   repeating-linear-gradient(0deg,rgba(255,214,150,.045) 0 1px,rgba(0,0,0,0) 1px 62px),
+   radial-gradient(52% 116% at 31% 104%,rgba(255,206,116,.62),rgba(255,184,80,.20) 44%,rgba(0,0,0,0) 76%),
+   linear-gradient(180deg,rgba(10,16,30,0) 0%,rgba(10,16,30,.34) 60%,rgba(8,12,24,.62) 100%)}
+.pave::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:rgba(255,214,150,.20)}
+/* the lightbox over the door, on its two rods */
+.hang{position:absolute;z-index:5;left:0;right:0;top:20%;
+  padding:0 clamp(160px,26vw,360px) 0 clamp(24px,7vw,104px)}
+.pend{transform-origin:top center;animation:pendsway 14s ease-in-out infinite;width:min(468px,54vw)}
 @keyframes pendsway{0%,100%{transform:rotate(-1.1deg)}50%{transform:rotate(1.1deg)}}
 @media(prefers-reduced-motion:reduce){.pend{animation:none}}
-.rods{display:flex;justify-content:space-between;padding:0 16%;height:clamp(30px,5vh,54px)}
-.rods i{width:3px;height:100%;background:var(--iron);position:relative}
-.rods i::before{content:"";position:absolute;top:-8px;left:-4px;width:11px;height:11px;border:3px solid var(--iron);border-radius:50%}
-.stairs{filter:drop-shadow(0 18px 22px rgba(46,39,30,.35))}
-.riser{position:relative;border-radius:2px;padding:9px 16px 10px;margin-bottom:4px;
-  border-top:6px solid #EAD9B8;box-shadow:inset 0 -5px 0 rgba(0,0,0,.18)}
-.riser.r1{background:var(--teal);width:100%}
-.riser.r2{background:var(--oxide);width:100%;margin-left:6%}
-.riser.r3{background:var(--indigo);width:100%;margin-left:12%}
-.riser.r4{background:var(--must);width:100%;margin-left:18%}
-.riser.r5{background:var(--pine);width:100%;margin-left:24%}
-.riser .arname{font-family:'Lalezar',var(--arh),sans-serif;color:var(--cream);text-align:center;
-  font-size:clamp(26px,4.6vw,44px);line-height:1.25;direction:rtl}
-.riser .lname{font-family:'Bebas Neue',sans-serif;color:var(--cream);text-align:center;letter-spacing:.12em;
-  font-size:clamp(19px,3vw,30px);line-height:1.1}
-.riser .rline{display:block;text-align:center;color:var(--cream);font:500 clamp(12px,1.7vw,15px)/1.5 'Rubik',sans-serif}
-.riser.r4 .rline{color:#3A3009;font-weight:700}
-.pane{width:min(190px,30vw)}
-.pane .rods{padding:0 26%}
-.pane .ph2f{background:var(--cream);padding:7px;border-radius:2px;box-shadow:0 16px 26px rgba(46,39,30,.35)}
-.pane img{width:100%;height:clamp(140px,22vh,220px);object-fit:cover;border-radius:1px}
-.pane .cap{margin:6px 2px 2px}
-.base{position:relative;z-index:2;text-align:center;margin-top:auto;padding:18px 6vw clamp(26px,4.5vh,44px)}
-.base .sub{max-width:52ch;margin:10px auto 0;color:#5C4C33;font-size:clamp(15px,1.9vw,17.5px);line-height:1.7}
-.meta{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:14px}
-.plate{display:inline-flex;align-items:baseline;gap:7px;background:var(--iron);color:var(--cream);
-  padding:6px 12px;border-radius:2px;font:700 13px/1.4 'Rubik',sans-serif}
-.chip{border:1.5px solid rgba(58,51,43,.45);border-radius:2px;padding:5px 12px;
-  font:600 12px/1.5 'Rubik',sans-serif;color:#4A3C28;background:rgba(247,239,221,.5)}
+.rods{display:flex;justify-content:space-between;padding:0 20%;height:clamp(26px,4.4vh,44px)}
+.rods i{width:3px;height:100%;background:#4A4238;position:relative}
+.rods i::before{content:"";position:absolute;top:-8px;left:-4px;width:11px;height:11px;border:3px solid #4A4238;border-radius:50%}
+.lbox{background:linear-gradient(180deg,#FFFEF8,#F6EEDE 60%,#E7DBC3);
+  border:6px solid #2A2620;border-radius:3px;padding:clamp(12px,2vh,18px) clamp(16px,2.6vw,26px) clamp(14px,2.2vh,20px);
+  box-shadow:0 0 70px 16px rgba(255,226,166,.42),0 26px 52px rgba(0,0,0,.65)}
+.riser{position:relative;background:none;border:0;border-radius:0;padding:0;margin:0;width:auto;box-shadow:none}
+.riser .arname{font-family:'Lalezar',var(--arh),sans-serif;color:#C8201A;text-align:center;
+  font-size:clamp(28px,4.8vw,52px);line-height:1.22;direction:rtl}
+.riser .lname{font-family:'Bebas Neue',sans-serif;color:#1B4E96;text-align:center;letter-spacing:.15em;
+  font-size:clamp(19px,3.1vw,33px);line-height:1.1;margin-top:3px}
+.strip{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-start;margin-top:clamp(16px,2.6vh,24px)}
+.strip .riser{background:rgba(255,226,166,.08);border:1px solid rgba(255,208,140,.4);border-radius:2px;padding:7px 13px}
+.strip .rline{display:block;color:#FFE7BE;font:600 12.5px/1.5 'Rubik',sans-serif;text-align:left}
+.strip .riser.r4 .rline{color:#FFD98F;font-weight:700}
+/* the oven, lit, seen through the doorway */
+.pane{position:absolute;z-index:6;right:clamp(18px,5vw,72px);bottom:clamp(56px,9.5vh,104px);width:min(248px,26vw)}
+.pane .rods{display:none}
+.pane .ph2f{background:#F7EFDD;padding:7px;border-radius:2px;
+  box-shadow:0 0 50px rgba(255,184,84,.3),0 24px 46px rgba(0,0,0,.7)}
+.pane img{width:100%;height:clamp(146px,21vh,194px);object-fit:cover;border-radius:1px}
+.pane .cap{margin:6px 2px 2px;color:#6E5A3C}
+.base{position:absolute;z-index:5;left:0;right:0;top:53%;text-align:left;margin:0;
+  padding:0 clamp(180px,28vw,380px) 0 clamp(24px,7vw,104px)}
+.base .k{color:#FFC97A}
+.base .sub{max-width:48ch;margin:10px 0 0;color:#E6D2AE;font-size:clamp(15px,1.9vw,17.5px);line-height:1.7}
+.meta{display:flex;gap:9px;justify-content:flex-start;flex-wrap:wrap;margin-top:16px}
+.plate{display:inline-flex;align-items:baseline;gap:7px;background:#FFC44E;color:#231C0C;
+  padding:7px 13px;border-radius:2px;font:700 13px/1.4 'Rubik',sans-serif}
+.chip{border:1.5px solid rgba(255,208,140,.42);border-radius:2px;padding:6px 12px;
+  font:600 12px/1.5 'Rubik',sans-serif;color:#F3DDB6;background:rgba(255,226,166,.07)}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -160,6 +177,17 @@ footer{padding:36px 7vw 132px;color:#7A6342;font-size:13.5px;text-align:center;b
   .gal{grid-template-columns:repeat(2,1fr)}
   .ntile{flex-wrap:wrap;gap:6px}
   body{padding-bottom:70px}
+  .hang{top:15%;padding:0 6vw}
+  .pend{width:min(292px,64vw)}
+  .strip{gap:6px;margin-top:14px}
+  .strip .riser{padding:5px 9px}
+  .strip .rline{font-size:11px}
+  .base{top:58%;padding:0 clamp(146px,42vw,200px) 0 6vw}
+  .base .sub{font-size:14.5px}
+  .pane{right:4vw;bottom:12%;width:min(140px,34vw)}
+  .pane img{height:clamp(96px,14vh,124px)}
+  .lamphead{left:34%}.arm{width:34%}
+  .cone{clip-path:polygon(30% 0,38% 0,92% 100%,-14% 100%)}
 }
 @media(max-width:560px){
   .hang{gap:16px}
@@ -219,24 +247,28 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="rail" aria-hidden="true"></div>
+  <div class="cone" aria-hidden="true"></div>
+  <i class="arm" aria-hidden="true"></i>
+  <div class="lamphead" aria-hidden="true"></div>
   <div class="hang">
     <div class="pend">
       <div class="rods" aria-hidden="true"><i></i><i></i></div>
-      <div class="stairs">
+      <div class="lbox">
         <div class="riser r1"><p class="arname" data-edit="t1" data-edit-label="Text: فرن عبد العزيز">فرن عبد العزيز</p></div>
         <div class="riser r2"><p class="lname" data-edit="t2" data-edit-label="Text: FURN ABDEL AZIZ">FURN ABDEL AZIZ</p></div>
-        <div class="riser r3"><span class="rline"><xen data-edit="t3" data-edit-label="Text (EN): Manakish at any hour">Manakish at any hour</xen><xar data-edit="t4" data-edit-label="Text (AR): مناقيش بأي ساعة">مناقيش بأي ساعة</xar></span></div>
-        <div class="riser r4"><span class="rline"><xen><span class="num" data-edit="t5" data-edit-label="Text: 4.3">4.3</span> of <span class="num" data-edit="t6" data-edit-label="Text: 126">126</span> Google reviews</xen><xar><span class="num" data-edit="t7" data-edit-label="Text: 4.3">4.3</span> من <span class="num" data-edit="t8" data-edit-label="Text: 126">126</span> تقييم على غوغل</xar></span></div>
-        <div class="riser r5"><span class="rline"><xen data-edit="t9" data-edit-label="Text (EN): Open 24 hours, seven days">Open 24 hours, seven days</xen><xar data-edit="t10" data-edit-label="Text (AR): مفتوح 24 ساعة، 7 أيام">مفتوح 24 ساعة، 7 أيام</xar></span></div>
       </div>
     </div>
-    <div class="pane">
-      <div class="rods" aria-hidden="true"><i></i><i></i></div>
-      <div class="ph2f">
-        <img src="img/07.jpg" alt="Manakish trays in front of the glowing oven mouth at night">
-        <p class="cap"><xen data-edit="t11" data-edit-label="Text (EN): The oven, lit at night.">The oven, lit at night.</xen><xar data-edit="t12" data-edit-label="Text (AR): الفرن، ولعان بالليل.">الفرن، ولعان بالليل.</xar></p>
-      </div>
+    <div class="strip">
+      <div class="riser r3"><span class="rline"><xen data-edit="t3" data-edit-label="Text (EN): Manakish at any hour">Manakish at any hour</xen><xar data-edit="t4" data-edit-label="Text (AR): مناقيش بأي ساعة">مناقيش بأي ساعة</xar></span></div>
+      <div class="riser r4"><span class="rline"><xen><span class="num" data-edit="t5" data-edit-label="Text: 4.3">4.3</span> of <span class="num" data-edit="t6" data-edit-label="Text: 126">126</span> Google reviews</xen><xar><span class="num" data-edit="t7" data-edit-label="Text: 4.3">4.3</span> من <span class="num" data-edit="t8" data-edit-label="Text: 126">126</span> تقييم على غوغل</xar></span></div>
+      <div class="riser r5"><span class="rline"><xen data-edit="t9" data-edit-label="Text (EN): Open 24 hours, seven days">Open 24 hours, seven days</xen><xar data-edit="t10" data-edit-label="Text (AR): مفتوح 24 ساعة، 7 أيام">مفتوح 24 ساعة، 7 أيام</xar></span></div>
+    </div>
+  </div>
+  <div class="pane">
+    <div class="rods" aria-hidden="true"><i></i><i></i></div>
+    <div class="ph2f">
+      <img src="img/07.jpg" alt="Manakish trays in front of the glowing oven mouth at night">
+      <p class="cap"><xen data-edit="t11" data-edit-label="Text (EN): The oven, lit at night.">The oven, lit at night.</xen><xar data-edit="t12" data-edit-label="Text (AR): الفرن، ولعان بالليل.">الفرن، ولعان بالليل.</xar></p>
     </div>
   </div>
   <div class="base">
@@ -248,6 +280,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <span class="chip"><xen data-edit="t21" data-edit-label="Text (EN): Ask for it crunchier">Ask for it crunchier</xen><xar data-edit="t22" data-edit-label="Text (AR): اطلبها أقرمش">اطلبها أقرمش</xar></span>
     </div>
   </div>
+  <div class="pave" aria-hidden="true"></div>
 </header>
 
 <section class="wrap">

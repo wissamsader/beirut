@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Simple Butter · Jnah, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=Amiri:wght@400;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&family=Amiri:wght@400;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Amiri';--arb:'Almarai';
   --marble:#F5F1E8;--marble2:#EAE4D6;--vein:#D8D0BD;--ink:#22271F;
   --spruce:#1F4D3A;--spruce-d:#143528;--butter:#E9C46A;--butter-d:#C99F3C;
+  --iron:#2B2E31;--iron-d:#16181A;--iron-l:#43474B;--ember:#D2601F;--cast:#EDE0BF;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--marble);color:var(--ink);font:400 17px/1.75 'DM Sans',system-ui,sans-serif;padding-bottom:64px}
@@ -21,58 +22,95 @@ img{display:block;max-width:100%}
 .k{font:700 11.5px/1.4 'DM Sans',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--spruce)}
 section{padding-block:clamp(54px,8vh,92px)}
 
-/* language chip: a butter pat tab, top right */
+/* language chip: a foundry tag screwed to the iron, top right */
 .lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
   font:700 13px/1 var(--arb),sans-serif;padding:10px 16px;min-width:58px;text-align:center;
   background:linear-gradient(180deg,#F1D186,var(--butter));color:#3D2E08;
-  border:1px solid var(--butter-d);border-radius:3px;box-shadow:0 6px 16px rgba(34,39,31,.25);-webkit-appearance:none}
+  border:1px solid var(--butter-d);border-radius:3px;box-shadow:0 6px 16px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one thick marble slab on stone feet ---------- */
+/* ---------- HERO: the cast-iron plancha, cropped, its pour lip off the right edge ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  background:linear-gradient(180deg,#EFE9DC,var(--marble) 55%,#E5DECD)}
-header::before{content:"";position:absolute;inset:0;opacity:.6;
+  display:flex;align-items:center;overflow:hidden;color:var(--cast);
   background:
-   radial-gradient(70% 40% at 18% 12%,rgba(216,208,189,.5),transparent 60%),
-   radial-gradient(60% 34% at 86% 80%,rgba(216,208,189,.44),transparent 60%)}
-.slabwrap{position:relative;z-index:2;width:min(880px,92vw);margin:clamp(22px,4vh,46px) auto}
-.slab{position:relative;border-radius:10px;
-  background:
-   linear-gradient(118deg,transparent 42%,rgba(203,193,170,.55) 43%,transparent 45%),
-   linear-gradient(96deg,transparent 68%,rgba(203,193,170,.4) 69%,transparent 71%),
-   linear-gradient(128deg,transparent 22%,rgba(31,77,58,.1) 23%,transparent 24.5%),
-   linear-gradient(180deg,#FBF8F1,#F1EBDE 70%,#EDE5D4);
-  border:1px solid #CFC6AF;
-  box-shadow:0 34px 70px rgba(34,39,31,.28),inset 0 2px 0 #fff;
-  padding:clamp(24px,4.4vw,52px) clamp(18px,3.6vw,48px) clamp(20px,3.4vw,38px);text-align:center}
-.slab::after{content:"";position:absolute;left:6px;right:6px;bottom:-16px;height:16px;border-radius:0 0 10px 10px;
-  background:linear-gradient(180deg,#CFC6AF,#B4A98D);box-shadow:0 10px 22px rgba(34,39,31,.25)}
-.feet{display:flex;justify-content:space-between;padding:16px 8% 0}
-.feet i{width:88px;height:34px;background:linear-gradient(180deg,#C4BAA0,#A79C7F);border-radius:0 0 8px 8px;
-  border:1px solid #998E71;border-top:0;font-style:normal}
-.seal{position:absolute;top:-30px;right:clamp(10px,4vw,40px);width:82px;height:82px;border-radius:50%;
-  background:radial-gradient(circle at 38% 32%,#F4D88E,var(--butter) 60%,var(--butter-d));
-  border:2px solid var(--butter-d);box-shadow:0 10px 22px rgba(34,39,31,.28);
+   radial-gradient(46% 40% at 71% 78%,rgba(224,104,30,.5),transparent 64%),
+   radial-gradient(74% 52% at 88% 20%,rgba(214,96,31,.16),transparent 68%),
+   radial-gradient(70% 46% at 14% 4%,rgba(255,255,255,.08),transparent 70%),
+   linear-gradient(176deg,#3A3E42,#2A2D30 38%,#1D2022 78%,#141618)}
+/* cast pebble grain */
+header::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:
+   radial-gradient(1.7px 1.7px at 11px 9px,rgba(255,255,255,.13),transparent 62%),
+   radial-gradient(1.5px 1.5px at 44px 31px,rgba(0,0,0,.55),transparent 62%),
+   radial-gradient(1.3px 1.3px at 71px 15px,rgba(255,255,255,.09),transparent 62%),
+   radial-gradient(1.6px 1.6px at 27px 46px,rgba(0,0,0,.45),transparent 62%);
+  background-size:88px 58px}
+/* machined grease channels running the full width */
+header::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.42;
+  background:repeating-linear-gradient(180deg,
+    rgba(255,255,255,.055) 0 1px,rgba(0,0,0,.34) 1px 2px,transparent 2px 17px)}
+.lip{position:absolute;top:0;bottom:0;right:0;width:clamp(72px,12vw,178px);z-index:3;
+  background:linear-gradient(90deg,rgba(0,0,0,.62) 0 5px,#222528 6px,#4C5156 30%,#666C72 48%,#3A3E42 72%,#232629);
+  box-shadow:-30px 0 56px rgba(0,0,0,.55)}
+.lip::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.06))}
+.lip::after{content:"";position:absolute;left:0;right:0;top:0;height:clamp(22px,3.4vw,44px);
+  background:linear-gradient(180deg,#7B8189,#41464B 62%,rgba(0,0,0,.2));
+  box-shadow:0 6px 16px rgba(0,0,0,.5)}
+.rimb{position:absolute;left:0;right:0;bottom:0;height:clamp(26px,4vw,54px);z-index:3;
+  background:linear-gradient(180deg,#4B5054,#2E3236 42%,#101214);
+  box-shadow:0 -18px 34px rgba(0,0,0,.42),inset 0 2px 0 rgba(255,255,255,.16)}
+/* the raised back wall of the plate */
+.backw{position:absolute;left:0;right:0;top:0;height:clamp(30px,4.6vw,62px);z-index:3;
+  background:linear-gradient(180deg,#121416,#565C62 26%,#3B4045 62%,rgba(20,22,24,.15));
+  box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.backw::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(0,0,0,.55)}
+/* the grease trench sloping to the pour lip */
+.trench{position:absolute;left:0;right:0;bottom:clamp(44px,6.2vw,82px);height:clamp(16px,1.9vw,26px);
+  z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.66),rgba(0,0,0,.42) 55%,rgba(255,255,255,.13));
+  box-shadow:inset 0 3px 6px rgba(0,0,0,.7),0 1px 0 rgba(255,255,255,.09)}
+.ironwrap{position:relative;z-index:4;width:min(1240px,100%);margin-inline:auto;
+  padding:clamp(30px,4.6vh,58px) clamp(24px,6vw,74px) clamp(58px,8vh,96px)}
+.stampk{display:inline-block;border:1px solid rgba(237,224,191,.34);border-radius:2px;
+  padding:6px 13px 5px;color:#CFC7AE;background:rgba(0,0,0,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+h1.cast{font-family:'Big Shoulders Display',sans-serif;font-weight:900;line-height:.83;
+  font-size:clamp(58px,13.6vw,192px);letter-spacing:.005em;margin:16px 0 0;text-transform:uppercase;
+  color:#E6DAB8;text-shadow:0 2px 0 rgba(255,255,255,.16),0 -2px 0 rgba(0,0,0,.55),0 18px 34px rgba(0,0,0,.5)}
+h1.cast b{display:block;font-weight:900;color:var(--butter);
+  text-shadow:0 2px 0 rgba(255,255,255,.2),0 -2px 0 rgba(0,0,0,.6),0 20px 40px rgba(0,0,0,.55)}
+.sub{max-width:44ch;margin:22px 0 0;color:#BDB6A4;font-size:clamp(15px,1.55vw,18px);line-height:1.7}
+.etchrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;max-width:46ch}
+.etch{border:1px solid rgba(237,224,191,.28);border-radius:2px;padding:7px 13px;background:rgba(20,22,24,.5);
+  font:700 12.5px/1.4 'DM Sans',sans-serif;letter-spacing:.11em;text-transform:uppercase;color:#D6CDB4;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}
+.score{display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;
+  background:linear-gradient(180deg,#F1D186,var(--butter-d));color:#33260A;
+  border-radius:2px;padding:9px 15px;font:700 13.5px/1.4 'DM Sans',sans-serif;
+  box-shadow:0 8px 20px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.5)}
+.score .num{font-size:16px}
+/* the skillet sitting on the plate, tucked under the lip and cropped by the bottom rim */
+.pan{position:absolute;right:clamp(58px,7.6vw,150px);bottom:-18px;width:clamp(240px,32vw,462px);z-index:2;margin:0}
+.pan::before{content:"";position:absolute;left:-22%;right:-22%;top:22%;bottom:-14%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(232,116,32,.62),rgba(214,96,26,0) 74%);filter:blur(9px)}
+.panbody{position:relative;border-radius:5px;padding:11px 11px 13px;
+  background:linear-gradient(180deg,#6A7076,#3A3E43 22%,#22252A 62%,#0E1012);
+  box-shadow:0 30px 62px rgba(0,0,0,.66),inset 0 2px 0 rgba(255,255,255,.32),inset 0 -3px 8px rgba(0,0,0,.5)}
+.panbody img{width:100%;height:clamp(180px,24.5vw,336px);object-fit:cover;border-radius:2px}
+.handle{position:absolute;left:12px;right:12px;bottom:4px;height:4px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent)}
+/* foundry medallion cast into the iron, riveted under the back wall */
+.seal{position:absolute;top:clamp(46px,7.4vh,86px);right:clamp(84px,10.5vw,206px);z-index:5;
+  width:clamp(96px,9vw,126px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 36% 30%,#F7E0A0,var(--butter) 56%,#A87C24);
+  border:3px solid #7C5E1B;
+  box-shadow:0 14px 30px rgba(0,0,0,.6),inset 0 -4px 10px rgba(0,0,0,.34),inset 0 3px 8px rgba(255,255,255,.5);
   display:flex;align-items:center;justify-content:center;text-align:center;
-  font:700 9.5px/1.35 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#3D2E08;
+  font:700 10.5px/1.4 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#3D2E08;
   animation:sealpulse 12s ease-in-out infinite}
-@keyframes sealpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.slab .k{display:block;margin-bottom:12px}
-.slab h1{font-size:clamp(44px,9vw,92px);color:var(--ink);text-shadow:0 1px 0 #fff}
-.slab h1 b{color:var(--spruce);font-weight:400}
-.inlay{width:120px;height:3px;background:var(--spruce);margin:14px auto;border-radius:2px}
-.sub{max-width:52ch;margin:0 auto;color:#57604F;font-size:clamp(14.5px,1.9vw,17.5px);line-height:1.65}
-.well{margin:22px auto 0;width:min(480px,88%);background:#20261E;border-radius:8px;padding:10px;
-  box-shadow:inset 0 4px 14px rgba(0,0,0,.55),0 2px 0 #fff}
-.well img{width:100%;height:clamp(180px,26vh,250px);object-fit:cover;border-radius:5px}
-.etchrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
-.etch{border:1px solid #C9BFA6;border-radius:3px;padding:6px 13px;background:rgba(255,255,255,.5);
-  font:700 12.5px/1.4 'DM Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#414A3C;
-  box-shadow:inset 0 1px 2px rgba(34,39,31,.12)}
-.score{display:inline-flex;align-items:baseline;gap:8px;margin-top:16px;background:var(--spruce);color:#EDF3EA;
-  border-radius:3px;padding:8px 14px;font:700 13.5px/1.4 'DM Sans',sans-serif}
-.score .num{color:var(--butter);font-size:16px}
+.seal::after{content:"";position:absolute;inset:9px;border-radius:50%;
+  border:1px solid rgba(61,46,8,.42);box-shadow:inset 0 0 0 3px rgba(255,255,255,.14)}
+@keyframes sealpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -160,8 +198,16 @@ footer{padding:36px 20px 130px;background:#141A12;color:#A7B3A0;font-size:13.5px
   .dstop.on::after{display:none}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .seal{width:64px;height:64px;font-size:8px;top:-22px}
-  .well img{height:160px}
+  .ironwrap{padding:52px 22px 78px}
+  .trench{bottom:52px}
+  .backw{height:26px}
+  .sub,.etchrow{max-width:none}
+  .pan{position:static;width:min(300px,74%);margin:22px 0 0}
+  .pan::before{display:none}
+  .handle{display:none}
+  .panbody img{height:172px}
+  .seal{top:auto;bottom:80px;right:18px;width:78px;font-size:8.5px;letter-spacing:.1em}
+  .lip{right:-42px;width:56px}
 }
 @media(prefers-reduced-motion:reduce){.seal{animation:none}}
 </style>
@@ -212,22 +258,25 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="slabwrap">
-    <div class="slab">
-      <div class="seal">Butter<br>house<br>Jnah</div>
-      <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Steak house · Jnah, Beirut">Steak house · Jnah, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): ستيك هاوس · الجناح، بيروت">ستيك هاوس · الجناح، بيروت</xar></span>
-      <h1>SIMPLE <b data-edit="t3" data-edit-label="Text: BUTTER">BUTTER</b></h1>
-      <div class="inlay"></div>
-      <p class="sub"><xen data-edit="t4" data-edit-label="Text (EN): Steak on a hot skillet, butter sauce u…">Steak on a hot skillet, butter sauce underneath, fries and salad on the board. No ceremony, no guessing, it is all on the slab.</xen><xar data-edit="t5" data-edit-label="Text (AR): ستيك على مقلاية سخنة، صوص الزبدة من تح…">ستيك على مقلاية سخنة، صوص الزبدة من تحت، بطاطا وسلطة عاللوح. بلا تشريفات وبلا تخمين، كل شي عالرخامة.</xar></p>
-      <div class="well"><img src="img/10.jpg" alt="Grilled beef steak in a skillet of butter sauce with fries and salad"></div>
-      <div class="etchrow">
-        <span class="etch"><xen data-edit="t6" data-edit-label="Text (EN): Beef filet">Beef filet</xen><xar data-edit="t7" data-edit-label="Text (AR): فيليه لحم">فيليه لحم</xar></span>
-        <span class="etch"><xen data-edit="t8" data-edit-label="Text (EN): Chicken filet">Chicken filet</xen><xar data-edit="t9" data-edit-label="Text (AR): فيليه دجاج">فيليه دجاج</xar></span>
-        <span class="etch"><xen data-edit="t10" data-edit-label="Text (EN): Salmon filet">Salmon filet</xen><xar data-edit="t11" data-edit-label="Text (AR): فيليه سلمون">فيليه سلمون</xar></span>
-      </div>
-      <p class="score"><span class="num" data-edit="t12" data-edit-label="Text: 4.7 ★">4.7 ★</span><span><xen>from <span class="num" data-edit="t13" data-edit-label="Text: 653">653</span> Google reviews</xen><xar>من <span class="num" data-edit="t14" data-edit-label="Text: 653">653</span> تقييم على غوغل</xar></span></p>
+  <div class="backw" aria-hidden="true"></div>
+  <div class="trench" aria-hidden="true"></div>
+  <div class="lip" aria-hidden="true"></div>
+  <div class="rimb" aria-hidden="true"></div>
+  <div class="ironwrap">
+    <span class="k stampk"><xen data-edit="t1" data-edit-label="Text (EN): Steak house · Jnah, Beirut">Steak house · Jnah, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): ستيك هاوس · الجناح، بيروت">ستيك هاوس · الجناح، بيروت</xar></span>
+    <h1 class="cast">SIMPLE <b data-edit="t3" data-edit-label="Text: BUTTER">BUTTER</b></h1>
+    <p class="sub"><xen data-edit="t4" data-edit-label="Text (EN): Steak on a hot skillet, butter sauce u…">Steak on a hot skillet, butter sauce underneath, fries and salad on the board. No ceremony, no guessing, it is all on the slab.</xen><xar data-edit="t5" data-edit-label="Text (AR): ستيك على مقلاية سخنة، صوص الزبدة من تح…">ستيك على مقلاية سخنة، صوص الزبدة من تحت، بطاطا وسلطة عاللوح. بلا تشريفات وبلا تخمين، كل شي عالرخامة.</xar></p>
+    <div class="etchrow">
+      <span class="etch"><xen data-edit="t6" data-edit-label="Text (EN): Beef filet">Beef filet</xen><xar data-edit="t7" data-edit-label="Text (AR): فيليه لحم">فيليه لحم</xar></span>
+      <span class="etch"><xen data-edit="t8" data-edit-label="Text (EN): Chicken filet">Chicken filet</xen><xar data-edit="t9" data-edit-label="Text (AR): فيليه دجاج">فيليه دجاج</xar></span>
+      <span class="etch"><xen data-edit="t10" data-edit-label="Text (EN): Salmon filet">Salmon filet</xen><xar data-edit="t11" data-edit-label="Text (AR): فيليه سلمون">فيليه سلمون</xar></span>
     </div>
-    <div class="feet"><i></i><i></i></div>
+    <p class="score"><span class="num" data-edit="t12" data-edit-label="Text: 4.7 ★">4.7 ★</span><span><xen>from <span class="num" data-edit="t13" data-edit-label="Text: 653">653</span> Google reviews</xen><xar>من <span class="num" data-edit="t14" data-edit-label="Text: 653">653</span> تقييم على غوغل</xar></span></p>
+    <figure class="pan">
+      <span class="handle" aria-hidden="true"></span>
+      <div class="panbody"><img src="img/10.jpg" alt="Grilled beef steak in a skillet of butter sauce with fries and salad"></div>
+    </figure>
+    <div class="seal">Butter<br>house<br>Jnah</div>
   </div>
 </header>
 

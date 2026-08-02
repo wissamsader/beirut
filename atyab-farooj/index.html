@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Atyab Farooj · Corniche El Mazraa, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Barlow:wght@400;500;700&family=Cairo+Play:wght@600;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,700;0,800;1,800&family=Changa+One&family=Barlow:wght@400;500;700&family=Cairo+Play:wght@600;800&family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Cairo Play';--arb:'Noto Kufi Arabic';
   --coal:#17181B;--pitch:#101114;--foil:#C9CDD4;--foil2:#9BA1AB;--card:#F8F6F0;--red:#D0342C;--yolk:#F0B428;--ink:#26282D;
+  --char2:#0C0D0F;--spit:#C8CDD3;--glow:#FF7A14;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--coal);color:#E8E8E4;font:400 16.5px/1.78 'Barlow',system-ui,sans-serif}
@@ -25,46 +26,86 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(0,0,0,.5);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the yellow room, trays landing on the counter edge ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;flex-direction:column;overflow:hidden;
+/* ---------- HERO: the rotisserie spit running diagonally over the coals ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   background:
-   radial-gradient(2px 2px at 16% 34%,rgba(255,255,255,.5),transparent 60%),
-   radial-gradient(1.6px 1.6px at 44% 18%,rgba(23,24,27,.35),transparent 60%),
-   radial-gradient(2.2px 2.2px at 72% 40%,rgba(255,255,255,.45),transparent 60%),
-   radial-gradient(1.8px 1.8px at 88% 24%,rgba(208,52,44,.5),transparent 60%),
-   radial-gradient(1.6px 1.6px at 30% 52%,rgba(23,24,27,.3),transparent 60%),
-   radial-gradient(60% 42% at 50% 0%,rgba(208,52,44,.28),transparent 70%),
-   linear-gradient(180deg,#F2B62B,#E8A414 62%,#DE9A0F)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:76px;
+   radial-gradient(64% 40% at 74% 62%,rgba(255,132,26,.34),transparent 66%),
+   radial-gradient(50% 34% at 16% 96%,rgba(208,52,44,.3),transparent 68%),
+   linear-gradient(168deg,#212327,#141618 42%,#0A0B0D)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+   radial-gradient(1.8px 1.8px at 18% 30%,rgba(255,190,110,.5),transparent 60%),
+   radial-gradient(1.5px 1.5px at 62% 16%,rgba(255,160,80,.35),transparent 60%),
+   radial-gradient(1.7px 1.7px at 86% 46%,rgba(255,200,130,.4),transparent 60%),
+   radial-gradient(1.4px 1.4px at 34% 70%,rgba(255,150,70,.3),transparent 60%)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:76px;z-index:6;
   background:linear-gradient(180deg,#1E1F24,#121317);border-top:4px solid #0D0E11}
-.htop{position:relative;z-index:2;padding:calc(30px + env(safe-area-inset-top)) 7vw 0;
-  max-width:1240px;margin-inline:auto;width:100%}
-.htop .k{color:var(--red);letter-spacing:.3em}
-.htop h1{font-size:clamp(52px,9.6vw,118px);color:var(--coal);text-transform:uppercase;
-  line-height:.98;margin-top:10px;text-shadow:0 3px 0 rgba(255,255,255,.25)}
-.htop .sub{margin:12px 0 0;max-width:52ch;color:#4A3A0E;font-size:clamp(14.5px,1.9vw,17px);font-weight:500}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.chip{background:var(--coal);color:#F5E9C8;border-radius:999px;padding:7px 14px;
-  font:700 12px/1 'Barlow',sans-serif;letter-spacing:.05em}
-.chip.r{background:var(--red);color:#fff}
-.cline{position:relative;z-index:3;margin-top:auto;display:flex;align-items:flex-end;
-  justify-content:center;gap:clamp(16px,3vw,40px);flex-wrap:wrap;
-  padding:26px 6vw 0;transform:translateY(14px)}
-.rim{width:min(400px,88vw);border-radius:20px;
+/* the spit assembly, cropped at both ends */
+.spitwrap{position:absolute;left:-16%;right:-16%;top:36%;height:clamp(190px,26vh,250px);z-index:1;
+  transform:rotate(-17deg);transform-origin:50% 50%}
+.emberbed{position:absolute;left:0;right:0;bottom:0;height:clamp(70px,9.2vh,100px);border-radius:5px;
+  background:
+   radial-gradient(circle 13px at 20px 26px,#FFDD9B,#EE6314 54%,rgba(72,16,3,.9) 86%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 11px at 58px 58px,#FFC975,#E05408 56%,rgba(64,14,2,.9) 86%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 14px at 92px 24px,#FFE3AA,#F26A1B 54%,rgba(76,17,3,.9) 86%,rgba(0,0,0,0) 100%),
+   radial-gradient(circle 10px at 126px 62px,#FFCC7C,#E2570D 56%,rgba(64,14,2,.9) 86%,rgba(0,0,0,0) 100%),
+   linear-gradient(180deg,#33190A,#0D0502);
+  background-size:150px 88px,150px 88px,150px 88px,150px 88px,100% 100%;
+  border:3px solid #23272B;
+  box-shadow:0 0 80px 18px rgba(255,110,20,.4),inset 0 3px 10px rgba(0,0,0,.7);
+  animation:bedglow 7s ease-in-out infinite}
+@keyframes bedglow{0%,100%{filter:brightness(.9)}50%{filter:brightness(1.15)}}
+@media(prefers-reduced-motion:reduce){.emberbed,.flame{animation:none}}
+.rod{position:absolute;left:0;right:0;top:clamp(50px,7vh,72px);height:clamp(24px,3vh,34px);border-radius:18px;
+  background:linear-gradient(180deg,#EFF2F5 0 14%,var(--spit) 34%,#767D85 62%,#3B4046 84%,#22262A);
+  box-shadow:0 16px 30px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.85)}
+.rod::after{content:"";position:absolute;left:0;right:0;top:26%;height:14%;border-radius:8px;
+  background:linear-gradient(90deg,rgba(255,255,255,.85),rgba(255,255,255,.25) 42%,rgba(255,255,255,.7) 76%,rgba(255,255,255,.2))}
+.forks{position:absolute;left:4%;right:4%;top:clamp(24px,3.4vh,40px);height:clamp(56px,7.6vh,86px);
+  display:flex;justify-content:space-between}
+.forks i{display:block;width:clamp(16px,1.6vw,24px);height:100%;
+  background:
+   linear-gradient(90deg,transparent 0 36%,#B9C0C7 36% 64%,transparent 64%),
+   linear-gradient(180deg,transparent 0 46%,transparent 46%);
+  filter:drop-shadow(0 4px 6px rgba(0,0,0,.6))}
+.forks i::before,.forks i::after{content:"";position:absolute;bottom:0;width:5px;height:52%;
+  background:linear-gradient(180deg,#C3CAD1,#5C6268);border-radius:0 0 3px 3px}
+.forks i::before{left:2px}.forks i::after{right:2px}
+.cog{position:absolute;left:13%;top:clamp(34px,4.6vh,54px);width:clamp(58px,7vh,86px);aspect-ratio:1;
+  border-radius:50%;background:
+   repeating-conic-gradient(#9AA1A9 0 9deg,#5C6268 9deg 12deg,#DDE2E7 12deg 18deg);
+  box-shadow:0 14px 28px rgba(0,0,0,.65),inset 0 0 0 6px #2B3035,inset 0 0 0 9px #A9B0B7}
+/* the name, over the top-left, the spit passing behind it */
+.htop{position:absolute;left:0;right:0;top:0;z-index:4;padding:calc(34px + env(safe-area-inset-top)) 7vw 0;
+  max-width:1260px;margin-inline:auto;width:100%}
+.htop .k{color:var(--yolk);letter-spacing:.3em}
+.htop h1{font-family:'Kanit',sans-serif;font-weight:800;font-style:italic;
+  font-size:clamp(52px,10.4vw,142px);color:#FFF4DC;text-transform:uppercase;max-width:8ch;
+  line-height:.9;margin-top:12px;letter-spacing:-.012em;
+  text-shadow:0 3px 0 rgba(0,0,0,.55),0 22px 46px rgba(0,0,0,.9)}
+.htop .sub{margin:18px 0 0;max-width:42ch;color:#D6CDBB;font-size:clamp(14.5px,1.6vw,17px);font-weight:500;
+  text-shadow:0 2px 10px rgba(0,0,0,.9)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;max-width:44ch}
+.chip{background:rgba(12,13,15,.82);color:#F5E9C8;border:1px solid rgba(240,180,40,.4);border-radius:999px;
+  padding:7px 14px;font:700 12px/1 'Barlow',sans-serif;letter-spacing:.05em}
+.chip.r{background:var(--red);color:#fff;border-color:#8E1F19}
+/* the steel plate and the tray, standing on the counter edge */
+.cline{position:absolute;left:0;right:0;bottom:clamp(70px,8.6vh,80px);z-index:7;display:flex;align-items:flex-end;
+  justify-content:space-between;gap:clamp(16px,3vw,44px);padding:0 6vw}
+.rim{width:clamp(230px,25vw,342px);border-radius:14px;
   background:repeating-linear-gradient(90deg,#DFE3E8 0 5px,var(--foil2) 5px 10px);
-  padding:12px;box-shadow:0 24px 48px rgba(60,40,0,.4),inset 0 2px 0 rgba(255,255,255,.5)}
-.rim::after{content:"";position:absolute;display:none}
-.lid{background:var(--card);color:var(--ink);border-radius:9px;text-align:center;padding:20px 18px 18px}
-.flame{width:58px;height:58px;margin:0 auto 8px;color:var(--red);animation:flpulse 12s ease-in-out infinite}
+  padding:10px;box-shadow:0 24px 48px rgba(0,0,0,.6),inset 0 2px 0 rgba(255,255,255,.6)}
+.lid{background:var(--card);color:var(--ink);border-radius:8px;text-align:center;padding:16px 14px 14px}
+.flame{width:clamp(40px,4vw,54px);height:clamp(40px,4vw,54px);margin:0 auto 6px;color:var(--red);
+  animation:flpulse 12s ease-in-out infinite}
 @keyframes flpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.033)}}
-.lid .lt{font:400 20px/1.2 'Changa One',sans-serif;text-transform:uppercase;color:var(--ink)}
-.rate{margin:12px auto 0;background:var(--ink);color:var(--card);border-radius:6px;
-  padding:9px 10px;font:700 12.5px/1.3 'Barlow',sans-serif}
+.lid .lt{font:400 clamp(16px,1.5vw,19px)/1.2 'Changa One',sans-serif;text-transform:uppercase;color:var(--ink)}
+.rate{margin:10px auto 0;background:var(--ink);color:var(--card);border-radius:5px;
+  padding:8px 10px;font:700 12px/1.3 'Barlow',sans-serif}
 .rate b{color:var(--yolk)}
-.pane{width:min(380px,88vw);background:#101114;padding:9px;border-radius:6px 6px 0 0;
-  box-shadow:0 24px 48px rgba(60,40,0,.4)}
-.pane img{width:100%;height:clamp(180px,24vh,240px);object-fit:cover;border-radius:3px}
+.pane{width:clamp(250px,30vw,412px);background:#101114;padding:9px;border-radius:6px;
+  border:1px solid #2C2F34;box-shadow:0 24px 48px rgba(0,0,0,.6)}
+.pane img{width:100%;height:clamp(150px,17vw,222px);object-fit:cover;border-radius:3px}
 .pane .pc{color:#9FA0A4;font:500 12px/1.5 'Barlow',sans-serif;margin-top:7px;padding:0 2px 3px}
 
 section{padding-block:clamp(56px,8vh,96px)}
@@ -144,11 +185,18 @@ footer{padding:36px 0 132px;color:#84858A;font-size:13px;text-align:center;backg
   .counter{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:1fr}
   .revs{grid-template-columns:1fr}
-  .htop{padding-top:calc(58px + env(safe-area-inset-top))}
-  .cline{transform:translateY(8px);gap:14px;padding-top:18px}
-  .rim{width:min(340px,90vw)}
-  .pane{width:min(340px,90vw)}
-  .pane img{height:clamp(140px,18vh,190px)}
+  header{display:flex;flex-direction:column;justify-content:flex-start;padding-bottom:82px}
+  .htop{position:static;padding:calc(30px + env(safe-area-inset-top)) 20px 0}
+  .htop h1{max-width:none}
+  .spitwrap{top:auto;bottom:clamp(184px,24vh,214px);height:126px;transform:rotate(-14deg)}
+  .emberbed{height:56px}
+  .rod{top:34px;height:20px}
+  .forks{top:16px;height:52px}
+  .cog{width:48px;top:22px}
+  .cline{position:static;margin-top:auto;flex-wrap:wrap;gap:10px;padding:14px 20px 0}
+  .rim{width:100%}
+  .pane{width:100%}
+  .pane img{height:112px}
   body{padding-bottom:76px}
 }
 @media(max-width:430px){
@@ -205,6 +253,12 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="spitwrap" aria-hidden="true">
+    <span class="emberbed"></span>
+    <span class="rod"></span>
+    <span class="forks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <span class="cog"></span>
+  </div>
   <div class="htop">
     <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Corniche El Mazraa · Beirut">Corniche El Mazraa · Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): كورنيش المزرعة · بيروت">كورنيش المزرعة · بيروت</xar></p>
     <h1><xen data-edit="t3" data-edit-label="Text (EN): Atyab Farooj">Atyab Farooj</xen><xar data-edit="t4" data-edit-label="Text (AR): أطيب فروج">أطيب فروج</xar></h1>

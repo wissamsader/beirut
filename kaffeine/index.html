@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Kaffeine · Daoud Ammoun Street, Sin El Fil</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600;800&family=Changa:wght@500;700&family=Harmattan:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;600;700&family=Manrope:wght@400;600;800&family=Changa:wght@500;700&family=Harmattan:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Changa';--arb:'Harmattan';
   --blk:#131311;--blk2:#1C1C19;--brick:#4A3A2E;--latte:#EFE3CE;--latte-d:#D8C6A8;
   --chrome:#D8D8D6;--chrome-d:#9A9A96;--foam:#F7F1E4;
+  --coalgrey:#3B3A37;--coalash:#6B6862;--emberk:#FF6412;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--blk);color:var(--latte);font:400 16.5px/1.75 'Manrope',system-ui,sans-serif;padding-bottom:64px}
@@ -28,41 +29,168 @@ section{padding-block:clamp(54px,8vh,92px)}
   box-shadow:0 6px 16px rgba(0,0,0,.5);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the sugar shaker, chrome dome over glass ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
+/* ---------- HERO: the charcoal bed, low and heavy under the black brick ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   background:
-   radial-gradient(56% 42% at 50% 30%,rgba(239,227,206,.08),transparent 70%),
-   repeating-linear-gradient(0deg,rgba(239,227,206,.03) 0 2px,transparent 2px 26px),
-   repeating-linear-gradient(90deg,rgba(74,58,46,.35) 0 84px,rgba(74,58,46,.16) 84px 86px,rgba(74,58,46,.35) 86px 168px),
-   linear-gradient(180deg,#0C0C0A,var(--blk) 60%,#0C0C0A)}
-.shaker{position:relative;z-index:2;width:min(520px,90vw);margin:clamp(18px,3vh,40px) auto;
-  display:flex;flex-direction:column;align-items:center}
-.dome{position:relative;width:min(300px,64%);height:76px;border-radius:150px 150px 8px 8px;overflow:hidden;
-  background:linear-gradient(180deg,#F2F2F0,var(--chrome) 55%,var(--chrome-d));
-  border:1px solid #6E6E6A;box-shadow:0 10px 24px rgba(0,0,0,.5),inset 0 2px 0 #fff}
-.dome::before{content:"";position:absolute;left:18%;top:14px;width:24%;height:12px;border-radius:8px;
-  background:rgba(19,19,17,.8)}
-.dome i{content:"";position:absolute;top:0;left:-45%;width:36%;height:100%;font-style:normal;pointer-events:none;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.65),transparent);
-  animation:domeglint 13s ease-in-out infinite}
-@keyframes domeglint{0%,86%{transform:translateX(0)}100%{transform:translateX(430%)}}
-.neckring{width:min(340px,72%);height:14px;border-radius:7px;margin-top:-2px;
-  background:linear-gradient(180deg,var(--chrome),var(--chrome-d));border:1px solid #6E6E6A}
-.glass{position:relative;width:100%;margin-top:10px;border-radius:26px 26px 34px 34px;
-  background:linear-gradient(90deg,rgba(239,227,206,.1),rgba(239,227,206,.035) 22%,rgba(239,227,206,.16) 50%,rgba(239,227,206,.035) 78%,rgba(239,227,206,.1));
-  border:2px solid rgba(239,227,206,.35);box-shadow:0 26px 60px rgba(0,0,0,.55),inset 0 0 40px rgba(0,0,0,.4);
-  padding:clamp(22px,4vw,40px) clamp(16px,3vw,32px) 0;text-align:center;overflow:hidden}
-.glass::before{content:"";position:absolute;top:6%;bottom:8%;left:9%;width:7px;border-radius:4px;
-  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,.06))}
-.glass .k{display:block;margin-bottom:10px}
-.glass h1{font-size:clamp(52px,11vw,104px);color:var(--foam);letter-spacing:-.04em;text-transform:lowercase}
-.glass h1 b{color:var(--latte-d);font-weight:700}
-.sub{margin:8px auto 0;max-width:44ch;color:#B9AC93;font-size:clamp(14px,1.8vw,16.5px);line-height:1.7}
-.cupline{margin:18px auto 0;width:min(380px,88%);border:1px solid rgba(239,227,206,.3);border-radius:12px;
-  overflow:hidden;background:#0C0C0A}
-.cupline img{width:100%;height:clamp(170px,24vh,235px);object-fit:cover}
-.sugar{margin:22px calc(clamp(16px,3vw,32px) * -1) 0;padding:16px 18px 18px;
+   radial-gradient(72% 44% at 44% 104%,rgba(255,110,20,.3),transparent 62%),
+   repeating-linear-gradient(0deg,rgba(239,227,206,.085) 0 2px,rgba(255,255,255,.012) 2px 44px),
+   repeating-linear-gradient(90deg,rgba(239,227,206,.07) 0 2px,transparent 2px 132px),
+   linear-gradient(180deg,#0A0A09,#131311 46%,#0B0B0A)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+   repeating-linear-gradient(90deg,rgba(239,227,206,.045) 0 2px,transparent 2px 132px);
+  background-position:66px 22px;
+  -webkit-mask:repeating-linear-gradient(0deg,#000 0 44px,transparent 44px 88px);
+  mask:repeating-linear-gradient(0deg,#000 0 44px,transparent 44px 88px)}
+/* the bed: a steel trough packed with charcoal, a few lumps still live */
+.charbed{position:absolute;left:0;right:0;bottom:0;height:clamp(150px,21vh,186px);z-index:3;
+  background:
+   radial-gradient(circle 15px at 8% 34%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 13px at 23% 74%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 14px at 39% 30%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 12px at 52% 86%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 14px at 66% 36%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 13px at 79% 72%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 12px at 93% 42%,#FFE7B4 0 40%,#F2691A 40% 74%,rgba(142,42,4,.75) 74% 92%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 41.5% 17%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 21.3% 98%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 16.5% 33%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 70.8% 69%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 39px at 26.6% 62%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 88.3% 26%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 39px at 78.5% 28%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 13.9% 18%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 7.6% 33%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 66.6% 64%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 39.4% 35%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 76.1% 58%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 88.6% 92%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 71.9% 24%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 33.5% 15%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 55.9% 57%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 100.6% 68%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 32px at 57.4% 79%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 91.0% 85%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 31px at 80.2% 47%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 31px at 2.3% 91%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 9.3% 59%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 32px at 77.4% 96%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 34.3% 81%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 55.1% 87%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 61.0% 25%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 66.8% 93%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 32px at 61.5% 56%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 95.4% 21%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 24.0% 29%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 52.2% 22%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 44.7% 31%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 50.6% 97%,#59544A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 42.0% 50%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 2.9% 21%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 83.8% 29%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 18.8% 24%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 36.7% 83%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 29.8% 18%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 41px at 40.9% 81%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 11.8% 95%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 43.6% 91%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 44px at 21.9% 22%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 6.2% 90%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 63.8% 86%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at -1.6% 32%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 39px at 84.2% 83%,#59544A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 12.9% 49%,#59544A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 98.4% 55%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 104.8% 50%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 37px at 58.6% 25%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 36.8% 26%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 41px at 7.0% 54%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 85.5% 25%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 45.5% 57%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 36.0% 62%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 72.1% 99%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 25.2% 89%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 0.1% 23%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 20.9% 62%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 83.7% 53%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 32px at 18.2% 91%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 51.9% 56%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 92.2% 31%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 44px at 63.9% 24%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 15.3% 55%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 98.8% 36%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 28.0% 99%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 49.4% 57%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 8.7% 90%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 80.5% 83%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 80.1% 21%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 48.9% 25%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 74.8% 78%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 48.8% 91%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 40px at 68.5% 86%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 60.8% 89%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 32px at 31.1% 84%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 41px at 63.7% 57%,#4E4A42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 27.7% 31%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 31px at 91.4% 62%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 41px at 0.6% 49%,#59544A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 74.6% 68%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 38px at 58.2% 62%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 9.2% 28%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 90.2% 59%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 39px at 15.9% 82%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 103.2% 79%,#2C2924 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 17.2% 52%,#59544A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 44px at 66.9% 29%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 24.5% 49%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 33px at 87.6% 69%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 40.0% 55%,#3E3A33 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 43px at 94.5% 48%,#514C42 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 44px at 100.9% 25%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 95.2% 89%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 41px at 92.4% 90%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 35px at 3.2% 54%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 34px at 74.8% 29%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 42px at 54.8% 22%,#6B655A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 39px at 32.6% 53%,#464238 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 36px at 99.9% 89%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   radial-gradient(circle 30px at 30.5% 59%,#332F2A 0 76%,#151310 76% 95%,rgba(0,0,0,0) 96%),
+   linear-gradient(180deg,#26231D,#0B0A08);
+  border-top:5px solid #2A2926;
+  box-shadow:0 -20px 60px rgba(255,102,16,.24),inset 0 10px 26px rgba(0,0,0,.9);
+  animation:bedbreathe 7s ease-in-out infinite}
+.charbed::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(200,192,180,.16),transparent 34%,rgba(0,0,0,.4))}
+@keyframes bedbreathe{0%,100%{filter:brightness(.92)}50%{filter:brightness(1.12)}}
+@media(prefers-reduced-motion:reduce){.charbed{animation:none}}
+.charbed::before{content:"";position:absolute;left:0;right:0;top:-5px;height:5px;
+  background:linear-gradient(180deg,#8E8B85,#3A3835)}
+.heatrise{position:absolute;left:0;right:0;bottom:clamp(150px,21vh,186px);height:clamp(160px,24vh,240px);z-index:2;
+  pointer-events:none;background:radial-gradient(66% 100% at 42% 100%,rgba(255,124,26,.4),transparent 74%)}
+/* the name, sitting low on the brick right above the bed */
+.shaker{position:absolute;left:clamp(20px,6vw,86px);right:clamp(20px,6vw,86px);top:0;bottom:0;z-index:4;
+  display:block;width:auto;margin:0}
+.dome,.neckring,.saucer{display:none}
+.glass{position:absolute;left:0;top:clamp(56px,9vh,96px);width:min(560px,52vw);
+  background:none;border:0;box-shadow:none;padding:0;text-align:left;overflow:visible}
+.glass::before{display:none}
+.glass .k{display:block;margin-bottom:14px;color:#C8B896}
+.glass h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(56px,9.2vw,132px);
+  color:var(--foam);letter-spacing:-.045em;text-transform:lowercase;line-height:.88;
+  position:absolute;left:0;top:clamp(384px,55.5vh,500px);width:max-content;
+  text-shadow:0 22px 50px rgba(0,0,0,.9)}
+.glass h1 b{color:#D6A05E;font-weight:800}
+.sub{margin:0;max-width:40ch;color:#B9AC93;font-size:clamp(14.5px,1.6vw,17px);line-height:1.75;
+  text-shadow:0 2px 10px rgba(0,0,0,.9)}
+/* the framed cup, on a steel shelf bracketed to the brick */
+.cupline{position:absolute;right:0;top:clamp(232px,34vh,306px);width:clamp(230px,26vw,362px);
+  border:1px solid rgba(239,227,206,.3);border-radius:6px;overflow:hidden;background:#0C0C0A;
+  box-shadow:0 28px 56px rgba(0,0,0,.75)}
+.cupline img{width:100%;height:clamp(150px,20vw,262px);object-fit:cover}
+.cupline::after{content:"";position:absolute;left:-14px;right:-14px;bottom:-13px;height:13px;
+  background:linear-gradient(180deg,#B0ADA6,#4E4C48);border-radius:0 0 3px 3px;
+  box-shadow:0 8px 18px rgba(0,0,0,.6)}
+.sugar{position:absolute;left:0;top:clamp(226px,31vh,290px);margin:0;padding:14px 18px 15px;border-radius:3px;
   background:
    radial-gradient(circle at 12% 30%,rgba(19,19,17,.16) 1.5px,transparent 2px),
    radial-gradient(circle at 34% 62%,rgba(19,19,17,.14) 1.5px,transparent 2px),
@@ -70,10 +198,8 @@ header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
    radial-gradient(circle at 82% 58%,rgba(19,19,17,.16) 1.5px,transparent 2px),
    linear-gradient(180deg,var(--foam),var(--latte));
   background-size:38px 38px,46px 46px,42px 42px,50px 50px,100% 100%;
-  color:#131311;font:800 14px/1.5 'Manrope',sans-serif}
-.sugar .num{font-size:17px}
-.saucer{width:min(420px,84%);height:18px;margin-top:0;border-radius:0 0 16px 16px;
-  background:linear-gradient(180deg,var(--chrome-d),#6E6E6A);border:1px solid #55554F;border-top:0}
+  color:#131311;font:800 13.5px/1.5 'Manrope',sans-serif;box-shadow:0 12px 26px rgba(0,0,0,.6)}
+.sugar .num{font-size:16px}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -138,8 +264,17 @@ footer{padding:36px 20px 130px;background:#0A0A08;color:#8A7F6A;font-size:13px;t
   .revs{grid-template-columns:1fr}
   .froyo{grid-template-columns:1fr;text-align:center}
   .froyo .cupicon{margin:0 auto}
-  .cupline img{height:150px}
-  .dome{height:60px}
+  header{display:flex;flex-direction:column;justify-content:flex-end}
+  .shaker{position:static;padding:0 20px clamp(168px,23vh,206px)}
+  .glass{position:static;width:auto;margin-bottom:16px}
+  .glass h1{position:static;font-size:clamp(38px,12.2vw,72px);margin-top:20px;width:auto;max-width:100%;overflow-wrap:anywhere}
+  .sub{max-width:none}
+  .cupline{position:static;width:min(300px,78%);margin-bottom:22px}
+  .cupline img{height:140px}
+  .cupline::after{display:none}
+  .sugar{position:static;display:inline-block}
+  .charbed{height:clamp(118px,16vh,150px)}
+  .heatrise{bottom:clamp(118px,16vh,150px);height:150px}
 }
 @media(prefers-reduced-motion:reduce){.dome i{animation:none}}
 </style>
@@ -190,17 +325,16 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="heatrise" aria-hidden="true"></div>
+  <div class="charbed" aria-hidden="true"></div>
   <div class="shaker">
-    <div class="dome"><i></i></div>
-    <div class="neckring"></div>
     <div class="glass">
       <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Coffee and kitchen · Qubic Square, Sin…">Coffee and kitchen · Qubic Square, Sin El Fil</xen><xar data-edit="t2" data-edit-label="Text (AR): قهوة ومطبخ · كيوبيك سكوير، سن الفيل">قهوة ومطبخ · كيوبيك سكوير، سن الفيل</xar></span>
-      <h1>kaf<b data-edit="t3" data-edit-label="Text: feine">feine</b></h1>
-      <p class="sub"><xen data-edit="t4" data-edit-label="Text (EN): The black-brick coffee room of Horsh T…">The black-brick coffee room of Horsh Tabet: flat whites at eight, business lunch at one, dinner when the offices go dark.</xen><xar data-edit="t5" data-edit-label="Text (AR): غرفة القهوة بالحجر الأسود بحرش تابت: ف…">غرفة القهوة بالحجر الأسود بحرش تابت: فلات وايت الساعة 8، غدا شغل الساعة 1، وعشا لما تطفي المكاتب ضوّها.</xar></p>
-      <div class="cupline"><img src="img/07.jpg" alt="The big Kaffeine cup with a biscuit, the counter behind it"></div>
-      <div class="sugar"><span class="num" data-edit="t6" data-edit-label="Text: 4.5 ★">4.5 ★</span> · <xen><span class="num" data-edit="t7" data-edit-label="Text: 440">440</span> Google reviews</xen><xar><span class="num" data-edit="t8" data-edit-label="Text: 440">440</span> تقييم على غوغل</xar></div>
+      <p class="sub"><xen data-edit="t3" data-edit-label="Text (EN): The black-brick coffee room of Horsh T…">The black-brick coffee room of Horsh Tabet: flat whites at eight, business lunch at one, dinner when the offices go dark.</xen><xar data-edit="t4" data-edit-label="Text (AR): غرفة القهوة بالحجر الأسود بحرش تابت: ف…">غرفة القهوة بالحجر الأسود بحرش تابت: فلات وايت الساعة 8، غدا شغل الساعة 1، وعشا لما تطفي المكاتب ضوّها.</xar></p>
+      <h1>kaf<b data-edit="t5" data-edit-label="Text: feine">feine</b></h1>
     </div>
-    <div class="saucer"></div>
+    <div class="cupline"><img src="img/07.jpg" alt="The big Kaffeine cup with a biscuit, the counter behind it"></div>
+    <div class="sugar"><span class="num" data-edit="t6" data-edit-label="Text: 4.5 ★">4.5 ★</span> · <xen><span class="num" data-edit="t7" data-edit-label="Text: 440">440</span> Google reviews</xen><xar><span class="num" data-edit="t8" data-edit-label="Text: 440">440</span> تقييم على غوغل</xar></div>
   </div>
 </header>
 

@@ -29,44 +29,58 @@ section{padding-block:clamp(56px,8vh,96px)}
   box-shadow:0 4px 0 var(--ox-d),0 8px 18px rgba(51,33,14,.35);-webkit-appearance:none}
 .lngt:active{transform:translateY(2px);box-shadow:0 2px 0 var(--ox-d)}
 
-/* ---------- HERO: a hand-lettered cloth banner hanging from a wooden rail,
-     on a kraft-paper wall that fills the frame edge to edge ---------- */
+/* ---------- HERO: five in the morning at the furn. The roller shutter is half up and the
+     light comes through it in diagonal bars across the brick. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;
   background:
-   radial-gradient(120% 90% at 50% 8%,rgba(255,240,205,.30),transparent 58%),
-   radial-gradient(140% 120% at 50% 108%,rgba(79,52,20,.32),transparent 60%),
-   repeating-linear-gradient(104deg,rgba(255,246,220,.05) 0 1px,transparent 1px 6px),
-   repeating-linear-gradient(0deg,rgba(79,52,20,.05) 0 1px,transparent 1px 34px),
-   linear-gradient(180deg,#CCA26A,var(--kraft) 46%,#B58A50)}
-.rail{position:relative;width:100%;height:26px;margin-top:calc(34px + env(safe-area-inset-top));
-  background:linear-gradient(180deg,#835B2F,var(--wood) 45%,var(--wood-d));
-  box-shadow:0 6px 14px rgba(51,33,14,.35)}
-.rail::before,.rail::after{content:"";position:absolute;top:-7px;width:40px;height:40px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#8F6534,var(--wood-d) 72%);box-shadow:0 4px 8px rgba(51,33,14,.4)}
-.rail::before{left:clamp(8px,4vw,60px)}
-.rail::after{right:clamp(8px,4vw,60px)}
-.strap{width:10px;height:clamp(26px,4vh,44px);background:linear-gradient(90deg,var(--ox-d),var(--ox) 50%,var(--ox-d));
-  box-shadow:0 3px 6px rgba(51,33,14,.3)}
-.straps{display:flex;gap:min(46vw,420px)}
-.banner{position:relative;width:min(640px,88vw);background:
-   repeating-linear-gradient(45deg,rgba(51,33,14,.025) 0 2px,transparent 2px 5px),
-   linear-gradient(180deg,#FBF4E4,var(--canvas) 55%,#EBDFC2);
-  border:2px solid #D8C69E;border-radius:4px;
-  padding:clamp(22px,3.8vh,36px) clamp(18px,3.4vw,38px) clamp(18px,3vh,30px);text-align:center;
-  box-shadow:0 22px 44px rgba(51,33,14,.32)}
-.banner::before{content:"";position:absolute;inset:9px;border:2px dashed rgba(142,47,35,.4);border-radius:2px;pointer-events:none}
-.grom{position:absolute;top:8px;width:16px;height:16px;border-radius:50%;background:#F1E4C9;
-  border:4px solid #93702F;box-shadow:inset 0 1px 2px rgba(51,33,14,.5)}
-.grom.g1{left:10px}.grom.g2{right:10px}
-.banner .over{font:600 clamp(12px,1.8vw,14px)/1.5 'Zilla Slab',serif;letter-spacing:.4em;text-transform:uppercase;color:var(--leaf);margin-right:-.4em}
-.banner h1{font-size:clamp(52px,10vw,96px);color:var(--ox);text-shadow:0 3px 0 rgba(110,33,24,.18)}
-html.ar .banner h1 xar{font-size:clamp(64px,12vw,116px);line-height:1;display:block}
-.swash{width:min(300px,64%);margin:6px auto 0;color:var(--ox)}
+   repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 2px,rgba(0,0,0,0) 2px 48px),
+   repeating-linear-gradient(90deg,rgba(0,0,0,.10) 0 2px,rgba(0,0,0,0) 2px 104px),
+   linear-gradient(180deg,#B8401F 0%,#9C2F18 44%,#6C1C0E 100%)}
+.dawn{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+   linear-gradient(180deg,rgba(255,232,178,.34) 0%,rgba(255,214,140,.10) 12%,rgba(0,0,0,0) 30%),
+   radial-gradient(70% 80% at 22% 4%,rgba(255,222,158,.62),rgba(255,196,116,.16) 42%,rgba(0,0,0,0) 76%),
+   radial-gradient(120% 90% at 86% 96%,rgba(30,6,2,.55),rgba(0,0,0,0) 62%)}
+.shaft{position:absolute;inset:0;z-index:2;pointer-events:none;
+  mix-blend-mode:screen;
+  background:repeating-linear-gradient(-18deg,
+    rgba(255,236,186,.62) 0 22px,rgba(255,236,186,.20) 22px 30px,
+    rgba(255,236,186,.03) 30px 40px,rgba(255,236,186,0) 40px 104px);
+  -webkit-mask-image:radial-gradient(80% 88% at 21% 3%,#000 0%,rgba(0,0,0,.5) 44%,rgba(0,0,0,0) 80%);
+  mask-image:radial-gradient(80% 88% at 21% 3%,#000 0%,rgba(0,0,0,.5) 44%,rgba(0,0,0,0) 80%)}
+/* the shutter itself */
+.rail{position:absolute;left:0;right:0;top:0;height:19%;z-index:4;margin:0;
+  background:
+   linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,0) 44%),
+   repeating-linear-gradient(180deg,#7A756C 0 5px,#948E84 5px 9px,#5A554E 9px 15px,#3A3631 15px 17px);
+  box-shadow:0 12px 30px rgba(28,8,3,.55)}
+.rail::before{content:"";position:absolute;left:0;right:0;bottom:0;height:17px;
+  background:linear-gradient(180deg,#4E4941,#232019);border-bottom:2px solid #15120E}
+.rail::after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:11px;
+  background:linear-gradient(180deg,#FFFDF2,#FFE7B4 55%,rgba(255,224,158,.15));
+  box-shadow:0 0 20px 6px rgba(255,236,190,.95),0 4px 60px 26px rgba(255,204,124,.6)}
+.straps{position:absolute;z-index:5;top:19%;left:0;right:0;display:flex;justify-content:center;
+  gap:min(46vw,420px);pointer-events:none}
+.strap{width:12px;height:clamp(20px,3vh,34px);border-radius:0 0 7px 7px;
+  background:linear-gradient(90deg,#2A2620,#6E695F 48%,#2A2620);box-shadow:0 4px 9px rgba(20,6,2,.5)}
+/* the name, standing in the light, no card under it */
+.banner{position:absolute;z-index:6;top:25%;left:0;right:0;
+  padding:0 clamp(170px,26vw,380px) 0 clamp(26px,7vw,104px);
+  background:none;border:0;border-radius:0;box-shadow:none;text-align:left}
+.banner::before{display:none}
+.grom{display:none}
+.banner .over{font:600 clamp(12px,1.8vw,14px)/1.5 'Zilla Slab',serif;letter-spacing:.4em;
+  text-transform:uppercase;color:#FFD9A0}
+.banner h1{font-size:clamp(48px,9.8vw,124px);color:#FFF3DA;
+  text-shadow:0 4px 0 rgba(66,14,6,.42),0 0 70px rgba(255,204,130,.5)}
+html.ar .banner h1 xar{font-size:clamp(56px,11vw,132px);line-height:1;display:block}
+.swash{width:min(280px,50%);margin:8px 0 0;color:#FFC98A}
 .swash svg{display:block;width:100%;height:auto}
-.banner .sub{margin-top:10px;color:#5C452A;font-size:clamp(14px,1.8vw,16.5px);line-height:1.6;font-weight:500}
-.heroline{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2.4vw,26px);flex-wrap:wrap;
-  margin-top:clamp(18px,3vh,30px);padding-inline:5vw}
+.banner .sub{margin-top:12px;color:#FBDDBB;font-size:clamp(14px,1.85vw,17px);line-height:1.65;
+  font-weight:500;max-width:46ch}
+.heroline{position:absolute;z-index:6;left:0;right:0;top:60%;display:flex;align-items:center;
+  justify-content:flex-start;gap:clamp(12px,2.2vw,24px);flex-wrap:wrap;margin:0;
+  padding:0 clamp(170px,26vw,380px) 0 clamp(26px,7vw,104px)}
 .badge{width:112px;height:112px;border-radius:50%;flex:0 0 auto;position:relative;
   background:var(--leaf);color:#F1E9CF;display:flex;flex-direction:column;align-items:center;justify-content:center;
   font:600 12px/1.2 'Zilla Slab',serif;letter-spacing:.14em;text-transform:uppercase;
@@ -75,18 +89,20 @@ html.ar .banner h1 xar{font-size:clamp(64px,12vw,116px);line-height:1;display:bl
 .badge::before{content:"";position:absolute;inset:6px;border:1.5px dashed rgba(241,233,207,.65);border-radius:50%}
 @keyframes pls{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.badge{animation:none}}
-.tapepic{position:relative;width:min(420px,78vw);background:#FBF4E4;padding:9px;border-radius:2px;
-  box-shadow:0 16px 34px rgba(51,33,14,.3)}
-.tapepic img{width:100%;height:clamp(160px,23vh,220px);object-fit:cover}
+.tapepic{position:absolute;z-index:7;right:clamp(22px,6vw,90px);top:33%;width:min(292px,29vw);
+  background:#FBF4E4;padding:9px;border-radius:2px;box-shadow:0 22px 46px rgba(36,10,3,.55)}
+.tapepic img{width:100%;height:clamp(196px,28vh,280px);object-fit:cover}
 .tapepic .tape{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:110px;height:22px;
   background:rgba(214,188,138,.85);box-shadow:0 2px 5px rgba(51,33,14,.2)}
-.ratestamp{flex:0 0 auto;border:2.5px solid var(--ox);color:var(--ox);border-radius:6px;padding:10px 16px;
-  font:600 13.5px/1.5 'Zilla Slab',serif;text-align:center;background:rgba(251,244,228,.6)}
+.ratestamp{flex:0 0 auto;border:2.5px solid #FFD09A;color:#FFF3DA;border-radius:6px;padding:10px 16px;
+  font:600 13.5px/1.5 'Zilla Slab',serif;text-align:center;background:rgba(58,12,4,.42)}
 .ratestamp b{display:block;font-size:22px;letter-spacing:.02em}
-.tagrow{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:clamp(16px,2.6vh,26px);padding-inline:6vw}
-.tag{background:rgba(251,244,228,.85);border:1.5px solid var(--kraft-dd);border-radius:3px 3px 12px 12px;
-  padding:7px 14px;font:600 12.5px/1.5 'Zilla Slab',serif;color:#5C452A;letter-spacing:.04em;
-  box-shadow:0 3px 0 rgba(143,104,54,.5)}
+.tagrow{position:absolute;z-index:6;left:0;right:0;bottom:clamp(16px,3.2vh,38px);display:flex;gap:9px;
+  flex-wrap:wrap;justify-content:flex-start;margin:0;
+  padding:0 clamp(170px,26vw,380px) 0 clamp(26px,7vw,104px)}
+.tag{background:rgba(255,242,220,.92);border:1.5px solid #7E2617;border-radius:3px 3px 12px 12px;
+  padding:7px 14px;font:600 12.5px/1.5 'Zilla Slab',serif;color:#5C2418;letter-spacing:.04em;
+  box-shadow:0 3px 0 rgba(94,24,12,.6)}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
@@ -163,10 +179,13 @@ footer{padding:36px 7vw 132px;color:#8A6A3E;font-size:13.5px;text-align:center;b
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:86px}
   .straps{gap:min(40vw,300px)}
-  .heroline{gap:14px}
-  .badge{width:96px;height:96px}
-  .badge b{font-size:28px}
-  .tapepic img{height:clamp(140px,19vh,180px)}
+  .heroline{gap:12px;top:58%;padding:0 clamp(110px,34vw,180px) 0 6vw}
+  .badge{width:88px;height:88px}
+  .badge b{font-size:26px}
+  .banner{top:23%;padding:0 clamp(110px,34vw,180px) 0 6vw}
+  .tapepic{right:5vw;top:32%;width:min(150px,34vw);padding:6px}
+  .tapepic img{height:clamp(140px,20vh,190px)}
+  .tagrow{padding:0 6vw}
 }
 @media(max-width:430px){
   .bar a{font-size:10.5px}
@@ -220,7 +239,9 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="rail"></div>
+  <div class="dawn" aria-hidden="true"></div>
+  <div class="shaft" aria-hidden="true"></div>
+  <div class="rail" aria-hidden="true"></div>
   <div class="straps"><span class="strap"></span><span class="strap"></span></div>
   <div class="banner">
     <span class="grom g1"></span><span class="grom g2"></span>

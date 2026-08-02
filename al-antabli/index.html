@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Al Antabli · Souk Ayass, Beirut Souks</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Figtree:wght@400;500;700&family=Lalezar&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&family=Zilla+Slab:wght@500;700&family=Figtree:wght@400;500;700&family=Lalezar&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Lalezar';--arb:'Cairo';
-  --terr:#F4EDDF;--slab:#FAF5E9;--ink:#2B2118;--pom:#C03A2B;--org:#D97E29;
+  --terr:#F4EDDF;--slab:#FAF5E9;--ink:#2B2118;--pom:#C03A2B;--org:#D97E29;--jam:#7C1B14;
   --teal:#17756A;--brass:#B98A3B;--line:rgba(43,33,24,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -21,7 +21,7 @@ body{color:var(--ink);font:400 17px/1.75 'Figtree',system-ui,sans-serif;
   background-size:56px 56px,44px 44px,68px 68px;
   background-position:0 0,20px 30px,40px 10px}
 .wrap{width:min(1160px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Bree Serif',Georgia,serif;font-weight:400;line-height:1.1}
+h1,h2,h3{font-family:'Zilla Slab',Georgia,serif;font-weight:700;line-height:1.12}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.4 'Figtree',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--teal)}
@@ -32,41 +32,81 @@ img{display:block;max-width:100%}
   -webkit-appearance:none;box-shadow:0 4px 14px rgba(43,33,24,.3);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the mosaic doorstep, the shop's threshold slab ---------- */
+/* ---------- HERO: the till roll, unspooling from the counter spindle ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;padding:56px 4vw 40px}
-header::before{content:"";position:absolute;inset:0 0 auto 0;height:64px;
-  background:linear-gradient(180deg,rgba(43,33,24,.18),transparent)}
-.slab{position:relative;width:min(860px,94vw);
-  background:
-   conic-gradient(from 0deg,var(--pom) 0 25%,var(--slab) 0 50%,var(--teal) 0 75%,var(--slab) 0) 0 0/22px 22px,
-   var(--slab);
-  padding:16px;box-shadow:0 26px 60px rgba(43,33,24,.28)}
-.slab-in{background:var(--slab);border:1px solid var(--line);
-  padding:clamp(22px,4vw,44px) clamp(16px,3.4vw,40px) clamp(18px,3vw,34px);text-align:center}
-.h-k{display:inline-block;margin-bottom:14px}
-h1.inlay{font-size:clamp(44px,8.4vw,86px);letter-spacing:.045em;color:var(--pom);
-  text-shadow:0 1px 0 #fff,0 -1px 0 rgba(43,33,24,.28)}
-h1.inlay xar{color:var(--pom)}
-.sub{margin:10px auto 0;max-width:56ch;color:#5A4B3B;font-size:clamp(14.5px,1.9vw,17px);line-height:1.65}
-.sill{position:relative;height:12px;margin:18px auto 0;width:min(430px,78%);overflow:hidden;
-  background:linear-gradient(90deg,#8F6A2C,var(--brass) 30%,#E4C989 50%,var(--brass) 70%,#8F6A2C);
-  border-radius:2px;box-shadow:0 2px 5px rgba(43,33,24,.35)}
-.sill::after{content:"";position:absolute;top:0;left:-46%;width:36%;height:100%;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.75),transparent);
-  animation:sillg 13s ease-in-out infinite}
-@keyframes sillg{0%,86%{transform:translateX(0)}100%{transform:translateX(430%)}}
-@media(prefers-reduced-motion:reduce){.sill::after{animation:none}}
-.mat{margin:20px auto 0;width:min(470px,84%);
-  background:conic-gradient(from 0deg,var(--org) 0 25%,var(--slab) 0 50%,var(--pom) 0 75%,var(--slab) 0) 0 0/16px 16px;
-  padding:10px;box-shadow:0 14px 34px rgba(43,33,24,.22)}
-.mat img{width:100%;height:clamp(190px,27vh,258px);object-fit:cover}
-.mat .cap{background:var(--slab);margin:0;padding:8px 10px 9px}
-.plate{display:inline-flex;align-items:baseline;gap:8px;margin-top:16px;background:var(--teal);color:#F2FBF7;
-  padding:7px 13px;border-radius:2px;font:700 13px/1 'Figtree',sans-serif}
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:15px}
-.chip{border:1.5px solid var(--teal);padding:6px 13px;border-radius:2px;
-  font:600 12.5px/1.4 'Figtree',sans-serif;color:var(--teal);background:rgba(23,117,106,.06)}
+  display:flex;align-items:flex-start;justify-content:flex-start;
+  padding:0 4vw 0 clamp(18px,19vw,286px);
+  background:var(--jam);
+  background-image:radial-gradient(70% 62% at 34% 26%,rgba(255,214,170,.24),transparent 66%),
+    radial-gradient(90% 70% at 108% 60%,rgba(0,0,0,.42),transparent 60%),
+    repeating-linear-gradient(90deg,rgba(0,0,0,.13) 0 1px,transparent 1px 8px)}
+header::before{content:"";position:absolute;left:0;right:0;bottom:118px;height:6px;z-index:5;
+  background:linear-gradient(180deg,#D8B171,#8C6A2C)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:118px;z-index:4;
+  background:linear-gradient(180deg,#411310,#2A0F0B 40%,#1B0907),
+    radial-gradient(46% 100% at 44% 0,rgba(252,247,236,.16),transparent 72%);
+  background-blend-mode:screen,normal;
+  box-shadow:0 -22px 46px rgba(0,0,0,.55)}
+
+.spindle{position:absolute;left:0;right:0;top:44px;height:11px;z-index:2;
+  background:linear-gradient(180deg,#6E6A64,#DCD7CE 34%,#8A857E 64%,#3A3733)}
+.spindle::before,.spindle::after{content:"";position:absolute;top:-17px;width:15px;height:45px;
+  border-radius:3px;background:linear-gradient(180deg,#95908A,#403D39)}
+.spindle::before{left:3vw}.spindle::after{right:3vw}
+.glint{position:absolute;left:0;right:0;top:44px;height:11px;z-index:3;overflow:hidden;pointer-events:none}
+.glint::after{content:"";position:absolute;top:0;left:-30%;width:22%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.85),transparent);
+  animation:spgl 13s ease-in-out infinite}
+@keyframes spgl{0%,88%{transform:translateX(0)}100%{transform:translateX(620%)}}
+@media(prefers-reduced-motion:reduce){.glint::after{animation:none}}
+
+.roll{position:relative;z-index:1;width:min(660px,50vw);margin-top:24px}
+.roll::before{content:"";position:absolute;z-index:2;left:-14px;right:-14px;top:6px;height:64px;
+  border-radius:8px/16px;
+  background:linear-gradient(180deg,#EFE7D6,#FCF8EF 22%,#E4D9C2 66%,#B9A98B);
+  box-shadow:0 12px 26px rgba(0,0,0,.5),inset 0 -6px 10px rgba(0,0,0,.14)}
+.tape{position:relative;margin-top:58px;min-height:820px;background:#FCF7EC;
+  background-image:linear-gradient(90deg,rgba(60,40,20,.17),transparent 4%,transparent 96%,rgba(60,40,20,.17));
+  padding:24px clamp(18px,2.6vw,36px) 40px;color:#241C15;
+  box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.tk{font:700 10.5px/1.5 'Courier Prime',monospace;letter-spacing:.3em;text-transform:uppercase;
+  text-align:center;color:#8A7458}
+h1.reg{font-family:'Archivo Black',Impact,sans-serif;font-weight:400;text-align:center;
+  font-size:clamp(27px,4.6vw,64px);line-height:1;letter-spacing:-.012em;margin:8px 0 11px;color:#1B1410}
+h1.reg xar{color:#1B1410;letter-spacing:0}
+.brule{border-top:3px double #241C15;margin:0 0 13px}
+.sub{font:400 13px/1.8 'Courier Prime',monospace;color:#453626;margin:0}
+.dash{border-top:1px dashed rgba(36,28,21,.6);margin:13px 0 10px}
+.order{list-style:none;margin:0;padding:0}
+.order li{position:relative;padding-left:19px;font:700 13.5px/2 'Courier Prime',monospace;
+  text-transform:uppercase;letter-spacing:.09em;color:#1B1410}
+.order li::before{content:"";position:absolute;left:0;top:.82em;width:8px;height:8px;background:var(--pom)}
+.print{margin-top:13px;border:1px solid #241C15;padding:6px;background:#fff}
+.print img{width:100%;height:clamp(132px,16.5vh,168px);object-fit:cover}
+.pcap{font:400 11px/1.5 'Courier Prime',monospace;color:#6E5B45;margin-top:5px;text-align:center}
+.tot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px;
+  background:#1B1410;color:#FCF7EC;padding:10px 13px;
+  font:700 12.5px/1.35 'Courier Prime',monospace;letter-spacing:.08em;text-transform:uppercase}
+.tot b{font-size:19px;letter-spacing:.02em}
+.code{margin-top:16px;height:52px;
+  background:repeating-linear-gradient(90deg,#1B1410 0 2px,transparent 2px 5px,#1B1410 5px 7px,
+    transparent 7px 10px,#1B1410 10px 11px,transparent 11px 17px)}
+@media(max-width:1100px){
+  header{padding-left:clamp(18px,8vw,110px)}
+  .roll{width:min(620px,62vw)}
+}
+@media(max-width:880px){
+  header{padding-left:0;padding-right:0;justify-content:center}
+  header::before{bottom:96px}header::after{height:96px}
+  .roll{width:min(600px,86vw)}
+  .tape{min-height:700px}
+}
+@media(max-width:430px){
+  header::before{bottom:78px}header::after{height:78px}
+  .tape{padding:18px 15px 28px;min-height:600px}
+  .print img{height:120px}
+  .code{height:30px}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -191,22 +231,26 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="slab">
-    <div class="slab-in">
-      <span class="k h-k"><xen data-edit="t1" data-edit-label="Text (EN): Souk Ayass · Beirut Souks">Souk Ayass · Beirut Souks</xen><xar data-edit="t2" data-edit-label="Text (AR): سوق عياس · أسواق بيروت">سوق عياس · أسواق بيروت</xar></span>
-      <h1 class="inlay"><xen data-edit="t3" data-edit-label="Text (EN): AL ANTABLI">AL ANTABLI</xen><xar data-edit="t4" data-edit-label="Text (AR): الأنطبلي">الأنطبلي</xar></h1>
+  <div class="spindle" aria-hidden="true"></div>
+  <div class="glint" aria-hidden="true"></div>
+  <div class="roll">
+    <div class="tape">
+      <p class="tk"><xen data-edit="t1" data-edit-label="Text (EN): Souk Ayass · Beirut Souks">Souk Ayass · Beirut Souks</xen><xar data-edit="t2" data-edit-label="Text (AR): سوق عياس · أسواق بيروت">سوق عياس · أسواق بيروت</xar></p>
+      <h1 class="reg"><xen data-edit="t3" data-edit-label="Text (EN): AL ANTABLI">AL ANTABLI</xen><xar data-edit="t4" data-edit-label="Text (AR): الأنطبلي">الأنطبلي</xar></h1>
+      <div class="brule" aria-hidden="true"></div>
       <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): Jallab, fresh fruit cocktails and Arab…">Jallab, fresh fruit cocktails and Arabic ice cream, poured at the same doorstep Beirut has crossed for generations. Their own page still says it plainly: Since 1936.</xen><xar data-edit="t6" data-edit-label="Text (AR): جلاب، كوكتيل فواكه طازجة وبوظة عربية، …">جلاب، كوكتيل فواكه طازجة وبوظة عربية، عالعتبة نفسها يلّي بيروت عم تقطعها من أجيال. صفحتهن نفسها بتقولها بكل بساطة: منذ 1936.</xar></p>
-      <div class="sill" aria-hidden="true"></div>
-      <div class="mat">
+      <div class="dash" aria-hidden="true"></div>
+      <ul class="order">
+        <li><xen class="c" data-edit="t7" data-edit-label="Text (EN): Jallab">Jallab</xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): جلاب">جلاب</xar></li>
+        <li><xen class="c" data-edit="t9" data-edit-label="Text (EN): Fruit cocktails">Fruit cocktails</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): كوكتيل فواكه">كوكتيل فواكه</xar></li>
+        <li><xen class="c" data-edit="t11" data-edit-label="Text (EN): Arabic ice cream">Arabic ice cream</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): بوظة عربية">بوظة عربية</xar></li>
+      </ul>
+      <div class="print">
         <img src="img/04.jpg" alt="A fruit cocktail cup crowned with strawberries, pistachios and cream">
-        <p class="cap"><xen data-edit="t7" data-edit-label="Text (EN): The fruit cocktail, dressed the Antabl…">The fruit cocktail, dressed the Antabli way.</xen><xar data-edit="t8" data-edit-label="Text (AR): كوكتيل الفواكه، متزيّن على طريقة الأنط…">كوكتيل الفواكه، متزيّن على طريقة الأنطبلي.</xar></p>
+        <p class="pcap"><xen data-edit="t13" data-edit-label="Text (EN): The fruit cocktail, dressed the Antabl…">The fruit cocktail, dressed the Antabli way.</xen><xar data-edit="t14" data-edit-label="Text (AR): كوكتيل الفواكه، متزيّن على طريقة الأنط…">كوكتيل الفواكه، متزيّن على طريقة الأنطبلي.</xar></p>
       </div>
-      <p class="plate"><span class="num" data-edit="t9" data-edit-label="Text: 4.3">4.3</span> <span><xen>from <span class="num" data-edit="t10" data-edit-label="Text: 270">270</span> Google reviews</xen><xar>من <span class="num" data-edit="t11" data-edit-label="Text: 270">270</span> تقييم على غوغل</xar></span></p>
-      <div class="chips">
-        <span class="chip"><xen class="c" data-edit="t12" data-edit-label="Text (EN): Jallab">Jallab</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): جلاب">جلاب</xar></span>
-        <span class="chip"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Fruit cocktails">Fruit cocktails</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): كوكتيل فواكه">كوكتيل فواكه</xar></span>
-        <span class="chip"><xen class="c" data-edit="t16" data-edit-label="Text (EN): Arabic ice cream">Arabic ice cream</xen><xar class="c" data-edit="t17" data-edit-label="Text (AR): بوظة عربية">بوظة عربية</xar></span>
-      </div>
+      <p class="tot"><b class="num" data-edit="t15" data-edit-label="Text: 4.3">4.3</b> <span><xen>from <span class="num" data-edit="t16" data-edit-label="Text: 270">270</span> Google reviews</xen><xar>من <span class="num" data-edit="t17" data-edit-label="Text: 270">270</span> تقييم على غوغل</xar></span></p>
+      <div class="code" aria-hidden="true"></div>
     </div>
   </div>
 </header>

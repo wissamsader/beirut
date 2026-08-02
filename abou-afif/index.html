@@ -28,50 +28,55 @@ img{display:block;max-width:100%}
   border:1.5px solid #0F241B;border-radius:2px;box-shadow:0 4px 14px rgba(0,0,0,.4);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: an enormous folding metal gate, cropped by the frame, red wall behind ---------- */
+/* ---------- HERO: one enormous fluorescent tube running off both edges of the frame,
+     hard glare falling down the mint tiles of the counter wall ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;
-  background:radial-gradient(64% 50% at 70% 26%,rgba(248,241,228,.10),transparent 70%),
-  linear-gradient(180deg,#A02219 0%,var(--red) 48%,#96201A 100%)}
-header::before{content:"";position:absolute;inset:0;opacity:.55;
-  background:repeating-linear-gradient(0deg,transparent 0 110px,rgba(0,0,0,.13) 110px 112px),
-  repeating-linear-gradient(90deg,transparent 0 190px,rgba(0,0,0,.07) 190px 192px)}
-.gate{position:absolute;top:-46px;bottom:-46px;left:-52px;width:clamp(250px,44vw,560px);z-index:1;
+  background:#5FAE8E}
+.tilewall{position:absolute;inset:0;z-index:0;
   background:
-   repeating-linear-gradient(90deg,rgba(15,36,27,.55) 0 2px,transparent 2px 34px),
-   repeating-linear-gradient(90deg,#8ED0B5 0 12px,var(--mint-m) 12px 24px,var(--mint-d) 24px 32px,var(--mint-x) 32px 34px);
-  border-right:9px solid #1E4736;box-shadow:20px 0 50px rgba(0,0,0,.45)}
-.gate .rail{position:absolute;left:0;right:0;height:26px;background:linear-gradient(180deg,#2C6B52,#1E4736);
-  box-shadow:0 3px 8px rgba(0,0,0,.35)}
-.gate .rail.r1{top:16%}.gate .rail.r2{bottom:14%}
-.gate .hasp{position:absolute;right:-9px;top:calc(50% - 30px);width:20px;height:60px;
-  background:linear-gradient(180deg,#6B6862,#4C4A45);border-radius:3px;box-shadow:0 4px 10px rgba(0,0,0,.5)}
-.lock{position:absolute;right:-24px;top:calc(50% + 18px);width:44px;height:56px;z-index:2;
-  transform-origin:top center;animation:lockwob 13s ease-in-out infinite}
-.lock::before{content:"";position:absolute;top:0;left:9px;width:26px;height:30px;border:6px solid #8B8781;
-  border-bottom:0;border-radius:14px 14px 0 0}
-.lock::after{content:"";position:absolute;bottom:0;left:0;width:44px;height:32px;border-radius:6px;
-  background:linear-gradient(180deg,#D9A83C,#A87B22);box-shadow:0 5px 12px rgba(0,0,0,.45)}
-@keyframes lockwob{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
-@media(prefers-reduced-motion:reduce){.lock{animation:none}}
-.hcol{position:relative;z-index:2;width:100%;
-  padding:clamp(24px,4vh,48px) 6vw clamp(24px,4vh,44px)
-  calc(clamp(250px,44vw,560px) - 52px + clamp(20px,3.2vw,52px))}
-h1.ttl{font-size:clamp(42px,7vw,88px);color:var(--cream);text-transform:uppercase}
+   linear-gradient(180deg,rgba(4,26,17,.52) 0%,rgba(4,26,17,.34) 11%,rgba(4,26,17,0) 26%),
+   repeating-linear-gradient(0deg,rgba(12,44,30,.30) 0 2px,rgba(0,0,0,0) 2px 76px),
+   repeating-linear-gradient(90deg,rgba(12,44,30,.30) 0 2px,rgba(0,0,0,0) 2px 76px),
+   linear-gradient(180deg,#7CC8A8 0%,#6BBB9B 44%,#54A182 100%)}
+.glare{position:absolute;left:0;right:0;top:17%;height:52%;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.36) 26%,rgba(255,255,255,.08) 66%,rgba(255,255,255,0))}
+.rod{position:absolute;top:0;width:6px;height:calc(17% + 8px);z-index:2;
+  background:linear-gradient(90deg,#5E7A70,#C6D8D1 45%,#6B857B)}
+.rod.l{left:17%}.rod.r{right:17%}
+.tube{position:absolute;left:-4%;right:-4%;top:17%;height:clamp(28px,3.4vw,44px);z-index:3;border-radius:999px;
+  background:linear-gradient(180deg,#E4F5EC 0 12%,#FFFFFF 32%,#FFFFFF 56%,#CFE9DD 80%,#93C2AF 100%);
+  box-shadow:0 0 36px 13px rgba(255,255,255,.9),0 0 130px 48px rgba(216,255,238,.55),
+             0 16px 44px rgba(6,40,26,.38);
+  animation:flick 9s ease-in-out infinite}
+@keyframes flick{0%,100%{filter:brightness(1)}44%{filter:brightness(.92)}}
+.hcol{position:absolute;z-index:5;left:0;right:0;top:25%;
+  padding:0 clamp(160px,25vw,350px) 0 clamp(28px,7vw,104px)}
+.hcol .k{color:#0E3527}
+h1.ttl{font-size:clamp(42px,9.2vw,132px);color:#0C2118;text-transform:uppercase;letter-spacing:-.022em;margin-top:6px}
 h1.ttl .arb{display:block;font-family:var(--arh),sans-serif;font-weight:800;letter-spacing:0;
-  font-size:clamp(34px,5.4vw,66px);color:#FFD9A8;direction:rtl;text-align:left;line-height:1.2;margin-top:4px}
-.sub{margin-top:10px;max-width:52ch;color:#F6D8C6;font-size:clamp(15px,1.9vw,18px);line-height:1.7}
-.meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}
-.plate{display:inline-flex;align-items:baseline;gap:7px;background:var(--cream);color:var(--red-x);
-  padding:6px 12px;border-radius:2px;font:700 13px/1.4 'Asap',sans-serif;border:1.5px solid var(--red-x)}
-.chip{border:1.5px dashed rgba(248,241,228,.55);border-radius:2px;padding:5px 12px;
-  font:600 12px/1.5 'Asap',sans-serif;color:#FBE9DA}
-.poster{margin-top:clamp(16px,3vh,26px);width:min(390px,100%);background:var(--cream);padding:9px 9px 12px;
-  border-radius:2px;box-shadow:0 18px 40px rgba(0,0,0,.4);position:relative}
-.poster::before{content:"";position:absolute;top:-10px;left:calc(50% - 34px);width:68px;height:20px;
-  background:rgba(255,236,200,.75);box-shadow:0 2px 5px rgba(0,0,0,.22)}
-.poster img{width:100%;height:clamp(160px,23vh,235px);object-fit:cover}
+  font-size:clamp(30px,5.6vw,78px);color:#14513B;direction:rtl;text-align:left;line-height:1.2;margin-top:2px}
+.sub{margin-top:16px;max-width:48ch;color:#113729;font-size:clamp(15px,2vw,19.5px);line-height:1.7}
+.meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:16px}
+.plate{display:inline-flex;align-items:baseline;gap:7px;background:#0C2118;color:#EBFBF3;
+  padding:7px 13px;border-radius:2px;font:700 13px/1.4 'Asap',sans-serif;border:1.5px solid #0C2118}
+.chip{border:1.5px dashed rgba(12,33,24,.55);border-radius:2px;padding:6px 12px;
+  font:600 12px/1.5 'Asap',sans-serif;color:#0F3527}
+/* the shopfront photo clipped to the tiles, under the tube */
+.poster{position:absolute;z-index:6;right:clamp(24px,6vw,92px);bottom:14%;width:min(258px,27vw);
+  background:var(--cream);padding:9px 9px 12px;border-radius:2px;
+  box-shadow:0 24px 46px rgba(4,30,20,.45)}
+.poster::before{content:"";position:absolute;top:-11px;left:calc(50% - 26px);width:52px;height:22px;border-radius:3px;
+  background:linear-gradient(180deg,#D3DBD7,#8D9A94);box-shadow:0 3px 7px rgba(0,0,0,.3)}
+.poster img{width:100%;height:clamp(168px,23vh,228px);object-fit:cover}
 .poster .cap{color:#6B5B48;margin:7px 2px 0}
+/* the stainless lip of the counter itself */
+.lip{position:absolute;left:0;right:0;bottom:0;height:14%;z-index:4;
+  background:
+   linear-gradient(180deg,rgba(255,255,255,.55) 0 3px,rgba(255,255,255,0) 3px),
+   linear-gradient(180deg,#E7EEEA 0 7px,#C2CCC7 7px 12px,#95A29B 12px 18px,#6E7C75 18px 26px,#4A5751 26px 62%,#333E39 100%);
+  box-shadow:0 -20px 40px rgba(6,34,22,.32)}
+.lip::after{content:"";position:absolute;left:0;right:0;top:26px;height:34%;
+  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0))}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -160,15 +165,18 @@ footer{padding:36px 7vw 130px;color:#E9B49C;font-size:13.5px;text-align:center;b
   .rung{flex-wrap:wrap}
   .rung p{margin-left:0;text-align:left;max-width:100%}
   body{padding-bottom:66px}
+  .hcol{top:24%;padding:0 clamp(120px,36vw,190px) 0 6vw}
+  .rod.l{left:12%}.rod.r{right:12%}
+  .poster{right:5vw;bottom:14%;width:min(156px,37vw);padding:6px 6px 8px}
+  .poster img{height:clamp(104px,15vh,140px)}
+  .poster::before{width:38px;left:calc(50% - 19px);height:16px;top:-8px}
+  .lip{height:11%}
 }
 @media(max-width:560px){
-  .gate{width:clamp(120px,30vw,180px);left:-36px}
-  .hcol{padding-left:calc(clamp(120px,30vw,180px) - 36px + 16px)}
-  .lock{right:-20px;width:34px;height:44px}
-  .lock::before{left:7px;width:20px;height:24px;border-width:5px}
-  .lock::after{width:34px;height:25px}
-  .poster{width:100%}
-  .poster img{height:clamp(130px,18vh,180px)}
+  .hcol{top:22%;padding:0 clamp(104px,40vw,150px) 0 6vw}
+  .poster{width:min(140px,40vw);right:4vw;bottom:15%}
+  .poster img{height:clamp(92px,14vh,120px)}
+  .poster .cap{font-size:10.5px;line-height:1.45}
   .stall .bod,.pump .bod{font-size:10px;height:48px}
   .bar a{font-size:10.5px}
 }
@@ -220,25 +228,25 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="gate" aria-hidden="true">
-    <i class="rail r1"></i><i class="rail r2"></i>
-    <i class="hasp"></i>
-    <i class="lock"></i>
-  </div>
+  <div class="tilewall" aria-hidden="true"></div>
+  <div class="glare" aria-hidden="true"></div>
+  <i class="rod l" aria-hidden="true"></i><i class="rod r" aria-hidden="true"></i>
+  <div class="tube" aria-hidden="true"></div>
   <div class="hcol">
     <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Sidani Street, facing the Medco statio…">Sidani Street, facing the Medco station</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع سيداني، مقابل محطة ميدكو">شارع سيداني، مقابل محطة ميدكو</xar></p>
-    <h1 class="ttl"><xen class="c">Abou Afif<span class="arb" data-edit="t3" data-edit-label="Text: أبو عفيف">أبو عفيف</span></xen><xar class="c">أبو عفيف<span class="arb" style="font-family:'Archivo',sans-serif;direction:ltr;color:#FFD9A8" data-edit="t4" data-edit-label="Text: ABOU AFIF">ABOU AFIF</span></xar></h1>
+    <h1 class="ttl"><xen class="c">Abou Afif<span class="arb" data-edit="t3" data-edit-label="Text: أبو عفيف">أبو عفيف</span></xen><xar class="c">أبو عفيف<span class="arb" style="font-family:'Archivo',sans-serif;direction:ltr;color:#14513B" data-edit="t4" data-edit-label="Text: ABOU AFIF">ABOU AFIF</span></xar></h1>
     <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): A Hamra sandwich counter working since…">A Hamra sandwich counter working since 1988, the year printed on every wrap. Generations of AUB students grew up ordering the Francisco through this gate.</xen><xar data-edit="t6" data-edit-label="Text (AR): كاونتر سندويش بالحمرا شغّال من سنة 198…">كاونتر سندويش بالحمرا شغّال من سنة 1988، السنة المطبوعة على كل ورقة لف. أجيال من طلاب الجامعة الأميركية كبروا وهنّي يطلبوا الفرانسيسكو من هالباب.</xar></p>
     <div class="meta">
       <span class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 4.6">4.6</span> <span><xen>of <span class="num" data-edit="t8" data-edit-label="Text: 74">74</span> Google reviews</xen><xar>من <span class="num" data-edit="t9" data-edit-label="Text: 74">74</span> تقييم على غوغل</xar></span></span>
       <span class="chip"><xen data-edit="t10" data-edit-label="Text (EN): Since 1988">Since 1988</xen><xar data-edit="t11" data-edit-label="Text (AR): من سنة 1988">من سنة 1988</xar></span>
       <span class="chip"><xen data-edit="t12" data-edit-label="Text (EN): Closed Sundays">Closed Sundays</xen><xar data-edit="t13" data-edit-label="Text (AR): الأحد مسكّر">الأحد مسكّر</xar></span>
     </div>
-    <div class="poster">
-      <img src="img/01.jpg" alt="The Abou Afif shopfront, mint green awning on a pink Hamra building">
-      <p class="cap"><xen data-edit="t14" data-edit-label="Text (EN): The mint awning on Sidani, you cannot …">The mint awning on Sidani, you cannot miss it.</xen><xar data-edit="t15" data-edit-label="Text (AR): التندة الخضرا بشارع سيداني، ما فيك تفو…">التندة الخضرا بشارع سيداني، ما فيك تفوّتها.</xar></p>
-    </div>
   </div>
+  <div class="poster">
+    <img src="img/01.jpg" alt="The Abou Afif shopfront, mint green awning on a pink Hamra building">
+    <p class="cap"><xen data-edit="t14" data-edit-label="Text (EN): The mint awning on Sidani, you cannot …">The mint awning on Sidani, you cannot miss it.</xen><xar data-edit="t15" data-edit-label="Text (AR): التندة الخضرا بشارع سيداني، ما فيك تفو…">التندة الخضرا بشارع سيداني، ما فيك تفوّتها.</xar></p>
+  </div>
+  <div class="lip" aria-hidden="true"></div>
 </header>
 
 <section class="wrap">

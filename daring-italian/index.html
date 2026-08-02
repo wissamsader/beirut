@@ -9,8 +9,8 @@
 <style>
 :root{
   --arh:'Noto Kufi Arabic';--arb:'Harmattan';
-  --green:#14351F;--green-d:#0E2717;--green-l:#1D4A2C;--cream:#F2EBD9;--cream-d:#DACFAF;
-  --tomato:#C3352B;--tomato-d:#96271F;--sage:#A9C0A0;
+  --green:#2C1411;--green-d:#1B0B08;--green-l:#42201A;--cream:#F2EBD9;--cream-d:#DACFAF;
+  --tomato:#C3352B;--tomato-d:#96271F;--sage:#DAA98D;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--green);color:var(--cream);font:400 17px/1.75 'Hanken Grotesk',system-ui,sans-serif}
@@ -21,61 +21,88 @@ img{display:block;max-width:100%}
 .k{font:700 11.5px/1.6 'Hanken Grotesk',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--sage)}
 section{padding-block:clamp(56px,8vh,96px)}
 .band{background:var(--green-d)}
-.paper{background:var(--cream);color:#26301F}
+.paper{background:var(--cream);color:#2E1A13}
 .paper .k{color:var(--tomato)}
 
 /* language chip: a stencil-cut tab, top right */
 .lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
   font:700 14px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
-  background:var(--cream);color:var(--green-d);border:2px dashed rgba(20,53,31,.65);
+  background:var(--cream);color:var(--green-d);border:2px dashed rgba(44,20,17,.65);
   border-radius:2px;box-shadow:0 6px 16px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: an enormous stencil cut, sprayed in cream, the first word
-     running off the left edge of the frame ---------- */
+/* ---------- HERO: one candle on the table. It is small and precise, it is the only
+     light in the room, and it lights the name from below. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
   background:
-   radial-gradient(70% 46% at 24% 30%,rgba(242,235,217,.07),transparent 66%),
-   repeating-linear-gradient(90deg,transparent 0 156px,rgba(0,0,0,.2) 156px 159px),
-   linear-gradient(180deg,#183D24,var(--green) 55%,var(--green-d) 100%)}
+   repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 158px,rgba(0,0,0,.18) 158px 161px),
+   linear-gradient(180deg,#54191F 0%,#3E1219 46%,#260A0F 100%)}
 header::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 80% at 50% 118%,rgba(0,0,0,.45),transparent 60%)}
-.hpad{padding-inline:clamp(18px,5vw,64px)}
-.kick{position:relative;z-index:2;display:inline-block;margin-bottom:clamp(10px,2vh,20px);
-  border:2px dashed rgba(242,235,217,.5);padding:7px 14px;
+  background:radial-gradient(126% 88% at 50% 46%,rgba(0,0,0,0) 26%,rgba(12,3,5,.5) 84%)}
+.glow{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(36% 44% at 50% 62%,rgba(255,182,94,.42),rgba(255,150,60,.10) 42%,rgba(0,0,0,0) 72%)}
+.centrestack{position:absolute;z-index:2;left:0;right:0;top:9%;text-align:center;padding-inline:4vw}
+.hpad{padding-inline:0}
+.kick{position:relative;display:inline-block;margin-bottom:clamp(10px,2vh,20px);
+  border:2px dashed rgba(242,235,217,.45);padding:7px 14px;
   font:700 11.5px/1.4 'Hanken Grotesk',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--sage)}
-.bigword{position:relative;z-index:2;white-space:nowrap;margin-left:-.42em;
-  font-family:'Allerta Stencil',sans-serif;
-  font-size:clamp(96px,24vw,286px);line-height:.88;color:var(--cream);
-  text-shadow:0 0 34px rgba(242,235,217,.14)}
-html.ar .bigword{margin-left:0;margin-right:-.3em;align-self:flex-end}
+.bigword{position:relative;white-space:nowrap;margin:0;
+  font-family:'Allerta Stencil',sans-serif;font-size:clamp(70px,16.6vw,204px);line-height:.9;color:var(--cream);
+  text-shadow:0 8px 60px rgba(255,180,90,.30)}
+html.ar .bigword{margin:0}
 html.ar .bigword xar{font-family:var(--arh);font-size:.72em;line-height:1.05;display:block}
-.secondrow{position:relative;z-index:2;display:flex;align-items:center;gap:clamp(14px,2.6vw,30px);flex-wrap:wrap}
-.secondword{font-family:'Allerta Stencil',sans-serif;font-size:clamp(46px,8.4vw,104px);line-height:1;color:var(--cream)}
+.secondrow{position:relative;display:flex;align-items:center;justify-content:center;
+  gap:clamp(14px,2.6vw,30px);flex-wrap:wrap;margin-top:2px}
+.secondword{font-family:'Allerta Stencil',sans-serif;font-size:clamp(38px,6.8vw,84px);line-height:1;color:#F3D9AE}
 html.ar .secondword xar{font-family:var(--arh);display:block}
-.wheel{width:clamp(58px,7vw,86px);flex:0 0 auto;color:var(--cream);animation:spin 80s linear infinite}
+.wheel{width:clamp(46px,5.4vw,66px);flex:0 0 auto;color:#D9A98E;animation:spin 80s linear infinite}
 .wheel svg{display:block;width:100%;height:auto}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.wheel{animation:none}}
-.redline{position:relative;z-index:2;margin-top:clamp(12px,2vh,20px);display:inline-block;
+.redline{position:relative;margin-top:clamp(12px,2vh,20px);display:inline-block;
   background:var(--tomato);color:var(--cream);padding:8px 16px;
-  font:700 clamp(13px,1.8vw,16px)/1.3 'Allerta Stencil',sans-serif;letter-spacing:.34em;text-transform:uppercase}
-.rateplate{position:relative;z-index:2;display:inline-flex;align-items:baseline;gap:8px;margin:14px 0 0 12px;
-  border:2px solid rgba(242,235,217,.55);padding:9px 15px;font:700 13px/1 'Hanken Grotesk',sans-serif;color:var(--cream)}
-.aperture{position:relative;z-index:2;align-self:flex-end;width:min(560px,84vw);
-  margin:clamp(18px,3.4vh,34px) clamp(18px,5vw,72px) 0 0}
-html.ar .aperture{align-self:flex-start;margin:clamp(18px,3.4vh,34px) 0 0 clamp(18px,5vw,72px)}
-.aperture .cut{background:var(--green-l);padding:12px;border:2px dashed rgba(242,235,217,.4);
-  box-shadow:0 24px 50px rgba(0,0,0,.5),inset 0 0 0 1px rgba(0,0,0,.3)}
-.aperture img{width:100%;height:clamp(180px,26vh,250px);object-fit:cover}
-.aperture .cap2{margin-top:9px;font:500 12.5px/1.55 'Hanken Grotesk',sans-serif;color:var(--sage);letter-spacing:.02em}
+  font:700 clamp(12px,1.6vw,15px)/1.3 'Allerta Stencil',sans-serif;letter-spacing:.34em;text-transform:uppercase}
+.rateplate{position:relative;display:inline-flex;align-items:baseline;gap:8px;margin:14px 0 0 12px;
+  border:2px solid rgba(242,235,217,.5);padding:9px 15px;font:700 13px/1 'Hanken Grotesk',sans-serif;color:var(--cream)}
+/* the candle */
+.candle{position:absolute;z-index:4;left:50%;bottom:23%;transform:translateX(-50%);
+  width:clamp(30px,3vw,44px);height:clamp(84px,12vh,116px);border-radius:4px 4px 2px 2px;
+  background:linear-gradient(90deg,#7A5F3E 0 11%,#F2E0BC 32%,#FFF8E6 50%,#E6D0A6 68%,#6E5637 100%);
+  box-shadow:0 -8px 34px rgba(255,180,90,.36),0 12px 28px rgba(0,0,0,.65)}
+.candle::before{content:"";position:absolute;top:-5px;left:0;right:0;height:10px;border-radius:50%;
+  background:linear-gradient(180deg,#FFFAEE,#E2CDA2)}
+.candle::after{content:"";position:absolute;left:-6px;right:-6px;bottom:-11px;height:14px;border-radius:2px 2px 3px 3px;
+  background:linear-gradient(180deg,#6A3A22,#2E170C)}
+.wick{position:absolute;left:50%;top:-14px;transform:translateX(-50%);width:2px;height:11px;background:#20120A}
+.flame{position:absolute;left:50%;top:-48px;width:20px;height:44px;
+  border-radius:50% 50% 44% 44%/66% 66% 34% 34%;
+  background:radial-gradient(circle at 50% 76%,#FFFFFF 0 18%,#FFF2B8 42%,#FFB43C 72%,rgba(255,150,40,0) 100%);
+  box-shadow:0 0 44px 18px rgba(255,180,80,.6),0 0 170px 66px rgba(255,158,58,.28);
+  transform:translateX(-50%);animation:cflick 7s ease-in-out infinite}
+@keyframes cflick{0%,100%{transform:translateX(-50%) scale(1,1)}50%{transform:translateX(-50%) scale(.96,1.09)}}
+/* the table it stands on */
+.table{position:absolute;left:0;right:0;bottom:0;height:23%;z-index:3;
+  background:
+   radial-gradient(34% 80% at 50% 0%,rgba(255,190,104,.30),rgba(255,170,80,.06) 46%,rgba(0,0,0,0) 76%),
+   repeating-linear-gradient(90deg,rgba(255,236,204,.022) 0 2px,rgba(0,0,0,0) 2px 94px),
+   linear-gradient(180deg,#6E2C2A 0 7px,#45151A 7px 15px,#2C0B10 15px 62%,#1C060A 100%);
+  box-shadow:0 -24px 48px rgba(0,0,0,.55)}
+.table::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,rgba(255,186,110,0) 12%,rgba(255,196,124,.62) 50%,rgba(255,186,110,0) 88%)}
+/* the terrace photo, standing on the table */
+.aperture{position:absolute;z-index:5;right:clamp(16px,5vw,72px);bottom:clamp(16px,3vh,34px);
+  width:min(300px,30vw);margin:0}
+html.ar .aperture{right:auto;left:clamp(16px,5vw,72px);margin:0}
+.aperture .cut{background:#42201A;padding:10px;border:2px dashed rgba(242,235,217,.35);
+  box-shadow:0 26px 52px rgba(0,0,0,.6),inset 0 0 0 1px rgba(0,0,0,.3)}
+.aperture img{width:100%;height:clamp(126px,17vh,164px);object-fit:cover}
+.aperture .cap2{margin-top:8px;font:500 12px/1.5 'Hanken Grotesk',sans-serif;color:#C79B80;letter-spacing:.02em}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
 .two h2,.hd{font-size:clamp(26px,3.8vw,42px);margin:8px 0 18px}
 .two p{color:#D6CDB4;margin-bottom:15px}
-.paper .two p{color:#3E4A34}
+.paper .two p{color:#4A2A20}
 .frame{background:var(--green-l);border:2px dashed rgba(242,235,217,.4);padding:11px}
 .frame img{width:100%;height:clamp(250px,40vh,410px);object-fit:cover}
 .cap{font:500 12.5px/1.6 'Hanken Grotesk',sans-serif;color:var(--sage);margin-top:9px}
@@ -83,10 +110,10 @@ html.ar .aperture{align-self:flex-start;margin:clamp(18px,3.4vh,34px) 0 0 clamp(
 .col h3{font-size:clamp(19px,2.4vw,24px);color:var(--tomato);margin-bottom:12px;letter-spacing:.2em}
 .paper .col h3{color:var(--tomato)}
 .col ul{list-style:none}
-.col li{padding:9px 2px;border-bottom:1px dashed rgba(38,48,31,.35);font:500 16px/1.5 'Hanken Grotesk',sans-serif}
-.boardimg{border:2px dashed rgba(38,48,31,.45);padding:9px;background:#FFFDF6}
+.col li{padding:9px 2px;border-bottom:1px dashed rgba(46,26,19,.35);font:500 16px/1.5 'Hanken Grotesk',sans-serif}
+.boardimg{border:2px dashed rgba(46,26,19,.45);padding:9px;background:#FFFDF6}
 .boardimg img{width:100%;height:auto}
-.note{margin-top:16px;font-size:14.5px;color:#5C6A4E}
+.note{margin-top:16px;font-size:14.5px;color:#7A5344}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
 .card{background:var(--green-l);border:2px dashed rgba(242,235,217,.35);overflow:hidden}
 .card img{width:100%;height:215px;object-fit:cover}
@@ -98,8 +125,8 @@ html.ar .aperture{align-self:flex-start;margin:clamp(18px,3.4vh,34px) 0 0 clamp(
 .ac b{display:block;font:400 44px/1 'Allerta Stencil',sans-serif;color:var(--tomato)}
 .ac p{margin-top:10px;color:#D6CDB4;font-size:14.5px;line-height:1.65}
 .revs{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2.6vw,28px)}
-.rev-c{border:2px dashed rgba(38,48,31,.4);padding:24px 22px 20px;background:#FFFDF6}
-.rev-c q{display:block;quotes:none;font-size:16.5px;line-height:1.7;color:#26301F}
+.rev-c{border:2px dashed rgba(46,26,19,.4);padding:24px 22px 20px;background:#FFFDF6}
+.rev-c q{display:block;quotes:none;font-size:16.5px;line-height:1.7;color:#2E1A13}
 .rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Hanken Grotesk',sans-serif;
   color:var(--tomato);letter-spacing:.16em;text-transform:uppercase}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -114,11 +141,11 @@ html.ar .aperture{align-self:flex-start;margin:clamp(18px,3.4vh,34px) 0 0 clamp(
   padding:13px 20px;text-decoration:none;font:700 14.5px/1 'Hanken Grotesk',sans-serif;
   border:2px solid var(--tomato-d);margin:6px 8px 0 0}
 .btn.o{background:transparent;color:var(--cream);border:2px dashed rgba(242,235,217,.55)}
-footer{padding:36px 7vw 130px;color:#8FA383;font-size:13.5px;text-align:center;background:var(--green-d)}
+footer{padding:36px 7vw 130px;color:#B98B72;font-size:13.5px;text-align:center;background:var(--green-d)}
 
 /* ---------- sticky bar: the stencilled crate edge ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
-  background:linear-gradient(180deg,#0F2C1A,var(--green-d));border-top:2px solid rgba(242,235,217,.25);
+  background:linear-gradient(180deg,#1D0D09,var(--green-d));border-top:2px solid rgba(242,235,217,.25);
   padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -10px 28px rgba(0,0,0,.55)}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
   padding:9px 4px 10px;background:transparent;color:var(--cream);border:2px dashed rgba(242,235,217,.5);
@@ -134,8 +161,13 @@ footer{padding:36px 7vw 130px;color:#8FA383;font-size:13.5px;text-align:center;b
   .revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:86px}
-  .aperture{margin-right:18px}
-  .aperture img{height:clamp(150px,20vh,190px)}
+  .centrestack{top:7%}
+  .candle{bottom:26%;width:24px;height:clamp(66px,10vh,84px)}
+  .flame{top:-38px;width:16px;height:34px}
+  .table{height:26%}
+  .aperture{right:5vw;bottom:14px;width:min(168px,42vw)}
+  .aperture .cut{padding:6px}
+  .aperture img{height:clamp(80px,12vh,108px)}
 }
 @media(max-width:430px){
   .bar a{font-size:10.5px}
@@ -197,16 +229,21 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="hpad"><span class="kick"><xen data-edit="t1" data-edit-label="Text (EN): Jal El Dib · Pizza Restaurant">Jal El Dib · Pizza Restaurant</xen><xar data-edit="t2" data-edit-label="Text (AR): جل الديب · مطعم بيتزا">جل الديب · مطعم بيتزا</xar></span></div>
-  <div class="bigword"><xen data-edit="t3" data-edit-label="Text (EN): DARING">DARING</xen><xar data-edit="t4" data-edit-label="Text (AR): الجريء">الجريء</xar></div>
-  <div class="secondrow hpad">
-    <span class="secondword"><xen data-edit="t5" data-edit-label="Text (EN): THE ITALIAN">THE ITALIAN</xen><xar data-edit="t6" data-edit-label="Text (AR): الإيطالي">الإيطالي</xar></span>
-    <span class="wheel"><svg viewBox="0 0 90 90" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="45" cy="45" r="40" stroke-width="7" stroke-dasharray="34 13"/><circle cx="45" cy="45" r="17" stroke-width="6" stroke-dasharray="16 9"/></svg></span>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="centrestack">
+    <div class="hpad"><span class="kick"><xen data-edit="t1" data-edit-label="Text (EN): Jal El Dib · Pizza Restaurant">Jal El Dib · Pizza Restaurant</xen><xar data-edit="t2" data-edit-label="Text (AR): جل الديب · مطعم بيتزا">جل الديب · مطعم بيتزا</xar></span></div>
+    <div class="bigword"><xen data-edit="t3" data-edit-label="Text (EN): DARING">DARING</xen><xar data-edit="t4" data-edit-label="Text (AR): الجريء">الجريء</xar></div>
+    <div class="secondrow hpad">
+      <span class="secondword"><xen data-edit="t5" data-edit-label="Text (EN): THE ITALIAN">THE ITALIAN</xen><xar data-edit="t6" data-edit-label="Text (AR): الإيطالي">الإيطالي</xar></span>
+      <span class="wheel"><svg viewBox="0 0 90 90" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="45" cy="45" r="40" stroke-width="7" stroke-dasharray="34 13"/><circle cx="45" cy="45" r="17" stroke-width="6" stroke-dasharray="16 9"/></svg></span>
+    </div>
+    <div class="hpad">
+      <span class="redline"><xen data-edit="t7" data-edit-label="Text (EN): Pizza · Pasta">Pizza · Pasta</xen><xar data-edit="t8" data-edit-label="Text (AR): بيتزا · باستا">بيتزا · باستا</xar></span>
+      <span class="rateplate"><span class="num" data-edit="t9" data-edit-label="Text: 4.7 ★">4.7 ★</span><span><xen><span class="num" data-edit="t10" data-edit-label="Text: 237">237</span> Google reviews</xen><xar><span class="num" data-edit="t11" data-edit-label="Text: 237">237</span> تقييم غوغل</xar></span></span>
+    </div>
   </div>
-  <div class="hpad">
-    <span class="redline"><xen data-edit="t7" data-edit-label="Text (EN): Pizza · Pasta">Pizza · Pasta</xen><xar data-edit="t8" data-edit-label="Text (AR): بيتزا · باستا">بيتزا · باستا</xar></span>
-    <span class="rateplate"><span class="num" data-edit="t9" data-edit-label="Text: 4.7 ★">4.7 ★</span><span><xen><span class="num" data-edit="t10" data-edit-label="Text: 237">237</span> Google reviews</xen><xar><span class="num" data-edit="t11" data-edit-label="Text: 237">237</span> تقييم غوغل</xar></span></span>
-  </div>
+  <i class="candle" aria-hidden="true"><i class="wick"></i><i class="flame"></i></i>
+  <div class="table" aria-hidden="true"></div>
   <div class="aperture">
     <div class="cut"><img src="img/01.jpg" alt="The Daring Italian terrace under its pergola, red sign on the cream wall"></div>
     <p class="cap2"><xen data-edit="t12" data-edit-label="Text (EN): The terrace in Jal El Dib, photographe…">The terrace in Jal El Dib, photographed by their own guests.</xen><xar data-edit="t13" data-edit-label="Text (AR): التراس بجل الديب، مصوّر من ضيوفهن.">التراس بجل الديب، مصوّر من ضيوفهن.</xar></p>

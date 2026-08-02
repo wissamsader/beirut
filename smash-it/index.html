@@ -11,6 +11,7 @@
   --arh:'Baloo Bhaijaan 2';--arb:'Rubik';
   --org:#EE5A17;--org-d:#C64409;--org-x:#A83605;
   --cream:#FFF3E4;--ink:#2B1406;--brown:#3A1E0C;--pan:#241106;--dust:#FFFDF9;
+  --tin:#3D444B;--tin-d:#20262B;--tin-l:#6E7880;--rivet:#8E9AA3;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--org);color:var(--ink);font:400 17px/1.72 'Instrument Sans',system-ui,sans-serif}
@@ -26,54 +27,60 @@ img{display:block;max-width:100%}
   box-shadow:0 6px 16px rgba(43,20,6,.45);min-width:58px;text-align:center;-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: a small, precise flour dusting pinned at the top-left corner of a hot orange field ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;text-align:center;
+/* ---------- HERO: a pressed-tin panel running diagonally across the hot orange field ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;isolation:isolate;
   background:
    radial-gradient(1.5px 1.5px at 31% 44%,rgba(43,20,6,.16) 45%,transparent 55%),
    radial-gradient(1.5px 1.5px at 68% 26%,rgba(43,20,6,.13) 45%,transparent 55%),
    radial-gradient(1.5px 1.5px at 52% 76%,rgba(43,20,6,.12) 45%,transparent 55%),
    radial-gradient(120% 100% at 0% 0%,#F76A24 0%,var(--org) 48%,#D94E0E 100%)}
-.dust{position:absolute;z-index:1;top:-26px;left:-26px;width:min(330px,44vw);aspect-ratio:1;pointer-events:none;
+.sheet{position:absolute;z-index:1;left:-14%;right:-14%;top:50%;height:clamp(300px,46vh,420px);
+  transform:translateY(-50%) rotate(-8.5deg);
   background:
-   radial-gradient(circle 4px at 24% 22%,var(--dust) 98%,transparent),
-   radial-gradient(circle 3px at 38% 12%,var(--dust) 98%,transparent),
-   radial-gradient(circle 2.6px at 15% 38%,var(--dust) 98%,transparent),
-   radial-gradient(circle 2.2px at 45% 30%,var(--dust) 98%,transparent),
-   radial-gradient(circle 3.4px at 30% 42%,var(--dust) 98%,transparent),
-   radial-gradient(circle 2px at 55% 18%,var(--dust) 98%,transparent),
-   radial-gradient(circle 1.8px at 60% 38%,var(--dust) 98%,transparent),
-   radial-gradient(circle 2.4px at 12% 56%,var(--dust) 98%,transparent),
-   radial-gradient(circle 1.6px at 40% 54%,var(--dust) 98%,transparent),
-   radial-gradient(circle 1.4px at 66% 52%,var(--dust) 98%,transparent),
-   radial-gradient(circle 1.3px at 52% 64%,var(--dust) 98%,transparent),
-   radial-gradient(circle 1.2px at 26% 68%,var(--dust) 98%,transparent),
-   radial-gradient(circle 60% 60% at 18% 16%,rgba(255,253,249,.3),transparent 70%)}
-.press{position:absolute;z-index:2;top:-34px;left:-34px;width:150px;height:150px;border-radius:50%;
-  background:radial-gradient(circle at 38% 32%,#4A2810,var(--pan) 68%);
-  border:5px solid #150A02;box-shadow:0 16px 34px rgba(43,20,6,.5),inset 0 0 0 12px rgba(255,243,228,.06)}
-.press::after{content:"";position:absolute;inset:26%;border-radius:50%;border:3px dashed rgba(255,243,228,.35)}
-.fl{position:absolute;border-radius:50%;background:var(--dust);animation:fltw 7s ease-in-out infinite}
-.f1{top:64px;left:150px;width:7px;height:7px}
-.f2{top:120px;left:96px;width:5px;height:5px;animation-delay:2.3s}
-.f3{top:40px;left:230px;width:6px;height:6px;animation-delay:4.6s}
-@keyframes fltw{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.15)}}
-.hcopy{position:relative;z-index:3;width:min(780px,94%);padding:clamp(90px,13vh,120px) 0 clamp(190px,26vh,240px)}
-.hcopy h1{font-size:clamp(58px,10.4vw,128px);color:var(--cream);
-  text-shadow:0 4px 0 var(--org-x),0 10px 0 rgba(43,20,6,.35),0 26px 44px rgba(43,20,6,.4)}
-.sub{color:#FFE1C8;font-size:clamp(15px,1.9vw,18.5px);max-width:46ch;margin:12px auto 0}
-.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:20px}
-.chip{background:rgba(43,20,6,.8);color:#FFD9BC;border-radius:999px;padding:9px 15px;
+   linear-gradient(139deg,rgba(255,255,255,.13) 0 20%,rgba(0,0,0,0) 20% 76%,rgba(0,0,0,.34) 76% 100%) 0 0/62px 62px,
+   radial-gradient(circle at 50% 50%,rgba(255,255,255,.14) 0 11px,rgba(0,0,0,.26) 12px 19px,rgba(0,0,0,0) 20px) 0 0/62px 62px,
+   repeating-linear-gradient(0deg,rgba(0,0,0,.42) 0 2px,rgba(0,0,0,0) 2px 62px),
+   repeating-linear-gradient(90deg,rgba(0,0,0,.42) 0 2px,rgba(0,0,0,0) 2px 62px),
+   linear-gradient(160deg,var(--tin-l) 0%,var(--tin) 34%,var(--tin-d) 100%);
+  border-top:4px solid #7E8992;border-bottom:4px solid #171C21;
+  box-shadow:0 34px 74px rgba(43,20,6,.55),0 -8px 26px rgba(43,20,6,.3)}
+.sheet::before{content:"";position:absolute;inset:0;
+  background:linear-gradient(102deg,transparent 26%,rgba(255,255,255,.2) 36%,transparent 46%)}
+.riv{position:absolute;left:0;right:0;height:14px;pointer-events:none;
+  background:radial-gradient(circle at 50% 50%,#AEBAC3 0 3.4px,#5C666E 3.8px 4.6px,rgba(0,0,0,.55) 5px 6.2px,rgba(0,0,0,0) 6.6px) 0 50%/58px 14px repeat-x}
+.riv.t{top:9px}.riv.b{bottom:9px}
+.hcopy{position:relative;z-index:4;width:min(1180px,100%);margin-inline:auto;
+  min-height:clamp(600px,92svh,820px);display:grid;align-content:center;justify-items:start;
+  gap:clamp(8px,1.4vh,16px);padding:clamp(40px,7vh,84px) 6vw clamp(40px,7vh,84px)}
+.hcopy .k{color:#3A1E0C;background:var(--cream);padding:7px 13px;border-radius:2px;letter-spacing:.22em}
+.hcopy h1{font-size:clamp(54px,11.4vw,152px);color:var(--cream);line-height:.94;
+  text-shadow:0 4px 0 #12171B,0 9px 0 rgba(0,0,0,.5),0 30px 52px rgba(0,0,0,.55)}
+.sub{color:#F4E7DA;font-size:clamp(14.5px,1.8vw,17.5px);max-width:40ch;line-height:1.72;
+  text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(2px,.8vh,8px)}
+.chip{background:rgba(18,23,27,.88);color:#FFD9BC;border-radius:999px;padding:9px 15px;
   font:700 12.5px/1 'Instrument Sans',sans-serif;letter-spacing:.05em}
 .chip.c2{background:var(--cream);color:var(--org-x)}
-.rate{display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;background:rgba(255,243,228,.16);
-  border:1.5px solid rgba(255,243,228,.5);border-radius:999px;padding:9px 16px;font-size:13.5px;color:#FFE9D6}
+.rate{display:inline-flex;align-items:baseline;gap:8px;background:rgba(255,243,228,.14);
+  border:1.5px solid rgba(255,243,228,.55);border-radius:999px;padding:9px 16px;font-size:13.5px;color:#FFE9D6}
 .rate b{font:400 20px/1 'Titan One',sans-serif;color:var(--cream)}
-.hpane{position:absolute;z-index:3;left:50%;bottom:clamp(22px,4.6vh,42px);transform:translateX(-50%);
-  width:min(520px,86vw);background:var(--pan);border-radius:14px;padding:9px;
-  border:2px solid #150A02;box-shadow:0 26px 48px rgba(43,20,6,.5)}
-.hpane img{width:100%;height:clamp(150px,20vh,195px);object-fit:cover;border-radius:8px}
-.hpane .cap{color:#D9A987;margin:7px 4px 2px}
+.hpane{position:absolute;z-index:5;right:clamp(16px,4vw,64px);bottom:clamp(26px,5vh,54px);
+  width:min(360px,32vw);background:var(--pan);border-radius:10px;padding:8px;
+  border:2px solid #150A02;box-shadow:0 26px 48px rgba(43,20,6,.6)}
+.hpane img{width:100%;height:clamp(140px,19vh,182px);object-fit:cover;border-radius:5px}
+.hpane .cap{color:#D9A987;margin:7px 4px 2px;font-size:12.5px;line-height:1.5}
+@media(max-width:900px){
+  .hcopy h1{font-size:clamp(50px,13vw,86px)}
+  .hpane{width:min(300px,42vw)}
+  .hpane img{height:clamp(120px,16vh,146px)}
+  .sheet{height:clamp(260px,40vh,340px);background-size:48px 48px,48px 48px,48px 48px,48px 48px,100% 100%}
+}
+@media(max-width:640px){
+  .hcopy{align-content:start;padding-top:clamp(70px,12vh,110px);min-height:0}
+  .hpane{position:relative;right:auto;bottom:auto;width:min(360px,86vw);margin:14px 6vw 0}
+  .sheet{top:38%;height:clamp(230px,34vh,300px);transform:translateY(-50%) rotate(-11deg)}
+  .sub{max-width:100%}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -144,13 +151,6 @@ footer{padding:36px 6vw 132px;color:#E8C4A4;font-size:13.5px;text-align:center;b
   .steps{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:76px}
-  .hcopy{padding:clamp(80px,12vh,110px) 0 clamp(200px,30vh,250px)}
-  .hcopy h1{font-size:clamp(52px,15vw,74px)}
-  .dust{width:56vw;top:-18px;left:-18px}
-  .press{width:110px;height:110px;top:-26px;left:-26px}
-  .f3{display:none}
-  .hpane{width:min(430px,88vw)}
-  .hpane img{height:clamp(120px,16vh,150px)}
 }
 @media(max-width:430px){.bar a{font-size:10.5px}}
 </style>
@@ -201,11 +201,9 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="dust" aria-hidden="true"></div>
-  <div class="press" aria-hidden="true"></div>
-  <span class="fl f1" aria-hidden="true"></span><span class="fl f2" aria-hidden="true"></span><span class="fl f3" aria-hidden="true"></span>
+  <div class="sheet" aria-hidden="true"><i class="riv t"></i><i class="riv b"></i></div>
   <div class="hcopy">
-    <p class="k" style="color:#FFD9BC"><xen data-edit="t1" data-edit-label="Text (EN): Borj Abi Haidar, Beirut">Borj Abi Haidar, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): برج أبي حيدر، بيروت">برج أبي حيدر، بيروت</xar></p>
+    <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Borj Abi Haidar, Beirut">Borj Abi Haidar, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): برج أبي حيدر، بيروت">برج أبي حيدر، بيروت</xar></p>
     <h1><xen class="c" data-edit="t3" data-edit-label="Text (EN): SMASH IT">SMASH IT</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): سماش إت">سماش إت</xar></h1>
     <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): Thin patties pressed loud on a hot pla…">Thin patties pressed loud on a hot plate, lacy edges, soft buns. A Beirut smash counter with a following bigger than its street.</xen><xar data-edit="t6" data-edit-label="Text (AR): لحمة رفيعة بتنكبس بصوت عالي عصاج سخن، …">لحمة رفيعة بتنكبس بصوت عالي عصاج سخن، أطراف مقرمشة، وخبز طري. كاونتر سماش بيروتي جمهوره أكبر من شارعه.</xar></p>
     <div class="chips">

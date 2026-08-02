@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Chicago Pizza LB · Galerie Semaan</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Public+Sans:wght@400;600;800&family=Beiruti:wght@500;800&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ultra&family=Alfa+Slab+One&family=Public+Sans:wght@400;600;800&family=Beiruti:wght@500;800&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Beiruti';--arb:'Readex Pro';
@@ -25,55 +25,54 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(0,0,0,.5);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: you are looking straight down at the box lid ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;
-  color:var(--ink);
+/* ---------- HERO: the thirty-centimetre deep dish, lid on, cropped by the frame ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;
   background:
-   radial-gradient(120% 100% at 50% 0%,rgba(255,255,255,.16),transparent 55%),
-   repeating-linear-gradient(90deg,transparent 0 3px,rgba(120,86,40,.045) 3px 6px),
-   linear-gradient(180deg,var(--kraft) 0%,var(--kraft2) 70%,#B99A6B 100%)}
-header::before{content:"";position:absolute;inset:14px;border:2px solid rgba(35,26,18,.3);
-  border-radius:10px;pointer-events:none;
-  box-shadow:inset 0 0 0 8px rgba(255,255,255,.08),inset 0 14px 30px rgba(90,60,25,.12)}
-.tape{position:absolute;left:-12px;right:-12px;top:calc(14% + env(safe-area-inset-top));
-  padding:11px 0;background:rgba(251,247,238,.85);color:var(--red);
-  border-block:1.5px dashed rgba(200,16,46,.6);text-align:center;
-  font:800 11.5px/1 'Public Sans',sans-serif;letter-spacing:.3em;text-transform:uppercase;
-  transform:rotate(-2deg);box-shadow:0 4px 10px rgba(60,40,15,.25);z-index:3}
-.hb{position:relative;z-index:2;width:min(620px,90vw);text-align:center;
-  padding-top:clamp(46px,7vh,72px)}
-.vents{display:flex;gap:14px;justify-content:center;margin-bottom:12px}
-.vents i{width:26px;height:7px;border-radius:4px;background:rgba(35,26,18,.4);
-  box-shadow:inset 0 2px 3px rgba(0,0,0,.35)}
-.hb h1{font-size:clamp(40px,8vw,74px);color:var(--ink);text-transform:uppercase}
+   radial-gradient(76% 44% at 50% 105%,rgba(229,37,43,.55),transparent 66%),
+   radial-gradient(124% 66% at 50% 112%,rgba(242,176,30,.42),transparent 56%),
+   linear-gradient(180deg,#0C0706 0%,#170D0A 50%,#26110A 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 2px,transparent 2px 8px)}
+.tape{position:relative;z-index:5;width:100%;padding:11px 0;text-align:center;
+  background:var(--milk);color:var(--red);border-bottom:1.5px dashed rgba(229,37,43,.55);
+  font:800 11.5px/1 'Public Sans',sans-serif;letter-spacing:.3em;text-transform:uppercase}
+.hb{position:relative;z-index:4;width:min(1150px,100%);padding:clamp(22px,3.6vh,42px) 6vw 0;text-align:center}
+.hb .k{color:#F2B01E;letter-spacing:.28em}
+.hb h1{margin-top:9px;font-family:'Ultra',serif;font-weight:400;text-transform:uppercase;color:var(--milk);
+  font-size:clamp(38px,7.3vw,102px);line-height:1;letter-spacing:-.005em;
+  text-shadow:0 14px 34px rgba(0,0,0,.6)}
 .hb h1 b{color:var(--red);font-weight:400}
-.win{position:absolute;z-index:2;top:calc(24% + env(safe-area-inset-top));right:5vw;
-  width:min(280px,30vw);border-radius:14px;background:#0F0908;padding:8px;
-  box-shadow:inset 0 0 0 2px rgba(35,26,18,.55),0 14px 30px rgba(60,40,15,.35)}
-.win::after{content:"";position:absolute;inset:8px;border-radius:9px;pointer-events:none;
-  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.18) 38%,transparent 46%)}
-.win img{width:100%;height:clamp(170px,24vh,230px);object-fit:cover;object-position:50% 72%;border-radius:8px}
-.win .wc{color:#C3B89F;font:600 11.5px/1.5 'Public Sans',sans-serif;margin-top:6px;padding:0 3px 3px;text-align:left}
-.flag{display:flex;flex-direction:column;gap:7px;width:min(340px,72%);margin:14px auto 4px}
-.flag .bar1{height:9px;background:var(--blue);border-radius:2px}
-.starsrow{display:flex;gap:16px;justify-content:center;padding:2px 0}
-.starsrow svg{width:24px;height:24px;color:var(--red);animation:sttw 7s ease-in-out infinite}
-.starsrow svg:nth-child(2){animation-delay:1.2s}
-.starsrow svg:nth-child(3){animation-delay:2.6s}
-.starsrow svg:nth-child(4){animation-delay:4s}
-@keyframes sttw{0%,100%{opacity:1}50%{opacity:.45}}
-.sub{margin:10px auto 0;max-width:46ch;color:#4E3E2A;font-size:clamp(14px,1.9vw,16.5px)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
-.chip{background:var(--ink);color:var(--kraft);border-radius:3px;padding:7px 13px;
-  font:800 12px/1 'Public Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase}
-.chip.b{background:var(--blue);color:var(--ink)}
-.qc{position:absolute;right:6vw;bottom:30px;width:104px;height:104px;border-radius:50%;
-  background:var(--milk);border:2.5px dashed var(--red);color:var(--red);z-index:3;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font:800 10px/1.3 'Public Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;
-  transform:rotate(-7deg);box-shadow:0 10px 22px rgba(60,40,15,.3)}
-.qc b{font:400 22px/1 'Alfa Slab One',serif}
+.sub{margin:12px auto 0;max-width:62ch;color:#D8CBB6;font-size:clamp(14px,1.7vw,16px);line-height:1.62}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:14px}
+.chip{background:var(--red);color:#fff;border-radius:2px;padding:8px 14px;
+  font:800 11.5px/1 'Public Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.chip.b{background:#F2B01E;color:#26110A}
+/* the pan itself */
+.pan{position:absolute;z-index:2;left:0;right:0;margin-inline:auto;bottom:-30%;
+  width:min(760px,112vw);aspect-ratio:1;border-radius:50%;padding:clamp(16px,2.6vw,30px);
+  background:linear-gradient(168deg,#4A403B 0%,#2A2320 34%,#100C0B 100%);
+  box-shadow:0 -18px 62px rgba(0,0,0,.6),inset 0 9px 18px rgba(255,255,255,.16),
+             inset 0 -16px 30px rgba(0,0,0,.7)}
+.crust{position:relative;width:100%;height:100%;border-radius:50%;padding:9px;
+  background:linear-gradient(180deg,#6E5B4F,#241B16);
+  box-shadow:inset 0 3px 8px rgba(255,255,255,.28),0 0 0 2px #0B0807}
+.pie{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;
+  box-shadow:inset 0 14px 40px rgba(0,0,0,.55)}
+.pie img{width:100%;height:100%;object-fit:cover}
+.glass{position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3;
+  background:linear-gradient(122deg,rgba(255,255,255,.3) 0 21%,rgba(255,255,255,.07) 30%,transparent 46%);
+  box-shadow:inset 0 0 0 5px rgba(236,242,246,.28)}
+.wc{position:absolute;z-index:4;left:50%;transform:translateX(-50%);top:6%;white-space:nowrap;
+  background:rgba(12,7,6,.78);border:1px solid rgba(246,241,230,.3);border-radius:99px;padding:7px 15px;
+  color:#F6F1E6;font:800 10.5px/1 'Public Sans',sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.qc{position:absolute;z-index:6;right:clamp(14px,6vw,88px);bottom:clamp(26px,7vh,74px);
+  width:112px;height:112px;border-radius:50%;background:var(--milk);color:var(--red);
+  border:2.5px dashed var(--red);display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font:800 9.5px/1.5 'Public Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:0 14px 30px rgba(0,0,0,.55);animation:stamp 12.5s ease-in-out infinite}
+.qc b{font:400 24px/1 'Ultra',serif}
+@keyframes stamp{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
 
 section{padding-block:clamp(56px,8vh,96px)}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(26px,4vw,56px);align-items:start}
@@ -156,17 +155,12 @@ footer{padding:36px 0 132px;color:#8A7F6C;font-size:13px;text-align:center;backg
 .bar a.s{flex:0 0 54px}
 
 @media(prefers-reduced-motion:reduce){.starsrow svg{animation:none}}
-@media(max-width:1180px){
-  .win{position:static;width:min(420px,82vw);margin:22px auto 0}
-  .hb{padding-top:clamp(64px,9vh,90px)}
-}
 @media(max-width:880px){
   .two,.visit,.board{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
   .ly{grid-template-columns:52px 1fr}
-  .win img{height:clamp(140px,19vh,200px)}
   .qc{width:84px;height:84px;right:18px;bottom:16px}
   body{padding-bottom:78px}
 }
@@ -223,32 +217,24 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="tape"><xen class="c" data-edit="t1" data-edit-label="Text (EN): Hot and fresh · keep flat · this side …">Hot and fresh · keep flat · this side up</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): سخنة وطازة · خلّيها مبسوطة · هالوجه لف…">سخنة وطازة · خلّيها مبسوطة · هالوجه لفوق</xar></div>
-  <div class="win">
-    <img src="img/04.jpg" alt="A whole deep dish pizza with parmesan on a wooden board">
-    <p class="wc"><xen data-edit="t3" data-edit-label="Text (EN): Through the lid window.">Through the lid window.</xen><xar data-edit="t4" data-edit-label="Text (AR): من شباك الغطا.">من شباك الغطا.</xar></p>
-  </div>
+  <div class="tape"><xen class="c" data-edit="t1" data-edit-label="Text (EN): Hot and fresh &middot; keep flat &midd…">Hot and fresh &middot; keep flat &middot; this side up</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): سخنة وطازة · خلّيها مبسوطة · هالوجه لف…">سخنة وطازة · خلّيها مبسوطة · هالوجه لفوق</xar></div>
   <div class="hb">
-    <div class="vents" aria-hidden="true"><i></i><i></i><i></i></div>
-    <p class="k" style="color:#8A6538"><xen data-edit="t5" data-edit-label="Text (EN): Galerie Semaan · Blvd Kamil Shamoun">Galerie Semaan · Blvd Kamil Shamoun</xen><xar data-edit="t6" data-edit-label="Text (AR): غاليري سمعان · بوليفار كميل شمعون">غاليري سمعان · بوليفار كميل شمعون</xar></p>
-    <h1><xen class="c">Chicago <b data-edit="t7" data-edit-label="Text: Pizza">Pizza</b></xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): شيكاغو بيتزا">شيكاغو بيتزا</xar></h1>
-    <div class="flag" aria-hidden="true">
-      <div class="bar1"></div>
-      <div class="starsrow">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8 14.2 8h6.6l-5.3 4 2 6.6-5.5-4-5.5 4 2-6.6-5.3-4h6.6z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8 14.2 8h6.6l-5.3 4 2 6.6-5.5-4-5.5 4 2-6.6-5.3-4h6.6z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8 14.2 8h6.6l-5.3 4 2 6.6-5.5-4-5.5 4 2-6.6-5.3-4h6.6z"/></svg>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.8 14.2 8h6.6l-5.3 4 2 6.6-5.5-4-5.5 4 2-6.6-5.3-4h6.6z"/></svg>
-      </div>
-      <div class="bar1"></div>
-    </div>
-    <p class="sub"><xen data-edit="t9" data-edit-label="Text (EN): Chicago-style deep dish, baked thirty …">Chicago-style deep dish, baked thirty centimetres wide with the cheese in charge, in a thirty-seat room at Galerie Semaan.</xen><xar data-edit="t10" data-edit-label="Text (AR): ديب ديش عالطريقة الشيكاغوية، مخبوز بعر…">ديب ديش عالطريقة الشيكاغوية، مخبوز بعرض تلاتين سنتيمتر والجبنة هيي الآمرة، بصالة تلاتين كرسي بغاليري سمعان.</xar></p>
+    <p class="k"><xen data-edit="t3" data-edit-label="Text (EN): Galerie Semaan · Blvd Kamil Shamoun">Galerie Semaan · Blvd Kamil Shamoun</xen><xar data-edit="t4" data-edit-label="Text (AR): غاليري سمعان · بوليفار كميل شمعون">غاليري سمعان · بوليفار كميل شمعون</xar></p>
+    <h1><xen class="c">Chicago <b data-edit="t5" data-edit-label="Text: Pizza">Pizza</b></xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): شيكاغو بيتزا">شيكاغو بيتزا</xar></h1>
+    <p class="sub"><xen data-edit="t7" data-edit-label="Text (EN): Chicago-style deep dish, baked thirty …">Chicago-style deep dish, baked thirty centimetres wide with the cheese in charge, in a thirty-seat room at Galerie Semaan.</xen><xar data-edit="t8" data-edit-label="Text (AR): ديب ديش عالطريقة الشيكاغوية، مخبوز بعر…">ديب ديش عالطريقة الشيكاغوية، مخبوز بعرض تلاتين سنتيمتر والجبنة هيي الآمرة، بصالة تلاتين كرسي بغاليري سمعان.</xar></p>
     <div class="chips">
-      <span class="chip b"><xen data-edit="t11" data-edit-label="Text (EN): Deep dish · 30 cm">Deep dish · 30 cm</xen><xar data-edit="t12" data-edit-label="Text (AR): ديب ديش · 30 سم">ديب ديش · 30 سم</xar></span>
-      <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Closed Mondays">Closed Mondays</xen><xar data-edit="t14" data-edit-label="Text (AR): الاثنين مسكّر">الاثنين مسكّر</xar></span>
+      <span class="chip b"><xen data-edit="t9" data-edit-label="Text (EN): Deep dish · 30 cm">Deep dish · 30 cm</xen><xar data-edit="t10" data-edit-label="Text (AR): ديب ديش · 30 سم">ديب ديش · 30 سم</xar></span>
+      <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Closed Mondays">Closed Mondays</xen><xar data-edit="t12" data-edit-label="Text (AR): الاثنين مسكّر">الاثنين مسكّر</xar></span>
     </div>
   </div>
-  <div class="qc"><b class="num" data-edit="t15" data-edit-label="Text: 4.7">4.7</b><span><xen data-edit="t16" data-edit-label="Text (EN): of 5 stars">of 5 stars</xen><xar data-edit="t17" data-edit-label="Text (AR): من 5 نجوم">من 5 نجوم</xar></span><span class="num" data-edit="t18" data-edit-label="Text: 346 ✓">346 ✓</span></div>
+  <div class="pan">
+    <div class="crust">
+      <div class="pie"><img src="img/04.jpg" alt="A whole deep dish pizza with parmesan on a wooden board"></div>
+      <div class="glass" aria-hidden="true"></div>
+      <p class="wc"><xen data-edit="t13" data-edit-label="Text (EN): Through the lid window.">Through the lid window.</xen><xar data-edit="t14" data-edit-label="Text (AR): من شباك الغطا.">من شباك الغطا.</xar></p>
+    </div>
+  </div>
+  <div class="qc"><b class="num" data-edit="t15" data-edit-label="Text: 4.7">4.7</b><span><xen data-edit="t16" data-edit-label="Text (EN): of 5 stars">of 5 stars</xen><xar data-edit="t17" data-edit-label="Text (AR): من 5 نجوم">من 5 نجوم</xar></span><span class="num" data-edit="t18" data-edit-label="Text: 346 &#10003;">346 &#10003;</span></div>
 </header>
 
 <section class="wrap">

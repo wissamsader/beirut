@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Chaud Froid · General Wazen, Dekwaneh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Asap:wght@400;500;700&family=Changa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Changa+One&family=Asap:wght@400;500;700&family=Changa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Changa';--arb:'IBM Plex Sans Arabic';
-  --tilewhite:#F2EFE4;--tile2:#E9E4D4;--ink:#23272E;--hot:#C4372E;--cold:#2E5E8C;--wood:#6B4A2E;
+  --tilewhite:#F2EFE4;--tile2:#E9E4D4;--ink:#23272E;--hot:#D0392C;--cold:#2E6B4F;--wood:#6B4A2E;
   --grout:rgba(35,39,46,.14);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -26,58 +26,61 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(35,39,46,.35);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the ceiling fan over the blue-tiled snack room ---------- */
+/* ---------- HERO: the corner of the enamel tray, the fan turning over it ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(30px,5vh,58px) 0 clamp(24px,4vh,44px);
   background:
-   linear-gradient(rgba(255,255,255,.10) 1.5px,transparent 1.5px) 0 0/100% 92px,
-   linear-gradient(90deg,rgba(255,255,255,.10) 1.5px,transparent 1.5px) 0 0/92px 100%,
-   linear-gradient(180deg,#316497 0%,#2A567E 52%,#20456A 100%)}
-header::after{content:"";position:absolute;inset:auto 0 0 0;height:120px;
-  background:linear-gradient(180deg,transparent,rgba(10,22,34,.28))}
-.fanwrap{position:relative;z-index:2;margin-top:0;display:flex;flex-direction:column;align-items:center}
-.rod{width:6px;height:clamp(26px,4.5vh,44px);background:linear-gradient(90deg,#4A3018,#6B4A2E 55%,#4A3018)}
-.fan{position:relative;width:clamp(220px,30vw,270px);height:clamp(220px,30vw,270px);
-  animation:fanspin 80s linear infinite}
-.fan .blade{position:absolute;left:50%;top:50%;width:clamp(88px,12vw,112px);height:clamp(34px,4.8vw,42px);
-  margin-top:calc(clamp(34px,4.8vw,42px)/-2);border-radius:6px 30px 30px 6px;
-  transform-origin:0 50%;
-  background:linear-gradient(180deg,#83603C,#5E3F24);
-  box-shadow:inset 0 -7px 0 rgba(28,17,7,.35),inset 0 3px 0 rgba(255,238,210,.18),0 6px 12px rgba(10,22,34,.35)}
-.fan .blade.b1{transform:rotate(18deg) translateX(clamp(22px,3vw,26px))}
-.fan .blade.b2{transform:rotate(108deg) translateX(clamp(22px,3vw,26px))}
-.fan .blade.b3{transform:rotate(198deg) translateX(clamp(22px,3vw,26px))}
-.fan .blade.b4{transform:rotate(288deg) translateX(clamp(22px,3vw,26px))}
-.fan .hub{position:absolute;left:50%;top:50%;width:clamp(56px,8vw,68px);height:clamp(56px,8vw,68px);
-  transform:translate(-50%,-50%);border-radius:50%;
-  background:radial-gradient(circle at 34% 30%,#96714A,#4A3018 74%);border:3px solid #3A2512;
-  box-shadow:0 8px 18px rgba(10,22,34,.4)}
-.fan .hub::after{content:"";position:absolute;inset:15px;border-radius:50%;
-  background:radial-gradient(circle at 38% 32%,#B08A5C,#5E3F24 80%)}
-.chain{position:absolute;left:calc(50% + 13px);top:calc(clamp(26px,4.5vh,44px) + clamp(110px,15vw,135px));
-  width:2px;height:clamp(38px,5.5vh,52px);background:rgba(237,244,249,.75)}
-.chain::after{content:"";position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
-  width:9px;height:9px;border-radius:50%;background:#EDF4F9;box-shadow:0 2px 5px rgba(10,22,34,.4)}
+   radial-gradient(1.6px 1.6px at 9px 14px,rgba(60,58,50,.3),transparent 60%) 0 0/43px 37px,
+   radial-gradient(1.3px 1.3px at 26px 9px,rgba(120,70,55,.26),transparent 60%) 0 0/59px 51px,
+   linear-gradient(180deg,#D8D2C2,#C6BFAE)}
+/* the tray: enamel, red rim, running off the right and the bottom */
+.tray{position:absolute;z-index:1;left:clamp(14px,3vw,42px);top:clamp(20px,4vh,36px);
+  width:calc(100% + 460px);height:calc(100% + 400px);
+  transform:rotate(-3deg);border:clamp(15px,2.2vw,26px) solid var(--hot);border-radius:38px;
+  box-shadow:0 26px 60px rgba(40,34,24,.4),inset 0 0 0 3px rgba(255,255,255,.6);
+  background:
+   radial-gradient(1.7px 1.7px at 11px 19px,rgba(46,52,48,.26),transparent 60%) 0 0/48px 41px,
+   radial-gradient(1.3px 1.3px at 34px 28px,rgba(176,66,52,.24),transparent 60%) 0 0/63px 55px,
+   radial-gradient(1.5px 1.5px at 21px 37px,rgba(46,107,79,.22),transparent 60%) 0 0/73px 69px,
+   linear-gradient(168deg,#FCFAF3 0%,#F4EFE1 52%,#EAE3D1 100%)}
+/* the slow ceiling fan, seen only as its shadow on the enamel */
+.fanwrap{position:absolute;z-index:2;left:0;right:0;top:-16%;margin-inline:auto;
+  width:min(1120px,120%);aspect-ratio:1;pointer-events:none}
+.fan{position:absolute;inset:0;opacity:.055;animation:fanspin 92s linear infinite}
+.fan .blade{position:absolute;left:50%;top:50%;width:46%;height:8.5%;margin-top:-4.25%;
+  border-radius:6px 60% 60% 6px/6px 50% 50% 6px;background:#1C2320;transform-origin:0 50%;filter:blur(16px)}
+.fan .blade.b1{transform:rotate(14deg) translateX(6%)}
+.fan .blade.b2{transform:rotate(104deg) translateX(6%)}
+.fan .blade.b3{transform:rotate(194deg) translateX(6%)}
+.fan .blade.b4{transform:rotate(284deg) translateX(6%)}
+.fan .hub{position:absolute;left:50%;top:50%;width:11%;height:11%;transform:translate(-50%,-50%);
+  border-radius:50%;background:#1C2320;filter:blur(14px)}
 @keyframes fanspin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.fan{animation:none}}
-.wordm{position:relative;z-index:2;text-align:center;margin-top:clamp(8px,1.6vh,18px)}
-.wordm .kick{font:700 12px/1.5 'Asap',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#BCD1E2}
-.wordm h1{font-size:clamp(52px,10vw,96px);display:flex;gap:clamp(10px,2vw,22px);justify-content:center;align-items:baseline;flex-wrap:wrap}
-.wordm h1 .hotw{color:#EA5A48;text-shadow:0 4px 0 rgba(10,22,34,.4)}
-.wordm h1 .coldw{color:#EDF4F9;text-shadow:0 4px 0 rgba(10,22,34,.4)}
-.wordm .sub{max-width:54ch;margin:6px auto 0;color:#D9E5EF;font-size:clamp(14.5px,1.9vw,16.5px);line-height:1.65;padding-inline:5vw}
-.splitpill{display:inline-flex;margin-top:14px;border:2px solid rgba(10,22,34,.7);border-radius:999px;overflow:hidden;
-  font:700 12.5px/1.4 'Asap',sans-serif;box-shadow:0 8px 20px rgba(10,22,34,.35)}
-.splitpill span{padding:6px 14px}
-.splitpill .l{background:var(--hot);color:#FCF6E8}
-.splitpill .r{background:#EDF4F9;color:#20456A}
-.heroPane{position:relative;z-index:2;margin:clamp(14px,2.4vh,24px) 0 30px;width:min(430px,86vw)}
-.heroPane .tframe{background:#FCF9EE;border:2px solid rgba(10,22,34,.75);border-radius:4px;padding:9px;
-  box-shadow:0 20px 44px rgba(10,22,34,.4)}
-.heroPane img{width:100%;height:clamp(150px,20vh,200px);object-fit:cover;border-radius:2px}
-.heroPane .cap{margin:8px 2px 0;color:#BCD1E2}
+/* the wordmark, painted straight onto the enamel */
+.wordm{position:relative;z-index:3;width:min(1140px,100%);margin-inline:auto;
+  padding-inline:clamp(34px,8vw,110px)}
+.wordm .kick{font:700 12px/1.5 'Asap',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--cold)}
+.wordm h1{margin-top:8px;font-family:'Bevan',serif;font-weight:400;line-height:.94;
+  font-size:clamp(46px,10.4vw,142px);display:flex;gap:clamp(12px,2.4vw,30px);align-items:baseline;flex-wrap:wrap}
+.wordm h1 .hotw{color:var(--hot)}
+.wordm h1 .coldw{color:var(--cold)}
+html.ar .wordm h1{font-size:clamp(44px,8.4vw,116px)}
+.wordm .sub{margin-top:clamp(14px,2.2vh,24px);max-width:44ch;color:#4C4E48;
+  font-size:clamp(14.5px,1.7vw,17px);line-height:1.68}
+.splitpill{display:inline-flex;margin-top:clamp(14px,2.2vh,24px);border-radius:99px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(40,34,24,.24);font:700 12.5px/1 'Asap',sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.splitpill .l{background:var(--hot);color:#FFF6EF;padding:11px 17px}
+.splitpill .r{background:var(--cold);color:#F1F7F3;padding:11px 17px}
+/* the tray's own lunch, set down in the corner */
+.heroPane{position:absolute;z-index:4;right:clamp(16px,5vw,80px);bottom:clamp(56px,10vh,104px);
+  width:min(360px,46vw);background:#FFFDF7;padding:10px 10px 8px;border-radius:4px;
+  box-shadow:0 20px 42px rgba(40,34,24,.38);border:1px solid rgba(208,57,44,.35)}
+.heroPane .tframe{overflow:hidden;border-radius:2px}
+.heroPane img{width:100%;height:clamp(140px,20vh,196px);object-fit:cover;display:block}
+.heroPane .cap{margin-top:8px;font:500 12px/1.5 'Asap',sans-serif;color:#6A6B62;letter-spacing:.01em}
 
-/* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
 .band{background:var(--tile2)}
 .two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,54px);align-items:start}
@@ -152,13 +155,7 @@ footer{padding:36px 7vw 128px;color:#84806F;font-size:13.5px;text-align:center;b
   .grid3,.ways,.revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:84px}
-  .fan{width:clamp(160px,42vw,200px);height:clamp(160px,42vw,200px)}
-  .fan .blade{width:70px;height:28px;margin-top:-14px}
-  .fan .blade.b1{transform:rotate(18deg) translateX(18px)}
-  .fan .blade.b2{transform:rotate(108deg) translateX(18px)}
-  .fan .blade.b3{transform:rotate(198deg) translateX(18px)}
-  .fan .blade.b4{transform:rotate(288deg) translateX(18px)}
-  .chain{height:30px;top:calc(clamp(26px,4.5vh,44px) + clamp(80px,21vw,100px))}
+  .heroPane{position:static;margin:clamp(20px,3.4vh,32px) 6vw 0;width:auto;max-width:360px}
   .heroPane img{height:140px}
 }
 @media(max-width:430px){
@@ -213,13 +210,12 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="tray" aria-hidden="true"></div>
   <div class="fanwrap" aria-hidden="true">
-    <div class="rod"></div>
     <div class="fan">
       <span class="blade b1"></span><span class="blade b2"></span><span class="blade b3"></span><span class="blade b4"></span>
       <span class="hub"></span>
     </div>
-    <span class="chain"></span>
   </div>
   <div class="wordm">
     <p class="kick"><xen data-edit="t1" data-edit-label="Text (EN): General Wazen street · Dekwaneh">General Wazen street · Dekwaneh</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع جنرال وازن · الدكوانة">شارع جنرال وازن · الدكوانة</xar></p>

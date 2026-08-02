@@ -5,132 +5,161 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ramadan Juice · Ghobeiry Square, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Plus+Jakarta+Sans:wght@400;500;700&family=Mada:wght@600;900&family=Readex+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;700&family=Mada:wght@600;900&family=Readex+Pro:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Mada';--arb:'Readex Pro';
-  --cream:#FBF4E2;--cream-d:#F3E8CE;--white:#FFFDF7;
-  --flesh:#F58A1F;--flesh2:#E8740D;--rind:#C85E08;--ink:#3A2413;--chest:#6E3414;
+  --cream:#FDF5EC;--cream-d:#F6E5D9;--white:#FFFFFF;
+  --flesh:#FF2E8B;--flesh2:#E8156F;--rind:#A80A56;--ink:#2C0B1C;--chest:#4C0C2E;
+  --glassA:#43082A;--glassB:#250516;--cold:#FFE4F1;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--cream);color:var(--ink);font:400 17px/1.75 'Plus Jakarta Sans',system-ui,sans-serif}
 .wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Calistoga',serif;font-weight:400;line-height:1.1;letter-spacing:.004em}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:1.1;letter-spacing:-.006em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--rind)}
 
 .lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
   font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:999px;cursor:pointer;
-  background:var(--flesh);color:#3A1B02;border:1.5px solid var(--rind);
-  box-shadow:0 6px 16px rgba(58,36,19,.3);min-width:58px;text-align:center;-webkit-appearance:none}
+  background:var(--flesh);color:#FFFFFF;border:1.5px solid var(--rind);
+  box-shadow:0 6px 16px rgba(44,11,28,.45);min-width:58px;text-align:center;-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one enormous citrus half, cropped by the left edge, turning slowly on cream ---------- */
+/* ---------- HERO: the lit fruit chiller. Its own glass fills the frame, shelves stacked,
+     strip-light under every lip, one cup standing on the middle shelf. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;
-  background:radial-gradient(120% 90% at 85% 0%,#FFFBEE 0%,var(--cream) 52%,#F3E5C4 100%)}
-.wheel{position:absolute;z-index:1;left:max(-340px,-26vw);top:50%;transform:translateY(-50%);
-  width:clamp(520px,58vw,780px);aspect-ratio:1;border-radius:50%;
+  background:#150310;color:var(--cold)}
+.case{position:absolute;inset:0;z-index:0;
   background:
-   repeating-conic-gradient(from 8deg,rgba(255,253,247,0) 0deg 31deg,rgba(255,253,247,.95) 31deg 36deg),
-   conic-gradient(#F58A1F 0deg 36deg,#EF7C10 36deg 72deg,#F79A2E 72deg 108deg,#EE760C 108deg 144deg,#F58A1F 144deg 180deg,#F0800F 180deg 216deg,#F79A2E 216deg 252deg,#EE760C 252deg 288deg,#F58A1F 288deg 324deg,#F0800F 324deg 360deg);
-  border:16px solid #FFFDF7;outline:22px solid var(--flesh2);outline-offset:0;
-  box-shadow:0 30px 70px rgba(110,52,20,.28),inset 0 0 0 4px rgba(255,253,247,.7);
-  animation:citspin 90s linear infinite}
-.wheel::after{content:"";position:absolute;inset:41%;border-radius:50%;background:#FFFDF7;
-  box-shadow:0 0 0 6px rgba(200,94,8,.25)}
-@keyframes citspin{to{transform:translateY(-50%) rotate(360deg)}}
-.hcopy{position:relative;z-index:3;margin-left:auto;width:min(620px,92%);
-  padding:clamp(24px,4vh,52px) 6vw clamp(220px,30vh,280px) 0;text-align:right}
-.arname{font:900 clamp(58px,9vw,116px)/1.15 var(--arh),sans-serif;color:var(--chest)}
-.hcopy h1{font-size:clamp(28px,4.2vw,50px);color:var(--flesh2);margin-top:2px}
-.sub{color:#7A5230;font-size:clamp(15px,1.9vw,18px);max-width:44ch;margin-left:auto;margin-top:12px}
-.pips{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end;margin-top:18px}
-.pip{background:var(--white);border:1.5px solid rgba(200,94,8,.5);border-radius:999px;padding:8px 14px;
-  font:700 12.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.04em;color:#8A4A10}
-.pip.full{background:var(--flesh);border-color:var(--rind);color:#3A1B02}
-.rate{margin-top:16px;font-size:13px;color:#8A6A42}
-.rate b{font:400 18px/1 'Calistoga',serif;color:var(--chest)}
-.hpane{position:absolute;z-index:3;right:6vw;bottom:clamp(22px,4.4vh,42px);width:min(360px,46%);
-  background:var(--white);border:2px solid var(--rind);border-radius:14px;padding:8px;
-  box-shadow:0 22px 44px rgba(110,52,20,.24)}
-.hpane img{width:100%;height:clamp(140px,19vh,185px);object-fit:cover;border-radius:9px}
+   radial-gradient(120% 70% at 50% 46%,rgba(255,90,164,.07),rgba(0,0,0,0) 58%),
+   repeating-linear-gradient(90deg,rgba(255,220,238,.045) 0 1px,rgba(0,0,0,0) 1px 52px),
+   linear-gradient(180deg,#070104 0%,#070104 11%,#1C0310 13%,#0E0208 34%,#090105 52%,#190309 57%,#0B0105 82%,#060003 89%,#040002 100%)}
+.canopy{position:absolute;z-index:8;left:0;right:0;top:0;height:12%;display:flex;align-items:center;
+  padding-inline:clamp(34px,8vw,110px);border-bottom:1px solid rgba(255,228,241,.16)}
+.canopy .k{color:#FF8FC0}
+/* a shelf: lit lip, dark front edge, contact shadow above, glow spilling below */
+.rail{position:absolute;left:0;right:0;height:17px;z-index:5;
+  background:linear-gradient(180deg,#FFFFFF 0 4px,#FFC7E0 4px 6px,#B0537C 6px 8px,#4B0F2D 8px 12px,#2A0617 12px 17px);
+  animation:hum 7.5s ease-in-out infinite}
+.rail::before{content:"";position:absolute;left:0;right:0;bottom:17px;height:70px;pointer-events:none;
+  background:linear-gradient(0deg,rgba(14,1,8,.6),rgba(14,1,8,0))}
+.rail::after{content:"";position:absolute;left:0;right:0;top:17px;height:clamp(50px,9vh,92px);pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,124,184,.5),rgba(255,46,139,.05) 44%,rgba(255,46,139,0))}
+.rail.a{top:12%}.rail.b{top:55%}.rail.c{top:88%}
+@keyframes hum{0%,100%{filter:brightness(1)}47%{filter:brightness(.88)}}
+.post{position:absolute;top:0;bottom:0;width:clamp(13px,1.6vw,22px);z-index:11;
+  background:linear-gradient(90deg,#2A0617,#8E6076 32%,#F6DEE9 50%,#8E6076 68%,#2A0617)}
+.post.l{left:0}.post.r{right:0}
+.sheen{position:absolute;inset:0;z-index:12;pointer-events:none;
+  background:linear-gradient(102deg,rgba(255,255,255,0) 22%,rgba(255,255,255,.11) 36%,rgba(255,255,255,.02) 45%,rgba(255,255,255,0) 56%)}
+.hcopy{position:absolute;z-index:8;left:0;right:0;top:12%;height:43%;display:flex;flex-direction:column;
+  justify-content:center;text-align:left;
+  padding:0 clamp(190px,21vw,300px) 0 clamp(34px,8vw,110px)}
+.hlow{position:absolute;z-index:8;left:0;right:0;top:55%;height:33%;display:flex;flex-direction:column;
+  justify-content:center;padding:0 clamp(250px,26vw,360px) 0 clamp(34px,8vw,110px)}
+.arname{font:900 clamp(52px,8.6vw,112px)/1.04 var(--arh),sans-serif;color:#FFFFFF;
+  text-shadow:0 0 30px rgba(255,46,139,.8),0 0 96px rgba(255,46,139,.45)}
+.hcopy h1{font-family:'Bungee',system-ui,sans-serif;font-weight:400;letter-spacing:.02em;
+  font-size:clamp(23px,3.6vw,45px);color:var(--flesh);margin-top:8px;line-height:1.08;
+  text-shadow:0 0 26px rgba(255,46,139,.7)}
+.sub{color:#F6D6E5;font-size:clamp(14.5px,1.72vw,17.5px);max-width:46ch}
+.pips{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.pip{background:rgba(255,255,255,.08);border:1px solid rgba(255,228,241,.42);border-radius:3px;padding:8px 13px;
+  font:700 12.5px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:.05em;color:#FFE4F1}
+.pip.full{background:var(--flesh);border-color:#FF9AC7;color:#2C0B1C}
+.rate{margin-top:13px;font-size:13px;color:#E9B4CE}
+.rate b{font:900 19px/1 'Fraunces',Georgia,serif;color:#FFFFFF}
+/* the cocktail standing on the lower shelf, rising past the shelf above it */
+.hpane{position:absolute;z-index:9;right:clamp(26px,7vw,104px);bottom:12%;width:min(228px,25vw);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,228,241,.46);border-radius:3px;padding:7px;
+  box-shadow:0 -4px 40px rgba(255,46,139,.45),0 18px 40px rgba(0,0,0,.6)}
+.hpane img{width:100%;height:clamp(196px,30vh,300px);object-fit:cover;border-radius:2px}
+.hpane .cap{color:#EDBDD6;margin-top:6px;font-size:11.5px}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
 .white-b{background:var(--white)}
-.deep-b{background:var(--chest);color:#FBEBD8}
-.deep-b .k{color:#F5B26A}
+.deep-b{background:var(--chest);color:#FDE3EF}
+.deep-b .k{color:#FF9AC7}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
 .two h2,.hh{font-size:clamp(26px,3.9vw,43px);margin:8px 0 18px;color:var(--chest)}
-.two p{color:#6E4B28;margin-bottom:15px}
-.frame{background:var(--white);border:2px solid rgba(200,94,8,.45);border-radius:14px;padding:9px;
-  box-shadow:0 18px 38px rgba(110,52,20,.16)}
+.two p{color:#6B4356;margin-bottom:15px}
+.frame{background:var(--white);border:2px solid rgba(168,10,86,.45);border-radius:14px;padding:9px;
+  box-shadow:0 18px 38px rgba(76,12,46,.16)}
 .frame img{width:100%;height:clamp(260px,40vh,420px);object-fit:cover;border-radius:9px}
-.cap{font:500 12px/1.6 'Plus Jakarta Sans',sans-serif;color:#9A6F3E;margin-top:8px;letter-spacing:.03em}
+.cap{font:500 12px/1.6 'Plus Jakarta Sans',sans-serif;color:#9A6480;margin-top:8px;letter-spacing:.03em}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.2vw,24px)}
-.card{background:var(--white);border:1.5px solid rgba(110,52,20,.18);border-radius:14px;overflow:hidden;
-  box-shadow:0 12px 26px rgba(110,52,20,.12)}
+.card{background:var(--white);border:1.5px solid rgba(76,12,46,.18);border-radius:14px;overflow:hidden;
+  box-shadow:0 12px 26px rgba(76,12,46,.12)}
 .card img{width:100%;height:225px;object-fit:cover}
 .card .t{padding:15px 17px 19px}
 .card h3{font-size:19px;margin-bottom:6px;color:var(--chest)}
-.card p{color:#7A5230;font-size:14.5px;line-height:1.65}
+.card p{color:#7A4A60;font-size:14.5px;line-height:1.65}
 .menu{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(22px,3.4vw,44px);align-items:start}
 .flav{columns:2;column-gap:26px;margin-top:16px}
-.flav li{list-style:none;padding:8px 0;border-bottom:1px dashed rgba(110,52,20,.3);
-  font:500 15.5px/1.4 'Plus Jakarta Sans',sans-serif;break-inside:avoid;color:#553517}
-.note{margin-top:16px;font-size:14px;color:#8A5A28}
-.mframe{background:var(--white);border:2px solid rgba(200,94,8,.45);border-radius:14px;padding:9px}
+.flav li{list-style:none;padding:8px 0;border-bottom:1px dashed rgba(76,12,46,.3);
+  font:500 15.5px/1.4 'Plus Jakarta Sans',sans-serif;break-inside:avoid;color:#52293C}
+.note{margin-top:16px;font-size:14px;color:#8E5A74}
+.mframe{background:var(--white);border:2px solid rgba(168,10,86,.45);border-radius:14px;padding:9px}
 .mframe img{width:100%;height:clamp(340px,46vh,470px);object-fit:cover;object-position:top;border-radius:9px}
 .since{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px);margin-top:26px}
-.brc{background:rgba(251,235,216,.08);border:1.5px solid rgba(245,178,106,.4);border-radius:14px;padding:20px 20px 18px}
-.brc h3{font-size:19px;color:#F5B26A;margin-bottom:6px}
-.brc p{font-size:14px;color:#EBD2B4;line-height:1.7}
+.brc{background:rgba(255,228,241,.07);border:1.5px solid rgba(255,154,199,.4);border-radius:14px;padding:20px 20px 18px}
+.brc h3{font-size:19px;color:#FF9AC7;margin-bottom:6px}
+.brc p{font-size:14px;color:#F0C6DC;line-height:1.7}
 .dayrail{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px);margin-top:34px}
-.dr{border-top:3px solid #F5B26A;padding-top:14px}
-.dr b{display:block;font:400 20px/1.2 'Calistoga',serif;color:#FBEBD8}
-.dr span{display:block;font-size:13.5px;color:#EBD2B4;line-height:1.65;margin-top:5px}
+.dr{border-top:3px solid #FF9AC7;padding-top:14px}
+.dr b{display:block;font:900 20px/1.2 'Fraunces',Georgia,serif;color:#FDE3EF}
+.dr span{display:block;font-size:13.5px;color:#F0C6DC;line-height:1.65;margin-top:5px}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}
-.gal a{display:block;border:2px solid rgba(200,94,8,.4);border-radius:12px;overflow:hidden;background:var(--white);padding:5px}
+.gal a{display:block;border:2px solid rgba(168,10,86,.4);border-radius:12px;overflow:hidden;background:var(--white);padding:5px}
 .gal img{width:100%;height:185px;object-fit:cover;border-radius:8px}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 table.hrs{width:100%;border-collapse:collapse}
-table.hrs td{padding:9px 0;border-bottom:1px solid rgba(110,52,20,.18);font-size:15.5px}
-table.hrs td:last-child{text-align:right;color:#7A5230}
-.ad,.ph{font-size:16.5px;color:#4A2E12}
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--flesh);color:#3A1B02;
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(76,12,46,.18);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#7A4A60}
+.ad,.ph{font-size:16.5px;color:#3E1A2C}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--flesh);color:#FFFFFF;
   padding:13px 20px;border-radius:999px;text-decoration:none;font:700 15px/1 'Plus Jakarta Sans',sans-serif;
-  border:1.5px solid var(--rind);margin:6px 8px 0 0;box-shadow:0 5px 0 rgba(110,52,20,.28)}
-.btn.o{background:transparent;color:var(--chest);border-color:rgba(110,52,20,.4);box-shadow:none}
-footer{padding:36px 6vw 132px;color:#9A6F3E;font-size:13.5px;text-align:center;background:var(--cream-d)}
+  border:1.5px solid var(--rind);margin:6px 8px 0 0;box-shadow:0 5px 0 rgba(76,12,46,.28)}
+.btn.o{background:transparent;color:var(--chest);border-color:rgba(76,12,46,.4);box-shadow:none}
+footer{padding:36px 6vw 132px;color:#9A6480;font-size:13.5px;text-align:center;background:var(--cream-d)}
 
 /* ---------- sticky bar: the citrus rail, segment arcs peeking over the lip ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
   background:var(--white);border-top:2px solid var(--rind);
-  padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px rgba(110,52,20,.22)}
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -12px 30px rgba(76,12,46,.22)}
 .bar::before{content:"";position:absolute;left:0;right:0;top:-13px;height:13px;pointer-events:none;
   background:radial-gradient(circle at 17px 14px,var(--flesh) 12px,transparent 13px) repeat-x;
   background-size:38px 13px}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
   padding:8px 4px 9px;min-height:56px;text-decoration:none;border-radius:11px;
-  background:var(--cream);border:1.5px solid rgba(200,94,8,.45);color:#8A4A10;
+  background:var(--cream);border:1.5px solid rgba(168,10,86,.32);color:#8E0A48;
   font:700 11.5px/1.2 'Plus Jakarta Sans',sans-serif;letter-spacing:.03em}
 .bar a:active{background:var(--cream-d)}
 .bar svg{width:19px;height:19px;fill:currentColor}
-.bar a.w{background:linear-gradient(180deg,#F79A2E,#E8740D);border-color:var(--rind);color:#3A1B02}
+.bar a.w{background:linear-gradient(180deg,#FF5AA4,#E8156F);border-color:var(--rind);color:#FFFFFF}
 @media(max-width:880px){
   .two,.visit,.menu{grid-template-columns:1fr}
   .grid3,.since,.dayrail{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   .flav{columns:1}
   body{padding-bottom:76px}
-  .wheel{left:-42vw;top:34%;width:min(94vw,420px)}
-  .hcopy{width:100%;padding:34px 6vw 230px;text-align:right}
-  .arname{font-size:clamp(50px,14vw,72px)}
-  .hcopy h1{font-size:clamp(24px,7vw,34px)}
-  .hpane{right:6vw;left:auto;width:min(320px,70%)}
-  .hpane img{height:clamp(120px,15vh,150px)}
+  .arname{font-size:clamp(44px,12.5vw,68px)}
+  .hcopy h1{font-size:clamp(19px,5.4vw,30px)}
+  .sub{font-size:14.5px;max-width:none}
+  .hcopy{top:12%;height:30%;padding:0 6vw}
+  .hlow{top:42%;height:46%;justify-content:flex-start;padding:16px 6vw 0}
+  .hlow .sub{font-size:13.6px;line-height:1.62;max-width:none}
+  .pips{margin-top:15px;gap:7px;padding-right:clamp(118px,36vw,152px)}
+  .pip{padding:7px 11px;font-size:11.5px}
+  .rate{padding-right:clamp(118px,36vw,152px)}
+  .rail.b{top:42%}.rail.c{top:90%}
+  .hpane{right:4vw;bottom:12%;width:min(126px,33vw);padding:5px}
+  .hpane img{height:clamp(128px,19vh,164px)}
+  .hpane .cap{font-size:10.5px;line-height:1.45}
+  .canopy{padding-inline:6vw}
 }
 @media(max-width:430px){.bar a{font-size:10px}}
 </style>
@@ -181,23 +210,33 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="wheel" aria-hidden="true"></div>
-  <div class="hcopy">
+  <div class="case" aria-hidden="true"></div>
+  <div class="canopy">
     <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Ghobeiry Square · Airport Road">Ghobeiry Square · Airport Road</xen><xar data-edit="t2" data-edit-label="Text (AR): ساحة الغبيري · طريق المطار">ساحة الغبيري · طريق المطار</xar></p>
-    <p class="arname" data-edit="t3" data-edit-label="Text: عصير رمضان">عصير رمضان</p>
-    <h1><xen class="c" data-edit="t4" data-edit-label="Text (EN): RAMADAN JUICE">RAMADAN JUICE</xen><xar class="c" data-edit="t5" data-edit-label="Text (AR): محل العصير تبع الساحة">محل العصير تبع الساحة</xar></h1>
-    <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Squeezed on the square since 1987. Fre…">Squeezed on the square since 1987. Fresh fruit in the window, ashta cocktails in the glass, and the blenders running from seven in the morning until half past two at night.</xen><xar data-edit="t7" data-edit-label="Text (AR): معصور عالساحة من سنة 1987. فواكه طازجة…">معصور عالساحة من سنة 1987. فواكه طازجة بالواجهة، كوكتيلات عالقشطة بالكاسة، والخلاطات شغّالة من 7 الصبح لـ 2:30 بالليل.</xar></p>
-    <div class="pips">
-      <span class="pip full"><xen data-edit="t8" data-edit-label="Text (EN): Since 1987">Since 1987</xen><xar data-edit="t9" data-edit-label="Text (AR): من سنة 1987">من سنة 1987</xar></span>
-      <span class="pip"><xen data-edit="t10" data-edit-label="Text (EN): Open 7 AM to 2:30 AM">Open 7 AM to 2:30 AM</xen><xar data-edit="t11" data-edit-label="Text (AR): فاتحين من 7 الصبح لـ 2:30 الليل">فاتحين من 7 الصبح لـ 2:30 الليل</xar></span>
-      <span class="pip"><xen data-edit="t12" data-edit-label="Text (EN): Three branches">Three branches</xen><xar data-edit="t13" data-edit-label="Text (AR): تلات فروع">تلات فروع</xar></span>
-    </div>
-    <p class="rate"><b class="num" data-edit="t14" data-edit-label="Text: 4.3">4.3</b> · <xen><span class="num" data-edit="t15" data-edit-label="Text: 180">180</span> Google reviews</xen><xar><span class="num" data-edit="t16" data-edit-label="Text: 180">180</span> تقييم على غوغل</xar></p>
+  </div>
+  <div class="rail a" aria-hidden="true"></div>
+  <div class="rail b" aria-hidden="true"></div>
+  <div class="rail c" aria-hidden="true"></div>
+  <div class="hcopy">
+      <p class="arname" data-edit="t3" data-edit-label="Text: عصير رمضان">عصير رمضان</p>
+      <h1><xen class="c" data-edit="t4" data-edit-label="Text (EN): RAMADAN JUICE">RAMADAN JUICE</xen><xar class="c" data-edit="t5" data-edit-label="Text (AR): محل العصير تبع الساحة">محل العصير تبع الساحة</xar></h1>
+  </div>
+  <div class="hlow">
+      <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Squeezed on the square since 1987. Fre…">Squeezed on the square since 1987. Fresh fruit in the window, ashta cocktails in the glass, and the blenders running from seven in the morning until half past two at night.</xen><xar data-edit="t7" data-edit-label="Text (AR): معصور عالساحة من سنة 1987. فواكه طازجة…">معصور عالساحة من سنة 1987. فواكه طازجة بالواجهة، كوكتيلات عالقشطة بالكاسة، والخلاطات شغّالة من 7 الصبح لـ 2:30 بالليل.</xar></p>
+      <div class="pips">
+        <span class="pip full"><xen data-edit="t8" data-edit-label="Text (EN): Since 1987">Since 1987</xen><xar data-edit="t9" data-edit-label="Text (AR): من سنة 1987">من سنة 1987</xar></span>
+        <span class="pip"><xen data-edit="t10" data-edit-label="Text (EN): Open 7 AM to 2:30 AM">Open 7 AM to 2:30 AM</xen><xar data-edit="t11" data-edit-label="Text (AR): فاتحين من 7 الصبح لـ 2:30 الليل">فاتحين من 7 الصبح لـ 2:30 الليل</xar></span>
+        <span class="pip"><xen data-edit="t12" data-edit-label="Text (EN): Three branches">Three branches</xen><xar data-edit="t13" data-edit-label="Text (AR): تلات فروع">تلات فروع</xar></span>
+      </div>
+      <p class="rate"><b class="num" data-edit="t14" data-edit-label="Text: 4.3">4.3</b> · <xen><span class="num" data-edit="t15" data-edit-label="Text: 180">180</span> Google reviews</xen><xar><span class="num" data-edit="t16" data-edit-label="Text: 180">180</span> تقييم على غوغل</xar></p>
   </div>
   <div class="hpane">
     <img src="img/04.jpg" alt="A tall fruit cocktail stacked with coconut, grapes and watermelon at the counter">
     <p class="cap"><xen data-edit="t17" data-edit-label="Text (EN): One of their towers, built to order.">One of their towers, built to order.</xen><xar data-edit="t18" data-edit-label="Text (AR): برج من أبراجهن، بينبنى عالطلب.">برج من أبراجهن، بينبنى عالطلب.</xar></p>
   </div>
+  <div class="post l" aria-hidden="true"></div>
+  <div class="post r" aria-hidden="true"></div>
+  <div class="sheen" aria-hidden="true"></div>
 </header>
 
 <section class="white-b">
@@ -269,7 +308,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="deep-b">
   <div class="wrap">
     <p class="k"><xen data-edit="t77" data-edit-label="Text (EN): Since 1987">Since 1987</xen><xar data-edit="t78" data-edit-label="Text (AR): من سنة 1987">من سنة 1987</xar></p>
-    <h2 class="hh" style="color:#FBEBD8"><xen data-edit="t79" data-edit-label="Text (EN): Three counters, one name">Three counters, one name</xen><xar data-edit="t80" data-edit-label="Text (AR): تلات كاونترات، اسم واحد">تلات كاونترات، اسم واحد</xar></h2>
+    <h2 class="hh" style="color:#FDE3EF"><xen data-edit="t79" data-edit-label="Text (EN): Three counters, one name">Three counters, one name</xen><xar data-edit="t80" data-edit-label="Text (AR): تلات كاونترات، اسم واحد">تلات كاونترات، اسم واحد</xar></h2>
     <div class="since">
       <div class="brc rev"><h3><xen data-edit="t81" data-edit-label="Text (EN): Ghobeiry Square">Ghobeiry Square</xen><xar data-edit="t82" data-edit-label="Text (AR): ساحة الغبيري">ساحة الغبيري</xar></h3><p><xen data-edit="t83" data-edit-label="Text (EN): This shop, on Tarik el Matar. The orig…">This shop, on Tarik el Matar. The original.</xen><xar data-edit="t84" data-edit-label="Text (AR): هالمحل، عطريق المطار. الأصلي.">هالمحل، عطريق المطار. الأصلي.</xar></p></div>
       <div class="brc rev"><h3><xen data-edit="t85" data-edit-label="Text (EN): Khaldeh">Khaldeh</xen><xar data-edit="t86" data-edit-label="Text (AR): خلدة">خلدة</xar></h3><p><xen data-edit="t87" data-edit-label="Text (EN): South along the coast.">South along the coast.</xen><xar data-edit="t88" data-edit-label="Text (AR): عالجنوب مع الساحل.">عالجنوب مع الساحل.</xar><br><span class="num" data-edit="t89" data-edit-label="Text: 71 916 695">71 916 695</span></p></div>

@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Smoking Barrels · Mar Mikhael, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Chivo:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Saira+Stencil+One&family=Chivo:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Noto Kufi Arabic';--arb:'Cairo';
-  --smoke:#261B0F;--smoke2:#2E2113;--char:#1B1409;--oak:#9A6B3F;--oakd:#6E4826;--amber:#D98A2B;--cream:#EFE5D2;
+  --smoke:#261B0F;--smoke2:#2E2113;--char:#1B1409;--oak:#A87543;--oakd:#6E4826;--amber:#E09433;--brick:#B8352A;--cream:#EFE5D2;
   --line:rgba(239,229,210,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -26,67 +26,75 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 16px rgba(0,0,0,.45);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the sauce caddy on the ember-lit charred plank table ---------- */
+/* ---------- HERO: the sauce crate itself, its oak filling the frame ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  display:flex;flex-direction:column;justify-content:center;padding:clamp(26px,5vh,54px) 0;
   background:
-   repeating-linear-gradient(90deg,rgba(20,8,2,.22) 0 2px,transparent 2px 88px),
-   radial-gradient(64% 44% at 50% 30%,rgba(255,170,60,.14),transparent 70%),
-   linear-gradient(180deg,#6E3110 0%,#8A3D14 52%,#57250C 100%)}
-header::before{content:"";position:absolute;inset:0;opacity:.55;pointer-events:none;
+   repeating-linear-gradient(180deg,
+     rgba(18,9,2,.6) 0 4px,rgba(255,224,180,.24) 4px 8px,rgba(255,224,180,.08) 8px 30px,
+     rgba(0,0,0,0) 30px 76px,rgba(18,9,2,.26) 76px 106px),
+   repeating-linear-gradient(90deg,rgba(255,226,178,.07) 0 2px,rgba(0,0,0,.07) 2px 6px,
+     rgba(255,226,178,.03) 6px 13px,rgba(0,0,0,.04) 13px 19px),
+   linear-gradient(172deg,#A97646 0%,#8E5E33 46%,#6B4324 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 78% at 50% 116%,rgba(24,14,6,.72),transparent 58%),
+             radial-gradient(70% 44% at 26% -6%,rgba(255,214,150,.22),transparent 66%)}
+/* the crate's iron corner straps */
+.strap{position:absolute;top:0;bottom:0;width:clamp(26px,4vw,52px);z-index:2;
+  background:linear-gradient(90deg,#2A2118,#4A3C2C 42%,#191309);
+  box-shadow:0 0 22px rgba(12,7,2,.6)}
+.strap.l{left:0}.strap.r{right:0}
+.strap i{position:absolute;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
+  background:radial-gradient(circle at 36% 32%,#B7A88F,#4A3C2C 72%);box-shadow:0 1px 2px rgba(0,0,0,.7)}
+.strap i:nth-child(1){top:9%}.strap i:nth-child(2){top:35%}
+.strap i:nth-child(3){top:63%}.strap i:nth-child(4){top:89%}
+/* the brand burned into the boards */
+.brandseal{position:absolute;z-index:2;right:clamp(58px,10vw,150px);top:clamp(30px,6vh,70px);
+  width:clamp(78px,9vw,116px);aspect-ratio:1;border-radius:50%;
+  border:3px solid rgba(40,22,8,.42);box-shadow:inset 0 0 26px rgba(40,22,8,.34);opacity:.82;
   background:
-   radial-gradient(220px 90px at 22% 22%,rgba(255,255,255,.035),transparent 70%),
-   radial-gradient(260px 100px at 76% 38%,rgba(255,255,255,.028),transparent 70%)}
-.kick{position:relative;z-index:2;text-align:center;margin-bottom:14px}
-.caddyzone{position:relative;z-index:2;display:flex;align-items:flex-end;gap:clamp(14px,2.4vw,26px)}
-.caddy{width:min(560px,86vw);position:relative}
-.handle{position:relative;width:64%;margin:0 auto;height:clamp(40px,6vh,54px);
-  background:linear-gradient(90deg,#4A2D12,#5E3B1C 30%,#4A2D12 70%,#38210C);
-  border:2.5px solid #241203;border-bottom:0;border-radius:10px 10px 0 0}
-.handle::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-40%);
-  width:56%;height:16px;border-radius:99px;background:#1E2A33;box-shadow:inset 0 2px 4px rgba(0,0,0,.7)}
-.bottles{position:relative;display:flex;justify-content:space-evenly;align-items:flex-end;
-  width:88%;margin:0 auto -12px;z-index:1}
-.bottle{width:clamp(40px,6.4vw,58px);height:clamp(64px,10vh,92px);border-radius:9px 9px 4px 4px;position:relative}
-.bottle::before{content:"";position:absolute;top:-13px;left:50%;transform:translateX(-50%);
-  width:16px;height:14px;border-radius:3px 3px 0 0;background:inherit;filter:brightness(.8)}
-.bottle.bbq{background:linear-gradient(180deg,#4A2018,#361511)}
-.bottle.mus{background:linear-gradient(180deg,#E3B32A,#B9880F)}
-.bottle.gar{background:linear-gradient(180deg,#EFE5D2,#CBBB9C)}
-.boxfront{position:relative;z-index:2;border:2.5px solid #241203;border-radius:4px;
-  background:
-   repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 2px,transparent 2px 18px),
-   linear-gradient(180deg,#5E3B1C,#4A2D12 60%,#38210C);
-  box-shadow:0 24px 50px rgba(20,8,2,.6);padding:clamp(14px,2.6vh,22px) clamp(14px,3vw,26px)}
-.boxfront::before,.boxfront::after{content:"";position:absolute;top:8px;bottom:8px;width:7px;opacity:.55;
-  background:repeating-linear-gradient(0deg,#241203 0 9px,transparent 9px 18px)}
-.boxfront::before{left:3px}.boxfront::after{right:3px}
-.plateband{position:relative;overflow:hidden;background:linear-gradient(180deg,#3A4750,#232E36);
-  border:2px solid #12181D;border-radius:3px;padding:10px 14px 12px;text-align:center;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
-.plateband::after{content:"";position:absolute;top:0;left:-45%;width:30%;height:100%;pointer-events:none;
-  background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);
-  animation:glint 13s ease-in-out infinite}
-@keyframes glint{0%,86%{transform:translateX(0)}100%{transform:translateX(500%)}}
-@media(prefers-reduced-motion:reduce){.plateband::after{animation:none}}
-.plateband h1{font-size:clamp(24px,4.6vw,42px);color:var(--cream)}
-.plateband h1 b{color:var(--amber);font-weight:400}
-.rivets{position:absolute;width:7px;height:7px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C9CDD0,#5E676D 75%)}
-.rivets.r1{top:6px;left:8px}.rivets.r2{top:6px;right:8px}.rivets.r3{bottom:6px;left:8px}.rivets.r4{bottom:6px;right:8px}
-.subline{margin-top:11px;text-align:center;color:#E4D7BD;font-size:clamp(13.5px,1.7vw,15.5px);line-height:1.6}
-.roll{flex:0 0 auto;width:clamp(44px,6vw,58px);display:none}
-@media(min-width:721px){.roll{display:block}}
-.roll .paper{height:clamp(90px,13vh,120px);border-radius:8px;
-  background:linear-gradient(90deg,#D9CDB5,#F4EBD8 45%,#C9BCA0);border:2px solid #8F836B}
-.roll .dowel{width:8px;height:22px;background:#4A2F14;margin:0 auto}
-.heroPane{position:relative;z-index:2;width:min(560px,86vw);margin-top:clamp(14px,2.6vh,24px)}
-.heroPane .bd{border:2.5px solid #4A2F14;background:#2E2113;padding:8px;border-radius:4px;
-  box-shadow:0 18px 40px rgba(0,0,0,.5)}
-.heroPane img{width:100%;height:clamp(170px,24vh,225px);object-fit:cover;border-radius:2px}
-.metaRow{position:relative;z-index:2;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:18px 5vw 30px}
-.tagc{border:1.5px solid var(--line);border-radius:2px;padding:6px 12px;
-  font:700 11.5px/1.4 'Chivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#DCCFB4;background:rgba(0,0,0,.2)}
-.tagc.amb{background:var(--amber);color:#1B222A;border-color:#8F5A16}
+   radial-gradient(circle,transparent 0 40%,rgba(40,22,8,.3) 40% 45%,transparent 45% 63%,rgba(40,22,8,.26) 63% 67%,transparent 67%),
+   repeating-conic-gradient(from 0deg,rgba(40,22,8,.16) 0 9deg,transparent 9deg 18deg);
+  animation:sealturn 92s linear infinite}
+@keyframes sealturn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.brandseal{animation:none}}
+.hwrap{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;
+  padding-inline:clamp(52px,9vw,132px)}
+.hwrap .kick{color:#F4DFB4;letter-spacing:.32em}
+.hwrap h1{margin-top:12px;font-family:'Rye',serif;font-weight:400;line-height:1.02;
+  font-size:clamp(38px,6.6vw,94px);color:#3A2410;
+  text-shadow:0 1px 0 rgba(255,214,150,.34),0 -1px 0 rgba(20,10,2,.5),0 8px 18px rgba(30,16,4,.28)}
+.hwrap h1 b{color:#8E2A20;font-weight:400}
+html.ar .hwrap h1{font-size:clamp(36px,5.6vw,78px)}
+.subline{margin-top:clamp(14px,2.2vh,22px);max-width:42ch;color:#F6E7C9;font-size:clamp(14.5px,1.7vw,17px);
+  line-height:1.66;text-shadow:0 1px 2px rgba(30,16,4,.6)}
+.metaRow{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(16px,2.6vh,26px)}
+.tagc{background:linear-gradient(180deg,#3B2E21,#221810);color:#F0E3C9;border:1px solid rgba(240,227,201,.28);
+  border-radius:3px;padding:8px 14px;font:700 11.5px/1 'Chivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 6px 14px rgba(20,10,2,.4)}
+.tagc.amb{background:linear-gradient(180deg,#E09433,#B86F1C);color:#2A1908;border-color:#8A5313}
+/* the board, screwed onto the crate */
+.heroPane{position:absolute;z-index:4;right:clamp(58px,9vw,132px);bottom:clamp(30px,6vh,74px);
+  width:min(370px,40vw);padding:11px;background:linear-gradient(180deg,#3B2E21,#1D150C);
+  border:1px solid rgba(240,227,201,.3);box-shadow:0 24px 46px rgba(16,9,2,.65)}
+.heroPane::before,.heroPane::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle at 36% 32%,#C4B69C,#4A3C2C 72%)}
+.heroPane::before{left:7px;top:7px}.heroPane::after{right:7px;bottom:7px}
+.heroPane .bd{overflow:hidden}
+.heroPane img{width:100%;height:clamp(140px,20vh,196px);object-fit:cover;display:block}
+/* the sauce bottles standing in the crate */
+.bottles{position:absolute;z-index:4;left:clamp(52px,9vw,132px);bottom:clamp(26px,5vh,60px);
+  display:flex;align-items:flex-end;gap:clamp(9px,1.4vw,16px)}
+.bottle{position:relative;width:clamp(26px,3vw,38px);border-radius:5px 5px 7px 7px;
+  box-shadow:0 12px 22px rgba(16,9,2,.6),inset -6px 0 12px rgba(0,0,0,.3),inset 6px 0 10px rgba(255,255,255,.16)}
+.bottle::before{content:"";position:absolute;left:50%;transform:translateX(-50%);top:-16px;
+  width:42%;height:17px;border-radius:3px 3px 0 0;background:#241A10}
+.bottle::after{content:"";position:absolute;left:12%;right:12%;top:34%;height:26%;border-radius:2px;
+  background:rgba(244,232,208,.85)}
+.bottle.bbq{height:clamp(72px,10vh,104px);background:linear-gradient(180deg,#6E2B14,#3E170A)}
+.bottle.mus{height:clamp(62px,9vh,90px);background:linear-gradient(180deg,#D9A32B,#9A6A12)}
+.bottle.gar{height:clamp(80px,11vh,114px);background:linear-gradient(180deg,#E7DCC0,#B8A889)}
+
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -156,12 +164,17 @@ footer{padding:36px 7vw 128px;color:#93A3AD;font-size:13.5px;text-align:center;b
   .steps,.grid3,.revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:84px}
-  .heroPane img{height:150px}
-  .plateband h1{font-size:clamp(20px,6vw,28px)}
 }
 @media(max-width:430px){
   .bar{gap:5px}
   .bar a{font-size:10px}
+}
+@media(max-width:700px){
+  .heroPane{bottom:clamp(20px,3.4vh,40px);width:min(268px,46vw);padding:8px}
+  .heroPane img{height:104px}
+  .bottles{bottom:clamp(18px,3vh,36px);left:7vw;gap:7px}
+  .bottle{width:22px}
+  .bottle::before{top:-12px;height:13px}
 }
 </style>
 <meta name="robots" content="noindex,nofollow">
@@ -211,32 +224,26 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <p class="k kick"><xen data-edit="t1" data-edit-label="Text (EN): Smokehouse · Mar Mikhael, Beirut">Smokehouse · Mar Mikhael, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): مدخّن لحوم · مار مخايل، بيروت">مدخّن لحوم · مار مخايل، بيروت</xar></p>
-  <div class="caddyzone">
-    <div class="caddy">
-      <div class="handle" aria-hidden="true"></div>
-      <div class="bottles" aria-hidden="true">
-        <span class="bottle bbq"></span><span class="bottle mus"></span><span class="bottle gar"></span>
-      </div>
-      <div class="boxfront">
-        <div class="plateband">
-          <span class="rivets r1"></span><span class="rivets r2"></span><span class="rivets r3"></span><span class="rivets r4"></span>
-          <h1><xen class="c">The Smoking <b data-edit="t3" data-edit-label="Text: Barrels">Barrels</b></xen><xar class="c">ذا سموكينغ <b data-edit="t4" data-edit-label="Text: باريلز">باريلز</b></xar></h1>
-        </div>
-        <p class="subline"><xen data-edit="t5" data-edit-label="Text (EN): Brisket, ribs and burgers cut on the b…">Brisket, ribs and burgers cut on the board, with the sauce caddy already on your table.</xen><xar data-edit="t6" data-edit-label="Text (AR): بريسكت، ريبس وبرغر بينقطعوا عاللوح، وع…">بريسكت، ريبس وبرغر بينقطعوا عاللوح، وعلبة الصوصات جاهزة عالطاولة قبلك.</xar></p>
-      </div>
+  <span class="strap l" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="strap r" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="brandseal" aria-hidden="true"></span>
+  <div class="hwrap">
+    <p class="k kick"><xen data-edit="t1" data-edit-label="Text (EN): Smokehouse · Mar Mikhael, Beirut">Smokehouse · Mar Mikhael, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): مدخّن لحوم · مار مخايل، بيروت">مدخّن لحوم · مار مخايل، بيروت</xar></p>
+    <h1><xen class="c">The Smoking <b data-edit="t3" data-edit-label="Text: Barrels">Barrels</b></xen><xar class="c">ذا سموكينغ <b data-edit="t4" data-edit-label="Text: باريلز">باريلز</b></xar></h1>
+    <p class="subline"><xen data-edit="t5" data-edit-label="Text (EN): Brisket, ribs and burgers cut on the b…">Brisket, ribs and burgers cut on the board, with the sauce caddy already on your table.</xen><xar data-edit="t6" data-edit-label="Text (AR): بريسكت، ريبس وبرغر بينقطعوا عاللوح، وع…">بريسكت، ريبس وبرغر بينقطعوا عاللوح، وعلبة الصوصات جاهزة عالطاولة قبلك.</xar></p>
+    <div class="metaRow">
+      <span class="tagc amb"><xen class="c"><span class="num" data-edit="t7" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t8" data-edit-label="Text: 138">138</span> reviews</xen><xar class="c"><span class="num" data-edit="t9" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t10" data-edit-label="Text: 138">138</span> تقييم</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Smoked meats">Smoked meats</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): لحوم مدخّنة">لحوم مدخّنة</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Draft beer">Draft beer</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): بيرة درافت">بيرة درافت</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t15" data-edit-label="Text (EN): BBQ catering">BBQ catering</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): كايترينغ مشاوي">كايترينغ مشاوي</xar></span>
     </div>
-    <div class="roll" aria-hidden="true"><div class="paper"></div><div class="dowel"></div></div>
+  </div>
+  <div class="bottles" aria-hidden="true">
+    <span class="bottle bbq"></span><span class="bottle mus"></span><span class="bottle gar"></span>
   </div>
   <figure class="heroPane">
     <div class="bd"><img src="img/10.jpg" alt="Sliced brisket with a smoke ring on the cutting board"></div>
   </figure>
-  <div class="metaRow">
-    <span class="tagc amb"><xen class="c"><span class="num" data-edit="t7" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t8" data-edit-label="Text: 138">138</span> reviews</xen><xar class="c"><span class="num" data-edit="t9" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t10" data-edit-label="Text: 138">138</span> تقييم</xar></span>
-    <span class="tagc"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Smoked meats">Smoked meats</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): لحوم مدخّنة">لحوم مدخّنة</xar></span>
-    <span class="tagc"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Draft beer">Draft beer</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): بيرة درافت">بيرة درافت</xar></span>
-    <span class="tagc"><xen class="c" data-edit="t15" data-edit-label="Text (EN): BBQ catering">BBQ catering</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): كايترينغ مشاوي">كايترينغ مشاوي</xar></span>
-  </div>
 </header>
 
 <section class="wrap">

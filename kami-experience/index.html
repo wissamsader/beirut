@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KAMI Experience · Gouraud Street, Gemmayzeh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Mada:wght@500;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700;800&family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Mada:wght@500;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Mada';--arb:'Tajawal';
@@ -28,49 +28,69 @@ section{padding-block:clamp(54px,8vh,92px)}
   box-shadow:0 6px 16px rgba(0,0,0,.5);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the bamboo steamer stack, top lid ajar ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
+/* ---------- HERO: one bamboo steamer hanging on the rail, in front of the mural ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;padding:0 5vw 26px;
+  background:linear-gradient(178deg,#12968F 0%,#0C736F 54%,#06504E 100%)}
+header::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:radial-gradient(132% 76% at 50% 124%,rgba(3,38,38,.82),transparent 58%)}
+/* the wall Felipe painted: sprayed ribbons across the room */
+.mural{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.mural i{position:absolute;display:block;border-radius:99px;filter:blur(2.5px)}
+.mural i:nth-child(1){left:-16%;top:9%;width:74%;height:30px;background:#FF6A3C;transform:rotate(-14deg);opacity:.85}
+.mural i:nth-child(2){left:-14%;top:15%;width:66%;height:11px;background:#FFE07A;transform:rotate(-14deg);opacity:.8}
+.mural i:nth-child(3){left:34%;top:-4%;width:88%;height:24px;background:#FFD23F;transform:rotate(11deg);opacity:.8}
+.mural i:nth-child(4){left:44%;top:30%;width:76%;height:44px;background:#FF3E86;transform:rotate(-16deg);opacity:.55}
+.mural i:nth-child(5){left:-22%;top:47%;width:56%;height:16px;background:#FFFFFF;transform:rotate(20deg);opacity:.5}
+.mural i:nth-child(6){left:52%;top:70%;width:74%;height:34px;background:#5BF2E2;transform:rotate(-5deg);opacity:.5}
+/* the dado the room is painted over */
+.dado{position:absolute;left:0;right:0;bottom:0;height:clamp(74px,13vh,116px);z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(3,38,38,0),rgba(3,34,34,.9) 46%,#04302F);
+  border-bottom:6px solid #0B1616}
+.rail{position:absolute;left:0;right:0;top:clamp(34px,5vh,60px);height:9px;z-index:2;
+  background:linear-gradient(180deg,#3A3D45,#0E0F13);box-shadow:0 5px 16px rgba(0,0,0,.5)}
+.hang{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;
+  margin-top:calc(clamp(34px,5vh,60px) + 9px);transform-origin:50% -34px;
+  animation:sway 14s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(0)}25%{transform:rotate(-1deg)}75%{transform:rotate(1deg)}}
+.cords{position:relative;width:min(230px,38vw);height:clamp(28px,4.6vh,52px)}
+.cords::before,.cords::after{content:"";position:absolute;top:-2px;bottom:-10px;width:2px;
+  background:linear-gradient(180deg,#F2E9D4,rgba(242,233,212,.5))}
+.cords::before{left:0}.cords::after{right:0}
+.steam{position:relative;width:min(460px,72vw);filter:drop-shadow(0 34px 44px rgba(0,0,0,.5))}
+.wall{position:relative;z-index:1;margin-top:-7.5%;height:clamp(96px,15vw,150px);
+  border-radius:0 0 50% 50%/0 0 44% 44%;
   background:
-   radial-gradient(52% 40% at 50% 26%,rgba(216,68,46,.2),transparent 68%),
-   linear-gradient(180deg,#101115,var(--sumi) 60%,#101115)}
-header::before{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(90deg,rgba(239,230,212,.025) 0 1px,transparent 1px 60px)}
-.sun{position:absolute;top:clamp(28px,7vh,72px);left:50%;transform:translateX(-50%);
-  width:clamp(150px,26vw,240px);height:clamp(150px,26vw,240px);border-radius:50%;z-index:1;
-  background:radial-gradient(circle,rgba(216,68,46,.85),rgba(216,68,46,.5) 55%,transparent 72%);
-  animation:sunpulse 12s ease-in-out infinite}
-@keyframes sunpulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.03)}}
-.stack{position:relative;z-index:2;width:min(620px,92vw);margin:clamp(20px,3.5vh,44px) auto;
-  display:flex;flex-direction:column;align-items:center;gap:9px}
-.lid{width:min(430px,78%);padding:10px 18px 12px;border-radius:120px 120px 14px 14px;text-align:center;
-  background:linear-gradient(180deg,#D9B075,var(--bamboo) 70%,var(--bamboo-d));
-  border:1px solid var(--bamboo-d);box-shadow:0 12px 26px rgba(0,0,0,.45);
-  transform:rotate(-2deg) translateX(-7%);
-  font:700 12px/1.5 'Zen Kaku Gothic New',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#3B2A12}
-.lid i{display:block;width:44px;height:9px;margin:4px auto 2px;border-radius:5px;background:#8F6A3C;
-  box-shadow:inset 0 1px 2px rgba(0,0,0,.4);font-style:normal}
-.tier{width:100%;background:linear-gradient(180deg,#23252B,var(--sumi2));
-  border:1px solid rgba(200,155,98,.4);border-radius:16px;position:relative;overflow:hidden;
-  box-shadow:0 16px 34px rgba(0,0,0,.5)}
-.tier::before{content:"";position:absolute;left:0;right:0;top:0;height:9px;
-  background:repeating-linear-gradient(90deg,var(--bamboo) 0 26px,var(--bamboo-d) 26px 30px)}
-.tier::after{content:"";position:absolute;left:0;right:0;bottom:0;height:9px;
-  background:repeating-linear-gradient(90deg,var(--bamboo-d) 0 26px,#755430 26px 30px)}
-.t1{padding:26px 20px 24px;text-align:center}
-.t1 .k{display:block;margin-bottom:8px}
-.t1 h1{font-size:clamp(46px,9vw,84px);letter-spacing:.14em;color:var(--washi)}
-.t1 h1 b{color:var(--verm);font-weight:800}
-.t1 .sub{margin:8px auto 0;max-width:46ch;color:#BFB49C;font-size:clamp(14px,1.8vw,16.5px);line-height:1.7}
-.t2{padding:16px}
-.t2 .pane{border:1px solid rgba(200,155,98,.5);border-radius:10px;overflow:hidden;background:#101115}
-.t2 img{width:100%;height:clamp(170px,24vh,240px);object-fit:cover}
-.t3{padding:14px 16px 20px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.t3 .num{color:var(--verm);font:700 17px/1 'Zen Kaku Gothic New',sans-serif}
-.t3 span{font:500 13.5px/1.5 'Zen Kaku Gothic New',sans-serif;color:#D8CDB5}
-.chiprow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%;margin-top:4px}
-.chip{border:1px solid rgba(47,166,160,.55);color:#9ADDD9;border-radius:3px;padding:5px 11px;
-  font:500 12px/1.4 'Zen Kaku Gothic New',sans-serif;letter-spacing:.06em}
+   repeating-linear-gradient(90deg,#D8AC72 0 12px,#B0803D 12px 14px,#C4924B 14px 26px,#8E6329 26px 28px);
+  box-shadow:inset 0 -20px 34px rgba(0,0,0,.45),inset 0 14px 20px rgba(0,0,0,.3)}
+.wall::before,.wall::after{content:"";position:absolute;left:0;right:0;height:9px;
+  background:linear-gradient(180deg,#E0B87F,#8A6229);box-shadow:0 2px 4px rgba(0,0,0,.3)}
+.wall::before{top:26%}.wall::after{top:66%}
+.rim{position:relative;z-index:2;width:100%;aspect-ratio:1/.46;border-radius:50%;display:grid;place-items:center;
+  background:repeating-conic-gradient(from 0deg,#E0B87F 0 2.2deg,#AE7C39 2.2deg 4.4deg),#B0803D;
+  box-shadow:inset 0 0 0 16px #C99A55,inset 0 0 0 19px #7A5424,0 10px 18px rgba(0,0,0,.4)}
+.rim::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,255,255,.34),transparent 46%)}
+.bowl{position:relative;z-index:3;width:72%;aspect-ratio:1/.44;border-radius:50%;overflow:hidden;
+  box-shadow:0 0 0 7px #8E6329,inset 0 10px 26px rgba(0,0,0,.62)}
+.bowl img{width:100%;height:100%;object-fit:cover}
+.lidt{position:absolute;z-index:4;left:50%;bottom:-15px;transform:translateX(-50%);white-space:nowrap;
+  background:#0E0F13;color:#F2E9D4;border:1px solid rgba(242,233,212,.32);padding:8px 16px;border-radius:99px;
+  font:700 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.24em;text-transform:uppercase;
+  box-shadow:0 10px 22px rgba(0,0,0,.5)}
+.hd{position:relative;z-index:3;width:min(1060px,100%);margin-top:clamp(16px,2.4vh,30px);text-align:center}
+.hd .k{display:block;color:#CFF6F1;letter-spacing:.34em}
+.hd h1{font-family:'Kaisei Tokumin',serif;font-weight:800;margin:6px 0 0;color:#FDF7EA;
+  font-size:clamp(58px,13vw,168px);line-height:.9;letter-spacing:.04em;
+  text-shadow:0 16px 40px rgba(0,0,0,.42)}
+.hd h1 b{color:#FF7A45;font-weight:800}
+.hd .sub{margin:12px auto 0;max-width:66ch;color:#E4F6F4;font-size:clamp(14.5px,1.7vw,16.5px);line-height:1.65}
+.hmeta{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.hmeta .num{font:700 18px/1 'Zen Kaku Gothic New',sans-serif;color:#FFD25C}
+.hmeta span{font:500 13.5px/1.5 'Zen Kaku Gothic New',sans-serif;color:#D3EEEC}
+.chiprow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:13px}
+.chip{border:1px solid rgba(253,247,234,.5);color:#FDF7EA;border-radius:99px;padding:6px 14px;
+  background:rgba(0,0,0,.17);font:600 12px/1.4 'Zen Kaku Gothic New',sans-serif;letter-spacing:.07em}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -149,8 +169,8 @@ footer{padding:36px 20px 130px;background:#0C0D10;color:#8D8672;font-size:13px;t
   .two,.visit,.lunch{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .t2 img{height:150px}
-  .sun{width:120px;height:120px}
+  .steam{width:min(340px,64vw)}
+  .bowl{width:60%}
 }
 @media(max-width:520px){.lrow{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.sun{animation:none}}
@@ -202,25 +222,29 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="sun"></div>
-  <div class="stack">
-    <div class="lid"><i></i><xen data-edit="t1" data-edit-label="Text (EN): Lid off, service on">Lid off, service on</xen><xar data-edit="t2" data-edit-label="Text (AR): الغطا مرفوع، الخدمة شغّالة">الغطا مرفوع، الخدمة شغّالة</xar></div>
-    <div class="tier t1">
-      <span class="k"><xen data-edit="t3" data-edit-label="Text (EN): Japanese fusion · Gouraud street, Gemm…">Japanese fusion · Gouraud street, Gemmayzeh</xen><xar data-edit="t4" data-edit-label="Text (AR): مطبخ ياباني فيوجن · شارع غورو، الجميزة">مطبخ ياباني فيوجن · شارع غورو، الجميزة</xar></span>
-      <h1>KA<b data-edit="t5" data-edit-label="Text: MI">MI</b></h1>
-      <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Sushi, bao and small hot plates out of…">Sushi, bao and small hot plates out of a stacked kitchen in Gemmayzeh, in a room painted by a graffiti artist.</xen><xar data-edit="t7" data-edit-label="Text (AR): سوشي وباو وأطباق سخنة صغيرة من مطبخ مر…">سوشي وباو وأطباق سخنة صغيرة من مطبخ مرصوص بالجميزة، بقاعة مرسومة بإيد فنان غرافيتي.</xar></p>
+  <div class="mural" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="dado" aria-hidden="true"></div>
+  <div class="rail" aria-hidden="true"></div>
+  <div class="hang">
+    <div class="cords" aria-hidden="true"></div>
+    <div class="steam">
+      <div class="rim"><div class="bowl"><img src="img/03.jpg" alt="Three bao buns lined on a long plate"></div></div>
+      <div class="wall" aria-hidden="true"></div>
+      <span class="lidt"><xen data-edit="t1" data-edit-label="Text (EN): Lid off, service on">Lid off, service on</xen><xar data-edit="t2" data-edit-label="Text (AR): الغطا مرفوع، الخدمة شغّالة">الغطا مرفوع، الخدمة شغّالة</xar></span>
     </div>
-    <div class="tier t2">
-      <div class="pane"><img src="img/03.jpg" alt="Three bao buns lined on a long plate"></div>
-    </div>
-    <div class="tier t3">
+  </div>
+  <div class="hd">
+    <span class="k"><xen data-edit="t3" data-edit-label="Text (EN): Japanese fusion · Gouraud street, Gemm…">Japanese fusion · Gouraud street, Gemmayzeh</xen><xar data-edit="t4" data-edit-label="Text (AR): مطبخ ياباني فيوجن · شارع غورو، الجميزة">مطبخ ياباني فيوجن · شارع غورو، الجميزة</xar></span>
+    <h1>KA<b data-edit="t5" data-edit-label="Text: MI">MI</b></h1>
+    <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Sushi, bao and small hot plates out of…">Sushi, bao and small hot plates out of a stacked kitchen in Gemmayzeh, in a room painted by a graffiti artist.</xen><xar data-edit="t7" data-edit-label="Text (AR): سوشي وباو وأطباق سخنة صغيرة من مطبخ مر…">سوشي وباو وأطباق سخنة صغيرة من مطبخ مرصوص بالجميزة، بقاعة مرسومة بإيد فنان غرافيتي.</xar></p>
+    <div class="hmeta">
       <span class="num" data-edit="t8" data-edit-label="Text: 4.8 ★">4.8 ★</span>
       <span><xen>from <span class="num" data-edit="t9" data-edit-label="Text: 267">267</span> Google reviews</xen><xar>من <span class="num" data-edit="t10" data-edit-label="Text: 267">267</span> تقييم على غوغل</xar></span>
-      <div class="chiprow">
-        <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t12" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></span>
-        <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Bao buns">Bao buns</xen><xar data-edit="t14" data-edit-label="Text (AR): باو بنز">باو بنز</xar></span>
-        <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Crispy rice">Crispy rice</xen><xar data-edit="t16" data-edit-label="Text (AR): كريسبي رايس">كريسبي رايس</xar></span>
-      </div>
+    </div>
+    <div class="chiprow">
+      <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t12" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></span>
+      <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Bao buns">Bao buns</xen><xar data-edit="t14" data-edit-label="Text (AR): باو بنز">باو بنز</xar></span>
+      <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Crispy rice">Crispy rice</xen><xar data-edit="t16" data-edit-label="Text (AR): كريسبي رايس">كريسبي رايس</xar></span>
     </div>
   </div>
 </header>

@@ -26,46 +26,59 @@ img{display:block;max-width:100%}
   box-shadow:0 6px 16px rgba(60,40,18,.4);min-width:58px;text-align:center;-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one enormous scored dough round, centred, cropped by the kraft frame ---------- */
+/* ---------- HERO: the morning sun coming through the kitchen window and lying
+     enormous and low across the tiled floor, cropped by both edges ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;text-align:center;
   background:
-   repeating-linear-gradient(0deg,rgba(143,100,53,.12) 0 1px,transparent 1px 7px),
-   repeating-linear-gradient(90deg,rgba(255,244,220,.06) 0 2px,transparent 2px 90px),
-   radial-gradient(120% 90% at 50% 0%,#CE9F6C 0%,var(--kraft) 55%,#AD7F4C 100%)}
-.loaf{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);
-  width:clamp(660px,88vw,980px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 50% 42%,#FAF2DF 0%,var(--dough) 52%,#E3CDA4 78%,#D2B586 100%);
-  box-shadow:inset 0 -30px 70px rgba(122,74,34,.28),inset 0 22px 50px rgba(255,252,242,.6),0 40px 90px rgba(94,56,23,.35)}
-.cutm{position:absolute;border-radius:999px;
-  background:linear-gradient(90deg,rgba(122,74,34,.0),rgba(94,56,23,.75) 30%,#4A2A10 50%,rgba(94,56,23,.75) 70%,rgba(122,74,34,0));
-  box-shadow:0 2px 4px rgba(255,250,238,.7)}
-.c1{width:20%;height:10px;left:12%;top:20%;transform:rotate(-24deg)}
-.c2{width:24%;height:11px;left:7%;top:30%;transform:rotate(-24deg)}
-.c3{width:24%;height:11px;left:68%;top:64%;transform:rotate(-24deg)}
-.c4{width:20%;height:10px;left:66%;top:75%;transform:rotate(-24deg)}
-.stamp{position:absolute;z-index:2;top:clamp(26px,4vh,44px);left:50%;transform:translateX(-50%);
-  width:clamp(88px,10vw,116px);opacity:.9}
+   repeating-linear-gradient(90deg,rgba(160,132,92,.05) 0 1px,rgba(0,0,0,0) 1px 128px),
+   linear-gradient(180deg,#FCF6EA 0%,#F6EDDC 36%,#EFE3CD 50%)}
+header::before{content:"";position:absolute;left:0;right:0;top:0;height:50%;z-index:1;pointer-events:none;
+  background:
+   radial-gradient(44% 60% at 22% 98%,rgba(255,224,152,.55),rgba(255,224,152,.10) 46%,rgba(0,0,0,0) 74%),
+   linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(255,228,164,.28) 100%)}
+/* the floor */
+.loaf{position:absolute;z-index:2;left:0;right:0;top:50%;bottom:0;width:auto;height:auto;
+  transform:none;border-radius:0;overflow:hidden;
+  background:
+   repeating-linear-gradient(90deg,rgba(120,94,58,.34) 0 2px,rgba(0,0,0,0) 2px 146px),
+   repeating-linear-gradient(0deg,rgba(120,94,58,.34) 0 2px,rgba(0,0,0,0) 2px 82px),
+   linear-gradient(180deg,#E6D9BF 0%,#DCCDAF 56%,#CDBB99 100%);
+  box-shadow:inset 0 9px 18px rgba(96,70,38,.16)}
+.loaf::after{content:"";position:absolute;left:0;right:0;top:0;height:11px;z-index:4;
+  background:linear-gradient(180deg,#C9B593,#B49E78);box-shadow:0 6px 14px rgba(96,70,38,.28)}
+/* four panes of light, the window's mullion between them */
+.cutm{position:absolute;z-index:3;border-radius:0;box-shadow:none;filter:blur(3px);
+  background:linear-gradient(180deg,rgba(255,248,214,.97),rgba(255,232,166,.80))}
+.c1{left:-13%;top:5%;width:33%;height:36%;transform:skewX(-27deg)}
+.c2{left:23%;top:5%;width:33%;height:36%;transform:skewX(-27deg)}
+.c3{left:-20%;top:47%;width:36%;height:44%;transform:skewX(-27deg)}
+.c4{left:19%;top:47%;width:36%;height:44%;transform:skewX(-27deg)}
+/* the maker's seal on the wall */
+.stamp{position:absolute;z-index:5;top:clamp(24px,5vh,58px);right:clamp(20px,6vw,92px);left:auto;
+  transform:none;width:clamp(78px,9vw,116px);opacity:.92}
 .stamp svg{width:100%;height:auto;display:block;animation:stampspin 90s linear infinite;transform-origin:50% 50%}
 @keyframes stampspin{to{transform:rotate(360deg)}}
-.hcopy{position:relative;z-index:3;width:min(660px,92%);padding-top:clamp(150px,21vh,190px);padding-bottom:clamp(150px,22vh,200px)}
-.hcopy h1{font-size:clamp(40px,6.6vw,76px);color:var(--ink)}
-.hcopy h1 em{font-style:normal;color:var(--rv)}
-.sub{color:#6E4E28;font-size:clamp(15px,1.9vw,18px);max-width:46ch;margin:12px auto 0}
-.seeds{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:18px}
-.seed{background:rgba(122,74,34,.12);border:1.5px solid rgba(122,74,34,.45);border-radius:999px;padding:8px 14px;
+@media(prefers-reduced-motion:reduce){.stamp svg{animation:none}}
+.hcopy{position:absolute;z-index:6;left:0;right:0;top:9%;width:auto;padding:0 clamp(160px,24vw,340px) 0 clamp(24px,7vw,104px)}
+.hcopy .k{color:#8A6A3C}
+.hcopy h1{font-size:clamp(38px,6.6vw,80px);color:#46346B;margin-top:8px;text-align:left}
+.hcopy h1 em{font-style:normal;color:#C43B72}
+.sub{color:#6B5334;font-size:clamp(15px,1.9vw,18px);max-width:44ch;margin:14px 0 0}
+.seeds{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-start;margin-top:18px}
+.seed{background:rgba(122,74,34,.10);border:1.5px solid rgba(122,74,34,.4);border-radius:999px;padding:8px 14px;
   font:700 12.5px/1 'Epilogue',sans-serif;letter-spacing:.04em;color:#5E3817}
-.seed.p{background:var(--plum);border-color:#493A70;color:#F1EDFB}
-.rate{margin-top:16px;font-size:13px;color:#7A5A32}
-.rate b{font:400 19px/1 'Young Serif',serif;color:var(--ink)}
-.hpane{position:absolute;z-index:3;right:clamp(14px,5vw,72px);bottom:clamp(20px,4.4vh,40px);
-  width:min(300px,52%);background:#FFFDF6;padding:8px 8px 10px;border-radius:3px;
-  box-shadow:0 22px 44px rgba(60,40,18,.4)}
-.hpane::before,.hpane::after{content:"";position:absolute;top:-10px;width:64px;height:20px;
+.seed.p{background:#46346B;border-color:#332651;color:#F3EFFB}
+.rate{margin-top:15px;font-size:13px;color:#7A5A32}
+.rate b{font:400 19px/1 'Young Serif',serif;color:#46346B}
+/* the tray of rolls, standing in the light */
+.hpane{position:absolute;z-index:7;right:clamp(14px,5vw,74px);bottom:clamp(22px,4.6vh,50px);
+  width:min(268px,27vw);background:#FFFDF6;padding:8px 8px 10px;border-radius:3px;
+  box-shadow:0 26px 44px rgba(96,70,38,.42)}
+.hpane::before,.hpane::after{content:"";position:absolute;top:-10px;width:60px;height:20px;
   background:rgba(214,183,140,.85);border:1px solid rgba(143,100,53,.4)}
 .hpane::before{left:12%;transform:rotate(-3deg)}
 .hpane::after{right:12%;transform:rotate(2deg)}
-.hpane img{width:100%;height:clamp(130px,18vh,175px);object-fit:cover}
+.hpane img{width:100%;height:clamp(136px,19vh,182px);object-fit:cover}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -142,12 +155,16 @@ footer{padding:36px 6vw 132px;color:#E5C9A0;font-size:13.5px;text-align:center;b
   .line{grid-template-columns:repeat(2,1fr);row-gap:22px}
   .line::before{display:none}
   body{padding-bottom:76px}
-  .loaf{width:170vw}
-  .hcopy{padding-top:clamp(80px,11vh,110px);padding-bottom:clamp(180px,26vh,220px)}
+  .hcopy{top:7%;padding:0 clamp(100px,30vw,170px) 0 6vw}
   .hcopy h1{font-size:clamp(36px,10vw,52px)}
-  .stamp{top:30px;width:84px}
-  .hpane{right:6vw;width:min(260px,62%)}
-  .hpane img{height:clamp(110px,15vh,140px)}
+  header::before{height:60%}
+  .seeds{gap:7px}
+  .seed{padding:7px 12px;font-size:11.5px}
+  .stamp{top:26px;right:5vw;width:76px}
+  .loaf{top:60%}
+  .hpane{right:5vw;bottom:18px;width:min(160px,38vw)}
+  .hpane img{height:clamp(96px,14vh,124px)}
+  .hpane::before,.hpane::after{width:40px;height:15px;top:-7px}
 }
 @media(max-width:430px){.bar a{font-size:10px}}
 </style>
@@ -206,8 +223,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <defs><path id="ringp" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
       <circle cx="60" cy="60" r="56" fill="none" stroke="#7A4A22" stroke-width="2.5"/>
       <circle cx="60" cy="60" r="30" fill="none" stroke="#7A4A22" stroke-width="1.5" stroke-dasharray="3 5"/>
-      <text font-family="Epilogue,sans-serif" font-size="10.5" letter-spacing="2.6" fill="#5E3817">
-        <textPath href="#ringp">FROM MY KITCHEN TO YOURS · SINCE 2014 ·</textPath>
+      <text font-family="Epilogue,sans-serif" font-size="8.8" letter-spacing="1.35" fill="#5E3817">
+        <textPath href="#ringp" startOffset="50%" text-anchor="middle">FROM MY KITCHEN TO YOURS · SINCE 2014 ·</textPath>
       </text>
       <text x="60" y="66" text-anchor="middle" font-family="Young Serif,serif" font-size="17" fill="#5E3817">BFS</text>
     </svg>

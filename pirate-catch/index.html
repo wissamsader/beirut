@@ -9,9 +9,9 @@
 <style>
 :root{
   --arh:'Changa';--arb:'Readex Pro';
-  --navy:#0E2233;--navy-d:#0A1927;--navy-x:#132C42;
+  --navy:#08303A;--navy-d:#04212A;--navy-x:#0C3E49;
   --conc:#C9CDC5;--conc-m:#B4B9AF;--conc-d:#9AA096;--conc-x:#7E857A;
-  --foam:#E9F1EC;--signal:#E8542F;--signal-d:#C23F20;--rope:#C89A62;--ink:#152430;
+  --foam:#E9F1EC;--signal:#FF8A3C;--signal-d:#D8641E;--rope:#C89A62;--ink:#0A2830;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--navy);color:var(--foam);font:400 17px/1.75 'Saira',system-ui,sans-serif}
@@ -28,50 +28,80 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: sea-wall blocks, stacked mid-frame on deep navy ---------- */
+/* ---------- HERO: one brass storm lantern on a rope, hanging whole in the frame,
+     its flame the only light on the water-dark wall of the diner ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  background:radial-gradient(70% 44% at 50% 16%,rgba(233,241,236,.07),transparent 70%),
-  linear-gradient(180deg,#0A1927 0%,var(--navy) 55%,#0C2136 100%)}
-header::before{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;opacity:.5;
+  background:
+   repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 7px),
+   linear-gradient(180deg,#04212A 0%,#08333E 48%,#04222B 100%)}
+header::before{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;opacity:.45;
   background:radial-gradient(34px 16px at 17px 18px,rgba(233,241,236,.35) 0 45%,transparent 50%);
   background-size:68px 36px;background-position:0 bottom}
-header::after{content:"";position:absolute;left:0;right:0;bottom:34px;height:3px;background:rgba(233,241,236,.22)}
-.htop{position:relative;z-index:2;display:flex;align-items:center;gap:12px;margin-bottom:clamp(14px,2.6vh,24px)}
-.wheel{position:relative;width:56px;height:56px;border:5px solid var(--rope);border-radius:50%;flex:0 0 auto;
+header::after{content:"";position:absolute;left:0;right:0;bottom:34px;height:3px;background:rgba(233,241,236,.16)}
+.pool{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+   radial-gradient(30% 12% at 74% 92%,rgba(255,168,72,.22),rgba(0,0,0,0) 72%),
+   radial-gradient(56% 58% at 74% 27%,rgba(255,178,86,.36),rgba(255,148,58,.10) 42%,rgba(0,0,0,0) 74%)}
+.lantern{position:absolute;z-index:4;left:74%;top:0;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center}
+.rope{position:relative;width:5px;height:clamp(52px,8vh,92px);
+  background:repeating-linear-gradient(180deg,#D3A76D 0 5px,#8E6A3C 5px 10px)}
+.rope::after{content:"";position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);
+  width:52px;height:26px;border:4px solid #C89A62;border-bottom:0;border-radius:26px 26px 0 0}
+.lbody{position:relative;margin-top:26px;width:clamp(94px,9vw,122px);height:clamp(174px,24vh,230px);
+  border-radius:3px;
+  background:
+   linear-gradient(90deg,#C89A62 0 6px,rgba(0,0,0,0) 6px calc(100% - 6px),#C89A62 calc(100% - 6px)),
+   linear-gradient(90deg,rgba(0,0,0,0) 0 30%,rgba(168,126,72,.85) 30% 33%,rgba(0,0,0,0) 33% 67%,rgba(168,126,72,.85) 67% 70%,rgba(0,0,0,0) 70%),
+   linear-gradient(180deg,rgba(0,0,0,0) 0 45%,rgba(168,126,72,.7) 45% 48%,rgba(0,0,0,0) 48%),
+   radial-gradient(46% 36% at 50% 52%,#FFF7DE,#FFC862 30%,#DE8A20 58%,#8A480B 84%,#4A2606 100%);
+  box-shadow:0 0 78px 30px rgba(255,178,80,.36),0 0 200px 84px rgba(255,152,54,.18),0 26px 46px rgba(0,0,0,.65);
+  animation:lantern 9s ease-in-out infinite}
+@keyframes lantern{0%,100%{filter:brightness(1)}50%{filter:brightness(.93)}}
+/* brass vent cap and fuel base, both wider than the glass */
+.lbody::before{content:"";position:absolute;left:-15px;right:-15px;top:-21px;height:22px;
+  background:linear-gradient(180deg,#F0CB8C,#C89A62 46%,#8E6A3C);
+  clip-path:polygon(16% 0,84% 0,100% 100%,0 100%);border-radius:3px 3px 0 0}
+.lbody::after{content:"";position:absolute;left:-15px;right:-15px;bottom:-17px;height:19px;
+  background:linear-gradient(180deg,#8E6A3C,#C89A62 40%,#7C5A30);
+  clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);border-radius:0 0 4px 4px}
+.flame{position:absolute;z-index:2;left:50%;top:50%;width:17px;height:40px;
+  border-radius:50% 50% 44% 44%/62% 62% 38% 38%;
+  background:radial-gradient(circle at 50% 72%,#FFFFFF 0 22%,#FFF0B4 46%,#FFB03C 78%,rgba(255,150,40,0) 100%);
+  transform:translate(-50%,-52%);animation:fl 7s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translate(-50%,-52%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.08)}}
+.htop{position:absolute;z-index:5;top:clamp(26px,5vh,50px);left:clamp(26px,7vw,104px);
+  display:flex;align-items:center;gap:12px}
+.wheel{position:relative;width:52px;height:52px;border:5px solid var(--rope);border-radius:50%;flex:0 0 auto;
   animation:wheelspin 90s linear infinite}
 .wheel::before{content:"";position:absolute;inset:4px;border-radius:50%;
   background:repeating-conic-gradient(from 8deg,transparent 0 37deg,var(--rope) 37deg 45deg)}
 .wheel::after{content:"";position:absolute;inset:calc(50% - 7px);border-radius:50%;background:var(--rope)}
 @keyframes wheelspin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.wheel{animation:none}}
-.stack{position:relative;z-index:2;width:min(720px,90vw);padding-bottom:30px}
-.blk{position:relative;border-radius:2px;background:
-  linear-gradient(180deg,rgba(255,255,255,.16),transparent 22%),
-  repeating-linear-gradient(115deg,transparent 0 46px,rgba(21,36,48,.06) 46px 52px),
-  linear-gradient(180deg,var(--conc) 0%,var(--conc-m) 70%,var(--conc-d) 100%);
-  border:1px solid #6E756A;box-shadow:0 16px 30px rgba(0,0,0,.5),inset 0 -7px 0 rgba(21,36,48,.18)}
-.blk+.blk{margin-top:10px}
-.b1{width:74%;margin-left:18%;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.b1 .tag{font:700 12px/1.5 'Saira',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#41544A}
-.rate{display:inline-flex;align-items:baseline;gap:7px;background:var(--ink);color:var(--foam);
+.stack{position:absolute;z-index:5;left:0;right:0;top:31%;width:auto;padding:0 clamp(190px,26vw,380px) 0 clamp(26px,7vw,104px)}
+.blk{position:relative;background:none;border:0;border-radius:0;box-shadow:none}
+.blk+.blk{margin-top:0}
+.b1{width:auto;margin:0;padding:0;display:flex;align-items:center;justify-content:flex-start;gap:14px;flex-wrap:wrap}
+.b1 .tag{font:700 12px/1.5 'Saira',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#7FB6C4}
+.rate{display:inline-flex;align-items:baseline;gap:7px;background:var(--foam);color:#05242C;
   padding:5px 11px;border-radius:2px;font:700 13px/1.4 'Saira',sans-serif}
-.b2{width:92%;margin-left:2%;padding:clamp(18px,3.4vh,30px) clamp(18px,3vw,34px);text-align:center}
-.b2 h1{font-size:clamp(38px,7vw,84px);color:var(--ink);text-transform:uppercase}
-.b2 h1 b{font-weight:400;color:var(--signal)}
-.b2 .arn{font-family:var(--arh),sans-serif;font-weight:700;font-size:clamp(22px,3.4vw,34px);
-  color:#3E5346;line-height:1.4;margin-top:2px}
-.b3{width:100%;padding:clamp(14px,2.4vh,20px) clamp(16px,2.6vw,28px)}
-.b3 .notice{position:relative;background:var(--foam);padding:9px;border-radius:2px;max-width:520px;margin:0 auto;
-  box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.b2{width:auto;margin:0;padding:14px 0 0;text-align:left}
+.b2 h1{font-size:clamp(40px,8.6vw,116px);color:#F0F8F4;text-transform:uppercase;
+  text-shadow:0 0 60px rgba(255,170,80,.35)}
+.b2 h1 b{font-weight:400;color:var(--signal);text-shadow:0 0 44px rgba(255,138,60,.7)}
+.b2 .arn{font-family:var(--arh),sans-serif;font-weight:700;font-size:clamp(20px,3vw,32px);
+  color:#F5C182;line-height:1.4;margin-top:8px}
+.b3{width:auto;padding:16px 0 0}
+.b3 .notice{position:absolute;right:clamp(20px,5vw,74px);bottom:clamp(48px,7.5vh,84px);width:min(238px,25vw);
+  background:var(--foam);padding:8px;border-radius:2px;margin:0;box-shadow:0 20px 44px rgba(0,0,0,.6)}
 .notice::before,.notice::after{content:"";position:absolute;top:4px;width:7px;height:7px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#DDE3DC,#6E756A 75%)}
 .notice::before{left:4px}.notice::after{right:4px}
-.notice img{width:100%;height:clamp(150px,21vh,215px);object-fit:cover}
+.notice img{width:100%;height:clamp(126px,18vh,168px);object-fit:cover}
 .notice .cap{color:#5E6B62;margin:6px 2px 0;text-align:left}
-.b3 .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
-.chip{border:1.5px dashed rgba(21,36,48,.5);border-radius:2px;padding:4px 11px;
-  font:600 12px/1.5 'Saira',sans-serif;color:#2C3E33;background:rgba(233,241,236,.5)}
+.b3 .chips{display:flex;gap:8px;justify-content:flex-start;flex-wrap:wrap;margin-top:0}
+.chip{border:1.5px dashed rgba(233,241,236,.42);border-radius:2px;padding:5px 12px;
+  font:600 12px/1.5 'Saira',sans-serif;color:#CFE3E6;background:rgba(233,241,236,.06)}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -149,6 +179,14 @@ footer{padding:36px 7vw 130px;color:#7FA0B0;font-size:13.5px;text-align:center;b
   .gal{grid-template-columns:repeat(2,1fr)}
   .tallf img{height:clamp(280px,40vh,420px)}
   body{padding-bottom:66px}
+  .lantern{left:78%}
+  .lbody{width:clamp(88px,22vw,110px);height:clamp(132px,19vh,170px)}
+  .stack{top:29%;padding:0 6vw}
+  .htop{left:6vw}
+  .b3{padding-top:14px}
+  .b3 .notice{position:relative;right:auto;bottom:auto;margin-top:14px;width:min(210px,54vw);padding:6px}
+  .notice img{height:clamp(94px,14vh,120px)}
+  .b2 h1{font-size:clamp(38px,11vw,52px)}
 }
 @media(max-width:560px){
   .stack{width:min(720px,94vw)}
@@ -207,6 +245,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="pool" aria-hidden="true"></div>
+  <i class="lantern" aria-hidden="true"><i class="rope"></i><i class="lbody"><i class="flame"></i></i></i>
   <div class="htop">
     <i class="wheel" aria-hidden="true"></i>
     <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Seafood diner · inside The Backyard, H…">Seafood diner · inside The Backyard, Hazmieh</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم بحري · جوّا الباكيارد، الحازمية">مطعم بحري · جوّا الباكيارد، الحازمية</xar></p>
@@ -221,14 +261,14 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <p class="arn"><xen data-edit="t9" data-edit-label="Text (EN): Adventure in every Bite">Adventure in every Bite</xen><xar data-edit="t10" data-edit-label="Text (AR): مغامرة بكل قضمة، متل ما بيكتبوها">مغامرة بكل قضمة، متل ما بيكتبوها</xar></p>
     </div>
     <div class="blk b3">
+      <div class="chips">
+        <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Paella">Paella</xen><xar data-edit="t12" data-edit-label="Text (AR): باييلا">باييلا</xar></span>
+        <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Seafood buckets">Seafood buckets</xen><xar data-edit="t14" data-edit-label="Text (AR): سطول بحرية">سطول بحرية</xar></span>
+        <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Noon to 11:30 PM, daily">Noon to 11:30 PM, daily</xen><xar data-edit="t16" data-edit-label="Text (AR): من الضهر لـ 11:30 ليلاً، يومياً">من الضهر لـ 11:30 ليلاً، يومياً</xar></span>
+      </div>
       <div class="notice">
         <img src="img/04.jpg" alt="A seafood paella pan and fried platter from above on Pirate Catch paper">
-        <p class="cap"><xen data-edit="t11" data-edit-label="Text (EN): The paella, photographed from above th…">The paella, photographed from above the paper.</xen><xar data-edit="t12" data-edit-label="Text (AR): الباييلا، مصوّرة من فوق الورق.">الباييلا، مصوّرة من فوق الورق.</xar></p>
-      </div>
-      <div class="chips">
-        <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Paella">Paella</xen><xar data-edit="t14" data-edit-label="Text (AR): باييلا">باييلا</xar></span>
-        <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Seafood buckets">Seafood buckets</xen><xar data-edit="t16" data-edit-label="Text (AR): سطول بحرية">سطول بحرية</xar></span>
-        <span class="chip"><xen data-edit="t17" data-edit-label="Text (EN): Noon to 11:30 PM, daily">Noon to 11:30 PM, daily</xen><xar data-edit="t18" data-edit-label="Text (AR): من الضهر لـ 11:30 ليلاً، يومياً">من الضهر لـ 11:30 ليلاً، يومياً</xar></span>
+        <p class="cap"><xen data-edit="t17" data-edit-label="Text (EN): The paella, photographed from above th…">The paella, photographed from above the paper.</xen><xar data-edit="t18" data-edit-label="Text (AR): الباييلا، مصوّرة من فوق الورق.">الباييلا، مصوّرة من فوق الورق.</xar></p>
       </div>
     </div>
   </div>

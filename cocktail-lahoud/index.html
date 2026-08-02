@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cocktail Lahoud · Armenia Street, Dawra, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Red+Hat+Text:wght@400;500;700&family=Reem+Kufi+Fun:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Righteous&family=Red+Hat+Text:wght@400;500;700&family=Reem+Kufi+Fun:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Reem Kufi Fun';--arb:'IBM Plex Sans Arabic';
-  --berry:#7E2149;--berry-d:#5E1836;--berry-x:#43112A;
-  --foam:#FFF6E9;--foam-d:#F3E2CC;--avo:#7FA05A;--gold:#E9B04C;--ink:#3A1526;
+  --berry:#2A1650;--berry-d:#1B0E3A;--berry-x:#120826;--night:#241246;
+  --foam:#FFF6E9;--foam-d:#F3E2CC;--avo:#7FA05A;--gold:#FFC24A;--ink:#1E1236;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--berry);color:var(--foam);font:400 17px/1.75 'Red Hat Text',system-ui,sans-serif}
@@ -26,36 +26,58 @@ img{display:block;max-width:100%}
   box-shadow:0 6px 16px rgba(67,17,42,.45);min-width:58px;text-align:center;-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: milk-foam rings, stacked like the collars of a layered cocktail, on berry ---------- */
+/* ---------- HERO: the neon sign at three in the morning. One dark bolted panel on the
+     night wall of Armenia Street, the name bent in glowing tube. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
   background:
-   radial-gradient(2px 2px at 18% 30%,rgba(255,246,233,.2) 45%,transparent 55%),
-   radial-gradient(1.6px 1.6px at 78% 22%,rgba(255,246,233,.16) 45%,transparent 55%),
-   radial-gradient(2px 2px at 64% 74%,rgba(255,246,233,.13) 45%,transparent 55%),
-   radial-gradient(130% 100% at 50% -12%,#96305C 0%,var(--berry) 52%,#571731 100%)}
-.hk{position:relative;z-index:2;margin-bottom:clamp(14px,2.4vh,24px)}
-.ring{position:relative;z-index:2;background:linear-gradient(180deg,#FFFBF2,var(--foam) 55%,#F6E7D2);
-  border-radius:50% / 46%;box-shadow:0 18px 40px rgba(67,17,42,.5),inset 0 -10px 22px rgba(214,178,134,.4);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.ring::before{content:"";position:absolute;left:7%;right:7%;top:-8px;height:16px;pointer-events:none;
-  background:radial-gradient(circle at 8px 9px,#FFFBF2 7px,transparent 8px) repeat-x;background-size:20px 16px}
-.r1{width:min(300px,64vw);height:clamp(78px,11vh,96px);animation:foampulse 12.5s ease-in-out infinite}
-@keyframes foampulse{0%,100%{transform:scale(1)}50%{transform:scale(1.033)}}
-.r1 .in{font:700 12px/1.5 'Red Hat Text',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#8A4A22}
-.r2{width:min(660px,88vw);height:clamp(170px,25vh,225px);margin-top:clamp(12px,2vh,20px);padding:0 6%}
-.r2 .arname{font:700 clamp(30px,4.6vw,52px)/1.25 var(--arh),sans-serif;color:var(--berry-d)}
-.r2 h1{font-size:clamp(30px,4.8vw,54px);color:var(--berry);margin-top:2px}
-.r3{width:min(480px,76vw);height:clamp(150px,22vh,200px);margin-top:clamp(12px,2vh,20px);padding:10px}
-.r3 .oval{width:92%;height:82%;border-radius:50%/48%;overflow:hidden;border:4px solid #FFFBF2;
-  box-shadow:inset 0 0 0 1px rgba(138,74,34,.4)}
-.r3 .oval img{width:100%;height:100%;object-fit:cover}
-.hsub{position:relative;z-index:2;margin-top:clamp(14px,2.6vh,24px);max-width:52ch;color:#F2D9C2;
+   radial-gradient(2px 2px at 12% 22%,rgba(255,214,150,.28) 45%,transparent 55%),
+   radial-gradient(1.6px 1.6px at 86% 16%,rgba(180,220,255,.22) 45%,transparent 55%),
+   radial-gradient(2px 2px at 74% 86%,rgba(255,214,150,.16) 45%,transparent 55%),
+   repeating-linear-gradient(0deg,rgba(0,0,0,.22) 0 1px,rgba(0,0,0,0) 1px 44px),
+   radial-gradient(120% 82% at 50% 40%,#3A1F68 0%,var(--night) 44%,#120826 100%)}
+.conduit{position:absolute;left:22%;top:0;width:7px;height:14%;z-index:3;
+  background:linear-gradient(90deg,#0B0716,#453567 46%,#120C22)}
+.conduit::after{content:"";position:absolute;left:-10px;bottom:-15px;width:27px;height:21px;border-radius:3px;
+  background:linear-gradient(180deg,#312551,#0F0A1C);box-shadow:0 4px 12px rgba(0,0,0,.55)}
+.hk{position:absolute;z-index:4;top:calc(22px + env(safe-area-inset-top));left:0;right:0;color:#9C86D6}
+/* the sign panel: dark metal, four bolts, the tube glowing off it */
+.panel{position:relative;z-index:4;width:min(880px,84vw);padding:clamp(26px,5vh,54px) clamp(20px,4vw,54px);
+  border-radius:4px;border:1px solid rgba(255,194,74,.22);
+  background:
+   radial-gradient(circle at 24px 22px,#7A6C9E 0 4px,rgba(0,0,0,0) 5px),
+   radial-gradient(circle at calc(100% - 24px) 22px,#7A6C9E 0 4px,rgba(0,0,0,0) 5px),
+   radial-gradient(circle at 24px calc(100% - 22px),#7A6C9E 0 4px,rgba(0,0,0,0) 5px),
+   radial-gradient(circle at calc(100% - 24px) calc(100% - 22px),#7A6C9E 0 4px,rgba(0,0,0,0) 5px),
+   radial-gradient(70% 80% at 50% 46%,rgba(255,150,50,.16),rgba(0,0,0,0) 72%),
+   linear-gradient(180deg,#191125 0%,#0C0814 62%,#0A0611 100%);
+  box-shadow:0 34px 90px rgba(0,0,0,.62),0 0 130px rgba(255,140,40,.16)}
+.arname{font:700 clamp(30px,4.9vw,60px)/1.3 var(--arh),sans-serif;color:#FFF0CE;
+  text-shadow:0 0 2px #FFFFFF,0 0 5px #FFF3D8,0 0 15px #FFC24A,0 0 34px #FF8A2B,0 0 78px rgba(255,110,30,.6);
+  animation:tube 7s ease-in-out infinite}
+.panel h1{font-family:'Yellowtail',cursive;font-weight:400;letter-spacing:.008em;
+  font-size:clamp(46px,8.4vw,112px);line-height:1.06;margin-top:2px;color:#FFF6E4;
+  text-shadow:0 0 2px #FFFFFF,0 0 6px #FFF0D2,0 0 18px #FF9E5A,0 0 42px #FF5E28,0 0 96px rgba(255,70,20,.55);
+  animation:tube 7s ease-in-out infinite}
+@keyframes tube{0%,100%{opacity:1}52%{opacity:.93}}
+/* the small cold tube under the name */
+.r1{margin:clamp(16px,2.6vh,28px) auto 0;display:inline-block;padding:9px 22px;border-radius:999px;
+  border:2px solid rgba(150,235,255,.75);
+  box-shadow:0 0 10px rgba(120,225,255,.6),inset 0 0 10px rgba(120,225,255,.4)}
+.r1 .in{font:700 12.5px/1.5 'Red Hat Text',sans-serif;letter-spacing:.24em;text-transform:uppercase;
+  color:#E9FBFF;text-shadow:0 0 8px #8FE6FF,0 0 22px #37B8E8}
+.hsub{position:relative;z-index:4;margin-top:clamp(20px,3.4vh,34px);max-width:56ch;color:#CFC0F0;
   font-size:clamp(14.5px,1.8vw,17px);padding-inline:6vw}
-.hmeta{position:relative;z-index:2;display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:14px}
-.hm{border:1.5px solid rgba(255,246,233,.4);background:rgba(67,17,42,.5);border-radius:999px;
-  padding:8px 14px;font:700 12px/1 'Red Hat Text',sans-serif;letter-spacing:.06em;color:#F6E7D2}
+.hmeta{position:relative;z-index:4;display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:15px}
+.hm{border:1px solid rgba(255,194,74,.42);background:rgba(10,6,17,.65);border-radius:999px;
+  padding:8px 15px;font:700 12px/1 'Red Hat Text',sans-serif;letter-spacing:.06em;color:#F6E7D2}
 .hm b{color:var(--gold)}
+/* the lit window beside the sign */
+.r3{position:absolute;z-index:5;right:clamp(20px,5vw,72px);bottom:clamp(20px,4vh,46px);
+  width:min(206px,23vw);padding:7px;border-radius:3px;background:#0E0A1A;
+  border:1px solid rgba(255,194,74,.35);box-shadow:0 0 40px rgba(255,150,50,.3),0 18px 40px rgba(0,0,0,.6)}
+.r3 .oval{overflow:hidden;border-radius:2px}
+.r3 .oval img{width:100%;height:clamp(120px,17vh,152px);object-fit:cover}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -128,9 +150,12 @@ footer{padding:36px 6vw 132px;color:#D6A9BC;font-size:13.5px;text-align:center;b
   .grid3,.revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:76px}
-  .r2{height:clamp(150px,20vh,180px)}
-  .r3{height:clamp(130px,18vh,160px)}
-  .hsub{font-size:14px}
+  .hsub{font-size:14px;max-width:none}
+  .conduit{left:12%}
+  .panel{width:90vw;padding:22px 16px}
+  .r3{right:5vw;bottom:16px;width:min(120px,32vw);padding:5px}
+  .r3 .oval img{height:clamp(74px,11vh,96px)}
+  .hmeta{padding-right:34vw}
 }
 @media(max-width:430px){.bar a{font-size:10.5px}.r2 h1{font-size:26px}.r2 .arname{font-size:26px}}
 </style>
@@ -181,19 +206,20 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="conduit" aria-hidden="true"></div>
   <p class="k hk"><xen data-edit="t1" data-edit-label="Text (EN): Armenia Street, Dawra, Beirut">Armenia Street, Dawra, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع أرمينيا، الدورة، بيروت">شارع أرمينيا، الدورة، بيروت</xar></p>
-  <div class="ring r1"><span class="in"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Squeezing since 1975">Squeezing since 1975</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): عم نعصر من الـ 1975">عم نعصر من الـ 1975</xar></span></div>
-  <div class="ring r2">
-    <p class="arname" data-edit="t5" data-edit-label="Text: كوكتيل لحود">كوكتيل لحود</p>
-    <h1><xen class="c" data-edit="t6" data-edit-label="Text (EN): Cocktail Lahoud">Cocktail Lahoud</xen><xar class="c" data-edit="t7" data-edit-label="Text (AR): خمسين سنة كوكتيل">خمسين سنة كوكتيل</xar></h1>
-  </div>
-  <div class="ring r3">
-    <div class="oval"><img src="img/02.jpg" alt="A carved fruit centrepiece with avocado, melon and strawberries at Cocktail Lahoud"></div>
+  <div class="panel">
+    <p class="arname" data-edit="t3" data-edit-label="Text: كوكتيل لحود">كوكتيل لحود</p>
+    <h1><xen class="c" data-edit="t4" data-edit-label="Text (EN): Cocktail Lahoud">Cocktail Lahoud</xen><xar class="c" data-edit="t5" data-edit-label="Text (AR): خمسين سنة كوكتيل">خمسين سنة كوكتيل</xar></h1>
+    <div class="ring r1"><span class="in"><xen class="c" data-edit="t6" data-edit-label="Text (EN): Squeezing since 1975">Squeezing since 1975</xen><xar class="c" data-edit="t7" data-edit-label="Text (AR): عم نعصر من الـ 1975">عم نعصر من الـ 1975</xar></span></div>
   </div>
   <p class="hsub"><xen data-edit="t8" data-edit-label="Text (EN): Fifty years of fruit cocktails on Arme…">Fifty years of fruit cocktails on Armenia Street: avocado over ashta, orange squeezed while you watch, and foam collars on every glass.</xen><xar data-edit="t9" data-edit-label="Text (AR): خمسين سنة كوكتيل فواكه بشارع أرمينيا: …">خمسين سنة كوكتيل فواكه بشارع أرمينيا: أفوكادو فوق القشطة، برتقال بينعصر قدام عينك، وطوق رغوة على كل كاسة.</xar></p>
   <div class="hmeta">
     <span class="hm"><b class="num" data-edit="t10" data-edit-label="Text: 4.5">4.5</b> · <xen class="c"><span class="num" data-edit="t11" data-edit-label="Text: 78">78</span> reviews</xen><xar class="c"><span class="num" data-edit="t12" data-edit-label="Text: 78">78</span> تقييم</xar></span>
     <span class="hm"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Open 8 AM to 3 AM">Open 8 AM to 3 AM</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): فاتحين من 8 الصبح لـ 3 الليل">فاتحين من 8 الصبح لـ 3 الليل</xar></span>
+  </div>
+  <div class="ring r3">
+    <div class="oval"><img src="img/02.jpg" alt="A carved fruit centrepiece with avocado, melon and strawberries at Cocktail Lahoud"></div>
   </div>
 </header>
 

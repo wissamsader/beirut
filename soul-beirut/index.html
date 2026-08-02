@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Soul Beirut · Restaurant &amp; Cafe, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Albert+Sans:wght@400;600;700&family=Zain:wght@700;800&family=Markazi+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Albert+Sans:wght@400;600;700&family=Zain:wght@700;800&family=Markazi+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Zain';--arb:'Markazi Text';
   --latte:#F1E7D8;--plaster:#EADDC9;--esp:#33261C;--crema:#B4763B;--clay:#CF8A52;
-  --slate:#56707A;--foam:#FBF4E6;--rim:#FFFFFF;
+  --slate:#3F6157;--foam:#FBF4E6;--rim:#FFFFFF;--baize:#1D3A33;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--latte);color:var(--esp);font:400 16.5px/1.75 'Albert Sans',system-ui,sans-serif}
 .wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3,.dsp{font-family:'Gloock',serif;font-weight:400;line-height:1.06}
+h1,h2,h3,.dsp{font-family:'Cinzel',Georgia,serif;font-weight:700;line-height:1.16;letter-spacing:.02em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1 'Albert Sans',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--slate)}
@@ -26,50 +26,69 @@ img{display:block;max-width:100%}
   border-radius:999px;box-shadow:0 4px 14px rgba(51,38,28,.35);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the milk-foam ring, a flat white seen from straight above ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;display:flex;
-  flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,2.4vh,22px);
-  overflow:hidden;padding:clamp(18px,3.5vh,36px) 5vw;
-  background:linear-gradient(180deg,#F5EDDF,var(--plaster))}
-header::before,header::after{content:"";position:absolute;bottom:-12%;width:clamp(150px,22vw,300px);height:clamp(300px,52vh,560px);
-  border-radius:999px 999px 0 0;background:linear-gradient(180deg,rgba(207,138,82,.34),rgba(207,138,82,.1));pointer-events:none}
-header::before{left:-4%}
-header::after{right:-4%}
-.saucer{position:relative;width:clamp(320px,58vh,540px);height:clamp(320px,58vh,540px);border-radius:50%;
-  background:radial-gradient(circle at 38% 30%,#FFFFFF,#EFE4D0 62%,#E2D2B8 78%,#D8C5A8);
-  box-shadow:0 40px 90px rgba(51,38,28,.30),inset 0 -8px 22px rgba(51,38,28,.12);
-  display:flex;align-items:center;justify-content:center}
-.spoon{position:absolute;left:50%;bottom:5.5%;width:36%;height:16px;transform:translateX(-50%);pointer-events:none}
-.spoon::before{content:"";position:absolute;left:0;top:5px;width:74%;height:6px;border-radius:4px;
-  background:linear-gradient(90deg,#C9B08C,#A88E68)}
-.spoon::after{content:"";position:absolute;right:0;top:0;width:30%;height:16px;border-radius:50%;
-  background:radial-gradient(circle at 35% 32%,#D9C4A2,#A88E68)}
-.cup{position:relative;width:74%;height:74%;border-radius:50%;
-  background:radial-gradient(circle at 40% 32%,var(--rim),#F3EBDB 66%,#E5D8C0);
-  box-shadow:0 14px 40px rgba(51,38,28,.28),inset 0 0 0 1px rgba(51,38,28,.06);
-  display:flex;align-items:center;justify-content:center}
-.handle{position:absolute;right:-13%;top:50%;width:26%;height:34%;transform:translateY(-50%);
-  border:14px solid #F0E6D2;border-left:none;border-radius:0 999px 999px 0;
-  box-shadow:6px 0 16px rgba(51,38,28,.16);pointer-events:none}
-.crema{position:absolute;inset:9%;border-radius:50%;overflow:hidden;
+/* ---------- HERO: the house ledger, closed on the desk ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;padding:clamp(40px,7vh,72px) 5vw;
   background:
-   radial-gradient(circle at 46% 40%,rgba(255,244,224,.24),transparent 52%),
-   conic-gradient(from 0deg,#B4763B,#9E6430 12%,#BC8145 25%,#A76A33 38%,#C08A4E 52%,#9E6430 66%,#B4763B 80%,#A76A33 92%,#B4763B);
-  animation:crematurn 90s linear infinite}
-@keyframes crematurn{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.crema{animation:none}}
-.foam{position:absolute;inset:20%;border-radius:50%;
-  background:radial-gradient(circle at 46% 40%,var(--foam) 56%,rgba(251,244,230,.94) 68%,rgba(251,244,230,.55) 78%,transparent 86%);
-  filter:blur(.3px)}
-.cuptx{position:relative;z-index:3;text-align:center;padding:0 9%}
-.cuptx .k{color:var(--crema)}
-.cuptx h1{font-size:clamp(36px,7.6vw,64px);color:var(--esp);letter-spacing:.01em;margin-top:6px}
-.cuptx p.sub{margin-top:8px;color:#6B543E;font-size:clamp(13px,1.6vw,15.5px);line-height:1.55;max-width:30ch;margin-inline:auto}
-.heroline{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.pearl{display:inline-flex;align-items:center;gap:8px;background:#FFF;border:1px solid rgba(86,112,122,.35);
-  border-radius:999px;padding:8px 15px;font:600 12.5px/1 'Albert Sans',sans-serif;color:var(--esp);
-  box-shadow:0 6px 16px rgba(51,38,28,.08)}
-.pearl i{width:8px;height:8px;border-radius:50%;background:var(--clay);flex:none}
+    radial-gradient(56% 48% at 50% 22%,rgba(214,178,120,.22),transparent 68%),
+    radial-gradient(80% 70% at 92% 100%,rgba(4,16,13,.55),transparent 62%),
+    repeating-linear-gradient(43deg,rgba(255,255,255,.028) 0 2px,transparent 2px 5px),
+    repeating-linear-gradient(137deg,rgba(0,0,0,.05) 0 2px,transparent 2px 5px),
+    linear-gradient(166deg,#2A5046,#1D3A33 56%,#122721)}
+
+.book{position:relative;z-index:2;display:flex;width:min(608px,64vw);
+  min-height:clamp(452px,64vh,612px);
+  box-shadow:0 34px 68px rgba(4,18,14,.62),0 3px 0 rgba(255,255,255,.08) inset}
+.spine{flex:0 0 clamp(52px,7vw,92px);position:relative;
+  background:linear-gradient(90deg,#48180E,#7A2A16 34%,#5C1F10 74%,#3A130A);
+  box-shadow:inset -8px 0 14px rgba(0,0,0,.4)}
+.spine::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(180deg,transparent 0 98px,rgba(0,0,0,.36) 98px 103px,
+    rgba(255,255,255,.13) 103px 108px,transparent 108px 116px)}
+.spine::after{content:"";position:absolute;left:20%;right:20%;top:26px;bottom:26px;
+  border-top:2px solid rgba(206,164,86,.75);border-bottom:2px solid rgba(206,164,86,.75)}
+.board{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:clamp(24px,4vw,50px);
+  background:
+    repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 1px,transparent 1px 4px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 4px),
+    radial-gradient(80% 70% at 34% 20%,#C36C3C,transparent 72%),
+    linear-gradient(160deg,#B25C31,#96481F 62%,#7C3A17)}
+.board::before{content:"";position:absolute;inset:clamp(15px,2.2vw,26px);pointer-events:none;
+  border:2px solid rgba(214,174,98,.8);
+  box-shadow:0 0 0 4px rgba(120,58,24,.35),inset 0 0 0 4px rgba(120,58,24,.3),
+    inset 0 0 0 6px rgba(214,174,98,.55)}
+.kickline{font:700 10.5px/1.6 'Albert Sans',sans-serif;letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(246,224,186,.9)}
+h1.tooled{font-family:'Cinzel',Georgia,serif;font-weight:700;
+  font-size:clamp(30px,4.4vw,60px);line-height:1.08;letter-spacing:.055em;margin:12px 0 4px;
+  color:#F0CE8A;text-shadow:0 1px 0 rgba(90,40,14,.85),0 -1px 0 rgba(255,240,210,.35)}
+.grule{width:clamp(90px,16vw,180px);height:5px;margin:14px 0 13px;
+  background:linear-gradient(180deg,rgba(214,174,98,.9) 0 2px,transparent 2px 3px,rgba(214,174,98,.9) 3px 5px)}
+.sub{color:#FCEBD6;font-size:clamp(14.5px,1.7vw,17.5px);line-height:1.6;max-width:34ch;margin:0}
+.marks{list-style:none;margin:clamp(16px,2.6vh,24px) 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+.marks li{font:600 11.5px/1.5 'Albert Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(250,232,206,.92)}
+.marks li b{font-family:'Cinzel',Georgia,serif;font-size:16px;color:#F0CE8A;letter-spacing:.02em}
+
+.tipin{position:absolute;z-index:4;right:clamp(10px,16vw,244px);bottom:clamp(26px,5vh,56px);
+  width:clamp(180px,22vw,304px);background:#FBF4E6;padding:9px 9px 11px;
+  box-shadow:0 22px 40px rgba(4,18,14,.6)}
+.tipin img{width:100%;height:clamp(126px,17vh,182px);object-fit:cover}
+.tipin::after{content:"";position:absolute;inset:4px;border:1px solid rgba(51,38,28,.18);pointer-events:none}
+@media(max-width:880px){
+  header{padding:clamp(56px,8vh,74px) 5vw clamp(120px,18vh,170px)}
+  .book{width:min(560px,92vw);min-height:auto}
+  .board{padding:32px 22px}
+  .tipin{right:auto;left:50%;transform:translateX(-50%);bottom:clamp(24px,4vh,44px);width:min(300px,78vw)}
+  .tipin img{height:130px}
+}
+@media(max-width:430px){
+  .spine{flex-basis:38px}
+  .board{padding:26px 16px}
+  h1.tooled{letter-spacing:.03em}
+  .marks li{letter-spacing:.08em;font-size:11px}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -179,24 +198,21 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <p class="k" style="position:relative;z-index:2"><xen data-edit="t1" data-edit-label="Text (EN): Restaurant &amp; cafe · Beirut">Restaurant &amp; cafe · Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم وكافيه · بيروت">مطعم وكافيه · بيروت</xar></p>
-  <div class="saucer">
-    <div class="spoon" aria-hidden="true"></div>
-    <div class="cup">
-      <div class="handle" aria-hidden="true"></div>
-      <div class="crema" aria-hidden="true"></div>
-      <div class="foam" aria-hidden="true"></div>
-      <div class="cuptx">
-        <p class="k"><xen data-edit="t3" data-edit-label="Text (EN): From nine to midnight">From nine to midnight</xen><xar data-edit="t4" data-edit-label="Text (AR): من التسعة لنص الليل">من التسعة لنص الليل</xar></p>
-        <h1 data-edit="t5" data-edit-label="Big title: Soul Beirut">Soul Beirut</h1>
-        <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Breakfast, plates and coffee under the…">Breakfast, plates and coffee under the terracotta arches.</xen><xar data-edit="t7" data-edit-label="Text (AR): ترويقة وصحون وقهوة تحت القناطر الترابي…">ترويقة وصحون وقهوة تحت القناطر الترابية.</xar></p>
-      </div>
+  <div class="book">
+    <div class="spine" aria-hidden="true"></div>
+    <div class="board">
+      <p class="kickline"><xen data-edit="t1" data-edit-label="Text (EN): Restaurant &amp; cafe · Beirut">Restaurant &amp; cafe · Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم وكافيه · بيروت">مطعم وكافيه · بيروت</xar></p>
+      <h1 class="tooled" data-edit="t3" data-edit-label="Big title: Soul Beirut">Soul Beirut</h1>
+      <p class="kickline"><xen data-edit="t4" data-edit-label="Text (EN): From nine to midnight">From nine to midnight</xen><xar data-edit="t5" data-edit-label="Text (AR): من التسعة لنص الليل">من التسعة لنص الليل</xar></p>
+      <div class="grule" aria-hidden="true"></div>
+      <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Breakfast, plates and coffee under the…">Breakfast, plates and coffee under the terracotta arches.</xen><xar data-edit="t7" data-edit-label="Text (AR): ترويقة وصحون وقهوة تحت القناطر الترابي…">ترويقة وصحون وقهوة تحت القناطر الترابية.</xar></p>
+      <ul class="marks">
+        <li><b class="num" data-edit="t8" data-edit-label="Text: 4.9">4.9</b> <xen>from <span class="num" data-edit="t9" data-edit-label="Text: 105">105</span> Google reviews</xen><xar>من <span class="num" data-edit="t10" data-edit-label="Text: 105">105</span> تقييمات على غوغل</xar></li>
+        <li><xen class="c" data-edit="t11" data-edit-label="Text (EN): Open every day of the week">Open every day of the week</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): فاتحين كل أيام الأسبوع">فاتحين كل أيام الأسبوع</xar></li>
+      </ul>
     </div>
   </div>
-  <div class="heroline">
-    <span class="pearl"><i></i><span><b class="num" data-edit="t8" data-edit-label="Text: 4.9">4.9</b> <xen>from <span class="num" data-edit="t9" data-edit-label="Text: 105">105</span> Google reviews</xen><xar>من <span class="num" data-edit="t10" data-edit-label="Text: 105">105</span> تقييمات على غوغل</xar></span></span>
-    <span class="pearl"><i></i><span><xen data-edit="t11" data-edit-label="Text (EN): Open every day of the week">Open every day of the week</xen><xar data-edit="t12" data-edit-label="Text (AR): فاتحين كل أيام الأسبوع">فاتحين كل أيام الأسبوع</xar></span></span>
-  </div>
+  <div class="tipin"><img src="img/04.jpg" alt="Pendant lamps over the terracotta arches inside Soul Beirut"></div>
 </header>
 
 <section class="wrap">

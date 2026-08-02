@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Restaurant Joseph · Saydeh, Sin El Fil</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&family=Alexandria:wght@500;800&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Archivo:wght@400;500;700&family=Alexandria:wght@500;800&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Alexandria';--arb:'Readex Pro';
@@ -29,50 +29,8 @@ section{padding-block:clamp(54px,8vh,92px)}
   border:1px solid #454C50;border-radius:3px;box-shadow:0 6px 16px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the vertical spit, tapered like the cone ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  background:
-   radial-gradient(60% 46% at 50% 60%,rgba(232,161,59,.16),transparent 70%),
-   linear-gradient(180deg,#0A241A,var(--green) 55%,#0A241A)}
-header::before{content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(0deg,rgba(185,228,207,.03) 0 1px,transparent 1px 54px)}
-.rig{position:relative;z-index:2;width:min(640px,92vw);margin:clamp(20px,3.5vh,42px) auto;
-  display:flex;flex-direction:column;align-items:center}
-.motor{width:200px;padding:9px 12px 10px;text-align:center;border-radius:6px 6px 2px 2px;
-  background:linear-gradient(180deg,var(--steel-1),var(--steel-2));border:1px solid #454C50;
-  font:700 11px/1.3 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#132018}
-.rod{width:12px;height:26px;background:linear-gradient(90deg,var(--steel-2),var(--steel-1) 50%,var(--steel-3));
-  border:1px solid #454C50;border-top:0;border-bottom:0}
-.cone{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;gap:7px}
-.heat{position:absolute;top:0;bottom:0;width:16px;border-radius:8px;z-index:1;
-  background:repeating-linear-gradient(0deg,var(--steel-3) 0 22px,#3C4347 22px 30px);
-  border:1px solid #454C50;box-shadow:0 0 26px rgba(232,161,59,.4)}
-.heat.l{left:2px}.heat.r{right:2px}
-.heat i{position:absolute;inset:0;border-radius:8px;font-style:normal;
-  background:linear-gradient(180deg,rgba(232,161,59,.5),rgba(201,127,28,.14));
-  animation:emberbreathe 7s ease-in-out infinite}
-@keyframes emberbreathe{0%,100%{opacity:.45}50%{opacity:1}}
-.slice{position:relative;z-index:2;background:linear-gradient(180deg,var(--green-3),var(--green-2));
-  border:1px solid rgba(185,228,207,.25);border-radius:10px;text-align:center;
-  box-shadow:0 14px 30px rgba(0,0,0,.4),inset 0 1px 0 rgba(185,228,207,.14)}
-.s1{width:min(560px,88%);padding:clamp(18px,3vw,28px) clamp(14px,2.6vw,26px)}
 .s1 .k{display:block;margin-bottom:8px}
-.s1 h1{font-size:clamp(30px,6.4vw,58px);color:var(--paper)}
-.s1 h1 b{color:var(--ember);font-weight:400}
-.s1 .arname{display:block;margin-top:6px;font:800 clamp(20px,4vw,30px)/1.3 var(--arh),sans-serif;color:var(--mint)}
-.s2{width:min(500px,80%);padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
-  font:700 14px/1.4 'Archivo',sans-serif}
 .s2 .num{color:var(--ember);font-size:17px}
-.s3{width:min(430px,72%);padding:10px}
-.s3 img{width:100%;height:clamp(160px,23vh,225px);object-fit:cover;border-radius:6px}
-.s4{width:min(340px,60%);padding:11px 12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.chip{border:1px solid rgba(185,228,207,.4);border-radius:999px;padding:5px 12px;
-  font:700 12px/1.3 'Archivo',sans-serif;color:var(--mint)}
-.tray{width:min(600px,94%);margin-top:10px;padding:12px 16px 14px;border-radius:4px 4px 10px 10px;
-  background:linear-gradient(180deg,var(--steel-1),var(--steel-2) 70%,var(--steel-3));
-  border:1px solid #454C50;color:#132018;text-align:center;font:700 13px/1.5 'Archivo',sans-serif;
-  box-shadow:0 18px 40px rgba(0,0,0,.5),inset 0 2px 0 rgba(255,255,255,.5)}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -142,17 +100,64 @@ footer{padding:36px 20px 130px;background:#071B13;color:#8FB3A2;font-size:13.5px
   .two,.visit{grid-template-columns:1fr}
   .steps,.grid3{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
-  .revs{grid-template-columns:1fr}
-  .heat{width:11px}
-  .s3{width:min(430px,86%)}
-  .s3 img{height:150px}
-  .motor{width:160px;font-size:10px}
+  .revs{grid-template-columns:1fr}}
+
+/* ---------- HERO: the hand-painted fascia board over the counter, wider than the frame ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  background:
+    linear-gradient(180deg,transparent 0 76%,rgba(255,255,255,.10) 76% 76.5%,rgba(0,0,0,.14) 76.5% 100%),
+    repeating-linear-gradient(96deg,rgba(255,255,255,.035) 0 2px,transparent 2px 11px),
+    radial-gradient(120% 80% at 50% 108%,rgba(233,199,140,.20),transparent 60%),
+    radial-gradient(90% 60% at 50% 0%,#1B6A48 0%,#125138 46%,#0B3524 100%)}
+.signboard{position:relative;z-index:3;margin:clamp(22px,4vh,48px) -3vw 0;padding:clamp(26px,4.4vh,52px) 6vw clamp(24px,4vh,46px);
+  border-top:clamp(6px,.8vw,11px) solid #EFE7D2;border-bottom:clamp(6px,.8vw,11px) solid #EFE7D2;
+  background:
+    repeating-linear-gradient(178deg,rgba(0,0,0,.05) 0 3px,transparent 3px 14px),
+    linear-gradient(180deg,#0E4630 0%,#0A3A27 54%,#07301F 100%);
+  box-shadow:0 24px 44px rgba(3,22,14,.5),inset 0 0 0 2px rgba(239,231,210,.18)}
+.bolt{position:absolute;width:15px;height:15px;border-radius:50%;
+  background:radial-gradient(circle at 34% 30%,#F6F0DC,#8C9A8E 72%);box-shadow:0 1px 2px rgba(0,0,0,.6)}
+.b1{left:5vw;top:14px}.b2{right:5vw;top:14px}.b3{left:5vw;bottom:14px}.b4{right:5vw;bottom:14px}
+.marq{font-family:'Anton',sans-serif;font-weight:400;line-height:.98;color:#F4EFE0;
+  font-size:clamp(34px,6.4vw,96px);letter-spacing:.006em;
+  text-shadow:0 2px 0 rgba(0,0,0,.35),0 0 30px rgba(185,228,207,.20)}
+.marq b{color:#B9E4CF;font-weight:400}
+.arname2{margin-top:clamp(8px,1.4vh,16px);font-family:var(--arh),sans-serif;font-weight:800;color:#EFE7D2;
+  font-size:clamp(20px,3vw,46px);line-height:1.24;direction:rtl;padding-inline-end:clamp(24px,3.4vw,62px)}
+.openline{margin-top:clamp(8px,1.4vh,16px);color:#9FC7B3;
+  font:600 clamp(11px,1.2vw,14.5px)/1.4 'Archivo',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.redband{display:block;height:clamp(16px,2.4vh,30px);margin:0 -3vw;
+  background:linear-gradient(180deg,#D23B2A 0 46%,#A72A1C 46%);
+  box-shadow:0 10px 22px rgba(3,22,14,.4),inset 0 2px 0 rgba(255,255,255,.28)}
+.frontrow{position:relative;z-index:2;flex:1 1 auto;display:flex;align-items:flex-start;gap:clamp(20px,3.4vw,54px);
+  padding:clamp(26px,5vh,60px) 6vw clamp(18px,3vh,38px)}
+.leftcol{flex:1 1 auto;min-width:0}
+.kicker2{color:#B9E4CF;font:700 clamp(11px,1.15vw,13px)/1.5 'Archivo',sans-serif;letter-spacing:.26em;text-transform:uppercase}
+.ratepill{margin-top:14px;display:inline-flex;align-items:center;gap:10px;background:#EFE7D2;color:#0F3527;
+  padding:9px 15px;border-radius:2px;font:600 12.5px/1 'Archivo',sans-serif;box-shadow:0 10px 22px rgba(3,22,14,.35)}
+.ratepill b{font-family:'Anton',sans-serif;font-weight:400;font-size:17px;color:#0B3524}
+.cuts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.cut{border:1px solid rgba(239,231,210,.42);border-radius:2px;padding:7px 13px;background:rgba(239,231,210,.08);
+  color:#EFE7D2;font:600 clamp(11px,1.1vw,13.5px)/1 'Archivo',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.saying{margin-top:16px;color:#EAF4EE;font:400 clamp(15px,1.7vw,20px)/1.5 'Readex Pro',sans-serif;opacity:.86}
+.glassbox{flex:0 0 auto;width:clamp(170px,25vw,368px);padding:clamp(7px,.9vw,12px);border-radius:2px;
+  background:linear-gradient(180deg,#C9CFD2,#5C6468);
+  box-shadow:0 22px 40px rgba(3,22,14,.5),inset 0 0 0 1px rgba(255,255,255,.3)}
+.glassbox img{width:100%;height:clamp(150px,26vh,290px);object-fit:cover}
+@media(max-width:860px){
+  .signboard{margin-top:clamp(20px,3.4vh,38px);padding:18px 6vw 16px}
+  .frontrow{flex-direction:column;align-items:flex-start;gap:16px;padding-top:18px}
+  .glassbox{width:min(240px,54vw)}
+  .glassbox img{height:clamp(110px,17vh,150px)}
+  .saying{font-size:15px}
 }
 @media(max-width:430px){
-  .s2{font-size:12.5px}
-  .chip{font-size:11px;padding:4px 10px}
+  .marq{font-size:clamp(26px,8.2vw,36px)}
+  .arname2{font-size:clamp(19px,6.4vw,28px)}
+  .openline{font-size:10px;letter-spacing:.12em}
+  .cut{font-size:10.5px;padding:5px 9px}
 }
-@media(prefers-reduced-motion:reduce){.heat i{animation:none}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -201,30 +206,27 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="rig">
-    <div class="motor"><xen data-edit="t1" data-edit-label="Text (EN): Turning since lunch">Turning since lunch</xen><xar data-edit="t2" data-edit-label="Text (AR): عم يدور من الضهر">عم يدور من الضهر</xar></div>
-    <div class="rod"></div>
-    <div class="cone">
-      <div class="heat l"><i></i></div>
-      <div class="heat r"><i></i></div>
-      <div class="slice s1">
-        <span class="k"><xen data-edit="t3" data-edit-label="Text (EN): Shawarma house · Saydeh, Sin El Fil">Shawarma house · Saydeh, Sin El Fil</xen><xar data-edit="t4" data-edit-label="Text (AR): بيت الشاورما · السيدة، سن الفيل">بيت الشاورما · السيدة، سن الفيل</xar></span>
-        <h1>RESTAURANT <b data-edit="t5" data-edit-label="Text: JOSEPH">JOSEPH</b></h1>
-        <span class="arname" data-edit="t6" data-edit-label="Text: مطعم جوزف">مطعم جوزف</span>
+  <div class="signboard">
+    <span class="bolt b1" aria-hidden="true"></span><span class="bolt b2" aria-hidden="true"></span>
+    <span class="bolt b3" aria-hidden="true"></span><span class="bolt b4" aria-hidden="true"></span>
+    <p class="marq">RESTAURANT <b data-edit="t1" data-edit-label="Text: JOSEPH">JOSEPH</b></p>
+    <p class="arname2" data-edit="t2" data-edit-label="Text: مطعم جوزيف">مطعم جوزيف</p>
+    <p class="openline"><xen data-edit="t3" data-edit-label="Text (EN): Carved to order, every day from half p…">Carved to order, every day from half past noon</xen><xar data-edit="t4" data-edit-label="Text (AR): بينقطع عالطلب، كل يوم من الضهر ونص">بينقطع عالطلب، كل يوم من الضهر ونص</xar></p>
+  </div>
+  <span class="redband" aria-hidden="true"></span>
+  <div class="frontrow">
+    <div class="leftcol">
+      <p class="kicker2"><xen data-edit="t5" data-edit-label="Text (EN): Shawarma house · Saydeh, Sin El Fil">Shawarma house · Saydeh, Sin El Fil</xen><xar data-edit="t6" data-edit-label="Text (AR): بيت الشاورما · السيدة، سن الفيل">بيت الشاورما · السيدة، سن الفيل</xar></p>
+      <p class="ratepill"><b class="num" data-edit="t7" data-edit-label="Text: 4.3 ★">4.3 ★</b><span><xen><span class="num" data-edit="t8" data-edit-label="Text: 2,406">2,406</span> Google reviews</xen><xar><span class="num" data-edit="t9" data-edit-label="Text: 2,406">2,406</span> تقييم على غوغل</xar></span></p>
+      <div class="cuts">
+        <span class="cut"><xen data-edit="t10" data-edit-label="Text (EN): Meat">Meat</xen><xar data-edit="t11" data-edit-label="Text (AR): لحمة">لحمة</xar></span>
+        <span class="cut"><xen data-edit="t12" data-edit-label="Text (EN): Chicken">Chicken</xen><xar data-edit="t13" data-edit-label="Text (AR): دجاج">دجاج</xar></span>
+        <span class="cut"><xen data-edit="t14" data-edit-label="Text (EN): Taouk">Taouk</xen><xar data-edit="t15" data-edit-label="Text (AR): طاووق">طاووق</xar></span>
+        <span class="cut"><xen data-edit="t16" data-edit-label="Text (EN): Kebab">Kebab</xen><xar data-edit="t17" data-edit-label="Text (AR): كباب">كباب</xar></span>
       </div>
-      <div class="slice s2">
-        <span class="num" data-edit="t7" data-edit-label="Text: 4.3 ★">4.3 ★</span>
-        <span><xen><span class="num" data-edit="t8" data-edit-label="Text: 2,406">2,406</span> Google reviews</xen><xar><span class="num" data-edit="t9" data-edit-label="Text: 2,406">2,406</span> تقييم على غوغل</xar></span>
-      </div>
-      <div class="slice s3"><img src="img/03.jpg" alt="The meat shawarma cone turning on the spit"></div>
-      <div class="slice s4">
-        <span class="chip"><xen data-edit="t10" data-edit-label="Text (EN): Meat">Meat</xen><xar data-edit="t11" data-edit-label="Text (AR): لحمة">لحمة</xar></span>
-        <span class="chip"><xen data-edit="t12" data-edit-label="Text (EN): Chicken">Chicken</xen><xar data-edit="t13" data-edit-label="Text (AR): دجاج">دجاج</xar></span>
-        <span class="chip"><xen data-edit="t14" data-edit-label="Text (EN): Taouk">Taouk</xen><xar data-edit="t15" data-edit-label="Text (AR): طاووق">طاووق</xar></span>
-        <span class="chip"><xen data-edit="t16" data-edit-label="Text (EN): Kebab">Kebab</xen><xar data-edit="t17" data-edit-label="Text (AR): كباب">كباب</xar></span>
-      </div>
+      <p class="saying"><xen data-edit="t18" data-edit-label="Text (EN): Turning since lunch">Turning since lunch</xen><xar data-edit="t19" data-edit-label="Text (AR): عم يدور من الضهر">عم يدور من الضهر</xar></p>
     </div>
-    <div class="tray"><xen data-edit="t18" data-edit-label="Text (EN): Carved to order, every day from half p…">Carved to order, every day from half past noon</xen><xar data-edit="t19" data-edit-label="Text (AR): بينقطع عالطلب، كل يوم من الضهر ونص">بينقطع عالطلب، كل يوم من الضهر ونص</xar></div>
+    <div class="glassbox"><img src="img/03.jpg" alt="The meat shawarma cone turning on the spit"></div>
   </div>
 </header>
 

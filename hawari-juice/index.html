@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hawari Juice · Aisha Bakkar, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&family=Marhey:wght@500;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&family=Marhey:wght@500;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Marhey';--arb:'Rubik';
@@ -28,60 +28,69 @@ section{padding-block:clamp(54px,8vh,92px)}
   box-shadow:0 6px 16px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the lever juice press ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
+/* ---------- HERO: one tall cocktail glass, too big for the frame ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;align-items:center;
   background:
-   radial-gradient(56% 40% at 50% 24%,rgba(79,227,178,.14),transparent 70%),
-   linear-gradient(180deg,#081E1E,var(--night) 58%,#081E1E)}
-header::before{content:"";position:absolute;inset:0;opacity:.5;
+   radial-gradient(70% 46% at 26% 12%,rgba(255,232,168,.55),transparent 66%),
+   linear-gradient(158deg,#F9BE3C 0%,#F0912F 46%,#DC5F22 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 74% at 50% 118%,rgba(120,40,4,.42),transparent 62%)}
+/* the counter the glass stands on */
+.counter{position:absolute;left:0;right:0;bottom:0;height:clamp(60px,9vh,86px);z-index:1;
+  background:linear-gradient(180deg,#6B3E1E,#3E2210);
+  box-shadow:0 -2px 0 rgba(255,224,168,.4),0 -20px 44px rgba(120,50,8,.32)}
+/* the glass: cropped by the top edge, standing on the counter */
+.cup{position:absolute;z-index:3;left:clamp(34px,13vw,196px);top:-104px;
+  width:clamp(180px,24vw,318px);bottom:clamp(52px,8vh,78px);
+  border-radius:8px 8px 52px 52px/5px 5px 74px 74px;overflow:hidden;
+  border:3px solid rgba(255,255,255,.75);border-top:0;
+  background:linear-gradient(100deg,rgba(255,255,255,.5) 0 6%,rgba(255,255,255,.1) 26%,
+             rgba(255,255,255,.16) 68%,rgba(255,255,255,.55) 96%);
+  box-shadow:0 34px 64px rgba(110,42,4,.45),inset 0 0 46px rgba(255,255,255,.3)}
+.cup::before{content:"";position:absolute;left:0;right:0;bottom:0;height:76%;
   background:
-   radial-gradient(circle at 12% 84%,rgba(242,169,59,.16) 0 90px,transparent 91px),
-   radial-gradient(circle at 90% 18%,rgba(228,86,110,.13) 0 70px,transparent 71px)}
-.press{position:relative;z-index:2;width:min(580px,92vw);margin:clamp(14px,2.4vh,32px) auto;
-  display:flex;flex-direction:column;align-items:center}
-/* the arm assembly */
-.arm{position:relative;width:100%;height:82px;animation:armsway 14s ease-in-out infinite;transform-origin:14% 78%}
-@keyframes armsway{0%,100%{transform:rotate(0)}50%{transform:rotate(1.1deg)}}
-.arm .post{position:absolute;left:10%;bottom:0;width:32px;height:66px;border-radius:8px 8px 0 0;
-  background:linear-gradient(90deg,#0F4B44,var(--mint-d) 45%,#0F4B44);border:1.5px solid #0A3A34}
-.arm .beam{position:absolute;left:12%;bottom:40px;width:62%;height:20px;border-radius:12px;
-  transform:rotate(-6deg);transform-origin:0 50%;
-  background:linear-gradient(180deg,#67EDC2,var(--mint-d));border:1.5px solid #0A3A34;
-  box-shadow:0 8px 20px rgba(79,227,178,.25)}
-.arm .knob{position:absolute;right:14%;bottom:52px;width:38px;height:38px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#FFD98E,var(--mango) 60%,var(--mango-d));
-  border:2px solid var(--mango-d);box-shadow:0 8px 18px rgba(0,0,0,.4)}
-.arm .piston{position:absolute;left:46%;bottom:4px;width:16px;height:44px;border-radius:6px;
-  background:linear-gradient(90deg,#9AA8A2,#E4E9E4 50%,#9AA8A2);border:1px solid #5F6E68}
-/* the dome over the cup */
-.domecap{width:min(300px,66%);height:38px;border-radius:150px 150px 10px 10px;z-index:2;
-  background:
-   repeating-linear-gradient(90deg,transparent 0 22px,rgba(13,42,42,.22) 22px 24px),
-   linear-gradient(180deg,#FFD98E,var(--mango) 70%,var(--mango-d));
-  border:2px solid var(--mango-d);box-shadow:0 10px 24px rgba(0,0,0,.4)}
-/* the glass body */
-.cup{position:relative;width:100%;margin-top:-6px;border-radius:22px 22px 30px 30px;
-  background:linear-gradient(90deg,rgba(244,240,226,.12),rgba(244,240,226,.04) 24%,rgba(244,240,226,.16) 50%,rgba(244,240,226,.04) 76%,rgba(244,240,226,.12));
-  border:2px solid rgba(79,227,178,.45);box-shadow:0 26px 60px rgba(0,0,0,.55),inset 0 0 40px rgba(0,0,0,.35);
-  padding:clamp(18px,3.2vw,30px) clamp(16px,3vw,32px) clamp(16px,2.6vw,24px);text-align:center;overflow:hidden}
-.cup::before{content:"";position:absolute;top:7%;bottom:9%;left:8%;width:7px;border-radius:4px;
-  background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.05))}
-.cup .k{display:block;margin-bottom:10px}
-.cup h1{font-size:clamp(42px,8.6vw,80px);color:var(--mint);font-weight:700;letter-spacing:.01em;
-  text-shadow:0 0 26px rgba(79,227,178,.45)}
-.cup h1 b{color:var(--cream);font-weight:700}
-.sub{margin:8px auto 0;max-width:46ch;color:#BFD4C8;font-size:clamp(14px,1.8vw,16px);line-height:1.65}
-.pane{margin:16px auto 0;width:min(400px,88%);border:2px solid rgba(242,169,59,.6);border-radius:14px;
-  overflow:hidden;background:#081E1E}
-.pane img{width:100%;height:clamp(150px,21vh,210px);object-fit:cover}
-.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
-.tag{border:1.5px solid rgba(242,169,59,.65);color:#FFD98E;border-radius:8px;padding:6px 12px;
-  font:800 12px/1.4 'Nunito',sans-serif;letter-spacing:.06em}
-.base{width:min(460px,84%);margin-top:12px;padding:12px 16px 14px;border-radius:10px;
-  background:linear-gradient(180deg,var(--mint-d),#178A66);border:1.5px solid #0A3A34;color:#06251C;
-  text-align:center;font:800 14px/1.5 'Nunito',sans-serif;box-shadow:0 16px 36px rgba(0,0,0,.5)}
-.base .num{font-size:17px}
+   radial-gradient(1.7px 1.7px at 11px 15px,rgba(255,255,255,.34),transparent 60%) 0 0/29px 33px,
+   radial-gradient(1.4px 1.4px at 22px 27px,rgba(90,40,0,.18),transparent 60%) 0 0/41px 37px,
+   linear-gradient(180deg,#FFF7E6 0 8%,#F6E7C2 8% 9.4%,#7FCB36 9.4% 26%,#63A82C 26% 27.4%,
+                   #FFC219 27.4% 53%,#E9A511 53% 54.4%,#EE7F17 54.4% 75%,#CC6110 75% 76.4%,#B0410E 76.4% 100%)}
+.cup::after{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(90deg,rgba(96,32,0,.32) 0 5%,rgba(255,255,255,.5) 11% 15%,
+             rgba(255,255,255,0) 30% 70%,rgba(255,255,255,.2) 83% 88%,rgba(96,32,0,.28) 96% 100%)}
+.foot{position:absolute;z-index:2;left:clamp(34px,13vw,196px);bottom:clamp(44px,7vh,68px);
+  width:clamp(180px,24vw,318px);height:26px;border-radius:50%;
+  background:radial-gradient(50% 50%,rgba(70,26,2,.55),transparent 72%)}
+.straw{position:absolute;z-index:4;left:calc(clamp(34px,13vw,196px) + clamp(112px,15vw,200px));top:-44px;
+  width:clamp(13px,1.5vw,19px);height:clamp(170px,25vh,258px);border-radius:8px;
+  background:repeating-linear-gradient(180deg,#E4566E 0 16px,#FFF3DC 16px 32px);
+  box-shadow:0 8px 18px rgba(110,42,4,.35);transform-origin:50% 100%;
+  animation:strawsway 14s ease-in-out infinite}
+@keyframes strawsway{0%,100%{transform:rotate(6deg)}50%{transform:rotate(10deg)}}
+@media(prefers-reduced-motion:reduce){.straw{animation:none}}
+/* the words, set against the fruit */
+.press{position:relative;z-index:4;margin-left:auto;width:min(780px,58vw);
+  padding-inline:clamp(20px,4vw,58px) clamp(24px,5vw,74px);text-align:right}
+.press .k{display:block;color:#FFF3DC;letter-spacing:.3em}
+.press h1{margin-top:10px;font-family:'Bowlby One',sans-serif;font-weight:400;line-height:.98;
+  font-size:clamp(44px,7.8vw,112px);color:#0E7A4A;letter-spacing:.005em;
+  text-shadow:0 4px 0 rgba(255,255,255,.5),0 18px 34px rgba(110,42,4,.3)}
+.press h1 b{display:block;color:#FFF7E8;font-weight:400}
+html.ar .press h1{font-size:clamp(38px,5.6vw,74px)}
+.press .sub{margin-top:14px;color:#4A2409;font-size:clamp(14px,1.65vw,16.5px);line-height:1.66;
+  margin-left:auto;max-width:40ch;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin-top:16px}
+.tag{background:rgba(255,247,232,.9);color:#0E7A4A;border-radius:99px;padding:7px 14px;
+  font:800 12px/1 'Nunito',sans-serif;letter-spacing:.05em}
+.base{display:inline-block;margin-top:16px;padding:11px 18px;border-radius:99px;
+  background:#0E7A4A;color:#FFF7E8;font:800 13px/1 'Nunito',sans-serif;letter-spacing:.06em;
+  box-shadow:0 10px 24px rgba(14,60,36,.4)}
+.base .num{font-size:16px}
+/* the cups themselves, propped against the glass */
+.pane{position:absolute;z-index:5;left:calc(clamp(34px,13vw,196px) + clamp(140px,18vw,240px));
+  bottom:clamp(56px,8.4vh,84px);width:min(370px,36vw);border-radius:16px;overflow:hidden;
+  background:#FFF7E8;padding:9px;box-shadow:0 22px 46px rgba(110,42,4,.5)}
+.pane img{width:100%;height:clamp(118px,16.5vh,166px);object-fit:cover;border-radius:9px}
+
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -158,14 +167,21 @@ footer{padding:36px 20px 130px;background:#061818;color:#7FA394;font-size:13px;t
   .two,.visit,.branches{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .pane img{height:150px}
-  .arm{height:70px}
-  .arm .post{height:56px}
-  .arm .beam{width:58%;bottom:34px}
-  .arm .knob{bottom:44px;width:32px;height:32px}
 }
 @media(max-width:520px){.lrow{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.arm{animation:none}}
+@media(max-width:700px){
+  header{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;
+    padding-top:clamp(20px,3.6vh,38px)}
+  .press{width:100%;margin:0;padding:56px 6vw 0;text-align:center}
+  .press .sub{margin-inline:auto}
+  .tags{justify-content:center}
+  .cup{left:5vw;top:auto;bottom:calc(clamp(60px,9vh,86px) - 8px);height:29vh;width:37vw}
+  .foot{left:5vw;width:37vw;bottom:calc(clamp(60px,9vh,86px) - 18px)}
+  .straw{left:17vw;top:auto;bottom:calc(clamp(60px,9vh,86px) + 24vh);height:14vh}
+  .pane{left:auto;right:5vw;bottom:calc(clamp(60px,9vh,86px) - 4px);width:45vw}
+  .pane img{height:96px}
+}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -214,28 +230,23 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="counter" aria-hidden="true"></div>
+  <div class="cup" aria-hidden="true"></div>
+  <span class="foot" aria-hidden="true"></span>
+  <span class="straw" aria-hidden="true"></span>
   <div class="press">
-    <div class="arm">
-      <span class="post"></span>
-      <span class="beam"></span>
-      <span class="knob"></span>
-      <span class="piston"></span>
-    </div>
-    <div class="domecap"></div>
-    <div class="cup">
-      <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Juice, sweets and gelato · Aisha Bakka…">Juice, sweets and gelato · Aisha Bakkar</xen><xar data-edit="t2" data-edit-label="Text (AR): عصير وحلو وبوظة · عائشة بكار">عصير وحلو وبوظة · عائشة بكار</xar></span>
-      <h1>HAWARI <b data-edit="t3" data-edit-label="Text: JUICE">JUICE</b></h1>
-      <p class="sub"><xen data-edit="t4" data-edit-label="Text (EN): The corner press of Aisha Bakkar, faci…">The corner press of Aisha Bakkar, facing the mosque: fresh fruit cocktails, crepes with real Belgian chocolate, and gelato until one in the morning.</xen><xar data-edit="t5" data-edit-label="Text (AR): معصرة الزاوية بعائشة بكار، قبال الجامع…">معصرة الزاوية بعائشة بكار، قبال الجامع: كوكتيلات فواكه فريش، كريب بشوكولا بلجيكية حقيقية، وبوظة لحد الوحدة بعد نص الليل.</xar></p>
-      <div class="pane"><img src="img/07.jpg" alt="Three layered fruit cocktail cups with kiwi, mango and chocolate"></div>
-      <div class="tags">
-        <span class="tag"><xen data-edit="t6" data-edit-label="Text (EN): Cocktails">Cocktails</xen><xar data-edit="t7" data-edit-label="Text (AR): كوكتيل">كوكتيل</xar></span>
-        <span class="tag"><xen data-edit="t8" data-edit-label="Text (EN): Crepes">Crepes</xen><xar data-edit="t9" data-edit-label="Text (AR): كريب">كريب</xar></span>
-        <span class="tag"><xen data-edit="t10" data-edit-label="Text (EN): Gelato">Gelato</xen><xar data-edit="t11" data-edit-label="Text (AR): بوظة">بوظة</xar></span>
-        <span class="tag"><xen data-edit="t12" data-edit-label="Text (EN): Fruit salad">Fruit salad</xen><xar data-edit="t13" data-edit-label="Text (AR): سلطة فواكه">سلطة فواكه</xar></span>
-      </div>
+    <span class="k"><xen data-edit="t1" data-edit-label="Text (EN): Juice, sweets and gelato · Aisha Bakka…">Juice, sweets and gelato · Aisha Bakkar</xen><xar data-edit="t2" data-edit-label="Text (AR): عصير وحلو وبوظة · عائشة بكار">عصير وحلو وبوظة · عائشة بكار</xar></span>
+    <h1>HAWARI <b data-edit="t3" data-edit-label="Text: JUICE">JUICE</b></h1>
+    <p class="sub"><xen data-edit="t4" data-edit-label="Text (EN): The corner press of Aisha Bakkar, faci…">The corner press of Aisha Bakkar, facing the mosque: fresh fruit cocktails, crepes with real Belgian chocolate, and gelato until one in the morning.</xen><xar data-edit="t5" data-edit-label="Text (AR): معصرة الزاوية بعائشة بكار، قبال الجامع…">معصرة الزاوية بعائشة بكار، قبال الجامع: كوكتيلات فواكه فريش، كريب بشوكولا بلجيكية حقيقية، وبوظة لحد الوحدة بعد نص الليل.</xar></p>
+    <div class="tags">
+      <span class="tag"><xen data-edit="t6" data-edit-label="Text (EN): Cocktails">Cocktails</xen><xar data-edit="t7" data-edit-label="Text (AR): كوكتيل">كوكتيل</xar></span>
+      <span class="tag"><xen data-edit="t8" data-edit-label="Text (EN): Crepes">Crepes</xen><xar data-edit="t9" data-edit-label="Text (AR): كريب">كريب</xar></span>
+      <span class="tag"><xen data-edit="t10" data-edit-label="Text (EN): Gelato">Gelato</xen><xar data-edit="t11" data-edit-label="Text (AR): بوظة">بوظة</xar></span>
+      <span class="tag"><xen data-edit="t12" data-edit-label="Text (EN): Fruit salad">Fruit salad</xen><xar data-edit="t13" data-edit-label="Text (AR): سلطة فواكه">سلطة فواكه</xar></span>
     </div>
     <div class="base"><span class="num" data-edit="t14" data-edit-label="Text: 4.4 ★">4.4 ★</span> · <xen><span class="num" data-edit="t15" data-edit-label="Text: 411">411</span> Google reviews</xen><xar><span class="num" data-edit="t16" data-edit-label="Text: 411">411</span> تقييم على غوغل</xar></div>
   </div>
+  <div class="pane"><img src="img/07.jpg" alt="Three layered fruit cocktail cups with kiwi, mango and chocolate"></div>
 </header>
 
 <section class="wrap">

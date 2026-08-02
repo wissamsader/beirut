@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Levant · Gouraud Street, Gemmayze</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Abril+Fatface&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Aref Ruqaa';--arb:'Tajawal';
@@ -26,65 +26,84 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(34,26,18,.3);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: a full bentwood chair beside the round marble table, china-red room ---------- */
+/* ---------- HERO: one enormous piece of their painted china, the demitasse in front ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
-  background:radial-gradient(70% 48% at 50% 16%,rgba(246,237,220,.16),transparent 70%),
-             linear-gradient(180deg,#B04234 0%,#9E372A 52%,#8A2C21 100%)}
-header::before{content:"";position:absolute;inset:14px;border:1.5px solid rgba(246,237,220,.5);pointer-events:none}
-header::after{content:"";position:absolute;inset:20px;border:1px solid rgba(246,237,220,.28);pointer-events:none}
-.cafe{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(18px,4.5vw,64px);
-  flex-wrap:wrap;padding-inline:5vw;margin-top:clamp(8px,1.6vh,22px)}
-.chairobj{width:min(460px,86vw);display:flex;flex-direction:column}
-.hoop{position:relative;width:100%;height:clamp(190px,28vh,250px)}
-.hoop .arc{position:absolute;inset:0;border:14px solid var(--wood);border-bottom:0;
-  border-radius:calc(min(460px,86vw)/2) calc(min(460px,86vw)/2) 0 0;
-  box-shadow:inset 0 3px 5px rgba(255,244,222,.35),0 8px 16px rgba(70,14,8,.4)}
-.hoop .arc.in{inset:28px 50px 0 50px;border-width:9px;
-  border-radius:calc(min(460px,86vw)/2) calc(min(460px,86vw)/2) 0 0}
-.hoop .cane{position:absolute;left:13%;right:13%;top:54%;bottom:6px;border-radius:10px;
-  background:radial-gradient(rgba(74,42,20,.20) 1.3px,transparent 1.4px) 0 0/9px 9px}
-.hoop .inner{position:absolute;inset:42px 11% 10px;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center}
-.hoop h1{font-size:clamp(50px,9.6vw,84px);color:var(--paper);text-shadow:0 3px 10px rgba(70,14,8,.5)}
-.hoop h1 xar{font-weight:700}
-.hoop .tag{font:600 clamp(13px,1.8vw,16px)/1.4 'Crimson Pro',serif;color:#F3D9A0;letter-spacing:.14em;text-transform:uppercase}
-.seatbar{height:14px;background:linear-gradient(180deg,#8A5731,#6E4423);border-radius:7px;
-  box-shadow:inset 0 2px 4px rgba(255,244,222,.35),0 4px 8px rgba(70,14,8,.3)}
-.seat2{width:76%;height:20px;margin:4px auto 0;border-radius:50%;position:relative;
-  background:radial-gradient(rgba(74,42,20,.25) 1.2px,transparent 1.3px) 0 0/8px 8px,
-             linear-gradient(180deg,#96613A,#6E4423);
-  box-shadow:inset 0 2px 3px rgba(255,244,222,.35),0 5px 10px rgba(70,14,8,.35)}
-.legs{position:relative;width:72%;margin:0 auto;height:clamp(48px,7vh,66px)}
-.legs i{position:absolute;top:0;width:13px;height:100%;border-radius:7px;
-  background:linear-gradient(90deg,#5E381E,#8A5731 55%,#4A2A14);box-shadow:0 4px 8px rgba(70,14,8,.35)}
-.legs i.l1{left:2px;transform:rotate(9deg);transform-origin:top center}
-.legs i.l2{right:2px;transform:rotate(-9deg);transform-origin:top center}
-.legs .str{position:absolute;left:9%;right:9%;top:52%;height:8px;border-radius:5px;
-  background:linear-gradient(180deg,#8A5731,#5E381E)}
-.rosette{position:absolute;top:2px;left:50%;transform:translateX(-50%);width:46px;height:46px;
-  animation:spinros 90s linear infinite}
-.rosette i{position:absolute;left:50%;top:50%;width:15px;height:15px;margin:-7.5px;border-radius:50% 0;
-  background:var(--paper);opacity:.92}
-.rosette i:nth-child(1){transform:rotate(0deg) translateY(-13px)}
-.rosette i:nth-child(2){transform:rotate(45deg) translateY(-13px)}
-.rosette i:nth-child(3){transform:rotate(90deg) translateY(-13px)}
-.rosette i:nth-child(4){transform:rotate(135deg) translateY(-13px)}
-.rosette i:nth-child(5){transform:rotate(180deg) translateY(-13px)}
-.rosette i:nth-child(6){transform:rotate(225deg) translateY(-13px)}
-.rosette i:nth-child(7){transform:rotate(270deg) translateY(-13px)}
-.rosette i:nth-child(8){transform:rotate(315deg) translateY(-13px)}
-.rosette b{position:absolute;inset:15px;border-radius:50%;background:#8A2C21;border:2px solid var(--paper)}
-@keyframes spinros{to{transform:translateX(-50%) rotate(360deg)}}
+  background:
+   radial-gradient(1.5px 1.5px at 11px 15px,rgba(122,75,42,.09),transparent 60%) 0 0/41px 37px,
+   radial-gradient(74% 50% at 50% 4%,#FFFFFF,transparent 66%),
+   linear-gradient(172deg,#F7F0E3 0%,#EFE4CE 56%,#E3D4B9 100%)}
+.hoop{position:absolute;z-index:1;left:50%;top:clamp(30px,6vh,74px);width:min(1160px,152vw);aspect-ratio:1;
+  margin-left:calc(min(1160px,152vw) / -2);border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,var(--china) 0 1.8deg,#FBF6EC 1.8deg 3.6deg);
+  box-shadow:0 30px 70px rgba(60,26,12,.2)}
+.arc{position:absolute;inset:6.5%;border-radius:50%;background:#FBF6EC;
+  box-shadow:inset 0 0 0 3px rgba(166,58,46,.55)}
+.arc.in{inset:11%;box-shadow:inset 0 0 0 1.5px rgba(166,58,46,.28)}
+.cane{position:absolute;inset:13.6%;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(166,58,46,.6) 0 .5deg,transparent .5deg 5deg)}
+.cane::after{content:"";position:absolute;inset:2.4%;border-radius:50%;background:#FBF6EC}
+.rosette{position:absolute;z-index:3;left:50%;top:16.5%;width:clamp(44px,4.6vw,64px);height:clamp(44px,4.6vw,64px);
+  margin-left:calc(clamp(44px,4.6vw,64px) / -2);animation:rose 92s linear infinite}
+.rosette i{position:absolute;left:50%;top:50%;width:44%;height:12%;margin:-6% 0 0 -22%;border-radius:50%;
+  background:var(--china);transform-origin:50% 50%;opacity:.85}
+.rosette i:nth-child(1){transform:rotate(0)}.rosette i:nth-child(2){transform:rotate(45deg)}
+.rosette i:nth-child(3){transform:rotate(90deg)}.rosette i:nth-child(4){transform:rotate(135deg)}
+.rosette i:nth-child(5){transform:rotate(22.5deg);opacity:.5}
+.rosette i:nth-child(6){transform:rotate(67.5deg);opacity:.5}
+.rosette i:nth-child(7){transform:rotate(112.5deg);opacity:.5}
+.rosette i:nth-child(8){transform:rotate(157.5deg);opacity:.5}
+.rosette b{position:absolute;left:50%;top:50%;width:26%;height:26%;margin:-13% 0 0 -13%;border-radius:50%;
+  background:#FBF6EC;box-shadow:0 0 0 3px var(--china)}
+@keyframes rose{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.rosette{animation:none}}
-.tabletop{position:relative;width:min(360px,66vw);aspect-ratio:1;flex:0 0 auto}
-.tabletop .rim{position:absolute;inset:0;border-radius:50%;background:var(--wood);
-  box-shadow:0 22px 46px rgba(70,14,8,.4),inset 0 3px 6px rgba(255,244,222,.35)}
-.tabletop .ph{position:absolute;inset:11px;border-radius:50%;overflow:hidden;border:2px solid #5E381E}
-.tabletop .ph img{width:100%;height:100%;object-fit:cover}
-.heroline{margin:clamp(16px,2.6vh,26px) 6vw 26px;text-align:center;position:relative;z-index:2}
-.heroline .sub{font-size:clamp(15px,2vw,18px);color:#F6E7D0;max-width:52ch}
-.heroline .plate{display:inline-flex;align-items:baseline;gap:7px;margin-top:10px;background:var(--ink);color:var(--paper);
-  padding:6px 13px;border-radius:999px;font:600 12.5px/1.4 'Crimson Pro',serif;box-shadow:0 8px 18px rgba(70,14,8,.4)}
+/* what is printed on the china */
+.inner{position:absolute;z-index:3;left:50%;top:clamp(150px,25vh,236px);width:min(760px,80vw);
+  margin-left:calc(min(760px,80vw) / -2);text-align:center}
+.inner h1{font-family:'Prata',serif;font-weight:400;line-height:1;color:var(--ink);
+  font-size:clamp(54px,10.6vw,144px);letter-spacing:-.005em}
+html.ar .inner h1{font-size:clamp(46px,8vw,112px)}
+.tag{margin-top:14px;font:700 11.5px/1.6 'Crimson Pro',serif;letter-spacing:.36em;text-transform:uppercase;
+  color:var(--china)}
+.tag::before,.tag::after{content:"";display:block;width:min(300px,52%);height:1px;margin:12px auto;
+  background:linear-gradient(90deg,transparent,rgba(166,58,46,.6),transparent)}
+.heroline{position:absolute;z-index:4;left:50%;top:clamp(310px,48vh,452px);width:min(660px,80vw);
+  margin-left:calc(min(660px,80vw) / -2);text-align:center}
+.heroline .sub{color:#4E3E2C;font-size:clamp(15px,1.8vw,18px);line-height:1.65}
+.plate{display:inline-block;margin-top:16px;padding:9px 18px;border-radius:99px;background:var(--china);
+  color:#FBF6EC;font:600 13px/1 'Crimson Pro',serif;letter-spacing:.08em}
+.plate .num{font-size:16px;font-weight:700}
+/* the green counter they pour over */
+.counter{position:absolute;left:0;right:0;bottom:0;height:clamp(74px,12vh,116px);z-index:2;
+  background:
+   repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 108px),
+   linear-gradient(180deg,#3B6E55 0%,#2C5642 34%,#1E3F30 100%);
+  box-shadow:0 -20px 40px rgba(30,63,48,.22)}
+.counter::before{content:"";position:absolute;left:0;right:0;top:0;height:9px;
+  background:linear-gradient(180deg,#5E9077,#2C5642);box-shadow:0 2px 6px rgba(20,40,30,.45)}
+/* the demitasse and its saucer */
+.chairobj{position:absolute;z-index:5;left:clamp(14px,7vw,124px);bottom:calc(clamp(74px,12vh,116px) - 6px);
+  width:clamp(150px,17vw,242px);display:flex;flex-direction:column;align-items:center}
+.demi{position:relative;z-index:2;width:56%;height:clamp(58px,8.4vh,96px);margin-bottom:-14px;
+  border-radius:7px 7px 44% 44%/5px 5px 42% 42%;
+  background:linear-gradient(100deg,#FFFFFF 0 10%,#F2E9DA 44%,#D9CCB6 100%);
+  box-shadow:0 10px 20px rgba(60,26,12,.26)}
+.demi::before{content:"";position:absolute;left:7%;right:7%;top:5px;height:13px;border-radius:50%;
+  background:radial-gradient(50% 50%,#452110,#190A03);box-shadow:inset 0 2px 3px rgba(255,220,180,.28)}
+.demi::after{content:"";position:absolute;right:-27%;top:18%;width:38%;height:52%;
+  border:8px solid #EAE0CD;border-left-color:transparent;border-radius:50%;
+  box-shadow:3px 3px 6px rgba(60,26,12,.24)}
+.seatbar{position:relative;z-index:1;width:100%;height:clamp(30px,4.2vh,48px);border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,var(--china) 0 1.5deg,#FBF6EC 1.5deg 3deg);
+  box-shadow:0 16px 28px rgba(60,26,12,.32)}
+.seatbar::after{content:"";position:absolute;inset:15% 7%;border-radius:50%;background:#FBF6EC;
+  box-shadow:inset 0 0 0 1.5px rgba(166,58,46,.45)}
+/* the table, propped at the right */
+.tabletop{position:absolute;z-index:5;right:clamp(14px,6vw,104px);bottom:calc(clamp(74px,12vh,116px) - 8px);
+  width:min(330px,32vw);padding:10px;background:#FBF6EC;border:1px solid rgba(166,58,46,.4);
+  box-shadow:0 24px 46px rgba(60,26,12,.3)}
+.tabletop .ph{overflow:hidden}
+.tabletop img{width:100%;height:clamp(126px,18vh,180px);object-fit:cover;display:block}
+
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -155,11 +174,8 @@ footer{padding:36px 7vw 128px;color:#8A6E4C;font-size:14px;text-align:center;bac
   .mgrid,.gloss,.grid3,.revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
   body{padding-bottom:82px}
-  .chairobj{width:min(380px,80vw)}
-  .hoop{height:clamp(160px,24vh,200px)}
-  .hoop h1{font-size:clamp(42px,12vw,56px)}
-  .legs{height:34px}
-  .tabletop{width:min(300px,58vw)}
+  .chairobj{width:clamp(126px,26vw,180px)}
+  .tabletop{width:min(300px,46vw)}
 }
 @media(max-width:430px){
   .bar{gap:6px}
@@ -213,30 +229,27 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="cafe">
-    <div class="chairobj">
-      <div class="hoop">
-        <span class="rosette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span>
-        <div class="arc" aria-hidden="true"></div>
-        <div class="arc in" aria-hidden="true"></div>
-        <div class="cane" aria-hidden="true"></div>
-        <div class="inner">
-          <h1><xen class="c" data-edit="t1" data-edit-label="Text (EN): Levant">Levant</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): ليڤانت">ليڤانت</xar></h1>
-          <p class="tag"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Sweet moments · Gouraud street">Sweet moments · Gouraud street</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): لحظات حلوة · شارع غورو">لحظات حلوة · شارع غورو</xar></p>
-        </div>
-      </div>
-      <div class="seatbar" aria-hidden="true"></div>
-      <div class="seat2" aria-hidden="true"></div>
-      <div class="legs" aria-hidden="true"><i class="l1"></i><i class="l2"></i><span class="str"></span></div>
-    </div>
-    <div class="tabletop">
-      <div class="rim" aria-hidden="true"></div>
-      <div class="ph"><img src="img/03.jpg" alt="Two lattes and slices of cake on patterned plates, on the marble table"></div>
-    </div>
+  <div class="counter" aria-hidden="true"></div>
+  <div class="hoop" aria-hidden="true">
+    <div class="arc"></div>
+    <div class="arc in"></div>
+    <div class="cane"></div>
+  </div>
+  <span class="rosette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b></span>
+  <div class="inner">
+    <h1><xen class="c" data-edit="t1" data-edit-label="Text (EN): Levant">Levant</xen><xar class="c" data-edit="t2" data-edit-label="Text (AR): ليڤانت">ليڤانت</xar></h1>
+    <p class="tag"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Sweet moments · Gouraud street">Sweet moments · Gouraud street</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): لحظات حلوة · شارع غورو">لحظات حلوة · شارع غورو</xar></p>
   </div>
   <div class="heroline">
     <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): An old Gemmayze house pouring Lebanese…">An old Gemmayze house pouring Lebanese coffee on patterned china, with sfouf and nammoura instead of muffins.</xen><xar data-edit="t6" data-edit-label="Text (AR): بيت جميزاوي عتيق بيسكب قهوة لبنانية عل…">بيت جميزاوي عتيق بيسكب قهوة لبنانية على صحون مزخرفة، مع صفوف ونمورة بدل المافِن.</xar></p>
     <p class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 5.0">5.0</span> <span><xen>across <span class="num" data-edit="t8" data-edit-label="Text: 138">138</span> Google reviews</xen><xar>على <span class="num" data-edit="t9" data-edit-label="Text: 138">138</span> تقييم بغوغل</xar></span></p>
+  </div>
+  <div class="chairobj" aria-hidden="true">
+    <span class="demi"></span>
+    <span class="seatbar"></span>
+  </div>
+  <div class="tabletop">
+    <div class="ph"><img src="img/03.jpg" alt="Two lattes and slices of cake on patterned plates, on the marble table"></div>
   </div>
 </header>
 

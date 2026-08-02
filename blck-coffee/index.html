@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BLCK Specialty Coffee · Mgr Chebli, Kantari</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;600;800&family=IBM+Plex+Sans+Arabic:wght@500;700&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'IBM Plex Sans Arabic';--arb:'Vazirmatn';
-  --wall:#E9E6E0;--wall-d:#DDD9D1;--blk:#0F0F0F;--wht:#F7F5F1;--cop:#B0722F;--line:rgba(15,15,15,.16);
+  --wall:#E8E5DE;--wall-d:#DBD7CE;--blk:#0B0B0B;--wht:#F7F5F1;--cop:#B0722F;--line:rgba(15,15,15,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--wall);color:#191919;font:400 16.5px/1.75 'Manrope',system-ui,sans-serif}
 .wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.01em}
+h1,h2,h3{font-family:'Syne',system-ui,sans-serif;font-weight:800;line-height:1.08;letter-spacing:-.022em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:800 11px/1.4 'Manrope',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--cop)}
@@ -25,51 +25,99 @@ img{display:block;max-width:100%}
   -webkit-appearance:none;box-shadow:0 4px 14px rgba(15,15,15,.3);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the meter cabinet, bolted to a concrete wall ---------- */
+/* ---------- HERO: the untrimmed press sheet, register marks cropped by the frame ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;padding:56px 4vw 42px;
+  display:block;padding:0;color:var(--wht);
   background:
-    linear-gradient(90deg,transparent 0 calc(50% - 300px),rgba(15,15,15,.05) calc(50% - 300px) calc(50% + 300px),transparent calc(50% + 300px)),
-    repeating-linear-gradient(0deg,rgba(15,15,15,.035) 0 1px,transparent 1px 90px),
-    repeating-linear-gradient(90deg,rgba(15,15,15,.035) 0 1px,transparent 1px 120px),
-    linear-gradient(180deg,var(--wall-d),var(--wall) 55%)}
-.conduit{position:absolute;top:0;bottom:0;width:5px;background:#C9C4BA;box-shadow:inset 1.5px 0 0 rgba(15,15,15,.25)}
-.conduit.l{left:clamp(16px,7vw,120px)}
-.conduit.r{right:clamp(16px,7vw,120px)}
-.box{position:relative;width:min(560px,93vw);background:var(--blk);border-radius:6px;
-  padding:clamp(18px,3vw,30px);box-shadow:0 30px 70px rgba(15,15,15,.4),inset 0 0 0 1.5px #2C2C2C;color:var(--wht)}
-.box::before,.box::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#8F8F8F,#3A3A3A);top:10px}
-.box::before{left:10px}
-.box::after{right:10px}
-.tagrow{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-  border-bottom:1px solid #2C2C2C;padding-bottom:13px}
-.tag{font:800 10.5px/1 'Manrope',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#9A9A9A}
-.tag b{color:var(--cop)}
-h1.stencil{font-size:clamp(58px,12vw,108px);letter-spacing:.08em;text-align:center;margin:10px 0 2px;color:var(--wht)}
-.sub{text-align:center;color:#B9B9B9;font-size:clamp(13.5px,1.7vw,15.5px);letter-spacing:.02em;margin-bottom:14px}
-.pane{position:relative;border:1.5px solid #3A3A3A;background:#080808;padding:7px;border-radius:3px;overflow:hidden}
-.pane img{width:100%;height:clamp(180px,25vh,240px);object-fit:cover;border-radius:1px}
-.pane::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.10) 47%,transparent 55%)}
-.dials{display:flex;justify-content:space-around;align-items:flex-start;gap:8px;margin-top:16px}
-.dial{text-align:center;flex:1}
-.gauge{position:relative;width:clamp(64px,9vw,84px);height:clamp(64px,9vw,84px);margin:0 auto 8px;border-radius:50%;
-  background:var(--wht);border:3px solid #2C2C2C;
-  box-shadow:inset 0 0 0 clamp(7px,1vw,9px) var(--wht),inset 0 0 0 100px #EFEBE4}
-.gauge i{position:absolute;left:50%;bottom:50%;width:2.5px;height:38%;background:#C43D2B;
-  transform:translateX(-50%) rotate(64deg);transform-origin:50% 100%;border-radius:2px}
-.gauge.g1 i{animation:needle 13s ease-in-out infinite}
-@keyframes needle{0%,100%{transform:translateX(-50%) rotate(63deg)}50%{transform:translateX(-50%) rotate(65.5deg)}}
-@media(prefers-reduced-motion:reduce){.gauge i{animation:none}}
-.gauge::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;border-radius:50%;
-  background:#2C2C2C;transform:translate(-50%,-50%)}
-.dial b{display:block;font:700 clamp(15px,2vw,19px)/1 'Space Grotesk',sans-serif;color:var(--wht)}
-.dial span{display:block;margin-top:4px;font:600 10px/1.4 'Manrope',sans-serif;letter-spacing:.18em;
-  text-transform:uppercase;color:#8B8B8B}
-.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:clamp(16px,2.6vh,24px)}
-.chip{border:1.5px solid var(--blk);padding:6px 13px;font:700 12px/1.4 'Manrope',sans-serif;
-  color:var(--blk);background:rgba(255,255,255,.5)}
+    radial-gradient(70% 54% at 26% 16%,rgba(255,255,255,.09),transparent 66%),
+    radial-gradient(60% 50% at 88% 92%,rgba(176,114,47,.14),transparent 64%),
+    repeating-linear-gradient(101deg,rgba(255,255,255,.018) 0 2px,transparent 2px 6px),
+    linear-gradient(168deg,#141414,#0B0B0B 58%,#050505)}
+
+.trim{position:absolute;width:clamp(30px,3.4vw,48px);height:clamp(30px,3.4vw,48px);z-index:3;
+  pointer-events:none;opacity:.72}
+.trim.tl{left:clamp(20px,3vw,44px);top:clamp(20px,3vw,44px);
+  border-left:1px solid var(--wht);border-top:1px solid var(--wht)}
+.trim.tr{right:clamp(20px,3vw,44px);top:clamp(20px,3vw,44px);
+  border-right:1px solid var(--wht);border-top:1px solid var(--wht)}
+.trim.bl{left:clamp(20px,3vw,44px);bottom:clamp(20px,3vw,44px);
+  border-left:1px solid var(--wht);border-bottom:1px solid var(--wht)}
+.trim.br{right:clamp(20px,3vw,44px);bottom:clamp(20px,3vw,44px);
+  border-right:1px solid var(--wht);border-bottom:1px solid var(--wht)}
+
+.reg{position:absolute;z-index:3;width:clamp(52px,5.2vw,74px);aspect-ratio:1;border-radius:50%;
+  border:1px solid rgba(247,245,241,.85);pointer-events:none}
+.reg::before,.reg::after{content:"";position:absolute;background:rgba(247,245,241,.85)}
+.reg::before{left:50%;top:-32%;width:1px;height:164%;transform:translateX(-50%)}
+.reg::after{top:50%;left:-32%;height:1px;width:164%;transform:translateY(-50%)}
+.reg i{position:absolute;inset:26%;border-radius:50%;border:1px solid rgba(176,114,47,.95)}
+.reg.t{left:50%;top:calc(-1 * clamp(26px,2.6vw,37px));transform:translateX(-50%)}
+.reg.b{left:50%;bottom:calc(-1 * clamp(26px,2.6vw,37px));transform:translateX(-50%)}
+.reg.l{top:50%;left:calc(-1 * clamp(26px,2.6vw,37px));transform:translateY(-50%)}
+.reg.rt{top:50%;right:calc(-1 * clamp(26px,2.6vw,37px));transform:translateY(-50%)}
+
+.slug{position:absolute;left:clamp(34px,5.4vw,80px);top:clamp(38px,5.4vw,74px);z-index:4;
+  display:flex;flex-direction:column;gap:5px}
+.slug span{font:600 10.5px/1.5 'Manrope',sans-serif;letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(247,245,241,.62)}
+.slug span b{color:var(--cop);font-weight:800}
+
+.mid{position:absolute;left:clamp(34px,5.4vw,80px);top:52%;transform:translateY(-50%);z-index:4;
+  width:min(880px,60vw)}
+h1.bname{font-family:'Syne',system-ui,sans-serif;font-weight:800;
+  font-size:clamp(68px,11.8vw,176px);line-height:.86;letter-spacing:-.04em;color:var(--wht);margin:0}
+h1.bname xar{letter-spacing:0;font-size:.5em;line-height:1.1;display:inline-block}
+.subx{margin-top:clamp(14px,2.2vh,22px);font-size:clamp(15px,1.7vw,19px);line-height:1.6;
+  color:rgba(247,245,241,.72);max-width:34ch}
+.readouts{display:flex;flex-wrap:wrap;gap:clamp(10px,1.4vw,18px);margin-top:clamp(18px,2.8vh,30px)}
+.readouts div{border:1px solid rgba(247,245,241,.3);padding:9px 14px 10px;min-width:104px}
+.readouts b{display:block;font-family:'Syne',system-ui,sans-serif;font-weight:800;
+  font-size:clamp(19px,2.1vw,27px);line-height:1;color:var(--wht)}
+.readouts span{display:block;margin-top:5px;font:600 9.5px/1.4 'Manrope',sans-serif;
+  letter-spacing:.24em;text-transform:uppercase;color:rgba(247,245,241,.55)}
+
+.plate{position:absolute;right:clamp(34px,6vw,96px);top:clamp(104px,19vh,186px);z-index:4;
+  width:clamp(210px,25vw,352px)}
+.plate img{width:100%;height:clamp(160px,24vh,248px);object-fit:cover;
+  box-shadow:0 22px 44px rgba(0,0,0,.7)}
+.plate::before,.plate::after{content:"";position:absolute;width:16px;height:16px}
+.plate::before{left:-11px;top:-11px;border-left:1px solid rgba(176,114,47,.95);border-top:1px solid rgba(176,114,47,.95)}
+.plate::after{right:-11px;bottom:-11px;border-right:1px solid rgba(176,114,47,.95);border-bottom:1px solid rgba(176,114,47,.95)}
+
+.wedge{position:absolute;right:clamp(34px,6vw,96px);bottom:clamp(38px,6vh,68px);z-index:4;
+  display:flex;align-items:flex-end;gap:0}
+.wedge i{display:block;width:clamp(20px,2.2vw,32px);height:clamp(20px,2.2vw,30px)}
+.wedge i:nth-child(1){background:#0A0A0A}.wedge i:nth-child(2){background:#232323}
+.wedge i:nth-child(3){background:#3C3C3C}.wedge i:nth-child(4){background:#565656}
+.wedge i:nth-child(5){background:#727272}.wedge i:nth-child(6){background:#8F8F8F}
+.wedge i:nth-child(7){background:#ADADAD}.wedge i:nth-child(8){background:#CCCCCC}
+.wedge i:nth-child(9){background:#F7F5F1}.wedge i:nth-child(10){background:var(--cop)}
+
+.swatches{position:absolute;left:clamp(34px,5.4vw,80px);bottom:clamp(38px,6vh,68px);z-index:4;
+  display:flex;flex-wrap:wrap;gap:8px 16px}
+.swatches span{display:inline-flex;align-items:center;gap:8px;
+  font:600 10px/1.4 'Manrope',sans-serif;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(247,245,241,.66)}
+.swatches span::before{content:"";width:11px;height:11px;background:var(--cop);flex:none}
+@media(max-width:1100px){
+  .mid{width:min(520px,50vw)}
+  .plate{width:clamp(190px,24vw,280px)}
+}
+@media(max-width:880px){
+  header{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+    gap:clamp(16px,2.6vh,24px);padding:clamp(84px,13vh,120px) 7vw clamp(96px,15vh,140px)}
+  .slug,.mid,.plate,.wedge,.swatches{position:static;transform:none;left:auto;right:auto;top:auto;bottom:auto}
+  .mid{width:100%}
+  .plate{width:min(340px,80vw)}
+  .wedge i{width:26px;height:22px}
+}
+@media(max-width:430px){
+  .trim{width:22px;height:22px}
+  h1.bname{font-size:clamp(58px,20vw,90px)}
+  .readouts div{min-width:88px;padding:7px 11px 8px}
+  .swatches span{letter-spacing:.12em}
+  .wedge i{width:19px;height:18px}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -193,32 +241,33 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <span class="conduit l" aria-hidden="true"></span>
-  <span class="conduit r" aria-hidden="true"></span>
-  <div>
-    <div class="box">
-      <div class="tagrow">
-        <span class="tag"><xen class="c">Specialty coffee <b data-edit="t1" data-edit-label="Text: · Kantari">· Kantari</b></xen><xar class="c">قهوة مختصة <b data-edit="t2" data-edit-label="Text: · القنطاري">· القنطاري</b></xar></span>
-        <span class="tag"><xen class="c" data-edit="t3" data-edit-label="Text (EN): Respect the beans">Respect the beans</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): احترم الحبوب">احترم الحبوب</xar></span>
-      </div>
-      <h1 class="stencil" data-edit="t5" data-edit-label="Big title: BLCK">BLCK</h1>
-      <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): The all-black coffee counter on Mgr Ch…">The all-black coffee counter on Mgr Chebli street.</xen><xar data-edit="t7" data-edit-label="Text (AR): كاونتر القهوة الأسود بالكامل بشارع الم…">كاونتر القهوة الأسود بالكامل بشارع المطران شبلي.</xar></p>
-      <div class="pane">
-        <img src="img/08.jpg" alt="A lineup of BLCK drinks: latte, matcha, cold brew, frappe and espresso">
-      </div>
-      <div class="dials">
-        <div class="dial"><span class="gauge g1" aria-hidden="true"><i></i></span><b class="num" data-edit="t8" data-edit-label="Text: 4.9">4.9</b><span><xen class="c" data-edit="t9" data-edit-label="Text (EN): Google rating">Google rating</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): تقييم غوغل">تقييم غوغل</xar></span></div>
-        <div class="dial"><span class="gauge" aria-hidden="true"><i style="transform:translateX(-50%) rotate(28deg)"></i></span><b class="num" data-edit="t11" data-edit-label="Text: 71">71</b><span><xen class="c" data-edit="t12" data-edit-label="Text (EN): Reviews">Reviews</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
-        <div class="dial"><span class="gauge" aria-hidden="true"><i style="transform:translateX(-50%) rotate(-46deg)"></i></span><b class="num" data-edit="t14" data-edit-label="Text: 7–23">7–23</b><span><xen class="c" data-edit="t15" data-edit-label="Text (EN): Daily hours">Daily hours</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): ساعات الدوام">ساعات الدوام</xar></span></div>
-      </div>
-    </div>
-    <div class="chips">
-      <span class="chip"><xen class="c" data-edit="t17" data-edit-label="Text (EN): Espresso tonic">Espresso tonic</xen><xar class="c" data-edit="t18" data-edit-label="Text (AR): إسبريسو تونيك">إسبريسو تونيك</xar></span>
-      <span class="chip"><xen class="c" data-edit="t19" data-edit-label="Text (EN): V60 pour-over">V60 pour-over</xen><xar class="c" data-edit="t20" data-edit-label="Text (AR): في 60">في 60</xar></span>
-      <span class="chip"><xen class="c" data-edit="t21" data-edit-label="Text (EN): Cortado">Cortado</xen><xar class="c" data-edit="t22" data-edit-label="Text (AR): كورتادو">كورتادو</xar></span>
-      <span class="chip"><xen class="c" data-edit="t23" data-edit-label="Text (EN): Matcha">Matcha</xen><xar class="c" data-edit="t24" data-edit-label="Text (AR): ماتشا">ماتشا</xar></span>
+  <span class="trim tl" aria-hidden="true"></span><span class="trim tr" aria-hidden="true"></span>
+  <span class="trim bl" aria-hidden="true"></span><span class="trim br" aria-hidden="true"></span>
+  <span class="reg t" aria-hidden="true"><i></i></span><span class="reg b" aria-hidden="true"><i></i></span>
+  <span class="reg l" aria-hidden="true"><i></i></span><span class="reg rt" aria-hidden="true"><i></i></span>
+  <p class="slug">
+    <span><xen class="c">Specialty coffee <b data-edit="t1" data-edit-label="Text: · Kantari">· Kantari</b></xen><xar class="c">قهوة مختصة <b data-edit="t2" data-edit-label="Text: · القنطاري">· القنطاري</b></xar></span>
+    <span><xen class="c" data-edit="t3" data-edit-label="Text (EN): Respect the beans">Respect the beans</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): احترم الحبوب">احترم الحبوب</xar></span>
+  </p>
+  <div class="mid">
+    <h1 class="bname" data-edit="t5" data-edit-label="Big title: BLCK">BLCK</h1>
+    <p class="subx"><xen data-edit="t6" data-edit-label="Text (EN): The all-black coffee counter on Mgr Ch…">The all-black coffee counter on Mgr Chebli street.</xen><xar data-edit="t7" data-edit-label="Text (AR): كاونتر القهوة الأسود بالكامل بشارع الم…">كاونتر القهوة الأسود بالكامل بشارع المطران شبلي.</xar></p>
+    <div class="readouts">
+      <div><b class="num" data-edit="t8" data-edit-label="Text: 4.9">4.9</b><span><xen class="c" data-edit="t9" data-edit-label="Text (EN): Google rating">Google rating</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): تقييم غوغل">تقييم غوغل</xar></span></div>
+      <div><b class="num" data-edit="t11" data-edit-label="Text: 71">71</b><span><xen class="c" data-edit="t12" data-edit-label="Text (EN): Reviews">Reviews</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): تقييم">تقييم</xar></span></div>
+      <div><b class="num" data-edit="t14" data-edit-label="Text: 7–23">7–23</b><span><xen class="c" data-edit="t15" data-edit-label="Text (EN): Daily hours">Daily hours</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): ساعات الدوام">ساعات الدوام</xar></span></div>
     </div>
   </div>
+  <div class="plate">
+    <img src="img/08.jpg" alt="A lineup of BLCK drinks: latte, matcha, cold brew, frappe and espresso">
+  </div>
+  <span class="wedge" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+  <p class="swatches">
+    <span><xen class="c" data-edit="t17" data-edit-label="Text (EN): Espresso tonic">Espresso tonic</xen><xar class="c" data-edit="t18" data-edit-label="Text (AR): إسبريسو تونيك">إسبريسو تونيك</xar></span>
+    <span><xen class="c" data-edit="t19" data-edit-label="Text (EN): V60 pour-over">V60 pour-over</xen><xar class="c" data-edit="t20" data-edit-label="Text (AR): في 60">في 60</xar></span>
+    <span><xen class="c" data-edit="t21" data-edit-label="Text (EN): Cortado">Cortado</xen><xar class="c" data-edit="t22" data-edit-label="Text (AR): كورتادو">كورتادو</xar></span>
+    <span><xen class="c" data-edit="t23" data-edit-label="Text (EN): Matcha">Matcha</xen><xar class="c" data-edit="t24" data-edit-label="Text (AR): ماتشا">ماتشا</xar></span>
+  </p>
 </header>
 
 <section class="wrap">

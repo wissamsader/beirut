@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Meats &amp; Bread · Naccache, Antelias</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=Kufam:wght@700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ultra&family=Big+Shoulders+Display:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&family=Kufam:wght@700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Kufam';--arb:'Noto Sans Arabic';
   --iron:#120E0B;--coal:#1C1510;--bar:#2B211A;--barhi:#3A2D22;
-  --ember:#E4572E;--flame:#FF9B54;--ash:#EFE4D3;--dust:#B9A893;--wood:#9A6B3F;
+  --ember:#E4572E;--flame:#FF9B54;--ash:#EFE4D3;--dust:#B9A893;--wood:#9A6B3F;--kraft:#C6A97F;--pulp:#F3E6CB;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--iron);color:var(--ash);font:400 17px/1.75 'Source Sans 3',system-ui,sans-serif}
@@ -26,41 +26,68 @@ img{display:block;max-width:100%}
   border-radius:2px;box-shadow:0 4px 16px rgba(0,0,0,.5);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the charcoal grid, an iron grill grate over live coals ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(16px,2.6vh,26px);
-  overflow:hidden;background:linear-gradient(180deg,#0C0907 0%,var(--iron) 55%,#0C0907 100%);padding:clamp(20px,4vh,40px) 5vw}
-.toprail{display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
-.tag{border:1px solid rgba(228,87,46,.55);color:var(--ash);padding:7px 13px;border-radius:2px;
-  font:600 12.5px/1 'Source Sans 3',sans-serif;letter-spacing:.14em;text-transform:uppercase;background:rgba(228,87,46,.09)}
-.tag b{color:var(--flame);font-weight:700}
-.grate{position:relative;width:min(880px,92vw);height:clamp(300px,42vh,400px);border-radius:6px;
-  border:11px solid #241C15;box-shadow:0 34px 80px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.05);
-  background:#0A0705;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.glow{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(38% 30% at 22% 82%,rgba(228,87,46,.55),transparent 70%),
-             radial-gradient(30% 26% at 58% 88%,rgba(255,155,84,.42),transparent 70%),
-             radial-gradient(26% 22% at 84% 80%,rgba(228,87,46,.38),transparent 70%);
-  animation:emberbreathe 7s ease-in-out infinite}
-@keyframes emberbreathe{0%,100%{opacity:.66}50%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.glow{animation:none}}
-.bars{position:absolute;inset:0;background:
-  repeating-linear-gradient(90deg,#31261D 0 7px,#20180F 7px 20px,#0E0A06 20px 24px,rgba(0,0,0,0) 24px 46px)}
-.bars::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(255,255,255,.07),transparent 26%,transparent 74%,rgba(0,0,0,.5))}
-.plate{position:relative;z-index:3;background:linear-gradient(180deg,#3A2D22,#241B13);
-  border:2px solid var(--ember);border-radius:4px;padding:clamp(18px,3.4vh,30px) clamp(22px,4.5vw,46px);
-  text-align:center;box-shadow:0 18px 46px rgba(0,0,0,.65)}
-.plate::before,.plate::after{content:"";position:absolute;width:8px;height:8px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#EFE4D3,#6E5A46 70%);top:8px;left:8px;box-shadow:0 1px 2px #000}
-.plate::after{left:auto;right:8px}
-.plate h1{font-size:clamp(44px,8.6vw,84px);color:var(--ash)}
-.plate h1 b{color:var(--flame)}
-.plate .sub{margin-top:8px;color:var(--dust);font-size:clamp(14px,1.8vw,17px);line-height:1.5}
-.coalrow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.coal{display:inline-flex;align-items:center;gap:8px;background:#1B140E;border:1px solid #33271D;
-  border-radius:999px;padding:8px 15px;font:600 13px/1 'Source Sans 3',sans-serif;color:var(--ash)}
-.coal i{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 40% 35%,var(--flame),var(--ember));flex:none}
+/* ---------- HERO: the fly-posted BBQ poster, torn open at the corner ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  background:#160C07;display:block;padding:0}
+.under{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 34%;z-index:0}
+.scorch{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(48% 42% at 84% 12%,rgba(255,146,66,.5),transparent 68%),
+    linear-gradient(206deg,rgba(28,10,4,.5),rgba(10,5,2,.88))}
+.tear{position:absolute;inset:-4px;z-index:2;background:#F3E6CB;
+  clip-path:polygon(0 0,47% 0,48.4% 6.4%,50.9% 1.6%,52.1% 8.9%,55.6% 3.1%,56.8% 12.2%,59.3% 6.2%,
+    61.9% 13.4%,63.1% 8%,66.6% 17.1%,68.4% 10.4%,70.7% 20.6%,73.9% 13.9%,75.2% 23.4%,78.5% 16.5%,
+    80.7% 27.3%,82.9% 20.9%,86.1% 30.6%,88.7% 23%,90.4% 34.4%,93.9% 26.6%,95.7% 37.6%,100% 30.2%,
+    100% 100%,0 100%)}
+.poster{position:absolute;inset:0;z-index:3;overflow:hidden;
+  background:
+    repeating-linear-gradient(94deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px),
+    repeating-linear-gradient(3deg,rgba(90,58,26,.07) 0 1px,transparent 1px 5px),
+    radial-gradient(78% 60% at 26% 20%,rgba(255,240,214,.5),transparent 70%),
+    linear-gradient(168deg,#CFB388,#BE9C6F 52%,#A9855B);
+  clip-path:polygon(0 0,47% 0,48.4% 6.4%,50.9% 1.6%,52.1% 8.9%,55.6% 3.1%,56.8% 12.2%,59.3% 6.2%,
+    61.9% 13.4%,63.1% 8%,66.6% 17.1%,68.4% 10.4%,70.7% 20.6%,73.9% 13.9%,75.2% 23.4%,78.5% 16.5%,
+    80.7% 27.3%,82.9% 20.9%,86.1% 30.6%,88.7% 23%,90.4% 34.4%,93.9% 26.6%,95.7% 37.6%,100% 30.2%,
+    100% 100%,0 100%);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(26px,4.6vh,46px) clamp(20px,5vw,74px) clamp(24px,4vh,42px)}
+.stripline{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  border-top:5px solid #170F09;border-bottom:2px solid #170F09;padding:9px 0;width:min(586px,100%)}
+.tag{font:700 11.5px/1.4 'Source Sans 3',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#241609}
+.tag b{color:#8E2E12;font-weight:700}
+.mid{margin:auto 0 0;width:100%}
+h1.woodtype{font-family:'Ultra',Georgia,serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(42px,11.7vw,180px);line-height:.9;letter-spacing:-.018em;color:#170F09;
+  text-shadow:3px 3px 0 rgba(142,46,18,.34);max-width:14ch}
+h1.woodtype b{color:#8E2E12;font-weight:400}
+h1.woodtype xar{font-family:var(--arh),sans-serif;letter-spacing:0;text-shadow:none;line-height:1.14}
+.slug{display:inline-block;margin-top:clamp(14px,2.4vh,24px);background:#8E2E12;color:#F7E9D2;
+  padding:10px clamp(14px,2vw,24px);max-width:min(760px,100%);
+  font:700 clamp(14px,1.66vw,20px)/1.45 'Source Sans 3',sans-serif;letter-spacing:.02em;
+  box-shadow:5px 5px 0 rgba(23,15,9,.5)}
+.credits{display:flex;flex-wrap:wrap;gap:0 clamp(14px,2.6vw,32px);align-items:center;
+  margin:clamp(18px,3.2vh,32px) calc(-1 * clamp(20px,5vw,74px)) calc(-1 * clamp(24px,4vh,42px));
+  padding:15px clamp(20px,5vw,74px);background:#170F09;
+  box-shadow:0 -4px 0 #8E2E12}
+.credits span{position:relative;font:700 12px/2 'Source Sans 3',sans-serif;letter-spacing:.17em;
+  text-transform:uppercase;color:#E0C79E;padding-right:clamp(14px,2.6vw,32px)}
+.credits span::after{content:"";position:absolute;right:0;top:22%;bottom:22%;width:2px;background:rgba(224,199,158,.34)}
+.credits span:last-child{padding-right:0}
+.credits span:last-child::after{display:none}
+@media(max-width:880px){
+  .tear,.poster{clip-path:polygon(0 0,44% 0,46% 4.2%,50% 1.6%,53% 7%,57.6% 3.4%,60.4% 10%,
+    65.4% 5.8%,68% 13.6%,73% 9.6%,75.6% 18%,80.8% 14%,83.4% 23%,88.6% 18.6%,91% 28%,100% 23%,
+    100% 100%,0 100%)}
+  h1.woodtype{max-width:100%}
+}
+@media(max-width:430px){
+  .poster{padding:16px 14px 14px}
+  .stripline{border-top-width:4px;padding:7px 0}
+  .tag{font-size:10px;letter-spacing:.08em}
+  h1.woodtype{line-height:.86}
+  .slug{margin-top:10px;padding:8px 12px;font-size:13px;line-height:1.35}
+  .credits{margin:12px -14px -14px;padding:10px 14px}
+  .credits span{font-size:10px;letter-spacing:.06em;line-height:1.8;padding-right:12px}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
@@ -176,22 +203,23 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
-  <div class="toprail">
-    <span class="tag"><xen data-edit="t1" data-edit-label="Text (EN): Naccache, Antelias">Naccache, Antelias</xen><xar data-edit="t2" data-edit-label="Text (AR): النقاش، أنطلياس">النقاش، أنطلياس</xar></span>
-    <span class="tag"><b class="num" data-edit="t3" data-edit-label="Text: 4.9">4.9</b> <span><xen>from <span class="num" data-edit="t4" data-edit-label="Text: 126">126</span> Google reviews</xen><xar>من <span class="num" data-edit="t5" data-edit-label="Text: 126">126</span> تقييم على غوغل</xar></span></span>
-  </div>
-  <div class="grate">
-    <div class="glow"></div>
-    <div class="bars"></div>
-    <div class="plate">
-      <h1>MEATS <b data-edit="t6" data-edit-label="Text: &amp;">&amp;</b> BREAD</h1>
-      <p class="sub"><xen data-edit="t7" data-edit-label="Text (EN): Hardcore BBQ. Ribs, wings and burgers …">Hardcore BBQ. Ribs, wings and burgers off a real fire, in Naccache.</xen><xar data-edit="t8" data-edit-label="Text (AR): باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن…">باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن نار حقيقية، بالنقاش.</xar></p>
+  <img class="under" src="img/03.jpg" alt="A rack of smoked ribs on the plate, glazed and sliced">
+  <div class="scorch" aria-hidden="true"></div>
+  <div class="tear" aria-hidden="true"></div>
+  <div class="poster">
+    <div class="stripline">
+      <span class="tag"><xen data-edit="t1" data-edit-label="Text (EN): Naccache, Antelias">Naccache, Antelias</xen><xar data-edit="t2" data-edit-label="Text (AR): النقاش، أنطلياس">النقاش، أنطلياس</xar></span>
+      <span class="tag"><b class="num" data-edit="t3" data-edit-label="Text: 4.9">4.9</b> <span><xen>from <span class="num" data-edit="t4" data-edit-label="Text: 126">126</span> Google reviews</xen><xar>من <span class="num" data-edit="t5" data-edit-label="Text: 126">126</span> تقييم على غوغل</xar></span></span>
     </div>
-  </div>
-  <div class="coalrow">
-    <span class="coal"><i></i><span><xen data-edit="t9" data-edit-label="Text (EN): Open 7 days from noon">Open 7 days from noon</xen><xar data-edit="t10" data-edit-label="Text (AR): فاتحين 7 أيام من الضهر">فاتحين 7 أيام من الضهر</xar></span></span>
-    <span class="coal"><i></i><span><xen data-edit="t11" data-edit-label="Text (EN): Baby backs, wings, smash stacks">Baby backs, wings, smash stacks</xen><xar data-edit="t12" data-edit-label="Text (AR): ريبس وأجنحة وسماش برغر">ريبس وأجنحة وسماش برغر</xar></span></span>
-    <span class="coal"><i></i><span><xen data-edit="t13" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t14" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></span></span>
+    <div class="mid">
+      <h1 class="woodtype">MEATS <b data-edit="t6" data-edit-label="Text: &amp;">&amp;</b> BREAD</h1>
+      <p class="slug"><xen data-edit="t7" data-edit-label="Text (EN): Hardcore BBQ. Ribs, wings and burgers …">Hardcore BBQ. Ribs, wings and burgers off a real fire, in Naccache.</xen><xar data-edit="t8" data-edit-label="Text (AR): باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن…">باربكيو عالحقيقة. ريبس وأجنحة وبرغر عن نار حقيقية، بالنقاش.</xar></p>
+    </div>
+    <div class="credits">
+      <span><xen class="c" data-edit="t9" data-edit-label="Text (EN): Open 7 days from noon">Open 7 days from noon</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): فاتحين 7 أيام من الضهر">فاتحين 7 أيام من الضهر</xar></span>
+      <span><xen class="c" data-edit="t11" data-edit-label="Text (EN): Baby backs, wings, smash stacks">Baby backs, wings, smash stacks</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): ريبس وأجنحة وسماش برغر">ريبس وأجنحة وسماش برغر</xar></span>
+      <span><xen class="c" data-edit="t13" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></span>
+    </div>
   </div>
 </header>
 

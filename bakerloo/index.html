@@ -9,8 +9,8 @@
 <style>
 :root{
   --arh:'Cairo Play';--arb:'Rubik';
-  --teal:#0F8F8C;--teal-d:#0A5A58;--teal-dd:#07403F;--grout:#E9F2EC;--glaze:#F6FBF9;
-  --pink:#EFA9BC;--pink-d:#D97E96;--ink:#0F3535;--sugar:#FFF7EF;
+  --teal:#D24479;--teal-d:#8E2350;--teal-dd:#5C1233;--grout:#F7E6EC;--glaze:#FFF7FA;
+  --pink:#FFCF6B;--pink-d:#E0AC38;--ink:#3B1024;--sugar:#FFF7EF;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--sugar);color:var(--ink);font:400 16.5px/1.75 'Varela Round',system-ui,sans-serif}
@@ -25,79 +25,102 @@ section{padding-block:clamp(56px,8vh,96px)}
 /* language chip: a little glazed tile of its own, top right */
 .lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
   font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
-  background:linear-gradient(165deg,#FFFFFF, var(--glaze) 55%,#DCEAE4);color:var(--teal-dd);
-  border:1px solid #BFD4CC;border-radius:4px;
-  box-shadow:0 3px 0 #BFD4CC,0 8px 18px rgba(7,64,63,.35);-webkit-appearance:none}
-.lngt:active{transform:translateY(2px);box-shadow:0 1px 0 #BFD4CC}
+  background:linear-gradient(165deg,#FFFFFF, var(--glaze) 55%,#F3DCE4);color:var(--teal-dd);
+  border:1px solid #E0BECC;border-radius:4px;
+  box-shadow:0 3px 0 #E0BECC,0 8px 18px rgba(92,18,51,.35);-webkit-appearance:none}
+.lngt:active{transform:translateY(2px);box-shadow:0 1px 0 #E0BECC}
 
-/* ---------- HERO: a wall of saturated teal glazed tiles; one small ceramic
-     shop-number tile pinned at the top-left corner ---------- */
+/* ---------- HERO: the shop clock on the pink wall, hung from the picture rail,
+     hands at opening time. Everything else is painted wall. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
   background:
-   linear-gradient(118deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 42%),
-   repeating-linear-gradient(0deg,transparent 0 120px,rgba(6,48,47,.42) 120px 122px),
-   repeating-linear-gradient(90deg,transparent 0 120px,rgba(6,48,47,.42) 120px 122px),
-   radial-gradient(120% 90% at 50% 110%,rgba(7,64,63,.55),transparent 62%),
-   linear-gradient(180deg,#13A09C,var(--teal) 52%,#0C7573)}
-.numtile{position:absolute;top:calc(16px + env(safe-area-inset-top));left:16px;z-index:5;
-  width:clamp(96px,12vw,128px);aspect-ratio:1;border-radius:5px;overflow:hidden;
-  background:linear-gradient(160deg,#FFFFFF 0%,var(--glaze) 50%,#D8E7E0 100%);
-  border:1px solid #BFD4CC;box-shadow:0 4px 0 rgba(7,64,63,.35),0 14px 30px rgba(7,64,63,.45);
+   linear-gradient(112deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,0) 46%),
+   radial-gradient(120% 84% at 50% 110%,rgba(74,12,40,.55),rgba(0,0,0,0) 62%),
+   linear-gradient(180deg,#E4568B 0%,#D24479 50%,#AE2C60 100%)}
+header::before{content:"";position:absolute;left:0;right:0;top:13%;height:7px;z-index:2;
+  background:linear-gradient(180deg,#FFF7FA,#E9C6D3 60%,#C08AA0);
+  box-shadow:0 5px 16px rgba(74,12,40,.4)}
+/* the clock */
+.clock{position:absolute;z-index:4;right:clamp(22px,5vw,74px);top:calc(13% + 24px);
+  width:clamp(148px,19vw,252px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 50% 38%,#FFFFFF 0 60%,#F6E9ED 80%,#E2CBD3 100%);
+  border:clamp(7px,.95vw,13px) solid #2E0F1D;
+  box-shadow:0 0 0 4px rgba(255,255,255,.32),0 30px 56px rgba(74,12,40,.55)}
+.clock::before{content:"";position:absolute;inset:5%;border-radius:50%;
+  background:repeating-conic-gradient(from -1.4deg,#2E0F1D 0 2.8deg,rgba(0,0,0,0) 2.8deg 30deg);
+  -webkit-mask:radial-gradient(circle closest-side,rgba(0,0,0,0) 0 78%,#000 79%);
+  mask:radial-gradient(circle closest-side,rgba(0,0,0,0) 0 78%,#000 79%)}
+.clock::after{content:"";position:absolute;left:50%;top:50%;width:13px;height:13px;border-radius:50%;
+  background:#2E0F1D;transform:translate(-50%,-50%);z-index:3}
+.clock i{position:absolute;left:50%;bottom:50%;transform-origin:50% 100%;border-radius:4px;background:#2E0F1D;z-index:2}
+.clock i.hh{width:7px;height:25%;transform:translateX(-50%) rotate(240deg)}
+.clock i.mh{width:5px;height:35%;transform:translateX(-50%) rotate(0deg)}
+.clock i.sh{width:2px;height:39%;background:#D24479;border-radius:2px;
+  transform:translateX(-50%) rotate(0deg);animation:sweep 60s linear infinite}
+@keyframes sweep{from{transform:translateX(-50%) rotate(0deg)}to{transform:translateX(-50%) rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.clock i.sh{animation:none}}
+/* the enamel year plaque, hung on the same rail */
+.numtile{position:absolute;top:calc(13% + 22px);left:clamp(24px,7vw,104px);z-index:5;
+  width:clamp(78px,9vw,102px);aspect-ratio:1;border-radius:4px;overflow:hidden;
+  background:linear-gradient(160deg,#FFFFFF 0%,var(--glaze) 50%,#F2D8E1 100%);
+  border:1px solid #E0BECC;box-shadow:0 4px 0 rgba(92,18,51,.35),0 14px 30px rgba(92,18,51,.45);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
-.numtile::before{content:"";position:absolute;inset:7px;border:2px solid var(--teal-d);border-radius:3px;opacity:.85}
+.numtile::before{content:"";position:absolute;inset:6px;border:2px solid var(--teal-d);border-radius:2px;opacity:.85}
 .numtile::after{content:"";position:absolute;top:0;left:-55%;width:38%;height:100%;pointer-events:none;
   background:linear-gradient(105deg,transparent,rgba(255,255,255,.75),transparent);
   animation:glz 12s ease-in-out infinite}
 @keyframes glz{0%,86%{transform:translateX(0)}100%{transform:translateX(430%)}}
 @media(prefers-reduced-motion:reduce){.numtile::after{animation:none}}
-.numtile i{position:absolute;width:5px;height:5px;border-radius:50%;background:#B9CCC4;font-size:0;
-  box-shadow:inset 0 1px 1px rgba(7,64,63,.5)}
-.numtile i.s1{top:12px;left:12px}.numtile i.s2{top:12px;right:12px}
-.numtile i.s3{bottom:12px;left:12px}.numtile i.s4{bottom:12px;right:12px}
-.numtile small{font:400 9.5px/1 'Varela Round',sans-serif;letter-spacing:.3em;color:var(--teal-d);text-transform:uppercase;margin-left:.3em}
-.numtile b{font:400 clamp(30px,4vw,42px)/1 'Hammersmith One',sans-serif;color:var(--teal-dd)}
-.station{position:relative;z-index:2;width:min(860px,92vw);text-align:center;padding-block:clamp(24px,4vh,44px)}
-.paint{position:relative;display:inline-block}
-.paint h1{font-size:clamp(54px,10.6vw,116px);color:var(--glaze);
-  text-shadow:0 3px 0 rgba(7,64,63,.4),0 12px 26px rgba(7,64,63,.4)}
-html.ar .paint h1 xar{font-size:clamp(50px,9.8vw,104px);line-height:1.1;display:block;font-family:var(--arh)}
-.under{margin-top:8px;font:400 clamp(13px,2vw,17px)/1.5 'Varela Round',sans-serif;
-  letter-spacing:.42em;text-transform:uppercase;color:#CFF0EA;margin-right:-.42em}
-.sub{margin:14px auto 0;max-width:56ch;color:#E4F6F1;font-size:clamp(14.5px,1.9vw,17px);line-height:1.7}
-.ratetile{display:inline-flex;align-items:baseline;gap:8px;margin-top:16px;
-  background:linear-gradient(165deg,#FFFFFF,var(--glaze) 55%,#D8E7E0);color:var(--teal-dd);
-  border:1px solid #BFD4CC;border-radius:4px;padding:9px 16px;font:700 13.5px/1 'Rubik',sans-serif;
-  box-shadow:0 3px 0 rgba(7,64,63,.3)}
-.hatch{margin:clamp(20px,3.4vh,32px) auto 0;width:min(470px,84vw);
-  border:10px solid var(--glaze);border-radius:8px;background:var(--glaze);
-  box-shadow:0 0 0 2px rgba(6,48,47,.45),0 24px 50px rgba(7,64,63,.5)}
-.hatch img{width:100%;height:clamp(200px,28vh,266px);object-fit:cover;border-radius:2px}
-.flavtabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:clamp(16px,2.6vh,24px)}
-.ftab{background:rgba(246,251,249,.16);border:1px solid rgba(246,251,249,.55);border-radius:999px;
-  padding:6px 14px;font:400 12.5px/1.5 'Varela Round',sans-serif;color:#F0FBF8;letter-spacing:.03em}
-.ftab.pk{background:var(--pink);border-color:var(--pink-d);color:#5C2333;font-weight:700}
+.numtile i{position:absolute;width:4px;height:4px;border-radius:50%;background:#DFBFCC;font-size:0;
+  box-shadow:inset 0 1px 1px rgba(92,18,51,.5)}
+.numtile i.s1{top:9px;left:9px}.numtile i.s2{top:9px;right:9px}
+.numtile i.s3{bottom:9px;left:9px}.numtile i.s4{bottom:9px;right:9px}
+.numtile small{font:400 8.5px/1 'Varela Round',sans-serif;letter-spacing:.28em;color:var(--teal-d);text-transform:uppercase;margin-left:.28em}
+.numtile b{font:400 clamp(22px,2.6vw,29px)/1 'Hammersmith One',sans-serif;color:var(--teal-dd)}
+/* the painted name */
+.station{position:absolute;z-index:3;left:0;right:0;top:35%;text-align:left;
+  padding:0 clamp(150px,32vw,470px) 0 clamp(24px,7vw,104px)}
+.paint{position:relative;display:block}
+.paint h1{font-size:clamp(46px,8.6vw,116px);color:var(--glaze);
+  text-shadow:0 4px 0 rgba(74,12,40,.42),0 16px 32px rgba(92,18,51,.45)}
+html.ar .paint h1 xar{font-size:clamp(44px,8vw,100px);line-height:1.1;display:block;font-family:var(--arh)}
+.under{margin-top:10px;font:400 clamp(12.5px,1.9vw,16px)/1.5 'Varela Round',sans-serif;
+  letter-spacing:.42em;text-transform:uppercase;color:#FFDCE8;margin-right:-.42em}
+.sub{margin:16px 0 0;max-width:44ch;color:#FFE9F0;font-size:clamp(14.5px,1.85vw,17px);line-height:1.7}
+.ratetile{display:inline-flex;align-items:baseline;gap:8px;margin-top:18px;
+  background:linear-gradient(165deg,#FFFFFF,var(--glaze) 55%,#F2D8E1);color:var(--teal-dd);
+  border:1px solid #E0BECC;border-radius:4px;padding:9px 16px;font:700 13.5px/1 'Rubik',sans-serif;
+  box-shadow:0 3px 0 rgba(92,18,51,.3)}
+/* the box of donuts, framed and hung low on the same wall */
+.hatch{position:absolute;z-index:4;right:clamp(22px,5vw,74px);bottom:clamp(26px,4.6vh,54px);
+  width:min(256px,27vw);border:9px solid var(--glaze);border-radius:6px;background:var(--glaze);
+  box-shadow:0 0 0 2px rgba(74,12,40,.4),0 26px 52px rgba(92,18,51,.55)}
+.hatch img{width:100%;height:clamp(140px,20vh,186px);object-fit:cover;border-radius:2px}
+.flavtabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start;margin-top:clamp(16px,2.6vh,24px)}
+.ftab{background:rgba(255,247,250,.16);border:1px solid rgba(255,247,250,.55);border-radius:999px;
+  padding:6px 14px;font:400 12.5px/1.5 'Varela Round',sans-serif;color:#FFF1F5;letter-spacing:.03em}
+.ftab.pk{background:var(--pink);border-color:var(--pink-d);color:#4A2A06;font-weight:700}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
 .two h2,.hd{font-size:clamp(26px,3.8vw,42px);margin:8px 0 18px}
-.two p{color:#2B4A48;margin-bottom:15px}
+.two p{color:#5A2039;margin-bottom:15px}
 .frame{border:8px solid var(--glaze);border-radius:6px;background:var(--glaze);
-  box-shadow:0 0 0 2px rgba(6,48,47,.25),0 18px 40px rgba(15,53,53,.18)}
+  box-shadow:0 0 0 2px rgba(74,12,40,.25),0 18px 40px rgba(59,16,36,.18)}
 .frame img{width:100%;height:clamp(250px,40vh,410px);object-fit:cover;border-radius:2px}
-.cap{font:400 12.5px/1.6 'Varela Round',sans-serif;color:#5E7C79;margin-top:9px;padding-inline:4px}
+.cap{font:400 12.5px/1.6 'Varela Round',sans-serif;color:#8C5C70;margin-top:9px;padding-inline:4px}
 .wallgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.wtile{background:linear-gradient(160deg,#FFFFFF,var(--glaze) 55%,#DCEAE4);border:1px solid #BFD4CC;
+.wtile{background:linear-gradient(160deg,#FFFFFF,var(--glaze) 55%,#F3DCE4);border:1px solid #E0BECC;
   border-radius:5px;padding:18px 10px 16px;text-align:center;
-  box-shadow:0 3px 0 #BFD4CC;position:relative}
+  box-shadow:0 3px 0 #E0BECC;position:relative}
 .wtile b{display:block;font:400 15.5px/1.3 'Hammersmith One',sans-serif;color:var(--teal-dd)}
-.wtile span{display:block;margin-top:5px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7E9A96}
-.wtile.pk{background:linear-gradient(160deg,#FBD9E2,var(--pink) 60%,#E393A8);border-color:var(--pink-d)}
-.wtile.pk b{color:#5C2333}
-.wtile.pk span{color:#8E4A5C}
+.wtile span{display:block;margin-top:5px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#AE8493}
+.wtile.pk{background:linear-gradient(160deg,#FFEBC8,var(--pink) 60%,#E5B44A);border-color:var(--pink-d)}
+.wtile.pk b{color:#4A2A06}
+.wtile.pk span{color:#7A5310}
 .card{background:#FFFFFF;border:1px solid #E3D5C8;border-radius:6px;
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:clamp(20px,3vw,40px);
-  padding:clamp(22px,3.6vw,40px);align-items:start;box-shadow:0 16px 38px rgba(15,53,53,.1)}
+  padding:clamp(22px,3.6vw,40px);align-items:start;box-shadow:0 16px 38px rgba(59,16,36,.1)}
 .card h2{font-size:clamp(25px,3.4vw,38px);margin:6px 0 14px}
 .menu ul{list-style:none}
 .menu .gh{margin:14px 0 4px;font:400 12px/1.5 'Varela Round',sans-serif;letter-spacing:.24em;
@@ -108,53 +131,53 @@ html.ar .paint h1 xar{font-size:clamp(50px,9.8vw,104px);line-height:1.1;display:
 .menu li .dots{flex:1;border-bottom:1px dotted #C9B8A6;transform:translateY(-4px)}
 .menu li .pr{color:var(--teal-d);font-weight:700}
 .note{margin-top:16px;font-size:14px;color:#6E5A48}
-.cardimg{border:6px solid #FBD9E2;border-radius:4px;background:#FBD9E2}
+.cardimg{border:6px solid #FFEBC8;border-radius:4px;background:#FFEBC8}
 .cardimg img{width:100%;height:auto;border-radius:1px}
 .line{position:relative;max-width:860px;margin:34px auto 0;padding:0 8px}
 .line .track{position:absolute;left:8px;right:8px;top:13px;height:8px;border-radius:4px;background:var(--teal)}
 .stops{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative}
 .stop{text-align:center}
 .stop .dot{width:26px;height:26px;margin:0 auto;border-radius:50%;background:#FFFFFF;
-  border:6px solid var(--teal-d);position:relative;z-index:2;box-shadow:0 3px 8px rgba(7,64,63,.3)}
+  border:6px solid var(--teal-d);position:relative;z-index:2;box-shadow:0 3px 8px rgba(92,18,51,.3)}
 .stop.here .dot{border-color:var(--pink-d);background:var(--pink)}
 .stop b{display:block;margin-top:12px;font:400 16px/1.3 'Hammersmith One',sans-serif;color:var(--ink)}
-.stop span{display:block;margin-top:4px;font-size:12.5px;color:#5E7C79;line-height:1.5}
+.stop span{display:block;margin-top:4px;font-size:12.5px;color:#8C5C70;line-height:1.5}
 .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
 .rev-c{background:#FFFFFF;border:1px solid #E3D5C8;border-radius:6px;padding:22px 20px 18px;position:relative;
-  box-shadow:0 10px 26px rgba(15,53,53,.08)}
+  box-shadow:0 10px 26px rgba(59,16,36,.08)}
 .rev-c::before{content:"";position:absolute;top:0;left:20px;right:auto;width:44px;height:6px;
   border-radius:0 0 4px 4px;background:var(--pink)}
-.rev-c q{display:block;quotes:none;font-size:14.5px;line-height:1.75;color:#2B4A48}
+.rev-c q{display:block;quotes:none;font-size:14.5px;line-height:1.75;color:#5A2039}
 .rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Rubik',sans-serif;
   color:var(--teal-d);letter-spacing:.1em;text-transform:uppercase}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
 .gal a{display:block;border:6px solid var(--glaze);border-radius:5px;background:var(--glaze);
-  box-shadow:0 0 0 1.5px rgba(6,48,47,.22),0 10px 24px rgba(15,53,53,.12)}
+  box-shadow:0 0 0 1.5px rgba(74,12,40,.22),0 10px 24px rgba(59,16,36,.12)}
 .gal img{width:100%;height:200px;object-fit:cover;border-radius:1px}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 table.hrs{width:100%;border-collapse:collapse}
 table.hrs td{padding:9px 0;border-bottom:1px dashed #D9C9BA;font-size:15px}
-table.hrs td:last-child{text-align:right;color:#4E6A67}
+table.hrs td:last-child{text-align:right;color:#7B4A5E}
 .ad,.ph{font-size:16.5px;color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#F6FBF9;
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#FFF7FA;
   padding:13px 20px;border-radius:5px;text-decoration:none;font:700 14.5px/1 'Rubik',sans-serif;
   border:1px solid var(--teal-dd);margin:6px 8px 0 0;box-shadow:0 3px 0 var(--teal-dd)}
-.btn.o{background:#FFFFFF;color:var(--teal-dd);border-color:#BFD4CC;box-shadow:0 3px 0 #BFD4CC}
-footer{padding:36px 7vw 138px;color:#7E9A96;font-size:13.5px;text-align:center;background:#EADDD2}
+.btn.o{background:#FFFFFF;color:var(--teal-dd);border-color:#E0BECC;box-shadow:0 3px 0 #E0BECC}
+footer{padding:36px 7vw 138px;color:#AE8493;font-size:13.5px;text-align:center;background:#EADDD2}
 
 /* ---------- sticky bar: the glazed counter edge, pink icing dripping over it ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:2px;
   background:var(--grout);padding:2px 2px calc(2px + env(safe-area-inset-bottom));
-  box-shadow:0 -12px 30px rgba(7,64,63,.4)}
+  box-shadow:0 -12px 30px rgba(92,18,51,.4)}
 .bar::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;pointer-events:none;
   background:radial-gradient(circle at 12px 0px,var(--pink) 11px,transparent 12px);
   background-size:34px 12px;background-position:6px 0}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:10px 4px 11px;background:linear-gradient(180deg,#0D7B78,var(--teal-d));color:#EFFBF7;
+  padding:10px 4px 11px;background:linear-gradient(180deg,#B93469,var(--teal-d));color:#FFF3F7;
   text-decoration:none;font:700 11.5px/1.2 'Rubik',sans-serif;letter-spacing:.02em;min-height:56px;border-radius:3px}
 .bar a:active{background:var(--teal-dd)}
 .bar svg{width:19px;height:19px;fill:currentColor}
-.bar a.w{background:linear-gradient(180deg,#F7C3D2,var(--pink));color:#5C2333}
+.bar a.w{background:linear-gradient(180deg,#FFDF9E,var(--pink));color:#4A2A06}
 .bar a.sq{flex:0 0 58px}
 @media(max-width:880px){
   .two,.visit,.card{grid-template-columns:1fr}
@@ -167,9 +190,13 @@ footer{padding:36px 7vw 138px;color:#7E9A96;font-size:13.5px;text-align:center;b
   .stop .dot{margin:0}
   .stop b{margin-top:0}
   body{padding-bottom:88px}
-  .numtile{width:84px}
-  .numtile b{font-size:26px}
+  .numtile{width:70px;left:6vw}
+  .numtile b{font-size:20px}
   .gal img{height:165px}
+  .clock{right:5vw;width:clamp(100px,26vw,140px)}
+  .station{top:33%;padding:0 clamp(110px,32vw,190px) 0 6vw}
+  .hatch{right:5vw;width:min(150px,36vw);border-width:6px}
+  .hatch img{height:clamp(92px,13vh,120px)}
 }
 @media(max-width:430px){
   .bar a{font-size:10px}
@@ -223,6 +250,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="clock" aria-hidden="true"><i class="hh"></i><i class="mh"></i><i class="sh"></i></div>
   <div class="numtile"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i><small data-edit="t1" data-edit-label="Text: EST.">EST.</small><b class="num" data-edit="t2" data-edit-label="Text: 2016">2016</b></div>
   <div class="station">
     <div class="paint">
@@ -231,7 +259,6 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     </div>
     <p class="sub"><xen data-edit="t7" data-edit-label="Text (EN): Lebanon's OG donut spot, glazed onto t…">Lebanon's OG donut spot, glazed onto the wall since 2016. Handmade brioche rings, stuffed to order, from the counter beside the Lebanese University.</xen><xar data-edit="t8" data-edit-label="Text (AR): محل الدوناتس الأصلي بلبنان، مرسوم عالح…">محل الدوناتس الأصلي بلبنان، مرسوم عالحيط من الـ2016. حلقات بريوش شغل إيد، بتنحشى عالطلب، من الكاونتر يلي حد الجامعة اللبنانية.</xar></p>
     <p><span class="ratetile"><span class="num" data-edit="t9" data-edit-label="Text: 4.4 ★">4.4 ★</span><span><xen><span class="num" data-edit="t10" data-edit-label="Text: 94">94</span> Google reviews</xen><xar><span class="num" data-edit="t11" data-edit-label="Text: 94">94</span> تقييم على غوغل</xar></span></span></p>
-    <div class="hatch"><img src="img/03.jpg" alt="Four sugared brioche donuts with cream centres, straight down into the box"></div>
     <div class="flavtabs">
       <span class="ftab pk" data-edit="t12" data-edit-label="Text: Kinder Bueno">Kinder Bueno</span>
       <span class="ftab" data-edit="t13" data-edit-label="Text: Peanut Butter">Peanut Butter</span>
@@ -239,6 +266,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <span class="ftab" data-edit="t15" data-edit-label="Text: Lotus">Lotus</span>
     </div>
   </div>
+  <div class="hatch"><img src="img/03.jpg" alt="Four sugared brioche donuts with cream centres, straight down into the box"></div>
 </header>
 
 <section class="wrap">
@@ -261,7 +289,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
   <div class="wrap">
     <p class="k"><xen data-edit="t28" data-edit-label="Text (EN): The flavour wall">The flavour wall</xen><xar data-edit="t29" data-edit-label="Text (AR): حيط النكهات">حيط النكهات</xar></p>
     <h2 class="hd rev"><xen data-edit="t30" data-edit-label="Text (EN): Ten tiles, ten fillings">Ten tiles, ten fillings</xen><xar data-edit="t31" data-edit-label="Text (AR): عشر بلاطات، عشر حشوات">عشر بلاطات، عشر حشوات</xar></h2>
-    <p style="max-width:62ch;color:#4E6A67;margin-bottom:24px"><xen data-edit="t32" data-edit-label="Text (EN): The stuffed brioche list, straight fro…">The stuffed brioche list, straight from their own counter and the reviewers who keep coming back for specific ones.</xen><xar data-edit="t33" data-edit-label="Text (AR): لائحة البريوش المحشي، من كاونترهن مباش…">لائحة البريوش المحشي، من كاونترهن مباشرة ومن المقيّمين يلي بيرجعوا مشان نكهات بعينها.</xar></p>
+    <p style="max-width:62ch;color:#7B4A5E;margin-bottom:24px"><xen data-edit="t32" data-edit-label="Text (EN): The stuffed brioche list, straight fro…">The stuffed brioche list, straight from their own counter and the reviewers who keep coming back for specific ones.</xen><xar data-edit="t33" data-edit-label="Text (AR): لائحة البريوش المحشي، من كاونترهن مباش…">لائحة البريوش المحشي، من كاونترهن مباشرة ومن المقيّمين يلي بيرجعوا مشان نكهات بعينها.</xar></p>
     <div class="wallgrid rev">
       <div class="wtile pk"><b data-edit="t34" data-edit-label="Text: Kinder Bueno">Kinder Bueno</b><span><xen data-edit="t35" data-edit-label="Text (EN): most named">most named</xen><xar data-edit="t36" data-edit-label="Text (AR): الأكتر ذكراً">الأكتر ذكراً</xar></span></div>
       <div class="wtile"><b data-edit="t37" data-edit-label="Text: Peanut Butter">Peanut Butter</b><span><xen data-edit="t38" data-edit-label="Text (EN): reviewer pick">reviewer pick</xen><xar data-edit="t39" data-edit-label="Text (AR): خيار المقيّمين">خيار المقيّمين</xar></span></div>

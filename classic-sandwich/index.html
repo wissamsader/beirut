@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Classic Sandwich · Ahmad El Asaad, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Tajawal:wght@400;500;700&family=Changa:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Archivo+Black&family=Tajawal:wght@400;500;700&family=Changa:wght@600;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --arh:'Changa';--arb:'Tajawal';
   --yolk:#F2C400;--coal:#151413;--stone:#211F1D;--wax:#F1EBDD;--ink:#23211E;
+  --torch:#E85B12;--torch-d:#B23A05;--steel:#8E949B;--steel-d:#3A3F45;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--wax);color:var(--ink);font:400 17px/1.75 'Tajawal',system-ui,sans-serif}
@@ -25,49 +26,92 @@ img{display:block;max-width:100%}
   box-shadow:3px 3px 0 var(--coal);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the waxed wrap sheet IS the field, creases and all ---------- */
+/* ---------- HERO: the grill grate hung from the top rail, flame licking the bars ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;
-  display:flex;flex-direction:column;justify-content:center;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;
   background:
-   linear-gradient(118deg,transparent 0 30%,rgba(21,20,19,.06) 30.2% 30.7%,transparent 31% 100%),
-   linear-gradient(62deg,transparent 0 58%,rgba(21,20,19,.05) 58.2% 58.7%,transparent 59% 100%),
-   linear-gradient(150deg,rgba(21,20,19,.045) 0 12%,transparent 12.4%),
-   linear-gradient(-30deg,rgba(21,20,19,.05) 0 9%,transparent 9.4%),
-   repeating-linear-gradient(0deg,transparent 0 27px,rgba(21,20,19,.03) 27px 28px),
-   repeating-linear-gradient(90deg,transparent 0 220px,rgba(21,20,19,.028) 220px 222px),
-   radial-gradient(120% 90% at 50% 50%,var(--wax) 60%,#E4DCC8 100%)}
-.seal{position:absolute;top:-30px;left:7vw;width:118px;height:118px;border-radius:50%;
-  background:var(--yolk);color:var(--coal);z-index:3;
-  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  padding-bottom:16px;border:3px dashed var(--coal);animation:sealpulse 12s ease-in-out infinite;
+   radial-gradient(96% 46% at 46% 4%,rgba(255,150,44,.6),transparent 62%),
+   radial-gradient(62% 40% at 86% 92%,rgba(190,66,10,.34),transparent 68%),
+   linear-gradient(178deg,#5A6067,#464C52 26%,#33383E 58%,#22262B 82%,#181B1F)}
+/* the grill body's own brushed steel, edge to edge */
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+   repeating-linear-gradient(90deg,rgba(255,255,255,.075) 0 1px,rgba(0,0,0,.09) 1px 4px,transparent 4px 7px),
+   repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 23px)}
+/* the grate: heavy bars hung off the rail at the top edge */
+.grate{position:absolute;left:0;right:0;top:0;height:clamp(176px,25vh,246px);z-index:4;pointer-events:none}
+.grate .rail{position:absolute;left:0;right:0;top:0;height:clamp(20px,2.8vw,34px);
+  background:linear-gradient(180deg,#B9C0C7,#6E757D 46%,#22262A);
+  box-shadow:0 8px 22px rgba(0,0,0,.42)}
+.grate .bars{position:absolute;left:0;right:0;top:clamp(20px,2.8vw,34px);bottom:0;
+  background:repeating-linear-gradient(180deg,
+    #23272B 0 2px,#6D747B 2px 7px,#AEB5BC 7px 11px,#5B6167 11px 16px,#191C1F 16px 19px,
+    transparent 19px 46px)}
+.grate .post{position:absolute;top:0;bottom:-14px;width:clamp(12px,1.5vw,20px);
+  background:linear-gradient(90deg,#1C1F22,#8E959C 42%,#42474C);border-radius:0 0 4px 4px;
+  box-shadow:0 10px 20px rgba(0,0,0,.4)}
+.grate .post.l{left:clamp(24px,7vw,110px)}
+.grate .post.r{right:clamp(24px,7vw,110px)}
+/* flame tongues licking up over the bars */
+.flames{position:absolute;left:0;right:0;top:clamp(26px,4.4vh,48px);height:clamp(188px,27vh,258px);
+  z-index:3;display:flex;justify-content:space-around;align-items:flex-end;pointer-events:none}
+.flames::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:clamp(18px,2.4vw,30px);
+  background:linear-gradient(180deg,#666D74,#202428 52%,#0B0D0F);
+  box-shadow:0 12px 24px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.24)}
+.flames i{display:block;width:clamp(30px,3.8vw,56px);height:86%;
+  clip-path:polygon(50% 0%,63% 17%,58% 32%,77% 46%,86% 68%,77% 89%,57% 100%,43% 100%,23% 89%,14% 68%,25% 45%,42% 31%,37% 16%);
+  background:linear-gradient(0deg,#2E6BE3 0 8%,#59AEF5 8% 15%,#FFE066 34%,#FF9B14 66%,#F5711A 88%,#EE5F12);
+  transform-origin:50% 100%;animation:lick 7s ease-in-out infinite}
+.flames i:nth-child(2n){height:60%;animation-duration:7.6s;animation-delay:-1.4s}
+.flames i:nth-child(3n){height:92%;animation-duration:8.2s;animation-delay:-2.9s}
+.flames i:nth-child(5n){height:70%;animation-delay:-4.1s}
+@keyframes lick{0%,100%{transform:scaleY(1);opacity:.88}50%{transform:scaleY(1.09);opacity:1}}
+/* the rating disc hung off the rail on a wire */
+..seal-x{}
+.seal{position:absolute;top:clamp(150px,20.5vh,196px);left:clamp(22px,3.4vw,66px);z-index:5;
+  width:clamp(88px,7.6vw,104px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 36% 30%,#FFE873,var(--yolk) 58%,#C79E00);color:var(--coal);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  border:3px solid var(--coal);animation:sealpulse 12s ease-in-out infinite;
   font:700 10.5px/1.3 'Tajawal',sans-serif;letter-spacing:.14em;text-transform:uppercase;
-  box-shadow:0 8px 20px rgba(21,20,19,.25)}
-.seal b{font:800 24px/1.1 'Archivo Black',sans-serif;letter-spacing:0}
+  box-shadow:0 12px 26px rgba(60,18,0,.45)}
+.seal::before{content:"";position:absolute;left:50%;bottom:100%;width:3px;height:clamp(28px,5vh,54px);
+  background:linear-gradient(180deg,#C6CCD2,#6C7278);transform:translateX(-50%)}
+.seal b{font:400 25px/1 'Bakbak One',sans-serif;letter-spacing:0}
 @keyframes sealpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.tape{position:absolute;right:0;top:34%;width:clamp(150px,20vw,240px);padding:9px 18px 9px 14px;
-  background:var(--yolk);color:var(--coal);font:700 11px/1 'Tajawal',sans-serif;
-  letter-spacing:.28em;text-transform:uppercase;text-align:left;
-  box-shadow:0 3px 10px rgba(21,20,19,.25);z-index:2}
-.tape::before{content:"";position:absolute;left:-9px;top:0;bottom:0;width:9px;
-  background:linear-gradient(-45deg,var(--yolk) 5px,transparent 0),linear-gradient(45deg,var(--yolk) 5px,transparent 0);
-  background-size:9px 8px;background-repeat:repeat-y}
-.hw{position:relative;z-index:1;padding:clamp(70px,10vh,110px) 7vw clamp(30px,5vh,54px);
-  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
-  gap:clamp(22px,4vw,60px);align-items:end;max-width:1280px;margin-inline:auto;width:100%}
-.hw .k{color:#6E6114}
-.hw h1{font-size:clamp(44px,8.6vw,104px);color:var(--coal);text-transform:uppercase;line-height:.98;margin-top:10px}
-.hw h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--coal);font-size:.6em;letter-spacing:.14em}
-.sub{margin:14px 0 0;max-width:46ch;color:#57503F;font-size:clamp(14.5px,1.9vw,17.5px)}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.chip{background:var(--coal);color:var(--wax);border-radius:2px;padding:7px 13px;
-  font:700 12px/1 'Tajawal',sans-serif;letter-spacing:.05em}
-.chip.y{background:var(--yolk);color:var(--coal)}
-.rate{display:inline-block;margin-top:20px;border:2px solid var(--coal);padding:10px 16px;
-  font:700 13.5px/1.3 'Tajawal',sans-serif;color:var(--coal);background:rgba(242,196,0,.2)}
-.pane{position:relative;background:#141312;padding:9px;border-radius:3px;z-index:2;
-  box-shadow:0 22px 46px rgba(21,20,19,.35)}
-.pane img{width:100%;height:clamp(210px,30vh,320px);object-fit:cover}
+/* the order panel hung off the grate on two hooks */
+.pane{position:absolute;right:clamp(26px,5vw,92px);top:clamp(238px,33vh,354px);z-index:5;
+  width:clamp(230px,32vw,452px);background:#141312;padding:10px 10px 8px;border-radius:3px;
+  border:2px solid #35383B;box-shadow:0 26px 52px rgba(60,18,0,.5)}
+.pane::before,.pane::after{content:"";position:absolute;bottom:100%;width:4px;
+  height:clamp(48px,10vh,104px);background:linear-gradient(180deg,#C6CCD2,#6C7278)}
+.pane::before{left:18%}.pane::after{right:18%}
+.pane img{width:100%;height:clamp(150px,19vw,236px);object-fit:cover}
 .pane .pc{color:#B6AE9C;font:500 12px/1.5 'Tajawal',sans-serif;margin-top:8px;padding:0 2px 2px}
+/* the stamped despatch tag */
+.tape{position:absolute;right:0;bottom:clamp(80px,11vh,132px);z-index:5;
+  padding:11px 18px 11px 24px;background:var(--coal);color:var(--yolk);
+  font:700 11.5px/1 'Tajawal',sans-serif;letter-spacing:.28em;text-transform:uppercase;
+  box-shadow:0 8px 20px rgba(60,18,0,.45)}
+.tape::after{content:"";position:absolute;right:100%;top:0;bottom:0;width:16px;
+  background:linear-gradient(135deg,transparent 50%,var(--coal) 0)}
+/* the name, sat low in the heat */
+.hw{position:relative;z-index:6;padding:0 7vw clamp(44px,7vh,78px);max-width:1280px;
+  margin-inline:auto;width:100%}
+.hw .k{color:#2A1A06;background:var(--yolk);display:inline-block;padding:6px 12px;border-radius:2px;
+  box-shadow:0 6px 16px rgba(0,0,0,.45)}
+.hw h1{font-family:'Bakbak One',sans-serif;font-weight:400;max-width:min(700px,50vw);
+  font-size:clamp(50px,10.6vw,132px);color:#F6EEDC;text-transform:uppercase;line-height:.9;margin-top:14px;
+  letter-spacing:-.005em;text-shadow:0 3px 0 rgba(0,0,0,.65),0 20px 46px rgba(0,0,0,.8)}
+.hw h1 span{display:block;color:transparent;-webkit-text-stroke:2.5px var(--yolk);font-size:.74em;letter-spacing:.02em}
+.sub{margin:18px 0 0;max-width:44ch;color:#C9C3B6;font-size:clamp(14.5px,1.65vw,17.5px);font-weight:500;
+  text-shadow:0 2px 10px rgba(0,0,0,.85)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{background:rgba(12,13,15,.86);color:var(--wax);border:1px solid rgba(242,196,0,.4);border-radius:2px;
+  padding:8px 14px;font:700 12px/1 'Tajawal',sans-serif;letter-spacing:.05em}
+.chip.y{background:var(--yolk);color:var(--coal)}
+.rate{display:inline-block;margin-top:20px;border:2px solid rgba(242,196,0,.55);padding:10px 16px;
+  font:700 13.5px/1.3 'Tajawal',sans-serif;color:#EDE6D6;background:rgba(12,13,15,.6)}
 
 section{padding-block:clamp(56px,8vh,96px)}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(26px,4vw,56px);align-items:start}
@@ -146,23 +190,31 @@ footer{padding:36px 0 130px;color:#8F8875;font-size:13.5px;text-align:center;bac
 .bar svg{width:18px;height:18px;fill:currentColor}
 .bar a.c1{background:var(--coal);color:var(--yolk)}
 
-@media(prefers-reduced-motion:reduce){.seal{animation:none}}
+@media(prefers-reduced-motion:reduce){.seal,.flames i{animation:none}}
 @media(max-width:880px){
   .two,.visit,.menu2{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
-  .hw{grid-template-columns:1fr;align-items:start;gap:20px;padding-top:96px}
-  .pane{max-width:460px}
-  .pane img{height:clamp(150px,20vh,220px)}
-  .tape{top:auto;bottom:12px}
+  .pane{position:static;order:3;width:auto;max-width:none;margin:16px 22px 0}
+  .pane::before,.pane::after{display:none}
+  .pane img{height:132px}
+  .tape{position:static;order:1;align-self:flex-start;margin-bottom:10px}
+  .tape::after{display:none}
+  .hw{order:2;padding:0 22px 0}
+  .hw h1{max-width:none}
+  .seal{top:124px;right:20px;left:auto;width:86px}
+  .seal::before{display:none}
+  .grate{height:138px}
+  .flames{top:72px;height:122px}
+  .seal{top:150px}
+  header{padding-bottom:clamp(28px,4vh,44px)}
   body{padding-bottom:74px}
 }
 @media(max-width:430px){
   .steps{grid-template-columns:1fr}
-  .seal{width:96px;height:96px;top:-24px;padding-bottom:12px}
-  .hw{padding-top:88px}
+  .seal{width:78px}
 }
 </style>
 <meta name="robots" content="noindex,nofollow">
@@ -212,23 +264,23 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header>
+  <div class="grate" aria-hidden="true"><span class="rail"></span><span class="bars"></span><span class="post l"></span><span class="post r"></span></div>
+  <div class="flames" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <div class="seal"><b class="num" data-edit="t1" data-edit-label="Text: 4.3">4.3</b><span><xen data-edit="t2" data-edit-label="Text (EN): stars">stars</xen><xar data-edit="t3" data-edit-label="Text (AR): نجوم">نجوم</xar></span></div>
-  <div class="tape"><xen data-edit="t4" data-edit-label="Text (EN): Wrapped hot">Wrapped hot</xen><xar data-edit="t5" data-edit-label="Text (AR): مغلّف سخن">مغلّف سخن</xar></div>
+  <div class="pane"><img src="img/07.jpg" alt="Wrapped sandwiches and fries spread over the black granite table">
+    <p class="pc"><xen data-edit="t4" data-edit-label="Text (EN): Orders in the house paper, on the gran…">Orders in the house paper, on the granite.</xen><xar data-edit="t5" data-edit-label="Text (AR): الطلبات بورق المحل، عالغرانيت.">الطلبات بورق المحل، عالغرانيت.</xar></p>
+  </div>
+  <div class="tape"><xen data-edit="t6" data-edit-label="Text (EN): Wrapped hot">Wrapped hot</xen><xar data-edit="t7" data-edit-label="Text (AR): مغلّف سخن">مغلّف سخن</xar></div>
   <div class="hw">
-    <div>
-      <p class="k"><xen data-edit="t6" data-edit-label="Text (EN): Ahmad El Asaad · Beirut">Ahmad El Asaad · Beirut</xen><xar data-edit="t7" data-edit-label="Text (AR): أحمد الأسعد · بيروت">أحمد الأسعد · بيروت</xar></p>
-      <h1><xen class="c">Classic<span data-edit="t8" data-edit-label="Text: Sandwich">Sandwich</span></xen><xar class="c" data-edit="t9" data-edit-label="Text (AR): كلاسيك ساندويش">كلاسيك ساندويش</xar></h1>
-      <p class="sub"><xen data-edit="t10" data-edit-label="Text (EN): Burgers, manoushe and wraps off a corn…">Burgers, manoushe and wraps off a corner grill, rolled in the house's own printed paper and out the door on the bikes.</xen><xar data-edit="t11" data-edit-label="Text (AR): برغر ومناقيش وسندويشات عن مشوى الزاوية…">برغر ومناقيش وسندويشات عن مشوى الزاوية، ملفوفين بورق المحل المطبوع وطالعين عالطريق عالموتوسيكلات.</xar></p>
-      <div class="chips">
-        <span class="chip y"><xen data-edit="t12" data-edit-label="Text (EN): Delivery all day">Delivery all day</xen><xar data-edit="t13" data-edit-label="Text (AR): دليفري طول النهار">دليفري طول النهار</xar></span>
-        <span class="chip"><xen data-edit="t14" data-edit-label="Text (EN): Open to midnight">Open to midnight</xen><xar data-edit="t15" data-edit-label="Text (AR): فاتحين لنص الليل">فاتحين لنص الليل</xar></span>
-        <span class="chip"><xen data-edit="t16" data-edit-label="Text (EN): Under the market price">Under the market price</xen><xar data-edit="t17" data-edit-label="Text (AR): أرخص من السوق">أرخص من السوق</xar></span>
-      </div>
-      <p class="rate"><b class="num" data-edit="t18" data-edit-label="Text: 744">744</b> <xen data-edit="t19" data-edit-label="Text (EN): Google reviews rate this counter">Google reviews rate this counter</xen><xar data-edit="t20" data-edit-label="Text (AR): تقييم على غوغل لهالكاونتر">تقييم على غوغل لهالكاونتر</xar></p>
+    <p class="k"><xen data-edit="t8" data-edit-label="Text (EN): Ahmad El Asaad · Beirut">Ahmad El Asaad · Beirut</xen><xar data-edit="t9" data-edit-label="Text (AR): أحمد الأسعد · بيروت">أحمد الأسعد · بيروت</xar></p>
+    <h1><xen class="c">Classic<span data-edit="t10" data-edit-label="Text: Sandwich">Sandwich</span></xen><xar class="c" data-edit="t11" data-edit-label="Text (AR): كلاسيك ساندويش">كلاسيك ساندويش</xar></h1>
+    <p class="sub"><xen data-edit="t12" data-edit-label="Text (EN): Burgers, manoushe and wraps off a corn…">Burgers, manoushe and wraps off a corner grill, rolled in the house's own printed paper and out the door on the bikes.</xen><xar data-edit="t13" data-edit-label="Text (AR): برغر ومناقيش وسندويشات عن مشوى الزاوية…">برغر ومناقيش وسندويشات عن مشوى الزاوية، ملفوفين بورق المحل المطبوع وطالعين عالطريق عالموتوسيكلات.</xar></p>
+    <div class="chips">
+      <span class="chip y"><xen data-edit="t14" data-edit-label="Text (EN): Delivery all day">Delivery all day</xen><xar data-edit="t15" data-edit-label="Text (AR): دليفري طول النهار">دليفري طول النهار</xar></span>
+      <span class="chip"><xen data-edit="t16" data-edit-label="Text (EN): Open to midnight">Open to midnight</xen><xar data-edit="t17" data-edit-label="Text (AR): فاتحين لنص الليل">فاتحين لنص الليل</xar></span>
+      <span class="chip"><xen data-edit="t18" data-edit-label="Text (EN): Under the market price">Under the market price</xen><xar data-edit="t19" data-edit-label="Text (AR): أرخص من السوق">أرخص من السوق</xar></span>
     </div>
-    <div class="pane"><img src="img/07.jpg" alt="Wrapped sandwiches and fries spread over the black granite table">
-      <p class="pc"><xen data-edit="t21" data-edit-label="Text (EN): Orders in the house paper, on the gran…">Orders in the house paper, on the granite.</xen><xar data-edit="t22" data-edit-label="Text (AR): الطلبات بورق المحل، عالغرانيت.">الطلبات بورق المحل، عالغرانيت.</xar></p>
-    </div>
+    <p class="rate"><b class="num" data-edit="t20" data-edit-label="Text: 744">744</b> <xen data-edit="t21" data-edit-label="Text (EN): Google reviews rate this counter">Google reviews rate this counter</xen><xar data-edit="t22" data-edit-label="Text (AR): تقييم على غوغل لهالكاونتر">تقييم على غوغل لهالكاونتر</xar></p>
   </div>
 </header>
 
