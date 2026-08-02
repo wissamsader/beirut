@@ -38,35 +38,34 @@ img{display:block;max-width:100%}
 #nav .call{color:var(--blk) !important;background:var(--cop);padding:10px 17px}
 #nav .call:hover{background:var(--wht);color:var(--blk) !important}
 
-/* ---------- HERO: near-black, one warm-lit frame of their own window ---------- */
+/* ---------- HERO: the near-black field itself, with one contained plate of their own counter ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:flex-end;background:var(--blk)}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 96%;
-  filter:brightness(.56) contrast(1.1) saturate(1.06);
-  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-header .scrim{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(11,11,11,.82) 0,rgba(11,11,11,.32) 30%,rgba(11,11,11,.5) 60%,rgba(11,11,11,.93) 100%),
-             linear-gradient(270deg,rgba(11,11,11,.72) 0,rgba(11,11,11,.1) 52%,transparent 100%)}
-.mid{position:relative;z-index:3;width:min(1180px,100%);margin:0 0 0 auto;padding:0 6vw clamp(52px,8.4vh,92px);
-  text-align:right;color:var(--wht)}
-.slug{display:flex;gap:16px;justify-content:flex-end;font:800 11px/1.5 'Manrope',sans-serif;
-  letter-spacing:.3em;text-transform:uppercase;color:rgba(247,245,241,.68);margin-bottom:18px}
+  display:flex;align-items:center;background:var(--blk);
+  padding:clamp(86px,11.6vh,122px) 0 clamp(52px,7.4vh,86px)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(176,114,47,.42)}
+.mid{position:relative;z-index:3;width:100%;padding-inline:6vw;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(300px,42vw,604px));
+  gap:clamp(24px,2.4vw,34px);align-items:center;text-align:left;color:var(--wht)}
+.plate{margin:0;position:relative}
+.plate img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;
+  border:1px solid rgba(247,245,241,.24);box-shadow:0 34px 76px rgba(0,0,0,.66)}
+.plate::after{content:"";position:absolute;left:-1px;top:-1px;width:46px;height:3px;background:var(--cop)}
+.slug{display:flex;gap:16px;justify-content:flex-start;font:800 11px/1.5 'Manrope',sans-serif;
+  letter-spacing:.3em;text-transform:uppercase;color:rgba(247,245,241,.68);margin-bottom:18px;flex-wrap:wrap}
 .slug b{color:var(--cop);font-weight:800}
-h1.bname{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(64px,11vw,158px);line-height:.84;
-  letter-spacing:-.045em;color:#FBFAF7;text-shadow:0 18px 50px rgba(0,0,0,.8)}
-.arn{font-family:var(--arh),serif;font-size:clamp(18px,2.4vw,30px);color:var(--cop);margin-top:10px}
-.subx{margin-top:14px;font-size:clamp(14.5px,1.7vw,17.5px);color:#D5D1C8;max-width:44ch;margin-left:auto;
-  text-shadow:0 2px 12px rgba(0,0,0,.8)}
-.readouts{display:flex;gap:34px;justify-content:flex-end;margin-top:24px;flex-wrap:wrap}
-.readouts div{text-align:right}
+h1.bname{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(64px,8.9vw,132px);line-height:.84;
+  letter-spacing:-.045em;color:#FBFAF7}
+.arn{font-family:var(--arh),serif;font-size:clamp(18px,2.4vw,30px);color:var(--cop);margin-top:16px}
+.subx{margin-top:20px;font-size:clamp(14.5px,1.7vw,17.5px);color:#D5D1C8;max-width:38ch}
+.readouts{display:flex;gap:30px;justify-content:flex-start;margin-top:30px;flex-wrap:wrap}
+.readouts div{text-align:left}
 .readouts b{display:block;font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(22px,2.8vw,32px);
   color:var(--cop);line-height:1}
 .readouts span{font:800 10.5px/1.6 'Manrope',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#9E9A92}
-.swatches{display:flex;gap:9px;justify-content:flex-end;flex-wrap:wrap;margin-top:24px;padding:0}
+.swatches{display:flex;gap:9px;justify-content:flex-start;flex-wrap:wrap;margin-top:28px;padding:0}
 .swatches span{border:1px solid rgba(247,245,241,.3);padding:8px 14px;font:800 10.5px/1 'Manrope',sans-serif;
   letter-spacing:.16em;text-transform:uppercase;color:#EDEAE3;background:rgba(11,11,11,.34)}
-.hbtns{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:26px}
+.hbtns{display:flex;gap:10px;justify-content:flex-start;flex-wrap:wrap;margin-top:30px}
 .hbtns a{display:inline-flex;align-items:center;gap:8px;padding:13px 23px;text-decoration:none;
   font:800 12px/1 'Manrope',sans-serif;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid transparent}
 .hbtns a.s{background:var(--cop);color:var(--blk)}
@@ -79,13 +78,17 @@ h1.bname{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(64px,11vw
 [data-r="4"]{animation-delay:330ms}[data-r="5"]{animation-delay:410ms}
 @keyframes rise{to{opacity:1;transform:none}}
 @media(max-width:900px){#nav .links a:not(.call){display:none}}
+@media(max-width:880px){
+  header{padding:78px 0 40px}
+  .mid{grid-template-columns:minmax(0,1fr);gap:24px}
+  .subx{max-width:100%}
+}
 @media(max-width:600px){
-  .mid{text-align:left;padding-bottom:clamp(40px,7vh,64px)}
-  .slug,.readouts,.swatches,.hbtns{justify-content:flex-start}
-  .readouts div{text-align:left}
-  .subx{margin-left:0}
   h1.bname{font-size:clamp(56px,18vw,86px)}
-  header .scrim{background:linear-gradient(180deg,rgba(11,11,11,.7) 0,rgba(11,11,11,.5) 40%,rgba(11,11,11,.94) 100%)}
+  .plate img{aspect-ratio:16/10}
+  .readouts{gap:22px}
+  .swatches{margin-top:20px}
+  .hbtns{margin-top:22px}
 }
 
 /* ---------- sections ---------- */
@@ -220,9 +223,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="bg" src="img/01.jpg" alt="The BLCK window on Mgr Chebli street, the counter lit inside">
-  <div class="scrim" aria-hidden="true"></div>
   <div class="mid">
+   <div class="col">
     <p class="slug" data-r="1">
       <span><xen class="c">Specialty coffee <b data-edit="t9" data-edit-label="Text: · Kantari">· Kantari</b></xen><xar class="c">قهوة مختصة <b data-edit="t10" data-edit-label="Text: · القنطاري">· القنطاري</b></xar></span>
       <span><xen class="c" data-edit="t11" data-edit-label="Text (EN): Respect the beans">Respect the beans</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): احترم الحبوب">احترم الحبوب</xar></span>
@@ -245,6 +247,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <a class="s" href="tel:+96181006900"><xen data-edit="t34" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t35" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
       <a class="l" href="https://www.google.com/maps?cid=4711636104042083456" target="_blank" rel="noopener"><xen data-edit="t36" data-edit-label="Text (EN): Find us">Find us</xen><xar data-edit="t37" data-edit-label="Text (AR): لاقونا">لاقونا</xar></a>
     </div>
+   </div>
+   <figure class="plate" data-r="4"><img src="img/07.jpg" alt="The BLCK line-up: latte, cold brew, filter coffee, iced matcha and iced tea in their own black and navy cups"></figure>
   </div>
 </header>
 

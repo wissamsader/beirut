@@ -38,32 +38,40 @@ img{display:block;max-width:100%}
 #nav a.callb{background:var(--olive);color:#F4F3F0;padding:11px 19px;border-radius:2px;
   font:700 13.5px/1 'Nunito Sans',sans-serif;text-decoration:none}
 
-/* ---------- HERO: Alta. The name enormous, one small photo overlapping the last letter ---------- */
+/* ---------- HERO: Alta's masthead, on its own line, over one large plate of their own table ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   background:var(--grey);color:var(--ink);display:flex;align-items:center;
-  padding:clamp(20px,3.4vh,42px) 0 clamp(74px,9.4vh,98px)}
-.lbl{position:relative;z-index:3;width:min(1160px,100%);margin-inline:auto;padding:0 clamp(20px,6vw,54px)}
-.lbl .crest{width:clamp(38px,4vw,52px);height:auto;color:var(--olive);display:block;margin-bottom:16px}
+  padding:clamp(22px,3.6vh,46px) 0 clamp(40px,5.6vh,66px)}
+.lbl{position:relative;z-index:3;width:100%;padding:0 clamp(20px,6vw,54px)}
+.mast{display:flex;align-items:center;gap:clamp(12px,1.6vw,20px)}
+.lbl .crest{width:clamp(34px,3.4vw,44px);height:auto;color:var(--olive);display:block;flex:0 0 auto}
 .lbl .k{color:var(--olive)}
-.lbl h1{position:relative;display:inline-block;font-family:'Bodoni Moda',serif;font-weight:400;
-  font-size:clamp(58px,14.6vw,208px);line-height:.86;letter-spacing:-.012em;color:var(--ink);margin-top:10px}
-html.ar .lbl h1{font-family:var(--arh),serif;font-size:clamp(46px,10vw,140px);line-height:1.1}
-.pane{position:absolute;z-index:4;left:min(71%,846px);top:calc(50% + 16px);
-  width:clamp(148px,17vw,236px);margin:0}
-.pane img{width:100%;aspect-ratio:1;object-fit:cover;display:block;
-  border:6px solid var(--flour);box-shadow:0 22px 54px rgba(34,36,42,.28)}
-.lbl .sub{max-width:42ch;margin-top:34px;color:#585B62;font-size:clamp(14.5px,1.62vw,17px);line-height:1.7}
-.perf{display:flex;align-items:baseline;gap:clamp(12px,2.2vw,26px);flex-wrap:wrap;margin-top:22px;
+.lbl h1{display:block;font-family:'Bodoni Moda',serif;font-weight:400;
+  font-size:clamp(56px,9.7vw,140px);line-height:.9;letter-spacing:-.012em;color:var(--ink);margin-top:12px}
+html.ar .lbl h1{font-family:var(--arh),serif;font-size:clamp(44px,8.4vw,116px);line-height:1.12}
+.rule{height:1px;background:rgba(34,36,42,.28);margin-top:clamp(18px,2.4vh,26px)}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(300px,52vw,750px));
+  gap:clamp(24px,3.4vw,48px);align-items:stretch;margin-top:clamp(22px,3vh,34px)}
+.hcol{display:flex;flex-direction:column;justify-content:space-between;gap:clamp(24px,4vh,40px);padding-block:4px}
+.pane{position:relative;margin:0;width:100%}
+.pane img{width:100%;aspect-ratio:1.56;object-fit:cover;display:block;
+  border:9px solid var(--flour);box-shadow:0 26px 62px rgba(34,36,42,.26)}
+.lbl .sub{max-width:32ch;color:#585B62;font-size:clamp(14.5px,1.62vw,17px);line-height:1.7}
+.perf{display:flex;align-items:baseline;gap:clamp(10px,1.3vw,17px);flex-wrap:wrap;margin-top:0;
   font:600 12px/1.6 'Nunito Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#6A6D74}
 .perf .num{font-family:'Bodoni Moda',serif;font-size:clamp(24px,2.8vw,34px);letter-spacing:0;line-height:1}
 .perf b{border:1.4px solid rgba(34,36,42,.3);padding:7px 12px;font-weight:600;color:#4A4D54}
 @media(max-width:880px){
-  header{flex-direction:column;align-items:flex-start;justify-content:flex-start;padding-top:26px}
-  .lbl{width:100%}
-  .lbl h1{font-size:clamp(46px,17vw,110px)}
-  .pane{position:relative;left:auto;top:auto;width:min(200px,44vw);margin:14px 0 0}
+  header{align-items:flex-start;padding-top:26px;padding-bottom:34px}
+  .lbl h1{font-size:clamp(46px,15vw,104px)}
+  .hrow{grid-template-columns:minmax(0,1fr);gap:22px}
+  .pane img{border-width:7px}
   .lbl .sub{max-width:100%;font-size:14.4px}
-  .perf{gap:10px;font-size:10.6px;letter-spacing:.1em}
+  .perf{gap:10px;font-size:10.6px;letter-spacing:.1em;margin-top:16px}
+}
+@media(max-width:600px){
+  .pane img{aspect-ratio:16/10;border-width:6px}
+  .lbl .crest{width:32px}
 }
 
 section{padding-block:clamp(56px,8vh,96px);scroll-margin-top:62px}
@@ -226,17 +234,24 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <header id="top">
   <div class="lbl">
-    <svg class="crest" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="36" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="39" cy="39" r="29" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/><path d="M31 22v12a4 4 0 0 0 3 3.9V56h2V37.9a4 4 0 0 0 3-3.9V22h-2v11h-1.5V22h-2v11H32V22zM46 22c-3 2-5 7-5 12 0 3 1.4 5 3 5.6V56h2V22z" fill="currentColor"/></svg>
-    <p class="k"><xen data-edit="t13" data-edit-label="Text (EN): Trattoria · Gemmayzeh, Beirut">Trattoria · Gemmayzeh, Beirut</xen><xar data-edit="t14" data-edit-label="Text (AR): تراتوريا · الجميزة، بيروت">تراتوريا · الجميزة، بيروت</xar></p>
+    <div class="mast">
+      <svg class="crest" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="36" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="39" cy="39" r="29" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/><path d="M31 22v12a4 4 0 0 0 3 3.9V56h2V37.9a4 4 0 0 0 3-3.9V22h-2v11h-1.5V22h-2v11H32V22zM46 22c-3 2-5 7-5 12 0 3 1.4 5 3 5.6V56h2V22z" fill="currentColor"/></svg>
+      <p class="k"><xen data-edit="t13" data-edit-label="Text (EN): Trattoria · Gemmayzeh, Beirut">Trattoria · Gemmayzeh, Beirut</xen><xar data-edit="t14" data-edit-label="Text (AR): تراتوريا · الجميزة، بيروت">تراتوريا · الجميزة، بيروت</xar></p>
+    </div>
     <h1><xen data-edit="t15" data-edit-label="Text (EN): Appetito">Appetito</xen><xar data-edit="t16" data-edit-label="Text (AR): أبيتيتو">أبيتيتو</xar></h1>
-    <p class="sub"><xen data-edit="t17" data-edit-label="Text (EN): An Italian dining room on the Selim Ba…">An Italian dining room on the Selim Baz corner, run table by table, served from the heart.</xen><xar data-edit="t18" data-edit-label="Text (AR): صالة إيطالية على زاوية سليم باز، ماشية…">صالة إيطالية على زاوية سليم باز، ماشية طاولة طاولة، وبتنخدم من القلب.</xar></p>
-    <div class="perf">
-      <span class="num" style="color:var(--olive)" data-edit="t19" data-edit-label="Text: ★ 4.6">★ 4.6</span>
-      <span><xen>from <span class="num" data-edit="t20" data-edit-label="Text: 655">655</span> Google reviews</xen><xar>من <span class="num" data-edit="t21" data-edit-label="Text: 655">655</span> تقييم على غوغل</xar></span>
-      <b><xen data-edit="t22" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t23" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></b>
+    <div class="rule" aria-hidden="true"></div>
+    <div class="hrow">
+      <div class="hcol">
+        <p class="sub"><xen data-edit="t17" data-edit-label="Text (EN): An Italian dining room on the Selim Ba…">An Italian dining room on the Selim Baz corner, run table by table, served from the heart.</xen><xar data-edit="t18" data-edit-label="Text (AR): صالة إيطالية على زاوية سليم باز، ماشية…">صالة إيطالية على زاوية سليم باز، ماشية طاولة طاولة، وبتنخدم من القلب.</xar></p>
+        <div class="perf">
+          <span class="num" style="color:var(--olive)" data-edit="t19" data-edit-label="Text: ★ 4.6">★ 4.6</span>
+          <span><xen>from <span class="num" data-edit="t20" data-edit-label="Text: 655">655</span> Google reviews</xen><xar>من <span class="num" data-edit="t21" data-edit-label="Text: 655">655</span> تقييم على غوغل</xar></span>
+          <b><xen data-edit="t22" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t23" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></b>
+        </div>
+      </div>
+      <figure class="pane"><img src="img/03.jpg" alt="Two Appetito pizzas photographed from above on the red checked tablecloth"></figure>
     </div>
   </div>
-  <figure class="pane"><img src="img/03.jpg" alt="Two Appetito pizzas photographed from above on the red checked tablecloth"></figure>
 </header>
 
 <div class="silent">
