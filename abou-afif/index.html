@@ -5,81 +5,79 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Abou Afif · Sidani Street, Hamra</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Asap:wght@400;500;700&family=Beiruti:wght@500;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Asap:wght@400;500;600;700&family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Beiruti';--arb:'Tajawal';
-  --red:#B3271E;--red-d:#8E1D16;--red-x:#6E140F;
-  --mint:#7FC8A9;--mint-m:#5FAE8E;--mint-d:#3E8A6C;--mint-x:#2C6B52;
-  --cream:#F8F1E4;--ink:#23140F;--steel:#4C4A45;
+  --arh:'Aref Ruqaa';--arb:'Tajawal';
+  --red:#A8322A;--red-d:#87231C;--red-x:#651813;
+  --mint:#E7DCC5;--mint-m:#2B221D;--mint-d:#9A8B72;--mint-x:#3A2E27;
+  --cream:#F7F1E5;--ink:#241C18;--steel:#6B5F52;
+  --oat:#EFE7D6;--oat2:#F9F4E9;--char:#241C18;--brick:#A8322A;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--red);color:var(--cream);font:400 17px/1.75 'Asap',system-ui,sans-serif}
 .wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;font-weight:900;line-height:1.02;letter-spacing:-.015em}
+h1,h2,h3{font-family:'Anton',system-ui,sans-serif;font-weight:400;line-height:1.02;letter-spacing:.004em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.5 'Asap',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#F2C9B3}
 
-/* language chip: one pleated gate leaf, top right */
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
-  font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;color:#0F241B;
-  background:repeating-linear-gradient(90deg,#8ED0B5 0 8px,var(--mint-m) 8px 14px);
-  border:1.5px solid #0F241B;border-radius:2px;box-shadow:0 4px 14px rgba(0,0,0,.4);-webkit-appearance:none}
+/* language chip lives at the right end of the top information band */
+.lngt{cursor:pointer;font:700 12.5px/1 var(--arb),sans-serif;padding:8px 13px;min-width:54px;text-align:center;
+  color:var(--char);background:transparent;border:1.5px solid rgba(36,28,24,.36);border-radius:2px;
+  letter-spacing:0;-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one enormous fluorescent tube running off both edges of the frame,
-     hard glare falling down the mint tiles of the counter wall ---------- */
+/* ---------- top strip: a thin information band, no nav (5 of his 50 open this way) ---------- */
+.tband{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--oat2);color:#7A6D5E;border-bottom:1px solid rgba(36,28,24,.15);
+  padding:10px clamp(16px,6vw,54px);
+  font:700 10.6px/1.6 'Asap',sans-serif;letter-spacing:.24em;text-transform:uppercase}
+.tband .mid{color:var(--brick);letter-spacing:.34em;white-space:nowrap}
+.tband .rt{display:flex;align-items:center;gap:clamp(10px,1.6vw,20px)}
+@media(max-width:700px){.tband .mid{display:none}}
+
+/* ---------- HERO: editorial. Their wrapped sandwich straight on, cropped at the base ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  background:#5FAE8E}
-.tilewall{position:absolute;inset:0;z-index:0;
-  background:
-   linear-gradient(180deg,rgba(4,26,17,.52) 0%,rgba(4,26,17,.34) 11%,rgba(4,26,17,0) 26%),
-   repeating-linear-gradient(0deg,rgba(12,44,30,.30) 0 2px,rgba(0,0,0,0) 2px 76px),
-   repeating-linear-gradient(90deg,rgba(12,44,30,.30) 0 2px,rgba(0,0,0,0) 2px 76px),
-   linear-gradient(180deg,#7CC8A8 0%,#6BBB9B 44%,#54A182 100%)}
-.glare{position:absolute;left:0;right:0;top:17%;height:52%;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(255,255,255,.36) 26%,rgba(255,255,255,.08) 66%,rgba(255,255,255,0))}
-.rod{position:absolute;top:0;width:6px;height:calc(17% + 8px);z-index:2;
-  background:linear-gradient(90deg,#5E7A70,#C6D8D1 45%,#6B857B)}
-.rod.l{left:17%}.rod.r{right:17%}
-.tube{position:absolute;left:-4%;right:-4%;top:17%;height:clamp(28px,3.4vw,44px);z-index:3;border-radius:999px;
-  background:linear-gradient(180deg,#E4F5EC 0 12%,#FFFFFF 32%,#FFFFFF 56%,#CFE9DD 80%,#93C2AF 100%);
-  box-shadow:0 0 36px 13px rgba(255,255,255,.9),0 0 130px 48px rgba(216,255,238,.55),
-             0 16px 44px rgba(6,40,26,.38);
-  animation:flick 9s ease-in-out infinite}
-@keyframes flick{0%,100%{filter:brightness(1)}44%{filter:brightness(.92)}}
-.hcol{position:absolute;z-index:5;left:0;right:0;top:25%;
-  padding:0 clamp(160px,25vw,350px) 0 clamp(28px,7vw,104px)}
-.hcol .k{color:#0E3527}
-h1.ttl{font-size:clamp(42px,9.2vw,132px);color:#0C2118;text-transform:uppercase;letter-spacing:-.022em;margin-top:6px}
-h1.ttl .arb{display:block;font-family:var(--arh),sans-serif;font-weight:800;letter-spacing:0;
-  font-size:clamp(30px,5.6vw,78px);color:#14513B;direction:rtl;text-align:left;line-height:1.2;margin-top:2px}
-.sub{margin-top:16px;max-width:48ch;color:#113729;font-size:clamp(15px,2vw,19.5px);line-height:1.7}
-.meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:16px}
-.plate{display:inline-flex;align-items:baseline;gap:7px;background:#0C2118;color:#EBFBF3;
-  padding:7px 13px;border-radius:2px;font:700 13px/1.4 'Asap',sans-serif;border:1.5px solid #0C2118}
-.chip{border:1.5px dashed rgba(12,33,24,.55);border-radius:2px;padding:6px 12px;
-  font:600 12px/1.5 'Asap',sans-serif;color:#0F3527}
-/* the shopfront photo clipped to the tiles, under the tube */
-.poster{position:absolute;z-index:6;right:clamp(24px,6vw,92px);bottom:14%;width:min(258px,27vw);
-  background:var(--cream);padding:9px 9px 12px;border-radius:2px;
-  box-shadow:0 24px 46px rgba(4,30,20,.45)}
-.poster::before{content:"";position:absolute;top:-11px;left:calc(50% - 26px);width:52px;height:22px;border-radius:3px;
-  background:linear-gradient(180deg,#D3DBD7,#8D9A94);box-shadow:0 3px 7px rgba(0,0,0,.3)}
-.poster img{width:100%;height:clamp(168px,23vh,228px);object-fit:cover}
-.poster .cap{color:#6B5B48;margin:7px 2px 0}
-/* the stainless lip of the counter itself */
-.lip{position:absolute;left:0;right:0;bottom:0;height:14%;z-index:4;
-  background:
-   linear-gradient(180deg,rgba(255,255,255,.55) 0 3px,rgba(255,255,255,0) 3px),
-   linear-gradient(180deg,#E7EEEA 0 7px,#C2CCC7 7px 12px,#95A29B 12px 18px,#6E7C75 18px 26px,#4A5751 26px 62%,#333E39 100%);
-  box-shadow:0 -20px 40px rgba(6,34,22,.32)}
-.lip::after{content:"";position:absolute;left:0;right:0;top:26px;height:34%;
-  background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0))}
+  background:var(--oat);display:flex;align-items:stretch}
+header::before{content:"";position:absolute;left:0;top:0;bottom:0;width:clamp(6px,1vw,11px);background:var(--brick);z-index:4}
+.hgrid{position:relative;z-index:2;width:min(1180px,100%);margin-inline:auto;display:grid;
+  grid-template-columns:1.03fr .97fr;gap:clamp(22px,4.2vw,62px);align-items:center;
+  padding:clamp(20px,3.4vh,44px) clamp(22px,6vw,54px) 0}
+.hcol{padding-bottom:clamp(34px,7vh,76px)}
+.hcol .k{color:var(--brick)}
+h1.ttl{font-size:clamp(46px,8.4vw,122px);color:var(--char);text-transform:uppercase;
+  letter-spacing:.004em;line-height:.9;margin-top:13px}
+h1.ttl .arb{display:block;font-family:var(--arh),serif;font-weight:700;letter-spacing:0;
+  font-size:clamp(26px,4vw,52px);color:var(--brick);direction:rtl;text-align:left;line-height:1.3;margin-top:10px}
+.sub{margin-top:15px;max-width:44ch;color:#5C5149;font-size:clamp(15px,1.75vw,17.5px);line-height:1.72}
+.meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:20px}
+.plate{display:inline-flex;align-items:baseline;gap:7px;background:var(--char);color:var(--oat2);
+  padding:8px 13px;border-radius:2px;font:700 13px/1.4 'Asap',sans-serif;border:1.5px solid var(--char)}
+.chip{border:1.5px solid rgba(36,28,24,.3);border-radius:2px;padding:7px 12px;
+  font:600 12px/1.5 'Asap',sans-serif;color:#5C5149}
+/* product-as-portrait: the photograph runs off the bottom edge of the frame */
+.poster{position:relative;align-self:end;margin:0;z-index:3}
+.poster img{width:100%;height:clamp(340px,82vh,740px);object-fit:cover;object-position:50% 42%;
+  border:1px solid rgba(36,28,24,.18);border-bottom:0;box-shadow:0 -10px 70px rgba(36,28,24,.14)}
+.poster .cap{position:absolute;left:0;top:0;background:var(--char);color:var(--oat2);
+  padding:8px 13px;margin:0;font:700 10.6px/1.5 'Asap',sans-serif;letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:880px){
+  .hgrid{grid-template-columns:1fr;gap:20px;align-items:start;padding-top:26px}
+  .hcol{padding-bottom:6px}
+  h1.ttl{font-size:clamp(44px,13vw,80px)}
+  .sub{max-width:100%;font-size:15px}
+  .poster img{height:clamp(230px,32svh,320px)}
+}
 
 /* ---------- sections ---------- */
-section{padding-block:clamp(56px,8vh,96px)}
+section{padding-block:clamp(56px,8vh,96px);scroll-margin-top:20px}
+section .k::before{content:"";display:block;width:58px;height:2px;background:currentColor;opacity:.65;margin-bottom:12px}
+.silent{background:var(--oat);color:var(--char);text-align:center;padding-block:clamp(52px,7.5vh,88px);
+  border-block:1px solid rgba(36,28,24,.16)}
+.silent p{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;
+  font-size:clamp(24px,3.6vw,46px);line-height:1.12;max-width:19ch;margin-inline:auto}
+.silent p b{color:var(--brick);font-weight:400}
 .band{background:var(--red-d)}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
 .two h2,.h2{font-size:clamp(28px,4.2vw,48px);margin:8px 0 18px;color:#FBF3E6;text-transform:uppercase}
@@ -91,9 +89,9 @@ section{padding-block:clamp(56px,8vh,96px)}
 /* the order board: five gate leaves */
 .ladder{counter-reset:ord;max-width:860px}
 .rung{position:relative;display:flex;align-items:baseline;gap:16px;counter-increment:ord;
-  background:repeating-linear-gradient(90deg,rgba(15,36,27,.16) 0 2px,transparent 2px 30px),var(--cream);
-  color:var(--ink);border:2px solid var(--mint-x);border-radius:2px;padding:16px 18px 15px;margin-bottom:10px}
-.rung::before{content:counter(ord,decimal-leading-zero);font:900 22px/1 'Archivo',sans-serif;color:var(--red)}
+  background:var(--cream);color:var(--ink);border:1.5px solid rgba(36,28,24,.28);border-left:5px solid var(--brick);
+  border-radius:2px;padding:16px 18px 15px;margin-bottom:10px}
+.rung::before{content:counter(ord,decimal-leading-zero);font:400 22px/1 'Anton',sans-serif;color:var(--red)}
 .rung h3{font-size:clamp(18px,2.4vw,24px);text-transform:uppercase;color:#173327}
 .rung p{margin-left:auto;text-align:right;color:#5C4A3C;font-size:14px;line-height:1.55;max-width:38ch}
 .lnote{margin-top:14px;font-size:14.5px;color:#F2C9B3}
@@ -145,19 +143,17 @@ table.hrs tr.off td{color:#F2C9B3;font-weight:700}
 footer{padding:36px 7vw 130px;color:#E9B49C;font-size:13.5px;text-align:center;background:var(--red-d)}
 
 /* ---------- sticky bar: gate leaves in a floor track ---------- */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:6px;align-items:flex-end;
-  background:linear-gradient(180deg,#3A3833,#2B2A26);
-  padding:8px 10px calc(6px + env(safe-area-inset-bottom));box-shadow:0 -10px 28px rgba(0,0,0,.5)}
-.bar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:#191815}
-.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:12px 4px 10px;color:#0F241B;text-decoration:none;min-height:58px;
-  font:700 12px/1.2 'Asap',sans-serif;letter-spacing:.02em;
-  background:repeating-linear-gradient(90deg,#8ED0B5 0 9px,var(--mint-m) 9px 16px);
-  border:1.5px solid #0F241B;border-bottom-width:3px;
-  clip-path:polygon(0 10px,8% 0,16% 10px,24% 0,32% 10px,40% 0,48% 10px,56% 0,64% 10px,72% 0,80% 10px,88% 0,96% 10px,100% 6px,100% 100%,0 100%)}
-.bar a:active{filter:brightness(1.1)}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:0;align-items:stretch;
+  background:var(--char);border-top:3px solid var(--brick);
+  padding:0 0 env(safe-area-inset-bottom);box-shadow:0 -10px 28px rgba(0,0,0,.42)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  padding:11px 4px 10px;color:var(--oat2);text-decoration:none;min-height:58px;
+  font:700 11.5px/1.2 'Asap',sans-serif;letter-spacing:.09em;text-transform:uppercase;
+  background:transparent;border:0;border-left:1px solid rgba(247,241,229,.16)}
+.bar a:first-child{border-left:0}
+.bar a:active{background:rgba(247,241,229,.08)}
 .bar svg{width:18px;height:18px;fill:currentColor}
-.bar a.w{background:repeating-linear-gradient(90deg,#D8503F 0 9px,var(--red) 9px 16px);color:#FFF2E2}
+.bar a.w{background:var(--brick);color:#FBF3E6}
 
 @media(max-width:880px){
   .two,.visit,.duo{grid-template-columns:1fr}
@@ -165,21 +161,14 @@ footer{padding:36px 7vw 130px;color:#E9B49C;font-size:13.5px;text-align:center;b
   .rung{flex-wrap:wrap}
   .rung p{margin-left:0;text-align:left;max-width:100%}
   body{padding-bottom:66px}
-  .hcol{top:24%;padding:0 clamp(120px,36vw,190px) 0 6vw}
-  .rod.l{left:12%}.rod.r{right:12%}
-  .poster{right:5vw;bottom:14%;width:min(156px,37vw);padding:6px 6px 8px}
-  .poster img{height:clamp(104px,15vh,140px)}
-  .poster::before{width:38px;left:calc(50% - 19px);height:16px;top:-8px}
-  .lip{height:11%}
 }
 @media(max-width:560px){
-  .hcol{top:22%;padding:0 clamp(104px,40vw,150px) 0 6vw}
-  .poster{width:min(140px,40vw);right:4vw;bottom:15%}
-  .poster img{height:clamp(92px,14vh,120px)}
   .poster .cap{font-size:10.5px;line-height:1.45}
   .stall .bod,.pump .bod{font-size:10px;height:48px}
   .bar a{font-size:10.5px}
 }
+.silent{padding-inline:22px}.silent p{max-width:min(23ch,100%)}
+@media(max-width:760px){.tband{flex-wrap:wrap;row-gap:6px}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -227,40 +216,49 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
+<div class="tband">
+  <span><xen data-edit="t1" data-edit-label="Text (EN): Sandwich counter · Hamra">Sandwich counter · Hamra</xen><xar data-edit="t2" data-edit-label="Text (AR): كاونتر سندويش · الحمرا">كاونتر سندويش · الحمرا</xar></span>
+  <span class="mid" data-edit="t3" data-edit-label="Text: Abou Afif">Abou Afif</span>
+  <span class="rt"><span class="num" data-edit="t4" data-edit-label="Text: ★ 4.6 / 74">★ 4.6 / 74</span>
+    <button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="أبو عفيف · الحمرا، بيروت" data-edit="t5" data-edit-label="Button: عربي">عربي</button>
+  </span>
+</div>
+
 <header>
-  <div class="tilewall" aria-hidden="true"></div>
-  <div class="glare" aria-hidden="true"></div>
-  <i class="rod l" aria-hidden="true"></i><i class="rod r" aria-hidden="true"></i>
-  <div class="tube" aria-hidden="true"></div>
-  <div class="hcol">
-    <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Sidani Street, facing the Medco statio…">Sidani Street, facing the Medco station</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع سيداني، مقابل محطة ميدكو">شارع سيداني، مقابل محطة ميدكو</xar></p>
-    <h1 class="ttl"><xen class="c">Abou Afif<span class="arb" data-edit="t3" data-edit-label="Text: أبو عفيف">أبو عفيف</span></xen><xar class="c">أبو عفيف<span class="arb" style="font-family:'Archivo',sans-serif;direction:ltr;color:#14513B" data-edit="t4" data-edit-label="Text: ABOU AFIF">ABOU AFIF</span></xar></h1>
-    <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): A Hamra sandwich counter working since…">A Hamra sandwich counter working since 1988, the year printed on every wrap. Generations of AUB students grew up ordering the Francisco through this gate.</xen><xar data-edit="t6" data-edit-label="Text (AR): كاونتر سندويش بالحمرا شغّال من سنة 198…">كاونتر سندويش بالحمرا شغّال من سنة 1988، السنة المطبوعة على كل ورقة لف. أجيال من طلاب الجامعة الأميركية كبروا وهنّي يطلبوا الفرانسيسكو من هالباب.</xar></p>
-    <div class="meta">
-      <span class="plate"><span class="num" data-edit="t7" data-edit-label="Text: 4.6">4.6</span> <span><xen>of <span class="num" data-edit="t8" data-edit-label="Text: 74">74</span> Google reviews</xen><xar>من <span class="num" data-edit="t9" data-edit-label="Text: 74">74</span> تقييم على غوغل</xar></span></span>
-      <span class="chip"><xen data-edit="t10" data-edit-label="Text (EN): Since 1988">Since 1988</xen><xar data-edit="t11" data-edit-label="Text (AR): من سنة 1988">من سنة 1988</xar></span>
-      <span class="chip"><xen data-edit="t12" data-edit-label="Text (EN): Closed Sundays">Closed Sundays</xen><xar data-edit="t13" data-edit-label="Text (AR): الأحد مسكّر">الأحد مسكّر</xar></span>
+  <div class="hgrid">
+    <div class="hcol">
+      <p class="k"><xen data-edit="t6" data-edit-label="Text (EN): Sidani Street, facing the Medco statio…">Sidani Street, facing the Medco station</xen><xar data-edit="t7" data-edit-label="Text (AR): شارع سيداني، مقابل محطة ميدكو">شارع سيداني، مقابل محطة ميدكو</xar></p>
+      <h1 class="ttl"><xen class="c">Abou Afif<span class="arb" data-edit="t8" data-edit-label="Text: أبو عفيف">أبو عفيف</span></xen><xar class="c">أبو عفيف<span class="arb" style="font-family:'Anton',sans-serif;direction:ltr;color:#A8322A" data-edit="t9" data-edit-label="Text: ABOU AFIF">ABOU AFIF</span></xar></h1>
+      <p class="sub"><xen data-edit="t10" data-edit-label="Text (EN): A Hamra sandwich counter working since…">A Hamra sandwich counter working since 1988, the year printed on every wrap. Generations of AUB students grew up ordering the Francisco through this gate.</xen><xar data-edit="t11" data-edit-label="Text (AR): كاونتر سندويش بالحمرا شغّال من سنة 198…">كاونتر سندويش بالحمرا شغّال من سنة 1988، السنة المطبوعة على كل ورقة لف. أجيال من طلاب الجامعة الأميركية كبروا وهنّي يطلبوا الفرانسيسكو من هالباب.</xar></p>
+      <div class="meta">
+        <span class="plate"><span class="num" data-edit="t12" data-edit-label="Text: 4.6">4.6</span> <span><xen>of <span class="num" data-edit="t13" data-edit-label="Text: 74">74</span> Google reviews</xen><xar>من <span class="num" data-edit="t14" data-edit-label="Text: 74">74</span> تقييم على غوغل</xar></span></span>
+        <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Since 1988">Since 1988</xen><xar data-edit="t16" data-edit-label="Text (AR): من سنة 1988">من سنة 1988</xar></span>
+        <span class="chip"><xen data-edit="t17" data-edit-label="Text (EN): Closed Sundays">Closed Sundays</xen><xar data-edit="t18" data-edit-label="Text (AR): الأحد مسكّر">الأحد مسكّر</xar></span>
+      </div>
     </div>
+    <figure class="poster">
+      <img src="img/04.jpg" alt="An Abou Afif sandwich pressed golden and wrapped in the shop's own paper">
+      <p class="cap"><xen data-edit="t19" data-edit-label="Text (EN): Pressed, wrapped, handed over">Pressed, wrapped, handed over</xen><xar data-edit="t20" data-edit-label="Text (AR): مكبوس، ملفوف، ومسلّم">مكبوس، ملفوف، ومسلّم</xar></p>
+    </figure>
   </div>
-  <div class="poster">
-    <img src="img/01.jpg" alt="The Abou Afif shopfront, mint green awning on a pink Hamra building">
-    <p class="cap"><xen data-edit="t14" data-edit-label="Text (EN): The mint awning on Sidani, you cannot …">The mint awning on Sidani, you cannot miss it.</xen><xar data-edit="t15" data-edit-label="Text (AR): التندة الخضرا بشارع سيداني، ما فيك تفو…">التندة الخضرا بشارع سيداني، ما فيك تفوّتها.</xar></p>
-  </div>
-  <div class="lip" aria-hidden="true"></div>
 </header>
+
+<div class="silent">
+  <p><xen>Since 1988, the year printed on <b data-edit="t21" data-edit-label="Text: every wrap.">every wrap.</b></xen><xar>من سنة 1988، السنة المطبوعة على <b data-edit="t22" data-edit-label="Text: كل ورقة لف.">كل ورقة لف.</b></xar></p>
+</div>
 
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t16" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t17" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></p>
-      <h2><xen data-edit="t18" data-edit-label="Text (EN): This page is about the original">This page is about the original</xen><xar data-edit="t19" data-edit-label="Text (AR): هالصفحة عن المحل الأصلي">هالصفحة عن المحل الأصلي</xar></h2>
-      <p><xen data-edit="t20" data-edit-label="Text (EN): The name travels these days: Tyre, Jal…">The name travels these days: Tyre, Jal el Dib, franchises out in the Gulf. This is not about any of that. This is the counter on Sidani Street in Hamra, facing the Medco station, where the whole story started in 1988.</xen><xar data-edit="t21" data-edit-label="Text (AR): الاسم صار يسافر: صور، جل الديب، وفرنشا…">الاسم صار يسافر: صور، جل الديب، وفرنشايز بالخليج. هالصفحة مش عن هيدا كلو. هيدي عن الكاونتر بشارع سيداني بالحمرا، مقابل محطة ميدكو، محل ما بلّشت القصة كلها سنة 1988.</xar></p>
-      <p><xen data-edit="t22" data-edit-label="Text (EN): The order never changed: bread pressed…">The order never changed: bread pressed on the grill until it cracks, fillings stacked the same way for decades, and a line of people who all think their usual is the correct one.</xen><xar data-edit="t23" data-edit-label="Text (AR): الطلب ما تغيّر: خبز مكبوس عالغريل تيقر…">الطلب ما تغيّر: خبز مكبوس عالغريل تيقرمش، حشوات مرتّبة نفس الترتيب من عشرات السنين، وطابور ناس كل واحد فيهن مقتنع إنو طلبو هوّي الصح.</xar></p>
-      <p><xen data-edit="t24" data-edit-label="Text (EN): Six days a week, from noon until eleve…">Six days a week, from noon until eleven at night. Sunday the gate stays folded shut.</xen><xar data-edit="t25" data-edit-label="Text (AR): ستة أيام بالأسبوع، من الضهر لحد الحدعش…">ستة أيام بالأسبوع، من الضهر لحد الحدعش بالليل. الأحد الباب بيضل مسكّر.</xar></p>
+      <p class="k"><xen data-edit="t23" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t24" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></p>
+      <h2><xen data-edit="t25" data-edit-label="Text (EN): This page is about the original">This page is about the original</xen><xar data-edit="t26" data-edit-label="Text (AR): هالصفحة عن المحل الأصلي">هالصفحة عن المحل الأصلي</xar></h2>
+      <p><xen data-edit="t27" data-edit-label="Text (EN): The name travels these days: Tyre, Jal…">The name travels these days: Tyre, Jal el Dib, franchises out in the Gulf. This is not about any of that. This is the counter on Sidani Street in Hamra, facing the Medco station, where the whole story started in 1988.</xen><xar data-edit="t28" data-edit-label="Text (AR): الاسم صار يسافر: صور، جل الديب، وفرنشا…">الاسم صار يسافر: صور، جل الديب، وفرنشايز بالخليج. هالصفحة مش عن هيدا كلو. هيدي عن الكاونتر بشارع سيداني بالحمرا، مقابل محطة ميدكو، محل ما بلّشت القصة كلها سنة 1988.</xar></p>
+      <p><xen data-edit="t29" data-edit-label="Text (EN): The order never changed: bread pressed…">The order never changed: bread pressed on the grill until it cracks, fillings stacked the same way for decades, and a line of people who all think their usual is the correct one.</xen><xar data-edit="t30" data-edit-label="Text (AR): الطلب ما تغيّر: خبز مكبوس عالغريل تيقر…">الطلب ما تغيّر: خبز مكبوس عالغريل تيقرمش، حشوات مرتّبة نفس الترتيب من عشرات السنين، وطابور ناس كل واحد فيهن مقتنع إنو طلبو هوّي الصح.</xar></p>
+      <p><xen data-edit="t31" data-edit-label="Text (EN): Six days a week, from noon until eleve…">Six days a week, from noon until eleven at night. Sunday the gate stays folded shut.</xen><xar data-edit="t32" data-edit-label="Text (AR): ستة أيام بالأسبوع، من الضهر لحد الحدعش…">ستة أيام بالأسبوع، من الضهر لحد الحدعش بالليل. الأحد الباب بيضل مسكّر.</xar></p>
     </div>
     <div>
       <div class="frame"><img src="img/03.jpg" loading="lazy" alt="A pressed Abou Afif sandwich, grill marks across the bread, on wrap paper">
-        <p class="cap"><xen data-edit="t26" data-edit-label="Text (EN): Pressed until the bread cracks, then w…">Pressed until the bread cracks, then wrapped.</xen><xar data-edit="t27" data-edit-label="Text (AR): مكبوس تيقرمش الخبز، وبعدين ملفوف.">مكبوس تيقرمش الخبز، وبعدين ملفوف.</xar></p>
+        <p class="cap"><xen data-edit="t33" data-edit-label="Text (EN): Pressed until the bread cracks, then w…">Pressed until the bread cracks, then wrapped.</xen><xar data-edit="t34" data-edit-label="Text (AR): مكبوس تيقرمش الخبز، وبعدين ملفوف.">مكبوس تيقرمش الخبز، وبعدين ملفوف.</xar></p>
       </div>
     </div>
   </div>
@@ -268,29 +266,29 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t28" data-edit-label="Text (EN): Straight from the reviews">Straight from the reviews</xen><xar data-edit="t29" data-edit-label="Text (AR): مأخود من التقييمات مباشرة">مأخود من التقييمات مباشرة</xar></p>
-    <h2 class="h2" style="margin-bottom:8px"><xen data-edit="t30" data-edit-label="Text (EN): The order board">The order board</xen><xar data-edit="t31" data-edit-label="Text (AR): لوحة الطلبات">لوحة الطلبات</xar></h2>
-    <p style="color:#F3D5C3;max-width:62ch;margin-bottom:24px"><xen data-edit="t32" data-edit-label="Text (EN): Nobody should invent a menu for a plac…">Nobody should invent a menu for a place like this. These five names are the ones the regulars themselves put in writing.</xen><xar data-edit="t33" data-edit-label="Text (AR): محل متل هيدا ما حدا لازم يألّفلو منيو.…">محل متل هيدا ما حدا لازم يألّفلو منيو. هالخمس أسامي همّي يلّي الزباين نفسهن كتبوهن.</xar></p>
+    <p class="k"><xen data-edit="t35" data-edit-label="Text (EN): Straight from the reviews">Straight from the reviews</xen><xar data-edit="t36" data-edit-label="Text (AR): مأخود من التقييمات مباشرة">مأخود من التقييمات مباشرة</xar></p>
+    <h2 class="h2" style="margin-bottom:8px"><xen data-edit="t37" data-edit-label="Text (EN): The order board">The order board</xen><xar data-edit="t38" data-edit-label="Text (AR): لوحة الطلبات">لوحة الطلبات</xar></h2>
+    <p style="color:#F3D5C3;max-width:62ch;margin-bottom:24px"><xen data-edit="t39" data-edit-label="Text (EN): Nobody should invent a menu for a plac…">Nobody should invent a menu for a place like this. These five names are the ones the regulars themselves put in writing.</xen><xar data-edit="t40" data-edit-label="Text (AR): محل متل هيدا ما حدا لازم يألّفلو منيو.…">محل متل هيدا ما حدا لازم يألّفلو منيو. هالخمس أسامي همّي يلّي الزباين نفسهن كتبوهن.</xar></p>
     <div class="ladder">
-      <div class="rung rev"><h3 data-edit="t34" data-edit-label="Heading: Francisco">Francisco</h3><p><xen data-edit="t35" data-edit-label="Text (EN): Both printed reviews open with it, one…">Both printed reviews open with it, one calls everything great from their Francisco onward.</xen><xar data-edit="t36" data-edit-label="Text (AR): التقييمين المطبوعين بيبلّشوا فيه، وواح…">التقييمين المطبوعين بيبلّشوا فيه، وواحد بيقول كل شي عندن ممتاز من الفرانسيسكو وطالع.</xar></p></div>
-      <div class="rung rev"><h3><xen class="c" data-edit="t37" data-edit-label="Text (EN): Abou Afif chicken">Abou Afif chicken</xen><xar class="c" data-edit="t38" data-edit-label="Text (AR): دجاج أبو عفيف">دجاج أبو عفيف</xar></h3><p><xen data-edit="t39" data-edit-label="Text (EN): On the must-try list of a reviewer who…">On the must-try list of a reviewer who calls the place iconic and old in Hamra.</xen><xar data-edit="t40" data-edit-label="Text (AR): على لائحة يلّي لازم تجرّبها عند معلّقة…">على لائحة يلّي لازم تجرّبها عند معلّقة وصفت المحل بالأيقوني والعتيق بالحمرا.</xar></p></div>
-      <div class="rung rev"><h3><xen class="c" data-edit="t41" data-edit-label="Text (EN): Spicy chicken">Spicy chicken</xen><xar class="c" data-edit="t42" data-edit-label="Text (AR): دجاج حرّ">دجاج حرّ</xar></h3><p><xen data-edit="t43" data-edit-label="Text (EN): Named in the same breath, for the ones…">Named in the same breath, for the ones who want the heat.</xen><xar data-edit="t44" data-edit-label="Text (AR): مذكور بنفس الجملة، ليلّي بدهن الحرقة.">مذكور بنفس الجملة، ليلّي بدهن الحرقة.</xar></p></div>
-      <div class="rung rev"><h3><xen class="c" data-edit="t45" data-edit-label="Text (EN): Abou Afif lahme">Abou Afif lahme</xen><xar class="c" data-edit="t46" data-edit-label="Text (AR): لحمة أبو عفيف">لحمة أبو عفيف</xar></h3><p><xen data-edit="t47" data-edit-label="Text (EN): The meat order carrying the house name…">The meat order carrying the house name, must-try per the same review.</xen><xar data-edit="t48" data-edit-label="Text (AR): طلب اللحمة يلّي حامل اسم البيت، لازم-ت…">طلب اللحمة يلّي حامل اسم البيت، لازم-تجرّبو بحسب نفس التقييم.</xar></p></div>
-      <div class="rung rev"><h3 data-edit="t49" data-edit-label="Heading: Cheeseburger">Cheeseburger</h3><p><xen data-edit="t50" data-edit-label="Text (EN): One review calls it their signature, t…">One review calls it their signature, the other a must order as well.</xen><xar data-edit="t51" data-edit-label="Text (AR): تقييم بيسمّيه التوقيع تبعهن، والتاني ب…">تقييم بيسمّيه التوقيع تبعهن، والتاني بيقول لازم ينطلب هوّي كمان.</xar></p></div>
+      <div class="rung rev"><h3 data-edit="t41" data-edit-label="Heading: Francisco">Francisco</h3><p><xen data-edit="t42" data-edit-label="Text (EN): Both printed reviews open with it, one…">Both printed reviews open with it, one calls everything great from their Francisco onward.</xen><xar data-edit="t43" data-edit-label="Text (AR): التقييمين المطبوعين بيبلّشوا فيه، وواح…">التقييمين المطبوعين بيبلّشوا فيه، وواحد بيقول كل شي عندن ممتاز من الفرانسيسكو وطالع.</xar></p></div>
+      <div class="rung rev"><h3><xen class="c" data-edit="t44" data-edit-label="Text (EN): Abou Afif chicken">Abou Afif chicken</xen><xar class="c" data-edit="t45" data-edit-label="Text (AR): دجاج أبو عفيف">دجاج أبو عفيف</xar></h3><p><xen data-edit="t46" data-edit-label="Text (EN): On the must-try list of a reviewer who…">On the must-try list of a reviewer who calls the place iconic and old in Hamra.</xen><xar data-edit="t47" data-edit-label="Text (AR): على لائحة يلّي لازم تجرّبها عند معلّقة…">على لائحة يلّي لازم تجرّبها عند معلّقة وصفت المحل بالأيقوني والعتيق بالحمرا.</xar></p></div>
+      <div class="rung rev"><h3><xen class="c" data-edit="t48" data-edit-label="Text (EN): Spicy chicken">Spicy chicken</xen><xar class="c" data-edit="t49" data-edit-label="Text (AR): دجاج حرّ">دجاج حرّ</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): Named in the same breath, for the ones…">Named in the same breath, for the ones who want the heat.</xen><xar data-edit="t51" data-edit-label="Text (AR): مذكور بنفس الجملة، ليلّي بدهن الحرقة.">مذكور بنفس الجملة، ليلّي بدهن الحرقة.</xar></p></div>
+      <div class="rung rev"><h3><xen class="c" data-edit="t52" data-edit-label="Text (EN): Abou Afif lahme">Abou Afif lahme</xen><xar class="c" data-edit="t53" data-edit-label="Text (AR): لحمة أبو عفيف">لحمة أبو عفيف</xar></h3><p><xen data-edit="t54" data-edit-label="Text (EN): The meat order carrying the house name…">The meat order carrying the house name, must-try per the same review.</xen><xar data-edit="t55" data-edit-label="Text (AR): طلب اللحمة يلّي حامل اسم البيت، لازم-ت…">طلب اللحمة يلّي حامل اسم البيت، لازم-تجرّبو بحسب نفس التقييم.</xar></p></div>
+      <div class="rung rev"><h3 data-edit="t56" data-edit-label="Heading: Cheeseburger">Cheeseburger</h3><p><xen data-edit="t57" data-edit-label="Text (EN): One review calls it their signature, t…">One review calls it their signature, the other a must order as well.</xen><xar data-edit="t58" data-edit-label="Text (AR): تقييم بيسمّيه التوقيع تبعهن، والتاني ب…">تقييم بيسمّيه التوقيع تبعهن، والتاني بيقول لازم ينطلب هوّي كمان.</xar></p></div>
     </div>
-    <p class="lnote"><xen data-edit="t52" data-edit-label="Text (EN): Prices are at the counter, or send a W…">Prices are at the counter, or send a WhatsApp message and they will answer with today's list.</xen><xar data-edit="t53" data-edit-label="Text (AR): الأسعار عالكاونتر، أو ابعت رسالة واتسا…">الأسعار عالكاونتر، أو ابعت رسالة واتساب وبيردّوا عليك بلائحة اليوم.</xar></p>
+    <p class="lnote"><xen data-edit="t59" data-edit-label="Text (EN): Prices are at the counter, or send a W…">Prices are at the counter, or send a WhatsApp message and they will answer with today's list.</xen><xar data-edit="t60" data-edit-label="Text (AR): الأسعار عالكاونتر، أو ابعت رسالة واتسا…">الأسعار عالكاونتر، أو ابعت رسالة واتساب وبيردّوا عليك بلائحة اليوم.</xar></p>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t54" data-edit-label="Text (EN): Two photographs">Two photographs</xen><xar data-edit="t55" data-edit-label="Text (AR): صورتين">صورتين</xar></p>
-  <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t56" data-edit-label="Text (EN): From behind the glass">From behind the glass</xen><xar data-edit="t57" data-edit-label="Text (AR): من ورا القزاز">من ورا القزاز</xar></h2>
+  <p class="k"><xen data-edit="t61" data-edit-label="Text (EN): Two photographs">Two photographs</xen><xar data-edit="t62" data-edit-label="Text (AR): صورتين">صورتين</xar></p>
+  <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t63" data-edit-label="Text (EN): From behind the glass">From behind the glass</xen><xar data-edit="t64" data-edit-label="Text (AR): من ورا القزاز">من ورا القزاز</xar></h2>
   <div class="duo">
     <div class="frame rev"><img src="img/02.jpg" loading="lazy" alt="The Abou Afif cheeseburger in its takeaway box">
-      <p class="cap"><xen data-edit="t58" data-edit-label="Text (EN): The cheeseburger, the one the reviews …">The cheeseburger, the one the reviews call signature.</xen><xar data-edit="t59" data-edit-label="Text (AR): التشيزبرغر، يلّي التقييمات بتسمّيه الت…">التشيزبرغر، يلّي التقييمات بتسمّيه التوقيع.</xar></p>
+      <p class="cap"><xen data-edit="t65" data-edit-label="Text (EN): The cheeseburger, the one the reviews …">The cheeseburger, the one the reviews call signature.</xen><xar data-edit="t66" data-edit-label="Text (AR): التشيزبرغر، يلّي التقييمات بتسمّيه الت…">التشيزبرغر، يلّي التقييمات بتسمّيه التوقيع.</xar></p>
     </div>
     <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The shopfront under the pink building on Sidani street">
-      <p class="cap"><xen data-edit="t60" data-edit-label="Text (EN): The gate, the awning and the pink buil…">The gate, the awning and the pink building above.</xen><xar data-edit="t61" data-edit-label="Text (AR): الباب، التندة والبناية الزهر فوقهن.">الباب، التندة والبناية الزهر فوقهن.</xar></p>
+      <p class="cap"><xen data-edit="t67" data-edit-label="Text (EN): The gate, the awning and the pink buil…">The gate, the awning and the pink building above.</xen><xar data-edit="t68" data-edit-label="Text (AR): الباب، التندة والبناية الزهر فوقهن.">الباب، التندة والبناية الزهر فوقهن.</xar></p>
     </div>
   </div>
 </section>
@@ -298,78 +296,77 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="band">
   <div class="wrap">
     <div class="street rev">
-      <p class="k"><xen data-edit="t62" data-edit-label="Text (EN): How to find it">How to find it</xen><xar data-edit="t63" data-edit-label="Text (AR): كيف بتلاقيه">كيف بتلاقيه</xar></p>
-      <h2><xen data-edit="t64" data-edit-label="Text (EN): Face the Medco, look across">Face the Medco, look across</xen><xar data-edit="t65" data-edit-label="Text (AR): وقّف عند الميدكو، طلاع قبالك">وقّف عند الميدكو، طلاع قبالك</xar></h2>
-      <p class="led"><xen data-edit="t66" data-edit-label="Text (EN): The address is the landmark: the count…">The address is the landmark: the counter sits directly opposite the Medco fuel station on Sidani Street. Park at the pumps, cross the street, follow the mint awning.</xen><xar data-edit="t67" data-edit-label="Text (AR): العنوان هوّي العلامة: الكاونتر قبال مح…">العنوان هوّي العلامة: الكاونتر قبال محطة بنزين الميدكو بشارع سيداني مباشرة. ركن عند المضخات، اقطع الشارع، وامشي ورا التندة الخضرا.</xar></p>
+      <p class="k"><xen data-edit="t69" data-edit-label="Text (EN): How to find it">How to find it</xen><xar data-edit="t70" data-edit-label="Text (AR): كيف بتلاقيه">كيف بتلاقيه</xar></p>
+      <h2><xen data-edit="t71" data-edit-label="Text (EN): Face the Medco, look across">Face the Medco, look across</xen><xar data-edit="t72" data-edit-label="Text (AR): وقّف عند الميدكو، طلاع قبالك">وقّف عند الميدكو، طلاع قبالك</xar></h2>
+      <p class="led"><xen data-edit="t73" data-edit-label="Text (EN): The address is the landmark: the count…">The address is the landmark: the counter sits directly opposite the Medco fuel station on Sidani Street. Park at the pumps, cross the street, follow the mint awning.</xen><xar data-edit="t74" data-edit-label="Text (AR): العنوان هوّي العلامة: الكاونتر قبال مح…">العنوان هوّي العلامة: الكاونتر قبال محطة بنزين الميدكو بشارع سيداني مباشرة. ركن عند المضخات، اقطع الشارع، وامشي ورا التندة الخضرا.</xar></p>
       <div class="lane">
-        <p class="lbl"><xen class="c" data-edit="t68" data-edit-label="Text (EN): Sidani Street">Sidani Street</xen><xar class="c" data-edit="t69" data-edit-label="Text (AR): شارع سيداني">شارع سيداني</xar></p>
+        <p class="lbl"><xen class="c" data-edit="t75" data-edit-label="Text (EN): Sidani Street">Sidani Street</xen><xar class="c" data-edit="t76" data-edit-label="Text (AR): شارع سيداني">شارع سيداني</xar></p>
         <div class="row">
-          <div class="pump"><div class="awn"></div><div class="bod"><xen class="c" data-edit="t70" data-edit-label="Text (EN): Medco station">Medco station</xen><xar class="c" data-edit="t71" data-edit-label="Text (AR): محطة ميدكو">محطة ميدكو</xar></div></div>
-          <div class="pump" style="max-width:90px"><div class="awn"></div><div class="bod"><xen class="c" data-edit="t72" data-edit-label="Text (EN): pumps">pumps</xen><xar class="c" data-edit="t73" data-edit-label="Text (AR): مضخات">مضخات</xar></div></div>
-          <div class="stall"><div class="awn"></div><div class="bod" data-edit="t74" data-edit-label="Text: ABOU AFIF">ABOU AFIF</div></div>
+          <div class="pump"><div class="awn"></div><div class="bod"><xen class="c" data-edit="t77" data-edit-label="Text (EN): Medco station">Medco station</xen><xar class="c" data-edit="t78" data-edit-label="Text (AR): محطة ميدكو">محطة ميدكو</xar></div></div>
+          <div class="pump" style="max-width:90px"><div class="awn"></div><div class="bod"><xen class="c" data-edit="t79" data-edit-label="Text (EN): pumps">pumps</xen><xar class="c" data-edit="t80" data-edit-label="Text (AR): مضخات">مضخات</xar></div></div>
+          <div class="stall"><div class="awn"></div><div class="bod" data-edit="t81" data-edit-label="Text: ABOU AFIF">ABOU AFIF</div></div>
         </div>
         <div class="kerb"></div>
       </div>
-      <p class="cap" style="color:#8A7A64;margin-top:12px"><xen data-edit="t75" data-edit-label="Text (EN): Not a map, just the truth of the stree…">Not a map, just the truth of the street: pumps on one side, sandwiches on the other.</xen><xar data-edit="t76" data-edit-label="Text (AR): مش خريطة، هيدي حقيقة الشارع: مضخات من …">مش خريطة، هيدي حقيقة الشارع: مضخات من جهة، وسندويشات من الجهة التانية.</xar></p>
+      <p class="cap" style="color:#8A7A64;margin-top:12px"><xen data-edit="t82" data-edit-label="Text (EN): Not a map, just the truth of the stree…">Not a map, just the truth of the street: pumps on one side, sandwiches on the other.</xen><xar data-edit="t83" data-edit-label="Text (AR): مش خريطة، هيدي حقيقة الشارع: مضخات من …">مش خريطة، هيدي حقيقة الشارع: مضخات من جهة، وسندويشات من الجهة التانية.</xar></p>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t77" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t78" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
-  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t79" data-edit-label="Text (EN): Both of the reviews">Both of the reviews</xen><xar data-edit="t80" data-edit-label="Text (AR): التقييمين تنينتهن">التقييمين تنينتهن</xar></h2>
+  <p class="k"><xen data-edit="t84" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t85" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t86" data-edit-label="Text (EN): Both of the reviews">Both of the reviews</xen><xar data-edit="t87" data-edit-label="Text (AR): التقييمين تنينتهن">التقييمين تنينتهن</xar></h2>
   <div class="revs">
-    <div class="rev-c rev"><q dir="ltr" data-edit="t81" data-edit-label="Quote: One of the best sandwich spots in Beir…">One of the best sandwich spots in Beirut. Everything is great from their Francisco to their signature Cheeseburger. Highly recommended ⭐️⭐️⭐️</q><cite data-edit="t82" data-edit-label="Credit: Reza Mak">Reza Mak</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t83" data-edit-label="Quote: Iconic and old place in Hamra! Must tr…">Iconic and old place in Hamra! Must try sandwiches are Fransisco, abou afif chicken, spicy chicken and abou afif lahme. Cheese burger is a must order as well!</q><cite data-edit="t84" data-edit-label="Credit: Zeina El Zein">Zeina El Zein</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t88" data-edit-label="Quote: One of the best sandwich spots in Beir…">One of the best sandwich spots in Beirut. Everything is great from their Francisco to their signature Cheeseburger. Highly recommended ⭐️⭐️⭐️</q><cite data-edit="t89" data-edit-label="Credit: Reza Mak">Reza Mak</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t90" data-edit-label="Quote: Iconic and old place in Hamra! Must tr…">Iconic and old place in Hamra! Must try sandwiches are Fransisco, abou afif chicken, spicy chicken and abou afif lahme. Cheese burger is a must order as well!</q><cite data-edit="t91" data-edit-label="Credit: Zeina El Zein">Zeina El Zein</cite></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap visit">
     <div>
-      <p class="k"><xen data-edit="t85" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t86" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
-      <h2 class="h2" style="margin-bottom:18px"><xen data-edit="t87" data-edit-label="Text (EN): Noon to eleven">Noon to eleven</xen><xar data-edit="t88" data-edit-label="Text (AR): من الضهر للحدعش">من الضهر للحدعش</xar></h2>
+      <p class="k"><xen data-edit="t92" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t93" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="h2" style="margin-bottom:18px"><xen data-edit="t94" data-edit-label="Text (EN): Noon to eleven">Noon to eleven</xen><xar data-edit="t95" data-edit-label="Text (AR): من الضهر للحدعش">من الضهر للحدعش</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t89" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t90" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t91" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t92" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t93" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t94" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t95" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t96" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t97" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t98" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t99" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t100" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t101" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t102" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t103" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t104" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t105" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t106" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t107" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t108" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t109" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t110" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t111" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t112" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
-        <tr class="off"><td><xen data-edit="t113" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t114" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t115" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t116" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
+        <tr><td><xen data-edit="t96" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t97" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t98" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t99" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t101" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t102" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t103" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t105" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t106" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t107" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t108" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t109" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t110" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t111" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t112" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t113" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t114" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t115" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t117" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t118" data-edit-label="Text: 12–11 PM">12–11 PM</span></xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): 12 إلى 11 م">12 إلى 11 م</xar></td></tr>
+        <tr class="off"><td><xen data-edit="t120" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t121" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t122" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t123" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
       </table>
-      <p class="cap"><xen data-edit="t117" data-edit-label="Text (EN): Sunday the folding gate stays shut.">Sunday the folding gate stays shut.</xen><xar data-edit="t118" data-edit-label="Text (AR): الأحد باب الأكورديون بيضل مسكّر.">الأحد باب الأكورديون بيضل مسكّر.</xar></p>
+      <p class="cap"><xen data-edit="t124" data-edit-label="Text (EN): Sunday the folding gate stays shut.">Sunday the folding gate stays shut.</xen><xar data-edit="t125" data-edit-label="Text (AR): الأحد باب الأكورديون بيضل مسكّر.">الأحد باب الأكورديون بيضل مسكّر.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t119" data-edit-label="Text (EN): Find the gate">Find the gate</xen><xar data-edit="t120" data-edit-label="Text (AR): لاقي الباب">لاقي الباب</xar></p>
-      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t121" data-edit-label="Text (EN): Facing the Medco station">Facing the Medco station</xen><xar data-edit="t122" data-edit-label="Text (AR): مقابل محطة ميدكو">مقابل محطة ميدكو</xar></h2>
-      <p class="k"><xen data-edit="t123" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t124" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t125" data-edit-label="Text: Facing medco station, Beirut, Lebanon">Facing medco station, Beirut, Lebanon</p>
-      <p class="k" style="margin-top:18px"><xen data-edit="t126" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t127" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
-      <p class="ph num" data-edit="t128" data-edit-label="Text: +961 3 235 444">+961 3 235 444</p>
+      <p class="k"><xen data-edit="t126" data-edit-label="Text (EN): Find the gate">Find the gate</xen><xar data-edit="t127" data-edit-label="Text (AR): لاقي الباب">لاقي الباب</xar></p>
+      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t128" data-edit-label="Text (EN): Facing the Medco station">Facing the Medco station</xen><xar data-edit="t129" data-edit-label="Text (AR): مقابل محطة ميدكو">مقابل محطة ميدكو</xar></h2>
+      <p class="k"><xen data-edit="t130" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t131" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t132" data-edit-label="Text: Facing medco station, Beirut, Lebanon">Facing medco station, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:18px"><xen data-edit="t133" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t134" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t135" data-edit-label="Text: +961 3 235 444">+961 3 235 444</p>
       <p style="margin-top:20px">
-        <a class="btn" href="https://wa.me/9613235444?text=Hello%20Abou%20Afif%2C%20I%20would%20like%20to%20order%20a%20sandwich." target="_blank" rel="noopener"><xen data-edit="t129" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t130" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=17238264288589418197" target="_blank" rel="noopener"><xen data-edit="t131" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t132" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn" href="https://wa.me/9613235444?text=Hello%20Abou%20Afif%2C%20I%20would%20like%20to%20order%20a%20sandwich." target="_blank" rel="noopener"><xen data-edit="t136" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t137" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=17238264288589418197" target="_blank" rel="noopener"><xen data-edit="t138" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t139" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
       </p>
       <p style="margin-top:12px">
-        <a class="btn o" href="https://www.instagram.com/abouafif.lb/" target="_blank" rel="noopener" data-edit="t133" data-edit-label="Button / link: Instagram">Instagram</a>
-        <a class="btn o" href="https://www.facebook.com/p/Abou-Afif-Sandwich-100063587469891/" target="_blank" rel="noopener" data-edit="t134" data-edit-label="Button / link: Facebook">Facebook</a>
+        <a class="btn o" href="https://www.instagram.com/abouafif.lb/" target="_blank" rel="noopener" data-edit="t140" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/p/Abou-Afif-Sandwich-100063587469891/" target="_blank" rel="noopener" data-edit="t141" data-edit-label="Button / link: Facebook">Facebook</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t135" data-edit-label="Text (EN): Abou Afif, Sidani Street, Hamra, Beiru…">Abou Afif, Sidani Street, Hamra, Beirut. Since 1988, as the wrap paper says.</xen><xar data-edit="t136" data-edit-label="Text (AR): أبو عفيف، شارع سيداني، الحمرا، بيروت. …">أبو عفيف، شارع سيداني، الحمرا، بيروت. من سنة 1988، متل ما مكتوب عورقة اللف.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t137" data-edit-label="Text (EN): Noon to 11 PM, closed Sundays.">Noon to 11 PM, closed Sundays.</xen><xar data-edit="t138" data-edit-label="Text (AR): من الضهر لـ 11 بالليل، الأحد مسكّر.">من الضهر لـ 11 بالليل، الأحد مسكّر.</xar></p>
+  <p><xen data-edit="t142" data-edit-label="Text (EN): Abou Afif, Sidani Street, Hamra, Beiru…">Abou Afif, Sidani Street, Hamra, Beirut. Since 1988, as the wrap paper says.</xen><xar data-edit="t143" data-edit-label="Text (AR): أبو عفيف، شارع سيداني، الحمرا، بيروت. …">أبو عفيف، شارع سيداني، الحمرا، بيروت. من سنة 1988، متل ما مكتوب عورقة اللف.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t144" data-edit-label="Text (EN): Noon to 11 PM, closed Sundays.">Noon to 11 PM, closed Sundays.</xen><xar data-edit="t145" data-edit-label="Text (AR): من الضهر لـ 11 بالليل، الأحد مسكّر.">من الضهر لـ 11 بالليل، الأحد مسكّر.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a href="tel:+9613235444"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t139" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t140" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a class="w" href="https://wa.me/9613235444?text=Hello%20Abou%20Afif%2C%20I%20would%20like%20to%20order%20a%20sandwich." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t141" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t142" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="https://www.google.com/maps?cid=17238264288589418197" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t143" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t144" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.instagram.com/abouafif.lb/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t145" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="tel:+9613235444"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t146" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t147" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/9613235444?text=Hello%20Abou%20Afif%2C%20I%20would%20like%20to%20order%20a%20sandwich." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t148" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t149" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=17238264288589418197" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t151" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/abouafif.lb/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t152" data-edit-label="Text: Instagram">Instagram</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="أبو عفيف · شارع سيداني، الحمرا" data-edit="t146" data-edit-label="Button: عربي">عربي</button>
 </body></html>

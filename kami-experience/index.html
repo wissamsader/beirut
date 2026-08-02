@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KAMI Experience · Gouraud Street, Gemmayzeh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@700;800&family=Shippori+Mincho:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Mada:wght@500;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Rakkas&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Mada';--arb:'Tajawal';
-  --sumi:#17181C;--sumi2:#1F2126;--washi:#EFE6D4;--washi-d:#D9CCB2;
-  --verm:#D8442E;--verm-d:#A82F1D;--bamboo:#C89B62;--bamboo-d:#8F6A3C;--teal:#2FA6A0;
+  --arh:'Rakkas';--arb:'Tajawal';
+  --sumi:#21231F;--sumi2:#2A2D28;--washi:#E9E4D6;--washi-d:#D3CDBB;
+  --verm:#5C7F5E;--verm-d:#3F5C42;--bamboo:#B4A98D;--bamboo-d:#8A7F63;--teal:#5C7F5E;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--sumi);color:var(--washi);font:400 16.5px/1.75 'Zen Kaku Gothic New',system-ui,sans-serif;padding-bottom:64px}
-h1,h2,h3{font-family:'Shippori Mincho',serif;font-weight:800;line-height:1.12}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:800;line-height:1.12}
 a{color:inherit}
 img{display:block;max-width:100%}
 .wrap{width:min(1130px,100%);margin-inline:auto;padding-inline:6vw}
@@ -28,69 +28,56 @@ section{padding-block:clamp(54px,8vh,92px)}
   box-shadow:0 6px 16px rgba(0,0,0,.5);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one bamboo steamer hanging on the rail, in front of the mural ---------- */
+/* ---------- HERO: Maru. Pale putty field, statement left, one tall photo right ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;padding:0 5vw 26px;
-  background:linear-gradient(178deg,#12968F 0%,#0C736F 54%,#06504E 100%)}
-header::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
-  background:radial-gradient(132% 76% at 50% 124%,rgba(3,38,38,.82),transparent 58%)}
-/* the wall Felipe painted: sprayed ribbons across the room */
-.mural{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.mural i{position:absolute;display:block;border-radius:99px;filter:blur(2.5px)}
-.mural i:nth-child(1){left:-16%;top:9%;width:74%;height:30px;background:#FF6A3C;transform:rotate(-14deg);opacity:.85}
-.mural i:nth-child(2){left:-14%;top:15%;width:66%;height:11px;background:#FFE07A;transform:rotate(-14deg);opacity:.8}
-.mural i:nth-child(3){left:34%;top:-4%;width:88%;height:24px;background:#FFD23F;transform:rotate(11deg);opacity:.8}
-.mural i:nth-child(4){left:44%;top:30%;width:76%;height:44px;background:#FF3E86;transform:rotate(-16deg);opacity:.55}
-.mural i:nth-child(5){left:-22%;top:47%;width:56%;height:16px;background:#FFFFFF;transform:rotate(20deg);opacity:.5}
-.mural i:nth-child(6){left:52%;top:70%;width:74%;height:34px;background:#5BF2E2;transform:rotate(-5deg);opacity:.5}
-/* the dado the room is painted over */
-.dado{position:absolute;left:0;right:0;bottom:0;height:clamp(74px,13vh,116px);z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(3,38,38,0),rgba(3,34,34,.9) 46%,#04302F);
-  border-bottom:6px solid #0B1616}
-.rail{position:absolute;left:0;right:0;top:clamp(34px,5vh,60px);height:9px;z-index:2;
-  background:linear-gradient(180deg,#3A3D45,#0E0F13);box-shadow:0 5px 16px rgba(0,0,0,.5)}
-.hang{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;
-  margin-top:calc(clamp(34px,5vh,60px) + 9px);transform-origin:50% -34px;
-  animation:sway 14s ease-in-out infinite}
-@keyframes sway{0%,100%{transform:rotate(0)}25%{transform:rotate(-1deg)}75%{transform:rotate(1deg)}}
-.cords{position:relative;width:min(230px,38vw);height:clamp(28px,4.6vh,52px)}
-.cords::before,.cords::after{content:"";position:absolute;top:-2px;bottom:-10px;width:2px;
-  background:linear-gradient(180deg,#F2E9D4,rgba(242,233,212,.5))}
-.cords::before{left:0}.cords::after{right:0}
-.steam{position:relative;width:min(460px,72vw);filter:drop-shadow(0 34px 44px rgba(0,0,0,.5))}
-.wall{position:relative;z-index:1;margin-top:-7.5%;height:clamp(96px,15vw,150px);
-  border-radius:0 0 50% 50%/0 0 44% 44%;
+  display:flex;align-items:center;color:var(--sumi);
   background:
-   repeating-linear-gradient(90deg,#D8AC72 0 12px,#B0803D 12px 14px,#C4924B 14px 26px,#8E6329 26px 28px);
-  box-shadow:inset 0 -20px 34px rgba(0,0,0,.45),inset 0 14px 20px rgba(0,0,0,.3)}
-.wall::before,.wall::after{content:"";position:absolute;left:0;right:0;height:9px;
-  background:linear-gradient(180deg,#E0B87F,#8A6229);box-shadow:0 2px 4px rgba(0,0,0,.3)}
-.wall::before{top:26%}.wall::after{top:66%}
-.rim{position:relative;z-index:2;width:100%;aspect-ratio:1/.46;border-radius:50%;display:grid;place-items:center;
-  background:repeating-conic-gradient(from 0deg,#E0B87F 0 2.2deg,#AE7C39 2.2deg 4.4deg),#B0803D;
-  box-shadow:inset 0 0 0 16px #C99A55,inset 0 0 0 19px #7A5424,0 10px 18px rgba(0,0,0,.4)}
-.rim::after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
-  background:linear-gradient(150deg,rgba(255,255,255,.34),transparent 46%)}
-.bowl{position:relative;z-index:3;width:72%;aspect-ratio:1/.44;border-radius:50%;overflow:hidden;
-  box-shadow:0 0 0 7px #8E6329,inset 0 10px 26px rgba(0,0,0,.62)}
-.bowl img{width:100%;height:100%;object-fit:cover}
-.lidt{position:absolute;z-index:4;left:50%;bottom:-15px;transform:translateX(-50%);white-space:nowrap;
-  background:#0E0F13;color:#F2E9D4;border:1px solid rgba(242,233,212,.32);padding:8px 16px;border-radius:99px;
-  font:700 11px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.24em;text-transform:uppercase;
-  box-shadow:0 10px 22px rgba(0,0,0,.5)}
-.hd{position:relative;z-index:3;width:min(1060px,100%);margin-top:clamp(16px,2.4vh,30px);text-align:center}
-.hd .k{display:block;color:#CFF6F1;letter-spacing:.34em}
-.hd h1{font-family:'Kaisei Tokumin',serif;font-weight:800;margin:6px 0 0;color:#FDF7EA;
-  font-size:clamp(58px,13vw,168px);line-height:.9;letter-spacing:.04em;
-  text-shadow:0 16px 40px rgba(0,0,0,.42)}
-.hd h1 b{color:#FF7A45;font-weight:800}
-.hd .sub{margin:12px auto 0;max-width:66ch;color:#E4F6F4;font-size:clamp(14.5px,1.7vw,16.5px);line-height:1.65}
-.hmeta{margin-top:13px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.hmeta .num{font:700 18px/1 'Zen Kaku Gothic New',sans-serif;color:#FFD25C}
-.hmeta span{font:500 13.5px/1.5 'Zen Kaku Gothic New',sans-serif;color:#D3EEEC}
-.chiprow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:13px}
-.chip{border:1px solid rgba(253,247,234,.5);color:#FDF7EA;border-radius:99px;padding:6px 14px;
-  background:rgba(0,0,0,.17);font:600 12px/1.4 'Zen Kaku Gothic New',sans-serif;letter-spacing:.07em}
+    radial-gradient(1.3px 1.3px at 16px 22px,rgba(60,58,44,.09),transparent 60%) 0 0/44px 46px,
+    linear-gradient(168deg,#EEE9DC 0,var(--washi) 56%,var(--washi-d) 100%)}
+.hwrap{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;
+  padding:clamp(56px,8vh,84px) 6vw;display:grid;grid-template-columns:1.04fr .96fr;
+  gap:clamp(28px,5vw,72px);align-items:center}
+.hd .k{display:block;color:var(--verm-d);letter-spacing:.3em;font-size:11px;font-weight:700}
+.hd h1{margin-top:18px;font-size:clamp(56px,9vw,124px);line-height:.88;letter-spacing:-.035em;color:var(--sumi)}
+.hd h1 b{color:var(--verm);font-weight:800}
+html.ar .hd h1{font-size:clamp(42px,6.4vw,84px);line-height:1.16}
+.hd .arn{margin-top:8px;font-family:var(--arh),sans-serif;font-size:clamp(18px,2.3vw,28px);color:var(--verm-d)}
+.hrule{width:60px;height:2px;background:var(--verm);margin:24px 0 20px;opacity:.9}
+.hd .sub{max-width:38ch;color:#4A4A42;font-size:clamp(15px,1.7vw,17.5px);line-height:1.75}
+.hmeta{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-top:20px;
+  font:600 13.5px/1.5 'Zen Kaku Gothic New',sans-serif;color:#5B5B51}
+.hmeta .num:first-child{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--verm-d)}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{border:1px solid rgba(33,35,31,.24);color:#3C3E38;padding:8px 14px;background:rgba(255,255,255,.5);
+  font:700 11.5px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.hbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.hbtns a{display:inline-flex;align-items:center;gap:8px;padding:13px 23px;text-decoration:none;
+  font:700 12.5px/1 'Zen Kaku Gothic New',sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  border:1.5px solid transparent}
+.hbtns a.s{background:var(--verm-d);color:#F2EFE4}
+.hbtns a.s:hover{background:var(--sumi)}
+.hbtns a.g2{background:#1FA855;color:#04240F}
+.hbtns a.l{border-color:rgba(33,35,31,.4);color:var(--sumi)}
+.hbtns a.l:hover{border-color:var(--verm-d);color:var(--verm-d)}
+/* the tall rectangle */
+.tallfig{position:relative;margin:0}
+.tallfig img{width:100%;height:clamp(400px,64vh,620px);object-fit:cover;object-position:50% 74%;display:block}
+.tallfig figcaption{margin-top:12px;font:600 11.5px/1.5 'Zen Kaku Gothic New',sans-serif;
+  letter-spacing:.18em;text-transform:uppercase;color:#6E6E62}
+.tallfig::after{content:"";position:absolute;inset:-12px;border:1px solid rgba(33,35,31,.22);pointer-events:none}
+[data-r]{opacity:0;transform:translateY(14px);animation:rise 620ms ease-out forwards}
+[data-r="1"]{animation-delay:70ms}[data-r="2"]{animation-delay:160ms}[data-r="3"]{animation-delay:250ms}
+[data-r="4"]{animation-delay:330ms}[data-r="5"]{animation-delay:410ms}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(max-width:900px){
+  .hwrap{grid-template-columns:1fr;gap:26px;padding-top:clamp(48px,7vh,70px)}
+  .tallfig img{height:clamp(240px,34vh,320px)}
+  .tallfig::after{inset:-8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  [data-r]{opacity:1;transform:none}
+}
 
 /* ---------- sections ---------- */
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,56px);align-items:start}
@@ -221,45 +208,46 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
-<header>
-  <div class="mural" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="dado" aria-hidden="true"></div>
-  <div class="rail" aria-hidden="true"></div>
-  <div class="hang">
-    <div class="cords" aria-hidden="true"></div>
-    <div class="steam">
-      <div class="rim"><div class="bowl"><img src="img/03.jpg" alt="Three bao buns lined on a long plate"></div></div>
-      <div class="wall" aria-hidden="true"></div>
-      <span class="lidt"><xen data-edit="t1" data-edit-label="Text (EN): Lid off, service on">Lid off, service on</xen><xar data-edit="t2" data-edit-label="Text (AR): الغطا مرفوع، الخدمة شغّالة">الغطا مرفوع، الخدمة شغّالة</xar></span>
+<header id="top">
+  <div class="hwrap">
+    <div class="hd">
+      <span class="k" data-r="1"><xen data-edit="t1" data-edit-label="Text (EN): Japanese fusion · Gouraud street, Gemm…">Japanese fusion · Gouraud street, Gemmayzeh</xen><xar data-edit="t2" data-edit-label="Text (AR): مطبخ ياباني فيوجن · شارع غورو، الجميزة">مطبخ ياباني فيوجن · شارع غورو، الجميزة</xar></span>
+      <h1 data-r="2">KA<b data-edit="t3" data-edit-label="Text: MI">MI</b></h1>
+      <div class="arn" data-r="2" data-edit="t4" data-edit-label="Text: كامي">كامي</div>
+      <div class="hrule" data-r="3" aria-hidden="true"></div>
+      <p class="sub" data-r="3"><xen data-edit="t5" data-edit-label="Text (EN): Sushi, bao and small hot plates out of…">Sushi, bao and small hot plates out of a stacked kitchen in Gemmayzeh, in a room painted by a graffiti artist.</xen><xar data-edit="t6" data-edit-label="Text (AR): سوشي وباو وأطباق سخنة صغيرة من مطبخ مر…">سوشي وباو وأطباق سخنة صغيرة من مطبخ مرصوص بالجميزة، بقاعة مرسومة بإيد فنان غرافيتي.</xar></p>
+      <div class="hmeta" data-r="4">
+        <span class="num" data-edit="t7" data-edit-label="Text: 4.8 ★">4.8 ★</span>
+        <span><xen>from <span class="num" data-edit="t8" data-edit-label="Text: 267">267</span> Google reviews</xen><xar>من <span class="num" data-edit="t9" data-edit-label="Text: 267">267</span> تقييم على غوغل</xar></span>
+      </div>
+      <div class="chiprow" data-r="4">
+        <span class="chip"><xen data-edit="t10" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t11" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></span>
+        <span class="chip"><xen data-edit="t12" data-edit-label="Text (EN): Bao buns">Bao buns</xen><xar data-edit="t13" data-edit-label="Text (AR): باو بنز">باو بنز</xar></span>
+        <span class="chip"><xen data-edit="t14" data-edit-label="Text (EN): Crispy rice">Crispy rice</xen><xar data-edit="t15" data-edit-label="Text (AR): كريسبي رايس">كريسبي رايس</xar></span>
+      </div>
+      <div class="hbtns" data-r="5">
+        <a class="s" href="tel:+96176611633"><xen data-edit="t16" data-edit-label="Text (EN): Call for a table">Call for a table</xen><xar data-edit="t17" data-edit-label="Text (AR): احجز طاولة">احجز طاولة</xar></a>
+        <a class="l" href="https://www.google.com/maps?cid=5445335971764195974" target="_blank" rel="noopener"><xen data-edit="t18" data-edit-label="Text (EN): Find us">Find us</xen><xar data-edit="t19" data-edit-label="Text (AR): لاقونا">لاقونا</xar></a>
+      </div>
     </div>
-  </div>
-  <div class="hd">
-    <span class="k"><xen data-edit="t3" data-edit-label="Text (EN): Japanese fusion · Gouraud street, Gemm…">Japanese fusion · Gouraud street, Gemmayzeh</xen><xar data-edit="t4" data-edit-label="Text (AR): مطبخ ياباني فيوجن · شارع غورو، الجميزة">مطبخ ياباني فيوجن · شارع غورو، الجميزة</xar></span>
-    <h1>KA<b data-edit="t5" data-edit-label="Text: MI">MI</b></h1>
-    <p class="sub"><xen data-edit="t6" data-edit-label="Text (EN): Sushi, bao and small hot plates out of…">Sushi, bao and small hot plates out of a stacked kitchen in Gemmayzeh, in a room painted by a graffiti artist.</xen><xar data-edit="t7" data-edit-label="Text (AR): سوشي وباو وأطباق سخنة صغيرة من مطبخ مر…">سوشي وباو وأطباق سخنة صغيرة من مطبخ مرصوص بالجميزة، بقاعة مرسومة بإيد فنان غرافيتي.</xar></p>
-    <div class="hmeta">
-      <span class="num" data-edit="t8" data-edit-label="Text: 4.8 ★">4.8 ★</span>
-      <span><xen>from <span class="num" data-edit="t9" data-edit-label="Text: 267">267</span> Google reviews</xen><xar>من <span class="num" data-edit="t10" data-edit-label="Text: 267">267</span> تقييم على غوغل</xar></span>
-    </div>
-    <div class="chiprow">
-      <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t12" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></span>
-      <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Bao buns">Bao buns</xen><xar data-edit="t14" data-edit-label="Text (AR): باو بنز">باو بنز</xar></span>
-      <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Crispy rice">Crispy rice</xen><xar data-edit="t16" data-edit-label="Text (AR): كريسبي رايس">كريسبي رايس</xar></span>
-    </div>
+    <figure class="tallfig" data-r="3">
+      <img src="img/04.jpg" alt="Glazed nigiri on a long white plate with two more plates beside it">
+      <figcaption><xen data-edit="t20" data-edit-label="Text (EN): The counter's hot plates, sent out thr…">The counter's hot plates, sent out three at a time.</xen><xar data-edit="t21" data-edit-label="Text (AR): الأطباق السخنة، بتطلع تلاتة تلاتة.">الأطباق السخنة، بتطلع تلاتة تلاتة.</xar></figcaption>
+    </figure>
   </div>
 </header>
 
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t17" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t18" data-edit-label="Text (AR): القاعة">القاعة</xar></p>
-      <h2 class="h2"><xen data-edit="t19" data-edit-label="Text (EN): A sushi bar inside an artwork">A sushi bar inside an artwork</xen><xar data-edit="t20" data-edit-label="Text (AR): سوشي بار جوّا لوحة">سوشي بار جوّا لوحة</xar></h2>
-      <p><xen data-edit="t21" data-edit-label="Text (EN): KAMI sits behind a tall arched doorway…">KAMI sits behind a tall arched doorway on Gouraud street. Inside, the walls were painted by the Brazilian graffiti artist Felipe Yung, so the koi and the colour ribbons swim right over the tables.</xen><xar data-edit="t22" data-edit-label="Text (AR): كامي قاعد ورا باب مقوّس عالي بشارع غور…">كامي قاعد ورا باب مقوّس عالي بشارع غورو. جوّا، الحيطان مرسومة بإيد فنان الغرافيتي البرازيلي فيليبي يونغ، فالسمك والشرايط الملوّنة عم يسبحوا فوق الطاولات.</xar></p>
-      <p><xen data-edit="t23" data-edit-label="Text (EN): The kitchen is Japanese fusion done wi…">The kitchen is Japanese fusion done with a straight face: fresh fish cut to order, real wasabi, and hot small plates between the rolls. A second branch runs on the Roman road in Byblos, but Gemmayzeh is the original room.</xen><xar data-edit="t24" data-edit-label="Text (AR): المطبخ ياباني فيوجن بس شغل جدّي: سمك ف…">المطبخ ياباني فيوجن بس شغل جدّي: سمك فريش بينقطع عالطلب، وسابي حقيقي، وأطباق سخنة صغيرة بين الرولات. في فرع تاني على الطريق الروماني بجبيل، بس الجميزة هيي القاعة الأصلية.</xar></p>
+      <p class="k"><xen data-edit="t22" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t23" data-edit-label="Text (AR): القاعة">القاعة</xar></p>
+      <h2 class="h2"><xen data-edit="t24" data-edit-label="Text (EN): A sushi bar inside an artwork">A sushi bar inside an artwork</xen><xar data-edit="t25" data-edit-label="Text (AR): سوشي بار جوّا لوحة">سوشي بار جوّا لوحة</xar></h2>
+      <p><xen data-edit="t26" data-edit-label="Text (EN): KAMI sits behind a tall arched doorway…">KAMI sits behind a tall arched doorway on Gouraud street. Inside, the walls were painted by the Brazilian graffiti artist Felipe Yung, so the koi and the colour ribbons swim right over the tables.</xen><xar data-edit="t27" data-edit-label="Text (AR): كامي قاعد ورا باب مقوّس عالي بشارع غور…">كامي قاعد ورا باب مقوّس عالي بشارع غورو. جوّا، الحيطان مرسومة بإيد فنان الغرافيتي البرازيلي فيليبي يونغ، فالسمك والشرايط الملوّنة عم يسبحوا فوق الطاولات.</xar></p>
+      <p><xen data-edit="t28" data-edit-label="Text (EN): The kitchen is Japanese fusion done wi…">The kitchen is Japanese fusion done with a straight face: fresh fish cut to order, real wasabi, and hot small plates between the rolls. A second branch runs on the Roman road in Byblos, but Gemmayzeh is the original room.</xen><xar data-edit="t29" data-edit-label="Text (AR): المطبخ ياباني فيوجن بس شغل جدّي: سمك ف…">المطبخ ياباني فيوجن بس شغل جدّي: سمك فريش بينقطع عالطلب، وسابي حقيقي، وأطباق سخنة صغيرة بين الرولات. في فرع تاني على الطريق الروماني بجبيل، بس الجميزة هيي القاعة الأصلية.</xar></p>
     </div>
     <div>
       <div class="frame rev"><img src="img/07.jpg" loading="lazy" alt="The bar and the graffiti mural wall with orange chairs">
-        <p class="cap"><xen data-edit="t25" data-edit-label="Text (EN): The bar and Felipe Yung's wall, orange…">The bar and Felipe Yung's wall, orange velvet below.</xen><xar data-edit="t26" data-edit-label="Text (AR): البار وحيط فيليبي يونغ، وقطيفة برتقالي…">البار وحيط فيليبي يونغ، وقطيفة برتقالية من تحت.</xar></p>
+        <p class="cap"><xen data-edit="t30" data-edit-label="Text (EN): The bar and Felipe Yung's wall, orange…">The bar and Felipe Yung's wall, orange velvet below.</xen><xar data-edit="t31" data-edit-label="Text (AR): البار وحيط فيليبي يونغ، وقطيفة برتقالي…">البار وحيط فيليبي يونغ، وقطيفة برتقالية من تحت.</xar></p>
       </div>
     </div>
   </div>
@@ -267,20 +255,20 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t27" data-edit-label="Text (EN): Out of the steamers">Out of the steamers</xen><xar data-edit="t28" data-edit-label="Text (AR): من الطبقات">من الطبقات</xar></p>
-    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t29" data-edit-label="Text (EN): Four plates that explain the 4.8">Four plates that explain the 4.8</xen><xar data-edit="t30" data-edit-label="Text (AR): أربع أطباق بتفسّر الـ4.8">أربع أطباق بتفسّر الـ4.8</xar></h2>
+    <p class="k"><xen data-edit="t32" data-edit-label="Text (EN): Out of the steamers">Out of the steamers</xen><xar data-edit="t33" data-edit-label="Text (AR): من الطبقات">من الطبقات</xar></p>
+    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t34" data-edit-label="Text (EN): Four plates that explain the 4.8">Four plates that explain the 4.8</xen><xar data-edit="t35" data-edit-label="Text (AR): أربع أطباق بتفسّر الـ4.8">أربع أطباق بتفسّر الـ4.8</xar></h2>
     <div class="grid4">
       <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="Bao buns with pulled beef and pickled onion">
-        <div class="t"><h3><xen data-edit="t31" data-edit-label="Text (EN): Bao beef buns">Bao beef buns</xen><xar data-edit="t32" data-edit-label="Text (AR): باو باللحمة">باو باللحمة</xar></h3><p><xen data-edit="t33" data-edit-label="Text (EN): Pillow bread, slow beef, pickled onion…">Pillow bread, slow beef, pickled onion on top.</xen><xar data-edit="t34" data-edit-label="Text (AR): خبز متل المخدة، لحمة مطهية عالمهل، وبص…">خبز متل المخدة، لحمة مطهية عالمهل، وبصل مكبوس فوق.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t36" data-edit-label="Text (EN): Bao beef buns">Bao beef buns</xen><xar data-edit="t37" data-edit-label="Text (AR): باو باللحمة">باو باللحمة</xar></h3><p><xen data-edit="t38" data-edit-label="Text (EN): Pillow bread, slow beef, pickled onion…">Pillow bread, slow beef, pickled onion on top.</xen><xar data-edit="t39" data-edit-label="Text (AR): خبز متل المخدة، لحمة مطهية عالمهل، وبص…">خبز متل المخدة، لحمة مطهية عالمهل، وبصل مكبوس فوق.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="Crispy rice bites and a scallop carpaccio plate">
-        <div class="t"><h3><xen data-edit="t35" data-edit-label="Text (EN): Crispy rice, then carpaccio">Crispy rice, then carpaccio</xen><xar data-edit="t36" data-edit-label="Text (AR): كريسبي رايس وكارباتشو">كريسبي رايس وكارباتشو</xar></h3><p><xen data-edit="t37" data-edit-label="Text (EN): Tartare on fried rice squares beside a…">Tartare on fried rice squares beside a plate cut thin as paper.</xen><xar data-edit="t38" data-edit-label="Text (AR): تارتار على مربعات رز مقلي، حد صحن مقطّ…">تارتار على مربعات رز مقلي، حد صحن مقطّع رقيق متل الورق.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t40" data-edit-label="Text (EN): Crispy rice, then carpaccio">Crispy rice, then carpaccio</xen><xar data-edit="t41" data-edit-label="Text (AR): كريسبي رايس وكارباتشو">كريسبي رايس وكارباتشو</xar></h3><p><xen data-edit="t42" data-edit-label="Text (EN): Tartare on fried rice squares beside a…">Tartare on fried rice squares beside a plate cut thin as paper.</xen><xar data-edit="t43" data-edit-label="Text (AR): تارتار على مربعات رز مقلي، حد صحن مقطّ…">تارتار على مربعات رز مقلي، حد صحن مقطّع رقيق متل الورق.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/09.jpg" loading="lazy" alt="Sushi rolls topped with salmon and crab beside crispy noodles">
-        <div class="t"><h3><xen data-edit="t39" data-edit-label="Text (EN): The signature rolls">The signature rolls</xen><xar data-edit="t40" data-edit-label="Text (AR): الرولات المميزة">الرولات المميزة</xar></h3><p><xen data-edit="t41" data-edit-label="Text (EN): Each roll built its own way; regulars …">Each roll built its own way; regulars say picking a favourite is the hard part.</xen><xar data-edit="t42" data-edit-label="Text (AR): كل رول معمول على طريقتو؛ الزباين بيقول…">كل رول معمول على طريقتو؛ الزباين بيقولوا الصعوبة إنك تختار المفضل.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t44" data-edit-label="Text (EN): The signature rolls">The signature rolls</xen><xar data-edit="t45" data-edit-label="Text (AR): الرولات المميزة">الرولات المميزة</xar></h3><p><xen data-edit="t46" data-edit-label="Text (EN): Each roll built its own way; regulars …">Each roll built its own way; regulars say picking a favourite is the hard part.</xen><xar data-edit="t47" data-edit-label="Text (AR): كل رول معمول على طريقتو؛ الزباين بيقول…">كل رول معمول على طريقتو؛ الزباين بيقولوا الصعوبة إنك تختار المفضل.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/02.jpg" loading="lazy" alt="A sushi box with rows of maki and salmon roe">
-        <div class="t"><h3><xen data-edit="t43" data-edit-label="Text (EN): The box to go">The box to go</xen><xar data-edit="t44" data-edit-label="Text (AR): البوكس تيك أواي">البوكس تيك أواي</xar></h3><p><xen data-edit="t45" data-edit-label="Text (EN): Rows packed tight for the house that c…">Rows packed tight for the house that could not come to Gouraud.</xen><xar data-edit="t46" data-edit-label="Text (AR): صفوف مرصوصة للبيت يلي ما قدر يوصل عغور…">صفوف مرصوصة للبيت يلي ما قدر يوصل عغورو.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t48" data-edit-label="Text (EN): The box to go">The box to go</xen><xar data-edit="t49" data-edit-label="Text (AR): البوكس تيك أواي">البوكس تيك أواي</xar></h3><p><xen data-edit="t50" data-edit-label="Text (EN): Rows packed tight for the house that c…">Rows packed tight for the house that could not come to Gouraud.</xen><xar data-edit="t51" data-edit-label="Text (AR): صفوف مرصوصة للبيت يلي ما قدر يوصل عغور…">صفوف مرصوصة للبيت يلي ما قدر يوصل عغورو.</xar></p></div>
       </div>
     </div>
   </div>
@@ -288,29 +276,29 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="wrap">
   <div class="ladder rev">
-    <p class="k"><xen data-edit="t47" data-edit-label="Text (EN): First visit">First visit</xen><xar data-edit="t48" data-edit-label="Text (AR): أول زيارة">أول زيارة</xar></p>
-    <h2 class="h2"><xen data-edit="t49" data-edit-label="Text (EN): Order like you have been before">Order like you have been before</xen><xar data-edit="t50" data-edit-label="Text (AR): اطلب كأنك من زباين المحل">اطلب كأنك من زباين المحل</xar></h2>
+    <p class="k"><xen data-edit="t52" data-edit-label="Text (EN): First visit">First visit</xen><xar data-edit="t53" data-edit-label="Text (AR): أول زيارة">أول زيارة</xar></p>
+    <h2 class="h2"><xen data-edit="t54" data-edit-label="Text (EN): Order like you have been before">Order like you have been before</xen><xar data-edit="t55" data-edit-label="Text (AR): اطلب كأنك من زباين المحل">اطلب كأنك من زباين المحل</xar></h2>
     <div class="lrow">
-      <div class="lstep"><b class="n num" data-edit="t51" data-edit-label="Text: 1">1</b><h3><xen data-edit="t52" data-edit-label="Text (EN): Tempura avocado">Tempura avocado</xen><xar data-edit="t53" data-edit-label="Text (AR): تمبورا أفوكادو">تمبورا أفوكادو</xar></h3><p><xen data-edit="t54" data-edit-label="Text (EN): With bonito flakes waving off the heat…">With bonito flakes waving off the heat.</xen><xar data-edit="t55" data-edit-label="Text (AR): مع رقائق البونيتو عم تترجرج من السخونة…">مع رقائق البونيتو عم تترجرج من السخونة.</xar></p></div>
-      <div class="lstep"><b class="n num" data-edit="t56" data-edit-label="Text: 2">2</b><h3><xen data-edit="t57" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t58" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></h3><p><xen data-edit="t59" data-edit-label="Text (EN): The hot one everybody photographs firs…">The hot one everybody photographs first.</xen><xar data-edit="t60" data-edit-label="Text (AR): الصحن السخن يلي الكل بيصوّرو أول شي.">الصحن السخن يلي الكل بيصوّرو أول شي.</xar></p></div>
-      <div class="lstep"><b class="n num" data-edit="t61" data-edit-label="Text: 3">3</b><h3><xen data-edit="t62" data-edit-label="Text (EN): Salmon tartare crispy rice">Salmon tartare crispy rice</xen><xar data-edit="t63" data-edit-label="Text (AR): تارتار السلمون عالرز المقلي">تارتار السلمون عالرز المقلي</xar></h3><p><xen data-edit="t64" data-edit-label="Text (EN): Cold on hot, the house trick.">Cold on hot, the house trick.</xen><xar data-edit="t65" data-edit-label="Text (AR): بارد فوق سخن، لعبة البيت.">بارد فوق سخن، لعبة البيت.</xar></p></div>
-      <div class="lstep"><b class="n num" data-edit="t66" data-edit-label="Text: 4">4</b><h3><xen data-edit="t67" data-edit-label="Text (EN): Bao beef buns">Bao beef buns</xen><xar data-edit="t68" data-edit-label="Text (AR): باو باللحمة">باو باللحمة</xar></h3><p><xen data-edit="t69" data-edit-label="Text (EN): Finish soft. Then argue about which ro…">Finish soft. Then argue about which roll next time.</xen><xar data-edit="t70" data-edit-label="Text (AR): خلّص عالناعم. وبعدين تناقشوا أي رول ال…">خلّص عالناعم. وبعدين تناقشوا أي رول المرة الجاية.</xar></p></div>
+      <div class="lstep"><b class="n num" data-edit="t56" data-edit-label="Text: 1">1</b><h3><xen data-edit="t57" data-edit-label="Text (EN): Tempura avocado">Tempura avocado</xen><xar data-edit="t58" data-edit-label="Text (AR): تمبورا أفوكادو">تمبورا أفوكادو</xar></h3><p><xen data-edit="t59" data-edit-label="Text (EN): With bonito flakes waving off the heat…">With bonito flakes waving off the heat.</xen><xar data-edit="t60" data-edit-label="Text (AR): مع رقائق البونيتو عم تترجرج من السخونة…">مع رقائق البونيتو عم تترجرج من السخونة.</xar></p></div>
+      <div class="lstep"><b class="n num" data-edit="t61" data-edit-label="Text: 2">2</b><h3><xen data-edit="t62" data-edit-label="Text (EN): Dynamite shrimp">Dynamite shrimp</xen><xar data-edit="t63" data-edit-label="Text (AR): دايناميت شريمب">دايناميت شريمب</xar></h3><p><xen data-edit="t64" data-edit-label="Text (EN): The hot one everybody photographs firs…">The hot one everybody photographs first.</xen><xar data-edit="t65" data-edit-label="Text (AR): الصحن السخن يلي الكل بيصوّرو أول شي.">الصحن السخن يلي الكل بيصوّرو أول شي.</xar></p></div>
+      <div class="lstep"><b class="n num" data-edit="t66" data-edit-label="Text: 3">3</b><h3><xen data-edit="t67" data-edit-label="Text (EN): Salmon tartare crispy rice">Salmon tartare crispy rice</xen><xar data-edit="t68" data-edit-label="Text (AR): تارتار السلمون عالرز المقلي">تارتار السلمون عالرز المقلي</xar></h3><p><xen data-edit="t69" data-edit-label="Text (EN): Cold on hot, the house trick.">Cold on hot, the house trick.</xen><xar data-edit="t70" data-edit-label="Text (AR): بارد فوق سخن، لعبة البيت.">بارد فوق سخن، لعبة البيت.</xar></p></div>
+      <div class="lstep"><b class="n num" data-edit="t71" data-edit-label="Text: 4">4</b><h3><xen data-edit="t72" data-edit-label="Text (EN): Bao beef buns">Bao beef buns</xen><xar data-edit="t73" data-edit-label="Text (AR): باو باللحمة">باو باللحمة</xar></h3><p><xen data-edit="t74" data-edit-label="Text (EN): Finish soft. Then argue about which ro…">Finish soft. Then argue about which roll next time.</xen><xar data-edit="t75" data-edit-label="Text (AR): خلّص عالناعم. وبعدين تناقشوا أي رول ال…">خلّص عالناعم. وبعدين تناقشوا أي رول المرة الجاية.</xar></p></div>
     </div>
-    <p class="lnote"><xen data-edit="t71" data-edit-label="Text (EN): All four are house signatures; the ful…">All four are house signatures; the full menu and today's fish are at the table, or a message away on WhatsApp.</xen><xar data-edit="t72" data-edit-label="Text (AR): الأربعة توقيع البيت؛ المنيو الكامل وسم…">الأربعة توقيع البيت؛ المنيو الكامل وسمك اليوم عالطاولة، أو على بعد رسالة واتساب.</xar></p>
+    <p class="lnote"><xen data-edit="t76" data-edit-label="Text (EN): All four are house signatures; the ful…">All four are house signatures; the full menu and today's fish are at the table, or a message away on WhatsApp.</xen><xar data-edit="t77" data-edit-label="Text (AR): الأربعة توقيع البيت؛ المنيو الكامل وسم…">الأربعة توقيع البيت؛ المنيو الكامل وسمك اليوم عالطاولة، أو على بعد رسالة واتساب.</xar></p>
   </div>
 </section>
 
 <section class="wrap" style="padding-top:0">
   <div class="lunch rev">
     <div>
-      <p class="k"><xen data-edit="t73" data-edit-label="Text (EN): Weekdays">Weekdays</xen><xar data-edit="t74" data-edit-label="Text (AR): أيام الأسبوع">أيام الأسبوع</xar></p>
-      <p class="big"><xen class="c">Business lunch, <b data-edit="t75" data-edit-label="Text: noon to three">noon to three</b></xen><xar class="c">غدا شغل، <b data-edit="t76" data-edit-label="Text: من 12 لـ3">من 12 لـ3</b></xar></p>
-      <p><xen data-edit="t77" data-edit-label="Text (EN): Monday to Friday the kitchen runs a bu…">Monday to Friday the kitchen runs a business lunch from 12:00 to 15:00, built for the offices that walk over from Mar Mikhael and Downtown.</xen><xar data-edit="t78" data-edit-label="Text (AR): من الاثنين للجمعة المطبخ ماشي بعرض غدا…">من الاثنين للجمعة المطبخ ماشي بعرض غدا الشغل من 12:00 لـ15:00، معمول للمكاتب يلي بتمشيلو من مار مخايل والوسط.</xar></p>
-      <p class="branch"><xen data-edit="t79" data-edit-label="Text (EN): Second room: Roman road, Byblos. Same …">Second room: Roman road, Byblos. Same fish, older stones.</xen><xar data-edit="t80" data-edit-label="Text (AR): قاعة تانية: الطريق الروماني، جبيل. نفس…">قاعة تانية: الطريق الروماني، جبيل. نفس السمك، حجار أقدم.</xar></p>
+      <p class="k"><xen data-edit="t78" data-edit-label="Text (EN): Weekdays">Weekdays</xen><xar data-edit="t79" data-edit-label="Text (AR): أيام الأسبوع">أيام الأسبوع</xar></p>
+      <p class="big"><xen class="c">Business lunch, <b data-edit="t80" data-edit-label="Text: noon to three">noon to three</b></xen><xar class="c">غدا شغل، <b data-edit="t81" data-edit-label="Text: من 12 لـ3">من 12 لـ3</b></xar></p>
+      <p><xen data-edit="t82" data-edit-label="Text (EN): Monday to Friday the kitchen runs a bu…">Monday to Friday the kitchen runs a business lunch from 12:00 to 15:00, built for the offices that walk over from Mar Mikhael and Downtown.</xen><xar data-edit="t83" data-edit-label="Text (AR): من الاثنين للجمعة المطبخ ماشي بعرض غدا…">من الاثنين للجمعة المطبخ ماشي بعرض غدا الشغل من 12:00 لـ15:00، معمول للمكاتب يلي بتمشيلو من مار مخايل والوسط.</xar></p>
+      <p class="branch"><xen data-edit="t84" data-edit-label="Text (EN): Second room: Roman road, Byblos. Same …">Second room: Roman road, Byblos. Same fish, older stones.</xen><xar data-edit="t85" data-edit-label="Text (AR): قاعة تانية: الطريق الروماني، جبيل. نفس…">قاعة تانية: الطريق الروماني، جبيل. نفس السمك، حجار أقدم.</xar></p>
     </div>
     <div>
       <div class="frame"><img src="img/11.jpg" loading="lazy" alt="Sushi boats and a gin tonic on a dark table">
-        <p class="cap"><xen data-edit="t81" data-edit-label="Text (EN): Lunch for two, boats and a cold glass.">Lunch for two, boats and a cold glass.</xen><xar data-edit="t82" data-edit-label="Text (AR): غدا لشخصين، قوارب سوشي وكاسة باردة.">غدا لشخصين، قوارب سوشي وكاسة باردة.</xar></p>
+        <p class="cap"><xen data-edit="t86" data-edit-label="Text (EN): Lunch for two, boats and a cold glass.">Lunch for two, boats and a cold glass.</xen><xar data-edit="t87" data-edit-label="Text (AR): غدا لشخصين، قوارب سوشي وكاسة باردة.">غدا لشخصين، قوارب سوشي وكاسة باردة.</xar></p>
       </div>
     </div>
   </div>
@@ -318,8 +306,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t83" data-edit-label="Text (EN): Around the tables">Around the tables</xen><xar data-edit="t84" data-edit-label="Text (AR): حول الطاولات">حول الطاولات</xar></p>
-    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t85" data-edit-label="Text (EN): Photographs from Gouraud">Photographs from Gouraud</xen><xar data-edit="t86" data-edit-label="Text (AR): صور من غورو">صور من غورو</xar></h2>
+    <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): Around the tables">Around the tables</xen><xar data-edit="t89" data-edit-label="Text (AR): حول الطاولات">حول الطاولات</xar></p>
+    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t90" data-edit-label="Text (EN): Photographs from Gouraud">Photographs from Gouraud</xen><xar data-edit="t91" data-edit-label="Text (AR): صور من غورو">صور من غورو</xar></h2>
     <div class="gal">
       <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="An overhead spread of plates on the dark table"></a>
       <a href="img/10.jpg" target="_blank" rel="noopener" class="g"><img src="img/10.jpg" loading="lazy" alt="A plate of maki presented on a red cloth"></a>
@@ -330,60 +318,60 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t87" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t88" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
-  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t89" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t90" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
+  <p class="k"><xen data-edit="t92" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t93" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t94" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t95" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
   <div class="revs">
-    <div class="rev-c rev"><q dir="ltr" data-edit="t91" data-edit-label="Quote: The sushi experience was truly excepti…">The sushi experience was truly exceptional,each roll delivered its own character, to the point where choosing a favorite became impossible.</q><cite data-edit="t92" data-edit-label="Credit: Lifewithjad">Lifewithjad</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t93" data-edit-label="Quote: Food is exceptional, the best sushi sp…">Food is exceptional, the best sushi spot for me. Everything is fresh and tastes good. Also one of the few places that serve you real wasabi.</q><cite data-edit="t94" data-edit-label="Credit: Elias Dagher">Elias Dagher</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t96" data-edit-label="Quote: The sushi experience was truly excepti…">The sushi experience was truly exceptional,each roll delivered its own character, to the point where choosing a favorite became impossible.</q><cite data-edit="t97" data-edit-label="Credit: Lifewithjad">Lifewithjad</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t98" data-edit-label="Quote: Food is exceptional, the best sushi sp…">Food is exceptional, the best sushi spot for me. Everything is fresh and tastes good. Also one of the few places that serve you real wasabi.</q><cite data-edit="t99" data-edit-label="Credit: Elias Dagher">Elias Dagher</cite></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap visit">
     <div>
-      <p class="k"><xen data-edit="t95" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t96" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
-      <h2 class="h2" style="margin-bottom:16px"><xen data-edit="t97" data-edit-label="Text (EN): Noon to 11:30, every day">Noon to 11:30, every day</xen><xar data-edit="t98" data-edit-label="Text (AR): من 12 لـ11:30، كل يوم">من 12 لـ11:30، كل يوم</xar></h2>
+      <p class="k"><xen data-edit="t100" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t101" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="h2" style="margin-bottom:16px"><xen data-edit="t102" data-edit-label="Text (EN): Noon to 11:30, every day">Noon to 11:30, every day</xen><xar data-edit="t103" data-edit-label="Text (AR): من 12 لـ11:30، كل يوم">من 12 لـ11:30، كل يوم</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t99" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t100" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t101" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t102" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t103" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t104" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t105" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t106" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t107" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t108" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t109" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t110" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t111" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t112" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t113" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t114" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t115" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t116" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
-        <tr><td><xen data-edit="t117" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t118" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t119" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t105" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t106" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t108" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t109" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t110" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t111" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t112" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t113" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t114" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t115" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t117" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t118" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t119" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t120" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t121" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
+        <tr><td><xen data-edit="t122" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t123" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td class="num" data-edit="t124" data-edit-label="Menu / table: 12–11:30 PM">12–11:30 PM</td></tr>
       </table>
-      <p class="cap"><xen data-edit="t120" data-edit-label="Text (EN): Business lunch weekdays from noon to t…">Business lunch weekdays from noon to three.</xen><xar data-edit="t121" data-edit-label="Text (AR): غدا الشغل أيام الأسبوع من 12 لـ3.">غدا الشغل أيام الأسبوع من 12 لـ3.</xar></p>
+      <p class="cap"><xen data-edit="t125" data-edit-label="Text (EN): Business lunch weekdays from noon to t…">Business lunch weekdays from noon to three.</xen><xar data-edit="t126" data-edit-label="Text (AR): غدا الشغل أيام الأسبوع من 12 لـ3.">غدا الشغل أيام الأسبوع من 12 لـ3.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t122" data-edit-label="Text (EN): Find the door">Find the door</xen><xar data-edit="t123" data-edit-label="Text (AR): لاقونا">لاقونا</xar></p>
-      <h3 style="font-size:21px;margin:6px 0 14px;color:#F5EEDC;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700"><xen data-edit="t124" data-edit-label="Text (EN): Gouraud street, Gemmayzeh">Gouraud street, Gemmayzeh</xen><xar data-edit="t125" data-edit-label="Text (AR): شارع غورو، الجميزة">شارع غورو، الجميزة</xar></h3>
-      <p class="k"><xen data-edit="t126" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t127" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t128" data-edit-label="Text: Gouraud, Beirut, Lebanon">Gouraud, Beirut, Lebanon</p>
-      <p class="k" style="margin-top:18px"><xen data-edit="t129" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t130" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
-      <p class="ph num" data-edit="t131" data-edit-label="Text: +961 76 611 633">+961 76 611 633</p>
+      <p class="k"><xen data-edit="t127" data-edit-label="Text (EN): Find the door">Find the door</xen><xar data-edit="t128" data-edit-label="Text (AR): لاقونا">لاقونا</xar></p>
+      <h3 style="font-size:21px;margin:6px 0 14px;color:#F5EEDC;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700"><xen data-edit="t129" data-edit-label="Text (EN): Gouraud street, Gemmayzeh">Gouraud street, Gemmayzeh</xen><xar data-edit="t130" data-edit-label="Text (AR): شارع غورو، الجميزة">شارع غورو، الجميزة</xar></h3>
+      <p class="k"><xen data-edit="t131" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t132" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t133" data-edit-label="Text: Gouraud, Beirut, Lebanon">Gouraud, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:18px"><xen data-edit="t134" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t135" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t136" data-edit-label="Text: +961 76 611 633">+961 76 611 633</p>
       <p style="margin-top:20px">
-        <a class="btn" href="https://wa.me/96176611633?text=Hello%20KAMI%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t132" data-edit-label="Text (EN): WhatsApp the bar">WhatsApp the bar</xen><xar data-edit="t133" data-edit-label="Text (AR): واتساب البار">واتساب البار</xar></a>
-        <a class="btn o" href="https://www.plate-app.com/widget/kami-experience-beirut" target="_blank" rel="noopener"><xen data-edit="t134" data-edit-label="Text (EN): Book online">Book online</xen><xar data-edit="t135" data-edit-label="Text (AR): احجز أونلاين">احجز أونلاين</xar></a>
+        <a class="btn" href="https://wa.me/96176611633?text=Hello%20KAMI%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t137" data-edit-label="Text (EN): WhatsApp the bar">WhatsApp the bar</xen><xar data-edit="t138" data-edit-label="Text (AR): واتساب البار">واتساب البار</xar></a>
+        <a class="btn o" href="https://www.plate-app.com/widget/kami-experience-beirut" target="_blank" rel="noopener"><xen data-edit="t139" data-edit-label="Text (EN): Book online">Book online</xen><xar data-edit="t140" data-edit-label="Text (AR): احجز أونلاين">احجز أونلاين</xar></a>
       </p>
       <p style="margin-top:12px">
-        <a class="btn o" href="https://www.google.com/maps?cid=5445335971764195974" target="_blank" rel="noopener"><xen data-edit="t136" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t137" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
-        <a class="btn o" href="https://www.instagram.com/kami.experience/" target="_blank" rel="noopener" data-edit="t138" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.google.com/maps?cid=5445335971764195974" target="_blank" rel="noopener"><xen data-edit="t141" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t142" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn o" href="https://www.instagram.com/kami.experience/" target="_blank" rel="noopener" data-edit="t143" data-edit-label="Button / link: Instagram">Instagram</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t139" data-edit-label="Text (EN): KAMI Experience, Gouraud street, Gemma…">KAMI Experience, Gouraud street, Gemmayzeh, Beirut.</xen><xar data-edit="t140" data-edit-label="Text (AR): كامي إكسبيرينس، شارع غورو، الجميزة، بي…">كامي إكسبيرينس، شارع غورو، الجميزة، بيروت.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t141" data-edit-label="Text (EN): Fresh fish, real wasabi, painted walls…">Fresh fish, real wasabi, painted walls. Every day from noon.</xen><xar data-edit="t142" data-edit-label="Text (AR): سمك فريش، وسابي حقيقي، وحيطان مرسومة. …">سمك فريش، وسابي حقيقي، وحيطان مرسومة. كل يوم من الضهر.</xar></p>
+  <p><xen data-edit="t144" data-edit-label="Text (EN): KAMI Experience, Gouraud street, Gemma…">KAMI Experience, Gouraud street, Gemmayzeh, Beirut.</xen><xar data-edit="t145" data-edit-label="Text (AR): كامي إكسبيرينس، شارع غورو، الجميزة، بي…">كامي إكسبيرينس، شارع غورو، الجميزة، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t146" data-edit-label="Text (EN): Fresh fish, real wasabi, painted walls…">Fresh fish, real wasabi, painted walls. Every day from noon.</xen><xar data-edit="t147" data-edit-label="Text (AR): سمك فريش، وسابي حقيقي، وحيطان مرسومة. …">سمك فريش، وسابي حقيقي، وحيطان مرسومة. كل يوم من الضهر.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a class="w" href="https://wa.me/96176611633?text=Hello%20KAMI%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t143" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t144" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="tel:+96176611633"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t145" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t146" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a href="https://www.google.com/maps?cid=5445335971764195974" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t147" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t148" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.instagram.com/kami.experience/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t149" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a class="w" href="https://wa.me/96176611633?text=Hello%20KAMI%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t148" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t149" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="tel:+96176611633"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t151" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a href="https://www.google.com/maps?cid=5445335971764195974" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t153" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/kami.experience/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t154" data-edit-label="Text: Instagram">Instagram</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="كامي إكسبيرينس · شارع غورو، الجميزة" data-edit="t150" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="كامي إكسبيرينس · شارع غورو، الجميزة" data-edit="t155" data-edit-label="Button: عربي">عربي</button>
 </body></html>

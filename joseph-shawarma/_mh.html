@@ -356,4 +356,17 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="مطعم جوزف · السيدة، سن الفيل" data-edit="t140" data-edit-label="Button: عربي">عربي</button>
+
+<script>window.addEventListener('load',function(){
+ var h=document.querySelector('header')||document.body.firstElementChild;
+ var out={h:Math.round(h.getBoundingClientRect().height),clip:[]};
+ h.querySelectorAll('*').forEach(function(e){
+  var cs=getComputedStyle(e);
+  if(cs.overflow==='visible'&&cs.overflowY==='visible')return;
+  var _t=(e.textContent||'').trim();
+  if(e.scrollHeight-e.clientHeight>6&&e.clientHeight>0&&_t){
+   out.clip.push({t:(e.textContent||'').trim().slice(0,30),
+     sel:e.tagName.toLowerCase()+(e.className?'.'+String(e.className).split(' ')[0]:''),
+     over:e.scrollHeight-e.clientHeight});}});
+ document.title='MH'+JSON.stringify(out);});</script>
 </body></html>

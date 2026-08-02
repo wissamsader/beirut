@@ -5,98 +5,87 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Smoking Barrels · Mar Mikhael, Beirut</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rye&family=Saira+Stencil+One&family=Chivo:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800;900&family=Chivo:wght@400;500;600;700&family=Rakkas&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Noto Kufi Arabic';--arb:'Cairo';
-  --smoke:#261B0F;--smoke2:#2E2113;--char:#1B1409;--oak:#A87543;--oakd:#6E4826;--amber:#E09433;--brick:#B8352A;--cream:#EFE5D2;
-  --line:rgba(239,229,210,.16);
+  --arh:'Rakkas';--arb:'Cairo';
+  --smoke:#2A2320;--smoke2:#332A26;--char:#1D1815;--oak:#B46238;--oakd:#7A3D1E;--amber:#C4592C;--brick:#A8401F;--cream:#F2ECE0;
+  --line:rgba(242,236,224,.16);
+  --rust:#B4552C;--rustd:#8A3C18;--bone:#F2ECE0;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--smoke);color:var(--cream);font:400 16.5px/1.72 'Chivo',system-ui,sans-serif}
 .wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;line-height:1.1;letter-spacing:.02em;text-transform:uppercase}
+h1,h2,h3{font-family:'Big Shoulders Display',system-ui,sans-serif;font-weight:800;line-height:1.02;letter-spacing:.008em;text-transform:uppercase}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.5 'Chivo',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--amber)}
 
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
-  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:2px;cursor:pointer;
-  background:var(--amber);color:#1B222A;border:2px solid #8F5A16;-webkit-appearance:none;
-  box-shadow:0 4px 16px rgba(0,0,0,.45);min-width:58px;text-align:center}
+.lngt{font:700 12.5px/1 var(--arb),sans-serif;padding:9px 13px;border-radius:2px;cursor:pointer;
+  background:transparent;color:var(--bone);border:1.5px solid rgba(242,236,224,.48);-webkit-appearance:none;
+  min-width:54px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the sauce crate itself, its oak filling the frame ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:center;padding:clamp(26px,5vh,54px) 0;
-  background:
-   repeating-linear-gradient(180deg,
-     rgba(18,9,2,.6) 0 4px,rgba(255,224,180,.24) 4px 8px,rgba(255,224,180,.08) 8px 30px,
-     rgba(0,0,0,0) 30px 76px,rgba(18,9,2,.26) 76px 106px),
-   repeating-linear-gradient(90deg,rgba(255,226,178,.07) 0 2px,rgba(0,0,0,.07) 2px 6px,
-     rgba(255,226,178,.03) 6px 13px,rgba(0,0,0,.04) 13px 19px),
-   linear-gradient(172deg,#A97646 0%,#8E5E33 46%,#6B4324 100%)}
-header::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(120% 78% at 50% 116%,rgba(24,14,6,.72),transparent 58%),
-             radial-gradient(70% 44% at 26% -6%,rgba(255,214,150,.22),transparent 66%)}
-/* the crate's iron corner straps */
-.strap{position:absolute;top:0;bottom:0;width:clamp(26px,4vw,52px);z-index:2;
-  background:linear-gradient(90deg,#2A2118,#4A3C2C 42%,#191309);
-  box-shadow:0 0 22px rgba(12,7,2,.6)}
-.strap.l{left:0}.strap.r{right:0}
-.strap i{position:absolute;left:50%;width:11px;height:11px;margin-left:-5.5px;border-radius:50%;
-  background:radial-gradient(circle at 36% 32%,#B7A88F,#4A3C2C 72%);box-shadow:0 1px 2px rgba(0,0,0,.7)}
-.strap i:nth-child(1){top:9%}.strap i:nth-child(2){top:35%}
-.strap i:nth-child(3){top:63%}.strap i:nth-child(4){top:89%}
-/* the brand burned into the boards */
-.brandseal{position:absolute;z-index:2;right:clamp(58px,10vw,150px);top:clamp(30px,6vh,70px);
-  width:clamp(78px,9vw,116px);aspect-ratio:1;border-radius:50%;
-  border:3px solid rgba(40,22,8,.42);box-shadow:inset 0 0 26px rgba(40,22,8,.34);opacity:.82;
-  background:
-   radial-gradient(circle,transparent 0 40%,rgba(40,22,8,.3) 40% 45%,transparent 45% 63%,rgba(40,22,8,.26) 63% 67%,transparent 67%),
-   repeating-conic-gradient(from 0deg,rgba(40,22,8,.16) 0 9deg,transparent 9deg 18deg);
-  animation:sealturn 92s linear infinite}
-@keyframes sealturn{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.brandseal{animation:none}}
-.hwrap{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;
-  padding-inline:clamp(52px,9vw,132px)}
-.hwrap .kick{color:#F4DFB4;letter-spacing:.32em}
-.hwrap h1{margin-top:12px;font-family:'Rye',serif;font-weight:400;line-height:1.02;
-  font-size:clamp(38px,6.6vw,94px);color:#26150A;
-  text-shadow:0 1px 0 rgba(255,224,168,.58),0 -1px 1px rgba(12,5,0,.78),0 10px 22px rgba(30,16,4,.35)}
-.hwrap h1 b{color:#8E2A20;font-weight:400}
-html.ar .hwrap h1{font-size:clamp(36px,5.6vw,78px)}
-.subline{margin-top:clamp(14px,2.2vh,22px);max-width:42ch;color:#F6E7C9;font-size:clamp(14.5px,1.7vw,17px);
-  line-height:1.66;text-shadow:0 1px 2px rgba(30,16,4,.6)}
-.metaRow{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(16px,2.6vh,26px)}
-.tagc{background:linear-gradient(180deg,#3B2E21,#221810);color:#F0E3C9;border:1px solid rgba(240,227,201,.28);
-  border-radius:3px;padding:8px 14px;font:700 11.5px/1 'Chivo',sans-serif;letter-spacing:.14em;text-transform:uppercase;
-  box-shadow:0 6px 14px rgba(20,10,2,.4)}
-.tagc.amb{background:linear-gradient(180deg,#E09433,#B86F1C);color:#2A1908;border-color:#8A5313}
-/* the board, screwed onto the crate */
-.heroPane{position:absolute;z-index:4;right:clamp(58px,9vw,132px);bottom:clamp(30px,6vh,74px);
-  width:min(370px,40vw);padding:11px;background:linear-gradient(180deg,#3B2E21,#1D150C);
-  border:1px solid rgba(240,227,201,.3);box-shadow:0 24px 46px rgba(16,9,2,.65)}
-.heroPane::before,.heroPane::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;
-  background:radial-gradient(circle at 36% 32%,#C4B69C,#4A3C2C 72%)}
-.heroPane::before{left:7px;top:7px}.heroPane::after{right:7px;bottom:7px}
-.heroPane .bd{overflow:hidden}
-.heroPane img{width:100%;height:clamp(140px,20vh,196px);object-fit:cover;display:block}
-/* the sauce bottles standing in the crate */
-.bottles{position:absolute;z-index:4;left:clamp(52px,9vw,132px);bottom:clamp(26px,5vh,60px);
-  display:flex;align-items:flex-end;gap:clamp(9px,1.4vw,16px)}
-.bottle{position:relative;width:clamp(26px,3vw,38px);border-radius:5px 5px 7px 7px;
-  box-shadow:0 12px 22px rgba(16,9,2,.6),inset -6px 0 12px rgba(0,0,0,.3),inset 6px 0 10px rgba(255,255,255,.16)}
-.bottle::before{content:"";position:absolute;left:50%;transform:translateX(-50%);top:-16px;
-  width:42%;height:17px;border-radius:3px 3px 0 0;background:#241A10}
-.bottle::after{content:"";position:absolute;left:12%;right:12%;top:34%;height:26%;border-radius:2px;
-  background:rgba(244,232,208,.85)}
-.bottle.bbq{height:clamp(72px,10vh,104px);background:linear-gradient(180deg,#6E2B14,#3E170A)}
-.bottle.mus{height:clamp(62px,9vh,90px);background:linear-gradient(180deg,#D9A32B,#9A6A12)}
-.bottle.gar{height:clamp(80px,11vh,114px);background:linear-gradient(180deg,#E7DCC0,#B8A889)}
+/* ---------- top strip: a real nav ---------- */
+#nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;padding:13px clamp(16px,6vw,54px);
+  background:linear-gradient(180deg,rgba(20,16,14,.66),transparent);
+  border-bottom:1px solid rgba(242,236,224,0);transition:background .3s,border-color .3s}
+#nav.sc{background:rgba(29,24,21,.95);backdrop-filter:blur(10px);border-bottom-color:rgba(242,236,224,.16)}
+#nav .brand{font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:clamp(17px,2.2vw,23px);
+  letter-spacing:.15em;color:var(--bone);text-decoration:none;white-space:nowrap;text-transform:uppercase}
+#nav .lk{display:flex;align-items:center;gap:clamp(10px,1.6vw,24px)}
+#nav .lk a{color:rgba(242,236,224,.76);text-decoration:none;font:500 13.5px/1 'Chivo',sans-serif;white-space:nowrap}
+#nav .lk a:hover{color:var(--rust)}
+#nav a.callb{background:var(--rust);color:#FFF2EB;padding:11px 19px;border-radius:2px;
+  font:700 13.5px/1 'Chivo',sans-serif;text-decoration:none}
 
+/* ---------- HERO: full-bleed. Their own smoked rack as the field, name across it ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  background:var(--char);display:flex;flex-direction:column;justify-content:flex-start}
+header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 56%;
+  z-index:0;filter:contrast(1.05) saturate(1.1) brightness(.72);
+  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+header .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(24,19,17,.90) 0%,rgba(24,19,17,.66) 34%,rgba(24,19,17,.38) 56%,rgba(24,19,17,.44) 78%,rgba(24,19,17,.62) 100%),
+  linear-gradient(0deg,rgba(180,85,44,.30),transparent 62%)}
+.hwrap{position:relative;z-index:3;width:min(1140px,100%);margin-inline:auto;
+  padding:clamp(78px,12vh,124px) clamp(20px,6vw,54px) 0;text-align:center}
+.hwrap .kick{color:#F0B492}
+.hwrap h1{font-size:clamp(46px,10.4vw,142px);line-height:.88;color:var(--bone);margin-top:12px;
+  text-shadow:0 12px 48px rgba(0,0,0,.6)}
+.hwrap h1 b{font-weight:400;color:#F0B492}
+html.ar .hwrap h1{font-family:var(--arh),sans-serif;font-size:clamp(38px,8vw,104px);line-height:1.14}
+.subline{max-width:50ch;margin:clamp(14px,2.2vh,22px) auto 0;color:#E2D9CC;
+  font-size:clamp(14.5px,1.6vw,17px);line-height:1.68;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.metaRow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:clamp(16px,2.4vh,24px)}
+.tagc{border:1.4px solid rgba(242,236,224,.4);border-radius:2px;padding:7px 12px;background:rgba(29,24,21,.4);
+  font:600 11.4px/1 'Chivo',sans-serif;color:#EFE7DA;letter-spacing:.06em}
+.tagc.amb{background:var(--rust);border-color:var(--rustd);color:#FFF2EB;font-weight:700}
+/* the bone panel low, carrying the plates */
+.heroPane{position:absolute;left:0;right:0;bottom:0;z-index:4;margin:0;
+  background:var(--bone);color:#2A2320;padding:clamp(14px,2.2vh,22px) clamp(20px,6vw,54px) clamp(78px,9.4vh,98px);
+  border-top:3px solid var(--rust)}
+.heroPane .bd{width:min(1140px,100%);margin-inline:auto;display:flex;align-items:center;
+  justify-content:space-between;gap:clamp(14px,3vw,36px);flex-wrap:wrap}
+.heroPane .bd span{font:700 11.4px/1.5 'Chivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#6B5B52}
+.heroPane .bd span b{color:var(--rustd)}
+@media(max-width:880px){
+  .hwrap{padding-top:clamp(84px,13vh,112px)}
+  .hwrap h1{font-size:clamp(40px,12.6vw,80px)}
+  .subline{max-width:100%;font-size:14.4px}
+  .heroPane{padding-bottom:clamp(76px,11vh,94px)}
+  .heroPane .bd{justify-content:center;gap:10px}
+  .heroPane .bd span{font-size:10px;letter-spacing:.14em}
+}
 
 /* ---------- sections ---------- */
+section .k::before{content:"";display:block;width:56px;height:2px;background:currentColor;opacity:.8;margin-bottom:12px}
+.silent{background:var(--char);color:var(--bone);text-align:center;padding-block:clamp(50px,7vh,86px)}
+.silent p{font-family:'Big Shoulders Display',sans-serif;font-weight:600;text-transform:uppercase;
+  font-size:clamp(23px,3.5vw,45px);line-height:1.1;max-width:23ch;margin-inline:auto}
+.silent p b{color:var(--rust);font-weight:800}
 section{padding-block:clamp(56px,8vh,96px)}
 .band{background:var(--smoke2)}
 .two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,54px);align-items:start}
@@ -109,7 +98,7 @@ h2.hd{font-size:clamp(23px,3.6vw,37px);margin:8px 0 18px;color:var(--cream)}
 .step{background:#2E2113;border:1.5px solid var(--line);border-radius:4px;overflow:hidden}
 .step img{width:100%;height:205px;object-fit:cover}
 .step .t{padding:16px 17px 19px;border-top:3px solid var(--amber)}
-.step .t .no{font:400 13px/1 'Saira Stencil One',sans-serif;color:var(--amber);letter-spacing:.2em}
+.step .t .no{font:400 13px/1 'Big Shoulders Display',sans-serif;color:var(--amber);letter-spacing:.2em}
 .step h3{font-size:17px;margin:6px 0 7px;color:var(--cream)}
 .step p{color:#C6B294;font-size:14px;line-height:1.65}
 .cater{background:linear-gradient(160deg,#43290F73,transparent),#2E2113;border:2px solid var(--amber);border-radius:6px;
@@ -144,20 +133,17 @@ footer{padding:36px 7vw 128px;color:#93A3AD;font-size:13.5px;text-align:center;b
 
 /* ---------- sticky bar: the plank rail with stencil steel tags ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
-  background:
-   repeating-linear-gradient(90deg,rgba(20,8,2,.3) 0 2px,transparent 2px 72px),
-   linear-gradient(180deg,#3A2210,#2B1A0B);
-  border-top:2.5px solid #241203;
+  background:var(--char);
+  border-top:3px solid var(--rust);
   padding:8px 10px calc(8px + env(safe-area-inset-bottom));
   box-shadow:0 -12px 30px rgba(0,0,0,.55)}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:9px 4px 10px;background:linear-gradient(180deg,#3A4750,#232E36);color:var(--cream);
-  border:1.5px solid #12181D;border-radius:3px;
-  text-decoration:none;font:700 11.5px/1.2 'Chivo',sans-serif;letter-spacing:.06em;text-transform:uppercase;min-height:54px;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+  padding:9px 4px 10px;background:transparent;color:var(--bone);
+  border:1.5px solid rgba(242,236,224,.34);border-radius:2px;
+  text-decoration:none;font:700 11.5px/1.2 'Chivo',sans-serif;letter-spacing:.09em;text-transform:uppercase;min-height:54px}
 .bar a:active{filter:brightness(.9)}
 .bar svg{width:18px;height:18px;fill:currentColor}
-.bar a.w{background:var(--amber);color:#1B222A;border-color:#8F5A16}
+.bar a.w{background:var(--rust);color:#FFF2EB;border-color:var(--rustd)}
 .bar a.sq{flex:0 0 56px}
 @media(max-width:880px){
   .two,.visit,.cater{grid-template-columns:1fr}
@@ -176,6 +162,9 @@ footer{padding:36px 7vw 128px;color:#93A3AD;font-size:13.5px;text-align:center;b
   .bottle{width:22px}
   .bottle::before{top:-12px;height:13px}
 }
+@media(max-width:760px){#nav .lk a:not(.callb){display:none}#nav .lk{gap:10px}#nav a.callb{padding:9px 14px;font-size:12.5px}}
+.silent{padding-inline:22px}.silent p{max-width:min(23ch,100%)}
+@media(max-width:760px){.heroPane .bd{padding-inline:8px}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -223,41 +212,59 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
-<header>
-  <span class="strap l" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-  <span class="strap r" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-  <span class="brandseal" aria-hidden="true"></span>
+<nav id="nav">
+  <a class="brand" href="#top" data-edit="t1" data-edit-label="Button / link: The Smoking Barrels">The Smoking Barrels</a>
+  <div class="lk">
+    <a href="#story"><xen data-edit="t2" data-edit-label="Text (EN): The pit">The pit</xen><xar data-edit="t3" data-edit-label="Text (AR): المدخنة">المدخنة</xar></a>
+    <a href="#menu"><xen data-edit="t4" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t5" data-edit-label="Text (AR): اللوح">اللوح</xar></a>
+    <a href="#say"><xen data-edit="t6" data-edit-label="Text (EN): Reviews">Reviews</xen><xar data-edit="t7" data-edit-label="Text (AR): التقييمات">التقييمات</xar></a>
+    <a href="#visit"><xen data-edit="t8" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t9" data-edit-label="Text (AR): زورونا">زورونا</xar></a>
+    <button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ذا سموكينغ باريلز · مار مخايل، بيروت" data-edit="t10" data-edit-label="Button: عربي">عربي</button>
+    <a class="callb" href="tel:+9611570770"><xen data-edit="t11" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t12" data-edit-label="Text (AR): اتصل">اتصل</xar></a>
+  </div>
+</nav>
+
+<header id="top">
+  <img class="bg" src="img/07.jpg" alt="A smoked rack from The Smoking Barrels on the tray with the house sauces">
+  <div class="scrim"></div>
   <div class="hwrap">
-    <p class="k kick"><xen data-edit="t1" data-edit-label="Text (EN): Smokehouse · Mar Mikhael, Beirut">Smokehouse · Mar Mikhael, Beirut</xen><xar data-edit="t2" data-edit-label="Text (AR): مدخّن لحوم · مار مخايل، بيروت">مدخّن لحوم · مار مخايل، بيروت</xar></p>
-    <h1><xen class="c">The Smoking <b data-edit="t3" data-edit-label="Text: Barrels">Barrels</b></xen><xar class="c">ذا سموكينغ <b data-edit="t4" data-edit-label="Text: باريلز">باريلز</b></xar></h1>
-    <p class="subline"><xen data-edit="t5" data-edit-label="Text (EN): Brisket, ribs and burgers cut on the b…">Brisket, ribs and burgers cut on the board, with the sauce caddy already on your table.</xen><xar data-edit="t6" data-edit-label="Text (AR): بريسكت، ريبس وبرغر بينقطعوا عاللوح، وع…">بريسكت، ريبس وبرغر بينقطعوا عاللوح، وعلبة الصوصات جاهزة عالطاولة قبلك.</xar></p>
+    <p class="k kick"><xen data-edit="t13" data-edit-label="Text (EN): Smokehouse · Mar Mikhael, Beirut">Smokehouse · Mar Mikhael, Beirut</xen><xar data-edit="t14" data-edit-label="Text (AR): مدخّن لحوم · مار مخايل، بيروت">مدخّن لحوم · مار مخايل، بيروت</xar></p>
+    <h1><xen class="c">The Smoking <b data-edit="t15" data-edit-label="Text: Barrels">Barrels</b></xen><xar class="c">ذا سموكينغ <b data-edit="t16" data-edit-label="Text: باريلز">باريلز</b></xar></h1>
+    <p class="subline"><xen data-edit="t17" data-edit-label="Text (EN): Brisket, ribs and burgers cut on the b…">Brisket, ribs and burgers cut on the board, with the sauce caddy already on your table.</xen><xar data-edit="t18" data-edit-label="Text (AR): بريسكت، ريبس وبرغر بينقطعوا عاللوح، وع…">بريسكت، ريبس وبرغر بينقطعوا عاللوح، وعلبة الصوصات جاهزة عالطاولة قبلك.</xar></p>
     <div class="metaRow">
-      <span class="tagc amb"><xen class="c"><span class="num" data-edit="t7" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t8" data-edit-label="Text: 138">138</span> reviews</xen><xar class="c"><span class="num" data-edit="t9" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t10" data-edit-label="Text: 138">138</span> تقييم</xar></span>
-      <span class="tagc"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Smoked meats">Smoked meats</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): لحوم مدخّنة">لحوم مدخّنة</xar></span>
-      <span class="tagc"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Draft beer">Draft beer</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): بيرة درافت">بيرة درافت</xar></span>
-      <span class="tagc"><xen class="c" data-edit="t15" data-edit-label="Text (EN): BBQ catering">BBQ catering</xen><xar class="c" data-edit="t16" data-edit-label="Text (AR): كايترينغ مشاوي">كايترينغ مشاوي</xar></span>
+      <span class="tagc amb"><xen class="c"><span class="num" data-edit="t19" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t20" data-edit-label="Text: 138">138</span> reviews</xen><xar class="c"><span class="num" data-edit="t21" data-edit-label="Text: 4.8">4.8</span> · <span class="num" data-edit="t22" data-edit-label="Text: 138">138</span> تقييم</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t23" data-edit-label="Text (EN): Smoked meats">Smoked meats</xen><xar class="c" data-edit="t24" data-edit-label="Text (AR): لحوم مدخّنة">لحوم مدخّنة</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t25" data-edit-label="Text (EN): Draft beer">Draft beer</xen><xar class="c" data-edit="t26" data-edit-label="Text (AR): بيرة درافت">بيرة درافت</xar></span>
+      <span class="tagc"><xen class="c" data-edit="t27" data-edit-label="Text (EN): BBQ catering">BBQ catering</xen><xar class="c" data-edit="t28" data-edit-label="Text (AR): كايترينغ مشاوي">كايترينغ مشاوي</xar></span>
     </div>
   </div>
-  <div class="bottles" aria-hidden="true">
-    <span class="bottle bbq"></span><span class="bottle mus"></span><span class="bottle gar"></span>
+  <div class="heroPane">
+    <div class="bd">
+      <span><b><xen class="c" data-edit="t29" data-edit-label="Text (EN): Brisket">Brisket</xen><xar class="c" data-edit="t30" data-edit-label="Text (AR): بريسكت">بريسكت</xar></b></span>
+      <span><xen class="c" data-edit="t31" data-edit-label="Text (EN): Baby back ribs">Baby back ribs</xen><xar class="c" data-edit="t32" data-edit-label="Text (AR): ريبس">ريبس</xar></span>
+      <span><xen class="c" data-edit="t33" data-edit-label="Text (EN): Pulled beef">Pulled beef</xen><xar class="c" data-edit="t34" data-edit-label="Text (AR): لحمة مفرومة">لحمة مفرومة</xar></span>
+      <span><xen class="c" data-edit="t35" data-edit-label="Text (EN): Burgers off the board">Burgers off the board</xen><xar class="c" data-edit="t36" data-edit-label="Text (AR): برغر عن اللوح">برغر عن اللوح</xar></span>
+      <span><xen class="c" data-edit="t37" data-edit-label="Text (EN): House sauces">House sauces</xen><xar class="c" data-edit="t38" data-edit-label="Text (AR): صوصات البيت">صوصات البيت</xar></span>
+    </div>
   </div>
-  <figure class="heroPane">
-    <div class="bd"><img src="img/10.jpg" alt="Sliced brisket with a smoke ring on the cutting board"></div>
-  </figure>
 </header>
+
+<div class="silent">
+  <p><xen>Cut on the board, <b data-edit="t39" data-edit-label="Text: sauce caddy already on your table.">sauce caddy already on your table.</b></xen><xar>بينقطع عاللوح، <b data-edit="t40" data-edit-label="Text: وعلبة الصوصات جاهزة عالطاولة.">وعلبة الصوصات جاهزة عالطاولة.</b></xar></p>
+</div>
 
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t17" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t18" data-edit-label="Text (AR): القاعة">القاعة</xar></p>
-      <h2 class="hd"><xen data-edit="t19" data-edit-label="Text (EN): Blue tables, brick walls, serious meat">Blue tables, brick walls, serious meat</xen><xar data-edit="t20" data-edit-label="Text (AR): طاولات زرقا، حيط قرميد، ولحمة جدّية">طاولات زرقا، حيط قرميد، ولحمة جدّية</xar></h2>
-      <p><xen data-edit="t21" data-edit-label="Text (EN): The Smoking Barrels is Mar Mikhael's s…">The Smoking Barrels is Mar Mikhael's smokehouse: painted blue plank tables, black chairs, glass bricks and a kitchen that measures its work in hours, not minutes. Brisket, ribs and smoked cuts arrive sliced on boards and steel trays.</xen><xar data-edit="t22" data-edit-label="Text (AR): ذا سموكينغ باريلز هو مدخّن مار مخايل: …">ذا سموكينغ باريلز هو مدخّن مار مخايل: طاولات خشب مدهونة أزرق، كراسي سودا، قرميد زجاجي، ومطبخ بيقيس شغلو بالساعات مش بالدقايق. البريسكت والريبس والقطع المدخّنة بتوصل مقطّعة على ألواح وصواني ستانلس.</xar></p>
-      <p><xen data-edit="t23" data-edit-label="Text (EN): The bar side takes the beer as serious…">The bar side takes the beer as seriously as the pit: draft taps, and a staff that will pour you a taste before you commit to a glass.</xen><xar data-edit="t24" data-edit-label="Text (AR): جهة البار بتاخد البيرة عالجد قدّ المدخ…">جهة البار بتاخد البيرة عالجد قدّ المدخنة: حنفيات درافت، وستاف بيسقيك دوقة قبل ما تحسمها كاس.</xar></p>
-      <p><xen data-edit="t25" data-edit-label="Text (EN): Six days a week, one till eleven. Sund…">Six days a week, one till eleven. Sunday the fire rests.</xen><xar data-edit="t26" data-edit-label="Text (AR): ستة أيام بالأسبوع، من الواحدة للحدعش. …">ستة أيام بالأسبوع، من الواحدة للحدعش. الأحد النار بترتاح.</xar></p>
+      <p class="k"><xen data-edit="t41" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t42" data-edit-label="Text (AR): القاعة">القاعة</xar></p>
+      <h2 class="hd"><xen data-edit="t43" data-edit-label="Text (EN): Blue tables, brick walls, serious meat">Blue tables, brick walls, serious meat</xen><xar data-edit="t44" data-edit-label="Text (AR): طاولات زرقا، حيط قرميد، ولحمة جدّية">طاولات زرقا، حيط قرميد، ولحمة جدّية</xar></h2>
+      <p><xen data-edit="t45" data-edit-label="Text (EN): The Smoking Barrels is Mar Mikhael's s…">The Smoking Barrels is Mar Mikhael's smokehouse: painted blue plank tables, black chairs, glass bricks and a kitchen that measures its work in hours, not minutes. Brisket, ribs and smoked cuts arrive sliced on boards and steel trays.</xen><xar data-edit="t46" data-edit-label="Text (AR): ذا سموكينغ باريلز هو مدخّن مار مخايل: …">ذا سموكينغ باريلز هو مدخّن مار مخايل: طاولات خشب مدهونة أزرق، كراسي سودا، قرميد زجاجي، ومطبخ بيقيس شغلو بالساعات مش بالدقايق. البريسكت والريبس والقطع المدخّنة بتوصل مقطّعة على ألواح وصواني ستانلس.</xar></p>
+      <p><xen data-edit="t47" data-edit-label="Text (EN): The bar side takes the beer as serious…">The bar side takes the beer as seriously as the pit: draft taps, and a staff that will pour you a taste before you commit to a glass.</xen><xar data-edit="t48" data-edit-label="Text (AR): جهة البار بتاخد البيرة عالجد قدّ المدخ…">جهة البار بتاخد البيرة عالجد قدّ المدخنة: حنفيات درافت، وستاف بيسقيك دوقة قبل ما تحسمها كاس.</xar></p>
+      <p><xen data-edit="t49" data-edit-label="Text (EN): Six days a week, one till eleven. Sund…">Six days a week, one till eleven. Sunday the fire rests.</xen><xar data-edit="t50" data-edit-label="Text (AR): ستة أيام بالأسبوع، من الواحدة للحدعش. …">ستة أيام بالأسبوع، من الواحدة للحدعش. الأحد النار بترتاح.</xar></p>
     </div>
     <div>
       <div class="frame rev"><img src="img/09.jpg" loading="lazy" alt="The corner of the room with blue tables, black chairs and glass bricks">
-        <p class="cap"><xen data-edit="t27" data-edit-label="Text (EN): The corner table, waiting for a long l…">The corner table, waiting for a long lunch.</xen><xar data-edit="t28" data-edit-label="Text (AR): طاولة الزاوية، ناطرة غدا مطوّل.">طاولة الزاوية، ناطرة غدا مطوّل.</xar></p>
+        <p class="cap"><xen data-edit="t51" data-edit-label="Text (EN): The corner table, waiting for a long l…">The corner table, waiting for a long lunch.</xen><xar data-edit="t52" data-edit-label="Text (AR): طاولة الزاوية، ناطرة غدا مطوّل.">طاولة الزاوية، ناطرة غدا مطوّل.</xar></p>
       </div>
     </div>
   </div>
@@ -265,20 +272,20 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t29" data-edit-label="Text (EN): The craft">The craft</xen><xar data-edit="t30" data-edit-label="Text (AR): الصنعة">الصنعة</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t31" data-edit-label="Text (EN): Low and slow, then the knife">Low and slow, then the knife</xen><xar data-edit="t32" data-edit-label="Text (AR): نار هادية ووقت طويل، وبعدين السكين">نار هادية ووقت طويل، وبعدين السكين</xar></h2>
+    <p class="k"><xen data-edit="t53" data-edit-label="Text (EN): The craft">The craft</xen><xar data-edit="t54" data-edit-label="Text (AR): الصنعة">الصنعة</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t55" data-edit-label="Text (EN): Low and slow, then the knife">Low and slow, then the knife</xen><xar data-edit="t56" data-edit-label="Text (AR): نار هادية ووقت طويل، وبعدين السكين">نار هادية ووقت طويل، وبعدين السكين</xar></h2>
     <div class="steps">
       <div class="step rev"><img src="img/08.jpg" loading="lazy" alt="Marbled raw cuts of beef seasoned on the block">
-        <div class="t"><span class="no" data-edit="t33" data-edit-label="Text: 01">01</span><h3><xen data-edit="t34" data-edit-label="Text (EN): The cut">The cut</xen><xar data-edit="t35" data-edit-label="Text (AR): القطعة">القطعة</xar></h3>
-        <p><xen data-edit="t36" data-edit-label="Text (EN): Marbled beef picked for the smoker, sa…">Marbled beef picked for the smoker, salted and rested before the fire ever sees it.</xen><xar data-edit="t37" data-edit-label="Text (AR): لحمة معرّقة منقّاية للمدخنة، بتتملّح و…">لحمة معرّقة منقّاية للمدخنة، بتتملّح وبترتاح قبل ما تشوفها النار.</xar></p></div>
+        <div class="t"><span class="no" data-edit="t57" data-edit-label="Text: 01">01</span><h3><xen data-edit="t58" data-edit-label="Text (EN): The cut">The cut</xen><xar data-edit="t59" data-edit-label="Text (AR): القطعة">القطعة</xar></h3>
+        <p><xen data-edit="t60" data-edit-label="Text (EN): Marbled beef picked for the smoker, sa…">Marbled beef picked for the smoker, salted and rested before the fire ever sees it.</xen><xar data-edit="t61" data-edit-label="Text (AR): لحمة معرّقة منقّاية للمدخنة، بتتملّح و…">لحمة معرّقة منقّاية للمدخنة، بتتملّح وبترتاح قبل ما تشوفها النار.</xar></p></div>
       </div>
       <div class="step rev"><img src="img/11.jpg" loading="lazy" alt="Pork belly cubes on the grate of the red barrel smoker">
-        <div class="t"><span class="no" data-edit="t38" data-edit-label="Text: 02">02</span><h3><xen data-edit="t39" data-edit-label="Text (EN): The barrel">The barrel</xen><xar data-edit="t40" data-edit-label="Text (AR): البرميل">البرميل</xar></h3>
-        <p><xen data-edit="t41" data-edit-label="Text (EN): Their red barrel smoker, loaded and ro…">Their red barrel smoker, loaded and rolling smoke. This is where the name comes from.</xen><xar data-edit="t42" data-edit-label="Text (AR): برميل التدخين الأحمر تبعهن، معبّى وعم …">برميل التدخين الأحمر تبعهن، معبّى وعم يدخّن. من هون جايي الاسم.</xar></p></div>
+        <div class="t"><span class="no" data-edit="t62" data-edit-label="Text: 02">02</span><h3><xen data-edit="t63" data-edit-label="Text (EN): The barrel">The barrel</xen><xar data-edit="t64" data-edit-label="Text (AR): البرميل">البرميل</xar></h3>
+        <p><xen data-edit="t65" data-edit-label="Text (EN): Their red barrel smoker, loaded and ro…">Their red barrel smoker, loaded and rolling smoke. This is where the name comes from.</xen><xar data-edit="t66" data-edit-label="Text (AR): برميل التدخين الأحمر تبعهن، معبّى وعم …">برميل التدخين الأحمر تبعهن، معبّى وعم يدخّن. من هون جايي الاسم.</xar></p></div>
       </div>
       <div class="step rev"><img src="img/10.jpg" loading="lazy" alt="Brisket slices showing a pink smoke ring">
-        <div class="t"><span class="no" data-edit="t43" data-edit-label="Text: 03">03</span><h3><xen data-edit="t44" data-edit-label="Text (EN): The slice">The slice</xen><xar data-edit="t45" data-edit-label="Text (AR): الشقفة">الشقفة</xar></h3>
-        <p><xen data-edit="t46" data-edit-label="Text (EN): Cut to order, pink ring showing, strai…">Cut to order, pink ring showing, straight from board to table.</xen><xar data-edit="t47" data-edit-label="Text (AR): بتنقطع عالطلب، والخاتم الزهري مبيّن، م…">بتنقطع عالطلب، والخاتم الزهري مبيّن، من اللوح للطاولة دغري.</xar></p></div>
+        <div class="t"><span class="no" data-edit="t67" data-edit-label="Text: 03">03</span><h3><xen data-edit="t68" data-edit-label="Text (EN): The slice">The slice</xen><xar data-edit="t69" data-edit-label="Text (AR): الشقفة">الشقفة</xar></h3>
+        <p><xen data-edit="t70" data-edit-label="Text (EN): Cut to order, pink ring showing, strai…">Cut to order, pink ring showing, straight from board to table.</xen><xar data-edit="t71" data-edit-label="Text (AR): بتنقطع عالطلب، والخاتم الزهري مبيّن، م…">بتنقطع عالطلب، والخاتم الزهري مبيّن، من اللوح للطاولة دغري.</xar></p></div>
       </div>
     </div>
   </div>
@@ -287,42 +294,42 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="wrap">
   <div class="cater">
     <div>
-      <p class="k"><xen data-edit="t48" data-edit-label="Text (EN): Outside the walls">Outside the walls</xen><xar data-edit="t49" data-edit-label="Text (AR): خارج الحيطان">خارج الحيطان</xar></p>
-      <h2><xen data-edit="t50" data-edit-label="Text (EN): The barrels come to you">The barrels come to you</xen><xar data-edit="t51" data-edit-label="Text (AR): البراميل بتجي لعندك">البراميل بتجي لعندك</xar></h2>
-      <p><xen data-edit="t52" data-edit-label="Text (EN): They also run mobile, on-site BBQ cate…">They also run mobile, on-site BBQ catering: the smoker, the boards and the crew, set up at your event, cutting meat where your guests stand.</xen><xar data-edit="t53" data-edit-label="Text (AR): عندن كمان كايترينغ مشاوي متنقّل: المدخ…">عندن كمان كايترينغ مشاوي متنقّل: المدخنة والألواح والفريق، بينصبوا بمناسبتك، وبيقطعوا اللحمة قدّام ضيوفك.</xar></p>
-      <p><xen data-edit="t54" data-edit-label="Text (EN): Dates go fast around holidays, message…">Dates go fast around holidays, message them with yours early.</xen><xar data-edit="t55" data-edit-label="Text (AR): المواعيد بتطير أيام الأعياد، ابعتلن تا…">المواعيد بتطير أيام الأعياد، ابعتلن تاريخك بكير.</xar></p>
-      <a class="btn" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20BBQ%20catering." target="_blank" rel="noopener"><xen data-edit="t56" data-edit-label="Text (EN): Ask about catering">Ask about catering</xen><xar data-edit="t57" data-edit-label="Text (AR): اسأل عن الكايترينغ">اسأل عن الكايترينغ</xar></a>
+      <p class="k"><xen data-edit="t72" data-edit-label="Text (EN): Outside the walls">Outside the walls</xen><xar data-edit="t73" data-edit-label="Text (AR): خارج الحيطان">خارج الحيطان</xar></p>
+      <h2><xen data-edit="t74" data-edit-label="Text (EN): The barrels come to you">The barrels come to you</xen><xar data-edit="t75" data-edit-label="Text (AR): البراميل بتجي لعندك">البراميل بتجي لعندك</xar></h2>
+      <p><xen data-edit="t76" data-edit-label="Text (EN): They also run mobile, on-site BBQ cate…">They also run mobile, on-site BBQ catering: the smoker, the boards and the crew, set up at your event, cutting meat where your guests stand.</xen><xar data-edit="t77" data-edit-label="Text (AR): عندن كمان كايترينغ مشاوي متنقّل: المدخ…">عندن كمان كايترينغ مشاوي متنقّل: المدخنة والألواح والفريق، بينصبوا بمناسبتك، وبيقطعوا اللحمة قدّام ضيوفك.</xar></p>
+      <p><xen data-edit="t78" data-edit-label="Text (EN): Dates go fast around holidays, message…">Dates go fast around holidays, message them with yours early.</xen><xar data-edit="t79" data-edit-label="Text (AR): المواعيد بتطير أيام الأعياد، ابعتلن تا…">المواعيد بتطير أيام الأعياد، ابعتلن تاريخك بكير.</xar></p>
+      <a class="btn" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20ask%20about%20BBQ%20catering." target="_blank" rel="noopener"><xen data-edit="t80" data-edit-label="Text (EN): Ask about catering">Ask about catering</xen><xar data-edit="t81" data-edit-label="Text (AR): اسأل عن الكايترينغ">اسأل عن الكايترينغ</xar></a>
     </div>
     <div class="frame rev"><img src="img/03.jpg" loading="lazy" alt="Ribs on a steel tray being cut at the table" style="height:clamp(220px,30vh,300px)">
-      <p class="cap"><xen data-edit="t58" data-edit-label="Text (EN): Ribs on the steel tray, mid-surgery.">Ribs on the steel tray, mid-surgery.</xen><xar data-edit="t59" data-edit-label="Text (AR): ريبس عصينية الستانلس، بنص العملية.">ريبس عصينية الستانلس، بنص العملية.</xar></p>
+      <p class="cap"><xen data-edit="t82" data-edit-label="Text (EN): Ribs on the steel tray, mid-surgery.">Ribs on the steel tray, mid-surgery.</xen><xar data-edit="t83" data-edit-label="Text (AR): ريبس عصينية الستانلس، بنص العملية.">ريبس عصينية الستانلس، بنص العملية.</xar></p>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t60" data-edit-label="Text (EN): Off the boards">Off the boards</xen><xar data-edit="t61" data-edit-label="Text (AR): من عالألواح">من عالألواح</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t62" data-edit-label="Text (EN): Three orders that built the name">Three orders that built the name</xen><xar data-edit="t63" data-edit-label="Text (AR): تلات طلبات بنيوا الاسم">تلات طلبات بنيوا الاسم</xar></h2>
+    <p class="k"><xen data-edit="t84" data-edit-label="Text (EN): Off the boards">Off the boards</xen><xar data-edit="t85" data-edit-label="Text (AR): من عالألواح">من عالألواح</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t86" data-edit-label="Text (EN): Three orders that built the name">Three orders that built the name</xen><xar data-edit="t87" data-edit-label="Text (AR): تلات طلبات بنيوا الاسم">تلات طلبات بنيوا الاسم</xar></h2>
     <div class="grid3">
       <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="A smash burger with melted cheese pulling on a skillet">
-        <div class="t"><h3><xen data-edit="t64" data-edit-label="Text (EN): The bun">The bun</xen><xar data-edit="t65" data-edit-label="Text (AR): الصمّونة">الصمّونة</xar></h3>
-        <p><xen data-edit="t66" data-edit-label="Text (EN): Smoked meat stacked in a brioche, chee…">Smoked meat stacked in a brioche, cheese refusing to let go. Guests call it exquisite in writing.</xen><xar data-edit="t67" data-edit-label="Text (AR): لحمة مدخّنة مرصوصة ببريوش، وجبنة رافضة…">لحمة مدخّنة مرصوصة ببريوش، وجبنة رافضة تفلّت. الزوار كتبوا عنها إنها فخمة، خطيًا.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t88" data-edit-label="Text (EN): The bun">The bun</xen><xar data-edit="t89" data-edit-label="Text (AR): الصمّونة">الصمّونة</xar></h3>
+        <p><xen data-edit="t90" data-edit-label="Text (EN): Smoked meat stacked in a brioche, chee…">Smoked meat stacked in a brioche, cheese refusing to let go. Guests call it exquisite in writing.</xen><xar data-edit="t91" data-edit-label="Text (AR): لحمة مدخّنة مرصوصة ببريوش، وجبنة رافضة…">لحمة مدخّنة مرصوصة ببريوش، وجبنة رافضة تفلّت. الزوار كتبوا عنها إنها فخمة، خطيًا.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="Smoked ribs on printed butcher paper with slaw and sauces">
-        <div class="t"><h3><xen data-edit="t68" data-edit-label="Text (EN): Ribs on paper">Ribs on paper</xen><xar data-edit="t69" data-edit-label="Text (AR): ريبس عالورق">ريبس عالورق</xar></h3>
-        <p><xen data-edit="t70" data-edit-label="Text (EN): Bark outside, give inside, slaw and tw…">Bark outside, give inside, slaw and two sauces riding along on the tray.</xen><xar data-edit="t71" data-edit-label="Text (AR): قشرة من برّا، طراوة من جوّا، وسلو وصوص…">قشرة من برّا، طراوة من جوّا، وسلو وصوصين مرافقين عالصينية.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t92" data-edit-label="Text (EN): Ribs on paper">Ribs on paper</xen><xar data-edit="t93" data-edit-label="Text (AR): ريبس عالورق">ريبس عالورق</xar></h3>
+        <p><xen data-edit="t94" data-edit-label="Text (EN): Bark outside, give inside, slaw and tw…">Bark outside, give inside, slaw and two sauces riding along on the tray.</xen><xar data-edit="t95" data-edit-label="Text (AR): قشرة من برّا، طراوة من جوّا، وسلو وصوص…">قشرة من برّا، طراوة من جوّا، وسلو وصوصين مرافقين عالصينية.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="A brisket board with fries, sides and cocktails from above">
-        <div class="t"><h3><xen data-edit="t72" data-edit-label="Text (EN): The board for two">The board for two</xen><xar data-edit="t73" data-edit-label="Text (AR): اللوح لشخصين">اللوح لشخصين</xar></h3>
-        <p><xen data-edit="t74" data-edit-label="Text (EN): Brisket slices, fries, pickles and gla…">Brisket slices, fries, pickles and glasses that were a good idea. Order it and cancel your evening.</xen><xar data-edit="t75" data-edit-label="Text (AR): شرحات بريسكت، بطاطا، كبيس وكاسات كانت …">شرحات بريسكت، بطاطا، كبيس وكاسات كانت فكرة ممتازة. اطلبو ولغّي سهرتك.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t96" data-edit-label="Text (EN): The board for two">The board for two</xen><xar data-edit="t97" data-edit-label="Text (AR): اللوح لشخصين">اللوح لشخصين</xar></h3>
+        <p><xen data-edit="t98" data-edit-label="Text (EN): Brisket slices, fries, pickles and gla…">Brisket slices, fries, pickles and glasses that were a good idea. Order it and cancel your evening.</xen><xar data-edit="t99" data-edit-label="Text (AR): شرحات بريسكت، بطاطا، كبيس وكاسات كانت …">شرحات بريسكت، بطاطا، كبيس وكاسات كانت فكرة ممتازة. اطلبو ولغّي سهرتك.</xar></p></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t76" data-edit-label="Text (EN): Smoke signals">Smoke signals</xen><xar data-edit="t77" data-edit-label="Text (AR): إشارات دخان">إشارات دخان</xar></p>
-  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t78" data-edit-label="Text (EN): Photographs from the smokehouse">Photographs from the smokehouse</xen><xar data-edit="t79" data-edit-label="Text (AR): صور من المدخّن">صور من المدخّن</xar></h2>
+  <p class="k"><xen data-edit="t100" data-edit-label="Text (EN): Smoke signals">Smoke signals</xen><xar data-edit="t101" data-edit-label="Text (AR): إشارات دخان">إشارات دخان</xar></p>
+  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t102" data-edit-label="Text (EN): Photographs from the smokehouse">Photographs from the smokehouse</xen><xar data-edit="t103" data-edit-label="Text (AR): صور من المدخّن">صور من المدخّن</xar></h2>
   <div class="gal">
     <a href="img/02.jpg" target="_blank" rel="noopener" class="g"><img src="img/02.jpg" loading="lazy" alt="Sliced steak on a wooden board with a draft beer"></a>
     <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="Cutting ribs on the steel tray"></a>
@@ -335,11 +342,11 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t80" data-edit-label="Text (EN): Table talk">Table talk</xen><xar data-edit="t81" data-edit-label="Text (AR): حكي الطاولات">حكي الطاولات</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t82" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t83" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
+    <p class="k"><xen data-edit="t104" data-edit-label="Text (EN): Table talk">Table talk</xen><xar data-edit="t105" data-edit-label="Text (AR): حكي الطاولات">حكي الطاولات</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t106" data-edit-label="Text (EN): Two of the reviews">Two of the reviews</xen><xar data-edit="t107" data-edit-label="Text (AR): تنين من التقييمات">تنين من التقييمات</xar></h2>
     <div class="revs">
-      <div class="rev-c rev"><q dir="ltr" data-edit="t84" data-edit-label="Quote: One of the best meat spots in Beirut, …">One of the best meat spots in Beirut, Lebanon! The quality of the meat is outstanding. We had the bun with pork and brisket absolutely exquisite. The burgers are packed with flavor and extremely filling.</q><cite data-edit="t85" data-edit-label="Credit: Abeer Hage">Abeer Hage</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t86" data-edit-label="Quote: The service was amazing; the waitress …">The service was amazing; the waitress was super helpful and had amazing suggestions. They let us taste their draft beers with decent portions before serving us the one we chose.</q><cite data-edit="t87" data-edit-label="Credit: Ghady Khalil">Ghady Khalil</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t108" data-edit-label="Quote: One of the best meat spots in Beirut, …">One of the best meat spots in Beirut, Lebanon! The quality of the meat is outstanding. We had the bun with pork and brisket absolutely exquisite. The burgers are packed with flavor and extremely filling.</q><cite data-edit="t109" data-edit-label="Credit: Abeer Hage">Abeer Hage</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t110" data-edit-label="Quote: The service was amazing; the waitress …">The service was amazing; the waitress was super helpful and had amazing suggestions. They let us taste their draft beers with decent portions before serving us the one we chose.</q><cite data-edit="t111" data-edit-label="Credit: Ghady Khalil">Ghady Khalil</cite></div>
     </div>
   </div>
 </section>
@@ -347,50 +354,53 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="wrap">
   <div class="visit">
     <div>
-      <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): Six days a week">Six days a week</xen><xar data-edit="t89" data-edit-label="Text (AR): ستة أيام بالأسبوع">ستة أيام بالأسبوع</xar></p>
-      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t90" data-edit-label="Text (EN): One in the afternoon to eleven">One in the afternoon to eleven</xen><xar data-edit="t91" data-edit-label="Text (AR): من الواحدة الظهر للحدعش">من الواحدة الظهر للحدعش</xar></h2>
+      <p class="k"><xen data-edit="t112" data-edit-label="Text (EN): Six days a week">Six days a week</xen><xar data-edit="t113" data-edit-label="Text (AR): ستة أيام بالأسبوع">ستة أيام بالأسبوع</xar></p>
+      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t114" data-edit-label="Text (EN): One in the afternoon to eleven">One in the afternoon to eleven</xen><xar data-edit="t115" data-edit-label="Text (AR): من الواحدة الظهر للحدعش">من الواحدة الظهر للحدعش</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t92" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t93" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t94" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t95" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t96" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t97" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t98" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t99" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t101" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t102" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t103" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t105" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t106" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t107" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t108" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t109" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t110" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t111" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr><td><xen data-edit="t112" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t113" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t114" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t115" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
-        <tr class="off"><td><xen data-edit="t116" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t117" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t118" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t117" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t118" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t120" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t121" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t122" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t123" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t124" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t125" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t126" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t127" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t128" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t129" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t130" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t131" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t132" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t133" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t134" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t135" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr><td><xen data-edit="t136" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t137" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t138" data-edit-label="Text: 1–11 PM">1–11 PM</span></xen><xar class="c" data-edit="t139" data-edit-label="Text (AR): 1 إلى 11 م">1 إلى 11 م</xar></td></tr>
+        <tr class="off"><td><xen data-edit="t140" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t141" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t142" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t143" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
       </table>
-      <p class="cap"><xen data-edit="t120" data-edit-label="Text (EN): Brisket can sell through on busy night…">Brisket can sell through on busy nights; message ahead to reserve a cut.</xen><xar data-edit="t121" data-edit-label="Text (AR): البريسكت بيخلص بالليالي المزحومة، ابعت…">البريسكت بيخلص بالليالي المزحومة، ابعت رسالة قبل لتحجز شقفتك.</xar></p>
+      <p class="cap"><xen data-edit="t144" data-edit-label="Text (EN): Brisket can sell through on busy night…">Brisket can sell through on busy nights; message ahead to reserve a cut.</xen><xar data-edit="t145" data-edit-label="Text (AR): البريسكت بيخلص بالليالي المزحومة، ابعت…">البريسكت بيخلص بالليالي المزحومة، ابعت رسالة قبل لتحجز شقفتك.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t122" data-edit-label="Text (EN): Find the smoke">Find the smoke</xen><xar data-edit="t123" data-edit-label="Text (AR): لاقي الدخان">لاقي الدخان</xar></p>
-      <h3 style="font-size:21px;margin:6px 0 14px"><xen data-edit="t124" data-edit-label="Text (EN): Mar Mikhael, Beirut">Mar Mikhael, Beirut</xen><xar data-edit="t125" data-edit-label="Text (AR): مار مخايل، بيروت">مار مخايل، بيروت</xar></h3>
-      <p class="k" style="margin-top:16px"><xen data-edit="t126" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t127" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t128" data-edit-label="Text: VGXG+265, Mar Mikhael, Beirut, Lebanon">VGXG+265, Mar Mikhael, Beirut, Lebanon</p>
-      <p class="k" style="margin-top:20px"><xen data-edit="t129" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t130" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
-      <p class="ph num" data-edit="t131" data-edit-label="Text: +961 76 791 491">+961 76 791 491</p>
+      <p class="k"><xen data-edit="t146" data-edit-label="Text (EN): Find the smoke">Find the smoke</xen><xar data-edit="t147" data-edit-label="Text (AR): لاقي الدخان">لاقي الدخان</xar></p>
+      <h3 style="font-size:21px;margin:6px 0 14px"><xen data-edit="t148" data-edit-label="Text (EN): Mar Mikhael, Beirut">Mar Mikhael, Beirut</xen><xar data-edit="t149" data-edit-label="Text (AR): مار مخايل، بيروت">مار مخايل، بيروت</xar></h3>
+      <p class="k" style="margin-top:16px"><xen data-edit="t150" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t151" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t152" data-edit-label="Text: VGXG+265, Mar Mikhael, Beirut, Lebanon">VGXG+265, Mar Mikhael, Beirut, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t153" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t154" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t155" data-edit-label="Text: +961 76 791 491">+961 76 791 491</p>
       <p style="margin-top:22px">
-        <a class="btn" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20book%20a%20table%20at%20The%20Smoking%20Barrels." target="_blank" rel="noopener"><xen data-edit="t132" data-edit-label="Text (EN): Book on WhatsApp">Book on WhatsApp</xen><xar data-edit="t133" data-edit-label="Text (AR): احجز عالواتساب">احجز عالواتساب</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=12564359320364173868" target="_blank" rel="noopener"><xen data-edit="t134" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t135" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20book%20a%20table%20at%20The%20Smoking%20Barrels." target="_blank" rel="noopener"><xen data-edit="t156" data-edit-label="Text (EN): Book on WhatsApp">Book on WhatsApp</xen><xar data-edit="t157" data-edit-label="Text (AR): احجز عالواتساب">احجز عالواتساب</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=12564359320364173868" target="_blank" rel="noopener"><xen data-edit="t158" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t159" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
       </p>
       <p style="margin-top:12px">
-        <a class="btn o" href="https://www.instagram.com/the_smoking_barrels/" target="_blank" rel="noopener" data-edit="t136" data-edit-label="Button / link: Instagram">Instagram</a>
-        <a class="btn o" href="https://www.facebook.com/Thesmokingbarrels.beirut/" target="_blank" rel="noopener" data-edit="t137" data-edit-label="Button / link: Facebook">Facebook</a>
+        <a class="btn o" href="https://www.instagram.com/the_smoking_barrels/" target="_blank" rel="noopener" data-edit="t160" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.facebook.com/Thesmokingbarrels.beirut/" target="_blank" rel="noopener" data-edit="t161" data-edit-label="Button / link: Facebook">Facebook</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t138" data-edit-label="Text (EN): The Smoking Barrels, Mar Mikhael, Beir…">The Smoking Barrels, Mar Mikhael, Beirut.</xen><xar data-edit="t139" data-edit-label="Text (AR): ذا سموكينغ باريلز، مار مخايل، بيروت.">ذا سموكينغ باريلز، مار مخايل، بيروت.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t140" data-edit-label="Text (EN): Follow the smoke, then follow the knif…">Follow the smoke, then follow the knife.</xen><xar data-edit="t141" data-edit-label="Text (AR): لحّق الدخان، وبعدين لحّق السكين.">لحّق الدخان، وبعدين لحّق السكين.</xar></p>
+  <p><xen data-edit="t162" data-edit-label="Text (EN): The Smoking Barrels, Mar Mikhael, Beir…">The Smoking Barrels, Mar Mikhael, Beirut.</xen><xar data-edit="t163" data-edit-label="Text (AR): ذا سموكينغ باريلز، مار مخايل، بيروت.">ذا سموكينغ باريلز، مار مخايل، بيروت.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t164" data-edit-label="Text (EN): Follow the smoke, then follow the knif…">Follow the smoke, then follow the knife.</xen><xar data-edit="t165" data-edit-label="Text (AR): لحّق الدخان، وبعدين لحّق السكين.">لحّق الدخان، وبعدين لحّق السكين.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a href="tel:+96176791491"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t142" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t143" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a class="w" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20book%20a%20table%20at%20The%20Smoking%20Barrels." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t144" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t145" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="https://www.google.com/maps?cid=12564359320364173868" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t146" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t147" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a class="sq" href="https://www.instagram.com/the_smoking_barrels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t148" data-edit-label="Text: IG">IG</span></a>
-  <a class="sq" href="https://www.facebook.com/Thesmokingbarrels.beirut/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t149" data-edit-label="Text: FB">FB</span></a>
+  <a href="tel:+96176791491"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t167" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96176791491?text=Hello%2C%20I%20would%20like%20to%20book%20a%20table%20at%20The%20Smoking%20Barrels." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t168" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t169" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=12564359320364173868" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t170" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t171" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="sq" href="https://www.instagram.com/the_smoking_barrels/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t172" data-edit-label="Text: IG">IG</span></a>
+  <a class="sq" href="https://www.facebook.com/Thesmokingbarrels.beirut/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t173" data-edit-label="Text: FB">FB</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ذا سموكينغ باريلز · مار مخايل، بيروت" data-edit="t150" data-edit-label="Button: عربي">عربي</button>
+<script>
+var nv=document.getElementById('nav');
+addEventListener('scroll',function(){nv.classList.toggle('sc',scrollY>40)},{passive:true});
+</script>
 </body></html>

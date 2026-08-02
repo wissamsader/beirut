@@ -5,113 +5,98 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Pirate Catch · The Backyard, Hazmieh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Saira:wght@400;600;700&family=Changa:wght@500;700&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Saira:wght@400;600;700&family=Rakkas&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Changa';--arb:'Readex Pro';
-  --navy:#08303A;--navy-d:#04212A;--navy-x:#0C3E49;
-  --conc:#C9CDC5;--conc-m:#B4B9AF;--conc-d:#9AA096;--conc-x:#7E857A;
-  --foam:#E9F1EC;--signal:#FF8A3C;--signal-d:#D8641E;--rope:#C89A62;--ink:#0A2830;
+  --arh:'Rakkas';--arb:'Readex Pro';
+  --navy:#2E3A38;--navy-d:#232D2C;--navy-x:#3A4745;
+  --conc:#EFEBE0;--conc-m:#E2DDCE;--conc-d:#C6C0AE;--conc-x:#948E7E;
+  --foam:#F3F0E7;--signal:#A8492A;--signal-d:#772E17;--rope:#C08A4E;--ink:#22292A;
+  --news:#EFEBE0;--slate:#33403F;--rust:#A8492A;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--navy);color:var(--foam);font:400 17px/1.75 'Saira',system-ui,sans-serif}
 .wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Saira Stencil One',system-ui,sans-serif;font-weight:400;line-height:1.05;letter-spacing:.02em}
+h1,h2,h3{font-family:'Libre Caslon Display',Georgia,serif;font-weight:400;line-height:1.1;letter-spacing:.004em}
+p.k:has(+h2),p.k:has(+h3){border-top:1px solid rgba(168,73,42,.5);padding-top:15px;display:block}
 a{color:inherit}
 img{display:block;max-width:100%}
-.k{font:700 11.5px/1.5 'Saira',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#8FB7CE}
+.k{font:700 11.5px/1.5 'Saira',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:#C08A4E}
 
 /* language chip: a stencilled crate tag, top right */
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;cursor:pointer;
+.lngt{position:fixed;right:14px;top:calc(60px + env(safe-area-inset-top));z-index:80;cursor:pointer;
   font:600 13px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
-  background:var(--conc);color:var(--ink);border:2px dashed #5D6459;border-radius:2px;
+  background:var(--conc);color:var(--ink);border:1px solid rgba(34,41,42,.4);border-radius:2px;
   box-shadow:0 4px 14px rgba(0,0,0,.45);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: one brass storm lantern on a rope, hanging whole in the frame,
-     its flame the only light on the water-dark wall of the diner ---------- */
+/* ---------- top strip: the broadsheet dateline, no nav ---------- */
+.infoband{display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,32px);
+  flex-wrap:wrap;background:var(--slate);color:#D9D5C8;padding:11px 5vw;
+  font:600 10.5px/1.4 'Saira',sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.infoband b{color:#E8B36A;font-weight:700}
+
+/* ---------- HERO: a broadsheet. Masthead between double rules, then three ruled
+     columns, with the photographs boxed like newspaper cuts. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  background:
-   repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0 1px,rgba(0,0,0,0) 1px 7px),
-   linear-gradient(180deg,#04212A 0%,#08333E 48%,#04222B 100%)}
-header::before{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;opacity:.45;
-  background:radial-gradient(34px 16px at 17px 18px,rgba(233,241,236,.35) 0 45%,transparent 50%);
-  background-size:68px 36px;background-position:0 bottom}
-header::after{content:"";position:absolute;left:0;right:0;bottom:34px;height:3px;background:rgba(233,241,236,.16)}
-.pool{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:
-   radial-gradient(30% 12% at 74% 92%,rgba(255,168,72,.22),rgba(0,0,0,0) 72%),
-   radial-gradient(56% 58% at 74% 27%,rgba(255,178,86,.36),rgba(255,148,58,.10) 42%,rgba(0,0,0,0) 74%)}
-.lantern{position:absolute;z-index:4;left:74%;top:0;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center}
-.rope{position:relative;width:5px;height:clamp(52px,8vh,92px);
-  background:repeating-linear-gradient(180deg,#D3A76D 0 5px,#8E6A3C 5px 10px)}
-.rope::after{content:"";position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);
-  width:52px;height:26px;border:4px solid #C89A62;border-bottom:0;border-radius:26px 26px 0 0}
-.lbody{position:relative;margin-top:26px;width:clamp(94px,9vw,122px);height:clamp(174px,24vh,230px);
-  border-radius:3px;
-  background:
-   linear-gradient(90deg,#C89A62 0 6px,rgba(0,0,0,0) 6px calc(100% - 6px),#C89A62 calc(100% - 6px)),
-   linear-gradient(90deg,rgba(0,0,0,0) 0 30%,rgba(168,126,72,.85) 30% 33%,rgba(0,0,0,0) 33% 67%,rgba(168,126,72,.85) 67% 70%,rgba(0,0,0,0) 70%),
-   linear-gradient(180deg,rgba(0,0,0,0) 0 45%,rgba(168,126,72,.7) 45% 48%,rgba(0,0,0,0) 48%),
-   radial-gradient(46% 36% at 50% 52%,#FFF7DE,#FFC862 30%,#DE8A20 58%,#8A480B 84%,#4A2606 100%);
-  box-shadow:0 0 78px 30px rgba(255,178,80,.36),0 0 200px 84px rgba(255,152,54,.18),0 26px 46px rgba(0,0,0,.65);
-  animation:lantern 9s ease-in-out infinite}
-@keyframes lantern{0%,100%{filter:brightness(1)}50%{filter:brightness(.93)}}
-/* brass vent cap and fuel base, both wider than the glass */
-.lbody::before{content:"";position:absolute;left:-15px;right:-15px;top:-21px;height:22px;
-  background:linear-gradient(180deg,#F0CB8C,#C89A62 46%,#8E6A3C);
-  clip-path:polygon(16% 0,84% 0,100% 100%,0 100%);border-radius:3px 3px 0 0}
-.lbody::after{content:"";position:absolute;left:-15px;right:-15px;bottom:-17px;height:19px;
-  background:linear-gradient(180deg,#8E6A3C,#C89A62 40%,#7C5A30);
-  clip-path:polygon(0 0,100% 0,86% 100%,14% 100%);border-radius:0 0 4px 4px}
-.flame{position:absolute;z-index:2;left:50%;top:50%;width:17px;height:40px;
-  border-radius:50% 50% 44% 44%/62% 62% 38% 38%;
-  background:radial-gradient(circle at 50% 72%,#FFFFFF 0 22%,#FFF0B4 46%,#FFB03C 78%,rgba(255,150,40,0) 100%);
-  transform:translate(-50%,-52%);animation:fl 7s ease-in-out infinite}
-@keyframes fl{0%,100%{transform:translate(-50%,-52%) scale(1)}50%{transform:translate(-50%,-54%) scale(1.08)}}
-.htop{position:absolute;z-index:5;top:clamp(26px,5vh,50px);left:clamp(26px,7vw,104px);
-  display:flex;align-items:center;gap:12px}
-.wheel{position:relative;width:52px;height:52px;border:5px solid var(--rope);border-radius:50%;flex:0 0 auto;
-  animation:wheelspin 90s linear infinite}
-.wheel::before{content:"";position:absolute;inset:4px;border-radius:50%;
-  background:repeating-conic-gradient(from 8deg,transparent 0 37deg,var(--rope) 37deg 45deg)}
-.wheel::after{content:"";position:absolute;inset:calc(50% - 7px);border-radius:50%;background:var(--rope)}
-@keyframes wheelspin{to{transform:rotate(360deg)}}
-.stack{position:absolute;z-index:5;left:0;right:0;top:31%;width:auto;padding:0 clamp(190px,26vw,380px) 0 clamp(26px,7vw,104px)}
-.blk{position:relative;background:none;border:0;border-radius:0;box-shadow:none}
-.blk+.blk{margin-top:0}
-.b1{width:auto;margin:0;padding:0;display:flex;align-items:center;justify-content:flex-start;gap:14px;flex-wrap:wrap}
-.b1 .tag{font:700 12px/1.5 'Saira',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#7FB6C4}
-.rate{display:inline-flex;align-items:baseline;gap:7px;background:var(--foam);color:#05242C;
-  padding:5px 11px;border-radius:2px;font:700 13px/1.4 'Saira',sans-serif}
-.b2{width:auto;margin:0;padding:14px 0 0;text-align:left}
-.b2 h1{font-size:clamp(40px,8.6vw,116px);color:#F0F8F4;text-transform:uppercase;
-  text-shadow:0 0 60px rgba(255,170,80,.35)}
-.b2 h1 b{font-weight:400;color:var(--signal);text-shadow:0 0 44px rgba(255,138,60,.7)}
-.b2 .arn{font-family:var(--arh),sans-serif;font-weight:700;font-size:clamp(20px,3vw,32px);
-  color:#F5C182;line-height:1.4;margin-top:8px}
-.b3{width:auto;padding:16px 0 0;position:static}
-.b3 .notice{position:absolute;right:clamp(20px,5vw,74px);bottom:clamp(48px,7.5vh,84px);width:min(238px,25vw);
-  background:var(--foam);padding:8px;border-radius:2px;margin:0;box-shadow:0 20px 44px rgba(0,0,0,.6)}
-.notice::before,.notice::after{content:"";position:absolute;top:4px;width:7px;height:7px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#DDE3DC,#6E756A 75%)}
-.notice::before{left:4px}.notice::after{right:4px}
-.notice img{width:100%;height:clamp(126px,18vh,168px);object-fit:cover}
-.notice .cap{color:#5E6B62;margin:6px 2px 0;text-align:left}
-.b3 .chips{display:flex;gap:8px;justify-content:flex-start;flex-wrap:wrap;margin-top:0}
-.chip{border:1.5px dashed rgba(233,241,236,.42);border-radius:2px;padding:5px 12px;
-  font:600 12px/1.5 'Saira',sans-serif;color:#CFE3E6;background:rgba(233,241,236,.06)}
+  background:var(--news);color:var(--ink);display:flex;flex-direction:column;
+  padding:clamp(22px,4vh,44px) 5vw clamp(20px,3vh,36px)}
+.paper{width:min(1220px,100%);margin-inline:auto;flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+.masthead{text-align:center;border-top:1px solid rgba(34,41,42,.55);border-bottom:1px solid rgba(34,41,42,.55);
+  padding:clamp(12px,2vh,20px) 0}
+.masthead .over{font:600 10.5px/1.4 'Saira',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:var(--rust)}
+.masthead h1{margin-top:clamp(6px,1.2vh,12px);font-family:'Libre Caslon Display',Georgia,serif;
+  font-weight:400;color:var(--ink);font-size:clamp(38px,6.6vw,92px);line-height:1.02;letter-spacing:-.005em}
+.masthead h1 b{font-weight:400;color:var(--rust)}
+html.ar .masthead h1{font-family:var(--arh);font-size:clamp(36px,5.8vw,78px);line-height:1.2}
+.masthead .under{margin-top:clamp(6px,1.2vh,12px);font:400 clamp(13px,1.5vw,17px)/1.5 'Libre Caslon Display',Georgia,serif;
+  font-style:italic;color:#4A5250}
+.cols{flex:1 1 auto;display:grid;grid-template-columns:1fr 1.12fr .86fr;
+  gap:0;margin-top:clamp(16px,2.6vh,28px);min-height:0}
+.col{padding:0 clamp(14px,1.8vw,26px);border-left:1px solid rgba(34,41,42,.28);min-width:0;
+  display:flex;flex-direction:column}
+.col:first-child{padding-left:0;border-left:0}
+.col:last-child{padding-right:0}
+.col .lede{font:400 clamp(14.5px,1.6vw,17.5px)/1.62 'Saira',system-ui,sans-serif;color:#3B4342}
+.col .lede::first-line{font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:clamp(12px,2vh,18px)}
+.chip{border:1px solid rgba(34,41,42,.4);padding:6px 12px;font:600 11px/1 'Saira',sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;color:#3B4342}
+.tag{display:inline-block;background:var(--rust);color:#F7F2E9;padding:6px 12px;
+  font:700 10.5px/1.3 'Saira',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.rate{display:block;margin-top:12px;font:600 13px/1.6 'Saira',sans-serif;color:#3B4342}
+.rate .num{color:var(--rust);font-size:17px;font-weight:700}
+.cut{border:1px solid rgba(34,41,42,.5);padding:8px;background:#F7F4EC}
+.col .sp{flex:1 1 auto}
+.cut.sm img{height:clamp(120px,20vh,196px)}
+.cut img{width:100%;height:clamp(180px,32vh,320px);object-fit:cover;display:block}
+.cut .cap{margin-top:7px;font:400 11.5px/1.5 'Saira',sans-serif;color:#5C645F;font-style:italic}
+.hbtns{display:flex;flex-direction:column;gap:8px;margin-top:clamp(12px,2vh,18px)}
+.hbtns a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  font:700 12.5px/1 'Saira',sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 18px;border:1px solid transparent}
+.hbtns a.s{background:var(--rust);color:#F7F2E9;border-color:var(--signal-d)}
+.hbtns a.w{background:#1FA855;color:#04240F}
+.hbtns a.o{color:var(--ink);border-color:rgba(34,41,42,.5)}
+.hbtns a.o:hover{background:rgba(34,41,42,.07)}
+@media(max-width:880px){
+  .cols{grid-template-columns:1fr;gap:20px}
+  .col{padding:0;border-left:0;border-top:1px solid rgba(34,41,42,.28);padding-top:16px}
+  .col:first-child{border-top:0;padding-top:0}
+  .cut img{height:clamp(150px,22vh,210px)}
+  .hbtns{flex-direction:row;flex-wrap:wrap}
+  .hbtns a{flex:1 1 auto}
+}
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
 .band{background:var(--navy-x)}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
-.two h2,.h2{font-size:clamp(27px,4vw,46px);margin:8px 0 18px;color:#F2F7F3;text-transform:uppercase}
-.two p{color:#C4D5D9;margin-bottom:15px}
-.frame{border:1px solid rgba(233,241,236,.25);padding:10px;background:#0B1D2E;border-radius:2px}
+.two h2,.h2{font-size:clamp(27px,4vw,46px);margin:8px 0 18px;color:#F3F0E7;text-transform:uppercase}
+.two p{color:#C3BFB2;margin-bottom:15px}
+.frame{border:1px solid rgba(243,240,231,.25);padding:10px;background:#374442;border-radius:2px}
 .frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover}
-.cap{font:600 12px/1.55 'Saira',sans-serif;color:#7FA0B0;margin-top:9px;letter-spacing:.02em}
+.cap{font:600 12px/1.55 'Saira',sans-serif;color:#9A958A;margin-top:9px;letter-spacing:.02em}
 
 /* the hands-dirty ritual: three small stencilled blocks */
 .ritual{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,3.2vw,44px);align-items:start}
@@ -119,59 +104,59 @@ section{padding-block:clamp(56px,8vh,96px)}
 .step{position:relative;counter-increment:st;background:
   linear-gradient(180deg,rgba(255,255,255,.14),transparent 24%),
   linear-gradient(180deg,var(--conc) 0%,var(--conc-m) 100%);
-  color:var(--ink);border:1px solid #6E756A;border-radius:2px;padding:18px 20px 16px 74px;margin-bottom:12px;
+  color:var(--ink);border:1px solid var(--conc-d);border-radius:2px;padding:18px 20px 16px 74px;margin-bottom:12px;
   box-shadow:0 10px 22px rgba(0,0,0,.4),inset 0 -6px 0 rgba(21,36,48,.16)}
 .step::before{content:counter(st,decimal-leading-zero);position:absolute;left:18px;top:16px;
   font-family:'Saira Stencil One',sans-serif;font-size:30px;color:var(--signal)}
 .step h3{font-size:19px;text-transform:uppercase;color:#25382C}
 .step p{color:#4A5A50;font-size:14.5px;line-height:1.65;margin-top:4px}
-.tallf{border:1px solid rgba(233,241,236,.25);padding:10px;background:#0B1D2E;border-radius:2px}
+.tallf{border:1px solid rgba(243,240,231,.25);padding:10px;background:#374442;border-radius:2px}
 .tallf img{width:100%;height:clamp(320px,52vh,520px);object-fit:cover}
 
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.card{background:#0B1D2E;border:1px solid rgba(233,241,236,.16);border-radius:2px;overflow:hidden}
+.card{background:#374442;border:1px solid rgba(243,240,231,.16);border-radius:2px;overflow:hidden}
 .card img{width:100%;height:225px;object-fit:cover}
 .card .t{padding:15px 16px 19px;border-top:3px solid var(--signal)}
-.card h3{font-size:19px;margin-bottom:6px;color:#F2F7F3;text-transform:uppercase}
-.card p{color:#A9BFC6;font-size:14.5px;line-height:1.65}
+.card h3{font-size:19px;margin-bottom:6px;color:#F3F0E7;text-transform:uppercase}
+.card p{color:#C3BFB2;font-size:14.5px;line-height:1.65}
 
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .gal a{display:block;background:var(--conc);padding:6px;border-radius:2px}
 .gal img{width:100%;height:200px;object-fit:cover}
 
 .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.rev-c{background:#0B1D2E;border:1px solid rgba(233,241,236,.16);border-top:4px solid var(--rope);
+.rev-c{background:#374442;border:1px solid rgba(243,240,231,.16);border-top:4px solid var(--rope);
   border-radius:2px;padding:20px 20px 17px}
-.rev-c q{display:block;quotes:none;font-size:15px;line-height:1.7;color:#D8E4E4}
+.rev-c q{display:block;quotes:none;font-size:15px;line-height:1.7;color:#E4E0D5}
 .rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1.4 'Saira',sans-serif;
   color:var(--rope);letter-spacing:.06em}
 
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 table.hrs{width:100%;border-collapse:collapse}
-table.hrs td{padding:9px 0;border-bottom:1px solid rgba(233,241,236,.16);font-size:15.5px}
-table.hrs td:last-child{text-align:right;color:#C4D5D9}
-.ad,.ph{font-size:16.5px;color:#F2F7F3}
+table.hrs td{padding:9px 0;border-bottom:1px solid rgba(243,240,231,.16);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:#C3BFB2}
+.ad,.ph{font-size:16.5px;color:#F3F0E7}
 .btn{display:inline-flex;align-items:center;gap:9px;background:var(--signal);color:#FFF3ED;
   padding:13px 20px;border-radius:2px;text-decoration:none;font:700 15px/1 'Saira',sans-serif;
   border:1.5px solid var(--signal-d);margin:6px 8px 0 0}
-.btn.o{background:transparent;color:var(--foam);border-color:rgba(233,241,236,.5)}
-footer{padding:36px 7vw 130px;color:#7FA0B0;font-size:13.5px;text-align:center;background:var(--navy-d)}
+.btn.o{background:transparent;color:var(--foam);border-color:rgba(243,240,231,.5)}
+footer{padding:36px 7vw 130px;color:#9A958A;font-size:13.5px;text-align:center;background:var(--navy-d)}
 
 /* ---------- sticky bar: the corniche railing ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;
   background:
-   repeating-linear-gradient(90deg,transparent 0 30px,rgba(233,241,236,.14) 30px 34px),
-   linear-gradient(180deg,#12293D,#0A1927);
-  border-top:4px solid #3E617C;
+   repeating-linear-gradient(90deg,transparent 0 30px,rgba(243,240,231,.14) 30px 34px),
+   var(--navy-d);
+  border-top:1px solid var(--rust);
   padding:9px 10px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -10px 28px rgba(0,0,0,.55)}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
   padding:9px 4px 10px;color:var(--ink);text-decoration:none;border-radius:2px;min-height:56px;
   font:700 12px/1.2 'Saira',sans-serif;letter-spacing:.02em;
-  background:linear-gradient(180deg,var(--conc),var(--conc-m));border:1px solid #6E756A;
-  box-shadow:inset 0 -4px 0 rgba(21,36,48,.16)}
+  background:var(--conc);border:1px solid var(--conc-d);
+  box-shadow:none}
 .bar a:active{filter:brightness(1.08)}
 .bar svg{width:19px;height:19px;fill:currentColor}
-.bar a.w{background:linear-gradient(180deg,#F0663F,var(--signal));color:#FFF3ED;border-color:var(--signal-d)}
+.bar a.w{background:var(--signal);color:#FFF3ED;border-color:var(--signal-d)}
 
 @media(max-width:880px){
   .two,.visit,.ritual{grid-template-columns:1fr}
@@ -179,24 +164,11 @@ footer{padding:36px 7vw 130px;color:#7FA0B0;font-size:13.5px;text-align:center;b
   .gal{grid-template-columns:repeat(2,1fr)}
   .tallf img{height:clamp(280px,40vh,420px)}
   body{padding-bottom:66px}
-  .lantern{left:78%}
-  .lbody{width:clamp(88px,22vw,110px);height:clamp(132px,19vh,170px)}
-  .stack{top:29%;padding:0 6vw}
-  .htop{left:6vw}
-  .b3{padding-top:14px}
-  .b3 .notice{position:relative;right:auto;bottom:auto;margin-top:14px;width:min(210px,54vw);padding:6px}
-  .notice img{height:clamp(94px,14vh,120px)}
-  .b2 h1{font-size:clamp(38px,11vw,52px)}
 }
 @media(max-width:560px){
-  .stack{width:min(720px,94vw)}
-  .b1{width:86%;margin-left:10%;padding:10px 14px}
-  .b2{width:98%;margin-left:0}
-  .notice img{height:clamp(120px,16vh,170px)}
-  .wheel{width:44px;height:44px;border-width:4px}
-  .chip{font-size:11px;padding:3px 9px}
   .bar a{font-size:10.5px}
 }
+@media(min-width:901px){.bar{display:none}footer{padding-bottom:60px}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -244,31 +216,52 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
-<header>
-  <div class="pool" aria-hidden="true"></div>
-  <i class="lantern" aria-hidden="true"><i class="rope"></i><i class="lbody"><i class="flame"></i></i></i>
-  <div class="htop">
-    <i class="wheel" aria-hidden="true"></i>
-    <p class="k"><xen data-edit="t1" data-edit-label="Text (EN): Seafood diner · inside The Backyard, H…">Seafood diner · inside The Backyard, Hazmieh</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم بحري · جوّا الباكيارد، الحازمية">مطعم بحري · جوّا الباكيارد، الحازمية</xar></p>
-  </div>
-  <div class="stack">
-    <div class="blk b1">
-      <span class="tag"><xen class="c" data-edit="t3" data-edit-label="Text (EN): They call it Lebanon's first seafood d…">They call it Lebanon's first seafood diner</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): بيسمّوه أول سيفود داينر بلبنان">بيسمّوه أول سيفود داينر بلبنان</xar></span>
-      <span class="rate"><span class="num" data-edit="t5" data-edit-label="Text: 4.7">4.7</span> <span><xen>of <span class="num" data-edit="t6" data-edit-label="Text: 63">63</span> reviews</xen><xar>من <span class="num" data-edit="t7" data-edit-label="Text: 63">63</span> تقييم</xar></span></span>
+<div class="infoband">
+  <span><xen data-edit="t1" data-edit-label="Text (EN): Seafood diner">Seafood diner</xen><xar data-edit="t2" data-edit-label="Text (AR): مطعم بحري">مطعم بحري</xar></span>
+  <span><xen data-edit="t3" data-edit-label="Text (EN): The Backyard, Hazmieh">The Backyard, Hazmieh</xen><xar data-edit="t4" data-edit-label="Text (AR): الباكيارد، الحازمية">الباكيارد، الحازمية</xar></span>
+  <span><xen>Noon to <span class="num" data-edit="t5" data-edit-label="Text: 11:30">11:30</span> PM, daily</xen><xar>من الضهر لـ <span class="num" data-edit="t6" data-edit-label="Text: 11:30">11:30</span> ليلاً، يومياً</xar></span>
+  <span><b class="num" data-edit="t7" data-edit-label="Text: ★ 4.7">★ 4.7</b></span>
+</div>
+
+<header id="top">
+  <div class="paper">
+    <div class="masthead">
+      <p class="over"><xen data-edit="t8" data-edit-label="Text (EN): Seafood diner · inside The Backyard, H…">Seafood diner · inside The Backyard, Hazmieh</xen><xar data-edit="t9" data-edit-label="Text (AR): مطعم بحري · جوّا الباكيارد، الحازمية">مطعم بحري · جوّا الباكيارد، الحازمية</xar></p>
+      <h1><xen class="c">The Pirate <b data-edit="t10" data-edit-label="Text: Catch">Catch</b></xen><xar class="c">ذا بايرت <b data-edit="t11" data-edit-label="Text: كاتش">كاتش</b></xar></h1>
+      <p class="under"><xen data-edit="t12" data-edit-label="Text (EN): Adventure in every Bite">Adventure in every Bite</xen><xar data-edit="t13" data-edit-label="Text (AR): مغامرة بكل قضمة، متل ما بيكتبوها">مغامرة بكل قضمة، متل ما بيكتبوها</xar></p>
     </div>
-    <div class="blk b2">
-      <h1>The Pirate <b data-edit="t8" data-edit-label="Text: Catch">Catch</b></h1>
-      <p class="arn"><xen data-edit="t9" data-edit-label="Text (EN): Adventure in every Bite">Adventure in every Bite</xen><xar data-edit="t10" data-edit-label="Text (AR): مغامرة بكل قضمة، متل ما بيكتبوها">مغامرة بكل قضمة، متل ما بيكتبوها</xar></p>
-    </div>
-    <div class="blk b3">
-      <div class="chips">
-        <span class="chip"><xen data-edit="t11" data-edit-label="Text (EN): Paella">Paella</xen><xar data-edit="t12" data-edit-label="Text (AR): باييلا">باييلا</xar></span>
-        <span class="chip"><xen data-edit="t13" data-edit-label="Text (EN): Seafood buckets">Seafood buckets</xen><xar data-edit="t14" data-edit-label="Text (AR): سطول بحرية">سطول بحرية</xar></span>
-        <span class="chip"><xen data-edit="t15" data-edit-label="Text (EN): Noon to 11:30 PM, daily">Noon to 11:30 PM, daily</xen><xar data-edit="t16" data-edit-label="Text (AR): من الضهر لـ 11:30 ليلاً، يومياً">من الضهر لـ 11:30 ليلاً، يومياً</xar></span>
+    <div class="cols">
+      <div class="col">
+        <span class="tag"><xen class="c" data-edit="t14" data-edit-label="Text (EN): They call it Lebanon's first seafood d…">They call it Lebanon's first seafood diner</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): بيسمّوه أول سيفود داينر بلبنان">بيسمّوه أول سيفود داينر بلبنان</xar></span>
+        <p class="lede" style="margin-top:14px"><xen data-edit="t16" data-edit-label="Text (EN): Paella pans and seafood buckets carrie…">Paella pans and seafood buckets carried to the table on their own printed paper, in the courtyard of The Backyard in Hazmieh, from noon until half past eleven every night.</xen><xar data-edit="t17" data-edit-label="Text (AR): طناجر باييلا وسطول بحرية بتوصل عالطاول…">طناجر باييلا وسطول بحرية بتوصل عالطاولة على ورقهن المطبوع، بساحة الباكيارد بالحازمية، من الضهر لَحدّ الحدعش ونص كل ليلة.</xar></p>
+        <span class="rate"><span class="num" data-edit="t18" data-edit-label="Text: ★ 4.7">★ 4.7</span> · <xen>of <span class="num" data-edit="t19" data-edit-label="Text: 63">63</span> Google reviews</xen><xar>من <span class="num" data-edit="t20" data-edit-label="Text: 63">63</span> تقييم على غوغل</xar></span>
+        <div class="chips">
+          <span class="chip"><xen data-edit="t21" data-edit-label="Text (EN): Paella">Paella</xen><xar data-edit="t22" data-edit-label="Text (AR): باييلا">باييلا</xar></span>
+          <span class="chip"><xen data-edit="t23" data-edit-label="Text (EN): Seafood buckets">Seafood buckets</xen><xar data-edit="t24" data-edit-label="Text (AR): سطول بحرية">سطول بحرية</xar></span>
+        </div>
+        <span class="sp"></span>
       </div>
-      <div class="notice">
-        <img src="img/04.jpg" alt="A seafood paella pan and fried platter from above on Pirate Catch paper">
-        <p class="cap"><xen data-edit="t17" data-edit-label="Text (EN): The paella, photographed from above th…">The paella, photographed from above the paper.</xen><xar data-edit="t18" data-edit-label="Text (AR): الباييلا، مصوّرة من فوق الورق.">الباييلا، مصوّرة من فوق الورق.</xar></p>
+      <div class="col">
+        <span class="sp" style="flex:0 0 0"></span>
+        <figure class="cut">
+          <img src="img/04.jpg" alt="A seafood paella pan and fried platter photographed from above on Pirate Catch paper">
+          <figcaption class="cap"><xen data-edit="t25" data-edit-label="Text (EN): The paella, photographed from above th…">The paella, photographed from above the paper.</xen><xar data-edit="t26" data-edit-label="Text (AR): الباييلا، مصوّرة من فوق الورق.">الباييلا، مصوّرة من فوق الورق.</xar></figcaption>
+        </figure>
+      </div>
+      <div class="col">
+        <figure class="cut sm">
+          <img src="img/07.jpg" alt="A Pirate Catch fried seafood platter with fries and dips, seen from above">
+          <figcaption class="cap"><xen data-edit="t27" data-edit-label="Text (EN): The fried platter, straight off the pa…">The fried platter, straight off the pass.</xen><xar data-edit="t28" data-edit-label="Text (AR): صينية المقالي، دغري من المطبخ.">صينية المقالي، دغري من المطبخ.</xar></figcaption>
+        </figure>
+        <div class="chips">
+          <span class="chip"><xen data-edit="t29" data-edit-label="Text (EN): Noon to 11:30 PM, daily">Noon to 11:30 PM, daily</xen><xar data-edit="t30" data-edit-label="Text (AR): من الضهر لـ 11:30 ليلاً، يومياً">من الضهر لـ 11:30 ليلاً، يومياً</xar></span>
+        </div>
+        <span class="sp"></span>
+        <div class="hbtns">
+          <a class="s" href="tel:+96178747283"><xen data-edit="t31" data-edit-label="Text (EN): Call the diner">Call the diner</xen><xar data-edit="t32" data-edit-label="Text (AR): اتصل بالمطعم">اتصل بالمطعم</xar></a>
+          <a class="w" href="https://wa.me/96178747283?text=Hello%20Pirate%20Catch%2C%20I%20would%20like%20a%20table." target="_blank" rel="noopener" data-edit="t33" data-edit-label="Button / link: WhatsApp">WhatsApp</a>
+          <a class="o" href="https://www.google.com/maps?cid=8845444506493969010" target="_blank" rel="noopener"><xen data-edit="t34" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t35" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        </div>
       </div>
     </div>
   </div>
@@ -277,15 +270,15 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t19" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t20" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></p>
-      <h2><xen data-edit="t21" data-edit-label="Text (EN): A seafood counter inside the yard">A seafood counter inside the yard</xen><xar data-edit="t22" data-edit-label="Text (AR): كاونتر بحري جوّا الباكيارد">كاونتر بحري جوّا الباكيارد</xar></h2>
-      <p><xen data-edit="t23" data-edit-label="Text (EN): The Pirate Catch is a seafood diner in…">The Pirate Catch is a seafood diner inside The Backyard in Hazmieh, the food and nightlife yard where half the city ends its evenings. One location, one kitchen, open from noon to half past eleven, every single day.</xen><xar data-edit="t24" data-edit-label="Text (AR): ذا بايرت كاتش مطعم بحري جوّا الباكيارد…">ذا بايرت كاتش مطعم بحري جوّا الباكيارد بالحازمية، ساحة الأكل والسهر يلّي نص المدينة بتسكّر ليلها فيها. فرع واحد، مطبخ واحد، فاتح من الضهر لحد الحدعش ونص، كل يوم بلا استثناء.</xar></p>
-      <p><xen data-edit="t25" data-edit-label="Text (EN): The menu leans on paella and seafood b…">The menu leans on paella and seafood buckets, the kind of food that arrives with gloves and paper instead of cutlery and apologies. Their own line says it best: Adventure in every Bite.</xen><xar data-edit="t26" data-edit-label="Text (AR): المنيو واقف على الباييلا وسطول المأكول…">المنيو واقف على الباييلا وسطول المأكولات البحرية، أكل بيوصل مع كفوف وورق بدل السكاكين والاعتذارات. وجملتهن بتقولها أحسن من أي حدا: مغامرة بكل قضمة.</xar></p>
-      <p><xen data-edit="t27" data-edit-label="Text (EN): Around you, the yard does the rest: li…">Around you, the yard does the rest: lights on, tables filling, and a counter that smells like a harbour in the middle of Hazmieh.</xen><xar data-edit="t28" data-edit-label="Text (AR): وحواليك الساحة بتكفّي الباقي: ضوا ولع،…">وحواليك الساحة بتكفّي الباقي: ضوا ولع، طاولات عم تعبّى، وكاونتر ريحتو ريحة مرفأ بنص الحازمية.</xar></p>
+      <p class="k"><xen data-edit="t36" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t37" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></p>
+      <h2><xen data-edit="t38" data-edit-label="Text (EN): A seafood counter inside the yard">A seafood counter inside the yard</xen><xar data-edit="t39" data-edit-label="Text (AR): كاونتر بحري جوّا الباكيارد">كاونتر بحري جوّا الباكيارد</xar></h2>
+      <p><xen data-edit="t40" data-edit-label="Text (EN): The Pirate Catch is a seafood diner in…">The Pirate Catch is a seafood diner inside The Backyard in Hazmieh, the food and nightlife yard where half the city ends its evenings. One location, one kitchen, open from noon to half past eleven, every single day.</xen><xar data-edit="t41" data-edit-label="Text (AR): ذا بايرت كاتش مطعم بحري جوّا الباكيارد…">ذا بايرت كاتش مطعم بحري جوّا الباكيارد بالحازمية، ساحة الأكل والسهر يلّي نص المدينة بتسكّر ليلها فيها. فرع واحد، مطبخ واحد، فاتح من الضهر لحد الحدعش ونص، كل يوم بلا استثناء.</xar></p>
+      <p><xen data-edit="t42" data-edit-label="Text (EN): The menu leans on paella and seafood b…">The menu leans on paella and seafood buckets, the kind of food that arrives with gloves and paper instead of cutlery and apologies. Their own line says it best: Adventure in every Bite.</xen><xar data-edit="t43" data-edit-label="Text (AR): المنيو واقف على الباييلا وسطول المأكول…">المنيو واقف على الباييلا وسطول المأكولات البحرية، أكل بيوصل مع كفوف وورق بدل السكاكين والاعتذارات. وجملتهن بتقولها أحسن من أي حدا: مغامرة بكل قضمة.</xar></p>
+      <p><xen data-edit="t44" data-edit-label="Text (EN): Around you, the yard does the rest: li…">Around you, the yard does the rest: lights on, tables filling, and a counter that smells like a harbour in the middle of Hazmieh.</xen><xar data-edit="t45" data-edit-label="Text (AR): وحواليك الساحة بتكفّي الباقي: ضوا ولع،…">وحواليك الساحة بتكفّي الباقي: ضوا ولع، طاولات عم تعبّى، وكاونتر ريحتو ريحة مرفأ بنص الحازمية.</xar></p>
     </div>
     <div>
       <div class="frame"><img src="img/01.jpg" loading="lazy" alt="The covered terrace of The Backyard with its long benches and greenery">
-        <p class="cap"><xen data-edit="t29" data-edit-label="Text (EN): The yard, photographed before the even…">The yard, photographed before the evening fills it.</xen><xar data-edit="t30" data-edit-label="Text (AR): الساحة، مصوّرة قبل ما تعبّيها السهرة.">الساحة، مصوّرة قبل ما تعبّيها السهرة.</xar></p>
+        <p class="cap"><xen data-edit="t46" data-edit-label="Text (EN): The yard, photographed before the even…">The yard, photographed before the evening fills it.</xen><xar data-edit="t47" data-edit-label="Text (AR): الساحة، مصوّرة قبل ما تعبّيها السهرة.">الساحة، مصوّرة قبل ما تعبّيها السهرة.</xar></p>
       </div>
     </div>
   </div>
@@ -293,48 +286,48 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t31" data-edit-label="Text (EN): How the bucket goes">How the bucket goes</xen><xar data-edit="t32" data-edit-label="Text (AR): كيف بيمشي السطل">كيف بيمشي السطل</xar></p>
-    <h2 class="h2" style="margin-bottom:8px"><xen data-edit="t33" data-edit-label="Text (EN): The hands-dirty ritual">The hands-dirty ritual</xen><xar data-edit="t34" data-edit-label="Text (AR): طقس توسيخ الإيدين">طقس توسيخ الإيدين</xar></h2>
-    <p style="color:#C4D5D9;max-width:62ch;margin-bottom:24px"><xen data-edit="t35" data-edit-label="Text (EN): One reviewer wrote the instructions al…">One reviewer wrote the instructions already: the paella and the bucket are recommended if you want to get your hands dirty. Here is how that plays out.</xen><xar data-edit="t36" data-edit-label="Text (AR): واحد من المعلّقين كتب التعليمات سلفاً:…">واحد من المعلّقين كتب التعليمات سلفاً: الباييلا والسطل منصوح فيهن إذا بدك توسّخ إيديك. وهيك بتمشي القصة.</xar></p>
+    <p class="k"><xen data-edit="t48" data-edit-label="Text (EN): How the bucket goes">How the bucket goes</xen><xar data-edit="t49" data-edit-label="Text (AR): كيف بيمشي السطل">كيف بيمشي السطل</xar></p>
+    <h2 class="h2" style="margin-bottom:8px"><xen data-edit="t50" data-edit-label="Text (EN): The hands-dirty ritual">The hands-dirty ritual</xen><xar data-edit="t51" data-edit-label="Text (AR): طقس توسيخ الإيدين">طقس توسيخ الإيدين</xar></h2>
+    <p style="color:#C3BFB2;max-width:62ch;margin-bottom:24px"><xen data-edit="t52" data-edit-label="Text (EN): One reviewer wrote the instructions al…">One reviewer wrote the instructions already: the paella and the bucket are recommended if you want to get your hands dirty. Here is how that plays out.</xen><xar data-edit="t53" data-edit-label="Text (AR): واحد من المعلّقين كتب التعليمات سلفاً:…">واحد من المعلّقين كتب التعليمات سلفاً: الباييلا والسطل منصوح فيهن إذا بدك توسّخ إيديك. وهيك بتمشي القصة.</xar></p>
     <div class="ritual">
       <div class="steps">
-        <div class="step rev"><h3><xen class="c" data-edit="t37" data-edit-label="Text (EN): Paper down, gloves on">Paper down, gloves on</xen><xar class="c" data-edit="t38" data-edit-label="Text (AR): الورق عالطاولة والكفوف بالإيد">الورق عالطاولة والكفوف بالإيد</xar></h3>
-          <p><xen data-edit="t39" data-edit-label="Text (EN): The table gets sheeted in their printe…">The table gets sheeted in their printed paper and the plastic gloves land next to it. That is the signal.</xen><xar data-edit="t40" data-edit-label="Text (AR): الطاولة بتتغطى بورقهن المطبوع والكفوف …">الطاولة بتتغطى بورقهن المطبوع والكفوف البلاستيك بتنزل حدها. هيدي هيّي الإشارة.</xar></p></div>
-        <div class="step rev"><h3><xen class="c" data-edit="t41" data-edit-label="Text (EN): The bucket lands">The bucket lands</xen><xar class="c" data-edit="t42" data-edit-label="Text (AR): السطل بيوصل">السطل بيوصل</xar></h3>
-          <p><xen data-edit="t43" data-edit-label="Text (EN): Shrimp, corn and the rest of the boil,…">Shrimp, corn and the rest of the boil, poured hot over rice or straight onto the paper. No cutlery worth defending.</xen><xar data-edit="t44" data-edit-label="Text (AR): قريدس، عرانيس وباقي السلقة، عم ينكبّوا…">قريدس، عرانيس وباقي السلقة، عم ينكبّوا سخنين فوق الرز أو عالورق مباشرة. ما في سكاكين تستاهل تدافع عنها.</xar></p></div>
-        <div class="step rev"><h3><xen class="c" data-edit="t45" data-edit-label="Text (EN): Fries and a margarita">Fries and a margarita</xen><xar class="c" data-edit="t46" data-edit-label="Text (AR): بطاطا ومارغريتا">بطاطا ومارغريتا</xar></h3>
-          <p><xen data-edit="t47" data-edit-label="Text (EN): The same review swears the fries are o…">The same review swears the fries are on point and the margarita is amazing. Order both before your hands are lost.</xen><xar data-edit="t48" data-edit-label="Text (AR): نفس التقييم بيحلف إنو البطاطا مظبوطة و…">نفس التقييم بيحلف إنو البطاطا مظبوطة والمارغريتا خرافية. اطلبهن قبل ما إيديك يضيعوا بالسطل.</xar></p></div>
+        <div class="step rev"><h3><xen class="c" data-edit="t54" data-edit-label="Text (EN): Paper down, gloves on">Paper down, gloves on</xen><xar class="c" data-edit="t55" data-edit-label="Text (AR): الورق عالطاولة والكفوف بالإيد">الورق عالطاولة والكفوف بالإيد</xar></h3>
+          <p><xen data-edit="t56" data-edit-label="Text (EN): The table gets sheeted in their printe…">The table gets sheeted in their printed paper and the plastic gloves land next to it. That is the signal.</xen><xar data-edit="t57" data-edit-label="Text (AR): الطاولة بتتغطى بورقهن المطبوع والكفوف …">الطاولة بتتغطى بورقهن المطبوع والكفوف البلاستيك بتنزل حدها. هيدي هيّي الإشارة.</xar></p></div>
+        <div class="step rev"><h3><xen class="c" data-edit="t58" data-edit-label="Text (EN): The bucket lands">The bucket lands</xen><xar class="c" data-edit="t59" data-edit-label="Text (AR): السطل بيوصل">السطل بيوصل</xar></h3>
+          <p><xen data-edit="t60" data-edit-label="Text (EN): Shrimp, corn and the rest of the boil,…">Shrimp, corn and the rest of the boil, poured hot over rice or straight onto the paper. No cutlery worth defending.</xen><xar data-edit="t61" data-edit-label="Text (AR): قريدس، عرانيس وباقي السلقة، عم ينكبّوا…">قريدس، عرانيس وباقي السلقة، عم ينكبّوا سخنين فوق الرز أو عالورق مباشرة. ما في سكاكين تستاهل تدافع عنها.</xar></p></div>
+        <div class="step rev"><h3><xen class="c" data-edit="t62" data-edit-label="Text (EN): Fries and a margarita">Fries and a margarita</xen><xar class="c" data-edit="t63" data-edit-label="Text (AR): بطاطا ومارغريتا">بطاطا ومارغريتا</xar></h3>
+          <p><xen data-edit="t64" data-edit-label="Text (EN): The same review swears the fries are o…">The same review swears the fries are on point and the margarita is amazing. Order both before your hands are lost.</xen><xar data-edit="t65" data-edit-label="Text (AR): نفس التقييم بيحلف إنو البطاطا مظبوطة و…">نفس التقييم بيحلف إنو البطاطا مظبوطة والمارغريتا خرافية. اطلبهن قبل ما إيديك يضيعوا بالسطل.</xar></p></div>
       </div>
       <div class="tallf rev"><img src="img/08.jpg" loading="lazy" alt="Gloved hands digging into a seafood boil over yellow rice">
-        <p class="cap"><xen data-edit="t49" data-edit-label="Text (EN): Gloves on, exactly as instructed.">Gloves on, exactly as instructed.</xen><xar data-edit="t50" data-edit-label="Text (AR): الكفوف لابسينها، متل ما وصفوا تماماً.">الكفوف لابسينها، متل ما وصفوا تماماً.</xar></p>
+        <p class="cap"><xen data-edit="t66" data-edit-label="Text (EN): Gloves on, exactly as instructed.">Gloves on, exactly as instructed.</xen><xar data-edit="t67" data-edit-label="Text (AR): الكفوف لابسينها، متل ما وصفوا تماماً.">الكفوف لابسينها، متل ما وصفوا تماماً.</xar></p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t51" data-edit-label="Text (EN): Named by the regulars">Named by the regulars</xen><xar data-edit="t52" data-edit-label="Text (AR): سمّوهن الزباين">سمّوهن الزباين</xar></p>
-  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t53" data-edit-label="Text (EN): Three plates off the wall">Three plates off the wall</xen><xar data-edit="t54" data-edit-label="Text (AR): تلات صحون من عالحيط">تلات صحون من عالحيط</xar></h2>
+  <p class="k"><xen data-edit="t68" data-edit-label="Text (EN): Named by the regulars">Named by the regulars</xen><xar data-edit="t69" data-edit-label="Text (AR): سمّوهن الزباين">سمّوهن الزباين</xar></p>
+  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t70" data-edit-label="Text (EN): Three plates off the wall">Three plates off the wall</xen><xar data-edit="t71" data-edit-label="Text (AR): تلات صحون من عالحيط">تلات صحون من عالحيط</xar></h2>
   <div class="grid3">
     <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="The paella pan with prawns, mussels and lemon">
-      <div class="t"><h3 data-edit="t55" data-edit-label="Heading: Paella">Paella</h3>
-      <p><xen data-edit="t56" data-edit-label="Text (EN): The pan that gets held over the table …">The pan that gets held over the table for the photo, prawns on top, lemon last.</xen><xar data-edit="t57" data-edit-label="Text (AR): الطنجرة يلّي بتنرفع فوق الطاولة للصورة…">الطنجرة يلّي بتنرفع فوق الطاولة للصورة، القريدس فوق والحامض عالآخر.</xar></p></div>
+      <div class="t"><h3 data-edit="t72" data-edit-label="Heading: Paella">Paella</h3>
+      <p><xen data-edit="t73" data-edit-label="Text (EN): The pan that gets held over the table …">The pan that gets held over the table for the photo, prawns on top, lemon last.</xen><xar data-edit="t74" data-edit-label="Text (AR): الطنجرة يلّي بتنرفع فوق الطاولة للصورة…">الطنجرة يلّي بتنرفع فوق الطاولة للصورة، القريدس فوق والحامض عالآخر.</xar></p></div>
     </div>
     <div class="card rev"><img src="img/07.jpg" loading="lazy" alt="A fried seafood platter with fries and dips">
-      <div class="t"><h3><xen class="c" data-edit="t58" data-edit-label="Text (EN): Fried platter">Fried platter</xen><xar class="c" data-edit="t59" data-edit-label="Text (AR): صحن المقالي">صحن المقالي</xar></h3>
-      <p><xen data-edit="t60" data-edit-label="Text (EN): Fire emoji in the review, fries in the…">Fire emoji in the review, fries in the basket, dips lined up in steel cups.</xen><xar data-edit="t61" data-edit-label="Text (AR): إيموجي النار بالتقييم، البطاطا بالسلة،…">إيموجي النار بالتقييم، البطاطا بالسلة، والصوصات مصفوفة بكاسات ستانلس.</xar></p></div>
+      <div class="t"><h3><xen class="c" data-edit="t75" data-edit-label="Text (EN): Fried platter">Fried platter</xen><xar class="c" data-edit="t76" data-edit-label="Text (AR): صحن المقالي">صحن المقالي</xar></h3>
+      <p><xen data-edit="t77" data-edit-label="Text (EN): Fire emoji in the review, fries in the…">Fire emoji in the review, fries in the basket, dips lined up in steel cups.</xen><xar data-edit="t78" data-edit-label="Text (AR): إيموجي النار بالتقييم، البطاطا بالسلة،…">إيموجي النار بالتقييم، البطاطا بالسلة، والصوصات مصفوفة بكاسات ستانلس.</xar></p></div>
     </div>
     <div class="card rev"><img src="img/02.jpg" loading="lazy" alt="A hand squeezing lemon over a grilled fish plate">
-      <div class="t"><h3><xen class="c" data-edit="t62" data-edit-label="Text (EN): Off the grill">Off the grill</xen><xar class="c" data-edit="t63" data-edit-label="Text (AR): من عالمشوى">من عالمشوى</xar></h3>
-      <p><xen data-edit="t64" data-edit-label="Text (EN): Grilled instead of fried when you want…">Grilled instead of fried when you want it lighter, lemon squeezed at the table.</xen><xar data-edit="t65" data-edit-label="Text (AR): مشوي بدل مقلي لما بدك ياها أخف، والحام…">مشوي بدل مقلي لما بدك ياها أخف، والحامض بينعصر عالطاولة.</xar></p></div>
+      <div class="t"><h3><xen class="c" data-edit="t79" data-edit-label="Text (EN): Off the grill">Off the grill</xen><xar class="c" data-edit="t80" data-edit-label="Text (AR): من عالمشوى">من عالمشوى</xar></h3>
+      <p><xen data-edit="t81" data-edit-label="Text (EN): Grilled instead of fried when you want…">Grilled instead of fried when you want it lighter, lemon squeezed at the table.</xen><xar data-edit="t82" data-edit-label="Text (AR): مشوي بدل مقلي لما بدك ياها أخف، والحام…">مشوي بدل مقلي لما بدك ياها أخف، والحامض بينعصر عالطاولة.</xar></p></div>
     </div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t66" data-edit-label="Text (EN): Photographs">Photographs</xen><xar data-edit="t67" data-edit-label="Text (AR): صور">صور</xar></p>
-    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t68" data-edit-label="Text (EN): From the yard and the paper">From the yard and the paper</xen><xar data-edit="t69" data-edit-label="Text (AR): من الساحة ومن عالورق">من الساحة ومن عالورق</xar></h2>
+    <p class="k"><xen data-edit="t83" data-edit-label="Text (EN): Photographs">Photographs</xen><xar data-edit="t84" data-edit-label="Text (AR): صور">صور</xar></p>
+    <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t85" data-edit-label="Text (EN): From the yard and the paper">From the yard and the paper</xen><xar data-edit="t86" data-edit-label="Text (AR): من الساحة ومن عالورق">من الساحة ومن عالورق</xar></h2>
     <div class="gal">
       <a href="img/01.jpg" target="_blank" rel="noopener" class="g"><img src="img/01.jpg" loading="lazy" alt="The Backyard terrace"></a>
       <a href="img/02.jpg" target="_blank" rel="noopener" class="g"><img src="img/02.jpg" loading="lazy" alt="Lemon squeezed over the grill plate"></a>
@@ -347,60 +340,60 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t70" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t71" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
-  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t72" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t73" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+  <p class="k"><xen data-edit="t87" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t88" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+  <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t89" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t90" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
   <div class="revs">
-    <div class="rev-c rev"><q dir="ltr" data-edit="t74" data-edit-label="Quote: If you're looking for a new dining exp…">If you're looking for a new dining experience with no regrets at all, just pass by.... highly recommended</q><cite data-edit="t75" data-edit-label="Credit: Alain Abboud">Alain Abboud</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t76" data-edit-label="Quote: big fan of their fish burger &amp; fre…">big fan of their fish burger &amp; fresh crab roll! paella et seafood bucket are recommended if you want to get your hands dirty! P.S: they serve an amazing margarita too &amp; their fries are on point!</q><cite data-edit="t77" data-edit-label="Credit: karl abiaad">karl abiaad</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t78" data-edit-label="Quote: We tried TPC Seafood Diner and honestl…">We tried TPC Seafood Diner and honestly,so good. The seafood was fresh, perfectly cooked, and full of flavor (fried platter 🔥 and the seafood boil was on point).</q><cite data-edit="t79" data-edit-label="Credit: Khalil Raad">Khalil Raad</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t91" data-edit-label="Quote: If you're looking for a new dining exp…">If you're looking for a new dining experience with no regrets at all, just pass by.... highly recommended</q><cite data-edit="t92" data-edit-label="Credit: Alain Abboud">Alain Abboud</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t93" data-edit-label="Quote: big fan of their fish burger &amp; fre…">big fan of their fish burger &amp; fresh crab roll! paella et seafood bucket are recommended if you want to get your hands dirty! P.S: they serve an amazing margarita too &amp; their fries are on point!</q><cite data-edit="t94" data-edit-label="Credit: karl abiaad">karl abiaad</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t95" data-edit-label="Quote: We tried TPC Seafood Diner and honestl…">We tried TPC Seafood Diner and honestly,so good. The seafood was fresh, perfectly cooked, and full of flavor (fried platter 🔥 and the seafood boil was on point).</q><cite data-edit="t96" data-edit-label="Credit: Khalil Raad">Khalil Raad</cite></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap visit">
     <div>
-      <p class="k"><xen data-edit="t80" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t81" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
-      <h2 class="h2" style="margin-bottom:18px"><xen data-edit="t82" data-edit-label="Text (EN): Seven days on the dot">Seven days on the dot</xen><xar data-edit="t83" data-edit-label="Text (AR): سبعة أيام عالموعد">سبعة أيام عالموعد</xar></h2>
+      <p class="k"><xen data-edit="t97" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t98" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+      <h2 class="h2" style="margin-bottom:18px"><xen data-edit="t99" data-edit-label="Text (EN): Seven days on the dot">Seven days on the dot</xen><xar data-edit="t100" data-edit-label="Text (AR): سبعة أيام عالموعد">سبعة أيام عالموعد</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t84" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t85" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t86" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t87" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t88" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t89" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t90" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t91" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t92" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t93" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t94" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t95" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t96" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t97" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t98" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t99" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t101" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t102" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t103" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t105" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t106" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t107" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t108" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t109" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t110" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t111" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t101" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t102" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t103" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t104" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t105" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t106" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t107" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t108" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t109" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t110" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t111" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t112" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t113" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t114" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t115" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t116" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t117" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t118" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t119" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t120" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t121" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t122" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t123" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t124" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t125" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t126" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t127" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t128" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
       </table>
-      <p class="cap"><xen data-edit="t112" data-edit-label="Text (EN): Lunch through the last late bucket, no…">Lunch through the last late bucket, no day off.</xen><xar data-edit="t113" data-edit-label="Text (AR): من الغدا لآخر سطل بالليل، ما في يوم عط…">من الغدا لآخر سطل بالليل، ما في يوم عطلة.</xar></p>
+      <p class="cap"><xen data-edit="t129" data-edit-label="Text (EN): Lunch through the last late bucket, no…">Lunch through the last late bucket, no day off.</xen><xar data-edit="t130" data-edit-label="Text (AR): من الغدا لآخر سطل بالليل، ما في يوم عط…">من الغدا لآخر سطل بالليل، ما في يوم عطلة.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t114" data-edit-label="Text (EN): Find the counter">Find the counter</xen><xar data-edit="t115" data-edit-label="Text (AR): لاقي الكاونتر">لاقي الكاونتر</xar></p>
-      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t116" data-edit-label="Text (EN): Inside The Backyard, Hazmieh">Inside The Backyard, Hazmieh</xen><xar data-edit="t117" data-edit-label="Text (AR): جوّا الباكيارد، الحازمية">جوّا الباكيارد، الحازمية</xar></h2>
-      <p class="k"><xen data-edit="t118" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t119" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t120" data-edit-label="Text: The Backyard, Hazmieh, Lebanon">The Backyard, Hazmieh, Lebanon</p>
-      <p class="k" style="margin-top:18px"><xen data-edit="t121" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t122" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
-      <p class="ph num" data-edit="t123" data-edit-label="Text: +961 78 747 283">+961 78 747 283</p>
+      <p class="k"><xen data-edit="t131" data-edit-label="Text (EN): Find the counter">Find the counter</xen><xar data-edit="t132" data-edit-label="Text (AR): لاقي الكاونتر">لاقي الكاونتر</xar></p>
+      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t133" data-edit-label="Text (EN): Inside The Backyard, Hazmieh">Inside The Backyard, Hazmieh</xen><xar data-edit="t134" data-edit-label="Text (AR): جوّا الباكيارد، الحازمية">جوّا الباكيارد، الحازمية</xar></h2>
+      <p class="k"><xen data-edit="t135" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t136" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t137" data-edit-label="Text: The Backyard, Hazmieh, Lebanon">The Backyard, Hazmieh, Lebanon</p>
+      <p class="k" style="margin-top:18px"><xen data-edit="t138" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t139" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+      <p class="ph num" data-edit="t140" data-edit-label="Text: +961 78 747 283">+961 78 747 283</p>
       <p style="margin-top:20px">
-        <a class="btn" href="https://wa.me/96178747283?text=Hello%20Pirate%20Catch%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t124" data-edit-label="Text (EN): WhatsApp the crew">WhatsApp the crew</xen><xar data-edit="t125" data-edit-label="Text (AR): واتساب للطاقم">واتساب للطاقم</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=8845444506493969010" target="_blank" rel="noopener"><xen data-edit="t126" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t127" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn" href="https://wa.me/96178747283?text=Hello%20Pirate%20Catch%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><xen data-edit="t141" data-edit-label="Text (EN): WhatsApp the crew">WhatsApp the crew</xen><xar data-edit="t142" data-edit-label="Text (AR): واتساب للطاقم">واتساب للطاقم</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=8845444506493969010" target="_blank" rel="noopener"><xen data-edit="t143" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t144" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
       </p>
       <p style="margin-top:12px">
-        <a class="btn o" href="https://www.instagram.com/thepiratecatch/" target="_blank" rel="noopener" data-edit="t128" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.instagram.com/thepiratecatch/" target="_blank" rel="noopener" data-edit="t145" data-edit-label="Button / link: Instagram">Instagram</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t129" data-edit-label="Text (EN): The Pirate Catch, inside The Backyard,…">The Pirate Catch, inside The Backyard, Hazmieh.</xen><xar data-edit="t130" data-edit-label="Text (AR): ذا بايرت كاتش، جوّا الباكيارد، الحازمي…">ذا بايرت كاتش، جوّا الباكيارد، الحازمية.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t131" data-edit-label="Text (EN): Paella, buckets and gloves, noon to 11…">Paella, buckets and gloves, noon to 11:30 at night, every day.</xen><xar data-edit="t132" data-edit-label="Text (AR): باييلا وسطول وكفوف، من الضهر لـ 11:30 …">باييلا وسطول وكفوف، من الضهر لـ 11:30 بالليل، كل يوم.</xar></p>
+  <p><xen data-edit="t146" data-edit-label="Text (EN): The Pirate Catch, inside The Backyard,…">The Pirate Catch, inside The Backyard, Hazmieh.</xen><xar data-edit="t147" data-edit-label="Text (AR): ذا بايرت كاتش، جوّا الباكيارد، الحازمي…">ذا بايرت كاتش، جوّا الباكيارد، الحازمية.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t148" data-edit-label="Text (EN): Paella, buckets and gloves, noon to 11…">Paella, buckets and gloves, noon to 11:30 at night, every day.</xen><xar data-edit="t149" data-edit-label="Text (AR): باييلا وسطول وكفوف، من الضهر لـ 11:30 …">باييلا وسطول وكفوف، من الضهر لـ 11:30 بالليل، كل يوم.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a href="tel:+96178747283"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t133" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t134" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a class="w" href="https://wa.me/96178747283?text=Hello%20Pirate%20Catch%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t135" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t136" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="https://www.google.com/maps?cid=8845444506493969010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t137" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t138" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.instagram.com/thepiratecatch/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t139" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="tel:+96178747283"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t151" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96178747283?text=Hello%20Pirate%20Catch%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t153" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=8845444506493969010" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t154" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t155" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/thepiratecatch/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t156" data-edit-label="Text: Instagram">Instagram</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ذا بايرت كاتش · الباكيارد، الحازمية" data-edit="t140" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ذا بايرت كاتش · الباكيارد، الحازمية" data-edit="t157" data-edit-label="Button: عربي">عربي</button>
 </body></html>

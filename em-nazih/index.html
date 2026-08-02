@@ -5,22 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Em Nazih · Furn El Hayek, Achrafieh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Work+Sans:wght@400;500;700&family=El+Messiri:wght@500;700&family=Harmattan:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Work+Sans:wght@400;500;700&family=Aref+Ruqaa:wght@400;700&family=Harmattan:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'El Messiri';--arb:'Harmattan';
-  --cream:#F4EEDF;--plaster:#EFE7D3;--ink:#26211A;--terra:#BC5A32;--leaf:#48663F;
-  --wood:#8A5B36;--teal:#76A9A1;--line:rgba(38,33,26,.16);
+  --arh:'Aref Ruqaa';--arb:'Harmattan';
+  --cream:#F5EFE1;--plaster:#EAE2D0;--ink:#17332F;--terra:#C97C21;--leaf:#0F3B38;
+  --wood:#8A5B36;--teal:#0F3B38;--line:rgba(23,51,47,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--cream);color:var(--ink);font:400 17px/1.75 'Work Sans',system-ui,sans-serif}
 .wrap{width:min(1160px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3,.dsp{font-family:'Fraunces',serif;font-weight:800;line-height:1.06;letter-spacing:-.01em}
+h1,h2,h3,.dsp{font-family:'Marcellus',serif;font-weight:400;line-height:1.1;letter-spacing:.005em}
+p.k:has(+h2),p.k:has(+h3){border-top:1px solid rgba(23,51,47,.3);padding-top:15px;display:block}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.4 'Work Sans',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--terra)}
 
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+.lngt{position:fixed;right:14px;top:calc(16px + env(safe-area-inset-top));z-index:80;
   font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:3px;cursor:pointer;
   background:var(--leaf);color:#F6F1E2;border:1.5px solid #33492D;-webkit-appearance:none;
   box-shadow:0 4px 14px rgba(38,33,26,.28);min-width:58px;text-align:center}
@@ -42,7 +43,7 @@ section{padding-block:clamp(56px,8vh,96px)}
   padding:52px 20px 22px;counter-increment:st}
 .step::before{content:counter(st);position:absolute;top:-18px;left:18px;width:44px;height:40px;
   background:#FBF6E9;border:1.5px solid var(--ink);border-radius:3px 3px 12px 12px;
-  display:grid;place-items:center;font:800 20px/1 'Fraunces',serif;color:var(--terra);
+  display:grid;place-items:center;font:400 20px/1 'Marcellus',serif;color:var(--terra);
   box-shadow:0 5px 0 -2px #8B8174}
 .step h3{font-size:19px;margin-bottom:7px}
 .step p{color:#57503F;font-size:14.5px;line-height:1.65}
@@ -57,7 +58,7 @@ section{padding-block:clamp(56px,8vh,96px)}
   gap:clamp(20px,3vw,40px);align-items:start}
 .board h2{font-size:clamp(25px,3.4vw,38px);margin:6px 0 14px}
 .menu li{list-style:none;display:flex;align-items:baseline;gap:10px;padding:10px 2px;
-  border-bottom:1px dashed var(--line);font:500 15.5px/1.5 'Work Sans',sans-serif}
+  border-bottom:1px solid var(--line);font:500 15.5px/1.5 'Work Sans',sans-serif}
 .menu li i{font-style:normal;color:var(--terra);font-weight:700}
 .note{margin-top:16px;font-size:14.5px;color:#6B6250}
 .boardimg{border:1.5px solid var(--ink);padding:8px;background:#fff;border-radius:3px}
@@ -72,7 +73,7 @@ section{padding-block:clamp(56px,8vh,96px)}
 .rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Work Sans',sans-serif;color:var(--leaf);letter-spacing:.06em}
 .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
 table.hrs{width:100%;border-collapse:collapse}
-table.hrs td{padding:9px 0;border-bottom:1px dashed var(--line);font-size:15.5px}
+table.hrs td{padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 table.hrs td:last-child{text-align:right;color:#57503F}
 .ad,.ph{font-size:16.5px;color:#3E382C}
 .btn{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#FBF6E9;
@@ -102,65 +103,42 @@ footer{padding:36px 7vw 130px;color:#7C7361;font-size:13.5px;text-align:center;b
   .bar{gap:5px}
   .bar a{font-size:10.5px}}
 
-/* ---------- HERO: the 1930s triple arch, shutters open on the garden room ---------- */
+/* ---------- HERO: the shared table photographed from above, their own spread,
+     with the Arabic name straight across the top third. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  padding:clamp(30px,5.4vh,64px) 5vw 0;
-  background:
-    repeating-linear-gradient(180deg,rgba(120,98,60,.10) 0 2px,transparent 2px 124px),
-    repeating-linear-gradient(90deg,rgba(120,98,60,.08) 0 2px,transparent 2px 262px),
-    radial-gradient(90% 70% at 26% 8%,rgba(255,252,240,.7),transparent 62%),
-    linear-gradient(180deg,#EBE0C7 0%,#E2D5B7 54%,#D3C39F 100%)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:13%;pointer-events:none;
-  background:linear-gradient(180deg,rgba(90,70,36,.16) 0 3px,#D9CBA9 3px,#CBBB94 40%,#B9A77F 100%);
-  box-shadow:0 -14px 24px rgba(90,70,36,.16)}
-.loc{position:relative;z-index:2;font:700 clamp(11px,1.15vw,13px)/1.5 'Work Sans',sans-serif;
-  letter-spacing:.26em;text-transform:uppercase;color:#8A5B36}
-.carved{position:relative;z-index:2;margin-top:clamp(10px,1.8vh,20px);font-family:'Cinzel',serif;font-weight:700;
-  font-size:clamp(38px,7.2vw,108px);line-height:1;color:#B0522C;letter-spacing:.055em;
-  text-shadow:0 2px 0 rgba(255,250,236,.75),0 -1px 0 rgba(120,60,26,.30)}
-.says{position:relative;z-index:2;margin-top:clamp(12px,2vh,20px);max-width:64ch;color:#4A4135;
-  font:400 clamp(15.5px,1.8vw,20px)/1.55 'Work Sans',sans-serif}
-/* the arcade */
-.triple{position:relative;z-index:3;margin-top:auto;margin-bottom:clamp(46px,10vh,96px);display:flex;align-items:flex-end;
-  gap:clamp(10px,1.4vw,22px);width:min(1010px,86vw)}
-.arch{position:relative;flex:1 1 0;border-radius:50% 50% 3px 3px/34% 34% 3px 3px;overflow:hidden;
-  border:clamp(9px,1.2vw,17px) solid #E7DCC0;
-  box-shadow:0 -6px 0 rgba(255,252,240,.6),0 18px 40px rgba(80,60,28,.28),
-    inset 0 0 0 2px rgba(120,98,60,.35)}
-.side{height:clamp(200px,38vh,360px);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  gap:10px;padding:0 8px clamp(16px,2.4vh,28px);
-  background:linear-gradient(180deg,#4E6B43 0%,#3B5433 100%)}
-.lv{position:absolute;inset:0;
-  background:repeating-linear-gradient(180deg,rgba(255,255,255,.13) 0 4px,rgba(0,0,0,.20) 4px 11px)}
-.paint2{position:relative;z-index:2;color:#EDE7D2;font:700 clamp(10.5px,1.15vw,14px)/1.3 'Work Sans',sans-serif;
-  letter-spacing:.12em;text-transform:uppercase;text-shadow:0 1px 2px rgba(0,0,0,.45)}
-.mid{flex:1.35 1 0;height:clamp(260px,48vh,462px);background:#2A3428}
-.mid img{width:100%;height:100%;object-fit:cover}
-.mid::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(30,40,26,.28),transparent 34%,rgba(30,40,26,.20))}
-.enam{position:absolute;z-index:4;left:6vw;top:clamp(40px,7vh,84px);
-  display:inline-flex;flex-direction:column;align-items:center;gap:4px;text-align:center;
-  background:#2E5A57;color:#EFE9D6;border:3px solid #EFE9D6;border-radius:3px;
-  padding:12px 14px;width:clamp(112px,12vw,168px);
-  font:500 clamp(10px,1vw,12px)/1.35 'Work Sans',sans-serif;
-  box-shadow:0 14px 26px rgba(70,54,26,.3)}
-.enam b{font-family:'Cinzel',serif;font-size:clamp(19px,2.2vw,30px);color:#F5EEDA;font-weight:700}
-@media(max-width:980px){
-  .enam{position:relative;left:auto;top:auto;margin:14px auto 0;flex-direction:row;align-items:center;gap:9px;width:auto}
-}
-@media(max-width:860px){
-  header{padding-top:clamp(26px,4.6vh,52px)}
-  .triple{width:94vw;gap:8px}
-  .side{height:clamp(150px,26vh,220px)}
-  .mid{height:clamp(190px,32vh,280px)}
-  .says{font-size:16px}
-}
-@media(max-width:430px){
-  .carved{font-size:clamp(34px,11vw,48px);letter-spacing:.04em}
-  .paint2{font-size:9.5px;letter-spacing:.08em}
-  .says{font-size:15px}
-}
+  display:flex;flex-direction:column;justify-content:flex-start;background:#0B2A27}
+header .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:24% 66%;
+  filter:contrast(1.07) saturate(1.12) brightness(.74)}
+header .scrim{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,17,16,.78) 0,rgba(7,17,16,.5) 40%,rgba(7,17,16,.26) 60%,rgba(7,17,16,.66) 90%,rgba(15,59,56,.97) 100%),
+   radial-gradient(52% 34% at 50% 27%,rgba(7,17,16,.66),transparent 76%),
+   radial-gradient(26% 40% at 97% 12%,rgba(7,17,16,.82),transparent 72%)}
+.hcol{position:relative;z-index:3;width:min(1160px,100%);margin-inline:auto;
+  padding:clamp(70px,11vh,116px) 5vw 0;text-align:center}
+.loc{font:700 clamp(11px,1.15vw,13px)/1.5 'Work Sans',sans-serif;letter-spacing:.3em;
+  text-transform:uppercase;color:#F0C98A}
+.arname{margin-top:clamp(10px,2vh,20px);font-family:'Aref Ruqaa',serif;font-weight:700;color:#F7F1E1;
+  font-size:clamp(52px,10.6vw,142px);line-height:1.1;direction:rtl;unicode-bidi:isolate;
+  text-shadow:0 12px 46px rgba(0,0,0,.72)}
+.carved{margin-top:clamp(6px,1.2vh,14px);font-family:'Marcellus',serif;font-weight:400;color:#F5EFE1;
+  font-size:clamp(20px,3.2vw,44px);letter-spacing:.36em;line-height:1.2;
+  text-shadow:0 8px 30px rgba(0,0,0,.6)}
+.hairr{width:min(420px,62vw);height:1px;margin:clamp(16px,2.6vh,28px) auto 0;
+  background:linear-gradient(90deg,transparent,rgba(240,201,138,.9),transparent)}
+.says{margin:clamp(14px,2.2vh,22px) auto 0;max-width:56ch;color:#E7E0CE;
+  font:400 clamp(15px,1.75vw,19px)/1.62 'Work Sans',system-ui,sans-serif}
+.enam{margin-top:clamp(12px,2vh,18px);font:500 13.5px/1.7 'Work Sans',sans-serif;color:#DCD5C4;letter-spacing:.05em}
+.enam b{color:#F0C98A;font-size:16px;font-weight:700}
+.hbtns{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:clamp(20px,3vh,30px)}
+.hbtns a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
+  font:700 13px/1 'Work Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  padding:15px 26px;border:1px solid transparent}
+.hbtns a.s{background:var(--terra);color:#2A1A05;border-color:#7E4A0D}
+.hbtns a.w{background:#1FA855;color:#04240F}
+.hbtns a.o{color:#F5EFE1;border-color:rgba(245,239,225,.6)}
+.hbtns a.o:hover{border-color:#F0C98A;color:#F0C98A}
+@media(max-width:430px){.hbtns a{flex:1 1 100%}.carved{letter-spacing:.2em}}
+@media(min-width:901px){.bar{display:none}footer{padding-bottom:60px}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -208,24 +186,22 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
-<header>
-  <p class="loc"><xen data-edit="t1" data-edit-label="Text (EN): Furn El Hayek · facing ABC, Achrafieh">Furn El Hayek · facing ABC, Achrafieh</xen><xar data-edit="t2" data-edit-label="Text (AR): فرن الحايك · مقابل الـ ABC، الأشرفية">فرن الحايك · مقابل الـ ABC، الأشرفية</xar></p>
-  <h1 class="carved"><xen class="c" data-edit="t3" data-edit-label="Text (EN): EM NAZIH">EM NAZIH</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): أم نزيه">أم نزيه</xar></h1>
-  <p class="says"><xen data-edit="t5" data-edit-label="Text (EN): A Lebanese garden room where you order…">A Lebanese garden room where you order at the counter, carry your number to the table, and eat like it is Sunday at the family house.</xen><xar data-edit="t6" data-edit-label="Text (AR): غرفة لبنانية بين النباتات، بتطلب عالكا…">غرفة لبنانية بين النباتات، بتطلب عالكاونتر، بتاخد رقمك عالطاولة، وبتاكل متل نهار الأحد ببيت العيلة.</xar></p>
-  <div class="triple">
-    <div class="arch side">
-      <span class="lv" aria-hidden="true"></span>
-      <span class="paint2"><xen class="c" data-edit="t7" data-edit-label="Text (EN): Breakfast buffet">Breakfast buffet</xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): بوفيه الصبح">بوفيه الصبح</xar></span>
-      <span class="paint2"><xen class="c" data-edit="t9" data-edit-label="Text (EN): Mezze">Mezze</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): مازة">مازة</xar></span>
-    </div>
-    <div class="arch mid"><img src="img/08.jpg" alt="The garden dining room with patterned tiles, teal chairs and an olive tree"></div>
-    <div class="arch side">
-      <span class="lv" aria-hidden="true"></span>
-      <span class="paint2"><xen class="c" data-edit="t11" data-edit-label="Text (EN): Manaeesh">Manaeesh</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): مناقيش">مناقيش</xar></span>
-      <span class="paint2"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Plat du jour">Plat du jour</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): طبق اليوم">طبق اليوم</xar></span>
+<header id="top">
+  <img class="hbg" src="img/04.jpg" alt="An Em Nazih mezze spread photographed from above: hummus in a red bowl, tomatoes, peppers and bread across the table">
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="hcol">
+    <p class="loc"><xen data-edit="t1" data-edit-label="Text (EN): Furn El Hayek · facing ABC, Achrafieh">Furn El Hayek · facing ABC, Achrafieh</xen><xar data-edit="t2" data-edit-label="Text (AR): فرن الحايك · مقابل الـ ABC، الأشرفية">فرن الحايك · مقابل الـ ABC، الأشرفية</xar></p>
+    <p class="arname" data-edit="t3" data-edit-label="Text: أم نزيه">أم نزيه</p>
+    <h1 class="carved"><xen class="c" data-edit="t4" data-edit-label="Text (EN): EM NAZIH">EM NAZIH</xen><xar class="c" data-edit="t5" data-edit-label="Text (AR): مطعم لبناني">مطعم لبناني</xar></h1>
+    <div class="hairr" aria-hidden="true"></div>
+    <p class="says"><xen data-edit="t6" data-edit-label="Text (EN): A Lebanese garden room where you order…">A Lebanese garden room where you order at the counter, carry your number to the table, and eat like it is Sunday at the family house.</xen><xar data-edit="t7" data-edit-label="Text (AR): غرفة لبنانية بين النباتات، بتطلب عالكا…">غرفة لبنانية بين النباتات، بتطلب عالكاونتر، بتاخد رقمك عالطاولة، وبتاكل متل نهار الأحد ببيت العيلة.</xar></p>
+    <p class="enam"><b class="num" data-edit="t8" data-edit-label="Text: ★ 4.4">★ 4.4</b> · <xen>from <span class="num" data-edit="t9" data-edit-label="Text: 2,693">2,693</span> Google reviews</xen><xar>من <span class="num" data-edit="t10" data-edit-label="Text: 2,693">2,693</span> تقييم على غوغل</xar><br><xen data-edit="t11" data-edit-label="Text (EN): Open every day, 9 in the morning to 1 …">Open every day, 9 in the morning to 1 at night</xen><xar data-edit="t12" data-edit-label="Text (AR): فاتحين كل يوم، من التسعة الصبح لَحدّ ا…">فاتحين كل يوم، من التسعة الصبح لَحدّ الوحدة بالليل</xar></p>
+    <div class="hbtns">
+      <a class="s" href="tel:+9613008835"><xen data-edit="t13" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t14" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
+      <a class="w" href="https://wa.me/9613008835?text=Hello%20Em%20Nazih%2C%20I%20have%20a%20question%20about%20today's%20table." target="_blank" rel="noopener" data-edit="t15" data-edit-label="Button / link: WhatsApp">WhatsApp</a>
+      <a class="o" href="https://www.google.com/maps?cid=198967945648276715" target="_blank" rel="noopener"><xen data-edit="t16" data-edit-label="Text (EN): Find the garden room">Find the garden room</xen><xar data-edit="t17" data-edit-label="Text (AR): لاقي غرفة الحديقة">لاقي غرفة الحديقة</xar></a>
     </div>
   </div>
-  <p class="enam"><b class="num" data-edit="t15" data-edit-label="Text: 4.4">4.4</b><span><xen>from <span class="num" data-edit="t16" data-edit-label="Text: 2,693">2,693</span> Google reviews</xen><xar>من <span class="num" data-edit="t17" data-edit-label="Text: 2,693">2,693</span> تقييم على غوغل</xar></span></p>
 </header>
 
 <section class="wrap">

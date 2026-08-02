@@ -5,100 +5,85 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Harout Bakery · Rue Masaken, Bourj Hammoud</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Anton&family=Barlow:wght@400;500;700&family=Changa:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Barlow:wght@400;500;700&family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Changa';--arb:'Tajawal';
-  --steel:#38697A;--steel-d:#20414D;--iron:#16303A;--paper:#F5F0E4;
-  --amber:#D98E2B;--red:#A63A2E;--line:rgba(30,46,54,.18);
+  --arh:'Reem Kufi';--arb:'Tajawal';
+  --steel:#4A5A63;--steel-d:#35434B;--iron:#232E34;--paper:#F3EEE2;
+  --amber:#B08A4A;--red:#7C6231;--line:rgba(35,46,52,.2);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--paper);color:#25333B;font:400 17px/1.75 'Barlow',system-ui,sans-serif}
 .wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;line-height:1.06;letter-spacing:.015em}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:-.008em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.4 'Barlow',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
 
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
+.lngt{position:fixed;right:14px;top:calc(76px + env(safe-area-inset-top));z-index:80;
   font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;cursor:pointer;
-  background:var(--amber);color:#241A08;border:2px solid #241A08;border-radius:2px;
+  background:var(--iron);color:#E9DCC0;border:1px solid rgba(233,220,192,.5);border-radius:2px;
   -webkit-appearance:none;box-shadow:0 4px 14px rgba(30,46,54,.35);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the notice pinned to the shutter, top left of the frame ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:block;padding:0;
-  background:
-    linear-gradient(96deg,rgba(255,236,196,.24),transparent 46%),
-    radial-gradient(64% 52% at 82% 88%,rgba(6,18,24,.5),transparent 68%),
-    repeating-linear-gradient(90deg,#2E5A69 0 8px,#38697A 8px 17px,#20414D 17px 23px,#2A5261 23px 31px)}
-header::before{content:"";position:absolute;left:0;right:0;top:0;height:clamp(30px,5vh,48px);
-  background:linear-gradient(180deg,#16303A,#1E3C47 62%,#12262E);
-  box-shadow:0 6px 18px rgba(0,0,0,.45)}
-header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:clamp(34px,6vh,56px);
-  background:linear-gradient(180deg,#16303A,#0E2028);
-  box-shadow:0 -8px 22px rgba(0,0,0,.4)}
-.rail{position:absolute;left:0;right:0;bottom:clamp(34px,6vh,56px);height:9px;z-index:2;
-  background:repeating-linear-gradient(90deg,#8FA6AE 0 26px,#4E6872 26px 31px)}
-.hasp{position:absolute;right:clamp(40px,9vw,140px);top:50%;transform:translateY(-50%);z-index:2;
-  width:clamp(74px,8vw,104px);aspect-ratio:1;border-radius:50%;
-  border:9px solid #16303A;box-shadow:0 8px 20px rgba(0,0,0,.45),inset 0 0 0 3px rgba(255,255,255,.08)}
-.hasp::before{content:"";position:absolute;left:50%;top:-34%;transform:translateX(-50%);
-  width:34%;height:44%;border:8px solid #16303A;border-bottom:0;border-radius:22px 22px 0 0}
+/* ---------- INFO BAND + HERO (pin: furn-01 "Bread Ark"): a pale linen field, the name and
+     the promise held at the top, then one wide photographic band across the fold ---------- */
+.iband{position:relative;z-index:6;display:flex;align-items:center;justify-content:center;
+  gap:clamp(12px,2.6vw,32px);flex-wrap:wrap;background:var(--iron);color:#D8D2C2;
+  padding:12px 5vw;font:700 10.5px/1.5 'Barlow',sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.iband .mono{width:38px;height:38px;border:1px solid var(--amber);display:grid;place-items:center;
+  font:600 14px/1 'Fraunces',serif;letter-spacing:0;color:var(--amber);flex:none}
+.iband .num{letter-spacing:.12em;color:var(--amber)}
 
-.notice{position:absolute;left:clamp(16px,6vw,92px);top:clamp(66px,10vh,96px);z-index:3;
-  width:min(618px,68vw);background:linear-gradient(174deg,#FBF7EC,#F1E9D7);
-  padding:0 0 clamp(18px,2.6vh,26px);
-  box-shadow:0 26px 54px rgba(4,16,22,.55),0 2px 0 rgba(255,255,255,.5) inset}
-.notice::after{content:"";position:absolute;inset:6px;border:1px solid rgba(30,46,54,.22);pointer-events:none}
-.pin{position:absolute;width:17px;height:17px;border-radius:50%;z-index:4;
-  background:radial-gradient(circle at 34% 30%,#F3B9AE,var(--red) 56%,#5E1A12);
-  box-shadow:0 3px 5px rgba(4,16,22,.6),inset 0 -2px 3px rgba(0,0,0,.35)}
-.pin.a{left:13px;top:13px}.pin.b{right:13px;top:13px}
-.pin.c{left:13px;bottom:13px}.pin.d{right:13px;bottom:13px}
-.nband{background:var(--red);color:#FBF3E2;padding:9px clamp(20px,3vw,34px);
-  font:700 11px/1.5 'Barlow',sans-serif;letter-spacing:.28em;text-transform:uppercase;
-  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.inner{padding:clamp(16px,2.4vh,24px) clamp(20px,3vw,34px) 0}
-h1.set{font-family:'Staatliches',Impact,sans-serif;font-weight:400;
-  font-size:clamp(38px,5.4vw,72px);line-height:1;letter-spacing:.012em;color:#17272E;
-  text-shadow:2px 2px 0 rgba(166,58,46,.28)}
-h1.set b{color:var(--red);font-weight:400}
-h1.set xar{font-family:var(--arh),sans-serif;text-shadow:none;line-height:1.16}
-.sub{margin-top:9px;color:#4A5C64;font-size:clamp(14px,1.7vw,16.5px);line-height:1.6;max-width:44ch}
-.hrule{margin:clamp(13px,2vh,18px) 0;height:5px;
-  background:linear-gradient(180deg,#17272E 0 2px,transparent 2px 3px,#17272E 3px 5px)}
-.setlines{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:7px 9px}
-.setlines li{border:2px solid #17272E;padding:5px 11px;
-  font:700 12px/1.5 'Barlow',sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#17272E}
-.setlines li:first-child{background:var(--amber);border-color:#241A08;color:#241A08}
-.pic{margin:clamp(14px,2.2vh,20px) 0 0;border:2px solid #17272E;padding:6px;background:#fff}
-.pic img{width:100%;height:clamp(150px,20vh,196px);object-fit:cover}
-.pic .cap{margin:6px 2px 1px;font:500 12px/1.5 'Barlow',sans-serif;color:#6B7B82}
-.stampline{margin-top:clamp(13px,2vh,18px);display:inline-flex;align-items:baseline;gap:8px;
-  border:3px double var(--red);color:var(--red);padding:7px 13px;
-  font:700 12px/1.3 'Barlow',sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.stampline span:first-child{font-family:'Staatliches',Impact,sans-serif;font-size:22px;letter-spacing:.02em}
-@media(max-width:1100px){
-  .notice{width:min(600px,76vw)}
-  .hasp{right:clamp(20px,4vw,54px);width:78px}
-}
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  background:linear-gradient(180deg,#F8F4EA 0%,var(--paper) 70%);display:flex;flex-direction:column}
+.hin{position:relative;z-index:4;flex:1 1 auto;width:min(1150px,100%);margin-inline:auto;
+  padding:clamp(34px,6vh,68px) 6vw clamp(18px,3vh,28px);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(22px,4vw,60px);flex-wrap:wrap}
+.hleft{flex:1 1 460px;min-width:0}
+h1.set{font-size:clamp(38px,6.4vw,84px);color:#232E34;line-height:1}
+h1.set b{font-weight:400;font-style:italic;color:var(--amber)}
+.arname{display:block;font-family:var(--arh),sans-serif;font-weight:700;color:var(--steel);
+  font-size:clamp(19px,2.5vw,30px);line-height:1.5;margin-top:6px}
+.sub{margin-top:12px;max-width:44ch;color:#4A5A63;font-size:clamp(14.5px,1.7vw,17px);line-height:1.72}
+.hrule{height:1px;background:rgba(35,46,52,.28);margin:clamp(16px,2.6vh,24px) 0}
+.setlines{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.setlines li{border:1px solid rgba(35,46,52,.3);padding:6px 12px;font:600 11.5px/1 'Barlow',sans-serif;
+  letter-spacing:.05em;color:#35434B}
+.setlines li:first-child{background:var(--amber);border-color:var(--amber);color:#221A0C}
+.hright{flex:0 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-bottom:2px}
+.stampline{display:inline-flex;align-items:baseline;gap:8px;color:#5A6870;
+  font:600 12.5px/1 'Barlow',sans-serif;letter-spacing:.04em}
+.stampline .num:first-child{font:700 26px/1 'Fraunces',serif;color:#232E34}
+.hcta{display:flex;flex-wrap:wrap;gap:9px}
+.hcta a{display:inline-flex;align-items:center;text-decoration:none;padding:12px 20px;
+  font:700 13.5px/1 'Barlow',sans-serif;letter-spacing:.03em;background:var(--steel-d);color:var(--paper);
+  border:1px solid var(--iron)}
+.hcta a.hb{background:var(--steel-d)}
+.hcta a.ln{background:transparent;color:#35434B;border-color:rgba(35,46,52,.4)}
+/* the wide band across the fold */
+.hstrip{position:relative;z-index:3;flex:0 0 auto;width:min(1150px,100%);margin:0 auto;
+  padding:0 6vw clamp(22px,4vh,44px)}
+.hstrip figure{position:relative;border:1px solid rgba(35,46,52,.34);padding:9px;background:#FBF8F0;
+  box-shadow:0 18px 40px -14px rgba(35,46,52,.34)}
+.hstrip img{width:100%;aspect-ratio:21/7;object-fit:cover;object-position:50% 86%;display:block}
+.hstrip .cap{display:flex;justify-content:space-between;gap:14px;margin-top:9px;
+  font:600 11px/1 'Barlow',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7C8288}
 @media(max-width:880px){
-  header{display:flex;align-items:center;justify-content:center}
-  .notice{position:relative;left:auto;top:auto;width:min(560px,90vw);margin:0 auto}
-  .hasp{display:none}
-  .pic img{height:150px}
-}
-@media(max-width:430px){
-  .inner{padding:14px 16px 0}
-  .nband{padding:8px 16px;letter-spacing:.18em}
-  .setlines li{font-size:11px;letter-spacing:.07em}
+  .iband{gap:10px;font-size:9.5px;letter-spacing:.2em}
+  .iband .mono{width:30px;height:30px;font-size:12px}
+  .hin{flex-direction:column;align-items:flex-start;gap:20px}
+  h1.set{font-size:clamp(34px,9vw,56px)}
+  .sub{max-width:100%}
+  .hstrip img{aspect-ratio:16/8}
+  .hcta a{flex:1 1 auto;justify-content:center;padding:11px 12px;font-size:12.5px}
 }
 
 /* ---------- sections ---------- */
 section{padding-block:clamp(56px,8vh,96px)}
-.band{background:#E4DCCB}
+/* one section-head system: hairline rule, small label, heading */
+section .wrap .k:first-child{display:block;border-top:1px solid rgba(35,46,52,.28);padding-top:15px}
+.band{background:#E5DECE}
 .two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
 .two h2,.hd{font-size:clamp(28px,4.2vw,46px);margin:8px 0 18px}
 .two p{color:#3C4A52;margin-bottom:15px}
@@ -116,8 +101,8 @@ section{padding-block:clamp(56px,8vh,96px)}
 .pos{background:#FBF7EC;border:2px solid var(--iron);padding:20px;box-shadow:6px 6px 0 rgba(30,46,54,.14)}
 .mini{height:64px;border:2px solid var(--iron);display:flex;margin-bottom:14px;background:#26343C}
 .mini i{display:block;height:100%}
-.mini .f{background:repeating-linear-gradient(90deg,#5B7B86 0 5px,var(--steel) 5px 10px,#33505B 10px 15px,var(--steel-d) 15px 20px)}
-.mini .o{background:radial-gradient(90% 100% at 50% 100%,rgba(217,142,43,.5),rgba(38,52,60,1) 75%)}
+.mini .f{background:repeating-linear-gradient(90deg,#6E7E86 0 5px,var(--steel) 5px 10px,#3E4C55 10px 15px,var(--steel-d) 15px 20px)}
+.mini .o{background:radial-gradient(90% 100% at 50% 100%,rgba(176,138,74,.55),rgba(35,46,52,1) 75%)}
 .pos h3{font-size:19px;margin-bottom:6px;letter-spacing:.02em}
 .pos p{font-size:14.5px;color:#3C4A52;line-height:1.7}
 .nophone{background:var(--iron);color:var(--paper);border:3px solid var(--iron);
@@ -144,15 +129,15 @@ table.hrs td:last-child{text-align:right;color:#3C4A52}
   padding:13px 20px;text-decoration:none;font:700 15px/1 'Barlow',sans-serif;
   border:2px solid var(--iron);margin:6px 8px 0 0;box-shadow:4px 4px 0 rgba(30,46,54,.2)}
 .btn.o{background:transparent;color:#25333B}
-footer{padding:36px 0 128px;color:#6E7B77;font-size:13.5px;text-align:center;background:#E4DCCB}
+footer{padding:36px 0 128px;color:#8A8272;font-size:13.5px;text-align:center;background:#E5DECE}
 
 /* ---------- sticky bar: three gate panels on the floor track ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:7px;align-items:stretch;
-  background:linear-gradient(180deg,#31414A,#22313A);
+  background:linear-gradient(180deg,#3E4C55,#232E34);
   padding:8px 10px calc(9px + env(safe-area-inset-bottom));
   box-shadow:0 -10px 26px rgba(20,31,38,.5)}
 .bar::after{content:"";position:absolute;left:0;right:0;bottom:calc(2px + env(safe-area-inset-bottom));height:3px;
-  background:repeating-linear-gradient(90deg,#8FA2A9 0 20px,transparent 20px 25px)}
+  background:repeating-linear-gradient(90deg,#A0988A 0 20px,transparent 20px 25px)}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
   padding:9px 4px 10px;color:var(--paper);text-decoration:none;font:700 12px/1.2 'Barlow',sans-serif;
   min-height:56px;border:2px solid var(--iron);
@@ -219,44 +204,59 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
+<div class="iband">
+  <span><xen data-edit="t1" data-edit-label="Text (EN): Armenian bakery, mornings only">Armenian bakery, mornings only</xen><xar data-edit="t2" data-edit-label="Text (AR): فرن أرمني، الصبحيات بس">فرن أرمني، الصبحيات بس</xar></span>
+  <span class="mono" aria-hidden="true" data-edit="t3" data-edit-label="Text: HB">HB</span>
+  <span><xen data-edit="t4" data-edit-label="Text (EN): Rue Masaken · Bourj Hammoud">Rue Masaken · Bourj Hammoud</xen><xar data-edit="t5" data-edit-label="Text (AR): شارع المساكن · برج حمود">شارع المساكن · برج حمود</xar></span>
+  <span class="num" data-edit="t6" data-edit-label="Text: 4.7 / 5">4.7 / 5</span>
+</div>
+
 <header>
-  <div class="rail" aria-hidden="true"></div>
-  <span class="hasp" aria-hidden="true"></span>
-  <div class="notice">
-    <span class="pin a" aria-hidden="true"></span><span class="pin b" aria-hidden="true"></span>
-    <span class="pin c" aria-hidden="true"></span><span class="pin d" aria-hidden="true"></span>
-    <p class="nband"><xen data-edit="t1" data-edit-label="Text (EN): Rue Masaken · Bourj Hammoud">Rue Masaken · Bourj Hammoud</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع المساكن · برج حمود">شارع المساكن · برج حمود</xar></p>
-    <div class="inner">
-      <h1 class="set"><xen class="c">HAROUT <b data-edit="t3" data-edit-label="Text: BAKERY">BAKERY</b></xen><xar class="c">فرن <b data-edit="t4" data-edit-label="Text: هاروت">هاروت</b></xar></h1>
-      <p class="sub"><xen data-edit="t5" data-edit-label="Text (EN): Lahmajun and boereg from an Armenian o…">Lahmajun and boereg from an Armenian oven that works mornings only.</xen><xar data-edit="t6" data-edit-label="Text (AR): لحم بعجين وبوريك من فرن أرمني بيشتغل ا…">لحم بعجين وبوريك من فرن أرمني بيشتغل الصبحيات بس.</xar></p>
+  <div class="hin">
+    <div class="hleft">
+      <p class="k"><xen data-edit="t7" data-edit-label="Text (EN): Lahmajun and boereg">Lahmajun and boereg</xen><xar data-edit="t8" data-edit-label="Text (AR): لحم بعجين وبوريك">لحم بعجين وبوريك</xar></p>
+      <h1 class="set"><xen class="c">Harout <b data-edit="t9" data-edit-label="Text: Bakery">Bakery</b></xen><xar class="c">فرن <b data-edit="t10" data-edit-label="Text: هاروت">هاروت</b></xar></h1>
+      <span class="arname" aria-hidden="true" data-edit="t11" data-edit-label="Text: فرن هاروت">فرن هاروت</span>
+      <p class="sub"><xen data-edit="t12" data-edit-label="Text (EN): Lahmajun and boereg from an Armenian o…">Lahmajun and boereg from an Armenian oven that works mornings only.</xen><xar data-edit="t13" data-edit-label="Text (AR): لحم بعجين وبوريك من فرن أرمني بيشتغل ا…">لحم بعجين وبوريك من فرن أرمني بيشتغل الصبحيات بس.</xar></p>
       <div class="hrule" aria-hidden="true"></div>
       <ul class="setlines">
-        <li><xen class="c" data-edit="t7" data-edit-label="Text (EN): Open from 7 AM">Open from 7 AM</xen><xar class="c" data-edit="t8" data-edit-label="Text (AR): فاتحين من 7 الصبح">فاتحين من 7 الصبح</xar></li>
-        <li><xen class="c" data-edit="t9" data-edit-label="Text (EN): Lahmajun">Lahmajun</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></li>
-        <li><xen class="c" data-edit="t11" data-edit-label="Text (EN): Cheese boereg">Cheese boereg</xen><xar class="c" data-edit="t12" data-edit-label="Text (AR): بوريك جبنة">بوريك جبنة</xar></li>
-        <li><xen class="c" data-edit="t13" data-edit-label="Text (EN): Tahinov hatz">Tahinov hatz</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): خبز الطحينة">خبز الطحينة</xar></li>
+        <li><xen class="c" data-edit="t14" data-edit-label="Text (EN): Open from 7 AM">Open from 7 AM</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): فاتحين من 7 الصبح">فاتحين من 7 الصبح</xar></li>
+        <li><xen class="c" data-edit="t16" data-edit-label="Text (EN): Lahmajun">Lahmajun</xen><xar class="c" data-edit="t17" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></li>
+        <li><xen class="c" data-edit="t18" data-edit-label="Text (EN): Cheese boereg">Cheese boereg</xen><xar class="c" data-edit="t19" data-edit-label="Text (AR): بوريك جبنة">بوريك جبنة</xar></li>
+        <li><xen class="c" data-edit="t20" data-edit-label="Text (EN): Tahinov hatz">Tahinov hatz</xen><xar class="c" data-edit="t21" data-edit-label="Text (AR): خبز الطحينة">خبز الطحينة</xar></li>
       </ul>
-      <div class="pic">
-        <img src="img/04.jpg" alt="Two long cheese boereg boats fresh out of the oven on paper">
-        <p class="cap"><xen data-edit="t15" data-edit-label="Text (EN): The long boereg, straight off the ston…">The long boereg, straight off the stone.</xen><xar data-edit="t16" data-edit-label="Text (AR): البوريك الطويل، طالع عن الحجر مباشرة.">البوريك الطويل، طالع عن الحجر مباشرة.</xar></p>
-      </div>
-      <p class="stampline"><span class="num" data-edit="t17" data-edit-label="Text: 4.7">4.7</span> <span><xen>from <span class="num" data-edit="t18" data-edit-label="Text: 184">184</span> Google reviews</xen><xar>من <span class="num" data-edit="t19" data-edit-label="Text: 184">184</span> تقييم على غوغل</xar></span></p>
     </div>
+    <div class="hright">
+      <p class="stampline"><span class="num" data-edit="t22" data-edit-label="Text: 4.7">4.7</span> <span><xen>from <span class="num" data-edit="t23" data-edit-label="Text: 184">184</span> Google reviews</xen><xar>من <span class="num" data-edit="t24" data-edit-label="Text: 184">184</span> تقييم على غوغل</xar></span></p>
+      <div class="hcta">
+        <a class="hb" href="https://www.google.com/maps?cid=13383139762702125025" target="_blank" rel="noopener"><xen data-edit="t25" data-edit-label="Text (EN): Find the oven">Find the oven</xen><xar data-edit="t26" data-edit-label="Text (AR): لاقي الفرن">لاقي الفرن</xar></a>
+        <a class="ln" href="#hrs"><xen data-edit="t27" data-edit-label="Text (EN): Morning hours">Morning hours</xen><xar data-edit="t28" data-edit-label="Text (AR): أوقات الصبح">أوقات الصبح</xar></a>
+      </div>
+    </div>
+  </div>
+  <div class="hstrip">
+    <figure>
+      <img src="img/01.jpg" alt="The red Harout awning over the bakery door on Rue Masaken, Bourj Hammoud">
+      <figcaption class="cap">
+        <span><xen data-edit="t29" data-edit-label="Text (EN): The red awning on Rue Masaken, script …">The red awning on Rue Masaken, script and all</xen><xar data-edit="t30" data-edit-label="Text (AR): الشمسية الحمرا بشارع المساكن، بخطها">الشمسية الحمرا بشارع المساكن، بخطها</xar></span>
+        <span><xen data-edit="t31" data-edit-label="Text (EN): Bourj Hammoud">Bourj Hammoud</xen><xar data-edit="t32" data-edit-label="Text (AR): برج حمود">برج حمود</xar></span>
+      </figcaption>
+    </figure>
   </div>
 </header>
 
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t20" data-edit-label="Text (EN): The bakery">The bakery</xen><xar data-edit="t21" data-edit-label="Text (AR): الفرن">الفرن</xar></p>
-      <h2><xen data-edit="t22" data-edit-label="Text (EN): The gate opens at seven, and the stree…">The gate opens at seven, and the street knows</xen><xar data-edit="t23" data-edit-label="Text (AR): الباب بيفتح الساعة 7، والشارع بيعرف">الباب بيفتح الساعة 7، والشارع بيعرف</xar></h2>
-      <p><xen data-edit="t24" data-edit-label="Text (EN): Harout bakes just north of the Bourj H…">Harout bakes just north of the Bourj Hammoud stadium, on Rue Masaken. Lahmajun is the house trade: thin, spiced, cut in quarters and folded warm, next to trays of cheese boereg in every shape the oven allows, long boats, triangles, crisp-edged squares.</xen><xar data-edit="t25" data-edit-label="Text (AR): هاروت بيخبز شمال ملعب برج حمود، بشارع …">هاروت بيخبز شمال ملعب برج حمود، بشارع المساكن. اللحم بعجين هو صنعة البيت: رقيق، متبّل، مقطّع أرباع وبينطوى وهو سخن، حدّ صواني بوريك الجبنة بكل شكل بيسمح فيه الفرن، قوارب طويلة، مثلثات، مربعات محمّصة الأطراف.</xar></p>
-      <p><xen data-edit="t26" data-edit-label="Text (EN): The red awning over the gate carries t…">The red awning over the gate carries the name in script, and its far corner still reads "Since 1972". Fifty years on, one review starts with a passerby who only came in because the street smelled of it.</xen><xar data-edit="t27" data-edit-label="Text (AR): التندة الحمرا فوق الباب حاملة الاسم بخ…">التندة الحمرا فوق الباب حاملة الاسم بخط مكتوب، وزاويتها البعيدة بعدها مكتوب عليها "Since 1972". بعد خمسين سنة، في تقييم بيبلّش بواحد مارق دخل بس لأن ريحة الشارع كلها خبز.</xar></p>
-      <p><xen data-edit="t28" data-edit-label="Text (EN): It works like a bakery worked before t…">It works like a bakery worked before telephones: mornings only, Sundays never, and no number to call. You come to the gate.</xen><xar data-edit="t29" data-edit-label="Text (AR): وبيشتغل متل ما كانت الأفران تشتغل قبل …">وبيشتغل متل ما كانت الأفران تشتغل قبل التلفونات: الصبح بس، والأحد أبدًا، وما في رقم تتصل فيه. بتجي عالباب.</xar></p>
+      <p class="k"><xen data-edit="t33" data-edit-label="Text (EN): The bakery">The bakery</xen><xar data-edit="t34" data-edit-label="Text (AR): الفرن">الفرن</xar></p>
+      <h2><xen data-edit="t35" data-edit-label="Text (EN): The gate opens at seven, and the stree…">The gate opens at seven, and the street knows</xen><xar data-edit="t36" data-edit-label="Text (AR): الباب بيفتح الساعة 7، والشارع بيعرف">الباب بيفتح الساعة 7، والشارع بيعرف</xar></h2>
+      <p><xen data-edit="t37" data-edit-label="Text (EN): Harout bakes just north of the Bourj H…">Harout bakes just north of the Bourj Hammoud stadium, on Rue Masaken. Lahmajun is the house trade: thin, spiced, cut in quarters and folded warm, next to trays of cheese boereg in every shape the oven allows, long boats, triangles, crisp-edged squares.</xen><xar data-edit="t38" data-edit-label="Text (AR): هاروت بيخبز شمال ملعب برج حمود، بشارع …">هاروت بيخبز شمال ملعب برج حمود، بشارع المساكن. اللحم بعجين هو صنعة البيت: رقيق، متبّل، مقطّع أرباع وبينطوى وهو سخن، حدّ صواني بوريك الجبنة بكل شكل بيسمح فيه الفرن، قوارب طويلة، مثلثات، مربعات محمّصة الأطراف.</xar></p>
+      <p><xen data-edit="t39" data-edit-label="Text (EN): The red awning over the gate carries t…">The red awning over the gate carries the name in script, and its far corner still reads "Since 1972". Fifty years on, one review starts with a passerby who only came in because the street smelled of it.</xen><xar data-edit="t40" data-edit-label="Text (AR): التندة الحمرا فوق الباب حاملة الاسم بخ…">التندة الحمرا فوق الباب حاملة الاسم بخط مكتوب، وزاويتها البعيدة بعدها مكتوب عليها "Since 1972". بعد خمسين سنة، في تقييم بيبلّش بواحد مارق دخل بس لأن ريحة الشارع كلها خبز.</xar></p>
+      <p><xen data-edit="t41" data-edit-label="Text (EN): It works like a bakery worked before t…">It works like a bakery worked before telephones: mornings only, Sundays never, and no number to call. You come to the gate.</xen><xar data-edit="t42" data-edit-label="Text (AR): وبيشتغل متل ما كانت الأفران تشتغل قبل …">وبيشتغل متل ما كانت الأفران تشتغل قبل التلفونات: الصبح بس، والأحد أبدًا، وما في رقم تتصل فيه. بتجي عالباب.</xar></p>
     </div>
     <div>
       <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The Harout Bakery red awning under red shutters on Rue Masaken">
-        <p class="cap"><xen data-edit="t30" data-edit-label="Text (EN): The red awning on Rue Masaken, 'Since …">The red awning on Rue Masaken, "Since 1972" printed at its edge.</xen><xar data-edit="t31" data-edit-label="Text (AR): التندة الحمرا بشارع المساكن، و'Since 1…">التندة الحمرا بشارع المساكن، و"Since 1972" مطبوعة على طرفها.</xar></p>
+        <p class="cap"><xen data-edit="t43" data-edit-label="Text (EN): The red awning on Rue Masaken, 'Since …">The red awning on Rue Masaken, "Since 1972" printed at its edge.</xen><xar data-edit="t44" data-edit-label="Text (AR): التندة الحمرا بشارع المساكن، و'Since 1…">التندة الحمرا بشارع المساكن، و"Since 1972" مطبوعة على طرفها.</xar></p>
       </div>
     </div>
   </div>
@@ -264,43 +264,43 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t32" data-edit-label="Text (EN): Off the stone">Off the stone</xen><xar data-edit="t33" data-edit-label="Text (AR): من على الحجر">من على الحجر</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t34" data-edit-label="Text (EN): Three things to carry out warm">Three things to carry out warm</xen><xar data-edit="t35" data-edit-label="Text (AR): تلات أشياء تاخدن وهنّي سخنين">تلات أشياء تاخدن وهنّي سخنين</xar></h2>
+    <p class="k"><xen data-edit="t45" data-edit-label="Text (EN): Off the stone">Off the stone</xen><xar data-edit="t46" data-edit-label="Text (AR): من على الحجر">من على الحجر</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t47" data-edit-label="Text (EN): Three things to carry out warm">Three things to carry out warm</xen><xar data-edit="t48" data-edit-label="Text (AR): تلات أشياء تاخدن وهنّي سخنين">تلات أشياء تاخدن وهنّي سخنين</xar></h2>
     <div class="grid3">
       <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="Quarters of lahmajun on a patterned tile table">
-        <div class="t"><h3><xen data-edit="t36" data-edit-label="Text (EN): Lahmajun">Lahmajun</xen><xar data-edit="t37" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></h3>
-        <p><xen data-edit="t38" data-edit-label="Text (EN): Thin as paper, baked to the edge. A re…">Thin as paper, baked to the edge. A reviewer's word for it: heavenly is for the boereg, but the lahmajun made him promise to return.</xen><xar data-edit="t39" data-edit-label="Text (AR): رقيق متل الورقة، مخبوز للطرف. حسب أحد …">رقيق متل الورقة، مخبوز للطرف. حسب أحد التقييمات: كلمة خيالي كانت للبوريك، بس اللحم بعجين خلّاه يوعد إنه يرجع.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t49" data-edit-label="Text (EN): Lahmajun">Lahmajun</xen><xar data-edit="t50" data-edit-label="Text (AR): لحم بعجين">لحم بعجين</xar></h3>
+        <p><xen data-edit="t51" data-edit-label="Text (EN): Thin as paper, baked to the edge. A re…">Thin as paper, baked to the edge. A reviewer's word for it: heavenly is for the boereg, but the lahmajun made him promise to return.</xen><xar data-edit="t52" data-edit-label="Text (AR): رقيق متل الورقة، مخبوز للطرف. حسب أحد …">رقيق متل الورقة، مخبوز للطرف. حسب أحد التقييمات: كلمة خيالي كانت للبوريك، بس اللحم بعجين خلّاه يوعد إنه يرجع.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="A triangle cheese boereg served on paper on a plate">
-        <div class="t"><h3><xen data-edit="t40" data-edit-label="Text (EN): The triangle boereg">The triangle boereg</xen><xar data-edit="t41" data-edit-label="Text (AR): البوريك المثلث">البوريك المثلث</xar></h3>
-        <p><xen data-edit="t42" data-edit-label="Text (EN): Cheese folded into a corner-perfect tr…">Cheese folded into a corner-perfect triangle, blistered on top, molten inside.</xen><xar data-edit="t43" data-edit-label="Text (AR): جبنة مطوية بمثلث مضبوط الزوايا، منفوخ …">جبنة مطوية بمثلث مضبوط الزوايا، منفوخ ومحمّص من فوق، وسايح من جوّا.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t53" data-edit-label="Text (EN): The triangle boereg">The triangle boereg</xen><xar data-edit="t54" data-edit-label="Text (AR): البوريك المثلث">البوريك المثلث</xar></h3>
+        <p><xen data-edit="t55" data-edit-label="Text (EN): Cheese folded into a corner-perfect tr…">Cheese folded into a corner-perfect triangle, blistered on top, molten inside.</xen><xar data-edit="t56" data-edit-label="Text (AR): جبنة مطوية بمثلث مضبوط الزوايا، منفوخ …">جبنة مطوية بمثلث مضبوط الزوايا، منفوخ ومحمّص من فوق، وسايح من جوّا.</xar></p></div>
       </div>
       <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="Crisp-edged boereg sticks cut on baking paper in the sun">
-        <div class="t"><h3><xen data-edit="t44" data-edit-label="Text (EN): The crisp cuts">The crisp cuts</xen><xar data-edit="t45" data-edit-label="Text (AR): القطع المقرمشة">القطع المقرمشة</xar></h3>
-        <p><xen data-edit="t46" data-edit-label="Text (EN): Edges first. The trays are cut while t…">Edges first. The trays are cut while they still crackle, and the corner pieces go fastest.</xen><xar data-edit="t47" data-edit-label="Text (AR): الأطراف أول شي. الصواني بتنقطع وهنّي ل…">الأطراف أول شي. الصواني بتنقطع وهنّي لسّا عم يقرمشوا، وقطع الزوايا بتخلص أول.</xar></p></div>
+        <div class="t"><h3><xen data-edit="t57" data-edit-label="Text (EN): The crisp cuts">The crisp cuts</xen><xar data-edit="t58" data-edit-label="Text (AR): القطع المقرمشة">القطع المقرمشة</xar></h3>
+        <p><xen data-edit="t59" data-edit-label="Text (EN): Edges first. The trays are cut while t…">Edges first. The trays are cut while they still crackle, and the corner pieces go fastest.</xen><xar data-edit="t60" data-edit-label="Text (AR): الأطراف أول شي. الصواني بتنقطع وهنّي ل…">الأطراف أول شي. الصواني بتنقطع وهنّي لسّا عم يقرمشوا، وقطع الزوايا بتخلص أول.</xar></p></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t48" data-edit-label="Text (EN): A day on the track">A day on the track</xen><xar data-edit="t49" data-edit-label="Text (AR): نهار على السكة">نهار على السكة</xar></p>
-  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t50" data-edit-label="Text (EN): Three positions of the gate">Three positions of the gate</xen><xar data-edit="t51" data-edit-label="Text (AR): تلات وضعيات للباب">تلات وضعيات للباب</xar></h2>
+  <p class="k"><xen data-edit="t61" data-edit-label="Text (EN): A day on the track">A day on the track</xen><xar data-edit="t62" data-edit-label="Text (AR): نهار على السكة">نهار على السكة</xar></p>
+  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t63" data-edit-label="Text (EN): Three positions of the gate">Three positions of the gate</xen><xar data-edit="t64" data-edit-label="Text (AR): تلات وضعيات للباب">تلات وضعيات للباب</xar></h2>
   <div class="positions">
     <div class="pos rev">
       <div class="mini" aria-hidden="true"><i class="f" style="width:100%"></i></div>
-      <h3><xen data-edit="t52" data-edit-label="Text (EN): Before seven">Before seven</xen><xar data-edit="t53" data-edit-label="Text (AR): قبل السبعة">قبل السبعة</xar></h3>
-      <p><xen data-edit="t54" data-edit-label="Text (EN): Folded shut. Behind it the dough that …">Folded shut. Behind it the dough that rose overnight is already being rolled.</xen><xar data-edit="t55" data-edit-label="Text (AR): مطوي ومسكّر. وراه العجين يلّي اختمر طو…">مطوي ومسكّر. وراه العجين يلّي اختمر طول الليل عم ينرقّ.</xar></p>
+      <h3><xen data-edit="t65" data-edit-label="Text (EN): Before seven">Before seven</xen><xar data-edit="t66" data-edit-label="Text (AR): قبل السبعة">قبل السبعة</xar></h3>
+      <p><xen data-edit="t67" data-edit-label="Text (EN): Folded shut. Behind it the dough that …">Folded shut. Behind it the dough that rose overnight is already being rolled.</xen><xar data-edit="t68" data-edit-label="Text (AR): مطوي ومسكّر. وراه العجين يلّي اختمر طو…">مطوي ومسكّر. وراه العجين يلّي اختمر طول الليل عم ينرقّ.</xar></p>
     </div>
     <div class="pos rev">
       <div class="mini" aria-hidden="true"><i class="f" style="width:38%"></i><i class="o" style="width:62%"></i></div>
-      <h3><xen data-edit="t56" data-edit-label="Text (EN): 7 AM to 3 PM">7 AM to 3 PM</xen><xar data-edit="t57" data-edit-label="Text (AR): من 7 الصبح لـ3 العصر">من 7 الصبح لـ3 العصر</xar></h3>
-      <p><xen data-edit="t58" data-edit-label="Text (EN): Pushed to the side. Trays out, quarter…">Pushed to the side. Trays out, quarters folded, the queue moves fast.</xen><xar data-edit="t59" data-edit-label="Text (AR): مدفوش عالجنب. الصواني طالعة، الأرباع ع…">مدفوش عالجنب. الصواني طالعة، الأرباع عم تنطوى، والدور ماشي بسرعة.</xar></p>
+      <h3><xen data-edit="t69" data-edit-label="Text (EN): 7 AM to 3 PM">7 AM to 3 PM</xen><xar data-edit="t70" data-edit-label="Text (AR): من 7 الصبح لـ3 العصر">من 7 الصبح لـ3 العصر</xar></h3>
+      <p><xen data-edit="t71" data-edit-label="Text (EN): Pushed to the side. Trays out, quarter…">Pushed to the side. Trays out, quarters folded, the queue moves fast.</xen><xar data-edit="t72" data-edit-label="Text (AR): مدفوش عالجنب. الصواني طالعة، الأرباع ع…">مدفوش عالجنب. الصواني طالعة، الأرباع عم تنطوى، والدور ماشي بسرعة.</xar></p>
     </div>
     <div class="pos rev">
       <div class="mini" aria-hidden="true"><i class="f" style="width:100%;opacity:.55"></i></div>
-      <h3><xen data-edit="t60" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t61" data-edit-label="Text (AR): الأحد">الأحد</xar></h3>
-      <p><xen data-edit="t62" data-edit-label="Text (EN): It does not open at all. The oven rest…">It does not open at all. The oven rests like everyone else in the quarter.</xen><xar data-edit="t63" data-edit-label="Text (AR): ما بيفتح أبدًا. الفرن بيرتاح متل كل ال…">ما بيفتح أبدًا. الفرن بيرتاح متل كل الحي.</xar></p>
+      <h3><xen data-edit="t73" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t74" data-edit-label="Text (AR): الأحد">الأحد</xar></h3>
+      <p><xen data-edit="t75" data-edit-label="Text (EN): It does not open at all. The oven rest…">It does not open at all. The oven rests like everyone else in the quarter.</xen><xar data-edit="t76" data-edit-label="Text (AR): ما بيفتح أبدًا. الفرن بيرتاح متل كل ال…">ما بيفتح أبدًا. الفرن بيرتاح متل كل الحي.</xar></p>
     </div>
   </div>
 </section>
@@ -308,15 +308,15 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="band">
   <div class="wrap">
     <div class="nophone rev">
-      <h2><xen class="c">THERE IS <b data-edit="t64" data-edit-label="Text: NO PHONE">NO PHONE</b> AT HAROUT</xen><xar class="c">ما في <b data-edit="t65" data-edit-label="Text: تلفون">تلفون</b> عند هاروت</xar></h2>
-      <p><xen data-edit="t66" data-edit-label="Text (EN): No number is listed anywhere, and none…">No number is listed anywhere, and none is printed here. The bakery answers in person, mornings only. The map below walks you to the gate, and the hours tell you when it is pushed open.</xen><xar data-edit="t67" data-edit-label="Text (AR): ما في رقم مسجّل بأي مكان، وما في رقم م…">ما في رقم مسجّل بأي مكان، وما في رقم مطبوع هون. الفرن بيردّ عليك وجهًا لوجه، الصبح بس. الخريطة تحت بتوصّلك عالباب، والدوام بيقلّك إيمتى بيكون مفتوح.</xar></p>
+      <h2><xen class="c">THERE IS <b data-edit="t77" data-edit-label="Text: NO PHONE">NO PHONE</b> AT HAROUT</xen><xar class="c">ما في <b data-edit="t78" data-edit-label="Text: تلفون">تلفون</b> عند هاروت</xar></h2>
+      <p><xen data-edit="t79" data-edit-label="Text (EN): No number is listed anywhere, and none…">No number is listed anywhere, and none is printed here. The bakery answers in person, mornings only. The map below walks you to the gate, and the hours tell you when it is pushed open.</xen><xar data-edit="t80" data-edit-label="Text (AR): ما في رقم مسجّل بأي مكان، وما في رقم م…">ما في رقم مسجّل بأي مكان، وما في رقم مطبوع هون. الفرن بيردّ عليك وجهًا لوجه، الصبح بس. الخريطة تحت بتوصّلك عالباب، والدوام بيقلّك إيمتى بيكون مفتوح.</xar></p>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t68" data-edit-label="Text (EN): From the queue">From the queue</xen><xar data-edit="t69" data-edit-label="Text (AR): من الدور">من الدور</xar></p>
-  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t70" data-edit-label="Text (EN): Photographs from the bakery">Photographs from the bakery</xen><xar data-edit="t71" data-edit-label="Text (AR): صور من الفرن">صور من الفرن</xar></h2>
+  <p class="k"><xen data-edit="t81" data-edit-label="Text (EN): From the queue">From the queue</xen><xar data-edit="t82" data-edit-label="Text (AR): من الدور">من الدور</xar></p>
+  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t83" data-edit-label="Text (EN): Photographs from the bakery">Photographs from the bakery</xen><xar data-edit="t84" data-edit-label="Text (AR): صور من الفرن">صور من الفرن</xar></h2>
   <div class="gal">
     <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="Long cheese boereg boats on paper"></a>
     <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="Lahmajun quarters on the tiled table"></a>
@@ -327,12 +327,12 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t72" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t73" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t74" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t75" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <p class="k"><xen data-edit="t85" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t86" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t87" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t88" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
     <div class="revs">
-      <div class="rev-c rev"><q dir="ltr" data-edit="t76" data-edit-label="Quote: The cheese-onion-parsley long beoreg w…">The cheese-onion-parsley long beoreg was heavenly! The lahmejun was good, too. Randomly smelled the bakery while passing by. Stopped to try it. Will definitely return again.</q><cite dir="ltr">Սէրուժ Ուրիշեան</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t77" data-edit-label="Quote: A great bakery with fast service and v…">A great bakery with fast service and very tasty products. The soujouk is especially delicious, and the pizza man2ouche is fresh, flavorful, and perfectly prepared. Friendly service and excellent quality make it a place worth visiting again.</q><cite data-edit="t78" data-edit-label="Credit: Michel Dina">Michel Dina</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t79" data-edit-label="Quote: Super tasty !! Cheese manouche is so g…">Super tasty !! Cheese manouche is so good! Will try more items!</q><cite data-edit="t80" data-edit-label="Credit: Catherine Otrakji">Catherine Otrakji</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t89" data-edit-label="Quote: The cheese-onion-parsley long beoreg w…">The cheese-onion-parsley long beoreg was heavenly! The lahmejun was good, too. Randomly smelled the bakery while passing by. Stopped to try it. Will definitely return again.</q><cite dir="ltr">Սէրուժ Ուրիշեան</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t90" data-edit-label="Quote: A great bakery with fast service and v…">A great bakery with fast service and very tasty products. The soujouk is especially delicious, and the pizza man2ouche is fresh, flavorful, and perfectly prepared. Friendly service and excellent quality make it a place worth visiting again.</q><cite data-edit="t91" data-edit-label="Credit: Michel Dina">Michel Dina</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t92" data-edit-label="Quote: Super tasty !! Cheese manouche is so g…">Super tasty !! Cheese manouche is so good! Will try more items!</q><cite data-edit="t93" data-edit-label="Credit: Catherine Otrakji">Catherine Otrakji</cite></div>
     </div>
   </div>
 </section>
@@ -340,44 +340,44 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="wrap" id="hrs">
   <div class="visit">
     <div>
-      <p class="k"><xen data-edit="t81" data-edit-label="Text (EN): Morning hours">Morning hours</xen><xar data-edit="t82" data-edit-label="Text (AR): دوام الصبح">دوام الصبح</xar></p>
-      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t83" data-edit-label="Text (EN): Seven to three, six days">Seven to three, six days</xen><xar data-edit="t84" data-edit-label="Text (AR): من 7 لـ3، ست أيام">من 7 لـ3، ست أيام</xar></h2>
+      <p class="k"><xen data-edit="t94" data-edit-label="Text (EN): Morning hours">Morning hours</xen><xar data-edit="t95" data-edit-label="Text (AR): دوام الصبح">دوام الصبح</xar></p>
+      <h2 class="hd" style="margin:8px 0 18px"><xen data-edit="t96" data-edit-label="Text (EN): Seven to three, six days">Seven to three, six days</xen><xar data-edit="t97" data-edit-label="Text (AR): من 7 لـ3، ست أيام">من 7 لـ3، ست أيام</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t85" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t86" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t87" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t88" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t89" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t90" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t91" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t92" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t93" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t94" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t95" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t96" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t97" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t98" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t99" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t100" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t101" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t102" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
-        <tr><td><xen data-edit="t103" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t104" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t105" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t106" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
+        <tr><td><xen data-edit="t98" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t99" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td class="num" data-edit="t100" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t101" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t102" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td class="num" data-edit="t103" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t104" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t105" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td class="num" data-edit="t106" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t108" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td class="num" data-edit="t109" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t110" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t111" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td class="num" data-edit="t112" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t113" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t114" data-edit-label="Text (AR): السبت">السبت</xar></td><td class="num" data-edit="t115" data-edit-label="Menu / table: 7 AM–3 PM">7 AM–3 PM</td></tr>
+        <tr><td><xen data-edit="t116" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t117" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t118" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
       </table>
-      <p class="cap"><xen data-edit="t107" data-edit-label="Text (EN): Come before noon for the full spread o…">Come before noon for the full spread of trays.</xen><xar data-edit="t108" data-edit-label="Text (AR): تعا قبل الضهر لتلاقي كل الصواني بعدها …">تعا قبل الضهر لتلاقي كل الصواني بعدها موجودة.</xar></p>
+      <p class="cap"><xen data-edit="t120" data-edit-label="Text (EN): Come before noon for the full spread o…">Come before noon for the full spread of trays.</xen><xar data-edit="t121" data-edit-label="Text (AR): تعا قبل الضهر لتلاقي كل الصواني بعدها …">تعا قبل الضهر لتلاقي كل الصواني بعدها موجودة.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t109" data-edit-label="Text (EN): Find the gate">Find the gate</xen><xar data-edit="t110" data-edit-label="Text (AR): لاقي الباب">لاقي الباب</xar></p>
-      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t111" data-edit-label="Text (EN): North of the stadium, Bourj Hammoud">North of the stadium, Bourj Hammoud</xen><xar data-edit="t112" data-edit-label="Text (AR): شمال الملعب، برج حمود">شمال الملعب، برج حمود</xar></h3>
-      <p class="k"><xen data-edit="t113" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t114" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t115" data-edit-label="Text: Rue Masaken, Bourj Hammoud">Rue Masaken, Bourj Hammoud</p>
-      <p class="k" style="margin-top:20px"><xen data-edit="t116" data-edit-label="Text (EN): Phone">Phone</xen><xar data-edit="t117" data-edit-label="Text (AR): الهاتف">الهاتف</xar></p>
-      <p class="ph"><xen class="c" data-edit="t118" data-edit-label="Text (EN): No phone line. Come to the counter.">No phone line. Come to the counter.</xen><xar class="c" data-edit="t119" data-edit-label="Text (AR): ما في خط هاتف. تعا عالكاونتر.">ما في خط هاتف. تعا عالكاونتر.</xar></p>
+      <p class="k"><xen data-edit="t122" data-edit-label="Text (EN): Find the gate">Find the gate</xen><xar data-edit="t123" data-edit-label="Text (AR): لاقي الباب">لاقي الباب</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t124" data-edit-label="Text (EN): North of the stadium, Bourj Hammoud">North of the stadium, Bourj Hammoud</xen><xar data-edit="t125" data-edit-label="Text (AR): شمال الملعب، برج حمود">شمال الملعب، برج حمود</xar></h3>
+      <p class="k"><xen data-edit="t126" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t127" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t128" data-edit-label="Text: Rue Masaken, Bourj Hammoud">Rue Masaken, Bourj Hammoud</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t129" data-edit-label="Text (EN): Phone">Phone</xen><xar data-edit="t130" data-edit-label="Text (AR): الهاتف">الهاتف</xar></p>
+      <p class="ph"><xen class="c" data-edit="t131" data-edit-label="Text (EN): No phone line. Come to the counter.">No phone line. Come to the counter.</xen><xar class="c" data-edit="t132" data-edit-label="Text (AR): ما في خط هاتف. تعا عالكاونتر.">ما في خط هاتف. تعا عالكاونتر.</xar></p>
       <p style="margin-top:22px">
-        <a class="btn" href="https://www.google.com/maps?cid=13383139762702125025" target="_blank" rel="noopener"><xen data-edit="t120" data-edit-label="Text (EN): Walk me there">Walk me there</xen><xar data-edit="t121" data-edit-label="Text (AR): وصّلني لهونيك">وصّلني لهونيك</xar></a>
-        <a class="btn o" href="https://www.facebook.com/p/Bakery-Harout-100054594902557/" target="_blank" rel="noopener" data-edit="t122" data-edit-label="Button / link: Facebook">Facebook</a>
+        <a class="btn" href="https://www.google.com/maps?cid=13383139762702125025" target="_blank" rel="noopener"><xen data-edit="t133" data-edit-label="Text (EN): Walk me there">Walk me there</xen><xar data-edit="t134" data-edit-label="Text (AR): وصّلني لهونيك">وصّلني لهونيك</xar></a>
+        <a class="btn o" href="https://www.facebook.com/p/Bakery-Harout-100054594902557/" target="_blank" rel="noopener" data-edit="t135" data-edit-label="Button / link: Facebook">Facebook</a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t123" data-edit-label="Text (EN): Harout Bakery, Rue Masaken, Bourj Hamm…">Harout Bakery, Rue Masaken, Bourj Hammoud.</xen><xar data-edit="t124" data-edit-label="Text (AR): فرن هاروت، شارع المساكن، برج حمود.">فرن هاروت، شارع المساكن، برج حمود.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t125" data-edit-label="Text (EN): No phone, no apps. A gate that folds o…">No phone, no apps. A gate that folds open at seven, and flour that speaks for itself.</xen><xar data-edit="t126" data-edit-label="Text (AR): لا تلفون ولا تطبيقات. باب بينطوي وبيفت…">لا تلفون ولا تطبيقات. باب بينطوي وبيفتح الساعة 7، وطحين بيحكي عن حاله.</xar></p>
+  <p><xen data-edit="t136" data-edit-label="Text (EN): Harout Bakery, Rue Masaken, Bourj Hamm…">Harout Bakery, Rue Masaken, Bourj Hammoud.</xen><xar data-edit="t137" data-edit-label="Text (AR): فرن هاروت، شارع المساكن، برج حمود.">فرن هاروت، شارع المساكن، برج حمود.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t138" data-edit-label="Text (EN): No phone, no apps. A gate that folds o…">No phone, no apps. A gate that folds open at seven, and flour that speaks for itself.</xen><xar data-edit="t139" data-edit-label="Text (AR): لا تلفون ولا تطبيقات. باب بينطوي وبيفت…">لا تلفون ولا تطبيقات. باب بينطوي وبيفتح الساعة 7، وطحين بيحكي عن حاله.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a class="w" href="https://www.google.com/maps?cid=13383139762702125025" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t127" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t128" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.facebook.com/p/Bakery-Harout-100054594902557/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t129" data-edit-label="Text: Facebook">Facebook</span></a>
-  <a href="#hrs"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8m-.5 3v5.3l4.4 2.6.8-1.3-3.7-2.2V7z"/></svg><span><xen data-edit="t130" data-edit-label="Text (EN): Hours">Hours</xen><xar data-edit="t131" data-edit-label="Text (AR): الدوام">الدوام</xar></span></a>
+  <a class="w" href="https://www.google.com/maps?cid=13383139762702125025" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t140" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t141" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.facebook.com/p/Bakery-Harout-100054594902557/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.4H7.8V14h2.7v8z"/></svg><span data-edit="t142" data-edit-label="Text: Facebook">Facebook</span></a>
+  <a href="#hrs"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8m-.5 3v5.3l4.4 2.6.8-1.3-3.7-2.2V7z"/></svg><span><xen data-edit="t143" data-edit-label="Text (EN): Hours">Hours</xen><xar data-edit="t144" data-edit-label="Text (AR): الدوام">الدوام</xar></span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="فرن هاروت · شارع المساكن، برج حمود" data-edit="t132" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="فرن هاروت · شارع المساكن، برج حمود" data-edit="t145" data-edit-label="Button: عربي">عربي</button>
 </body></html>

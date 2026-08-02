@@ -5,93 +5,83 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pertutti · Martakla, Baabda</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Marcellus&family=Karla:wght@400;500;700&family=Alexandria:wght@500;700&family=Mada:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Karla:wght@400;500;600;700&family=Lalezar&family=Mada:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Alexandria';--arb:'Mada';
-  --mint:#B9CDBB;--mint2:#A6BEA9;--sage:#2F5244;--cloth:#F7F1E1;--tomato:#C23B2E;--terra:#B9714C;--ink:#20302A;
+  --arh:'Lalezar';--arb:'Mada';
+  --mint:#F3EEE2;--mint2:#E6DCC8;--sage:#3B1E33;--cloth:#F7F1E1;--tomato:#C99A3E;--terra:#8E5F7E;--ink:#221A20;
+  --plum:#3B1E33;--plumd:#2A1325;--gold:#C99A3E;
   --line:rgba(32,48,42,.18);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--mint);color:var(--ink);font:400 16.5px/1.75 'Karla',system-ui,sans-serif}
 .wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Marcellus',serif;font-weight:400;line-height:1.08;letter-spacing:.02em}
+h1,h2,h3{font-family:'Prata',serif;font-weight:400;line-height:1.08;letter-spacing:.02em}
 a{color:inherit}
 img{display:block;max-width:100%}
 .k{font:700 11.5px/1.5 'Karla',sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--sage)}
 
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
-  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:2px;cursor:pointer;
-  background:var(--tomato);color:#FBF5E6;border:1.5px solid #7E2119;-webkit-appearance:none;
-  box-shadow:0 4px 14px rgba(32,48,42,.3);min-width:58px;text-align:center}
+.lngt{font:600 12.5px/1 var(--arb),sans-serif;padding:9px 13px;min-width:54px;text-align:center;cursor:pointer;
+  background:transparent;color:var(--cloth);border:1.5px solid rgba(247,241,225,.48);border-radius:2px;
+  -webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: the pasta jar on the shelf against the mint wall ---------- */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;flex-direction:column;justify-content:flex-start;padding-top:clamp(40px,7vh,84px);
-  background:
-   radial-gradient(1.6px 1.6px at 10px 16px,rgba(47,82,68,.1),transparent 60%) 0 0/39px 43px,
-   radial-gradient(1.2px 1.2px at 27px 7px,rgba(47,82,68,.07),transparent 60%) 0 0/57px 49px,
-   radial-gradient(70% 48% at 22% 8%,rgba(255,255,255,.4),transparent 62%),
-   linear-gradient(170deg,#CFE7CE 0%,#AFD1B1 50%,#8FBB95 100%)}
-/* the terracotta floor the room stands on */
-.floor{position:absolute;left:0;right:0;bottom:0;height:clamp(38px,6vh,58px);z-index:1;
-  background:
-   repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 2px,transparent 2px 88px),
-   linear-gradient(180deg,#D28457 0%,#B5623C 40%,#93492C 100%);
-  box-shadow:0 -2px 0 rgba(32,48,42,.16),0 -18px 34px rgba(47,82,68,.14)}
-.clothwrap{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;padding-inline:6vw}
-.cloth{width:min(760px,72%)}
-.kick{font:700 11.5px/1.5 'Karla',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:var(--sage)}
-.cloth h1{margin-top:12px;font-family:'Bodoni Moda',serif;font-weight:900;line-height:.9;
-  font-size:clamp(56px,12.4vw,176px);letter-spacing:-.01em;color:var(--ink)}
-.cloth h1 b{color:var(--tomato);font-weight:900}
-html.ar .cloth h1{font-size:clamp(46px,9vw,124px)}
-.meaning{margin-top:10px;font:400 clamp(15px,1.9vw,21px)/1.4 'Bodoni Moda',serif;font-style:italic;color:var(--sage)}
-.cloth .sub{margin-top:14px;max-width:48ch;color:#2C3F36;font-size:clamp(14.5px,1.7vw,17px);line-height:1.68}
-.platebtnrow{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:18px}
-.dot{background:var(--sage);color:#F2F7F1;border-radius:99px;padding:9px 16px;
-  font:700 13px/1 'Karla',sans-serif;letter-spacing:.05em}
-.dot .num{font-size:15.5px}
-.chip{border:1.5px solid rgba(47,82,68,.4);color:var(--sage);border-radius:99px;padding:8px 14px;
-  font:600 12.5px/1 'Karla',sans-serif;background:rgba(255,255,255,.72)}
-/* the pass, framed and hung low */
-.boardpane{position:absolute;z-index:4;left:6vw;bottom:clamp(86px,14vh,128px);width:min(500px,44vw);
-  padding:10px;background:#FBF7EC;border:1px solid rgba(47,82,68,.28);
-  box-shadow:0 22px 42px rgba(47,82,68,.26)}
-.boardpane .bd{overflow:hidden}
-.boardpane img{width:100%;height:clamp(112px,16vh,160px);object-fit:cover;display:block}
-/* the shelf and its jar */
-.shelf{position:absolute;z-index:3;right:0;bottom:clamp(104px,16vh,150px);width:min(340px,32vw);height:13px;
-  background:linear-gradient(180deg,#CBA87E,#8A6438);box-shadow:0 7px 16px rgba(47,82,68,.3)}
-.jar span{display:block}
-.jar{position:absolute;z-index:4;right:clamp(24px,7vw,112px);bottom:calc(clamp(104px,16vh,150px) + 13px);
-  width:clamp(80px,8.6vw,118px)}
-.jar .lid{height:clamp(15px,1.9vh,23px);margin-inline:10%;border-radius:5px 5px 2px 2px;
-  background:linear-gradient(100deg,#D2AF7A,#8A6438 48%,#BE9A62);box-shadow:0 3px 6px rgba(32,48,42,.34)}
-.jar .glassb{position:relative;height:clamp(126px,18.5vh,190px);border-radius:7px 7px 15px 15px;overflow:hidden;
-  border:2px solid rgba(255,255,255,.9);
-  background:linear-gradient(100deg,rgba(255,255,255,.85) 0 8%,rgba(255,255,255,.28) 26%,
-             rgba(255,255,255,.38) 70%,rgba(255,255,255,.9) 96%);
-  box-shadow:0 16px 28px rgba(47,82,68,.3)}
-.jar .glassb::before{content:"";position:absolute;left:7px;right:7px;bottom:7px;top:15%;border-radius:3px;
-  background:repeating-linear-gradient(90deg,#EBCB7C 0 4px,#C6A24C 4px 6px,#F5DC9C 6px 10px,#D6B25E 10px 12px)}
-.jar .glassb::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(100deg,rgba(255,255,255,.75) 0 7%,transparent 20% 78%,rgba(255,255,255,.55) 92%)}
-.basil{position:absolute;z-index:5;right:calc(clamp(24px,7vw,112px) + clamp(88px,9.4vw,128px));
-  bottom:calc(clamp(104px,16vh,150px) + 14px);width:56px;height:74px;
-  transform-origin:50% 100%;animation:basilsway 14s ease-in-out infinite}
-.basil i{position:absolute;left:50%;bottom:0;width:2.5px;height:100%;margin-left:-1.25px;
-  background:linear-gradient(180deg,#5C8A55,#2F5244);border-radius:2px}
-.basil b{position:absolute;width:26px;height:15px;border-radius:60% 10% 60% 10%;background:#4E8046}
-.basil b:nth-of-type(1){left:2px;bottom:52px}
-.basil b:nth-of-type(2){right:2px;bottom:38px;border-radius:10% 60% 10% 60%;background:#5C9152}
-.basil b:nth-of-type(3){left:4px;bottom:22px;background:#3F6F3B}
-@keyframes basilsway{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.1deg)}75%{transform:rotate(1.1deg)}}
-@media(prefers-reduced-motion:reduce){.basil{animation:none}}
+/* ---------- top strip: a real nav ---------- */
+#nav{position:fixed;top:0;left:0;right:0;z-index:80;display:flex;align-items:center;
+  justify-content:space-between;gap:14px;padding:13px clamp(16px,6vw,54px);
+  background:linear-gradient(180deg,rgba(30,14,26,.66),transparent);
+  border-bottom:1px solid rgba(247,241,225,0);transition:background .3s,border-color .3s}
+#nav.sc{background:rgba(42,19,37,.95);backdrop-filter:blur(10px);border-bottom-color:rgba(247,241,225,.16)}
+#nav .brand{font-family:'Prata',serif;font-size:clamp(17px,2.2vw,23px);letter-spacing:.16em;
+  color:var(--cloth);text-decoration:none;white-space:nowrap;text-transform:uppercase}
+#nav .lk{display:flex;align-items:center;gap:clamp(10px,1.6vw,24px)}
+#nav .lk a{color:rgba(247,241,225,.76);text-decoration:none;font:500 13.5px/1 'Karla',sans-serif;white-space:nowrap}
+#nav .lk a:hover{color:var(--gold)}
+#nav a.callb{background:var(--gold);color:#2A1325;padding:11px 19px;border-radius:2px;
+  font:700 13.5px/1 'Karla',sans-serif;text-decoration:none}
 
+/* ---------- HERO: Pomodoro Popolare. The name twice, solid then outlined, low and heavy ---------- */
+header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  background:var(--plumd);display:flex;align-items:flex-end}
+header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;
+  z-index:0;filter:contrast(1.05) saturate(1.02) brightness(.58);
+  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+header .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(42,19,37,.72) 0%,rgba(42,19,37,.22) 26%,rgba(42,19,37,.46) 54%,rgba(42,19,37,.92) 84%,var(--plumd) 100%),
+  linear-gradient(72deg,rgba(59,30,51,.82) 0%,rgba(59,30,51,.36) 46%,transparent 74%)}
+.clothwrap{position:relative;z-index:3;width:min(1160px,100%);margin-inline:auto;
+  padding:0 clamp(20px,6vw,54px) clamp(96px,13vh,138px)}
+.cloth{max-width:min(720px,94%)}
+.kick{font:600 11px/1.6 'Karla',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:38px}
+h1.dbl{margin-top:0;line-height:.8;letter-spacing:.01em}
+h1.dbl .s1,h1.dbl .s2{display:block;font-family:'Prata',serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(44px,9.6vw,132px)}
+h1.dbl .s1{color:var(--gold)}
+h1.dbl .s2{color:transparent;-webkit-text-stroke:1.6px rgba(201,154,62,.75)}
+html.ar h1.dbl .s1,html.ar h1.dbl .s2{font-family:var(--arh),sans-serif;font-size:clamp(38px,8vw,108px)}
+.meaning{margin-top:16px;font:600 11.4px/1.6 'Karla',sans-serif;letter-spacing:.3em;
+  text-transform:uppercase;color:#E5CBA0}
+.sub{max-width:46ch;margin-top:12px;color:#EADFE6;font-size:clamp(14.5px,1.62vw,17px);line-height:1.68;
+  text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.platebtnrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:22px}
+.dot{display:inline-flex;align-items:baseline;gap:6px;background:var(--gold);color:#2A1325;
+  padding:8px 13px;border-radius:2px;font:700 12.4px/1.4 'Karla',sans-serif}
+.chip{border:1.4px solid rgba(247,241,225,.42);border-radius:2px;padding:7px 12px;background:rgba(42,19,37,.42);
+  font:600 11.4px/1 'Karla',sans-serif;color:#EFE6EC;letter-spacing:.06em}
+@media(max-width:880px){
+  .cloth{max-width:100%}
+  h1.dbl .s1,h1.dbl .s2{font-size:clamp(38px,12.4vw,74px)}
+  .sub{max-width:100%;font-size:14.4px}
+  .clothwrap{padding-bottom:clamp(92px,13vh,120px)}
+}
 
 /* ---------- sections ---------- */
+section .k::before{content:"";display:block;width:56px;height:2px;background:currentColor;opacity:.8;margin-bottom:12px}
+.silent{background:var(--plum);color:var(--cloth);text-align:center;padding-block:clamp(50px,7vh,86px)}
+.silent p{font-family:'Prata',serif;font-size:clamp(22px,3.3vw,42px);line-height:1.24;
+  max-width:23ch;margin-inline:auto}
+.silent p b{color:var(--gold);font-weight:400}
 section{padding-block:clamp(56px,8vh,96px)}
 .band{background:var(--mint2)}
 .bandc{background:var(--cloth)}
@@ -139,20 +129,14 @@ footer{padding:36px 7vw 128px;color:#4A5A45;font-size:13.5px;text-align:center;b
 
 /* ---------- sticky bar: the cloth edge held by two clips ---------- */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:9px;
-  background:
-   repeating-linear-gradient(90deg,rgba(32,48,42,.03) 0 1.5px,transparent 1.5px 8px),
-   var(--cloth);
-  border-top:1.5px solid rgba(32,48,42,.4);
+  background:var(--plumd);
+  border-top:2px solid var(--gold);
   padding:10px 10px calc(9px + env(safe-area-inset-bottom));
   box-shadow:0 -10px 26px rgba(32,48,42,.28)}
-.bar::before,.bar::after{content:"";position:absolute;top:-11px;width:44px;height:22px;border-radius:5px 5px 2px 2px;
-  background:linear-gradient(180deg,#DCDCD4,#9FA39B 70%,#82867E);border:1.5px solid #5C6058}
-.bar::before{left:9%}
-.bar::after{right:9%}
 .bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:9px 4px 10px;background:var(--sage);color:#F2F0E0;border:1.5px solid #1F3A2F;border-radius:3px;
-  text-decoration:none;font:700 12px/1.2 'Karla',sans-serif;min-height:54px}
-.bar a.rd{background:var(--tomato);border-color:#7E2119;color:#FBF5E6}
+  padding:9px 4px 10px;background:transparent;color:var(--cloth);border:1.4px solid rgba(247,241,225,.36);border-radius:2px;
+  text-decoration:none;font:600 11.6px/1.2 'Karla',sans-serif;letter-spacing:.09em;text-transform:uppercase;min-height:54px}
+.bar a.rd{background:var(--gold);border-color:var(--mint2);color:#2A1325;font-weight:700}
 .bar a:active{filter:brightness(.92)}
 .bar svg{width:18px;height:18px;fill:currentColor}
 @media(max-width:880px){
@@ -169,6 +153,8 @@ footer{padding:36px 7vw 128px;color:#4A5A45;font-size:13.5px;text-align:center;b
   .bar{gap:6px}
   .bar a{font-size:10.5px}
 }
+@media(max-width:760px){#nav .lk a:not(.callb){display:none}#nav .lk{gap:10px}#nav a.callb{padding:9px 14px;font-size:12.5px}}
+.silent{padding-inline:22px}.silent p{max-width:min(23ch,100%)}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -216,42 +202,53 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </head>
 <body>
 
-<header>
-  <div class="floor" aria-hidden="true"></div>
+<nav id="nav">
+  <a class="brand" href="#top" data-edit="t1" data-edit-label="Button / link: Pertutti">Pertutti</a>
+  <div class="lk">
+    <a href="#story"><xen data-edit="t2" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t3" data-edit-label="Text (AR): الصالة">الصالة</xar></a>
+    <a href="#menu"><xen data-edit="t4" data-edit-label="Text (EN): The menu">The menu</xen><xar data-edit="t5" data-edit-label="Text (AR): المنيو">المنيو</xar></a>
+    <a href="#say"><xen data-edit="t6" data-edit-label="Text (EN): Reviews">Reviews</xen><xar data-edit="t7" data-edit-label="Text (AR): التقييمات">التقييمات</xar></a>
+    <a href="#visit"><xen data-edit="t8" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t9" data-edit-label="Text (AR): زورونا">زورونا</xar></a>
+    <button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="بيرتوتي · مرتقلا، بعبدا" data-edit="t10" data-edit-label="Button: عربي">عربي</button>
+    <a class="callb" href="tel:+9615922522"><xen data-edit="t11" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t12" data-edit-label="Text (AR): اتصل">اتصل</xar></a>
+  </div>
+</nav>
+
+<header id="top">
+  <img class="bg" src="img/14.jpg" alt="A blistered-crust Pertutti pizza straight out of the oven">
+  <div class="scrim"></div>
   <div class="clothwrap">
     <div class="cloth">
-      <p class="kick"><xen data-edit="t1" data-edit-label="Text (EN): Martakla · Baabda">Martakla · Baabda</xen><xar data-edit="t2" data-edit-label="Text (AR): مرتقلا · بعبدا">مرتقلا · بعبدا</xar></p>
-      <h1><xen class="c">PER<b data-edit="t3" data-edit-label="Text: TUTTI">TUTTI</b></xen><xar class="c">بير<b data-edit="t4" data-edit-label="Text: توتي">توتي</b></xar></h1>
-      <p class="meaning"><xen class="c" data-edit="t5" data-edit-label="Text (EN): per tutti: for everyone">per tutti: for everyone</xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): بير توتي يعني: للكل">بير توتي يعني: للكل</xar></p>
-      <p class="sub"><xen data-edit="t7" data-edit-label="Text (EN): A neighbourhood trattoria with mint wa…">A neighbourhood trattoria with mint walls and a hot oven, where the pizzas come blistered and the spaghetti comes twirled.</xen><xar data-edit="t8" data-edit-label="Text (AR): تراتوريا حيّ بحيطان نعناعية وفرن حامي،…">تراتوريا حيّ بحيطان نعناعية وفرن حامي، البيتزا بتطلع منفوخة الحواف والسباغيتي بتوصل ملفوفة عالشوكة.</xar></p>
+      <p class="kick"><xen data-edit="t13" data-edit-label="Text (EN): Martakla · Baabda">Martakla · Baabda</xen><xar data-edit="t14" data-edit-label="Text (AR): مرتقلا · بعبدا">مرتقلا · بعبدا</xar></p>
+      <h1 class="dbl"><xen class="c"><span class="s1" data-edit="t15" data-edit-label="Text: Pertutti">Pertutti</span><span class="s2" aria-hidden="true" data-edit="t16" data-edit-label="Text: Pertutti">Pertutti</span></xen><xar class="c"><span class="s1" data-edit="t17" data-edit-label="Text: بيرتوتي">بيرتوتي</span><span class="s2" aria-hidden="true" data-edit="t18" data-edit-label="Text: بيرتوتي">بيرتوتي</span></xar></h1>
+      <p class="meaning"><xen class="c" data-edit="t19" data-edit-label="Text (EN): per tutti: for everyone">per tutti: for everyone</xen><xar class="c" data-edit="t20" data-edit-label="Text (AR): بير توتي يعني: للكل">بير توتي يعني: للكل</xar></p>
+      <p class="sub"><xen data-edit="t21" data-edit-label="Text (EN): A neighbourhood trattoria with mint wa…">A neighbourhood trattoria with mint walls and a hot oven, where the pizzas come blistered and the spaghetti comes twirled.</xen><xar data-edit="t22" data-edit-label="Text (AR): تراتوريا حيّ بحيطان نعناعية وفرن حامي،…">تراتوريا حيّ بحيطان نعناعية وفرن حامي، البيتزا بتطلع منفوخة الحواف والسباغيتي بتوصل ملفوفة عالشوكة.</xar></p>
       <div class="platebtnrow">
-        <span class="dot"><span class="num" data-edit="t9" data-edit-label="Text: 4.7">4.7</span> <span><xen>· <span class="num" data-edit="t10" data-edit-label="Text: 282">282</span> reviews</xen><xar>· <span class="num" data-edit="t11" data-edit-label="Text: 282">282</span> تقييم</xar></span></span>
-        <span class="chip"><xen class="c" data-edit="t12" data-edit-label="Text (EN): Blistered-crust pizza">Blistered-crust pizza</xen><xar class="c" data-edit="t13" data-edit-label="Text (AR): بيتزا حوافها منفوخة">بيتزا حوافها منفوخة</xar></span>
-        <span class="chip"><xen class="c" data-edit="t14" data-edit-label="Text (EN): Fresh pasta">Fresh pasta</xen><xar class="c" data-edit="t15" data-edit-label="Text (AR): باستا فريش">باستا فريش</xar></span>
-        <span class="chip"><xen class="c" data-edit="t16" data-edit-label="Text (EN): Tiramisu">Tiramisu</xen><xar class="c" data-edit="t17" data-edit-label="Text (AR): تيراميسو">تيراميسو</xar></span>
+        <span class="dot"><span class="num" data-edit="t23" data-edit-label="Text: 4.7">4.7</span> <span><xen>· <span class="num" data-edit="t24" data-edit-label="Text: 282">282</span> reviews</xen><xar>· <span class="num" data-edit="t25" data-edit-label="Text: 282">282</span> تقييم</xar></span></span>
+        <span class="chip"><xen class="c" data-edit="t26" data-edit-label="Text (EN): Blistered-crust pizza">Blistered-crust pizza</xen><xar class="c" data-edit="t27" data-edit-label="Text (AR): بيتزا حوافها منفوخة">بيتزا حوافها منفوخة</xar></span>
+        <span class="chip"><xen class="c" data-edit="t28" data-edit-label="Text (EN): Fresh pasta">Fresh pasta</xen><xar class="c" data-edit="t29" data-edit-label="Text (AR): باستا فريش">باستا فريش</xar></span>
+        <span class="chip"><xen class="c" data-edit="t30" data-edit-label="Text (EN): Tiramisu">Tiramisu</xen><xar class="c" data-edit="t31" data-edit-label="Text (AR): تيراميسو">تيراميسو</xar></span>
       </div>
     </div>
   </div>
-  <span class="shelf" aria-hidden="true"></span>
-  <div class="jar" aria-hidden="true"><span class="lid"></span><span class="glassb"></span></div>
-  <span class="basil" aria-hidden="true"><i></i><b></b><b></b><b></b></span>
-  <div class="boardpane">
-    <div class="bd"><img src="img/08.jpg" alt="Pesto spaghetti and salads plated on the pass"></div>
-  </div>
 </header>
+
+<div class="silent">
+  <p><xen>The pizzas come blistered, <b data-edit="t32" data-edit-label="Text: the spaghetti comes twirled.">the spaghetti comes twirled.</b></xen><xar>البيتزا بتطلع منفوخة الحواف، <b data-edit="t33" data-edit-label="Text: والسباغيتي بتوصل ملفوفة.">والسباغيتي بتوصل ملفوفة.</b></xar></p>
+</div>
 
 <section class="wrap">
   <div class="two">
     <div class="rev">
-      <p class="k"><xen data-edit="t18" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t19" data-edit-label="Text (AR): الصالة">الصالة</xar></p>
-      <h2 class="hd"><xen data-edit="t20" data-edit-label="Text (EN): Mint walls, wooden chairs, full tables">Mint walls, wooden chairs, full tables</xen><xar data-edit="t21" data-edit-label="Text (AR): حيطان نعناعية، كراسي خشب، وطاولات مليا…">حيطان نعناعية، كراسي خشب، وطاولات مليانة</xar></h2>
-      <p><xen data-edit="t22" data-edit-label="Text (EN): Pertutti is Baabda's version of the It…">Pertutti is Baabda's version of the Italian neighbourhood place: framed photographs on green walls, a rosemary plant by the wine fridge, and a Thursday-night crowd that fills the room without anyone advertising anything.</xen><xar data-edit="t23" data-edit-label="Text (AR): بيرتوتي هي نسخة بعبدا عن المطعم الإيطا…">بيرتوتي هي نسخة بعبدا عن المطعم الإيطالي الجارتي: صور مبروزة على حيطان خضرا، شتلة إكليل الجبل حدّ برّاد النبيذ، وزحمة خميس مسا بتعبّي الصالة بلا ما حدا يعلن شي.</xar></p>
-      <p><xen data-edit="t24" data-edit-label="Text (EN): The name is the promise: per tutti, fo…">The name is the promise: per tutti, for everyone. Families around the big tables, couples at the bar, and plates priced for coming back weekly, not for photographing once.</xen><xar data-edit="t25" data-edit-label="Text (AR): الاسم هو الوعد: بير توتي، للكل. عيل حو…">الاسم هو الوعد: بير توتي، للكل. عيل حول الطاولات الكبيرة، أزواج عالبار، وصحون مسعّرة لترجع كل جمعة، مش لتتصوّر مرة وحدة.</xar></p>
-      <p><xen data-edit="t26" data-edit-label="Text (EN): The service can lag on the packed nigh…">The service can lag on the packed nights, the regulars forgive it by the time the burrata lands.</xen><xar data-edit="t27" data-edit-label="Text (AR): الخدمة ممكن تتأخر بالليالي المليانة، و…">الخدمة ممكن تتأخر بالليالي المليانة، والزباين بيسامحوا لحظة ما توصل البوراتا.</xar></p>
+      <p class="k"><xen data-edit="t34" data-edit-label="Text (EN): The room">The room</xen><xar data-edit="t35" data-edit-label="Text (AR): الصالة">الصالة</xar></p>
+      <h2 class="hd"><xen data-edit="t36" data-edit-label="Text (EN): Mint walls, wooden chairs, full tables">Mint walls, wooden chairs, full tables</xen><xar data-edit="t37" data-edit-label="Text (AR): حيطان نعناعية، كراسي خشب، وطاولات مليا…">حيطان نعناعية، كراسي خشب، وطاولات مليانة</xar></h2>
+      <p><xen data-edit="t38" data-edit-label="Text (EN): Pertutti is Baabda's version of the It…">Pertutti is Baabda's version of the Italian neighbourhood place: framed photographs on green walls, a rosemary plant by the wine fridge, and a Thursday-night crowd that fills the room without anyone advertising anything.</xen><xar data-edit="t39" data-edit-label="Text (AR): بيرتوتي هي نسخة بعبدا عن المطعم الإيطا…">بيرتوتي هي نسخة بعبدا عن المطعم الإيطالي الجارتي: صور مبروزة على حيطان خضرا، شتلة إكليل الجبل حدّ برّاد النبيذ، وزحمة خميس مسا بتعبّي الصالة بلا ما حدا يعلن شي.</xar></p>
+      <p><xen data-edit="t40" data-edit-label="Text (EN): The name is the promise: per tutti, fo…">The name is the promise: per tutti, for everyone. Families around the big tables, couples at the bar, and plates priced for coming back weekly, not for photographing once.</xen><xar data-edit="t41" data-edit-label="Text (AR): الاسم هو الوعد: بير توتي، للكل. عيل حو…">الاسم هو الوعد: بير توتي، للكل. عيل حول الطاولات الكبيرة، أزواج عالبار، وصحون مسعّرة لترجع كل جمعة، مش لتتصوّر مرة وحدة.</xar></p>
+      <p><xen data-edit="t42" data-edit-label="Text (EN): The service can lag on the packed nigh…">The service can lag on the packed nights, the regulars forgive it by the time the burrata lands.</xen><xar data-edit="t43" data-edit-label="Text (AR): الخدمة ممكن تتأخر بالليالي المليانة، و…">الخدمة ممكن تتأخر بالليالي المليانة، والزباين بيسامحوا لحظة ما توصل البوراتا.</xar></p>
     </div>
     <div>
       <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The mint-green dining room with framed photos and a plant">
-        <p class="cap"><xen data-edit="t28" data-edit-label="Text (EN): The room, rosemary included.">The room, rosemary included.</xen><xar data-edit="t29" data-edit-label="Text (AR): الصالة، مع إكليل الجبل.">الصالة، مع إكليل الجبل.</xar></p>
+        <p class="cap"><xen data-edit="t44" data-edit-label="Text (EN): The room, rosemary included.">The room, rosemary included.</xen><xar data-edit="t45" data-edit-label="Text (AR): الصالة، مع إكليل الجبل.">الصالة، مع إكليل الجبل.</xar></p>
       </div>
     </div>
   </div>
@@ -259,47 +256,47 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band" id="menu2">
   <div class="wrap">
-    <p class="k"><xen data-edit="t30" data-edit-label="Text (EN): The two stations">The two stations</xen><xar data-edit="t31" data-edit-label="Text (AR): المحطتين">المحطتين</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t32" data-edit-label="Text (EN): From the oven, from the pot">From the oven, from the pot</xen><xar data-edit="t33" data-edit-label="Text (AR): من الفرن، ومن الطنجرة">من الفرن، ومن الطنجرة</xar></h2>
+    <p class="k"><xen data-edit="t46" data-edit-label="Text (EN): The two stations">The two stations</xen><xar data-edit="t47" data-edit-label="Text (AR): المحطتين">المحطتين</xar></p>
+    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t48" data-edit-label="Text (EN): From the oven, from the pot">From the oven, from the pot</xen><xar data-edit="t49" data-edit-label="Text (AR): من الفرن، ومن الطنجرة">من الفرن، ومن الطنجرة</xar></h2>
     <div class="ovenpot">
       <div class="col rev">
-        <h3><xen class="c" data-edit="t34" data-edit-label="Text (EN): The oven">The oven</xen><xar class="c" data-edit="t35" data-edit-label="Text (AR): الفرن">الفرن</xar></h3>
+        <h3><xen class="c" data-edit="t50" data-edit-label="Text (EN): The oven">The oven</xen><xar class="c" data-edit="t51" data-edit-label="Text (AR): الفرن">الفرن</xar></h3>
         <ul>
-          <li>Mushroom and ham pizza <xen class="c"><span data-edit="t36" data-edit-label="Text: the one their photos keep starring">the one their photos keep starring</span></xen><xar class="c"><span data-edit="t37" data-edit-label="Text: نجمة صورهن الدايمة">نجمة صورهن الدايمة</span></xar></li>
-          <li>Bresaola pizza <xen class="c"><span data-edit="t38" data-edit-label="Text: cured beef over the melt">cured beef over the melt</span></xen><xar class="c"><span data-edit="t39" data-edit-label="Text: لحمة مقدّدة فوق الدوبان">لحمة مقدّدة فوق الدوبان</span></xar></li>
-          <li>Margherita <xen class="c"><span data-edit="t40" data-edit-label="Text: tomatoes, mozzarella, basil, done righ…">tomatoes, mozzarella, basil, done right</span></xen><xar class="c"><span data-edit="t41" data-edit-label="Text: بندورة، موزاريلا، حبق، معمولة صح">بندورة، موزاريلا، حبق، معمولة صح</span></xar></li>
-          <li>Prosciutto <xen class="c"><span data-edit="t42" data-edit-label="Text: draped on after the heat">draped on after the heat</span></xen><xar class="c"><span data-edit="t43" data-edit-label="Text: بينفرش بعد النار">بينفرش بعد النار</span></xar></li>
+          <li>Mushroom and ham pizza <xen class="c"><span data-edit="t52" data-edit-label="Text: the one their photos keep starring">the one their photos keep starring</span></xen><xar class="c"><span data-edit="t53" data-edit-label="Text: نجمة صورهن الدايمة">نجمة صورهن الدايمة</span></xar></li>
+          <li>Bresaola pizza <xen class="c"><span data-edit="t54" data-edit-label="Text: cured beef over the melt">cured beef over the melt</span></xen><xar class="c"><span data-edit="t55" data-edit-label="Text: لحمة مقدّدة فوق الدوبان">لحمة مقدّدة فوق الدوبان</span></xar></li>
+          <li>Margherita <xen class="c"><span data-edit="t56" data-edit-label="Text: tomatoes, mozzarella, basil, done righ…">tomatoes, mozzarella, basil, done right</span></xen><xar class="c"><span data-edit="t57" data-edit-label="Text: بندورة، موزاريلا، حبق، معمولة صح">بندورة، موزاريلا، حبق، معمولة صح</span></xar></li>
+          <li>Prosciutto <xen class="c"><span data-edit="t58" data-edit-label="Text: draped on after the heat">draped on after the heat</span></xen><xar class="c"><span data-edit="t59" data-edit-label="Text: بينفرش بعد النار">بينفرش بعد النار</span></xar></li>
         </ul>
       </div>
       <div class="col pot rev">
-        <h3><xen class="c" data-edit="t44" data-edit-label="Text (EN): The pot">The pot</xen><xar class="c" data-edit="t45" data-edit-label="Text (AR): الطنجرة">الطنجرة</xar></h3>
+        <h3><xen class="c" data-edit="t60" data-edit-label="Text (EN): The pot">The pot</xen><xar class="c" data-edit="t61" data-edit-label="Text (AR): الطنجرة">الطنجرة</xar></h3>
         <ul>
-          <li>Spaghetti al pesto <xen class="c"><span data-edit="t46" data-edit-label="Text: pine nuts and sun-dried tomato on top">pine nuts and sun-dried tomato on top</span></xen><xar class="c"><span data-edit="t47" data-edit-label="Text: صنوبر وبندورة مجفّفة من فوق">صنوبر وبندورة مجفّفة من فوق</span></xar></li>
-          <li>Burrata <xen class="c"><span data-edit="t48" data-edit-label="Text: cold heart, warm tomatoes">cold heart, warm tomatoes</span></xen><xar class="c"><span data-edit="t49" data-edit-label="Text: قلب بارد، بندورة دافية">قلب بارد، بندورة دافية</span></xar></li>
-          <li>Seafood linguine <xen class="c"><span data-edit="t50" data-edit-label="Text: mussels and calamari in the tangle">mussels and calamari in the tangle</span></xen><xar class="c"><span data-edit="t51" data-edit-label="Text: بلح البحر والكاليماري بالعجقة">بلح البحر والكاليماري بالعجقة</span></xar></li>
-          <li>Tiramisu <xen class="c"><span data-edit="t52" data-edit-label="Text: the only correct ending">the only correct ending</span></xen><xar class="c"><span data-edit="t53" data-edit-label="Text: الخاتمة الصحيحة الوحيدة">الخاتمة الصحيحة الوحيدة</span></xar></li>
+          <li>Spaghetti al pesto <xen class="c"><span data-edit="t62" data-edit-label="Text: pine nuts and sun-dried tomato on top">pine nuts and sun-dried tomato on top</span></xen><xar class="c"><span data-edit="t63" data-edit-label="Text: صنوبر وبندورة مجفّفة من فوق">صنوبر وبندورة مجفّفة من فوق</span></xar></li>
+          <li>Burrata <xen class="c"><span data-edit="t64" data-edit-label="Text: cold heart, warm tomatoes">cold heart, warm tomatoes</span></xen><xar class="c"><span data-edit="t65" data-edit-label="Text: قلب بارد، بندورة دافية">قلب بارد، بندورة دافية</span></xar></li>
+          <li>Seafood linguine <xen class="c"><span data-edit="t66" data-edit-label="Text: mussels and calamari in the tangle">mussels and calamari in the tangle</span></xen><xar class="c"><span data-edit="t67" data-edit-label="Text: بلح البحر والكاليماري بالعجقة">بلح البحر والكاليماري بالعجقة</span></xar></li>
+          <li>Tiramisu <xen class="c"><span data-edit="t68" data-edit-label="Text: the only correct ending">the only correct ending</span></xen><xar class="c"><span data-edit="t69" data-edit-label="Text: الخاتمة الصحيحة الوحيدة">الخاتمة الصحيحة الوحيدة</span></xar></li>
         </ul>
       </div>
     </div>
-    <p class="colnote"><xen data-edit="t54" data-edit-label="Text (EN): Every dish above is taken from their o…">Every dish above is taken from their own photo gallery and the tags on it, nothing imagined. Prices are on the table menu; call the restaurant for tonight's specials.</xen><xar data-edit="t55" data-edit-label="Text (AR): كل صحن فوق مأخود من ألبوم صورهن نفسو و…">كل صحن فوق مأخود من ألبوم صورهن نفسو والتأشيرات يلّي عليه، ما في شي متخيَّل. الأسعار على لائحة الطاولة، واتصل بالمطعم لأطباق الليلة.</xar></p>
+    <p class="colnote"><xen data-edit="t70" data-edit-label="Text (EN): Every dish above is taken from their o…">Every dish above is taken from their own photo gallery and the tags on it, nothing imagined. Prices are on the table menu; call the restaurant for tonight's specials.</xen><xar data-edit="t71" data-edit-label="Text (AR): كل صحن فوق مأخود من ألبوم صورهن نفسو و…">كل صحن فوق مأخود من ألبوم صورهن نفسو والتأشيرات يلّي عليه، ما في شي متخيَّل. الأسعار على لائحة الطاولة، واتصل بالمطعم لأطباق الليلة.</xar></p>
   </div>
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t56" data-edit-label="Text (EN): Three plates, three reasons">Three plates, three reasons</xen><xar data-edit="t57" data-edit-label="Text (AR): تلات صحون، تلات أسباب">تلات صحون، تلات أسباب</xar></p>
-  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t58" data-edit-label="Text (EN): What the table always agrees on">What the table always agrees on</xen><xar data-edit="t59" data-edit-label="Text (AR): الشي يلّي الطاولة دايمًا بتتفق عليه">الشي يلّي الطاولة دايمًا بتتفق عليه</xar></h2>
+  <p class="k"><xen data-edit="t72" data-edit-label="Text (EN): Three plates, three reasons">Three plates, three reasons</xen><xar data-edit="t73" data-edit-label="Text (AR): تلات صحون، تلات أسباب">تلات صحون، تلات أسباب</xar></p>
+  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t74" data-edit-label="Text (EN): What the table always agrees on">What the table always agrees on</xen><xar data-edit="t75" data-edit-label="Text (AR): الشي يلّي الطاولة دايمًا بتتفق عليه">الشي يلّي الطاولة دايمًا بتتفق عليه</xar></h2>
   <div class="grid3">
     <div class="card rev"><img src="img/10.jpg" loading="lazy" alt="A margherita pizza held up over the terracotta floor">
-      <div class="t"><h3><xen data-edit="t60" data-edit-label="Text (EN): From the oven">From the oven</xen><xar data-edit="t61" data-edit-label="Text (AR): من الفرن">من الفرن</xar></h3>
-      <p><xen data-edit="t62" data-edit-label="Text (EN): Leopard-spotted crust, tomatoes still …">Leopard-spotted crust, tomatoes still bubbling. Held up like a trophy because it is one.</xen><xar data-edit="t63" data-edit-label="Text (AR): حواف منقّطة عالأصول، والبندورة لسّا عم…">حواف منقّطة عالأصول، والبندورة لسّا عم تبقبق. مرفوعة متل الكاس لأنها فعلًا كاس.</xar></p></div>
+      <div class="t"><h3><xen data-edit="t76" data-edit-label="Text (EN): From the oven">From the oven</xen><xar data-edit="t77" data-edit-label="Text (AR): من الفرن">من الفرن</xar></h3>
+      <p><xen data-edit="t78" data-edit-label="Text (EN): Leopard-spotted crust, tomatoes still …">Leopard-spotted crust, tomatoes still bubbling. Held up like a trophy because it is one.</xen><xar data-edit="t79" data-edit-label="Text (AR): حواف منقّطة عالأصول، والبندورة لسّا عم…">حواف منقّطة عالأصول، والبندورة لسّا عم تبقبق. مرفوعة متل الكاس لأنها فعلًا كاس.</xar></p></div>
     </div>
     <div class="card rev"><img src="img/12.jpg" loading="lazy" alt="Pesto pasta close up with pine nuts and dried tomato">
-      <div class="t"><h3><xen data-edit="t64" data-edit-label="Text (EN): The pesto table">The pesto table</xen><xar data-edit="t65" data-edit-label="Text (AR): طاولة البيستو">طاولة البيستو</xar></h3>
-      <p><xen data-edit="t66" data-edit-label="Text (EN): Green, glossy, showered in parmesan an…">Green, glossy, showered in parmesan and pine nuts. The fork does not get passed around, order your own.</xen><xar data-edit="t67" data-edit-label="Text (AR): أخضر، لامع، مغطّى بارميزان وصنوبر. الش…">أخضر، لامع، مغطّى بارميزان وصنوبر. الشوكة ما بتنعار، اطلب صحنك.</xar></p></div>
+      <div class="t"><h3><xen data-edit="t80" data-edit-label="Text (EN): The pesto table">The pesto table</xen><xar data-edit="t81" data-edit-label="Text (AR): طاولة البيستو">طاولة البيستو</xar></h3>
+      <p><xen data-edit="t82" data-edit-label="Text (EN): Green, glossy, showered in parmesan an…">Green, glossy, showered in parmesan and pine nuts. The fork does not get passed around, order your own.</xen><xar data-edit="t83" data-edit-label="Text (AR): أخضر، لامع، مغطّى بارميزان وصنوبر. الش…">أخضر، لامع، مغطّى بارميزان وصنوبر. الشوكة ما بتنعار، اطلب صحنك.</xar></p></div>
     </div>
     <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="A cup of tiramisu dusted with cocoa on the marble table">
-      <div class="t"><h3><xen data-edit="t68" data-edit-label="Text (EN): Tiramisu to finish">Tiramisu to finish</xen><xar data-edit="t69" data-edit-label="Text (AR): تيراميسو للختام">تيراميسو للختام</xar></h3>
-      <p><xen data-edit="t70" data-edit-label="Text (EN): Cocoa on top, espresso underneath, sil…">Cocoa on top, espresso underneath, silence at the table for one full minute.</xen><xar data-edit="t71" data-edit-label="Text (AR): كاكاو من فوق، إسبريسو من تحت، وسكوت عا…">كاكاو من فوق، إسبريسو من تحت، وسكوت عالطاولة دقيقة كاملة.</xar></p></div>
+      <div class="t"><h3><xen data-edit="t84" data-edit-label="Text (EN): Tiramisu to finish">Tiramisu to finish</xen><xar data-edit="t85" data-edit-label="Text (AR): تيراميسو للختام">تيراميسو للختام</xar></h3>
+      <p><xen data-edit="t86" data-edit-label="Text (EN): Cocoa on top, espresso underneath, sil…">Cocoa on top, espresso underneath, silence at the table for one full minute.</xen><xar data-edit="t87" data-edit-label="Text (AR): كاكاو من فوق، إسبريسو من تحت، وسكوت عا…">كاكاو من فوق، إسبريسو من تحت، وسكوت عالطاولة دقيقة كاملة.</xar></p></div>
     </div>
   </div>
 </section>
@@ -308,13 +305,13 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
   <div class="wrap">
     <div class="dets">
       <div>
-        <p class="k"><xen data-edit="t72" data-edit-label="Text (EN): The details">The details</xen><xar data-edit="t73" data-edit-label="Text (AR): التفاصيل">التفاصيل</xar></p>
-        <h2 class="hd"><xen data-edit="t74" data-edit-label="Text (EN): Things you notice while waiting">Things you notice while waiting</xen><xar data-edit="t75" data-edit-label="Text (AR): أشيا بتلاحظها وانت ناطر">أشيا بتلاحظها وانت ناطر</xar></h2>
-        <p style="color:#4A5A45;margin-bottom:15px"><xen data-edit="t76" data-edit-label="Text (EN): The shelf of jars glowing over the pas…">The shelf of jars glowing over the pass: pickled things, dried pasta, tools that actually get used. A trattoria tells you the truth in its clutter, and this clutter is honest.</xen><xar data-edit="t77" data-edit-label="Text (AR): رف القناني المضوي فوق البسطة: مكبوسات،…">رف القناني المضوي فوق البسطة: مكبوسات، باستا ناشفة، عدّة عم تنستعمل فعلًا. التراتوريا بتقلّك الحقيقة من كراكيبها، وهالكراكيب صادقة.</xar></p>
-        <p style="color:#4A5A45"><xen data-edit="t78" data-edit-label="Text (EN): And the burrata plate: a white heart o…">And the burrata plate: a white heart on warm cherry tomatoes with a spoon of pesto, photographed by half the room before it is touched.</xen><xar data-edit="t79" data-edit-label="Text (AR): وصحن البوراتا: قلب أبيض فوق بندورة كرز…">وصحن البوراتا: قلب أبيض فوق بندورة كرزية دافية مع معلقة بيستو، بيتصوّر من نص الصالة قبل ما حدا يلمسو.</xar></p>
+        <p class="k"><xen data-edit="t88" data-edit-label="Text (EN): The details">The details</xen><xar data-edit="t89" data-edit-label="Text (AR): التفاصيل">التفاصيل</xar></p>
+        <h2 class="hd"><xen data-edit="t90" data-edit-label="Text (EN): Things you notice while waiting">Things you notice while waiting</xen><xar data-edit="t91" data-edit-label="Text (AR): أشيا بتلاحظها وانت ناطر">أشيا بتلاحظها وانت ناطر</xar></h2>
+        <p style="color:#4A5A45;margin-bottom:15px"><xen data-edit="t92" data-edit-label="Text (EN): The shelf of jars glowing over the pas…">The shelf of jars glowing over the pass: pickled things, dried pasta, tools that actually get used. A trattoria tells you the truth in its clutter, and this clutter is honest.</xen><xar data-edit="t93" data-edit-label="Text (AR): رف القناني المضوي فوق البسطة: مكبوسات،…">رف القناني المضوي فوق البسطة: مكبوسات، باستا ناشفة، عدّة عم تنستعمل فعلًا. التراتوريا بتقلّك الحقيقة من كراكيبها، وهالكراكيب صادقة.</xar></p>
+        <p style="color:#4A5A45"><xen data-edit="t94" data-edit-label="Text (EN): And the burrata plate: a white heart o…">And the burrata plate: a white heart on warm cherry tomatoes with a spoon of pesto, photographed by half the room before it is touched.</xen><xar data-edit="t95" data-edit-label="Text (AR): وصحن البوراتا: قلب أبيض فوق بندورة كرز…">وصحن البوراتا: قلب أبيض فوق بندورة كرزية دافية مع معلقة بيستو، بيتصوّر من نص الصالة قبل ما حدا يلمسو.</xar></p>
       </div>
       <div class="frame rev" style="background:#fff"><img src="img/07.jpg" loading="lazy" alt="The lit shelf of jars, pasta and tools above the pass" style="height:clamp(240px,34vh,340px)">
-        <p class="cap"><xen data-edit="t80" data-edit-label="Text (EN): The jar shelf over the pass.">The jar shelf over the pass.</xen><xar data-edit="t81" data-edit-label="Text (AR): رف القناني فوق البسطة.">رف القناني فوق البسطة.</xar></p>
+        <p class="cap"><xen data-edit="t96" data-edit-label="Text (EN): The jar shelf over the pass.">The jar shelf over the pass.</xen><xar data-edit="t97" data-edit-label="Text (AR): رف القناني فوق البسطة.">رف القناني فوق البسطة.</xar></p>
       </div>
     </div>
   </div>
@@ -322,8 +319,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <section class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t82" data-edit-label="Text (EN): Around the tables">Around the tables</xen><xar data-edit="t83" data-edit-label="Text (AR): حول الطاولات">حول الطاولات</xar></p>
-    <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t84" data-edit-label="Text (EN): Photographs from Pertutti">Photographs from Pertutti</xen><xar data-edit="t85" data-edit-label="Text (AR): صور من بيرتوتي">صور من بيرتوتي</xar></h2>
+    <p class="k"><xen data-edit="t98" data-edit-label="Text (EN): Around the tables">Around the tables</xen><xar data-edit="t99" data-edit-label="Text (AR): حول الطاولات">حول الطاولات</xar></p>
+    <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t100" data-edit-label="Text (EN): Photographs from Pertutti">Photographs from Pertutti</xen><xar data-edit="t101" data-edit-label="Text (AR): صور من بيرتوتي">صور من بيرتوتي</xar></h2>
     <div class="gal">
       <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="Arugula pizza with shaved cheese"></a>
       <a href="img/11.jpg" target="_blank" rel="noopener" class="g"><img src="img/11.jpg" loading="lazy" alt="Burrata with cherry tomatoes and pesto"></a>
@@ -336,59 +333,62 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </section>
 
 <section class="wrap">
-  <p class="k"><xen data-edit="t86" data-edit-label="Text (EN): Two tables speak">Two tables speak</xen><xar data-edit="t87" data-edit-label="Text (AR): طاولتين بيحكوا">طاولتين بيحكوا</xar></p>
-  <h2 class="hd" style="margin-bottom:30px"><xen data-edit="t88" data-edit-label="Text (EN): From the Google reviews">From the Google reviews</xen><xar data-edit="t89" data-edit-label="Text (AR): من تقييمات غوغل">من تقييمات غوغل</xar></h2>
+  <p class="k"><xen data-edit="t102" data-edit-label="Text (EN): Two tables speak">Two tables speak</xen><xar data-edit="t103" data-edit-label="Text (AR): طاولتين بيحكوا">طاولتين بيحكوا</xar></p>
+  <h2 class="hd" style="margin-bottom:30px"><xen data-edit="t104" data-edit-label="Text (EN): From the Google reviews">From the Google reviews</xen><xar data-edit="t105" data-edit-label="Text (AR): من تقييمات غوغل">من تقييمات غوغل</xar></h2>
   <div class="revs">
-    <div class="rev-c rev"><q dir="ltr" data-edit="t90" data-edit-label="Quote: The experience was great! It was kind …">The experience was great! It was kind of full on a Thursday night. Very friendly staff, and food gets served hot and fast enough! It was our first time there and won't be the last!</q><cite data-edit="t91" data-edit-label="Credit: Christian Yaacoub">Christian Yaacoub</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t92" data-edit-label="Quote: Good italian restaurant. The food is e…">Good italian restaurant. The food is excellent, and the drinks are good. Service must be improved though.</q><cite data-edit="t93" data-edit-label="Credit: Nizar Kassis">Nizar Kassis</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t106" data-edit-label="Quote: The experience was great! It was kind …">The experience was great! It was kind of full on a Thursday night. Very friendly staff, and food gets served hot and fast enough! It was our first time there and won't be the last!</q><cite data-edit="t107" data-edit-label="Credit: Christian Yaacoub">Christian Yaacoub</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t108" data-edit-label="Quote: Good italian restaurant. The food is e…">Good italian restaurant. The food is excellent, and the drinks are good. Service must be improved though.</q><cite data-edit="t109" data-edit-label="Credit: Nizar Kassis">Nizar Kassis</cite></div>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap visit">
     <div>
-      <p class="k"><xen data-edit="t94" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t95" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></p>
-      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t96" data-edit-label="Text (EN): Noon to half past eleven">Noon to half past eleven</xen><xar data-edit="t97" data-edit-label="Text (AR): من الضهر لـ 11:30 بالليل">من الضهر لـ 11:30 بالليل</xar></h2>
+      <p class="k"><xen data-edit="t110" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t111" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></p>
+      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t112" data-edit-label="Text (EN): Noon to half past eleven">Noon to half past eleven</xen><xar data-edit="t113" data-edit-label="Text (AR): من الضهر لـ 11:30 بالليل">من الضهر لـ 11:30 بالليل</xar></h2>
       <table class="hrs">
-        <tr><td><xen data-edit="t98" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t99" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t100" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t101" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t102" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t103" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t104" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t105" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t106" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t107" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t108" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t109" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t110" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t111" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t112" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t113" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t114" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t115" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t116" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t117" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t118" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t119" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t120" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t121" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
-        <tr><td><xen data-edit="t122" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t123" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t124" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t125" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t114" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t115" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t116" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t117" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t118" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t119" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t120" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t121" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t122" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t123" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t124" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t125" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t126" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t127" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t128" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t129" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t130" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t131" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t132" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t133" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t134" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t135" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t136" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t137" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
+        <tr><td><xen data-edit="t138" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t139" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t140" data-edit-label="Text: 12–11:30 PM">12–11:30 PM</span></xen><xar class="c" data-edit="t141" data-edit-label="Text (AR): 12 إلى 11:30 م">12 إلى 11:30 م</xar></td></tr>
       </table>
-      <p class="cap"><xen data-edit="t126" data-edit-label="Text (EN): Thursday nights fill up; book earlier …">Thursday nights fill up; book earlier in the week for the big tables.</xen><xar data-edit="t127" data-edit-label="Text (AR): ليالي الخميس بتعبّي، احجز أول الأسبوع …">ليالي الخميس بتعبّي، احجز أول الأسبوع للطاولات الكبيرة.</xar></p>
+      <p class="cap"><xen data-edit="t142" data-edit-label="Text (EN): Thursday nights fill up; book earlier …">Thursday nights fill up; book earlier in the week for the big tables.</xen><xar data-edit="t143" data-edit-label="Text (AR): ليالي الخميس بتعبّي، احجز أول الأسبوع …">ليالي الخميس بتعبّي، احجز أول الأسبوع للطاولات الكبيرة.</xar></p>
     </div>
     <div>
-      <p class="k"><xen data-edit="t128" data-edit-label="Text (EN): Find the mint room">Find the mint room</xen><xar data-edit="t129" data-edit-label="Text (AR): لاقي الصالة النعناعية">لاقي الصالة النعناعية</xar></p>
-      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t130" data-edit-label="Text (EN): Martakla, Baabda">Martakla, Baabda</xen><xar data-edit="t131" data-edit-label="Text (AR): مرتقلا، بعبدا">مرتقلا، بعبدا</xar></h3>
-      <p class="k" style="margin-top:16px"><xen data-edit="t132" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t133" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t134" data-edit-label="Text: Martakla, Baabda, Lebanon">Martakla, Baabda, Lebanon</p>
-      <p class="k" style="margin-top:20px"><xen data-edit="t135" data-edit-label="Text (EN): Phone, landline">Phone, landline</xen><xar data-edit="t136" data-edit-label="Text (AR): الهاتف، خط أرضي">الهاتف، خط أرضي</xar></p>
-      <p class="ph num" data-edit="t137" data-edit-label="Text: +961 5 457 000">+961 5 457 000</p>
-      <p class="lland"><xen data-edit="t138" data-edit-label="Text (EN): A landline takes the bookings: call, g…">A landline takes the bookings: call, give a name and a time. No WhatsApp on this number, ask them for theirs on the call.</xen><xar data-edit="t139" data-edit-label="Text (AR): الحجوزات عالخط الأرضي: اتصل، اعطي اسم …">الحجوزات عالخط الأرضي: اتصل، اعطي اسم وساعة. ما في واتساب عهيدا الرقم، اسألهن عن رقمهن وانت عالخط.</xar></p>
+      <p class="k"><xen data-edit="t144" data-edit-label="Text (EN): Find the mint room">Find the mint room</xen><xar data-edit="t145" data-edit-label="Text (AR): لاقي الصالة النعناعية">لاقي الصالة النعناعية</xar></p>
+      <h3 style="font-size:22px;margin:6px 0 14px"><xen data-edit="t146" data-edit-label="Text (EN): Martakla, Baabda">Martakla, Baabda</xen><xar data-edit="t147" data-edit-label="Text (AR): مرتقلا، بعبدا">مرتقلا، بعبدا</xar></h3>
+      <p class="k" style="margin-top:16px"><xen data-edit="t148" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t149" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+      <p class="ad" data-edit="t150" data-edit-label="Text: Martakla, Baabda, Lebanon">Martakla, Baabda, Lebanon</p>
+      <p class="k" style="margin-top:20px"><xen data-edit="t151" data-edit-label="Text (EN): Phone, landline">Phone, landline</xen><xar data-edit="t152" data-edit-label="Text (AR): الهاتف، خط أرضي">الهاتف، خط أرضي</xar></p>
+      <p class="ph num" data-edit="t153" data-edit-label="Text: +961 5 457 000">+961 5 457 000</p>
+      <p class="lland"><xen data-edit="t154" data-edit-label="Text (EN): A landline takes the bookings: call, g…">A landline takes the bookings: call, give a name and a time. No WhatsApp on this number, ask them for theirs on the call.</xen><xar data-edit="t155" data-edit-label="Text (AR): الحجوزات عالخط الأرضي: اتصل، اعطي اسم …">الحجوزات عالخط الأرضي: اتصل، اعطي اسم وساعة. ما في واتساب عهيدا الرقم، اسألهن عن رقمهن وانت عالخط.</xar></p>
       <p style="margin-top:20px">
-        <a class="btn rd" href="tel:+9615457000"><xen data-edit="t140" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t141" data-edit-label="Text (AR): اتصل واحجز">اتصل واحجز</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=5533198288649466588" target="_blank" rel="noopener"><xen data-edit="t142" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t143" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        <a class="btn rd" href="tel:+9615457000"><xen data-edit="t156" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t157" data-edit-label="Text (AR): اتصل واحجز">اتصل واحجز</xar></a>
+        <a class="btn o" href="https://www.google.com/maps?cid=5533198288649466588" target="_blank" rel="noopener"><xen data-edit="t158" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t159" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t144" data-edit-label="Text (EN): Pertutti, Martakla, Baabda.">Pertutti, Martakla, Baabda.</xen><xar data-edit="t145" data-edit-label="Text (AR): بيرتوتي، مرتقلا، بعبدا.">بيرتوتي، مرتقلا، بعبدا.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t146" data-edit-label="Text (EN): Per tutti. That includes you, obviousl…">Per tutti. That includes you, obviously.</xen><xar data-edit="t147" data-edit-label="Text (AR): بير توتي. يعني انت كمان، أكيد.">بير توتي. يعني انت كمان، أكيد.</xar></p>
+  <p><xen data-edit="t160" data-edit-label="Text (EN): Pertutti, Martakla, Baabda.">Pertutti, Martakla, Baabda.</xen><xar data-edit="t161" data-edit-label="Text (AR): بيرتوتي، مرتقلا، بعبدا.">بيرتوتي، مرتقلا، بعبدا.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t162" data-edit-label="Text (EN): Per tutti. That includes you, obviousl…">Per tutti. That includes you, obviously.</xen><xar data-edit="t163" data-edit-label="Text (AR): بير توتي. يعني انت كمان، أكيد.">بير توتي. يعني انت كمان، أكيد.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a class="rd" href="tel:+9615457000"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t148" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t149" data-edit-label="Text (AR): اتصل واحجز">اتصل واحجز</xar></span></a>
-  <a href="https://www.google.com/maps?cid=5533198288649466588" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t151" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="#menu2"><svg viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4zm0 5h16v2H4z"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t153" data-edit-label="Text (AR): اللائحة">اللائحة</xar></span></a>
+  <a class="rd" href="tel:+9615457000"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t164" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t165" data-edit-label="Text (AR): اتصل واحجز">اتصل واحجز</xar></span></a>
+  <a href="https://www.google.com/maps?cid=5533198288649466588" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t167" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="#menu2"><svg viewBox="0 0 24 24"><path d="M4 4h16v2H4zm0 5h16v2H4zm0 5h10v2H4zm0 5h16v2H4z"/></svg><span><xen data-edit="t168" data-edit-label="Text (EN): Menu">Menu</xen><xar data-edit="t169" data-edit-label="Text (AR): اللائحة">اللائحة</xar></span></a>
 
   <a class="rd" href="https://www.instagram.com/pertuttilb/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
     Instagram</a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="بيرتوتي · مرتقلا، بعبدا" data-edit="t154" data-edit-label="Button: عربي">عربي</button>
+<script>
+var nv=document.getElementById('nav');
+addEventListener('scroll',function(){nv.classList.toggle('sc',scrollY>40)},{passive:true});
+</script>
 </body></html>
