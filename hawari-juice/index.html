@@ -147,6 +147,13 @@ footer{padding:36px 20px 130px;background:#150E05;color:#9C8B6C;font-size:13px;t
 @media(max-width:520px){.lrow{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.arm{animation:none}}
 @media(min-width:901px){.bar{display:none}footer{padding-bottom:60px}}
+/* his 08-03 note: "the number here are overlapping". The badges hang at top:-15px, so the first
+   one sat on the h2 and each of the others sat on the panel above. Give the stack room and space
+   the panels so every badge lands in a gap instead of on top of something. */
+.layers .lay:first-of-type{margin-top:26px}
+.layers .lay + .lay{margin-top:26px}
+.layers h2{margin-bottom:6px}
+/* data-layfix */
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
