@@ -40,41 +40,54 @@ img{display:block;max-width:100%}
 #nav a.callb{background:var(--ember);color:#241005;border:0;padding:11px 20px;
   border-radius:2px;font:700 13.5px/1 'Sen',sans-serif}
 
-/* ---------- HERO: full-bleed, their own farrouj on the coals ---------- */
+/* ---------- HERO (pin: shawarma-04 Smokehouse Grill Co): one line in two weights on a charcoal
+     field, and their own tray of grilled farrouj in a long band under it. Their strongest frame is
+     1062x1047, so the band is capped at 880px and the photograph is never blown up: the ember field
+     does the burning, the picture only has to be sharp. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:flex-end;background:#0B0C0E;isolation:isolate}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;
-  filter:contrast(1.08) saturate(1.05) brightness(.60);z-index:0;
-  transform:scale(1.055);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-header .scrim{position:absolute;inset:0;z-index:1;background:
-  linear-gradient(180deg,rgba(9,10,12,.72) 0%,rgba(9,10,12,.10) 22%,rgba(9,10,12,.22) 40%,rgba(9,10,12,.90) 74%,#0B0C0E 100%),
-  linear-gradient(96deg,rgba(9,10,12,.78) 0%,rgba(9,10,12,.34) 40%,transparent 72%),
-  radial-gradient(112% 74% at 78% 34%,rgba(255,116,51,.22),transparent 62%)}
+  display:flex;align-items:center;isolation:isolate;
+  background:linear-gradient(168deg,#101114 0%,#191413 40%,#221512 66%,#0B0C0E 100%)}
+header .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  radial-gradient(96% 62% at 16% 26%,rgba(255,116,51,.16),transparent 64%),
+  radial-gradient(70% 52% at 92% 88%,rgba(255,116,51,.10),transparent 66%)}
 header .grain{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.16;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-.hwrap{position:relative;z-index:3;width:min(1150px,100%);margin-inline:auto;
-  padding:0 6vw clamp(104px,15vh,132px)}
-.hcopy{max-width:min(680px,94%)}
-.hcopy .arname{font:700 clamp(30px,3.7vw,46px)/1 var(--arh),serif;color:var(--ember2);margin:15px 0 12px}
-.hcopy h1{font-size:clamp(54px,10.2vw,132px);color:var(--bone);letter-spacing:.005em;
+.hwrap{position:relative;z-index:3;width:min(1012px,100%);margin-inline:auto;
+  padding:clamp(70px,9vh,92px) 6vw clamp(26px,3.6vh,38px)}
+.hband{position:relative;padding:7px;border:1px solid rgba(241,237,228,.26);background:rgba(241,237,228,.05);
+  box-shadow:0 44px 92px -38px rgba(0,0,0,.92)}
+.hband>img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:52% 58%;
+  filter:contrast(1.07) saturate(1.07)}
+.hband::before{content:"";position:absolute;inset:7px;pointer-events:none;z-index:2;background:
+  linear-gradient(93deg,rgba(9,10,12,.96) 0%,rgba(9,10,12,.93) 32%,rgba(9,10,12,.66) 54%,rgba(9,10,12,.18) 80%,rgba(9,10,12,0) 100%)}
+.hband::after{content:"";position:absolute;left:-1px;top:-1px;width:62px;height:3px;background:var(--ember);z-index:3}
+.hgear{position:absolute;inset:7px;z-index:4;display:flex;align-items:center;
+  padding:clamp(18px,3vw,40px)}
+.hcopy{max-width:min(520px,90%)}
+.hcopy .arname{font:700 clamp(26px,2.9vw,38px)/1 var(--arh),serif;color:var(--ember2);margin:13px 0 10px}
+.hcopy h1{font-size:clamp(42px,5.4vw,74px);color:var(--bone);letter-spacing:.005em;
   text-shadow:0 10px 54px rgba(0,0,0,.62)}
 .hcopy h1 .lt{font-weight:300;color:rgba(241,237,228,.82)}
-.sub{color:#D3D7DA;font-size:clamp(15px,1.7vw,17.5px);max-width:47ch;line-height:1.68;margin-top:15px;text-shadow:0 2px 16px rgba(0,0,0,.6)}
-.hmeta{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.sub{color:#D3D7DA;font-size:clamp(14.5px,1.55vw,16.5px);max-width:44ch;line-height:1.64;margin-top:12px;text-shadow:0 2px 16px rgba(0,0,0,.6)}
+.hmeta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .hm{border:1px solid rgba(241,237,228,.34);background:rgba(11,12,14,.34);border-radius:2px;padding:8px 13px;
   font:700 11.6px/1 'Sen',sans-serif;letter-spacing:.09em;text-transform:uppercase;color:#E8E4DB}
 .hm.f{background:var(--ember);border-color:var(--ember);color:#241005}
 .hm b{color:var(--ember2)}
 .hm.f b{color:#241005}
-.hbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.hbtns{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
 .hbtns .btn{margin:0}
 .hbtns .btn.o{background:rgba(11,12,14,.28);color:var(--bone);border-color:rgba(241,237,228,.5)}
 @media(max-width:880px){
   .hcopy{max-width:100%}
-  .hcopy h1{font-size:clamp(50px,15.5vw,96px)}
-  .hcopy .arname{font-size:clamp(28px,7.6vw,42px)}
+  .hcopy h1{font-size:clamp(44px,12.4vw,72px)}
+  .hcopy .arname{font-size:clamp(24px,6.6vw,36px)}
   .sub{max-width:100%;font-size:15px}
+  .hband>img{aspect-ratio:16/10;object-position:54% 56%}
+  .hband::before{display:none}
+  .hgear{position:static;inset:auto;display:block;padding:0;margin-top:clamp(18px,2.6vh,24px)}
+  .hcopy{max-width:100%}
+  .hwrap{padding-top:clamp(76px,10vh,94px)}
 }
 
 /* ---------- sections ---------- */
@@ -215,11 +228,13 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="bg" src="img/02.jpg" alt="A whole charcoal-grilled farrouj on yellow rice at Al Shayeb in Ras El Nabaa">
   <div class="scrim"></div>
   <div class="grain"></div>
   <div class="hwrap">
-    <div class="hcopy">
+    <div class="hband">
+      <img src="img/04.jpg" alt="A tray of Al Shayeb grilled chicken with fries, hummus, muhammara and pickles">
+      <div class="hgear">
+      <div class="hcopy">
       <p class="k"><xen data-edit="t13" data-edit-label="Text (EN): Charcoal farrouj · Ras El Nabaa">Charcoal farrouj · Ras El Nabaa</xen><xar data-edit="t14" data-edit-label="Text (AR): فروج عالفحم · رأس النبع">فروج عالفحم · رأس النبع</xar></p>
       <p class="arname" data-edit="t15" data-edit-label="Text: الشايب">الشايب</p>
       <h1><xen class="c"><span class="lt" data-edit="t16" data-edit-label="Text: AL">AL</span> SHAYEB</xen><xar class="c" data-edit="t17" data-edit-label="Text (AR): مشاوي عالجمر">مشاوي عالجمر</xar></h1>
@@ -233,6 +248,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
         <a class="btn" href="tel:+96170705450"><xen data-edit="t27" data-edit-label="Text (EN): Call the grill">Call the grill</xen><xar data-edit="t28" data-edit-label="Text (AR): تلفن عالمحل">تلفن عالمحل</xar></a>
         <a class="btn wa" href="https://wa.me/96170705450?text=Hello%20Al%20Shayeb%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t29" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t30" data-edit-label="Text (AR): واتساب">واتساب</xar></a>
         <a class="btn o" href="https://www.google.com/maps?cid=1465549910759777370" target="_blank" rel="noopener"><xen data-edit="t31" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t32" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+      </div>
       </div>
     </div>
   </div>

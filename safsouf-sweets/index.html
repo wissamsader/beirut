@@ -40,8 +40,14 @@ section .wrap .k:first-child,section.wrap .k:first-child,section .k:first-child{
 .two p{margin-bottom:15px;color:#54443C}
 .frame{background:#fff;border:1px solid #DCCFB6;padding:10px;border-radius:4px;box-shadow:0 16px 34px rgba(51,35,43,.12)}
 .frame img{width:100%;height:clamp(240px,38vh,410px);object-fit:cover;border-radius:2px}
-.wideframe{background:#fff;border:1px solid #DCCFB6;padding:10px;border-radius:4px;box-shadow:0 16px 34px rgba(51,35,43,.12)}
-.wideframe img{width:100%;aspect-ratio:16/6;object-fit:cover;object-position:50% 30%;border-radius:2px}
+/* the shopfront plate. Their storefront frame is 1200x1600 and portrait, so the old 16:6 letterbox
+   kept 28% of it and printed a strip of awning with no shop under it. The plate is now held at
+   620px on a 1200px source: the whole pink sign, the awning drilled like lace, the curtain and the
+   door, with the parked car cropped off the bottom. It stands at the left of the row and the rest
+   of the band is left silent. */
+.shoprule{border-top:1px solid rgba(154,117,38,.34);margin-bottom:clamp(22px,3.2vh,34px)}
+.wideframe{width:min(760px,100%);background:#fff;border:1px solid #DCCFB6;padding:10px;border-radius:4px;box-shadow:0 16px 34px rgba(51,35,43,.12)}
+.wideframe img{width:100%;aspect-ratio:31/23;object-fit:cover;object-position:50% 14%;border-radius:2px}
 .cap{font:600 12.5px/1.55 'Mulish',sans-serif;color:#8F7D6A;margin-top:9px;letter-spacing:.02em}
 .band{background:var(--night);color:#F2E9D6}
 .band .k{color:var(--brass)}
@@ -304,6 +310,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </section>
 
 <section class="wrap" style="padding-top:0">
+  <div class="shoprule" aria-hidden="true"></div>
   <div class="wideframe rev"><img src="img/01.jpg" loading="lazy" alt="The pink Safsouf storefront with its perforated awning">
     <p class="cap"><xen data-edit="t105" data-edit-label="Text (EN): The pink corner on Soleiman Boustani s…">The pink corner on Soleiman Boustani street, awning drilled like lace.</xen><xar data-edit="t106" data-edit-label="Text (AR): الزاوية الزهرية بشارع سليمان البستاني،…">الزاوية الزهرية بشارع سليمان البستاني، والتندة مبرومة متل الدانتيل.</xar></p>
   </div>

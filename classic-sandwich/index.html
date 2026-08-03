@@ -34,13 +34,18 @@ header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;ov
 header::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--tom)}
 .hw{position:relative;z-index:5;width:min(1160px,100%);display:flex;flex-direction:column;align-items:center}
 .hw .k{color:var(--tom)}
-.hw h1{font-size:clamp(48px,9.6vw,136px);color:var(--navy);line-height:.86;margin-top:14px;
+.hw h1{font-size:clamp(44px,7.2vw,104px);color:var(--navy);line-height:.86;margin-top:14px;
   letter-spacing:-.03em;text-transform:uppercase}
 .hw h1 span{display:block}
-.sub{margin:20px auto 0;max-width:52ch;color:#54606E;font-size:clamp(14.5px,1.62vw,17px);font-weight:500;line-height:1.68}
-/* the product portrait, running off the base of the frame */
-.shot{position:relative;z-index:4;margin:clamp(16px,2.6vh,30px) auto 0;width:min(560px,74vw)}
-.shot img{width:100%;height:clamp(230px,36vh,344px);object-fit:cover;object-position:50% 44%;
+.sub{margin:18px auto 0;max-width:52ch;color:#54606E;font-size:clamp(14.5px,1.62vw,17px);font-weight:500;line-height:1.68}
+/* the product portrait. Their sandwich frame is 800x1600, so the old wide strip kept only 26% of
+   it; the plate is now a square held at 430px on an 800px source, the bun whole in the middle of
+   the printed wrap with the shop's own logo still in the corner of the paper */
+/* on a short window the whole poster still has to clear the sticky bar, so the plate is capped by
+   the height the copy and the bar leave it, never by a fixed number alone */
+.shot{position:relative;z-index:4;margin:clamp(14px,2.2vh,24px) auto 0;
+  width:min(430px,62vw,max(240px,calc(100svh - 430px)))}
+.shot img{width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;object-position:50% 46%;
   border:1px solid rgba(22,48,90,.2);box-shadow:0 -8px 60px rgba(22,48,90,.16)}
 .disc{position:absolute;z-index:6;right:-46px;top:-34px;width:104px;height:104px;border-radius:999px;
   background:var(--tom);color:#FFF6EF;display:grid;place-items:center;text-align:center;
@@ -61,10 +66,9 @@ header::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;back
 .rate b{color:var(--tom)}
 @media(max-width:900px){
   header{padding-top:clamp(56px,9vh,84px)}
-  .hw h1{font-size:clamp(44px,13.4vw,86px)}
+  .hw h1{font-size:clamp(44px,12vw,80px)}
   .sub{max-width:100%;font-size:14.5px}
-  .shot{width:min(420px,80vw)}
-  .shot img{height:clamp(190px,26svh,250px)}
+  .shot{width:min(310px,66vw)}
   .disc{right:-14px;top:-24px;width:82px;height:82px;font-size:10.5px}
   .disc b{font-size:21px}
   .flank{position:static;flex-direction:column;align-items:center;gap:12px;padding:16px 0 0;margin-top:14px}

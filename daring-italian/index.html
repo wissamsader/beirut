@@ -47,22 +47,30 @@ section{padding-block:clamp(56px,8vh,96px)}
 #nav .lk a.call{background:var(--tomato);color:var(--cream);border:1px solid var(--tomato-d);
   padding:10px 18px;letter-spacing:.06em}
 
-/* ---------- HERO: their own pizza, shot from above, filling the frame.
-     One compact block of type stamped on the surface. No panel behind it. ---------- */
+/* ---------- HERO (pin: pizza-04 Secret Pizza Club): a compact block of type stamped straight on a
+     cobalt field, and their own pizza shot from directly above running off the bottom right corner.
+     Their widest frame of a whole pizza is 1280x960, so the square is capped at 600px and the
+     photograph is never shown wider than it was taken. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;background:#0A1230}
-header .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  object-position:52% 46%;filter:contrast(1.06) saturate(1.04) brightness(.82)}
-header .scrim{position:absolute;inset:0;pointer-events:none;
+  display:flex;align-items:center;justify-content:flex-start;
+  background:linear-gradient(146deg,#0A1230 0%,#122054 44%,#0C1638 78%,#080E24 100%)}
+header .pdisc{position:absolute;right:0;bottom:-2.6vh;z-index:2;
+  width:clamp(300px,42vw,580px);aspect-ratio:1/1;overflow:hidden;
+  box-shadow:0 46px 110px -30px rgba(0,0,0,.8)}
+header .hbg{display:block;width:100%;height:100%;object-fit:cover;
+  object-position:48% 50%;filter:contrast(1.06) saturate(1.06)}
+header .scrim{position:absolute;inset:0;pointer-events:none;z-index:3;
   background:
-   radial-gradient(46% 40% at 50% 47%,rgba(8,14,38,.74),rgba(8,14,38,.32) 62%,rgba(8,14,38,0) 84%),
-   linear-gradient(180deg,rgba(8,14,38,.72) 0,rgba(8,14,38,.12) 22%,rgba(8,14,38,.22) 62%,var(--green) 100%)}
-.stamp{position:relative;z-index:3;text-align:center;padding:0 6vw;width:min(880px,100%)}
+   linear-gradient(88deg,rgba(8,14,38,.92) 0%,rgba(8,14,38,.74) 34%,rgba(8,14,38,.20) 58%,rgba(8,14,38,0) 76%),
+   radial-gradient(58% 46% at 12% 22%,rgba(214,58,42,.16),transparent 70%)}
+.stamp{position:relative;z-index:4;text-align:left;padding:0 6vw;width:min(820px,100%)}
 .stamp .kick{display:inline-flex;align-items:center;gap:12px;
+  text-shadow:0 2px 12px rgba(8,14,38,.9);
   font:700 11px/1.4 'Hanken Grotesk',sans-serif;letter-spacing:.36em;text-transform:uppercase;color:#DCE3F7}
-.stamp .kick::before,.stamp .kick::after{content:"";width:clamp(20px,5vw,54px);height:1px;background:rgba(244,238,224,.66)}
+.stamp .kick::after{display:none}
+.stamp .kick::before{content:"";width:clamp(20px,4vw,44px);height:1px;background:rgba(244,238,224,.66)}
 h1.big{margin:clamp(12px,2vh,20px) 0 0;font-family:'Anton',sans-serif;color:var(--cream);
-  font-size:clamp(46px,8.6vw,116px);line-height:.9;letter-spacing:.012em;
+  font-size:clamp(46px,6.6vw,94px);line-height:.9;letter-spacing:.012em;
   text-shadow:0 10px 44px rgba(0,0,0,.7)}
 h1.big .l2{display:block;color:#FFD9C6}
 html.ar h1.big{font-size:clamp(42px,7.4vw,96px);line-height:1.16;letter-spacing:normal}
@@ -71,7 +79,7 @@ html.ar h1.big{font-size:clamp(42px,7.4vw,96px);line-height:1.16;letter-spacing:
   letter-spacing:.3em;text-transform:uppercase}
 .stamp .rt{margin-top:14px;font:700 13.5px/1.7 'Hanken Grotesk',sans-serif;color:#DCE3F7;letter-spacing:.05em}
 .stamp .rt b{color:#FFD9C6;font-size:16px}
-.hbtns{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:clamp(20px,3vh,30px)}
+.hbtns{display:flex;flex-wrap:wrap;gap:11px;justify-content:flex-start;margin-top:clamp(20px,3vh,30px)}
 .hbtns a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
   font:700 13px/1 'Hanken Grotesk',sans-serif;letter-spacing:.1em;text-transform:uppercase;
   padding:15px 26px;border:1px solid transparent}
@@ -136,6 +144,13 @@ footer{padding:36px 7vw 130px;color:#B98B72;font-size:13.5px;text-align:center;b
 .bar svg{width:19px;height:19px;fill:currentColor}
 .bar a.w{background:var(--tomato);border:2px solid var(--tomato-d)}
 @media(max-width:880px){
+  header{flex-direction:column;align-items:stretch;justify-content:flex-start;
+    padding:clamp(88px,13vh,118px) 0 0}
+  header .pdisc{position:relative;right:auto;bottom:auto;width:100%;aspect-ratio:16/10;order:2;
+    margin-top:clamp(20px,3vh,28px);box-shadow:none}
+  .stamp{order:1}
+  header .scrim{display:none}
+  .stamp{width:100%}
   .two,.visit{grid-template-columns:1fr}
   .legend{grid-template-columns:1fr}
   .grid3{grid-template-columns:1fr}
@@ -219,7 +234,9 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="hbg" src="img/04.jpg" alt="A Daring Italian pizza photographed from directly above, blistered crust running off the frame">
+  <div class="pdisc" aria-hidden="false">
+    <img class="hbg" src="img/09.jpg" alt="A whole Daring Italian pizza photographed from directly above on a white plate">
+  </div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="stamp">
     <span class="kick"><xen data-edit="t13" data-edit-label="Text (EN): Jal El Dib · Pizza Restaurant">Jal El Dib · Pizza Restaurant</xen><xar data-edit="t14" data-edit-label="Text (AR): جل الديب · مطعم بيتزا">جل الديب · مطعم بيتزا</xar></span>
@@ -372,21 +389,21 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
         <a class="btn o" href="https://www.google.com/maps?cid=9463469736754491965" target="_blank" rel="noopener"><xen data-edit="t154" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t155" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
       </p>
       <p style="margin-top:16px">
-        <a class="btn o" href="tel:+9613026682"><xen data-edit="t156" data-edit-label="Text (EN): Or just call">Or just call</xen><xar data-edit="t157" data-edit-label="Text (AR): أو تلفن دغري">أو تلفن دغري</xar></a>
+        <a class="btn o" href="tel:+9613026682"><xen data-edit="t156" data-edit-label="Text (EN): Or just call">Or just call</xen><xar data-edit="t157" data-edit-label="Text (AR): أو تلفن دغري">أو تلفن دغري</xar></a><a class="btn o" href="https://www.instagram.com/thedaringitalian/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.1a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><xen data-edit="t158" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t159" data-edit-label="Text (AR): انستغرام">انستغرام</xar></a><a class="btn o" href="https://www.facebook.com/people/The-Daring-Italian/61571849796630/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V14h2.7v8z"/></svg><xen data-edit="t160" data-edit-label="Text (EN): Facebook">Facebook</xen><xar data-edit="t161" data-edit-label="Text (AR): فيسبوك">فيسبوك</xar></a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t158" data-edit-label="Text (EN): The Daring Italian, Jal El Dib, Lebano…">The Daring Italian, Jal El Dib, Lebanon.</xen><xar data-edit="t159" data-edit-label="Text (AR): الإيطالي الجريء، جل الديب، لبنان.">الإيطالي الجريء، جل الديب، لبنان.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t160" data-edit-label="Text (EN): Open every day from 10 in the morning,…">Open every day from 10 in the morning, late on Saturday and Sunday.</xen><xar data-edit="t161" data-edit-label="Text (AR): فاتحين كل يوم من العشرة الصبح، وبيطوّل…">فاتحين كل يوم من العشرة الصبح، وبيطوّلوا السبت والأحد.</xar></p>
+  <p><xen data-edit="t162" data-edit-label="Text (EN): The Daring Italian, Jal El Dib, Lebano…">The Daring Italian, Jal El Dib, Lebanon.</xen><xar data-edit="t163" data-edit-label="Text (AR): الإيطالي الجريء، جل الديب، لبنان.">الإيطالي الجريء، جل الديب، لبنان.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t164" data-edit-label="Text (EN): Open every day from 10 in the morning,…">Open every day from 10 in the morning, late on Saturday and Sunday.</xen><xar data-edit="t165" data-edit-label="Text (AR): فاتحين كل يوم من العشرة الصبح، وبيطوّل…">فاتحين كل يوم من العشرة الصبح، وبيطوّلوا السبت والأحد.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a href="tel:+9613026682"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t162" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t163" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a class="w" href="https://wa.me/9613026682?text=Hello%2C%20are%20you%20open%20tonight%3F%20I%20would%20like%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t164" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t165" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="https://www.google.com/maps?cid=9463469736754491965" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t167" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="tel:+9613026682"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t167" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/9613026682?text=Hello%2C%20are%20you%20open%20tonight%3F%20I%20would%20like%20a%20table." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t168" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t169" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=9463469736754491965" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t170" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t171" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
 
   <a class="w" href="https://www.instagram.com/thedaringitalian/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
     Instagram</a>
@@ -394,6 +411,6 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     Facebook</a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="الإيطالي الجريء · جل الديب" data-edit="t168" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="الإيطالي الجريء · جل الديب" data-edit="t172" data-edit-label="Button: عربي">عربي</button>
 <script>var n=document.getElementById('nav');addEventListener('scroll',function(){n.classList.toggle('sc',scrollY>40)},{passive:true});n.classList.toggle('sc',scrollY>40);</script>
 </body></html>

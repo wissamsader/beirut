@@ -104,54 +104,66 @@ footer{padding:36px 20px 130px;background:#160F06;color:#A8977C;font-size:13.5px
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}}
 
-/* ---------- HERO (pin: shawarma-01 "Al-Dawaha"): one saturated field colour lifted straight
-     from the glow of their own broiler, the cream bilingual lockup on it, and the cone photograph
-     entering as a tall crop off the right edge ---------- */
+/* ---------- HERO (pin: shawarma-01 "Al-Dawaha"): the field colour lifted from the glow of their
+     own broiler, and the turning spit standing at the CENTRE of the frame, floor to ceiling, as
+     the axis of the page. The two names of the house are set in the calm field either side of the
+     fire, on one baseline, so nothing sits beside the photograph as a column ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:stretch;
-  background:radial-gradient(78% 62% at 18% 36%,#D2601C,rgba(210,96,28,0) 68%),
-             linear-gradient(158deg,#C24F14 0%,#A63D0B 52%,#7E2C06 100%)}
+  background:radial-gradient(94% 60% at 50% 104%,#E0761F,rgba(224,118,31,0) 66%),
+             linear-gradient(180deg,#98350A 0%,#C24F14 74%,#AE4310 100%)}
 header::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
   background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 2px,rgba(0,0,0,0) 2px 6px)}
-.frontrow{position:relative;z-index:3;flex:1 1 auto;display:flex;align-items:center;
-  width:100%;gap:clamp(20px,4vw,60px)}
-.leftcol{flex:1 1 auto;min-width:0;padding:clamp(36px,6vh,64px) 0 clamp(30px,5vh,54px) clamp(24px,7vw,110px);
-  max-width:none}
-.kicker2{font:700 11px/1.5 'Archivo',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#FBE6C6}
-.arname2{font-family:var(--arh),serif;font-weight:400;color:var(--paper);direction:rtl;text-align:left;
-  font-size:clamp(30px,4.8vw,62px);line-height:1.14;margin-top:8px;text-shadow:0 5px 26px rgba(70,20,0,.5)}
-.marq{font-family:'Anton',Impact,sans-serif;font-size:clamp(26px,3.8vw,50px);line-height:1;
-  letter-spacing:.05em;color:#FBE6C6;margin-top:2px;text-transform:uppercase}
-.marq b{font-weight:400;color:#2A1405}
-.openline{margin-top:clamp(12px,2vh,20px);padding-top:clamp(12px,2vh,18px);
-  border-top:1px solid rgba(251,230,198,.45);max-width:36ch;color:rgba(251,230,198,.9);
-  font:500 clamp(13.5px,1.5vw,16px)/1.6 'Archivo',sans-serif}
-.ratepill{display:inline-flex;align-items:baseline;gap:8px;margin-top:clamp(12px,2vh,18px);
+.frontrow{position:absolute;inset:0;z-index:3;display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  gap:clamp(12px,1.9vw,28px);padding-inline:clamp(14px,2.2vw,30px)}
+/* one hairline horizon across the calm field, interrupted by the fire */
+.frontrow::after{content:"";position:absolute;left:0;right:0;top:clamp(96px,18.8vh,164px);height:1px;
+  background:rgba(251,230,198,.32);z-index:1}
+.wing{position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;
+  justify-content:space-between;padding:clamp(72px,14.5vh,130px) 0 clamp(32px,6vh,70px)}
+.wl{align-items:flex-end;text-align:right}
+.wr{align-items:flex-start;text-align:left}
+.wfoot{width:100%}
+.kicker2{font:700 11px/1.7 'Archivo',sans-serif;letter-spacing:.22em;text-transform:uppercase;
+  color:#FBE6C6;text-wrap:balance}
+.arname2{font-family:var(--arh),serif;font-weight:400;color:var(--paper);direction:rtl;text-align:right;
+  font-size:clamp(28px,5vw,72px);line-height:1.08;text-shadow:0 5px 26px rgba(70,20,0,.45)}
+.marq{font-family:'Anton',Impact,sans-serif;font-size:clamp(28px,4.5vw,64px);line-height:.96;
+  letter-spacing:.02em;color:#FBE6C6;text-transform:uppercase}
+.marq b{display:block;font-weight:400;color:#2A1405}
+.openline{margin-top:clamp(13px,2.1vh,19px);padding-top:clamp(13px,2.1vh,19px);
+  border-top:1px solid rgba(251,230,198,.45);color:rgba(251,230,198,.92);text-wrap:balance;
+  font:500 clamp(13px,1.36vw,15.5px)/1.6 'Archivo',sans-serif}
+.ratepill{display:inline-flex;align-items:baseline;gap:8px;margin-top:clamp(11px,1.9vh,17px);
   color:rgba(251,230,198,.86);font:600 12.5px/1 'Archivo',sans-serif;letter-spacing:.03em}
 .ratepill b{font:400 24px/1 'Anton',sans-serif;color:#2A1405;letter-spacing:.03em}
-.cuts{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.cuts{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
 .cut{border:1px solid rgba(251,230,198,.5);border-radius:2px;padding:6px 12px;
   font:600 11.5px/1 'Archivo',sans-serif;letter-spacing:.05em;color:#FBE6C6}
-.saying{margin-top:14px;font:700 10.5px/1 'Archivo',sans-serif;letter-spacing:.34em;
-  text-transform:uppercase;color:rgba(42,20,5,.8)}
-.hcta{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(16px,2.6vh,24px)}
+.saying{font:700 10.5px/1.7 'Archivo',sans-serif;letter-spacing:.34em;
+  text-transform:uppercase;color:rgba(42,20,5,.82)}
+html.ar .wr .saying{text-align:left}
+.hcta{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(15px,2.4vh,22px)}
 .hcta a{display:inline-flex;align-items:center;text-decoration:none;border-radius:2px;padding:12px 20px;
   font:700 13.5px/1 'Archivo',sans-serif;background:#2A1405;color:#FBE6C6;border:1px solid #2A1405}
 .hcta a.ln{background:transparent;color:#FBE6C6;border-color:rgba(251,230,198,.55)}
-/* the cone, a tall crop running off the right edge */
-.glassbox{flex:0 0 auto;position:relative;align-self:stretch;width:clamp(200px,38vw,540px);
-  overflow:hidden;box-shadow:-30px 0 70px -24px rgba(60,20,0,.6)}
-.glassbox::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  box-shadow:inset 6px 0 0 rgba(251,230,198,.6)}
-.glassbox img{width:100%;height:100%;object-fit:cover;object-position:44% 50%;display:block;
+/* the spit itself: floor to ceiling, dead centre, the widest its own file can honestly carry */
+.spit{position:relative;z-index:2;align-self:stretch;width:clamp(210px,45vw,648px);overflow:hidden}
+.spit::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(251,230,198,.5)}
+.spit img{width:100%;height:100%;object-fit:cover;object-position:46% 50%;display:block;
   filter:contrast(1.06) saturate(1.05)}
 @media(max-width:900px){
-  .frontrow{flex-direction:column;align-items:stretch;gap:0}
-  .leftcol{padding:clamp(58px,10vh,86px) 6vw clamp(22px,4vh,34px)}
-  .glassbox{width:100%;height:clamp(180px,28vh,260px);align-self:auto;flex:0 0 auto}
-  .glassbox::before{box-shadow:inset 0 6px 0 rgba(251,230,198,.6)}
-  .arname2{font-size:clamp(30px,9vw,52px)}
-  .marq{font-size:clamp(22px,6.4vw,36px)}
+  .frontrow{position:relative;inset:auto;display:flex;flex-direction:column;gap:0;padding-inline:0}
+  .frontrow::after{content:none}
+  .wl{align-items:flex-start;text-align:left;padding:clamp(52px,8.6vh,80px) 6vw clamp(17px,3vh,26px)}
+  .wr{padding:clamp(17px,3vh,26px) 6vw clamp(26px,4.4vh,40px)}
+  .wing{gap:12px}
+  .spit{width:100%;height:clamp(214px,31vh,286px);align-self:auto}
+  .spit img{object-position:46% 13%}
+  .spit::before{box-shadow:inset 0 1px 0 rgba(251,230,198,.5),inset 0 -1px 0 rgba(251,230,198,.5)}
+  .arname2{font-size:clamp(30px,9vw,52px);text-align:left}
+  .marq{font-size:clamp(26px,7.6vw,44px)}
   .hcta a{flex:1 1 auto;justify-content:center;padding:11px 12px;font-size:12.5px}
 }
 </style>
@@ -203,40 +215,44 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 
 <header>
   <div class="frontrow">
-    <div class="leftcol">
+    <div class="wing wl">
       <p class="kicker2"><xen data-edit="t1" data-edit-label="Text (EN): Shawarma house · Saydeh, Sin El Fil">Shawarma house · Saydeh, Sin El Fil</xen><xar data-edit="t2" data-edit-label="Text (AR): بيت الشاورما · السيدة، سن الفيل">بيت الشاورما · السيدة، سن الفيل</xar></p>
-      <p class="arname2" data-edit="t3" data-edit-label="Text: مطعم جوزيف">مطعم جوزيف</p>
-      <h1 class="marq">Restaurant <b data-edit="t4" data-edit-label="Text: Joseph">Joseph</b></h1>
-      <p class="openline"><xen data-edit="t5" data-edit-label="Text (EN): Carved to order, every day from half p…">Carved to order, every day from half past noon</xen><xar data-edit="t6" data-edit-label="Text (AR): بينقطع عالطلب، كل يوم من الضهر ونص">بينقطع عالطلب، كل يوم من الضهر ونص</xar></p>
-      <p class="ratepill"><b class="num" data-edit="t7" data-edit-label="Text: 4.3 ★">4.3 ★</b><span><xen><span class="num" data-edit="t8" data-edit-label="Text: 2,406">2,406</span> Google reviews</xen><xar><span class="num" data-edit="t9" data-edit-label="Text: 2,406">2,406</span> تقييم على غوغل</xar></span></p>
-      <div class="cuts">
-        <span class="cut"><xen data-edit="t10" data-edit-label="Text (EN): Meat">Meat</xen><xar data-edit="t11" data-edit-label="Text (AR): لحمة">لحمة</xar></span>
-        <span class="cut"><xen data-edit="t12" data-edit-label="Text (EN): Chicken">Chicken</xen><xar data-edit="t13" data-edit-label="Text (AR): دجاج">دجاج</xar></span>
-        <span class="cut"><xen data-edit="t14" data-edit-label="Text (EN): Taouk">Taouk</xen><xar data-edit="t15" data-edit-label="Text (AR): طاووق">طاووق</xar></span>
-        <span class="cut"><xen data-edit="t16" data-edit-label="Text (EN): Kebab">Kebab</xen><xar data-edit="t17" data-edit-label="Text (AR): كباب">كباب</xar></span>
-      </div>
-      <p class="saying"><xen data-edit="t18" data-edit-label="Text (EN): Turning since lunch">Turning since lunch</xen><xar data-edit="t19" data-edit-label="Text (AR): عم يدور من الضهر">عم يدور من الضهر</xar></p>
-      <div class="hcta">
-        <a href="tel:+9611510520"><xen data-edit="t20" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t21" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
-        <a class="ln" href="https://www.google.com/maps?cid=11790927344842820403" target="_blank" rel="noopener"><xen data-edit="t22" data-edit-label="Text (EN): Find the corner">Find the corner</xen><xar data-edit="t23" data-edit-label="Text (AR): لاقي الزاروب">لاقي الزاروب</xar></a>
+      <div class="wfoot">
+        <p class="arname2" data-edit="t3" data-edit-label="Text: مطعم جوزيف">مطعم جوزيف</p>
+        <p class="openline"><xen data-edit="t4" data-edit-label="Text (EN): Carved to order, every day from half p…">Carved to order, every day from half past noon</xen><xar data-edit="t5" data-edit-label="Text (AR): بينقطع عالطلب، كل يوم من الضهر ونص">بينقطع عالطلب، كل يوم من الضهر ونص</xar></p>
+        <p class="ratepill"><b class="num" data-edit="t6" data-edit-label="Text: 4.3 ★">4.3 ★</b><span><xen><span class="num" data-edit="t7" data-edit-label="Text: 2,406">2,406</span> Google reviews</xen><xar><span class="num" data-edit="t8" data-edit-label="Text: 2,406">2,406</span> تقييم على غوغل</xar></span></p>
       </div>
     </div>
-    <div class="glassbox"><img src="img/03.jpg" alt="The meat shawarma cone turning on the spit at Restaurant Joseph"></div>
+    <div class="spit"><img src="img/03.jpg" alt="The meat shawarma cone turning on the spit at Restaurant Joseph"></div>
+    <div class="wing wr">
+      <p class="saying"><xen data-edit="t9" data-edit-label="Text (EN): Turning since lunch">Turning since lunch</xen><xar data-edit="t10" data-edit-label="Text (AR): عم يدور من الضهر">عم يدور من الضهر</xar></p>
+      <div class="wfoot">
+        <h1 class="marq">Restaurant <b data-edit="t11" data-edit-label="Text: Joseph">Joseph</b></h1>
+        <div class="cuts">
+          <span class="cut"><xen data-edit="t12" data-edit-label="Text (EN): Meat">Meat</xen><xar data-edit="t13" data-edit-label="Text (AR): لحمة">لحمة</xar></span>
+          <span class="cut"><xen data-edit="t14" data-edit-label="Text (EN): Chicken">Chicken</xen><xar data-edit="t15" data-edit-label="Text (AR): دجاج">دجاج</xar></span>
+          <span class="cut"><xen data-edit="t16" data-edit-label="Text (EN): Taouk">Taouk</xen><xar data-edit="t17" data-edit-label="Text (AR): طاووق">طاووق</xar></span>
+          <span class="cut"><xen data-edit="t18" data-edit-label="Text (EN): Kebab">Kebab</xen><xar data-edit="t19" data-edit-label="Text (AR): كباب">كباب</xar></span>
+        </div>
+        <div class="hcta">
+          <a href="tel:+9611510520"><xen data-edit="t20" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t21" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
+          <a class="ln" href="https://www.google.com/maps?cid=11790927344842820403" target="_blank" rel="noopener"><xen data-edit="t22" data-edit-label="Text (EN): Find the corner">Find the corner</xen><xar data-edit="t23" data-edit-label="Text (AR): لاقي الزاروب">لاقي الزاروب</xar></a>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 
 <section class="wrap">
   <div class="two">
-    <div class="rev">
-      <p class="k"><xen data-edit="t24" data-edit-label="Text (EN): The classic">The classic</xen><xar data-edit="t25" data-edit-label="Text (AR): الكلاسيكي">الكلاسيكي</xar></p>
+    <div class="rev"><p class="k"><xen data-edit="t24" data-edit-label="Text (EN): The classic">The classic</xen><xar data-edit="t25" data-edit-label="Text (AR): الكلاسيكي">الكلاسيكي</xar></p>
       <h2 class="h2"><xen data-edit="t26" data-edit-label="Text (EN): The spot Sin El Fil keeps coming back …">The spot Sin El Fil keeps coming back to</xen><xar data-edit="t27" data-edit-label="Text (AR): المحل يلي سن الفيل بترجعلو دايماً">المحل يلي سن الفيل بترجعلو دايماً</xar></h2>
       <p><xen data-edit="t28" data-edit-label="Text (EN): Two cones turn behind the counter, one…">Two cones turn behind the counter, one meat, one chicken, and the men who carve them have done it long enough that the knife never seems to look down. This is not a trend spot. It is the other thing: the place people describe with the word "always".</xen><xar data-edit="t29" data-edit-label="Text (AR): قالبين عم يدوروا ورا الكاونتر، واحد لح…">قالبين عم يدوروا ورا الكاونتر، واحد لحمة وواحد دجاج، والمعلمين يلي عم يقطعوا صارلهن سنين، السكين ما بتغلط. هيدا مش محل موضة. هيدا الشي التاني: المحل يلي الناس بتحكي عنو بكلمة "دايماً".</xar></p>
       <p><xen data-edit="t30" data-edit-label="Text (EN): More than two thousand four hundred pe…">More than two thousand four hundred people have rated it on Google, and the reviews all circle the same sentence: the shawarma is the reason.</xen><xar data-edit="t31" data-edit-label="Text (AR): أكتر من ألفين وأربعمية شخص قيّموه على …">أكتر من ألفين وأربعمية شخص قيّموه على غوغل، والتقييمات كلها بتلف حول نفس الجملة: الشاورما هيي السبب.</xar></p>
       <p><xen data-edit="t32" data-edit-label="Text (EN): Sandwiches at the counter, platters fo…">Sandwiches at the counter, platters for the table, kebab off the skewers in the case. Open seven days from 12:30 in the afternoon until 11:30 at night.</xen><xar data-edit="t33" data-edit-label="Text (AR): سندويشات عالكاونتر، صواني للطاولة، وكب…">سندويشات عالكاونتر، صواني للطاولة، وكباب عن أسياخ الفاترينة. فاتحين سبعة أيام من 12:30 الضهر لـ11:30 بالليل.</xar></p>
     </div>
     <div>
-      <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The Restaurant Joseph corner at night, both neon signs lit" style="object-position:50% 20%">
-        <p class="cap"><xen data-edit="t34" data-edit-label="Text (EN): The corner at night, both signs lit, c…">The corner at night, both signs lit, chairs already taken.</xen><xar data-edit="t35" data-edit-label="Text (AR): الزاوية بالليل، اللافتتين مضويين، والك…">الزاوية بالليل، اللافتتين مضويين، والكراسي محجوزة سلفاً.</xar></p>
+      <div class="frame rev"><img src="img/01.jpg" loading="lazy" alt="The Restaurant Joseph corner at night, both neon signs lit" style="object-position:50% 20%"> <p class="cap"><xen data-edit="t34" data-edit-label="Text (EN): The corner at night, both signs lit, c…">The corner at night, both signs lit, chairs already taken.</xen><xar data-edit="t35" data-edit-label="Text (AR): الزاوية بالليل، اللافتتين مضويين، والك…">الزاوية بالليل، اللافتتين مضويين، والكراسي محجوزة سلفاً.</xar></p>
       </div>
     </div>
   </div>
@@ -247,17 +263,11 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     <p class="k"><xen data-edit="t36" data-edit-label="Text (EN): The station">The station</xen><xar data-edit="t37" data-edit-label="Text (AR): المحطة">المحطة</xar></p>
     <h2 class="h2" style="margin-bottom:30px"><xen data-edit="t38" data-edit-label="Text (EN): From the spit to your hand, three move…">From the spit to your hand, three moves</xen><xar data-edit="t39" data-edit-label="Text (AR): من السيخ لإيدك، تلات حركات">من السيخ لإيدك، تلات حركات</xar></h2>
     <div class="steps">
-      <div class="step rev"><img src="img/07.jpg" loading="lazy" alt="Two masters at the twin shawarma spits, backs to the room">
-        <div class="t"><b class="n num" data-edit="t40" data-edit-label="Text: 1">1</b><h3><xen data-edit="t41" data-edit-label="Text (EN): Two cones, two masters">Two cones, two masters</xen><xar data-edit="t42" data-edit-label="Text (AR): قالبين ومعلمين">قالبين ومعلمين</xar></h3>
-        <p><xen data-edit="t43" data-edit-label="Text (EN): Meat on one spit, chicken on the other…">Meat on one spit, chicken on the other, trimmed all day so the edge never dries.</xen><xar data-edit="t44" data-edit-label="Text (AR): لحمة ع سيخ ودجاج ع سيخ، عم ينقطعوا طول…">لحمة ع سيخ ودجاج ع سيخ، عم ينقطعوا طول النهار ليضل الطرف طري.</xar></p></div>
+      <div class="step rev"><img src="img/07.jpg" loading="lazy" alt="Two masters at the twin shawarma spits, backs to the room"> <div class="t"><b class="n num" data-edit="t40" data-edit-label="Text: 1">1</b><h3><xen data-edit="t41" data-edit-label="Text (EN): Two cones, two masters">Two cones, two masters</xen><xar data-edit="t42" data-edit-label="Text (AR): قالبين ومعلمين">قالبين ومعلمين</xar></h3> <p><xen data-edit="t43" data-edit-label="Text (EN): Meat on one spit, chicken on the other…">Meat on one spit, chicken on the other, trimmed all day so the edge never dries.</xen><xar data-edit="t44" data-edit-label="Text (AR): لحمة ع سيخ ودجاج ع سيخ، عم ينقطعوا طول…">لحمة ع سيخ ودجاج ع سيخ، عم ينقطعوا طول النهار ليضل الطرف طري.</xar></p></div>
       </div>
-      <div class="step rev"><img src="img/03.jpg" loading="lazy" alt="The meat cone close up, plate of fries waiting under it">
-        <div class="t"><b class="n num" data-edit="t45" data-edit-label="Text: 2">2</b><h3><xen data-edit="t46" data-edit-label="Text (EN): Carved at the fire">Carved at the fire</xen><xar data-edit="t47" data-edit-label="Text (AR): عالنار بينقطع">عالنار بينقطع</xar></h3>
-        <p><xen data-edit="t48" data-edit-label="Text (EN): The plate waits under the cone and cat…">The plate waits under the cone and catches the slices as they fall.</xen><xar data-edit="t49" data-edit-label="Text (AR): الصحن ناطر تحت القالب وبيلقط الشقف وهي…">الصحن ناطر تحت القالب وبيلقط الشقف وهيي نازلة.</xar></p></div>
+      <div class="step rev"><img src="img/03.jpg" loading="lazy" alt="The meat cone close up, plate of fries waiting under it"> <div class="t"><b class="n num" data-edit="t45" data-edit-label="Text: 2">2</b><h3><xen data-edit="t46" data-edit-label="Text (EN): Carved at the fire">Carved at the fire</xen><xar data-edit="t47" data-edit-label="Text (AR): عالنار بينقطع">عالنار بينقطع</xar></h3> <p><xen data-edit="t48" data-edit-label="Text (EN): The plate waits under the cone and cat…">The plate waits under the cone and catches the slices as they fall.</xen><xar data-edit="t49" data-edit-label="Text (AR): الصحن ناطر تحت القالب وبيلقط الشقف وهي…">الصحن ناطر تحت القالب وبيلقط الشقف وهيي نازلة.</xar></p></div>
       </div>
-      <div class="step rev"><img src="img/08.jpg" loading="lazy" alt="A wrapped shawarma sandwich in its printed paper">
-        <div class="t"><b class="n num" data-edit="t50" data-edit-label="Text: 3">3</b><h3><xen data-edit="t51" data-edit-label="Text (EN): Rolled in their paper">Rolled in their paper</xen><xar data-edit="t52" data-edit-label="Text (AR): ملفوف بورقهن">ملفوف بورقهن</xar></h3>
-        <p><xen data-edit="t53" data-edit-label="Text (EN): Tight, hot, in the house paper, made t…">Tight, hot, in the house paper, made to be eaten standing on the pavement.</xen><xar data-edit="t54" data-edit-label="Text (AR): مشدود وسخن وبورق المحل، معمول لينتاكل …">مشدود وسخن وبورق المحل، معمول لينتاكل وقوف عالرصيف.</xar></p></div>
+      <div class="step rev"><img src="img/08.jpg" loading="lazy" alt="A wrapped shawarma sandwich in its printed paper"> <div class="t"><b class="n num" data-edit="t50" data-edit-label="Text: 3">3</b><h3><xen data-edit="t51" data-edit-label="Text (EN): Rolled in their paper">Rolled in their paper</xen><xar data-edit="t52" data-edit-label="Text (AR): ملفوف بورقهن">ملفوف بورقهن</xar></h3> <p><xen data-edit="t53" data-edit-label="Text (EN): Tight, hot, in the house paper, made t…">Tight, hot, in the house paper, made to be eaten standing on the pavement.</xen><xar data-edit="t54" data-edit-label="Text (AR): مشدود وسخن وبورق المحل، معمول لينتاكل …">مشدود وسخن وبورق المحل، معمول لينتاكل وقوف عالرصيف.</xar></p></div>
       </div>
     </div>
   </div>
@@ -267,17 +277,11 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
   <p class="k"><xen data-edit="t55" data-edit-label="Text (EN): Beyond the sandwich">Beyond the sandwich</xen><xar data-edit="t56" data-edit-label="Text (AR): أبعد من السندويش">أبعد من السندويش</xar></p>
   <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t57" data-edit-label="Text (EN): What the tables order">What the tables order</xen><xar data-edit="t58" data-edit-label="Text (AR): شو بتطلب الطاولات">شو بتطلب الطاولات</xar></h2>
   <div class="grid3">
-    <div class="card rev"><img src="img/06.jpg" loading="lazy" alt="A kebab platter on flatbread with grilled tomato and parsley">
-      <div class="t"><h3><xen data-edit="t59" data-edit-label="Text (EN): The kebab platter">The kebab platter</xen><xar data-edit="t60" data-edit-label="Text (AR): صينية الكباب">صينية الكباب</xar></h3>
-      <p><xen data-edit="t61" data-edit-label="Text (EN): Skewers laid over bread that soaks up …">Skewers laid over bread that soaks up everything, tomato heaped on top.</xen><xar data-edit="t62" data-edit-label="Text (AR): أسياخ فوق خبز عم يشرب كل شي، والبندورة…">أسياخ فوق خبز عم يشرب كل شي، والبندورة مكوّمة فوق.</xar></p></div>
+    <div class="card rev"><img src="img/06.jpg" loading="lazy" alt="A kebab platter on flatbread with grilled tomato and parsley"> <div class="t"><h3><xen data-edit="t59" data-edit-label="Text (EN): The kebab platter">The kebab platter</xen><xar data-edit="t60" data-edit-label="Text (AR): صينية الكباب">صينية الكباب</xar></h3> <p><xen data-edit="t61" data-edit-label="Text (EN): Skewers laid over bread that soaks up …">Skewers laid over bread that soaks up everything, tomato heaped on top.</xen><xar data-edit="t62" data-edit-label="Text (AR): أسياخ فوق خبز عم يشرب كل شي، والبندورة…">أسياخ فوق خبز عم يشرب كل شي، والبندورة مكوّمة فوق.</xar></p></div>
     </div>
-    <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="Wrapped sandwiches cut and arranged on a plate">
-      <div class="t"><h3><xen data-edit="t63" data-edit-label="Text (EN): Sandwiches, cut for the table">Sandwiches, cut for the table</xen><xar data-edit="t64" data-edit-label="Text (AR): سندويشات مقطّعة للطاولة">سندويشات مقطّعة للطاولة</xar></h3>
-      <p><xen data-edit="t65" data-edit-label="Text (EN): Rolled, pressed, sliced into rounds so…">Rolled, pressed, sliced into rounds so nobody has to commit to just one kind.</xen><xar data-edit="t66" data-edit-label="Text (AR): ملفوفين ومكبوسين ومقطّعين حلقات، لحتى …">ملفوفين ومكبوسين ومقطّعين حلقات، لحتى ما حدا يضطر يختار نوع واحد.</xar></p></div>
+    <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="Wrapped sandwiches cut and arranged on a plate"> <div class="t"><h3><xen data-edit="t63" data-edit-label="Text (EN): Sandwiches, cut for the table">Sandwiches, cut for the table</xen><xar data-edit="t64" data-edit-label="Text (AR): سندويشات مقطّعة للطاولة">سندويشات مقطّعة للطاولة</xar></h3> <p><xen data-edit="t65" data-edit-label="Text (EN): Rolled, pressed, sliced into rounds so…">Rolled, pressed, sliced into rounds so nobody has to commit to just one kind.</xen><xar data-edit="t66" data-edit-label="Text (AR): ملفوفين ومكبوسين ومقطّعين حلقات، لحتى …">ملفوفين ومكبوسين ومقطّعين حلقات، لحتى ما حدا يضطر يختار نوع واحد.</xar></p></div>
     </div>
-    <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="Kebab skewers lined up in the display case">
-      <div class="t"><h3><xen data-edit="t67" data-edit-label="Text (EN): The skewer case">The skewer case</xen><xar data-edit="t68" data-edit-label="Text (AR): فاترينة الأسياخ">فاترينة الأسياخ</xar></h3>
-      <p><xen data-edit="t69" data-edit-label="Text (EN): Kebabs lined up ready for the charcoal…">Kebabs lined up ready for the charcoal, pick and point.</xen><xar data-edit="t70" data-edit-label="Text (AR): كباب مصفوف جاهز عالفحم، نقّي وأشّر.">كباب مصفوف جاهز عالفحم، نقّي وأشّر.</xar></p></div>
+    <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="Kebab skewers lined up in the display case"> <div class="t"><h3><xen data-edit="t67" data-edit-label="Text (EN): The skewer case">The skewer case</xen><xar data-edit="t68" data-edit-label="Text (AR): فاترينة الأسياخ">فاترينة الأسياخ</xar></h3> <p><xen data-edit="t69" data-edit-label="Text (EN): Kebabs lined up ready for the charcoal…">Kebabs lined up ready for the charcoal, pick and point.</xen><xar data-edit="t70" data-edit-label="Text (AR): كباب مصفوف جاهز عالفحم، نقّي وأشّر.">كباب مصفوف جاهز عالفحم، نقّي وأشّر.</xar></p></div>
     </div>
   </div>
   <p class="counterline rev" style="margin-top:26px"><xen data-edit="t71" data-edit-label="Text (EN): Prices are on the board over the count…">Prices are on the board over the counter and they change with the market, call and they will tell you today's list before you order.</xen><xar data-edit="t72" data-edit-label="Text (AR): الأسعار على اللوحة فوق الكاونتر وبتتغي…">الأسعار على اللوحة فوق الكاونتر وبتتغير مع السوق، تلفن وبيقولولك لائحة اليوم قبل ما تطلب.</xar></p>
@@ -299,9 +303,8 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <section class="wrap">
   <p class="k"><xen data-edit="t77" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t78" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
   <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t79" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t80" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
-  <div class="revs">
-    <div class="rev-c rev"><q dir="ltr" data-edit="t81" data-edit-label="Quote: On one hand, the meat shawarma was abs…">On one hand, the meat shawarma was absolutely incredible! It was perfectly seasoned, juicy, and very well prepared by the best chef in the house 👨‍🍳,definitely a highlight.</q><cite data-edit="t82" data-edit-label="Credit: Ismail AS">Ismail AS</cite></div>
-    <div class="rev-c rev"><q dir="ltr" data-edit="t83" data-edit-label="Quote: A must-visit spot for Shawarma lovers …">A must-visit spot for Shawarma lovers 🇱🇧🔥</q><cite data-edit="t84" data-edit-label="Credit: Cesar Nasr">Cesar Nasr</cite></div>
+  <div class="revs"><div class="rev-c rev"><q dir="ltr" data-edit="t81" data-edit-label="Quote: On one hand, the meat shawarma was abs…">On one hand, the meat shawarma was absolutely incredible! It was perfectly seasoned, juicy, and very well prepared by the best chef in the house,definitely a highlight.</q><cite data-edit="t82" data-edit-label="Credit: Ismail AS">Ismail AS</cite></div>
+    <div class="rev-c rev"><q dir="ltr" data-edit="t83" data-edit-label="Quote: A must-visit spot for Shawarma lovers">A must-visit spot for Shawarma lovers</q><cite data-edit="t84" data-edit-label="Credit: Cesar Nasr">Cesar Nasr</cite></div>
     <div class="rev-c rev"><q dir="ltr" data-edit="t85" data-edit-label="Quote: Restaurant Joseph in Sin El Fil is one…">Restaurant Joseph in Sin El Fil is one of those classic spots that people keep coming back to for a reason.</q><cite data-edit="t86" data-edit-label="Credit: Roy Chalhoub">Roy Chalhoub</cite></div>
   </div>
 </section>

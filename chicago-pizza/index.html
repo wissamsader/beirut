@@ -38,40 +38,54 @@ img{display:block;max-width:100%}
   font:600 13.5px/1 'Public Sans',sans-serif;text-decoration:none}
 @media(max-width:760px){#nav .lk a:not(.callb){display:none}#nav .lk{gap:10px}#nav .brand{font-size:16px}}
 
-/* ---------- HERO: La Luce. The pizza from directly above, crust off every edge ---------- */
+/* ---------- HERO: La Luce. The pizza from directly above, hung straight off the delivery tape,
+     the name set underneath it. Their whole-pizza frame is 900x900, so a bleed hero magnified it
+     1.60x; it is now a contained plate at 700px on a 900px source, the board running off the top
+     and the base of the plate while the pizza itself stays whole ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  background:var(--night);display:flex;align-items:center;justify-content:center;text-align:center}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%;
-  z-index:0;filter:contrast(1.04) saturate(1.08) brightness(.62);
-  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-header .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
-  radial-gradient(72% 56% at 50% 46%,rgba(27,16,12,.62),rgba(27,16,12,.30) 62%,rgba(27,16,12,.72) 100%),
-  linear-gradient(180deg,rgba(184,92,51,.34) 0%,transparent 34%,transparent 62%,rgba(27,16,12,.62) 100%)}
-.tape{position:absolute;z-index:4;left:0;right:0;top:0;background:var(--terra);color:#FFF3EA;
+  background:var(--night);display:flex;flex-direction:column;align-items:center;
+  justify-content:flex-start;text-align:center;padding-bottom:clamp(22px,3.2vh,30px)}
+header .scrim{position:absolute;inset:0;z-index:0;pointer-events:none;background:
+  radial-gradient(88% 52% at 50% 20%,rgba(184,92,51,.30),rgba(184,92,51,.08) 58%,rgba(27,16,12,0) 100%),
+  radial-gradient(120% 92% at 50% 46%,rgba(27,16,12,0) 42%,rgba(27,16,12,.44) 86%,rgba(27,16,12,.74) 100%)}
+.tape{position:relative;z-index:4;align-self:stretch;background:var(--terra);color:#FFF3EA;
   padding:9px 5vw;font:600 10.6px/1.6 'Public Sans',sans-serif;letter-spacing:.28em;text-transform:uppercase;text-align:center}
-.hb{position:relative;z-index:3;width:min(1000px,100%);padding:0 5vw}
-.hb .k{color:#E9C39C}
-.hb h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(52px,10.6vw,150px);
-  line-height:.95;color:var(--cream);margin-top:14px;letter-spacing:.03em;
+/* the plate: contained at 700px, hanging straight off the tape */
+.pieplate{position:relative;z-index:3;flex:0 0 auto;width:min(620px,84vw);
+  height:clamp(272px,50svh,410px);overflow:hidden;
+  box-shadow:0 26px 70px -20px rgba(0,0,0,.72);
+  border:1px solid rgba(217,190,147,.34);border-top:0}
+.pieplate img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;
+  filter:contrast(1.04) saturate(1.06)}
+.hb{position:relative;z-index:3;width:min(1000px,100%);padding:clamp(14px,2.2vh,22px) 5vw 0}
+.hb .k{color:#E9C39C;text-indent:.28em}
+.hb h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(44px,5.6vw,78px);
+  line-height:.95;color:var(--cream);margin-top:9px;letter-spacing:.03em;
   text-shadow:0 12px 52px rgba(0,0,0,.62)}
 .hb h1 b{font-weight:500;font-style:italic;color:#F0C9A4}
-html.ar .hb h1{font-family:var(--arh),sans-serif;font-size:clamp(40px,8vw,104px);line-height:1.16}
-.hb .sub{max-width:52ch;margin:clamp(14px,2.2vh,22px) auto 0;color:#EFE4D6;
+html.ar .hb h1{font-family:var(--arh),sans-serif;font-size:clamp(34px,4.8vw,66px);line-height:1.16}
+.hb .sub{max-width:52ch;margin:clamp(9px,1.4vh,14px) auto 0;color:#EFE4D6;
   font-size:clamp(14.5px,1.6vw,17px);line-height:1.7;text-shadow:0 2px 16px rgba(0,0,0,.7)}
-.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:clamp(16px,2.4vh,24px)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:clamp(11px,1.6vh,16px)}
 .chip{border:1.4px solid rgba(247,241,228,.42);border-radius:2px;padding:7px 13px;background:rgba(27,16,12,.4);
   font:600 11.4px/1 'Public Sans',sans-serif;color:#F2E8DA;letter-spacing:.07em}
 .chip.b{background:var(--terra);border-color:var(--kraft2);color:#FFF3EA;font-weight:700}
-.qc{position:absolute;z-index:4;left:0;right:0;bottom:clamp(80px,10vh,110px);display:flex;gap:12px;
+.qc{position:relative;z-index:4;align-self:stretch;margin-top:clamp(12px,1.8vh,18px);display:flex;gap:12px;
   justify-content:center;align-items:baseline;flex-wrap:wrap;padding:0 18px;color:#EFE4D6;
   font:600 11.4px/1.5 'Public Sans',sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .qc b{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(26px,3vw,38px);
   letter-spacing:0;color:#F0C9A4;line-height:1}
 @media(max-width:880px){
-  .hb h1{font-size:clamp(44px,13.4vw,88px)}
+  .pieplate{width:min(520px,90vw);height:clamp(214px,30svh,300px)}
+  .hb h1{font-size:clamp(40px,10.4vw,68px)}
   .hb .sub{max-width:100%;font-size:14.4px}
-  .qc{bottom:clamp(78px,11vh,98px);font-size:10px;letter-spacing:.14em}
+  .qc{font-size:10px;letter-spacing:.14em}
+}
+@media(max-width:430px){
+  .pieplate{width:min(362px,93vw);height:clamp(230px,38svh,336px)}
+  .hb{padding-top:20px}
+  .qc{gap:8px;font-size:9.4px;letter-spacing:.1em}
+  .qc b{font-size:24px}
 }
 
 section .k::before{content:"";display:block;width:56px;height:2px;background:currentColor;opacity:.8;margin-bottom:12px}
@@ -167,13 +181,11 @@ footer{padding:36px 0 132px;color:#8A7F6C;font-size:13px;text-align:center;backg
   .gal{grid-template-columns:repeat(2,1fr)}
   .revs{grid-template-columns:1fr}
   .ly{grid-template-columns:52px 1fr}
-  .qc{width:84px;height:84px;right:18px;bottom:16px}
   body{padding-bottom:78px}
 }
 @media(max-width:430px){
   .tape{letter-spacing:.14em;font-size:10px}
-  .qc{width:74px;height:74px;bottom:12px}
-  .qc b{font-size:18px}
+  .qc b{font-size:22px}
 }
 .silent{padding-inline:22px}.silent p{max-width:min(23ch,100%)}
 </style>
@@ -236,9 +248,11 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="bg" src="img/04.jpg" alt="A whole Chicago Pizza deep dish shot from directly above, crust running off the frame">
   <div class="scrim"></div>
   <div class="tape"><xen class="c" data-edit="t13" data-edit-label="Text (EN): Hot and fresh &middot; keep flat &midd…">Hot and fresh &middot; keep flat &middot; this side up</xen><xar class="c" data-edit="t14" data-edit-label="Text (AR): سخنة وطازة · خلّيها مبسوطة · هالوجه لف…">سخنة وطازة · خلّيها مبسوطة · هالوجه لفوق</xar></div>
+  <figure class="pieplate">
+    <img class="bg" src="img/04.jpg" alt="A whole Chicago Pizza deep dish on its wooden board, shot from above">
+  </figure>
   <div class="hb">
     <p class="k"><xen data-edit="t15" data-edit-label="Text (EN): Galerie Semaan · Blvd Kamil Shamoun">Galerie Semaan · Blvd Kamil Shamoun</xen><xar data-edit="t16" data-edit-label="Text (AR): غاليري سمعان · بوليفار كميل شمعون">غاليري سمعان · بوليفار كميل شمعون</xar></p>
     <h1><xen class="c">Chicago <b data-edit="t17" data-edit-label="Text: Pizza">Pizza</b></xen><xar class="c" data-edit="t18" data-edit-label="Text (AR): شيكاغو بيتزا">شيكاغو بيتزا</xar></h1>

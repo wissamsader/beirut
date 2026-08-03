@@ -118,12 +118,12 @@ footer{padding:36px 20px 130px;background:#141109;color:#9B8F76;font-size:13.5px
      and everything else is tiny, on a single hairline rail along the foot. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
   display:block;background:var(--char)}
-header .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 9%;
-  filter:contrast(1.05) saturate(1.08) brightness(1.03)}
+header .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;
+  filter:contrast(1.05) saturate(1.06) brightness(.98)}
 header .scrim{position:absolute;inset:0;pointer-events:none;
   background:
-    radial-gradient(118% 78% at 3% 12%,rgba(20,17,11,.9) 0,rgba(20,17,11,.56) 32%,rgba(20,17,11,0) 62%),
-    linear-gradient(180deg,rgba(20,17,11,.44) 0,rgba(20,17,11,0) 26%)}
+    linear-gradient(96deg,rgba(18,15,10,.93) 0,rgba(18,15,10,.8) 22%,rgba(18,15,10,.42) 44%,rgba(18,15,10,.06) 66%,rgba(18,15,10,0) 82%),
+    linear-gradient(180deg,rgba(18,15,10,.66) 0,rgba(18,15,10,.16) 26%,rgba(18,15,10,0) 46%)}
 .mark{position:absolute;z-index:3;left:clamp(20px,5.2vw,74px);top:clamp(64px,11vh,112px);
   width:min(540px,66vw)}
 .mark .street2{font:700 clamp(10px,1.05vw,12px)/1.75 'Barlow',sans-serif;letter-spacing:.28em;
@@ -156,9 +156,10 @@ h1.sprayed{margin:clamp(10px,1.6vh,18px) 0 0;font-family:'Anton',sans-serif;colo
 .hbtns a.o{color:#F3EADA;border-color:rgba(243,234,218,.5)}
 .hbtns a.o:hover{background:rgba(243,234,218,.12)}
 @media(max-width:900px){
-  header .hbg{object-position:56% 8%}
+  header .hbg{inset:0 0 auto 0;height:64%;object-position:50% 46%}
   header .scrim{background:
-    radial-gradient(150% 58% at 6% 8%,rgba(20,17,11,.92) 0,rgba(20,17,11,.5) 42%,rgba(20,17,11,0) 74%)}
+    linear-gradient(180deg,rgba(18,15,10,.9) 0,rgba(18,15,10,.66) 26%,rgba(18,15,10,.18) 48%,rgba(18,15,10,0) 66%),
+    linear-gradient(96deg,rgba(18,15,10,.72) 0,rgba(18,15,10,.36) 40%,rgba(18,15,10,0) 78%)}
   .mark{width:min(540px,88vw)}
   .plinth{grid-template-columns:1fr;gap:clamp(11px,2vh,16px)}
   .plinthr{align-items:flex-start}
@@ -216,7 +217,7 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header id="top">
-  <img class="hbg" src="img/12.jpg" alt="A Murray burger stacked on the tabletop spike, cheese running down the patties over a tray of fries">
+  <img class="hbg" src="img/11.jpg" alt="A Murray sharing platter from above: fried fish, calamari, whitebait and a mountain of fries, with salads and sauces around it">
   <div class="scrim" aria-hidden="true"></div>
   <div class="mark">
     <p class="street2"><xen data-edit="t1" data-edit-label="Text (EN): Grill and garden · Antelias restaurant…">Grill and garden · Antelias restaurants street</xen><xar data-edit="t2" data-edit-label="Text (AR): مشاوي وحديقة · شارع مطاعم أنطلياس">مشاوي وحديقة · شارع مطاعم أنطلياس</xar></p>
@@ -371,25 +372,25 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
       <p style="margin-top:20px">
         <a class="btn" href="tel:+9614444213"><xen data-edit="t141" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t142" data-edit-label="Text (AR): تلفن واحجز">تلفن واحجز</xar></a>
         <a class="btn o" href="https://www.google.com/maps?cid=13965659784113650868" target="_blank" rel="noopener"><xen data-edit="t143" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t144" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
-        <a class="btn o" href="https://www.instagram.com/murrayresto" target="_blank" rel="noopener" data-edit="t145" data-edit-label="Button / link: Instagram">Instagram</a>
+        <a class="btn o" href="https://www.instagram.com/murrayresto" target="_blank" rel="noopener" data-edit="t145" data-edit-label="Button / link: Instagram">Instagram</a><a class="btn o" href="https://www.facebook.com/Murrayrestaurantantelias/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6c-.3-.04-1.3-.12-2.45-.12-2.4 0-4.05 1.46-4.05 4.15v2.27H7.5V14h2.7v8z"/></svg><xen data-edit="t146" data-edit-label="Text (EN): Facebook">Facebook</xen><xar data-edit="t147" data-edit-label="Text (AR): فيسبوك">فيسبوك</xar></a>
       </p>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t146" data-edit-label="Text (EN): Murray, Antelias restaurants street, A…">Murray, Antelias restaurants street, Antelias.</xen><xar data-edit="t147" data-edit-label="Text (AR): موراي، شارع مطاعم أنطلياس، أنطلياس.">موراي، شارع مطاعم أنطلياس، أنطلياس.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t148" data-edit-label="Text (EN): Bring people. The spit does not respec…">Bring people. The spit does not respect small tables.</xen><xar data-edit="t149" data-edit-label="Text (AR): جيب عالم معك. السيخ ما بيحترم الطاولات…">جيب عالم معك. السيخ ما بيحترم الطاولات الصغيرة.</xar></p>
+  <p><xen data-edit="t148" data-edit-label="Text (EN): Murray, Antelias restaurants street, A…">Murray, Antelias restaurants street, Antelias.</xen><xar data-edit="t149" data-edit-label="Text (AR): موراي، شارع مطاعم أنطلياس، أنطلياس.">موراي، شارع مطاعم أنطلياس، أنطلياس.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t150" data-edit-label="Text (EN): Bring people. The spit does not respec…">Bring people. The spit does not respect small tables.</xen><xar data-edit="t151" data-edit-label="Text (AR): جيب عالم معك. السيخ ما بيحترم الطاولات…">جيب عالم معك. السيخ ما بيحترم الطاولات الصغيرة.</xar></p>
 </footer>
 
 <nav class="bar">
-  <a class="w" href="tel:+9614444213"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t150" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t151" data-edit-label="Text (AR): تلفن واحجز">تلفن واحجز</xar></span></a>
-  <a href="https://www.google.com/maps?cid=13965659784113650868" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t153" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.instagram.com/murrayresto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t154" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a class="w" href="tel:+9614444213"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t152" data-edit-label="Text (EN): Call to book">Call to book</xen><xar data-edit="t153" data-edit-label="Text (AR): تلفن واحجز">تلفن واحجز</xar></span></a>
+  <a href="https://www.google.com/maps?cid=13965659784113650868" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t154" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t155" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="https://www.instagram.com/murrayresto" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t156" data-edit-label="Text: Instagram">Instagram</span></a>
 
   <a class="w" href="https://www.facebook.com/Murrayrestaurantantelias/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.91.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
     Facebook</a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="موراي · شارع مطاعم أنطلياس" data-edit="t155" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="موراي · شارع مطاعم أنطلياس" data-edit="t157" data-edit-label="Button: عربي">عربي</button>
 </body></html>

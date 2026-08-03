@@ -33,7 +33,10 @@ section{padding-block:clamp(56px,8vh,96px)}
 .two h2{font-size:clamp(26px,3.8vw,42px);margin:10px 0 18px;color:var(--amber)}
 .two p{margin-bottom:15px;color:#C8C2B2}
 .frame{background:#2A2620;border:1px solid rgba(223,164,62,.4);padding:10px;border-radius:4px}
-.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
+/* the same table, cut TALL and tight so it reads as its own picture and not as a repeat of the
+   hero band: the bowl of moutabbal and the napkin with the house mark stamped on it */
+.frame img{width:100%;height:clamp(270px,42.5vh,383px);object-fit:cover;object-position:24% 50%;
+  border-radius:2px}
 .cap{font:600 12.5px/1.6 'Karla',sans-serif;color:#9A9080;margin-top:9px}
 .band{background:var(--deep)}
 h2.sec{font-size:clamp(24px,3.6vw,40px);margin:8px 0 26px;color:var(--amber)}
@@ -133,30 +136,39 @@ footer{padding:36px 6vw 132px;color:#877E6C;font-size:13px;text-align:center;bac
 #nav .lk a:hover{color:var(--amber)}
 #nav .lk a.call{background:var(--amber);color:#221B0B;border:1px solid #7E6423;padding:10px 18px;font-weight:700}
 
-/* ---------- HERO: their own terrace at dusk. The wordmark is set in the colour of the
-     bulbs that are actually in the photograph, so the page and the room agree. ---------- */
+/* ---------- HERO: a broadsheet masthead standing over their own table, shot from above.
+     Their mark is printed in gold on the napkins in that photograph, so the wordmark is set
+     in the same gold and the page agrees with the table instead of imitating it.
+     Type above, one wide photographic band below, nothing beside it. ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:flex-end;background:#17150F}
-header .hbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 58%;
-  filter:contrast(1.06) saturate(1.08) brightness(.92)}
-header .scrim{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(23,21,15,.72) 0,rgba(23,21,15,.1) 22%,rgba(23,21,15,.5) 62%,rgba(34,31,25,.96) 96%,var(--petrol) 100%),radial-gradient(72% 60% at 26% 74%,rgba(23,21,15,.5),transparent 76%)}
-.hcol{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;
-  padding:0 5vw clamp(46px,8vh,92px)}
-.eyeb{font:500 clamp(11px,1.15vw,13px)/1.5 'Karla',sans-serif;letter-spacing:.32em;
+  display:flex;align-items:center;background:
+    radial-gradient(126% 56% at 50% 114%,#282318 0,rgba(40,35,24,0) 70%),
+    linear-gradient(180deg,#17150F 0,#1B1912 46%,#221F19 100%)}
+.hwrap{width:min(1120px,100%);margin-inline:auto;
+  padding:clamp(74px,10.4vh,92px) 5vw clamp(28px,4.2vh,44px)}
+.eyeb{font:500 clamp(11px,1.1vw,13px)/1.5 'Karla',sans-serif;letter-spacing:.32em;
   text-transform:uppercase;color:#E4C888}
-h1.wm{margin-top:14px;font-family:'Playfair Display',serif;font-weight:900;color:#F2D9A0;
-  font-size:clamp(56px,12.6vw,168px);line-height:.9;letter-spacing:.01em;
+h1.wm{margin-top:11px;font-family:'Playfair Display',serif;font-weight:900;color:#F2D9A0;
+  font-size:clamp(52px,6.4vw,92px);line-height:.9;letter-spacing:.012em;
   text-shadow:0 14px 46px rgba(0,0,0,.8)}
-html.ar h1.wm{font-size:clamp(50px,10vw,132px);letter-spacing:normal;line-height:1.14}
-.hrule{width:min(460px,60vw);height:1px;margin-top:clamp(14px,2.2vh,24px);
-  background:linear-gradient(90deg,rgba(199,162,78,.9),transparent)}
-.tell{margin-top:clamp(14px,2.2vh,22px);max-width:52ch;color:#E2DACA;
-  font:400 clamp(15px,1.75vw,19px)/1.62 'Karla',system-ui,sans-serif}
-.hfacts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(14px,2vh,20px);
-  font:500 13px/1.6 'Karla',sans-serif;color:#CFC4AC;letter-spacing:.04em}
+html.ar h1.wm{font-size:clamp(44px,5.4vw,78px);letter-spacing:normal;line-height:1.16}
+.mline{margin-top:clamp(13px,2vh,20px);border-top:1px solid rgba(199,162,78,.55);padding-top:13px}
+.tell{margin-top:clamp(11px,1.7vh,16px);max-width:60ch;color:#E2DACA;
+  font:400 clamp(15px,1.5vw,18px)/1.6 'Karla',system-ui,sans-serif}
+.hfacts{display:flex;flex-wrap:wrap;gap:8px 30px;
+  font:500 13px/1.6 'Karla',sans-serif;color:#CFC4AC;letter-spacing:.05em}
 .hfacts b{color:#F2D9A0;font-weight:700}
-.hbtns{display:flex;flex-wrap:wrap;gap:11px;margin-top:clamp(20px,3vh,30px)}
+.hband{position:relative;margin-top:clamp(16px,2.6vh,26px);overflow:hidden;background:#100E0A;
+  box-shadow:0 30px 58px -26px rgba(0,0,0,.85)}
+header .hbg{width:100%;height:clamp(196px,40vh,364px);object-fit:cover;object-position:50% 100%;
+  filter:contrast(1.05) saturate(1.06)}
+@media(max-width:880px){
+  header{max-height:1000px}
+  .hwrap{padding:clamp(74px,10vh,88px) 5vw 32px}
+  /* the language chip sits top right at 74px: keep the kicker out from under it */
+  .eyeb{max-width:calc(100% - 78px)}
+  header .hbg{height:clamp(178px,26vh,232px)}}
+.hbtns{display:flex;flex-wrap:wrap;gap:11px;margin-top:clamp(18px,2.6vh,26px)}
 .hbtns a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
   font:700 13px/1 'Karla',sans-serif;letter-spacing:.1em;text-transform:uppercase;
   padding:15px 26px;border:1px solid transparent}
@@ -227,18 +239,20 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="hbg" src="img/01.jpg" alt="Mezyan's terrace at dusk, wooden tables under the pergola and warm bulbs strung overhead">
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="hcol">
+  <div class="hwrap">
     <p class="eyeb"><xen data-edit="t13" data-edit-label="Text (EN): Resto pub · Rasamny Building, Hamra">Resto pub · Rasamny Building, Hamra</xen><xar data-edit="t14" data-edit-label="Text (AR): ريستو باب · بناية الرصمني، الحمرا">ريستو باب · بناية الرصمني، الحمرا</xar></p>
     <h1 class="wm"><xen data-edit="t15" data-edit-label="Text (EN): MEZYAN">MEZYAN</xen><xar data-edit="t16" data-edit-label="Text (AR): مزيان">مزيان</xar></h1>
-    <div class="hrule" aria-hidden="true"></div>
-    <p class="tell"><xen data-edit="t17" data-edit-label="Text (EN): Mezze to share, Lebanese wines, and a …">Mezze to share, Lebanese wines, and a room in the middle of Hamra that turns into a stage after the plates are cleared.</xen><xar data-edit="t18" data-edit-label="Text (AR): مازة عالشراكة، نبيذ لبناني، وصالة بنص …">مازة عالشراكة، نبيذ لبناني، وصالة بنص الحمرا بتتحول لمسرح بعد ما تنشال الصحون.</xar></p>
-    <div class="hfacts">
-      <span><xen data-edit="t19" data-edit-label="Text (EN): Lebanese · Armenian · Moroccan">Lebanese · Armenian · Moroccan</xen><xar data-edit="t20" data-edit-label="Text (AR): لبناني · أرمني · مغربي">لبناني · أرمني · مغربي</xar></span>
-      <span><xen data-edit="t21" data-edit-label="Text (EN): Serving Hamra since">Serving Hamra since</xen><xar data-edit="t22" data-edit-label="Text (AR): عم تخدم الحمرا من">عم تخدم الحمرا من</xar> <b class="num" data-edit="t23" data-edit-label="Text: 2011">2011</b></span>
-      <span><b class="num" data-edit="t24" data-edit-label="Text: ★ 4.4">★ 4.4</b> · <span class="num" data-edit="t25" data-edit-label="Text: 1,317">1,317</span> <xen data-edit="t26" data-edit-label="Text (EN): Google reviews">Google reviews</xen><xar data-edit="t27" data-edit-label="Text (AR): تقييم غوغل">تقييم غوغل</xar></span>
+    <div class="mline">
+      <div class="hfacts">
+        <span><xen data-edit="t17" data-edit-label="Text (EN): Lebanese · Armenian · Moroccan">Lebanese · Armenian · Moroccan</xen><xar data-edit="t18" data-edit-label="Text (AR): لبناني · أرمني · مغربي">لبناني · أرمني · مغربي</xar></span>
+        <span><xen data-edit="t19" data-edit-label="Text (EN): Serving Hamra since">Serving Hamra since</xen><xar data-edit="t20" data-edit-label="Text (AR): عم تخدم الحمرا من">عم تخدم الحمرا من</xar> <b class="num" data-edit="t21" data-edit-label="Text: 2011">2011</b></span>
+        <span><b class="num" data-edit="t22" data-edit-label="Text: ★ 4.4">★ 4.4</b> · <span class="num" data-edit="t23" data-edit-label="Text: 1,317">1,317</span> <xen data-edit="t24" data-edit-label="Text (EN): Google reviews">Google reviews</xen><xar data-edit="t25" data-edit-label="Text (AR): تقييم غوغل">تقييم غوغل</xar></span>
+      </div>
     </div>
+    <p class="tell"><xen data-edit="t26" data-edit-label="Text (EN): Mezze to share, Lebanese wines, and a …">Mezze to share, Lebanese wines, and a room in the middle of Hamra that turns into a stage after the plates are cleared.</xen><xar data-edit="t27" data-edit-label="Text (AR): مازة عالشراكة، نبيذ لبناني، وصالة بنص …">مازة عالشراكة، نبيذ لبناني، وصالة بنص الحمرا بتتحول لمسرح بعد ما تنشال الصحون.</xar></p>
+    <figure class="hband">
+      <img class="hbg" src="img/06.jpg" alt="Mezyan's table from above: the moutabbal under pomegranate on the timber, the cutlery, and the napkins stamped in gold">
+    </figure>
     <div class="hbtns">
       <a class="s" href="tel:+96171293015"><xen data-edit="t28" data-edit-label="Text (EN): Call the room">Call the room</xen><xar data-edit="t29" data-edit-label="Text (AR): اتصل بالصالة">اتصل بالصالة</xar></a>
       <a class="w" href="https://wa.me/96171293015?text=Hello%20Mezyan%2C%20I%20would%20like%20to%20book%20a%20table." target="_blank" rel="noopener" data-edit="t30" data-edit-label="Button / link: WhatsApp">WhatsApp</a>

@@ -46,35 +46,46 @@ section .wrap .k:first-child{display:block;border-top:1px solid rgba(23,20,18,.2
 #nav .call{background:var(--emb3);color:#171412 !important;border:1px solid var(--emb3);
   padding:10px 17px;border-radius:2px;font-weight:700 !important;text-shadow:none !important}
 
-/* ---------- HERO (pin: arabicsweets-04 "Khobza"): their own lit shopfront, full bleed, the
-     page name set in gold on the calm brick under the real sign ---------- */
+/* ---------- HERO (pin: arabicsweets-04 "Khobza"): their own lit shopfront carries the page, and
+     the real sign IS the lockup. Their only frame of it is 1200x1600 and it is a photograph OF A
+     SIGN, so it is never upscaled and never generated: it is contained in a gold-hairline plate
+     capped at 800px, well under its own width, on a field the colour of the brick behind it. --- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:flex-end;background:var(--jet)}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0%;
-  filter:contrast(1.05) saturate(1.02) brightness(.9)}
-header .scrim{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(20,17,15,.5) 0%,rgba(20,17,15,.14) 22%,rgba(20,17,15,.5) 52%,rgba(20,17,15,.93) 84%,rgba(20,17,15,.98) 100%)}
-.mach{position:relative;z-index:4;width:100%;padding:0 0 clamp(22px,3.6vh,38px)}
+  display:flex;align-items:center;
+  background:linear-gradient(178deg,#18140F 0%,#2C231A 42%,#221B14 72%,#141110 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(112% 78% at 50% 26%,rgba(201,162,78,.11) 0%,rgba(20,17,15,0) 62%)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(201,162,78,.34)}
+.mach{position:relative;z-index:4;width:100%;padding:clamp(60px,8.4vh,84px) 0 clamp(20px,3vh,32px)}
+.mtop{width:min(1180px,100%);margin-inline:auto;padding:0 6vw;margin-bottom:clamp(18px,2.6vh,26px);
+  display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,3vw,44px);flex-wrap:wrap}
+.shopfr{flex:1 1 480px;max-width:620px;min-width:0;position:relative;padding:8px;
+  border:1px solid rgba(201,162,78,.46);background:rgba(244,235,216,.05);
+  box-shadow:0 42px 84px -36px rgba(0,0,0,.9)}
+.shopfr img{display:block;width:100%;aspect-ratio:5/3;object-fit:cover;object-position:50% 0%;
+  filter:contrast(1.06) saturate(1.05)}
+.shopfr::after{content:"";position:absolute;left:-1px;top:-1px;width:56px;height:3px;background:var(--emb3)}
 .mname{width:min(1180px,100%);margin-inline:auto;padding:0 6vw;
   display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(20px,4vw,58px);flex-wrap:wrap}
 .mleft{flex:1 1 420px;min-width:0}
-.mright{flex:0 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(10px,1.8vh,16px)}
-.mname .k{color:var(--emb3);display:block;border:0 !important}
-.mname h1{font-size:clamp(34px,6.2vw,80px);line-height:.98;color:#F7F0DF;margin-top:10px;
+.mright{flex:0 1 388px;min-width:0;display:flex;flex-direction:column;align-items:flex-start;
+  gap:clamp(9px,1.5vh,14px)}
+.mach .k{color:var(--emb3);display:block;border:0 !important;font-size:11px;letter-spacing:.17em}
+.mach h1{font-size:clamp(32px,4.4vw,60px);line-height:.98;color:#F7F0DF;margin-top:8px;
   text-shadow:0 6px 34px rgba(0,0,0,.75)}
-.mname h1 b{font-weight:500;font-style:italic;color:var(--emb3)}
-.mname .arname{display:inline-block;font:400 clamp(20px,2.8vw,34px)/1.5 var(--arh),sans-serif;
-  color:#E7D5A9;margin-top:4px}
-.mname .sub{max-width:52ch;color:rgba(244,235,216,.8);font-size:clamp(14px,1.6vw,16.5px);
-  line-height:1.66;margin-top:12px}
-.serving{display:flex;flex-wrap:wrap;gap:0;margin-top:0;
+.mach h1 b{font-weight:500;font-style:italic;color:var(--emb3)}
+.mach .arname{display:inline-block;font:400 clamp(19px,2.3vw,30px)/1.5 var(--arh),sans-serif;
+  color:#E7D5A9;margin-top:2px}
+.mach .sub{max-width:74ch;color:rgba(244,235,216,.82);font-size:clamp(14px,1.6vw,16.5px);
+  line-height:1.66;margin-top:0}
+.serving{display:flex;flex-wrap:nowrap;gap:0;margin-top:0;
   border-top:1px solid rgba(201,162,78,.4);border-bottom:1px solid rgba(201,162,78,.4)}
-.led{padding:12px clamp(16px,2.6vw,34px) 12px 0;margin-right:clamp(16px,2.6vw,34px);
+.led{padding:11px clamp(11px,1.5vw,20px) 11px 0;margin-right:clamp(11px,1.5vw,20px);
   border-right:1px solid rgba(201,162,78,.28)}
 .led:last-child{border-right:0;margin-right:0;padding-right:0}
 .led .lbl{display:block;font:700 10.5px/1 'Work Sans',sans-serif;letter-spacing:.22em;
   text-transform:uppercase;color:rgba(244,235,216,.6)}
-.led .val{display:block;margin-top:6px;font:700 clamp(17px,2.1vw,24px)/1 'Playfair Display',serif;color:var(--emb3)}
+.led .val{display:block;margin-top:6px;font:700 clamp(17px,1.7vw,22px)/1 'Playfair Display',serif;white-space:nowrap;color:var(--emb3)}
 .tickrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:0}
 .tick{border:1px solid rgba(201,162,78,.45);border-radius:2px;padding:7px 13px;
   font:600 12px/1 'Work Sans',sans-serif;letter-spacing:.05em;color:#EFE0BC}
@@ -88,10 +99,12 @@ header .scrim{position:absolute;inset:0;pointer-events:none;
   #nav{padding:10px 5vw}#nav .brand{font-size:13.5px}
   #nav .call{padding:9px 13px;font-size:12px}
   .lngt{top:calc(62px + env(safe-area-inset-top))}
-  header img.bg{object-position:50% 0%}
+  .shopfr{flex:1 1 100%}
+  .shopfr img{aspect-ratio:16/9}
+  .mtop{margin-bottom:18px}
   .mname{gap:14px}
-  .mname h1{font-size:clamp(32px,8.6vw,54px)}
-  .mname .sub{max-width:100%}
+  .mach h1{font-size:clamp(32px,8.6vw,50px)}
+  .mach .sub{max-width:100%}
   .led{padding-right:14px;margin-right:14px}
   .hcta a{flex:1 1 auto;justify-content:center;padding:11px 12px;font-size:12.5px}
 }
@@ -171,16 +184,10 @@ footer{padding:36px 20px 130px;background:#100F0D;color:#8C857A;font-size:13.5px
   .gal{grid-template-columns:1fr}
   .revs{grid-template-columns:1fr}
   header{display:flex;flex-direction:column;justify-content:flex-start}
-  .mach{position:static;width:auto;padding:calc(30px + env(safe-area-inset-top)) 20px 0}
-  .mwin{position:static;width:min(300px,78%);margin-top:20px;border-width:6px}
-  .mwin img{aspect-ratio:16/9}
+  .mach{position:static;width:auto;padding:calc(112px + env(safe-area-inset-top)) 0 26px}
   .sub{max-width:none}
   .led .val{font-size:18px}
-  .tongue{display:none}
-  .mangal{left:-40px;bottom:clamp(62px,8.6vh,84px);width:124%;height:clamp(96px,12.5vh,124px)}
-  .tickrow{left:20px;right:20px;bottom:clamp(16px,2.4vh,26px)}
 }
-@media(prefers-reduced-motion:reduce){.tongue{animation:none}}
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -240,32 +247,35 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 </nav>
 
 <header id="top">
-  <img class="bg" src="img/01.jpg" alt="The lit Hajj Nasr sign over the shopfront on Sassine Square at night">
-  <div class="scrim" aria-hidden="true"></div>
   <div class="mach">
-    <div class="mname">
-     <div class="mleft">
+    <div class="mtop">
+     <div class="shopfr" data-r="1">
+       <img class="bg" src="img/01.jpg" alt="The lit Hajj Nasr sign over the shopfront on Sassine Square at night">
+     </div>
+     <div class="mright">
       <span class="k"><xen data-edit="t11" data-edit-label="Text (EN): Snack counter · Sassine Square, Achraf…">Snack counter · Sassine Square, Achrafieh</xen><xar data-edit="t12" data-edit-label="Text (AR): سناك · ساحة ساسين، الأشرفية">سناك · ساحة ساسين، الأشرفية</xar></span>
       <h1>Hajj <b data-edit="t13" data-edit-label="Text: Nasr">Nasr</b></h1>
       <span class="arname" data-edit="t14" data-edit-label="Text: حاج نصر">حاج نصر</span>
-      <p class="sub"><xen data-edit="t15" data-edit-label="Text (EN): Old-school Beirut sandwiches: sawda, s…">Old-school Beirut sandwiches: sawda, soujouk, kafta and their friends, pressed hot and handed over the counter in printed paper.</xen><xar data-edit="t16" data-edit-label="Text (AR): سندويشات بيروت العتيقة: سودة وسجق وكفت…">سندويشات بيروت العتيقة: سودة وسجق وكفتة ورفقاتهن، مكبوسين سخنين وبينعطوا فوق الكاونتر بورق مطبوع.</xar></p>
-     </div>
-     <div class="mright">
       <div class="tickrow">
-        <span class="tick"><xen data-edit="t17" data-edit-label="Text (EN): Sawda">Sawda</xen><xar data-edit="t18" data-edit-label="Text (AR): سودة">سودة</xar></span>
-        <span class="tick"><xen data-edit="t19" data-edit-label="Text (EN): Soujouk">Soujouk</xen><xar data-edit="t20" data-edit-label="Text (AR): سجق">سجق</xar></span>
-        <span class="tick"><xen data-edit="t21" data-edit-label="Text (EN): Kafta">Kafta</xen><xar data-edit="t22" data-edit-label="Text (AR): كفتة">كفتة</xar></span>
-        <span class="tick"><xen data-edit="t23" data-edit-label="Text (EN): Halloum">Halloum</xen><xar data-edit="t24" data-edit-label="Text (AR): حلوم">حلوم</xar></span>
+        <span class="tick"><xen data-edit="t15" data-edit-label="Text (EN): Sawda">Sawda</xen><xar data-edit="t16" data-edit-label="Text (AR): سودة">سودة</xar></span>
+        <span class="tick"><xen data-edit="t17" data-edit-label="Text (EN): Soujouk">Soujouk</xen><xar data-edit="t18" data-edit-label="Text (AR): سجق">سجق</xar></span>
+        <span class="tick"><xen data-edit="t19" data-edit-label="Text (EN): Kafta">Kafta</xen><xar data-edit="t20" data-edit-label="Text (AR): كفتة">كفتة</xar></span>
+        <span class="tick"><xen data-edit="t21" data-edit-label="Text (EN): Halloum">Halloum</xen><xar data-edit="t22" data-edit-label="Text (AR): حلوم">حلوم</xar></span>
       </div>
       <div class="serving">
-        <div class="led"><span class="lbl"><xen data-edit="t25" data-edit-label="Text (EN): Rating">Rating</xen><xar data-edit="t26" data-edit-label="Text (AR): التقييم">التقييم</xar></span><span class="val num" data-edit="t27" data-edit-label="Text: 4.6 ★">4.6 ★</span></div>
-        <div class="led"><span class="lbl"><xen data-edit="t28" data-edit-label="Text (EN): Reviews">Reviews</xen><xar data-edit="t29" data-edit-label="Text (AR): تقييمات">تقييمات</xar></span><span class="val num" data-edit="t30" data-edit-label="Text: 442">442</span></div>
-        <div class="led"><span class="lbl"><xen data-edit="t31" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t32" data-edit-label="Text (AR): الأحد">الأحد</xar></span><span class="val"><xen data-edit="t33" data-edit-label="Text (EN): Closed">Closed</xen><xar data-edit="t34" data-edit-label="Text (AR): مسكّر">مسكّر</xar></span></div>
+        <div class="led"><span class="lbl"><xen data-edit="t23" data-edit-label="Text (EN): Rating">Rating</xen><xar data-edit="t24" data-edit-label="Text (AR): التقييم">التقييم</xar></span><span class="val num" data-edit="t25" data-edit-label="Text: 4.6 ★">4.6 ★</span></div>
+        <div class="led"><span class="lbl"><xen data-edit="t26" data-edit-label="Text (EN): Reviews">Reviews</xen><xar data-edit="t27" data-edit-label="Text (AR): تقييمات">تقييمات</xar></span><span class="val num" data-edit="t28" data-edit-label="Text: 442">442</span></div>
+        <div class="led"><span class="lbl"><xen data-edit="t29" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t30" data-edit-label="Text (AR): الأحد">الأحد</xar></span><span class="val"><xen data-edit="t31" data-edit-label="Text (EN): Closed">Closed</xen><xar data-edit="t32" data-edit-label="Text (AR): مسكّر">مسكّر</xar></span></div>
       </div>
       <div class="hcta">
-        <a href="tel:+9611330071"><xen data-edit="t35" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t36" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
-        <a class="ln" href="https://www.google.com/maps?cid=9501477670661051368" target="_blank" rel="noopener"><xen data-edit="t37" data-edit-label="Text (EN): Find us">Find us</xen><xar data-edit="t38" data-edit-label="Text (AR): لاقونا">لاقونا</xar></a>
+        <a href="tel:+9611330071"><xen data-edit="t33" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t34" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
+        <a class="ln" href="https://www.google.com/maps?cid=9501477670661051368" target="_blank" rel="noopener"><xen data-edit="t35" data-edit-label="Text (EN): Find us">Find us</xen><xar data-edit="t36" data-edit-label="Text (AR): لاقونا">لاقونا</xar></a>
       </div>
+     </div>
+    </div>
+    <div class="mname">
+     <div class="mleft">
+      <p class="sub"><xen data-edit="t37" data-edit-label="Text (EN): Old-school Beirut sandwiches: sawda, s…">Old-school Beirut sandwiches: sawda, soujouk, kafta and their friends, pressed hot and handed over the counter in printed paper.</xen><xar data-edit="t38" data-edit-label="Text (AR): سندويشات بيروت العتيقة: سودة وسجق وكفت…">سندويشات بيروت العتيقة: سودة وسجق وكفتة ورفقاتهن، مكبوسين سخنين وبينعطوا فوق الكاونتر بورق مطبوع.</xar></p>
      </div>
     </div>
   </div>

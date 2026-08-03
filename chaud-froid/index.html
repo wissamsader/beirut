@@ -26,26 +26,35 @@ img{display:block;max-width:100%}
   box-shadow:0 4px 14px rgba(35,39,46,.35);min-width:58px;text-align:center}
 .lngt:active{transform:scale(.94)}
 
-/* ---------- HERO: COUCOU. Their own table from above, wordmark laid straight across it ---------- */
+/* ---------- HERO: COUCOU. Their own table shot from straight above, wordmark laid across it.
+     Their top-down counter frame is 1280x720, so the plate is capped at 980px and the photograph
+     is never shown wider than it was taken. Field is the forest green, plate carries the picture. */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;background:#1A211B}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 52%;
-  filter:brightness(.76) contrast(1.05) saturate(1.04);
-  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-header .scrim{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(20,28,21,.74) 0,rgba(20,28,21,.30) 28%,rgba(20,28,21,.38) 56%,rgba(20,28,21,.9) 100%)}
-.wordm{position:relative;z-index:3;width:min(1300px,92vw);margin-inline:auto;text-align:center;color:#F4EFE2}
-.wordm .kick{font:700 11.5px/1.5 'Asap',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:#EBB6C0}
-.wordm h1{margin-top:16px;font-family:'Unbounded',sans-serif;font-weight:800;line-height:.94;
-  font-size:clamp(30px,7.1vw,104px);letter-spacing:-.03em;white-space:nowrap;color:#F7F3E8;
-  text-shadow:0 16px 48px rgba(0,0,0,.72)}
+  display:flex;align-items:center;justify-content:center;padding:clamp(20px,3vh,30px) 0;
+  background:radial-gradient(128% 104% at 50% 4%,#26422F 0%,#1B2E22 58%,#121E17 100%)}
+header::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(244,239,226,.045) 0 1px,transparent 1px 92px)}
+.hcol{position:relative;z-index:3;width:min(1020px,100% - 10vw);margin-inline:auto;text-align:center;color:#F4EFE2}
+.plate{position:relative;overflow:hidden;border:1px solid rgba(244,239,226,.30);
+  box-shadow:0 44px 96px -34px rgba(0,0,0,.86)}
+.plate img.bg{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 50%;
+  filter:contrast(1.12) saturate(1.12) brightness(.97)}
+.plate .scrim{position:absolute;inset:0;
+  background:radial-gradient(74% 52% at 50% 45%,rgba(14,25,18,.80) 0%,rgba(14,25,18,.44) 56%,rgba(14,25,18,0) 100%),
+             linear-gradient(180deg,rgba(14,25,18,.52) 0%,rgba(14,25,18,.04) 30%,rgba(14,25,18,.06) 68%,rgba(14,25,18,.58) 100%)}
+.wordm{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:0 4%;color:#F4EFE2}
+.wordm .kick{font:700 12px/1.5 'Asap',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#F3CCD3;
+  text-shadow:0 2px 10px rgba(0,0,0,.95),0 0 26px rgba(0,0,0,.7)}
+.wordm h1{margin-top:14px;font-family:'Unbounded',sans-serif;font-weight:800;line-height:.94;
+  font-size:clamp(30px,5.6vw,74px);letter-spacing:-.03em;white-space:nowrap;color:#F7F3E8;
+  text-shadow:0 14px 44px rgba(0,0,0,.82)}
 .wordm h1 .hotw{color:#F7F3E8}
 .wordm h1 .coldw{color:#F7F3E8;margin-left:.22em}
-html.ar .wordm h1{font-family:var(--arh),sans-serif;letter-spacing:0;font-size:clamp(34px,8vw,96px)}
-.wordm .sub{margin:22px auto 0;max-width:52ch;color:#DCD6C6;font-size:clamp(14.5px,1.7vw,17px);line-height:1.72;
-  text-shadow:0 2px 12px rgba(0,0,0,.8)}
-.splitpill{display:inline-flex;margin-top:22px;border-radius:99px;overflow:hidden;
+html.ar .wordm h1{font-family:var(--arh),sans-serif;letter-spacing:0;font-size:clamp(34px,6vw,70px)}
+.hbelow{margin-top:26px}
+.wordm .sub,.hbelow .sub{margin:0 auto;max-width:58ch;color:#DCD6C6;font-size:clamp(14.5px,1.7vw,17px);line-height:1.72}
+.splitpill{display:inline-flex;margin-top:20px;border-radius:99px;overflow:hidden;
   font:700 11.5px/1 'Asap',sans-serif;letter-spacing:.14em;text-transform:uppercase}
 .splitpill .l{background:var(--hot);color:#2A1219;padding:12px 18px}
 .splitpill .r{background:var(--cold);color:#EFF5F1;padding:12px 18px}
@@ -61,9 +70,16 @@ html.ar .wordm h1{font-family:var(--arh),sans-serif;letter-spacing:0;font-size:c
 [data-r="1"]{animation-delay:70ms}[data-r="2"]{animation-delay:160ms}[data-r="3"]{animation-delay:250ms}
 [data-r="4"]{animation-delay:330ms}[data-r="5"]{animation-delay:410ms}
 @keyframes rise{to{opacity:1;transform:none}}
+@media(max-width:760px){
+  header{padding:clamp(20px,3vh,32px) 0}
+  .hcol{width:min(980px,100% - 8vw)}
+  .plate img.bg{aspect-ratio:4/3;object-position:56% 52%}
+  .hbelow{margin-top:20px}
+}
 @media(max-width:520px){
   .wordm h1{white-space:normal;font-size:clamp(30px,11vw,46px)}
   .wordm h1 .coldw{display:block;margin-left:0}
+  .plate img.bg{aspect-ratio:5/4}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -200,16 +216,22 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header id="top">
-  <img class="bg" src="img/08.jpg" alt="A Chaud Froid wrap and a branded box of fries on the table">
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="wordm">
-    <p class="kick" data-r="1"><xen data-edit="t1" data-edit-label="Text (EN): General Wazen street · Dekwaneh">General Wazen street · Dekwaneh</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع جنرال وازن · الدكوانة">شارع جنرال وازن · الدكوانة</xar></p>
-    <h1 data-r="2"><span class="hotw"><xen class="c" data-edit="t3" data-edit-label="Text (EN): CHAUD">CHAUD</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): شو">شو</xar></span><span class="coldw"><xen class="c" data-edit="t5" data-edit-label="Text (EN): FROID">FROID</xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): فروا">فروا</xar></span></h1>
-    <p class="sub" data-r="3"><xen data-edit="t7" data-edit-label="Text (EN): A family snack under a slow ceiling fa…">A family snack under a slow ceiling fan: toasted chicken subs, loaded fries, and a room that has fed Dekwaneh for a generation.</xen><xar data-edit="t8" data-edit-label="Text (AR): سناك عيلة تحت مروحة سقف بطيئة: صبات دج…">سناك عيلة تحت مروحة سقف بطيئة: صبات دجاج محمّصة، بطاطا معبّاية، وغرفة عم تطعمي الدكوانة من جيل كامل.</xar></p>
-    <div data-r="4"><span class="splitpill"><span class="l"><xen class="c" data-edit="t9" data-edit-label="Text (EN): 4.4 stars">4.4 stars</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): 4.4 نجوم">4.4 نجوم</xar></span><span class="r"><xen class="c"><span class="num" data-edit="t11" data-edit-label="Text: 451">451</span> reviews</xen><xar class="c"><span class="num" data-edit="t12" data-edit-label="Text: 451">451</span> تقييم</xar></span></span></div>
-    <div class="hbtns" data-r="5">
-      <a class="s" href="tel:+9611684126"><xen data-edit="t13" data-edit-label="Text (EN): Call the snack">Call the snack</xen><xar data-edit="t14" data-edit-label="Text (AR): اتصل بالسناك">اتصل بالسناك</xar></a>
-      <a class="l" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><xen data-edit="t15" data-edit-label="Text (EN): Find us in Dekwaneh">Find us in Dekwaneh</xen><xar data-edit="t16" data-edit-label="Text (AR): لاقونا بالدكوانة">لاقونا بالدكوانة</xar></a>
+  <div class="hcol">
+    <div class="plate" data-r="1">
+      <img class="bg" src="img/04.jpg" alt="A Chaud Froid wrap and a branded box of fries on the table">
+      <div class="scrim" aria-hidden="true"></div>
+      <div class="wordm">
+        <p class="kick"><xen data-edit="t1" data-edit-label="Text (EN): General Wazen street · Dekwaneh">General Wazen street · Dekwaneh</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع جنرال وازن · الدكوانة">شارع جنرال وازن · الدكوانة</xar></p>
+        <h1><span class="hotw"><xen class="c" data-edit="t3" data-edit-label="Text (EN): CHAUD">CHAUD</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): شو">شو</xar></span><span class="coldw"><xen class="c" data-edit="t5" data-edit-label="Text (EN): FROID">FROID</xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): فروا">فروا</xar></span></h1>
+      </div>
+    </div>
+    <div class="hbelow">
+      <p class="sub" data-r="3"><xen data-edit="t7" data-edit-label="Text (EN): A family snack under a slow ceiling fa…">A family snack under a slow ceiling fan: toasted chicken subs, loaded fries, and a room that has fed Dekwaneh for a generation.</xen><xar data-edit="t8" data-edit-label="Text (AR): سناك عيلة تحت مروحة سقف بطيئة: صبات دج…">سناك عيلة تحت مروحة سقف بطيئة: صبات دجاج محمّصة، بطاطا معبّاية، وغرفة عم تطعمي الدكوانة من جيل كامل.</xar></p>
+      <div data-r="4"><span class="splitpill"><span class="l"><xen class="c" data-edit="t9" data-edit-label="Text (EN): 4.4 stars">4.4 stars</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): 4.4 نجوم">4.4 نجوم</xar></span><span class="r"><xen class="c"><span class="num" data-edit="t11" data-edit-label="Text: 451">451</span> reviews</xen><xar class="c"><span class="num" data-edit="t12" data-edit-label="Text: 451">451</span> تقييم</xar></span></span></div>
+      <div class="hbtns" data-r="5">
+        <a class="s" href="tel:+9611684126"><xen data-edit="t13" data-edit-label="Text (EN): Call the snack">Call the snack</xen><xar data-edit="t14" data-edit-label="Text (AR): اتصل بالسناك">اتصل بالسناك</xar></a>
+        <a class="l" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><xen data-edit="t15" data-edit-label="Text (EN): Find us in Dekwaneh">Find us in Dekwaneh</xen><xar data-edit="t16" data-edit-label="Text (AR): لاقونا بالدكوانة">لاقونا بالدكوانة</xar></a>
+      </div>
     </div>
   </div>
 </header>

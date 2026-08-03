@@ -51,6 +51,7 @@ h1.set b{font-weight:400;font-style:italic;color:var(--amber)}
 .setlines li{border:1px solid rgba(35,46,52,.3);padding:6px 12px;font:600 11.5px/1 'Barlow',sans-serif;
   letter-spacing:.05em;color:#35434B}
 .setlines li:first-child{background:var(--amber);border-color:var(--amber);color:#221A0C}
+.hin{flex:0 0 auto}
 .hright{flex:0 1 auto;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding-bottom:2px}
 .stampline{display:inline-flex;align-items:baseline;gap:8px;color:#5A6870;
   font:600 12.5px/1 'Barlow',sans-serif;letter-spacing:.04em}
@@ -61,21 +62,37 @@ h1.set b{font-weight:400;font-style:italic;color:var(--amber)}
   border:1px solid var(--iron)}
 .hcta a.hb{background:var(--steel-d)}
 .hcta a.ln{background:transparent;color:#35434B;border-color:rgba(35,46,52,.4)}
-/* the wide band across the fold */
-.hstrip{position:relative;z-index:3;flex:0 0 auto;width:min(1150px,100%);margin:0 auto;
-  padding:0 6vw clamp(22px,4vh,44px)}
-.hstrip figure{position:relative;border:1px solid rgba(35,46,52,.34);padding:9px;background:#FBF8F0;
-  box-shadow:0 18px 40px -14px rgba(35,46,52,.34)}
-.hstrip img{width:100%;aspect-ratio:21/7;object-fit:cover;object-position:50% 86%;display:block}
-.hstrip .cap{display:flex;justify-content:space-between;gap:14px;margin-top:9px;
-  font:600 11px/1 'Barlow',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#7C8288}
+/* the band across the fold. Their awning frame is 1200x1240, so the old 21:7 letterbox kept 32% of
+   it and sliced the sign; the photograph now stands on an iron plinth at 700px on a 1200px source,
+   the whole awning and its "Since 1972" corner inside the frame */
+.hstrip{position:relative;z-index:3;flex:0 0 auto;margin-top:auto;width:100%;
+  background:linear-gradient(180deg,rgba(35,46,52,0) 0 39%,var(--iron) 39% 100%)}
+.hsin{position:relative;width:min(1150px,100%);margin-inline:auto;padding:0 6vw;
+  display:flex;align-items:flex-end;justify-content:flex-end;
+  padding-bottom:clamp(22px,7.4vh,72px)}
+.hstrip figure{position:relative;flex:0 0 auto;
+  width:min(700px,100%,max(300px,calc(2 * (100svh - 540px))));
+  border:1px solid rgba(233,220,192,.5);padding:9px;background:#FBF8F0;
+  box-shadow:0 22px 44px -16px rgba(20,31,38,.6)}
+.hstrip img{width:100%;aspect-ratio:2/1;object-fit:cover;object-position:50% 86%;display:block}
+.hstrip .cap{position:absolute;right:calc(100% + clamp(20px,3vw,44px));bottom:14px;
+  width:max-content;max-width:min(300px,26vw);display:flex;flex-direction:column;gap:7px;text-align:left;
+  font:600 11px/1.5 'Barlow',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#B4BCC0}
+.hstrip .cap span:last-child{color:var(--amber)}
 @media(max-width:880px){
   .iband{gap:10px;font-size:9.5px;letter-spacing:.2em}
   .iband .mono{width:30px;height:30px;font-size:12px}
   .hin{flex-direction:column;align-items:flex-start;gap:20px}
   h1.set{font-size:clamp(34px,9vw,56px)}
   .sub{max-width:100%}
-  .hstrip img{aspect-ratio:16/8}
+  .hleft,.hright{flex:0 0 auto}
+  .hstrip{margin-top:0;flex:1 1 auto;
+    background:linear-gradient(180deg,rgba(35,46,52,0) 0 30px,var(--iron) 30px 100%)}
+  .hsin{flex-direction:column;align-items:stretch;gap:14px;width:100%;
+    padding-bottom:clamp(20px,2.6vh,28px)}
+  .hstrip figure{width:100%}
+  .hstrip .cap{position:static;max-width:100%;width:auto;flex-direction:row;flex-wrap:wrap;
+    justify-content:space-between;gap:10px;padding-top:2px}
   .hcta a{flex:1 1 auto;justify-content:center;padding:11px 12px;font-size:12.5px}
 }
 
@@ -235,13 +252,15 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     </div>
   </div>
   <div class="hstrip">
-    <figure>
-      <img src="img/01.jpg" alt="The red Harout awning over the bakery door on Rue Masaken, Bourj Hammoud">
-      <figcaption class="cap">
-        <span><xen data-edit="t29" data-edit-label="Text (EN): The red awning on Rue Masaken, script …">The red awning on Rue Masaken, script and all</xen><xar data-edit="t30" data-edit-label="Text (AR): الشمسية الحمرا بشارع المساكن، بخطها">الشمسية الحمرا بشارع المساكن، بخطها</xar></span>
-        <span><xen data-edit="t31" data-edit-label="Text (EN): Bourj Hammoud">Bourj Hammoud</xen><xar data-edit="t32" data-edit-label="Text (AR): برج حمود">برج حمود</xar></span>
-      </figcaption>
-    </figure>
+    <div class="hsin">
+      <figure>
+        <img src="img/01.jpg" alt="The red Harout awning over the bakery door on Rue Masaken, Bourj Hammoud">
+        <figcaption class="cap">
+          <span><xen data-edit="t29" data-edit-label="Text (EN): The red awning on Rue Masaken, script …">The red awning on Rue Masaken, script and all</xen><xar data-edit="t30" data-edit-label="Text (AR): الشمسية الحمرا بشارع المساكن، بخطها">الشمسية الحمرا بشارع المساكن، بخطها</xar></span>
+          <span><xen data-edit="t31" data-edit-label="Text (EN): Bourj Hammoud">Bourj Hammoud</xen><xar data-edit="t32" data-edit-label="Text (AR): برج حمود">برج حمود</xar></span>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </header>
 

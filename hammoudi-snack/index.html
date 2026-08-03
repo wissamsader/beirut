@@ -164,6 +164,12 @@ footer{padding:36px 7vw 128px;color:#9C8A69;font-size:13.5px;text-align:center;b
 }
 @media(max-width:760px){#nav .lk a:not(.callb){display:none}#nav .lk{gap:10px}#nav a.callb{padding:9px 14px;font-size:12.5px}}
 .silent{padding-inline:22px}.silent p{max-width:min(23ch,100%)}
+
+/* 390px: the bar has no side padding, so the first label sat 4px from the screen edge.
+   nowrap made it worse by widening the run. Pad the BAR instead and let the label wrap. */
+@media(max-width:430px){.bar{padding-inline:14px}
+ .bar a{font-size:10px;padding-inline:3px}}
+/* data-m390fix2 */
 </style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -391,6 +397,9 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
   <a class="rd" href="tel:+9611370200"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t166" data-edit-label="Text (EN): Call to order">Call to order</xen><xar data-edit="t167" data-edit-label="Text (AR): اتصل واطلب">اتصل واطلب</xar></span></a>
   <a href="https://www.google.com/maps?cid=1654663317310794909" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t168" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t169" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
   <a href="#hrs"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8m-.5 3v5.3l4.1 2.5.8-1.3-3.4-2V7z"/></svg><span><xen data-edit="t170" data-edit-label="Text (EN): Hours">Hours</xen><xar data-edit="t171" data-edit-label="Text (AR): الدوام">الدوام</xar></span></a>
+
+  <a href="https://www.instagram.com/hamoudi_snack/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg><span><xen data-edit="t172" data-edit-label="Text (EN): Instagram">Instagram</xen><xar data-edit="t173" data-edit-label="Text (AR): انستغرام">انستغرام</xar></span></a>
+  <a href="https://www.facebook.com/p/Hamoudi-Snack-100067836521412/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.91.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg><span><xen data-edit="t174" data-edit-label="Text (EN): Facebook">Facebook</xen><xar data-edit="t175" data-edit-label="Text (AR): فيسبوك">فيسبوك</xar></span></a>
 </nav>
 
 </body></html>

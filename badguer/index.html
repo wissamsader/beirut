@@ -28,14 +28,24 @@ img{display:block;max-width:100%}
 
 /* ---------- HERO: Zest Café. Their own table, full bleed, gold lockup low ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:flex-end;background:#1B2419}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 34%;
-  filter:brightness(.7) contrast(1.05) saturate(1.05);
-  transform:scale(1.05);animation:settle 1500ms cubic-bezier(.16,.84,.44,1) forwards}
-@keyframes settle{to{transform:scale(1)}}
-header .scrim{position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(27,36,25,.66) 0,rgba(27,36,25,.24) 26%,rgba(27,36,25,.80) 48%,rgba(27,36,25,.96) 76%,rgba(20,27,18,.99) 100%)}
-.env{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;padding:0 6vw clamp(46px,7.4vh,80px)}
+  display:flex;align-items:center;background:
+    radial-gradient(72% 64% at 78% 40%,#2A3724 0,rgba(42,55,36,0) 74%),
+    linear-gradient(180deg,#243020 0,#1B2419 56%,#151C13 100%)}
+.env{position:relative;z-index:3;width:min(1180px,100%);margin-inline:auto;
+  padding:clamp(28px,4.4vh,54px) 6vw}
+.hgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,406px);
+  gap:clamp(26px,4.4vw,62px);align-items:center}
+.hplate{position:relative;overflow:hidden;background:#12180F;padding:9px;
+  border:1px solid rgba(200,167,94,.5);box-shadow:0 34px 62px -30px rgba(0,0,0,.75)}
+.hplate img{width:100%;height:clamp(400px,72vh,660px);object-fit:cover;object-position:50% 50%;
+  filter:contrast(1.04) saturate(1.04)}
+.hplate .pvg{position:absolute;inset:9px;pointer-events:none;
+  background:radial-gradient(122% 112% at 50% 50%,rgba(15,20,12,0) 56%,rgba(15,20,12,.3) 100%)}
+@media(max-width:880px){
+  header{max-height:1120px}
+  .env{padding-top:64px}
+  .hgrid{grid-template-columns:1fr;gap:20px}
+  .hplate img{height:clamp(280px,42vh,380px)}}
 .estrow{display:flex;align-items:baseline;justify-content:space-between;gap:20px;
   border-top:1px solid rgba(200,167,94,.55);padding-top:16px;margin-bottom:24px;
   font:700 11px/1.5 'Mulish',sans-serif;letter-spacing:.3em;text-transform:uppercase;color:#C8A75E}
@@ -149,7 +159,6 @@ footer{padding:36px 0 128px;color:#6E7A53;font-size:13.5px;text-align:center;bac
   .win{flex-basis:15vw}
 }
 </style>
-<style data-mobfix>@media(max-width:430px){header p{padding-inline:18px}}</style>
 <style data-mobfix2>@media(max-width:430px){.mfx{padding-inline:18px}}</style>
 <meta name="robots" content="noindex,nofollow">
 <style data-mech>*{-webkit-tap-highlight-color:transparent}
@@ -198,13 +207,13 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header id="top">
-  <img class="bg" src="img/04.jpg" alt="An Armenian spread of soujouk, sarma, cheese boereg and mezze on a patterned cloth">
-  <div class="scrim" aria-hidden="true"></div>
   <div class="env">
     <div class="estrow" data-r="1">
       <span><xen data-edit="t1" data-edit-label="Text (EN): Armenian house kitchen">Armenian house kitchen</xen><xar data-edit="t2" data-edit-label="Text (AR): مطبخ بيتي أرمني">مطبخ بيتي أرمني</xar></span>
       <span><xen class="c">Est. <span class="num" data-edit="t3" data-edit-label="Text: 1930">1930</span></xen><xar class="c">بناء <span class="num" data-edit="t4" data-edit-label="Text: 1930">1930</span></xar></span>
     </div>
+    <div class="hgrid">
+    <div class="hcopy">
     <p class="ek" data-r="1"><xen data-edit="t5" data-edit-label="Text (EN): Nor Marash · Bourj Hammoud">Nor Marash · Bourj Hammoud</xen><xar data-edit="t6" data-edit-label="Text (AR): نور مراش · برج حمود">نور مراش · برج حمود</xar></p>
     <h1 class="card" data-r="2"><xen data-edit="t7" data-edit-label="Text (EN): BADGUER">BADGUER</xen><xar data-edit="t8" data-edit-label="Text (AR): بادغير">بادغير</xar></h1>
     <div class="arn" data-r="2" data-edit="t9" data-edit-label="Text: بادغير">بادغير</div>
@@ -218,6 +227,12 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
     <div class="hbtns" data-r="5">
       <a class="s" href="tel:+9611240214"><xen data-edit="t21" data-edit-label="Text (EN): Call the house">Call the house</xen><xar data-edit="t22" data-edit-label="Text (AR): اتصل بالبيت">اتصل بالبيت</xar></a>
       <a class="l" href="https://www.google.com/maps?cid=1635583243947852084" target="_blank" rel="noopener"><xen data-edit="t23" data-edit-label="Text (EN): Find us in Bourj Hammoud">Find us in Bourj Hammoud</xen><xar data-edit="t24" data-edit-label="Text (AR): لاقونا ببرج حمود">لاقونا ببرج حمود</xar></a>
+    </div>
+    </div>
+    <div class="hplate" data-r="2">
+      <img src="img/04.jpg" alt="An Armenian spread of soujouk, sarma, cheese boereg and mezze on a patterned cloth">
+      <span class="pvg" aria-hidden="true"></span>
+    </div>
     </div>
   </div>
 </header>
