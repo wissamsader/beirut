@@ -5,185 +5,261 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Saj Stories · Yarze, Baabda</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;700&family=Lalezar&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@500;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700&family=Reem+Kufi:wght@500;700&family=Zain:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --arh:'Lalezar';--arb:'Almarai';
-  --field:#3A4034;--field-d:#2A2F26;--leafg:#6E8A4A;--leaf-d:#53683A;--slat:#8AA562;
-  --cream:#F5EFE0;--cream-d:#E5DCC6;--terra:#A08A63;--terra-d:#7E6A46;--ink:#25301E;
-  --madder:#6E8A4A;--madder-d:#53683A;--madder-l:#8AA562;--stitch:#F6F1E2;
+  --arh:'Reem Kufi';--arb:'Zain';
+  --paper:#F8F1E6;--paper2:#F1E6D4;--card:#FFFBF4;
+  --ink:#2B231C;--ink2:#5F5147;--ink3:#8A7A6C;
+  --terra:#C4552C;--terra-d:#9C3F1D;--terra-l:#E2825C;
+  --sage:#7E9569;--sage-d:#5C7350;
+  --pat:#EADAC1;--pat2:#E6D6BD;
+  --rule:rgba(43,35,28,.16);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--field);color:var(--cream);font:400 17px/1.75 'Figtree',system-ui,sans-serif}
-.wrap{width:min(1150px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Anton',Impact,sans-serif;font-weight:400;line-height:1.05;letter-spacing:.01em}
+body{background:var(--paper);color:var(--ink);font:400 17px/1.75 'Be Vietnam Pro',system-ui,sans-serif}
+.wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
+h1,h2,h3{font-family:'Gabarito',system-ui,sans-serif;font-weight:900;line-height:1.02;letter-spacing:-.012em}
 a{color:inherit}
 img{display:block;max-width:100%}
-.k{font:700 11.5px/1.5 'Figtree',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:#9CC4A8}
+.k{font:700 11px/1.5 'Be Vietnam Pro',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--terra-d)}
 
-/* language chip: a little painted louvre tab, top right */
+/* ---------- the vocabulary field: their own words, tiled and ghosted back ---------- */
+.field{position:absolute;inset:0;overflow:hidden;pointer-events:none;user-select:none;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.fr{white-space:nowrap;width:100%;font-family:'Gabarito',sans-serif;font-weight:900;
+  text-transform:uppercase;color:var(--pat);line-height:.94;letter-spacing:-.005em}
+.fr xar{font-family:var(--arh),sans-serif;font-weight:700;letter-spacing:0}
+.fr.b{font-family:'Be Vietnam Pro',sans-serif;font-weight:700;color:var(--pat2);
+  letter-spacing:.34em;padding:11px 0 13px}
+.fr.a{font-size:clamp(54px,9.2vw,128px)}
+.fr.b{font-size:clamp(10.5px,1.3vw,16px)}
+.fr:nth-child(1){text-indent:-3vw}
+.fr:nth-child(3){text-indent:-19vw}
+.fr:nth-child(4){text-indent:-6vw}
+.fr:nth-child(5){text-indent:-31vw}
+.fr:nth-child(7){text-indent:-11vw}
+.fr:nth-child(8){text-indent:-2vw}
+.fr:nth-child(9){text-indent:-24vw}
+.field.dark .fr{color:rgba(248,241,230,.075)}
+.field.dark .fr.b{color:rgba(248,241,230,.11)}
+/* Reem Kufi sets much heavier than Gabarito, so the Arabic field is tuned lighter */
+html.ar .fr{color:#EFE5D5}
+html.ar .fr.b{color:#EBDECA}
+
+/* language chip: a small stamped tab, top right, clear of the nav call button */
 .lngt{position:fixed;right:14px;top:calc(74px + env(safe-area-inset-top));z-index:80;cursor:pointer;
-  font:700 13px/1 var(--arb),sans-serif;padding:10px 15px;min-width:58px;text-align:center;
-  color:#1E2716;background:repeating-linear-gradient(180deg,#8AA562 0 5px,#6E8A4A 5px 9px);
-  border:1px solid #3A4A2A;border-radius:3px;box-shadow:0 4px 14px rgba(0,0,0,.4);-webkit-appearance:none}
+  font:700 13px/1 var(--arb),sans-serif;padding:9px 15px;min-width:56px;text-align:center;
+  color:var(--card);background:var(--terra);border:1px solid var(--terra-d);border-radius:999px;
+  box-shadow:0 6px 16px rgba(43,35,28,.22);-webkit-appearance:none}
 .lngt:active{transform:scale(.94)}
 
 /* ---------- top nav ---------- */
 #nav{position:fixed;inset:0 0 auto 0;z-index:75;display:flex;align-items:center;justify-content:space-between;
-  gap:20px;padding:13px clamp(18px,5vw,46px);transition:background .3s,border-color .3s;
-  border-bottom:1px solid rgba(245,239,224,0)}
-#nav.sc{background:rgba(35,46,29,.94);backdrop-filter:blur(10px);border-bottom-color:rgba(138,165,98,.36)}
-#nav .brand{font:400 16px/1 'Anton',sans-serif;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--cream);text-decoration:none;text-shadow:0 2px 14px rgba(0,0,0,.7)}
-#nav .links{display:flex;align-items:center;gap:clamp(14px,2vw,28px)}
-#nav .links a{color:rgba(245,239,224,.88);text-decoration:none;font:600 13.5px/1 'Figtree',sans-serif;
-  text-shadow:0 2px 12px rgba(0,0,0,.7);transition:color .2s}
-#nav .links a:hover{color:var(--slat)}
-#nav .call{background:var(--leafg);color:#1E2716 !important;border:1px solid var(--leaf-d);
-  padding:10px 17px;border-radius:2px;font-weight:700 !important;text-shadow:none !important}
+  gap:20px;padding:13px clamp(18px,5vw,44px);transition:background .3s,box-shadow .3s;
+  background:rgba(248,241,230,0)}
+#nav.sc{background:rgba(248,241,230,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--rule)}
+#nav .brand{font:900 17px/1 'Gabarito',sans-serif;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);text-decoration:none}
+#nav .links{display:flex;align-items:center;gap:clamp(14px,2vw,26px)}
+#nav .links a{color:var(--ink2);text-decoration:none;font:600 13.5px/1 'Be Vietnam Pro',sans-serif;
+  transition:color .2s}
+#nav .links a:hover{color:var(--terra)}
+#nav .call{background:var(--terra);color:var(--card) !important;border-radius:999px;
+  padding:10px 18px;font-weight:700 !important}
 
-/* ---------- HERO (pin: furn-05 "Z&Z Manoushe"): the saj photographed from above, and the real
-     price list laid out on the empty half of the paper beside it ---------- */
+/* ---------- HERO: the word field, one contained photo card floating on it ---------- */
 header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;background:var(--field-d)}
-header img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:66% 56%;
-  filter:contrast(1.04) saturate(1.03)}
-header .scrim{position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(92deg,rgba(24,30,18,.94) 0%,rgba(24,30,18,.86) 34%,rgba(24,30,18,.36) 58%,rgba(24,30,18,0) 78%),
-             linear-gradient(180deg,rgba(24,30,18,.62) 0%,rgba(24,30,18,0) 22%)}
-.hcol{position:relative;z-index:4;width:min(1150px,100%);margin-inline:auto;padding:clamp(72px,11vh,110px) 6vw clamp(24px,4vh,44px)}
-.hbox{max-width:min(560px,58%)}
-.loc{display:flex;align-items:center;gap:10px}
-.loc .k{color:var(--slat);border:0 !important}
-h1.ttl{font-size:clamp(38px,7vw,92px);color:var(--cream);margin-top:10px;line-height:.98;
-  text-shadow:0 6px 34px rgba(0,0,0,.6)}
-h1.ttl em{font-style:normal;color:var(--slat)}
-html.ar h1.ttl xar{font-family:var(--arh),sans-serif;font-size:clamp(38px,7vw,86px);line-height:1.14;display:block}
-.sub{margin-top:13px;color:rgba(245,239,224,.82);font-size:clamp(14px,1.62vw,16.5px);line-height:1.7;max-width:44ch}
-.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.plate{display:inline-flex;align-items:baseline;gap:7px;background:var(--leafg);color:#1E2716;
-  padding:6px 12px;border-radius:2px;font:700 11.5px/1.5 'Figtree',sans-serif}
-.chip{border:1px solid rgba(138,165,98,.5);border-radius:2px;padding:6px 11px;
-  font:600 11.5px/1.5 'Figtree',sans-serif;color:#E6E0CE}
-/* the price list, laid out on the paper */
-.hprice{margin-top:clamp(16px,2.8vh,26px);padding-top:clamp(13px,2.2vh,19px);
-  border-top:1px solid rgba(138,165,98,.44);max-width:430px}
-.hprice .lbl{font:700 10.5px/1 'Figtree',sans-serif;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--slat);margin-bottom:10px}
-.hprice ul{list-style:none}
-.hprice li{display:flex;align-items:baseline;gap:10px;padding:5px 0;
-  font:600 13.5px/1.5 'Figtree',sans-serif;color:#EFE9D8}
-.hprice li i{flex:1 1 auto;height:1px;border-bottom:1px dotted rgba(245,239,224,.42);transform:translateY(-4px)}
-.hprice li b{font-weight:700;color:var(--slat);white-space:nowrap}
-.hprice .note{margin-top:9px;font:500 11px/1.5 'Figtree',sans-serif;color:rgba(245,239,224,.6)}
-.hcta{display:flex;flex-wrap:wrap;gap:9px;margin-top:clamp(14px,2.4vh,20px)}
-.hcta a{display:inline-flex;align-items:center;text-decoration:none;border-radius:2px;padding:12px 20px;
-  font:700 13.5px/1 'Figtree',sans-serif;background:var(--leafg);color:#1E2716;border:1px solid var(--leaf-d)}
-.hcta a.ln{background:transparent;color:#E6E0CE;border-color:rgba(138,165,98,.5)}
+  display:flex;align-items:center;justify-content:center;background:var(--paper);
+  border-bottom:1px solid var(--rule)}
+.wash{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 74% 66% at 50% 50%,rgba(248,241,230,.93) 0%,rgba(248,241,230,.78) 46%,rgba(248,241,230,0) 84%)}
+header .wash{background:radial-gradient(ellipse 64% 62% at 50% 47%,rgba(248,241,230,.94) 0%,rgba(248,241,230,.8) 44%,rgba(248,241,230,0) 80%)}
+.hin{position:relative;z-index:4;width:min(760px,100%);margin-inline:auto;text-align:center;
+  padding:clamp(84px,12vh,116px) 6vw clamp(26px,4vh,44px)}
+h1.ttl{font-size:clamp(42px,9.6vw,104px);line-height:.94;margin:9px 0 clamp(18px,3vh,28px);color:var(--ink)}
+h1.ttl em{font-style:normal;color:var(--terra)}
+html.ar h1.ttl xar{font-family:var(--arh),sans-serif;font-size:clamp(40px,8.6vw,92px);line-height:1.18;display:block}
+html.ar h2 xar{font-size:.86em}
+.hcard{position:relative;display:inline-block;background:var(--card);padding:11px 11px 11px;
+  border-radius:20px;box-shadow:0 26px 60px rgba(43,35,28,.22),0 2px 0 rgba(255,255,255,.6) inset}
+.hcard img{width:min(330px,64vw);aspect-ratio:4/5;height:auto;object-fit:cover;border-radius:12px}
+.sub{margin:clamp(20px,3.4vh,30px) auto 0;color:var(--ink2);font-size:clamp(14.5px,1.55vw,17px);
+  line-height:1.72;max-width:50ch}
+.hcta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(16px,2.6vh,24px)}
+.hcta a{display:inline-flex;align-items:center;text-decoration:none;border-radius:999px;padding:13px 24px;
+  font:700 14px/1 'Be Vietnam Pro',sans-serif;background:var(--terra);color:var(--card);
+  border:1.5px solid var(--terra)}
+.hcta a.ln{background:transparent;color:var(--ink);border-color:var(--rule)}
+
+/* the ONE animated ornament: a type seal, no drawn object */
+.seal{position:absolute;left:-30px;bottom:-24px;width:126px;height:126px;z-index:6;
+  border-radius:50%;background:var(--sage);color:#F6F3EA;
+  box-shadow:0 12px 26px rgba(43,35,28,.26);display:grid;place-items:center}
+.seal .ring{position:absolute;inset:0;width:100%;height:100%;animation:sealspin 84s linear infinite}
+.seal .ring text{font:700 8.4px/1 'Be Vietnam Pro',sans-serif;letter-spacing:1.7px;
+  fill:rgba(246,243,234,.86);text-transform:uppercase}
+.seal .sv{font:900 27px/1 'Gabarito',sans-serif;letter-spacing:-.02em;display:block;text-align:center}
+.seal .sl{display:block;font:700 8.5px/1 'Be Vietnam Pro',sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;margin-top:5px;color:rgba(246,243,234,.86)}
+@keyframes sealspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.seal .ring{animation:none}}
+
+/* ---------- the board ledger strip ---------- */
+.ledger{background:var(--ink);color:#F1E7D8;padding:clamp(30px,5vw,50px) 0}
+.ledger .in{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:start}
+.ledger .k{color:var(--terra-l)}
+.ledger ul{list-style:none;margin-top:14px}
+.ledger li{display:flex;align-items:baseline;gap:10px;padding:7px 0;
+  font:600 15px/1.5 'Be Vietnam Pro',sans-serif;color:#F6EFE3;border-bottom:1px solid rgba(241,231,216,.14)}
+.ledger li i{flex:1 1 auto;height:1px;border-bottom:1px dotted rgba(241,231,216,.36);transform:translateY(-4px)}
+.ledger li b{font-weight:700;color:var(--terra-l);white-space:nowrap}
+.ledger .note{margin-top:12px;font-size:13.5px;line-height:1.7;color:rgba(241,231,216,.68)}
+.chips{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin-top:14px}
+.chip{border:1px solid rgba(241,231,216,.3);border-radius:999px;padding:10px 17px;
+  font:600 13px/1.4 'Be Vietnam Pro',sans-serif;color:#F1E7D8}
+.chip.hi{background:var(--terra);border-color:var(--terra);color:#FFF6EE;font-weight:700}
+
+/* ---------- generic sections ---------- */
+section{position:relative;padding-block:clamp(58px,8.4vh,102px)}
+section.band{background:var(--ink);color:#EFE5D6}
+section.band .k{color:var(--terra-l)}
+section.band h2{color:#F8F1E6}
+section.band p{color:#CFC4B4}
+.lead{max-width:60ch;color:var(--ink2)}
+h2.h2{font-size:clamp(29px,4.5vw,52px);margin:10px 0 18px}
+.nw{white-space:nowrap}
+.hd{margin-bottom:clamp(22px,3.6vw,38px)}
+
+.two{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(26px,4.4vw,60px);align-items:start}
+.two p{margin-bottom:15px}
+.pf{background:var(--card);padding:10px;border-radius:16px;box-shadow:0 16px 38px rgba(43,35,28,.13)}
+section.band .pf{background:#393027;box-shadow:none}
+.pf img{width:100%;border-radius:9px;object-fit:cover}
+.pf.land img{aspect-ratio:4/3}
+.pf.port img{aspect-ratio:4/5}
+.pf.tall img{aspect-ratio:9/14}
+.cap{font:500 12.5px/1.6 'Be Vietnam Pro',sans-serif;color:var(--ink3);padding:9px 4px 2px;letter-spacing:.01em}
+section.band .cap{color:#9C8E7E}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.6vw,28px);margin-top:clamp(20px,3vw,32px)}
+
+/* three off the board */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6vw,28px)}
+.dish{background:#393027;border-radius:16px;overflow:hidden}
+.dish img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.dish .t{padding:18px 20px 22px;border-top:3px solid var(--terra)}
+.dish h3{font-size:23px;color:#F8F1E6;margin-bottom:7px}
+.dish p{color:#C6BAA9;font-size:14.5px;line-height:1.68}
+
+/* the printed board, transcribed */
+.board{background:var(--card);color:var(--ink);border-radius:20px;padding:clamp(24px,3.8vw,46px);
+  box-shadow:0 28px 60px rgba(43,35,28,.3)}
+.board .k{color:var(--terra-d)}
+.board h2{color:var(--ink);font-size:clamp(27px,3.9vw,44px);margin:8px 0 8px}
+.bnote{font-size:14.5px;color:var(--ink2);margin-bottom:24px;max-width:66ch}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vw,46px);align-items:start}
+table.mn{width:100%;border-collapse:collapse}
+table.mn th{font:700 10.5px/1.4 'Be Vietnam Pro',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink3);text-align:right;padding:0 0 9px;border-bottom:2px solid var(--ink)}
+table.mn th:first-child{text-align:left}
+table.mn td{padding:9px 0;border-bottom:1px dashed rgba(43,35,28,.2);font:600 14.5px/1.5 'Be Vietnam Pro',sans-serif}
+table.mn td+td{text-align:right;color:var(--ink2);font-weight:500}
+.mlist li{list-style:none;padding:11px 0;border-bottom:1px dashed rgba(43,35,28,.2)}
+.mlist .nm{display:flex;justify-content:space-between;gap:12px;font:700 15px/1.5 'Be Vietnam Pro',sans-serif}
+.mlist .nm i{font-style:normal;color:var(--terra-d);white-space:nowrap}
+.mlist small{display:block;color:var(--ink2);font-size:13px;line-height:1.6;margin-top:3px}
+.mh{font-family:'Gabarito',sans-serif;font-weight:900;font-size:21px;color:var(--ink);margin:22px 0 8px}
+.mh:first-child{margin-top:0}
+.bshots{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(16px,2.6vw,28px);
+  margin-top:clamp(22px,3.4vw,34px);align-items:end}
+.bshots .pf{background:var(--paper2);box-shadow:none}
+
+/* mooneh */
+.shelf{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(16px,2.6vw,30px);align-items:end}
+.retail-note{margin-top:16px;font-size:14.5px;color:var(--ink2)}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal a{display:block;background:#393027;border-radius:12px;overflow:hidden}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s ease}
+.gal a:hover img{transform:scale(1.04)}
+
+/* reviews on the word field */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6vw,28px)}
+.rev-c{background:var(--card);border-radius:16px;padding:24px 24px 20px;display:flex;
+  flex-direction:column;box-shadow:0 14px 34px rgba(43,35,28,.12)}
+.rev-c q{display:block;quotes:none;font-size:15.5px;line-height:1.72;color:var(--ink)}
+.rev-c cite{display:block;margin-top:auto;padding-top:16px;font-style:normal;
+  font:700 12.5px/1.4 'Be Vietnam Pro',sans-serif;color:var(--terra-d);letter-spacing:.05em}
+
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.2fr .8fr;gap:clamp(24px,3.6vw,50px);align-items:start}
+.shots{display:grid;grid-template-columns:1fr;gap:16px}
+table.hrs{width:100%;border-collapse:collapse;margin-top:6px}
+table.hrs td{padding:10px 0;border-bottom:1px solid var(--rule);font-size:15.5px}
+table.hrs td:last-child{text-align:right;color:var(--ink2)}
+.ad,.ph{font-size:16.5px;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#FFF6EE;
+  padding:12px 18px;border-radius:999px;text-decoration:none;
+  font:700 14px/1 'Be Vietnam Pro',sans-serif;border:1.5px solid var(--terra);margin:8px 7px 0 0}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--rule);padding:11px 15px;font-size:13.5px;margin-right:5px}
+.btn.s{background:var(--sage);border-color:var(--sage);color:#F6F3EA}
+footer{background:var(--ink);color:#A79887;padding:44px 7vw 132px;text-align:center;font-size:13.5px}
+footer a{color:#E8DCCA;text-decoration:none;border-bottom:1px solid rgba(232,220,202,.4)}
+footer a:hover{color:#F8F1E6}
+footer b{display:block;font:900 20px/1.2 'Gabarito',sans-serif;color:#F8F1E6;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:12px}
+
+/* ---------- sticky bar: their kraft paper wrap, cream over the ink footer ---------- */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:6px;
+  background:var(--paper2);border-top:3px solid var(--terra);
+  padding:8px 9px calc(8px + env(safe-area-inset-bottom));
+  box-shadow:0 -12px 30px rgba(43,35,28,.22)}
+.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  padding:9px 4px 10px;text-decoration:none;border-radius:12px;min-height:56px;
+  font:700 11.5px/1.2 'Be Vietnam Pro',sans-serif;letter-spacing:.04em;
+  background:var(--card);color:var(--ink);border:1px solid rgba(43,35,28,.14)}
+.bar a:active{filter:brightness(.96)}
+.bar svg{width:19px;height:19px;fill:currentColor}
+.bar a.c{background:var(--terra);border-color:var(--terra-d);color:#FFF6EE}
+.bar a.w{background:var(--sage);border-color:var(--sage-d);color:#F6F3EA}
+.bar a.g{flex:0 0 54px;padding-inline:0}
+.bar a.g span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+@media(min-width:901px){.bar{display:none}}
+
+@media(max-width:1120px) and (min-width:901px){
+  .visit{grid-template-columns:1fr 1fr}
+  .shots{grid-column:1/-1;grid-template-columns:1fr 1fr;gap:22px}
+}
 @media(max-width:900px){
   #nav .links a:not(.call){display:none}
-  #nav{padding:10px 5vw}#nav .brand{font-size:13.5px}
-  #nav .call{padding:9px 13px;font-size:12px}
-  .lngt{top:calc(62px + env(safe-area-inset-top))}
-  .hbox{max-width:100%}
-  header .scrim{background:linear-gradient(92deg,rgba(24,30,18,.95) 0%,rgba(24,30,18,.9) 52%,rgba(24,30,18,.62) 100%),
-    linear-gradient(180deg,rgba(24,30,18,.6) 0%,rgba(24,30,18,.2) 30%)}
-  h1.ttl{font-size:clamp(34px,9.4vw,60px)}
-  .hcta a{flex:1 1 auto;justify-content:center;padding:11px 12px;font-size:12.5px}
-}
-
-/* ---------- sections ---------- */
-/* one section-head system: hairline rule, small label, heading */
-section .wrap .k:first-child{display:block;border-top:1px solid rgba(160,138,99,.4);padding-top:15px}
-section{padding-block:clamp(56px,8vh,96px)}
-.band{background:var(--field-d)}
-.two{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(24px,4vw,54px);align-items:start}
-.two h2,.h2{font-size:clamp(30px,4.4vw,50px);margin:8px 0 18px;color:#F7F2E2}
-.two p{color:#D0CDBC;margin-bottom:15px}
-.frame{border:1px solid rgba(244,237,218,.28);padding:10px;background:#2C3428;border-radius:3px}
-.frame img{width:100%;height:clamp(250px,40vh,420px);object-fit:cover;border-radius:2px}
-.cap{font:600 12px/1.55 'Figtree',sans-serif;color:#9F9D8C;margin-top:9px;letter-spacing:.02em}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.card{background:#2E3629;border:1px solid rgba(244,237,218,.14);border-radius:4px;overflow:hidden}
-.card img{width:100%;height:212px;object-fit:cover}
-.card .t{padding:15px 16px 19px;border-top:3px solid var(--terra)}
-.card h3{font-size:22px;margin-bottom:6px;color:#F7F2E2}
-.card p{color:#C3C1AF;font-size:14.5px;line-height:1.65}
-
-/* the clipboard menu, transcribed */
-.board{background:var(--cream);color:var(--ink);border-radius:4px;padding:clamp(22px,3.6vw,42px);
-  box-shadow:0 22px 50px rgba(0,0,0,.35)}
-.board .k{color:var(--terra-d)}
-.board h2{color:#39402E;font-size:clamp(27px,3.8vw,42px);margin:6px 0 6px}
-.bnote{font-size:14.5px;color:#5F6355;margin-bottom:22px}
-.mcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3.4vw,44px);align-items:start}
-table.mn{width:100%;border-collapse:collapse}
-table.mn th{font:700 11px/1.4 'Figtree',sans-serif;letter-spacing:.14em;text-transform:uppercase;
-  color:#7C7660;text-align:right;padding:0 0 8px;border-bottom:2px solid #39402E}
-table.mn th:first-child{text-align:left}
-table.mn td{padding:9px 0;border-bottom:1px dashed rgba(27,58,40,.25);font:600 15px/1.5 'Figtree',sans-serif}
-table.mn td+td{text-align:right;color:#4E5247;font-weight:400}
-.mlist li{list-style:none;padding:10px 0;border-bottom:1px dashed rgba(27,58,40,.25)}
-.mlist .nm{display:flex;justify-content:space-between;gap:12px;font:700 15.5px/1.5 'Figtree',sans-serif}
-.mlist .nm i{font-style:normal;color:var(--terra-d);white-space:nowrap}
-.mlist small{display:block;color:#5F6355;font-size:13px;line-height:1.6;margin-top:2px}
-.mh{font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.01em;color:#39402E;margin:18px 0 6px}
-.boardimg{margin-top:20px;border:1px solid #C7C0A8;padding:8px;background:#fff;border-radius:3px}
-.boardimg img{width:100%;height:340px;object-fit:cover;object-position:top}
-
-/* mooneh shelf: jars on a balcony rail */
-.shelfrow{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(16px,2.6vw,30px);align-items:end}
-.jarframe{background:var(--cream);padding:9px;border-radius:3px}
-.jarframe img{width:100%;object-fit:cover;border-radius:2px}
-.jarframe.wide img{height:clamp(230px,34vh,330px)}
-.jarframe.tall img{height:clamp(230px,34vh,330px)}
-.railing{margin-top:-6px;height:44px;position:relative;
-  background:repeating-linear-gradient(90deg,transparent 0 26px,#4E5842 26px 32px);border-top:7px solid #57624A;
-  border-radius:2px 2px 0 0}
-.retail p{color:#D0CDBC;margin-bottom:14px}
-
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal a{display:block;background:var(--cream);padding:6px;border-radius:3px}
-.gal img{width:100%;height:200px;object-fit:cover;border-radius:2px}
-
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.rev-c{background:#2E3629;border:1px solid rgba(244,237,218,.14);border-left:4px solid var(--terra);
-  border-radius:3px;padding:20px 20px 17px}
-.rev-c q{display:block;quotes:none;font-size:15.5px;line-height:1.7;color:#DEDBCB}
-.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1.4 'Figtree',sans-serif;
-  color:#B9A87A;letter-spacing:.05em}
-
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
-table.hrs{width:100%;border-collapse:collapse}
-table.hrs td{padding:9px 0;border-bottom:1px solid rgba(244,237,218,.14);font-size:15.5px}
-table.hrs td:last-child{text-align:right;color:#C3C1AF}
-.ad,.ph{font-size:16.5px;color:#EFE8D2}
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#25130A;
-  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 15px/1 'Figtree',sans-serif;
-  border:1.5px solid #25130A;margin:6px 8px 0 0}
-.btn.o{background:transparent;color:var(--cream);border-color:rgba(244,237,218,.5)}
-footer{padding:36px 7vw 128px;color:#9F9D8C;font-size:13.5px;text-align:center;background:var(--field-d)}
-
-/* ---------- sticky bar: a half-open louvre rail ---------- */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:3px;
-  background:#242A20;padding:7px 8px calc(7px + env(safe-area-inset-bottom));
-  box-shadow:0 -10px 28px rgba(0,0,0,.5)}
-.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:9px 4px 10px;color:#F0F6E9;text-decoration:none;border-radius:3px;min-height:56px;
-  font:700 12px/1.2 'Figtree',sans-serif;letter-spacing:.02em;border:1px solid rgba(16,40,28,.9);
-  background:repeating-linear-gradient(180deg,#5F7A3F 0 6px,#4C6432 6px 11px)}
-.bar a:active{filter:brightness(1.12)}
-.bar svg{width:19px;height:19px;fill:currentColor}
-.bar a.w{background:repeating-linear-gradient(180deg,#B9A87A 0 6px,#A08A63 6px 11px);color:#241E10}
-
-@media(max-width:880px){
-  .two,.visit,.mcols,.shelfrow{grid-template-columns:1fr}
+  .shots{grid-template-columns:1fr 1fr;gap:16px}
+  #nav{padding:10px 5vw}
+  #nav .brand{font-size:14.5px}
+  #nav .call{padding:9px 15px;font-size:12.5px}
+  .lngt{top:calc(62px + env(safe-area-inset-top));padding:8px 13px;min-width:50px;font-size:12px}
+  .two,.visit,.mcols,.shelf,.bshots,.ledger .in{grid-template-columns:1fr}
   .grid3,.revs{grid-template-columns:1fr}
   .gal{grid-template-columns:repeat(2,1fr)}
-  .boardimg img{height:300px}
-  body{padding-bottom:64px}
+  .chips{flex-direction:row;flex-wrap:wrap}
+  body{padding-bottom:66px}
 }
 @media(max-width:560px){
+  table.mn td{font:600 12.5px/1.5 'Be Vietnam Pro',sans-serif;padding:8px 0}
+  table.mn th{font-size:9.5px;letter-spacing:.06em;padding-bottom:8px}
+  table.mn td+td,table.mn th+th{padding-left:10px}
+  .board{padding-inline:20px}
+  .bar{gap:5px;padding-inline:7px}
+  .bar a{font-size:11px;letter-spacing:0}
+  .bar a.g{flex:0 0 48px}
+  .hin{padding-top:clamp(76px,13vh,104px)}
+  .hcard img{width:min(248px,66vw)}
+  .seal{width:92px;height:92px;left:-16px;bottom:-16px}
+  .seal .sv{font-size:20px}
+  .seal .sl{font-size:7px;letter-spacing:.14em;margin-top:3px}
+  .seal .ring text{font-size:7px;letter-spacing:1.1px}
+  .fr.a{font-size:clamp(44px,13.5vw,66px)}
+  .hcta a{flex:1 1 auto;justify-content:center;padding:13px 14px;font-size:13.5px}
 }
 </style>
 <meta name="robots" content="noindex,nofollow">
@@ -235,220 +311,318 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <nav id="nav">
   <a class="brand" href="#top" data-edit="t1" data-edit-label="Button / link: Saj Stories">Saj Stories</a>
   <div class="links">
-    <a href="#story"><xen data-edit="t2" data-edit-label="Text (EN): The shop">The shop</xen><xar data-edit="t3" data-edit-label="Text (AR): المحل">المحل</xar></a>
-    <a href="#menu"><xen data-edit="t4" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t5" data-edit-label="Text (AR): اللائحة">اللائحة</xar></a>
-    <a href="#mooneh"><xen data-edit="t6" data-edit-label="Text (EN): Mooneh">Mooneh</xen><xar data-edit="t7" data-edit-label="Text (AR): المونة">المونة</xar></a>
-    <a href="#visit"><xen data-edit="t8" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t9" data-edit-label="Text (AR): زورونا">زورونا</xar></a>
-    <a class="call num" href="tel:+96170500019" data-edit="t10" data-edit-label="Button / link: +961 70 500 019">+961 70 500 019</a>
+    <a href="#story"><xen data-edit="t2" data-edit-label="Text (EN): The story">The story</xen><xar data-edit="t3" data-edit-label="Text (AR): القصة">القصة</xar></a>
+    <a href="#dome"><xen data-edit="t4" data-edit-label="Text (EN): Off the dome">Off the dome</xen><xar data-edit="t5" data-edit-label="Text (AR): من عالصاج">من عالصاج</xar></a>
+    <a href="#menu"><xen data-edit="t6" data-edit-label="Text (EN): The board">The board</xen><xar data-edit="t7" data-edit-label="Text (AR): اللائحة">اللائحة</xar></a>
+    <a href="#mooneh"><xen data-edit="t8" data-edit-label="Text (EN): Mooneh">Mooneh</xen><xar data-edit="t9" data-edit-label="Text (AR): المونة">المونة</xar></a>
+    <a href="#visit"><xen data-edit="t10" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t11" data-edit-label="Text (AR): زورونا">زورونا</xar></a>
+    <a class="call num" href="tel:+96170500019" data-edit="t12" data-edit-label="Button / link: +961 70 500 019">+961 70 500 019</a>
   </div>
 </nav>
 
 <header id="top">
-  <img class="bg" src="img/06.jpg" alt="A saj folded open on the shop's own printed paper, roast beef, tomatoes and micro herbs">
-  <div class="scrim" aria-hidden="true"></div>
-  <div class="hcol">
-   <div class="hbox">
-    <p class="loc"><span class="k"><xen data-edit="t11" data-edit-label="Text (EN): Alyarz Club, Yarze, Baabda">Alyarz Club, Yarze, Baabda</xen><xar data-edit="t12" data-edit-label="Text (AR): نادي الأرز، اليرزة، بعبدا">نادي الأرز، اليرزة، بعبدا</xar></span></p>
-    <h1 class="ttl"><xen>Saj <em data-edit="t13" data-edit-label="Text: Stories">Stories</em></xen><xar>ساج <em data-edit="t14" data-edit-label="Text: ستوريز">ستوريز</em></xar></h1>
-    <p class="sub"><xen data-edit="t15" data-edit-label="Text (EN): Wholewheat saj with a crunchy corn-flo…">Wholewheat saj with a crunchy corn-flour crust, folded behind a green shutter up in Yarze. Coffee, mooneh jars and a menu that goes from za'atar to roasted pears.</xen><xar data-edit="t16" data-edit-label="Text (AR): ساج على طحين قمحة كاملة وقرمشة طحين ذر…">ساج على طحين قمحة كاملة وقرمشة طحين ذرة، ورا شبّاك أخضر بأعالي اليرزة. قهوة، مونة بالمرطبانات، ومنيو من الزعتر للإجاص المشوي.</xar></p>
-    <div class="meta">
-      <span class="plate"><span class="num" data-edit="t17" data-edit-label="Text: 4.7">4.7</span> <span><xen>of <span class="num" data-edit="t18" data-edit-label="Text: 75">75</span> Google reviews</xen><xar>من <span class="num" data-edit="t19" data-edit-label="Text: 75">75</span> تقييم على غوغل</xar></span></span>
-      <span class="chip"><xen data-edit="t20" data-edit-label="Text (EN): Wholewheat dough">Wholewheat dough</xen><xar data-edit="t21" data-edit-label="Text (AR): عجينة قمحة كاملة">عجينة قمحة كاملة</xar></span>
-      <span class="chip"><xen data-edit="t22" data-edit-label="Text (EN): Lebanese mooneh">Lebanese mooneh</xen><xar data-edit="t23" data-edit-label="Text (AR): مونة لبنانية">مونة لبنانية</xar></span>
-      <span class="chip"><xen data-edit="t24" data-edit-label="Text (EN): Open every day">Open every day</xen><xar data-edit="t25" data-edit-label="Text (AR): فاتحين كل يوم">فاتحين كل يوم</xar></span>
+  <div class="field" aria-hidden="true">
+    <div class="fr a"><xen data-edit="t13" data-edit-label="Text (EN): SAJ ZA'ATAR KISHK LABNEH JEBNEH SAJ ZA…">SAJ ZA'ATAR KISHK LABNEH JEBNEH SAJ ZA'ATAR KISHK LABNEH JEBNEH</xen><xar data-edit="t14" data-edit-label="Text (AR): ساج زعتر كشك لبنة جبنة ساج زعتر كشك لب…">ساج زعتر كشك لبنة جبنة ساج زعتر كشك لبنة جبنة</xar></div>
+    <div class="fr b"><xen data-edit="t15" data-edit-label="Text (EN): FOLDED TO ORDER · WHOLEFOODS · LOCALLY…">FOLDED TO ORDER · WHOLEFOODS · LOCALLY SOURCED · CATERING · POP UPS · FOLDED TO ORDER · WHOLEFOODS · LOCALLY SOURCED · CATERING · POP UPS</xen><xar data-edit="t16" data-edit-label="Text (AR): بتنطوى عالطلب · أكل صحّي · منتج محلّي …">بتنطوى عالطلب · أكل صحّي · منتج محلّي · كايترينغ · بسطات · بتنطوى عالطلب · أكل صحّي · منتج محلّي · كايترينغ · بسطات</xar></div>
+    <div class="fr a"><xen data-edit="t17" data-edit-label="Text (EN): MOONEH AWARMA TAHINI DEBES MOONEH AWAR…">MOONEH AWARMA TAHINI DEBES MOONEH AWARMA TAHINI DEBES</xen><xar data-edit="t18" data-edit-label="Text (AR): مونة قاورما طحينة دبس مونة قاورما طحين…">مونة قاورما طحينة دبس مونة قاورما طحينة دبس</xar></div>
+    <div class="fr b"><xen data-edit="t19" data-edit-label="Text (EN): TRADITIONAL SAJ · SPECIALTY SAJ · SWEE…">TRADITIONAL SAJ · SPECIALTY SAJ · SWEET SAJ · COFFEE · HERBAL INFUSIONS · TRADITIONAL SAJ · SPECIALTY SAJ · SWEET SAJ · COFFEE · HERBAL INFUSIONS</xen><xar data-edit="t20" data-edit-label="Text (AR): صاج تقليدي · صاج سبيسيالتي · صاج حلو ·…">صاج تقليدي · صاج سبيسيالتي · صاج حلو · قهوة · أعشاب للنقوع · صاج تقليدي · صاج سبيسيالتي · صاج حلو · قهوة · أعشاب للنقوع</xar></div>
+    <div class="fr a"><xen data-edit="t21" data-edit-label="Text (EN): WHOLEWHEAT CORN CRUST HONEY ALMONDS WH…">WHOLEWHEAT CORN CRUST HONEY ALMONDS WHOLEWHEAT CORN CRUST HONEY ALMONDS</xen><xar data-edit="t22" data-edit-label="Text (AR): قمحة كاملة طحين ذرة عسل لوز قمحة كاملة…">قمحة كاملة طحين ذرة عسل لوز قمحة كاملة طحين ذرة عسل لوز</xar></div>
+    <div class="fr b"><xen data-edit="t23" data-edit-label="Text (EN): YARZE, BAABDA · NINE TO NINE, EVERY DA…">YARZE, BAABDA · NINE TO NINE, EVERY DAY · YARZE, BAABDA · NINE TO NINE, EVERY DAY · YARZE, BAABDA · NINE TO NINE, EVERY DAY</xen><xar data-edit="t24" data-edit-label="Text (AR): اليرزة، بعبدا · من 9 لـ 9، كل يوم · ال…">اليرزة، بعبدا · من 9 لـ 9، كل يوم · اليرزة، بعبدا · من 9 لـ 9، كل يوم · اليرزة، بعبدا · من 9 لـ 9، كل يوم</xar></div>
+    <div class="fr a"><xen data-edit="t25" data-edit-label="Text (EN): SAJ STORIES SAJ STORIES SAJ STORIES SA…">SAJ STORIES SAJ STORIES SAJ STORIES SAJ STORIES</xen><xar data-edit="t26" data-edit-label="Text (AR): ساج ستوريز ساج ستوريز ساج ستوريز ساج س…">ساج ستوريز ساج ستوريز ساج ستوريز ساج ستوريز</xar></div>
+    <div class="fr b"><xen data-edit="t27" data-edit-label="Text (EN): ROASTED PEARS · GOAT CHEESE · POMEGRAN…">ROASTED PEARS · GOAT CHEESE · POMEGRANATE MOLASSES · ROSEMARY · ROASTED PEARS · GOAT CHEESE · POMEGRANATE MOLASSES · ROSEMARY</xen><xar data-edit="t28" data-edit-label="Text (AR): إجاص مشوي · جبنة ماعز · دبس رمان · إكل…">إجاص مشوي · جبنة ماعز · دبس رمان · إكليل الجبل · إجاص مشوي · جبنة ماعز · دبس رمان · إكليل الجبل</xar></div>
+    <div class="fr a"><xen data-edit="t29" data-edit-label="Text (EN): PEAR UP HUM YUM FATTE FATTO PEAR UP HU…">PEAR UP HUM YUM FATTE FATTO PEAR UP HUM YUM FATTE FATTO</xen><xar data-edit="t30" data-edit-label="Text (AR): بير أب هم يم فاتّي فاتّو بير أب هم يم …">بير أب هم يم فاتّي فاتّو بير أب هم يم فاتّي فاتّو</xar></div>
+  </div>
+  <div class="wash" aria-hidden="true"></div>
+  <div class="hin">
+    <p class="k"><xen data-edit="t31" data-edit-label="Text (EN): Alyarz Club, Yarze, Baabda">Alyarz Club, Yarze, Baabda</xen><xar data-edit="t32" data-edit-label="Text (AR): نادي الأرز، اليرزة، بعبدا">نادي الأرز، اليرزة، بعبدا</xar></p>
+    <h1 class="ttl"><xen>Saj <em data-edit="t33" data-edit-label="Text: Stories">Stories</em></xen><xar>ساج <em data-edit="t34" data-edit-label="Text: ستوريز">ستوريز</em></xar></h1>
+    <div class="hcard">
+      <img src="img/01.jpg" alt="Hands spreading the topping over the dough on the black saj dome">
+      <div class="seal">
+        <svg class="ring" viewBox="0 0 126 126" aria-hidden="true">
+          <defs><path id="sealpath" d="M63,63 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+          <text><textPath href="#sealpath" textLength="310" lengthAdjust="spacing">SAJ STORIES · YARZE, BAABDA · SAJ STORIES · YARZE, BAABDA · </textPath></text>
+        </svg>
+        <div>
+          <span class="sv num" data-edit="t35" data-edit-label="Text: 4.7">4.7</span>
+          <span class="sl" data-edit="t36" data-edit-label="Text: Google">Google</span>
+        </div>
+      </div>
     </div>
-    <div class="hprice">
-      <p class="lbl"><xen data-edit="t26" data-edit-label="Text (EN): Off their own board, full size">Off their own board, full size</xen><xar data-edit="t27" data-edit-label="Text (AR): عن لوحتهن، الحجم الكبير">عن لوحتهن، الحجم الكبير</xar></p>
-      <ul>
-        <li><span><xen class="c" data-edit="t28" data-edit-label="Text (EN): Za'atar">Za'atar</xen><xar class="c" data-edit="t29" data-edit-label="Text (AR): زعتر">زعتر</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t30" data-edit-label="Text: $1.80">$1.80</b></li>
-        <li><span><xen class="c" data-edit="t31" data-edit-label="Text (EN): Kishk">Kishk</xen><xar class="c" data-edit="t32" data-edit-label="Text (AR): كشك">كشك</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t33" data-edit-label="Text: $3.00">$3.00</b></li>
-        <li><span><xen class="c" data-edit="t34" data-edit-label="Text (EN): Labneh">Labneh</xen><xar class="c" data-edit="t35" data-edit-label="Text (AR): لبنة">لبنة</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t36" data-edit-label="Text: $2.50">$2.50</b></li>
-        <li><span><xen class="c" data-edit="t37" data-edit-label="Text (EN): Pear up">Pear up</xen><xar class="c" data-edit="t38" data-edit-label="Text (AR): بير أب">بير أب</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t39" data-edit-label="Text: $3.00">$3.00</b></li>
-      </ul>
-      <p class="note"><xen data-edit="t40" data-edit-label="Text (EN): Half and mini sizes cost less. The who…">Half and mini sizes cost less. The whole board is further down the page.</xen><xar data-edit="t41" data-edit-label="Text (AR): النص والميني أرخص. اللائحة كاملة تحت ب…">النص والميني أرخص. اللائحة كاملة تحت بالصفحة.</xar></p>
-    </div>
+    <p class="sub"><xen data-edit="t37" data-edit-label="Text (EN): Wholewheat saj with a crunchy corn-flo…">Wholewheat saj with a crunchy corn-flour crust, folded to order at the Alyarz club up in Yarze. Coffee, mooneh jars and a menu that goes from za'atar to roasted pears.</xen><xar data-edit="t38" data-edit-label="Text (AR): ساج على طحين قمحة كاملة وقرمشة طحين ذر…">ساج على طحين قمحة كاملة وقرمشة طحين ذرة، بينطوى عالطلب بنادي الأرز بأعالي اليرزة. قهوة، مونة بالمرطبانات، ومنيو من الزعتر للإجاص المشوي.</xar></p>
     <div class="hcta">
-      <a href="tel:+96170500019"><xen data-edit="t42" data-edit-label="Text (EN): Call the shop">Call the shop</xen><xar data-edit="t43" data-edit-label="Text (AR): اتصل بالمحل">اتصل بالمحل</xar></a>
-      <a class="ln" href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><xen data-edit="t44" data-edit-label="Text (EN): Find the green shutter">Find the green shutter</xen><xar data-edit="t45" data-edit-label="Text (AR): لاقي الشبّاك الأخضر">لاقي الشبّاك الأخضر</xar></a>
+      <a href="tel:+96170500019"><xen data-edit="t39" data-edit-label="Text (EN): Call the shop">Call the shop</xen><xar data-edit="t40" data-edit-label="Text (AR): اتصل بالمحل">اتصل بالمحل</xar></a>
+      <a class="ln" href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><xen data-edit="t41" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t42" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
     </div>
-   </div>
   </div>
 </header>
 
-<section id="story" class="wrap">
-  <div class="two">
-    <div class="rev">
-      <p class="k"><xen data-edit="t46" data-edit-label="Text (EN): The story">The story</xen><xar data-edit="t47" data-edit-label="Text (AR): القصة">القصة</xar></p>
-      <h2><xen data-edit="t48" data-edit-label="Text (EN): From a pop-up in Rome to a saj in Yarz…">From a pop-up in Rome to a saj in Yarze</xen><xar data-edit="t49" data-edit-label="Text (AR): من بسطة بروما لصاج باليرزة">من بسطة بروما لصاج باليرزة</xar></h2>
-      <p><xen data-edit="t50" data-edit-label="Text (EN): Saj Stories began as a pop-up in Rome,…">Saj Stories began as a pop-up in Rome, run by Rita Chahine, a Lebanese food curator and interior designer. It came home as a cafe and retail shop in Gemmayzeh, and today the saj turns at the Alyarz Leisure Club in Yarze, Baabda.</xen><xar data-edit="t51" data-edit-label="Text (AR): ساج ستوريز بلّشت كبسطة بروما، بإدارة ر…">ساج ستوريز بلّشت كبسطة بروما، بإدارة ريتا شاهين، منسّقة أكل ومصمّمة داخلية لبنانية. رجعت عالبلد كمقهى ومحل بالجميزة، واليوم الصاج عم يدور بنادي الأرز باليرزة، بعبدا.</xar></p>
-      <p><xen data-edit="t52" data-edit-label="Text (EN): The dough is wholewheat with a crunchy…">The dough is wholewheat with a crunchy corn-flour crust, and what goes on it is wholefoods and locally sourced Lebanese product, the same jars and blends they sell off the shelf.</xen><xar data-edit="t53" data-edit-label="Text (AR): العجينة قمحة كاملة مع قشرة مقرمشة من ط…">العجينة قمحة كاملة مع قشرة مقرمشة من طحين الذرة، ويلّي فوقها أكل صحّي ومنتج لبناني محلّي، نفس المرطبانات والخلطات يلّي بينباعوا عن الرف.</xar></p>
-      <p><xen data-edit="t54" data-edit-label="Text (EN): They cater, they do pop-ups and events…">They cater, they do pop-ups and events, and they still fold every saj to order.</xen><xar data-edit="t55" data-edit-label="Text (AR): بيعملوا كايترينغ، بسطات ومناسبات، وبعد…">بيعملوا كايترينغ، بسطات ومناسبات، وبعدن بيطووا كل صاج عالطلب.</xar></p>
+<div class="ledger">
+  <div class="wrap in">
+    <div>
+      <p class="k"><xen data-edit="t43" data-edit-label="Text (EN): Off their own board, full size">Off their own board, full size</xen><xar data-edit="t44" data-edit-label="Text (AR): عن لوحتهن، الحجم الكبير">عن لوحتهن، الحجم الكبير</xar></p>
+      <ul>
+        <li><span><xen class="c" data-edit="t45" data-edit-label="Text (EN): Za'atar">Za'atar</xen><xar class="c" data-edit="t46" data-edit-label="Text (AR): زعتر">زعتر</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t47" data-edit-label="Text: $1.80">$1.80</b></li>
+        <li><span><xen class="c" data-edit="t48" data-edit-label="Text (EN): Kishk">Kishk</xen><xar class="c" data-edit="t49" data-edit-label="Text (AR): كشك">كشك</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t50" data-edit-label="Text: $3.00">$3.00</b></li>
+        <li><span><xen class="c" data-edit="t51" data-edit-label="Text (EN): Labneh">Labneh</xen><xar class="c" data-edit="t52" data-edit-label="Text (AR): لبنة">لبنة</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t53" data-edit-label="Text: $2.50">$2.50</b></li>
+        <li><span><xen class="c" data-edit="t54" data-edit-label="Text (EN): Pear up">Pear up</xen><xar class="c" data-edit="t55" data-edit-label="Text (AR): بير أب">بير أب</xar></span><i aria-hidden="true"></i><b class="num" data-edit="t56" data-edit-label="Text: $3.00">$3.00</b></li>
+      </ul>
+      <p class="note"><xen data-edit="t57" data-edit-label="Text (EN): Half and mini sizes cost less. The who…">Half and mini sizes cost less. The whole board is further down the page.</xen><xar data-edit="t58" data-edit-label="Text (AR): النص والميني أرخص. اللائحة كاملة تحت ب…">النص والميني أرخص. اللائحة كاملة تحت بالصفحة.</xar></p>
     </div>
     <div>
-      <div class="frame"><img src="img/01.jpg" loading="lazy" alt="The Saj Stories hanging sign lit at night">
-        <p class="cap"><xen data-edit="t56" data-edit-label="Text (EN): The hanging sign, lit for the evening.">The hanging sign, lit for the evening.</xen><xar data-edit="t57" data-edit-label="Text (AR): اللافتة المعلّقة، مضوّاية عالسهرة.">اللافتة المعلّقة، مضوّاية عالسهرة.</xar></p>
+      <p class="k"><xen data-edit="t59" data-edit-label="Text (EN): What the place is">What the place is</xen><xar data-edit="t60" data-edit-label="Text (AR): شو هيدا المحل">شو هيدا المحل</xar></p>
+      <div class="chips">
+        <span class="chip hi"><xen><span class="num" data-edit="t61" data-edit-label="Text: 4.7">4.7</span> of <span class="num" data-edit="t62" data-edit-label="Text: 75">75</span> Google reviews</xen><xar><span class="num" data-edit="t63" data-edit-label="Text: 4.7">4.7</span> من <span class="num" data-edit="t64" data-edit-label="Text: 75">75</span> تقييم على غوغل</xar></span>
+        <span class="chip"><xen data-edit="t65" data-edit-label="Text (EN): Wholewheat dough, corn-flour crust">Wholewheat dough, corn-flour crust</xen><xar data-edit="t66" data-edit-label="Text (AR): عجينة قمحة كاملة وقشرة طحين ذرة">عجينة قمحة كاملة وقشرة طحين ذرة</xar></span>
+        <span class="chip"><xen data-edit="t67" data-edit-label="Text (EN): Lebanese mooneh on the shelf">Lebanese mooneh on the shelf</xen><xar data-edit="t68" data-edit-label="Text (AR): مونة لبنانية عالرف">مونة لبنانية عالرف</xar></span>
+        <span class="chip"><xen data-edit="t69" data-edit-label="Text (EN): Open every day, nine to nine">Open every day, nine to nine</xen><xar data-edit="t70" data-edit-label="Text (AR): فاتحين كل يوم، من 9 لـ 9">فاتحين كل يوم، من 9 لـ 9</xar></span>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section class="band">
+<section id="story">
   <div class="wrap">
-    <p class="k"><xen data-edit="t58" data-edit-label="Text (EN): Off the dome">Off the dome</xen><xar data-edit="t59" data-edit-label="Text (AR): من عالصاج">من عالصاج</xar></p>
-    <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t60" data-edit-label="Text (EN): Three saj worth the drive up">Three saj worth the drive up</xen><xar data-edit="t61" data-edit-label="Text (AR): تلات صاجات بيستاهلوا الطلعة">تلات صاجات بيستاهلوا الطلعة</xar></h2>
-    <div class="grid3">
-      <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="A thin saj topped with roasted fruit, rosemary and toasted almonds">
-        <div class="t"><h3><xen data-edit="t62" data-edit-label="Text (EN): The sweet side">The sweet side</xen><xar data-edit="t63" data-edit-label="Text (AR): الجهة الحلوة">الجهة الحلوة</xar></h3>
-        <p><xen data-edit="t64" data-edit-label="Text (EN): A blistered crust under roasted fruit,…">A blistered crust under roasted fruit, honey and toasted almonds, off the sweet half of the board.</xen><xar data-edit="t65" data-edit-label="Text (AR): قشرة منفوخة تحتها فاكهة مشوية، عسل ولو…">قشرة منفوخة تحتها فاكهة مشوية، عسل ولوز محمّص، من النص الحلو للائحة.</xar></p></div>
+    <div class="two">
+      <div class="rev">
+        <p class="k"><xen data-edit="t71" data-edit-label="Text (EN): The story">The story</xen><xar data-edit="t72" data-edit-label="Text (AR): القصة">القصة</xar></p>
+        <h2 class="h2"><xen data-edit="t73" data-edit-label="Text (EN): From a pop-up in Rome to a saj in Yarz…">From a pop-up in Rome to a saj in Yarze</xen><xar data-edit="t74" data-edit-label="Text (AR): من بسطة بروما لصاج باليرزة">من بسطة بروما لصاج باليرزة</xar></h2>
+        <p><xen data-edit="t75" data-edit-label="Text (EN): Saj Stories began as a pop-up in Rome,…">Saj Stories began as a pop-up in Rome, run by Rita Chahine, a Lebanese food curator and interior designer. It came home as a cafe and retail shop in Gemmayzeh, and today the saj turns at the Alyarz Leisure Club in Yarze, Baabda.</xen><xar data-edit="t76" data-edit-label="Text (AR): ساج ستوريز بلّشت كبسطة بروما، بإدارة ر…">ساج ستوريز بلّشت كبسطة بروما، بإدارة ريتا شاهين، منسّقة أكل ومصمّمة داخلية لبنانية. رجعت عالبلد كمقهى ومحل بالجميزة، واليوم الصاج عم يدور بنادي الأرز باليرزة، بعبدا.</xar></p>
+        <p><xen data-edit="t77" data-edit-label="Text (EN): The dough is wholewheat with a crunchy…">The dough is wholewheat with a crunchy corn-flour crust, and what goes on it is wholefoods and locally sourced Lebanese product, the same jars and blends they sell off the shelf.</xen><xar data-edit="t78" data-edit-label="Text (AR): العجينة قمحة كاملة مع قشرة مقرمشة من ط…">العجينة قمحة كاملة مع قشرة مقرمشة من طحين الذرة، ويلّي فوقها أكل صحّي ومنتج لبناني محلّي، نفس المرطبانات والخلطات يلّي بينباعوا عن الرف.</xar></p>
+        <p><xen data-edit="t79" data-edit-label="Text (EN): They cater, they do pop-ups and events…">They cater, they do pop-ups and events, and they still fold every saj to order.</xen><xar data-edit="t80" data-edit-label="Text (AR): بيعملوا كايترينغ، بسطات ومناسبات، وبعد…">بيعملوا كايترينغ، بسطات ومناسبات، وبعدن بيطووا كل صاج عالطلب.</xar></p>
       </div>
-      <div class="card rev"><img src="img/04.jpg" loading="lazy" alt="A specialty saj with mushrooms, almonds, cherry tomatoes and yogurt drizzle">
-        <div class="t"><h3><xen data-edit="t66" data-edit-label="Text (EN): The specialty round">The specialty round</xen><xar data-edit="t67" data-edit-label="Text (AR): القرص السبيسيالتي">القرص السبيسيالتي</xar></h3>
-        <p><xen data-edit="t68" data-edit-label="Text (EN): Mushrooms, cherry tomatoes and yogurt …">Mushrooms, cherry tomatoes and yogurt over a 17 cm round, the size the regulars order twice.</xen><xar>فطر، بندورة كرزية ولبن فوق قرص <span class="num" data-edit="t69" data-edit-label="Text: 17">17</span> سم، القياس يلّي الزباين بيطلبوه مرتين.</xar></p></div>
+      <div class="rev">
+        <div class="pf land"><img src="img/06.jpg" loading="lazy" alt="The counter with the black saj dome, the neon roundel and the tiled wall"></div>
+        <p class="cap"><xen data-edit="t81" data-edit-label="Text (EN): The counter, the dome and the neon rou…">The counter, the dome and the neon roundel over the tiles.</xen><xar data-edit="t82" data-edit-label="Text (AR): الكاونتر، الصاج والنيون فوق القرميد.">الكاونتر، الصاج والنيون فوق القرميد.</xar></p>
       </div>
-      <div class="card rev"><img src="img/06.jpg" loading="lazy" alt="A garden saj with cherry tomatoes, cucumber and fresh greens">
-        <div class="t"><h3><xen data-edit="t70" data-edit-label="Text (EN): The garden one">The garden one</xen><xar data-edit="t71" data-edit-label="Text (AR): تبع الجنينة">تبع الجنينة</xar></h3>
-        <p><xen data-edit="t72" data-edit-label="Text (EN): Cherry tomatoes, cucumber and greens o…">Cherry tomatoes, cucumber and greens on the wholewheat base, folded and cut in front of you.</xen><xar data-edit="t73" data-edit-label="Text (AR): بندورة كرزية، خيار وخضرة عالعجينة الكا…">بندورة كرزية، خيار وخضرة عالعجينة الكاملة، بتنطوى وبتنقص قدّامك.</xar></p></div>
+    </div>
+    <div class="duo">
+      <div class="rev">
+        <div class="pf port"><img src="img/12.jpg" loading="lazy" alt="A table on the terrace with two saj on the shop's printed paper and two drinks"></div>
+        <p class="cap"><xen data-edit="t83" data-edit-label="Text (EN): Two saj and two drinks on a terrace ta…">Two saj and two drinks on a terrace table.</xen><xar data-edit="t84" data-edit-label="Text (AR): صاجين وشرابين على طاولة بالبرّا.">صاجين وشرابين على طاولة بالبرّا.</xar></p>
+      </div>
+      <div class="rev">
+        <div class="pf port"><img src="img/11.jpg" loading="lazy" alt="Espresso running into a Saj Stories cup"></div>
+        <p class="cap"><xen data-edit="t85" data-edit-label="Text (EN): The coffee side, in their own cup.">The coffee side, in their own cup.</xen><xar data-edit="t86" data-edit-label="Text (AR): جهة القهوة، بكاسهن.">جهة القهوة، بكاسهن.</xar></p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="menu" class="wrap">
-  <div class="board rev">
-    <p class="k"><xen data-edit="t74" data-edit-label="Text (EN): The clipboard by the counter">The clipboard by the counter</xen><xar data-edit="t75" data-edit-label="Text (AR): اللوح الخشب حدّ الكاونتر">اللوح الخشب حدّ الكاونتر</xar></p>
-    <h2><xen data-edit="t76" data-edit-label="Text (EN): The food menu, as they print it">The food menu, as they print it</xen><xar data-edit="t77" data-edit-label="Text (AR): منيو الأكل، متل ما هنّي طابعينو">منيو الأكل، متل ما هنّي طابعينو</xar></h2>
-    <p class="bnote"><xen data-edit="t78" data-edit-label="Text (EN): Transcribed from the clipboard menu in…">Transcribed from the clipboard menu in their own photos. Traditional comes in 25, 17 and 10 cm, specialty and sweet in 17 and 10 cm.</xen><xar>منقول عن منيو اللوح بصورهن. التقليدي بقياس <span class="num" data-edit="t79" data-edit-label="Text: 25">25</span> و<span class="num" data-edit="t80" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t81" data-edit-label="Text: 10">10</span> سم، والسبيسيالتي والحلو بقياس <span class="num" data-edit="t82" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t83" data-edit-label="Text: 10">10</span> سم.</xar></p>
-    <div class="mcols">
-      <div>
-        <p class="mh"><xen data-edit="t84" data-edit-label="Text (EN): Traditional saj">Traditional saj</xen><xar data-edit="t85" data-edit-label="Text (AR): الصاج التقليدي">الصاج التقليدي</xar></p>
-        <table class="mn">
-          <tr><th><xen data-edit="t86" data-edit-label="Text (EN): On the dome">On the dome</xen><xar data-edit="t87" data-edit-label="Text (AR): عالصاج">عالصاج</xar></th><th class="num" data-edit="t88" data-edit-label="Menu / table: 25 cm">25 cm</th><th class="num" data-edit="t89" data-edit-label="Menu / table: 17 cm">17 cm</th><th class="num" data-edit="t90" data-edit-label="Menu / table: 10 cm">10 cm</th></tr>
-          <tr><td data-edit="t91" data-edit-label="Menu / table: Za'atar">Za'atar</td><td class="num" data-edit="t92" data-edit-label="Menu / table: $1.80">$1.80</td><td class="num" data-edit="t93" data-edit-label="Menu / table: $1.00">$1.00</td><td class="num" data-edit="t94" data-edit-label="Menu / table: $0.80">$0.80</td></tr>
-          <tr><td data-edit="t95" data-edit-label="Menu / table: Kishk">Kishk</td><td class="num" data-edit="t96" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t97" data-edit-label="Menu / table: $2.00">$2.00</td><td class="num" data-edit="t98" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
-          <tr><td data-edit="t99" data-edit-label="Menu / table: Jebneh">Jebneh</td><td class="num" data-edit="t100" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t101" data-edit-label="Menu / table: $1.50">$1.50</td><td class="num" data-edit="t102" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
-          <tr><td data-edit="t103" data-edit-label="Menu / table: Labneh">Labneh</td><td class="num" data-edit="t104" data-edit-label="Menu / table: $2.50">$2.50</td><td class="num" data-edit="t105" data-edit-label="Menu / table: $1.50">$1.50</td><td class="num" data-edit="t106" data-edit-label="Menu / table: $0.80">$0.80</td></tr>
-          <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Mix, za'atar and jebneh">Mix, za'atar and jebneh</xen><xar data-edit="t108" data-edit-label="Text (AR): ميكس زعتر وجبنة">ميكس زعتر وجبنة</xar></td><td class="num" data-edit="t109" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t110" data-edit-label="Menu / table: $2.00">$2.00</td><td class="num" data-edit="t111" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
-          <tr><td><xen data-edit="t112" data-edit-label="Text (EN): Mix, kishik and jebneh">Mix, kishik and jebneh</xen><xar data-edit="t113" data-edit-label="Text (AR): ميكس كشك وجبنة">ميكس كشك وجبنة</xar></td><td class="num" data-edit="t114" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t115" data-edit-label="Menu / table: $2.50">$2.50</td><td class="num" data-edit="t116" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
-        </table>
-        <p class="mh"><xen data-edit="t117" data-edit-label="Text (EN): Sweet saj">Sweet saj</xen><xar data-edit="t118" data-edit-label="Text (AR): الصاج الحلو">الصاج الحلو</xar></p>
-        <ul class="mlist">
-          <li><span class="nm">Tahini my jam <i class="num" data-edit="t119" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t120" data-edit-label="Text (EN): Jam of the season, tahini, sesame seed…">Jam of the season, tahini, sesame seed.</xen><xar data-edit="t121" data-edit-label="Text (AR): مربّى الموسم، طحينة وسمسم.">مربّى الموسم، طحينة وسمسم.</xar></small></li>
-          <li><span class="nm">Debes bi tahini <i class="num" data-edit="t122" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t123" data-edit-label="Text (EN): Carob molasses and tahini, the old rat…">Carob molasses and tahini, the old ratio.</xen><xar data-edit="t124" data-edit-label="Text (AR): دبس خرّوب وطحينة، عالنسبة القديمة.">دبس خرّوب وطحينة، عالنسبة القديمة.</xar></small></li>
-          <li><span class="nm">Chocolate delight <i class="num" data-edit="t125" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t126" data-edit-label="Text (EN): A natural chocolate hazelnut spread.">A natural chocolate hazelnut spread.</xen><xar data-edit="t127" data-edit-label="Text (AR): دهن شوكولا وبندق طبيعي.">دهن شوكولا وبندق طبيعي.</xar></small></li>
-          <li><span class="nm">Sucre beure <i class="num" data-edit="t128" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t129" data-edit-label="Text (EN): Sugar and butter, nothing else.">Sugar and butter, nothing else.</xen><xar data-edit="t130" data-edit-label="Text (AR): سكّر وزبدة، بلا شي تاني.">سكّر وزبدة، بلا شي تاني.</xar></small></li>
-          <li><span class="nm">PB &amp; J <i class="num" data-edit="t131" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t132" data-edit-label="Text (EN): Peanut butter and strawberry jam.">Peanut butter and strawberry jam.</xen><xar data-edit="t133" data-edit-label="Text (AR): زبدة فستق ومربّى فريز.">زبدة فستق ومربّى فريز.</xar></small></li>
-        </ul>
+<section id="dome" class="band">
+  <div class="wrap">
+    <div class="hd">
+      <p class="k"><xen data-edit="t87" data-edit-label="Text (EN): Off the dome">Off the dome</xen><xar data-edit="t88" data-edit-label="Text (AR): من عالصاج">من عالصاج</xar></p>
+      <h2 class="h2"><xen data-edit="t89" data-edit-label="Text (EN): Three halves of one board">Three halves of one board</xen><xar data-edit="t90" data-edit-label="Text (AR): تلات جهات من لوحة وحدة">تلات جهات من لوحة وحدة</xar></h2>
+      <p class="lead"><xen data-edit="t91" data-edit-label="Text (EN): Traditional, specialty and sweet, all …">Traditional, specialty and sweet, all of it on the same wholewheat base, folded and cut in front of you.</xen><xar data-edit="t92" data-edit-label="Text (AR): تقليدي، سبيسيالتي وحلو، كلّن عنفس العج…">تقليدي، سبيسيالتي وحلو، كلّن عنفس العجينة الكاملة، بينطووا وبينقصّوا قدّامك.</xar></p>
+    </div>
+    <div class="grid3">
+      <div class="dish rev"><img src="img/04.jpg" loading="lazy" alt="The poulet laque saj, marinated chicken with spring onions and sesame">
+        <div class="t"><h3 data-edit="t93" data-edit-label="Heading: Poulet laqué">Poulet laqué</h3>
+        <p><xen data-edit="t94" data-edit-label="Text (EN): Asian style marinated chicken, spring …">Asian style marinated chicken, spring onions, sesame seeds. One of the seven on the specialty half.</xen><xar data-edit="t95" data-edit-label="Text (AR): دجاج متبّل عالطريقة الآسيوية، بصل أخضر…">دجاج متبّل عالطريقة الآسيوية، بصل أخضر وسمسم. وحدة من السبعة بالجهة السبيسيالتي.</xar></p></div>
       </div>
-      <div>
-        <p class="mh"><xen data-edit="t134" data-edit-label="Text (EN): Specialty saj">Specialty saj</xen><xar data-edit="t135" data-edit-label="Text (AR): الصاج السبيسيالتي">الصاج السبيسيالتي</xar></p>
-        <ul class="mlist">
-          <li><span class="nm">C'est la feta <i class="num" data-edit="t136" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t137" data-edit-label="Text (EN): Feta, tomatoes, onions, za'atar mix, p…">Feta, tomatoes, onions, za'atar mix, pomegranate molasses.</xen><xar data-edit="t138" data-edit-label="Text (AR): فيتا، بندورة، بصل، خلطة زعتر ودبس رمان…">فيتا، بندورة، بصل، خلطة زعتر ودبس رمان.</xar></small></li>
-          <li><span class="nm">Hum yum <i class="num" data-edit="t139" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t140" data-edit-label="Text (EN): Hummus, beetroot, oregano, olive oil.">Hummus, beetroot, oregano, olive oil.</xen><xar data-edit="t141" data-edit-label="Text (AR): حمّص، شمندر، أوريغانو وزيت زيتون.">حمّص، شمندر، أوريغانو وزيت زيتون.</xar></small></li>
-          <li><span class="nm">Fatte fatto <i class="num" data-edit="t142" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t143" data-edit-label="Text (EN): Roasted eggplants, tahini yogurt, toas…">Roasted eggplants, tahini yogurt, toasted almonds, pomegranate seeds.</xen><xar data-edit="t144" data-edit-label="Text (AR): باتنجان مشوي، لبن بالطحينة، لوز محمّص …">باتنجان مشوي، لبن بالطحينة، لوز محمّص وحب رمان.</xar></small></li>
-          <li><span class="nm">Parmigiana di melanzane <i class="num" data-edit="t145" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t146" data-edit-label="Text (EN): Roasted eggplants, tomato sauce, fresh…">Roasted eggplants, tomato sauce, fresh mozzarella, basil.</xen><xar data-edit="t147" data-edit-label="Text (AR): باتنجان مشوي، صلصة بندورة، موزاريلا طا…">باتنجان مشوي، صلصة بندورة، موزاريلا طازة وحبق.</xar></small></li>
-          <li><span class="nm">Pear up <i class="num" data-edit="t148" data-edit-label="Text: $3.00 / $1.00">$3.00 / $1.00</i></span><small><xen data-edit="t149" data-edit-label="Text (EN): Roasted pears, goat cheese, honey, fre…">Roasted pears, goat cheese, honey, fresh rosemary, toasted almonds.</xen><xar data-edit="t150" data-edit-label="Text (AR): إجاص مشوي، جبنة ماعز، عسل، إكليل الجبل…">إجاص مشوي، جبنة ماعز، عسل، إكليل الجبل ولوز محمّص.</xar></small></li>
-          <li><span class="nm">Poulet laqué <i class="num" data-edit="t151" data-edit-label="Text: $3.00 / $1.00">$3.00 / $1.00</i></span><small><xen data-edit="t152" data-edit-label="Text (EN): Asian style marinated chicken, spring …">Asian style marinated chicken, spring onions, sesame seeds.</xen><xar data-edit="t153" data-edit-label="Text (AR): دجاج متبّل عالطريقة الآسيوية، بصل أخضر…">دجاج متبّل عالطريقة الآسيوية، بصل أخضر وسمسم.</xar></small></li>
-          <li><span class="nm">Eggs &amp; awarma <i class="num" data-edit="t154" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t155" data-edit-label="Text (EN): Scrambled eggs, homemade awarma, pomeg…">Scrambled eggs, homemade awarma, pomegranate molasses, mint.</xen><xar data-edit="t156" data-edit-label="Text (AR): بيض مخفوق، قاورما بيتية، دبس رمان ونعن…">بيض مخفوق، قاورما بيتية، دبس رمان ونعنع.</xar></small></li>
-        </ul>
-        <div class="boardimg"><img src="img/02.jpg" loading="lazy" alt="The printed Saj Stories food menu on its clipboard">
-          <p class="cap" style="color:#8A7F60"><xen data-edit="t157" data-edit-label="Text (EN): The clipboard itself, photographed in …">The clipboard itself, photographed in the shop.</xen><xar data-edit="t158" data-edit-label="Text (AR): اللوح نفسو، مصوّر بالمحل.">اللوح نفسو، مصوّر بالمحل.</xar></p>
+      <div class="dish rev"><img src="img/05.jpg" loading="lazy" alt="A saj under a tahini swirl and pomegranate seeds, a split pomegranate beside it">
+        <div class="t"><h3><xen data-edit="t96" data-edit-label="Text (EN): The specialty half">The specialty half</xen><xar data-edit="t97" data-edit-label="Text (AR): الجهة السبيسيالتي">الجهة السبيسيالتي</xar></h3>
+        <p><xen>Roasted eggplants and tahini yogurt, hummus and beetroot, feta and pomegranate molasses. In <span class="num" data-edit="t98" data-edit-label="Text: 17">17</span> and <span class="num" data-edit="t99" data-edit-label="Text: 10">10</span> cm.</xen><xar>باتنجان مشوي ولبن بالطحينة، حمّص وشمندر، فيتا ودبس رمان. بقياس <span class="num" data-edit="t100" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t101" data-edit-label="Text: 10">10</span> سم.</xar></p></div>
+      </div>
+      <div class="dish rev"><img src="img/03.jpg" loading="lazy" alt="A sweet saj with a dark jam and pistachio over a cream base">
+        <div class="t"><h3><xen data-edit="t102" data-edit-label="Text (EN): The sweet half">The sweet half</xen><xar data-edit="t103" data-edit-label="Text (AR): الجهة الحلوة">الجهة الحلوة</xar></h3>
+        <p><xen>Jam of the season with tahini and sesame, carob molasses and tahini, sugar and butter. In <span class="num" data-edit="t104" data-edit-label="Text: 17">17</span> and <span class="num" data-edit="t105" data-edit-label="Text: 10">10</span> cm.</xen><xar>مربّى الموسم مع طحينة وسمسم، دبس خرّوب وطحينة، سكّر وزبدة. بقياس <span class="num" data-edit="t106" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t107" data-edit-label="Text: 10">10</span> سم.</xar></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="board rev">
+      <p class="k"><xen data-edit="t108" data-edit-label="Text (EN): The clipboard by the counter">The clipboard by the counter</xen><xar data-edit="t109" data-edit-label="Text (AR): اللوح الخشب حدّ الكاونتر">اللوح الخشب حدّ الكاونتر</xar></p>
+      <h2><xen data-edit="t110" data-edit-label="Text (EN): The food menu, as they print it">The food menu, as they print it</xen><xar data-edit="t111" data-edit-label="Text (AR): منيو الأكل، متل ما هنّي طابعينو">منيو الأكل، متل ما هنّي طابعينو</xar></h2>
+      <p class="bnote"><xen data-edit="t112" data-edit-label="Text (EN): Transcribed from the clipboard menu in…">Transcribed from the clipboard menu in their own photos. Traditional comes in 25, 17 and 10 cm, specialty and sweet in 17 and 10 cm.</xen><xar>منقول عن منيو اللوح بصورهن. التقليدي بقياس <span class="num" data-edit="t113" data-edit-label="Text: 25">25</span> و<span class="num" data-edit="t114" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t115" data-edit-label="Text: 10">10</span> سم، والسبيسيالتي والحلو بقياس <span class="num" data-edit="t116" data-edit-label="Text: 17">17</span> و<span class="num" data-edit="t117" data-edit-label="Text: 10">10</span> سم.</xar></p>
+      <div class="mcols">
+        <div>
+          <p class="mh"><xen data-edit="t118" data-edit-label="Text (EN): Traditional saj">Traditional saj</xen><xar data-edit="t119" data-edit-label="Text (AR): الصاج التقليدي">الصاج التقليدي</xar></p>
+          <table class="mn">
+            <tr><th><xen data-edit="t120" data-edit-label="Text (EN): On the dome">On the dome</xen><xar data-edit="t121" data-edit-label="Text (AR): عالصاج">عالصاج</xar></th><th class="num" data-edit="t122" data-edit-label="Menu / table: 25 cm">25 cm</th><th class="num" data-edit="t123" data-edit-label="Menu / table: 17 cm">17 cm</th><th class="num" data-edit="t124" data-edit-label="Menu / table: 10 cm">10 cm</th></tr>
+            <tr><td data-edit="t125" data-edit-label="Menu / table: Za'atar">Za'atar</td><td class="num" data-edit="t126" data-edit-label="Menu / table: $1.80">$1.80</td><td class="num" data-edit="t127" data-edit-label="Menu / table: $1.00">$1.00</td><td class="num" data-edit="t128" data-edit-label="Menu / table: $0.80">$0.80</td></tr>
+            <tr><td data-edit="t129" data-edit-label="Menu / table: Kishk">Kishk</td><td class="num" data-edit="t130" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t131" data-edit-label="Menu / table: $2.00">$2.00</td><td class="num" data-edit="t132" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
+            <tr><td data-edit="t133" data-edit-label="Menu / table: Jebneh">Jebneh</td><td class="num" data-edit="t134" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t135" data-edit-label="Menu / table: $1.50">$1.50</td><td class="num" data-edit="t136" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
+            <tr><td data-edit="t137" data-edit-label="Menu / table: Labneh">Labneh</td><td class="num" data-edit="t138" data-edit-label="Menu / table: $2.50">$2.50</td><td class="num" data-edit="t139" data-edit-label="Menu / table: $1.50">$1.50</td><td class="num" data-edit="t140" data-edit-label="Menu / table: $0.80">$0.80</td></tr>
+            <tr><td><xen data-edit="t141" data-edit-label="Text (EN): Mix, za'atar and jebneh">Mix, za'atar and jebneh</xen><xar data-edit="t142" data-edit-label="Text (AR): ميكس زعتر وجبنة">ميكس زعتر وجبنة</xar></td><td class="num" data-edit="t143" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t144" data-edit-label="Menu / table: $2.00">$2.00</td><td class="num" data-edit="t145" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
+            <tr><td><xen data-edit="t146" data-edit-label="Text (EN): Mix, kishik and jebneh">Mix, kishik and jebneh</xen><xar data-edit="t147" data-edit-label="Text (AR): ميكس كشك وجبنة">ميكس كشك وجبنة</xar></td><td class="num" data-edit="t148" data-edit-label="Menu / table: $3.00">$3.00</td><td class="num" data-edit="t149" data-edit-label="Menu / table: $2.50">$2.50</td><td class="num" data-edit="t150" data-edit-label="Menu / table: $1.00">$1.00</td></tr>
+          </table>
+          <p class="mh"><xen data-edit="t151" data-edit-label="Text (EN): Sweet saj">Sweet saj</xen><xar data-edit="t152" data-edit-label="Text (AR): الصاج الحلو">الصاج الحلو</xar></p>
+          <ul class="mlist">
+            <li><span class="nm">Tahini my jam <i class="num" data-edit="t153" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t154" data-edit-label="Text (EN): Jam of the season, tahini, sesame seed…">Jam of the season, tahini, sesame seed.</xen><xar data-edit="t155" data-edit-label="Text (AR): مربّى الموسم، طحينة وسمسم.">مربّى الموسم، طحينة وسمسم.</xar></small></li>
+            <li><span class="nm">Debes bi tahini <i class="num" data-edit="t156" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t157" data-edit-label="Text (EN): Carob molasses and tahini, the old rat…">Carob molasses and tahini, the old ratio.</xen><xar data-edit="t158" data-edit-label="Text (AR): دبس خرّوب وطحينة، عالنسبة القديمة.">دبس خرّوب وطحينة، عالنسبة القديمة.</xar></small></li>
+            <li><span class="nm">Chocolate delight <i class="num" data-edit="t159" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t160" data-edit-label="Text (EN): A natural chocolate hazelnut spread.">A natural chocolate hazelnut spread.</xen><xar data-edit="t161" data-edit-label="Text (AR): دهن شوكولا وبندق طبيعي.">دهن شوكولا وبندق طبيعي.</xar></small></li>
+            <li><span class="nm">Sucre beure <i class="num" data-edit="t162" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t163" data-edit-label="Text (EN): Sugar and butter, nothing else.">Sugar and butter, nothing else.</xen><xar data-edit="t164" data-edit-label="Text (AR): سكّر وزبدة، بلا شي تاني.">سكّر وزبدة، بلا شي تاني.</xar></small></li>
+            <li><span class="nm">PB &amp; J <i class="num" data-edit="t165" data-edit-label="Text: $2.00 / $0.80">$2.00 / $0.80</i></span><small><xen data-edit="t166" data-edit-label="Text (EN): Peanut butter and strawberry jam.">Peanut butter and strawberry jam.</xen><xar data-edit="t167" data-edit-label="Text (AR): زبدة فستق ومربّى فريز.">زبدة فستق ومربّى فريز.</xar></small></li>
+          </ul>
+        </div>
+        <div>
+          <p class="mh"><xen data-edit="t168" data-edit-label="Text (EN): Specialty saj">Specialty saj</xen><xar data-edit="t169" data-edit-label="Text (AR): الصاج السبيسيالتي">الصاج السبيسيالتي</xar></p>
+          <ul class="mlist">
+            <li><span class="nm">C'est la feta <i class="num" data-edit="t170" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t171" data-edit-label="Text (EN): Feta, tomatoes, onions, za'atar mix, p…">Feta, tomatoes, onions, za'atar mix, pomegranate molasses.</xen><xar data-edit="t172" data-edit-label="Text (AR): فيتا، بندورة، بصل، خلطة زعتر ودبس رمان…">فيتا، بندورة، بصل، خلطة زعتر ودبس رمان.</xar></small></li>
+            <li><span class="nm">Hum yum <i class="num" data-edit="t173" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t174" data-edit-label="Text (EN): Hummus, beetroot, oregano, olive oil.">Hummus, beetroot, oregano, olive oil.</xen><xar data-edit="t175" data-edit-label="Text (AR): حمّص، شمندر، أوريغانو وزيت زيتون.">حمّص، شمندر، أوريغانو وزيت زيتون.</xar></small></li>
+            <li><span class="nm">Fatte fatto <i class="num" data-edit="t176" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t177" data-edit-label="Text (EN): Roasted eggplants, tahini yogurt, toas…">Roasted eggplants, tahini yogurt, toasted almonds, pomegranate seeds.</xen><xar data-edit="t178" data-edit-label="Text (AR): باتنجان مشوي، لبن بالطحينة، لوز محمّص …">باتنجان مشوي، لبن بالطحينة، لوز محمّص وحب رمان.</xar></small></li>
+            <li><span class="nm">Parmigiana di melanzane <i class="num" data-edit="t179" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t180" data-edit-label="Text (EN): Roasted eggplants, tomato sauce, fresh…">Roasted eggplants, tomato sauce, fresh mozzarella, basil.</xen><xar data-edit="t181" data-edit-label="Text (AR): باتنجان مشوي، صلصة بندورة، موزاريلا طا…">باتنجان مشوي، صلصة بندورة، موزاريلا طازة وحبق.</xar></small></li>
+            <li><span class="nm">Pear up <i class="num" data-edit="t182" data-edit-label="Text: $3.00 / $1.00">$3.00 / $1.00</i></span><small><xen data-edit="t183" data-edit-label="Text (EN): Roasted pears, goat cheese, honey, fre…">Roasted pears, goat cheese, honey, fresh rosemary, toasted almonds.</xen><xar data-edit="t184" data-edit-label="Text (AR): إجاص مشوي، جبنة ماعز، عسل، إكليل الجبل…">إجاص مشوي، جبنة ماعز، عسل، إكليل الجبل ولوز محمّص.</xar></small></li>
+            <li><span class="nm">Poulet laqué <i class="num" data-edit="t185" data-edit-label="Text: $3.00 / $1.00">$3.00 / $1.00</i></span><small><xen data-edit="t186" data-edit-label="Text (EN): Asian style marinated chicken, spring …">Asian style marinated chicken, spring onions, sesame seeds.</xen><xar data-edit="t187" data-edit-label="Text (AR): دجاج متبّل عالطريقة الآسيوية، بصل أخضر…">دجاج متبّل عالطريقة الآسيوية، بصل أخضر وسمسم.</xar></small></li>
+            <li><span class="nm">Eggs &amp; awarma <i class="num" data-edit="t188" data-edit-label="Text: $2.50 / $1.00">$2.50 / $1.00</i></span><small><xen data-edit="t189" data-edit-label="Text (EN): Scrambled eggs, homemade awarma, pomeg…">Scrambled eggs, homemade awarma, pomegranate molasses, mint.</xen><xar data-edit="t190" data-edit-label="Text (AR): بيض مخفوق، قاورما بيتية، دبس رمان ونعن…">بيض مخفوق، قاورما بيتية، دبس رمان ونعنع.</xar></small></li>
+          </ul>
+        </div>
+      </div>
+      <div class="bshots">
+        <div>
+          <div class="pf tall"><img src="img/02.jpg" loading="lazy" alt="The printed Saj Stories food menu on its clipboard"></div>
+          <p class="cap"><xen data-edit="t191" data-edit-label="Text (EN): The clipboard itself, photographed in …">The clipboard itself, photographed in the shop.</xen><xar data-edit="t192" data-edit-label="Text (AR): اللوح نفسو، مصوّر بالمحل.">اللوح نفسو، مصوّر بالمحل.</xar></p>
+        </div>
+        <div>
+          <div class="pf port"><img src="img/10.jpg" loading="lazy" alt="A tray carried out with the saj from across the board laid over it"></div>
+          <p class="cap"><xen data-edit="t193" data-edit-label="Text (EN): Most of the board on one tray, for a t…">Most of the board on one tray, for a table that could not choose.</xen><xar data-edit="t194" data-edit-label="Text (AR): معظم اللائحة عصينية وحدة، لطاولة ما قد…">معظم اللائحة عصينية وحدة، لطاولة ما قدرت تقرّر.</xar></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="mooneh" class="band retail">
-  <div class="wrap">
-    <p class="k"><xen data-edit="t159" data-edit-label="Text (EN): The shelf">The shelf</xen><xar data-edit="t160" data-edit-label="Text (AR): الرف">الرف</xar></p>
-    <h2 class="h2"><xen data-edit="t161" data-edit-label="Text (EN): Mooneh to carry home">Mooneh to carry home</xen><xar data-edit="t162" data-edit-label="Text (AR): مونة تاخدها معك عالبيت">مونة تاخدها معك عالبيت</xar></h2>
-    <p style="max-width:60ch"><xen data-edit="t163" data-edit-label="Text (EN): Half the room is a shop: herbal infusi…">Half the room is a shop: herbal infusions, coffee blends and Lebanese mooneh brands lined up on the rail, the same jars that season the saj.</xen><xar data-edit="t164" data-edit-label="Text (AR): نص المحل دكّانة: أعشاب للنقوع، خلطات ق…">نص المحل دكّانة: أعشاب للنقوع، خلطات قهوة وماركات مونة لبنانية مصفوفة عالدرابزين، نفس المرطبانات يلّي بتتبّل الصاج.</xar></p>
-    <div class="shelfrow" style="margin-top:22px">
-      <div>
-        <div class="jarframe wide rev"><img src="img/07.jpg" loading="lazy" alt="Shelves of mooneh jars, infusions and spice blends"></div>
-        <div class="railing" aria-hidden="true"></div>
+<section id="mooneh">
+  <div class="field" aria-hidden="true">
+    <div class="fr a"><xen data-edit="t195" data-edit-label="Text (EN): MOONEH ZA'ATAR KISHK MOONEH ZA'ATAR KI…">MOONEH ZA'ATAR KISHK MOONEH ZA'ATAR KISHK</xen><xar data-edit="t196" data-edit-label="Text (AR): مونة زعتر كشك مونة زعتر كشك">مونة زعتر كشك مونة زعتر كشك</xar></div>
+    <div class="fr b"><xen data-edit="t197" data-edit-label="Text (EN): HERBAL INFUSIONS · COFFEE BLENDS · LEB…">HERBAL INFUSIONS · COFFEE BLENDS · LEBANESE BRANDS · HERBAL INFUSIONS · COFFEE BLENDS · LEBANESE BRANDS</xen><xar data-edit="t198" data-edit-label="Text (AR): أعشاب للنقوع · خلطات قهوة · ماركات لبن…">أعشاب للنقوع · خلطات قهوة · ماركات لبنانية · أعشاب للنقوع · خلطات قهوة · ماركات لبنانية</xar></div>
+    <div class="fr a"><xen data-edit="t199" data-edit-label="Text (EN): OFF THE SHELF OFF THE SHELF OFF THE SH…">OFF THE SHELF OFF THE SHELF OFF THE SHELF</xen><xar data-edit="t200" data-edit-label="Text (AR): عن الرف عن الرف عن الرف">عن الرف عن الرف عن الرف</xar></div>
+  </div>
+  <div class="wash" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <div class="hd">
+      <p class="k"><xen data-edit="t201" data-edit-label="Text (EN): The shelf">The shelf</xen><xar data-edit="t202" data-edit-label="Text (AR): الرف">الرف</xar></p>
+      <h2 class="h2"><xen data-edit="t203" data-edit-label="Text (EN): Mooneh to carry home">Mooneh to carry home</xen><xar data-edit="t204" data-edit-label="Text (AR): مونة تاخدها معك عالبيت">مونة تاخدها معك عالبيت</xar></h2>
+      <p class="lead"><xen data-edit="t205" data-edit-label="Text (EN): Half the room is a shop: herbal infusi…">Half the room is a shop: herbal infusions, coffee blends and Lebanese mooneh brands lined up on the rail, the same jars that season the saj.</xen><xar data-edit="t206" data-edit-label="Text (AR): نص المحل دكّانة: أعشاب للنقوع، خلطات ق…">نص المحل دكّانة: أعشاب للنقوع، خلطات قهوة وماركات مونة لبنانية مصفوفة عالدرابزين، نفس المرطبانات يلّي بتتبّل الصاج.</xar></p>
+    </div>
+    <div class="shelf">
+      <div class="rev">
+        <div class="pf land"><img src="img/07.jpg" loading="lazy" alt="Shelves of mooneh jars, infusions and spice blends"></div>
+        <p class="cap"><xen data-edit="t207" data-edit-label="Text (EN): The rail, jar by jar, at the back of t…">The rail, jar by jar, at the back of the room.</xen><xar data-edit="t208" data-edit-label="Text (AR): الدرابزين، مرطبان مرطبان، بآخر القاعة.">الدرابزين، مرطبان مرطبان، بآخر القاعة.</xar></p>
       </div>
-      <div>
-        <div class="jarframe tall rev"><img src="img/08.jpg" loading="lazy" alt="A stamped kraft Saj Stories bag held up against the sky"></div>
-        <div class="railing" aria-hidden="true"></div>
+      <div class="rev">
+        <div class="pf port"><img src="img/08.jpg" loading="lazy" alt="A stamped kraft Saj Stories bag held up against the sky"></div>
+        <p class="cap"><xen data-edit="t209" data-edit-label="Text (EN): Everything leaves in the same stamped …">Everything leaves in the same stamped kraft bag.</xen><xar data-edit="t210" data-edit-label="Text (AR): كل شي بيطلع بنفس الكيس الكرافت المختوم…">كل شي بيطلع بنفس الكيس الكرافت المختوم.</xar></p>
       </div>
     </div>
-    <p class="cap" style="margin-top:14px"><xen data-edit="t165" data-edit-label="Text (EN): They also take catering, pop-ups and p…">They also take catering, pop-ups and private events, ask on WhatsApp.</xen><xar data-edit="t166" data-edit-label="Text (AR): وبياخدوا كايترينغ، بسطات ومناسبات خاصة…">وبياخدوا كايترينغ، بسطات ومناسبات خاصة، اسأل عالواتساب.</xar></p>
+    <p class="retail-note"><xen data-edit="t211" data-edit-label="Text (EN): They also take catering, pop-ups and p…">They also take catering, pop-ups and private events, ask on WhatsApp.</xen><xar data-edit="t212" data-edit-label="Text (AR): وبياخدوا كايترينغ، بسطات ومناسبات خاصة…">وبياخدوا كايترينغ، بسطات ومناسبات خاصة، اسأل عالواتساب.</xar></p>
   </div>
 </section>
 
-<section class="wrap">
-  <p class="k"><xen data-edit="t167" data-edit-label="Text (EN): Photographs">Photographs</xen><xar data-edit="t168" data-edit-label="Text (AR): صور">صور</xar></p>
-  <h2 class="h2" style="margin-bottom:24px"><xen data-edit="t169" data-edit-label="Text (EN): From the room and the dome">From the room and the dome</xen><xar data-edit="t170" data-edit-label="Text (AR): من القاعة ومن عالصاج">من القاعة ومن عالصاج</xar></h2>
-  <div class="gal">
-    <a href="img/01.jpg" target="_blank" rel="noopener" class="g"><img src="img/01.jpg" loading="lazy" alt="The lit hanging sign at night"></a>
-    <a href="img/03.jpg" target="_blank" rel="noopener" class="g"><img src="img/03.jpg" loading="lazy" alt="A sweet saj with roasted fruit and almonds"></a>
-    <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="A specialty saj with mushrooms and yogurt"></a>
-    <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="A garden saj with cherry tomatoes"></a>
-    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The mooneh shelves"></a>
-    <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="The kraft bag against the sky"></a>
-  </div>
-</section>
-
-<section class="band">
+<section id="gallery" class="band">
   <div class="wrap">
-    <p class="k"><xen data-edit="t171" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t172" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
-    <h2 class="h2" style="margin-bottom:26px"><xen data-edit="t173" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t174" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <div class="hd">
+      <p class="k"><xen data-edit="t213" data-edit-label="Text (EN): Photographs">Photographs</xen><xar data-edit="t214" data-edit-label="Text (AR): صور">صور</xar></p>
+      <h2 class="h2"><xen data-edit="t215" data-edit-label="Text (EN): From the room and the dome">From the room and the dome</xen><xar data-edit="t216" data-edit-label="Text (AR): من القاعة ومن عالصاج">من القاعة ومن عالصاج</xar></h2>
+    </div>
+    <div class="gal">
+      <a href="img/13.jpg" target="_blank" rel="noopener"><img src="img/13.jpg" loading="lazy" alt="A saj with greens and pomegranate beside a cold pressed juice"></a>
+      <a href="img/03.jpg" target="_blank" rel="noopener"><img src="img/03.jpg" loading="lazy" alt="A sweet saj with dark jam and pistachio"></a>
+      <a href="img/12.jpg" target="_blank" rel="noopener"><img src="img/12.jpg" loading="lazy" alt="A terrace table with two saj and two drinks"></a>
+      <a href="img/05.jpg" target="_blank" rel="noopener"><img src="img/05.jpg" loading="lazy" alt="A saj under a tahini swirl and pomegranate seeds"></a>
+      <a href="img/09.jpg" target="_blank" rel="noopener"><img src="img/09.jpg" loading="lazy" alt="The round Saj Stories sign hanging against the greenery"></a>
+      <a href="img/10.jpg" target="_blank" rel="noopener"><img src="img/10.jpg" loading="lazy" alt="A tray of saj from across the board"></a>
+      <a href="img/11.jpg" target="_blank" rel="noopener"><img src="img/11.jpg" loading="lazy" alt="Espresso running into a Saj Stories cup"></a>
+      <a href="img/04.jpg" target="_blank" rel="noopener"><img src="img/04.jpg" loading="lazy" alt="The poulet laque saj with spring onions and sesame"></a>
+    </div>
+  </div>
+</section>
+
+<section id="words">
+  <div class="field" aria-hidden="true">
+    <div class="fr a"><xen data-edit="t217" data-edit-label="Text (EN): WELCOMING COSY CRISPY WELCOMING COSY C…">WELCOMING COSY CRISPY WELCOMING COSY CRISPY</xen><xar data-edit="t218" data-edit-label="Text (AR): ترحيب دفا قرمشة ترحيب دفا قرمشة">ترحيب دفا قرمشة ترحيب دفا قرمشة</xar></div>
+    <div class="fr b"><xen data-edit="t219" data-edit-label="Text (EN): 75 GOOGLE REVIEWS · 4.7 OUT OF 5 · 75 …">75 GOOGLE REVIEWS · 4.7 OUT OF 5 · 75 GOOGLE REVIEWS · 4.7 OUT OF 5 · 75 GOOGLE REVIEWS · 4.7 OUT OF 5</xen><xar data-edit="t220" data-edit-label="Text (AR): 75 تقييم على غوغل · 4.7 من 5 · 75 تقيي…">75 تقييم على غوغل · 4.7 من 5 · 75 تقييم على غوغل · 4.7 من 5 · 75 تقييم على غوغل · 4.7 من 5</xar></div>
+    <div class="fr a"><xen data-edit="t221" data-edit-label="Text (EN): EXQUISITE FLAVOURFUL EXQUISITE FLAVOUR…">EXQUISITE FLAVOURFUL EXQUISITE FLAVOURFUL</xen><xar data-edit="t222" data-edit-label="Text (AR): لذيذ طيّب لذيذ طيّب">لذيذ طيّب لذيذ طيّب</xar></div>
+  </div>
+  <div class="wash" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:3">
+    <div class="hd">
+      <p class="k"><xen data-edit="t223" data-edit-label="Text (EN): What people wrote">What people wrote</xen><xar data-edit="t224" data-edit-label="Text (AR): شو كتبوا الناس">شو كتبوا الناس</xar></p>
+      <h2 class="h2"><xen data-edit="t225" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t226" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+      <p class="lead"><xen><span class="num" data-edit="t227" data-edit-label="Text: 4.7">4.7</span> out of <span class="num" data-edit="t228" data-edit-label="Text: 5">5</span>, across <span class="num" data-edit="t229" data-edit-label="Text: 75">75</span> Google reviews.</xen><xar><span class="num" data-edit="t230" data-edit-label="Text: 4.7">4.7</span> من <span class="num" data-edit="t231" data-edit-label="Text: 5">5</span>، على <span class="num" data-edit="t232" data-edit-label="Text: 75">75</span> تقييم على غوغل.</xar></p>
+    </div>
     <div class="revs">
-      <div class="rev-c rev"><q dir="ltr" data-edit="t175" data-edit-label="Quote: One of the best places to visit in gem…">One of the best places to visit in gemmayzeh. Saj Stories is a small, cozy restaurant that has a casual and welcoming.</q><cite data-edit="t176" data-edit-label="Credit: Mohamad haidar">Mohamad haidar</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t177" data-edit-label="Quote: I recently dined at Saj Stories and wa…">I recently dined at Saj Stories and was blown away by the delicious food, welcoming atmosphere, and charming staff. The traditional and specialty saj dishes were exquisite, with crispy dough and flavorful ingredients.</q><cite data-edit="t178" data-edit-label="Credit: Lea C (young fossil89)">Lea C (young fossil89)</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t179" data-edit-label="Quote: Amazing cafe! As soon as I walked in t…">Amazing cafe! As soon as I walked in the staff greeted me with a big smile.</q><cite data-edit="t180" data-edit-label="Credit: Mohamed Irba">Mohamed Irba</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t233" data-edit-label="Quote: One of the best places to visit in gem…">One of the best places to visit in gemmayzeh. Saj Stories is a small, cozy restaurant that has a casual and welcoming.</q><cite data-edit="t234" data-edit-label="Credit: Mohamad haidar">Mohamad haidar</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t235" data-edit-label="Quote: I recently dined at Saj Stories and wa…">I recently dined at Saj Stories and was blown away by the delicious food, welcoming atmosphere, and charming staff. The traditional and specialty saj dishes were exquisite, with crispy dough and flavorful ingredients.</q><cite data-edit="t236" data-edit-label="Credit: Lea C (young fossil89)">Lea C (young fossil89)</cite></div>
+      <div class="rev-c rev"><q dir="ltr" data-edit="t237" data-edit-label="Quote: Amazing cafe! As soon as I walked in t…">Amazing cafe! As soon as I walked in the staff greeted me with a big smile.</q><cite data-edit="t238" data-edit-label="Credit: Mohamed Irba">Mohamed Irba</cite></div>
     </div>
   </div>
 </section>
 
-<section id="visit" class="wrap">
-  <div class="visit">
-    <div>
-      <p class="k"><xen data-edit="t181" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t182" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
-      <h2 class="h2" style="margin-bottom:18px"><xen data-edit="t183" data-edit-label="Text (EN): Every day, nine to nine">Every day, nine to nine</xen><xar data-edit="t184" data-edit-label="Text (AR): كل يوم، من 9 لـ 9">كل يوم، من 9 لـ 9</xar></h2>
-      <table class="hrs">
-        <tr><td><xen data-edit="t185" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t186" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t187" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t188" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t189" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t190" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t191" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t192" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t193" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t194" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t195" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t196" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t197" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t198" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t199" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t200" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t201" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t202" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t203" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t204" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t205" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t206" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t207" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t208" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-        <tr><td><xen data-edit="t209" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t210" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t211" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t212" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
-      </table>
-    </div>
-    <div>
-      <p class="k"><xen data-edit="t213" data-edit-label="Text (EN): Find the shutter">Find the shutter</xen><xar data-edit="t214" data-edit-label="Text (AR): لاقي الشبّاك">لاقي الشبّاك</xar></p>
-      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t215" data-edit-label="Text (EN): Inside Alyarz Leisure Club, Yarze">Inside Alyarz Leisure Club, Yarze</xen><xar data-edit="t216" data-edit-label="Text (AR): جوّا نادي الأرز، اليرزة">جوّا نادي الأرز، اليرزة</xar></h2>
-      <p class="k"><xen data-edit="t217" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t218" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t219" data-edit-label="Text: RGJX+HP, Baabda, Lebanon">RGJX+HP, Baabda, Lebanon</p>
-      <p class="k" style="margin-top:18px"><xen data-edit="t220" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t221" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
-      <p class="ph num" data-edit="t222" data-edit-label="Text: +961 70 500 019">+961 70 500 019</p>
-      <p style="margin-top:20px">
-        <a class="btn" href="https://wa.me/96170500019?text=Hello%20Saj%20Stories%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t223" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t224" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><xen data-edit="t225" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t226" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
-      </p>
-      <p style="margin-top:12px">
-        <a class="btn o" href="https://www.instagram.com/sajstories/" target="_blank" rel="noopener" data-edit="t227" data-edit-label="Button / link: Instagram">Instagram</a>
-        <a class="btn o" href="https://www.facebook.com/sajstories/" target="_blank" rel="noopener" data-edit="t228" data-edit-label="Button / link: Facebook">Facebook</a>
-      </p>
+<section id="visit">
+  <div class="wrap">
+    <div class="visit">
+      <div>
+        <p class="k"><xen data-edit="t239" data-edit-label="Text (EN): Opening hours">Opening hours</xen><xar data-edit="t240" data-edit-label="Text (AR): أوقات الدوام">أوقات الدوام</xar></p>
+        <h2 class="h2" style="margin-bottom:14px"><xen data-edit="t241" data-edit-label="Text (EN): Every day, nine to nine">Every day, nine to nine</xen><xar>كل يوم، <span class="nw" data-edit="t242" data-edit-label="Text: من 9 لـ 9">من 9 لـ 9</span></xar></h2>
+        <table class="hrs">
+          <tr><td><xen data-edit="t243" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t244" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t245" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t246" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t247" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t248" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t249" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t250" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t251" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t252" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t253" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t254" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t255" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t256" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t257" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t258" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t259" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t260" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t261" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t262" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t263" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t264" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t265" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t266" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+          <tr><td><xen data-edit="t267" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t268" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c"><span class="num" data-edit="t269" data-edit-label="Text: 9 AM–9 PM">9 AM–9 PM</span></xen><xar class="c" data-edit="t270" data-edit-label="Text (AR): 9 ص إلى 9 م">9 ص إلى 9 م</xar></td></tr>
+        </table>
+      </div>
+      <div>
+        <p class="k"><xen data-edit="t271" data-edit-label="Text (EN): Find the shop">Find the shop</xen><xar data-edit="t272" data-edit-label="Text (AR): لاقي المحل">لاقي المحل</xar></p>
+        <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin-bottom:14px"><xen data-edit="t273" data-edit-label="Text (EN): Inside Alyarz Leisure Club, Yarze">Inside Alyarz Leisure Club, Yarze</xen><xar data-edit="t274" data-edit-label="Text (AR): جوّا نادي الأرز، اليرزة">جوّا نادي الأرز، اليرزة</xar></h2>
+        <p class="k"><xen data-edit="t275" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t276" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+        <p class="ad" data-edit="t277" data-edit-label="Text: RGJX+HP, Baabda, Lebanon">RGJX+HP, Baabda, Lebanon</p>
+        <p class="k" style="margin-top:18px"><xen data-edit="t278" data-edit-label="Text (EN): Phone and WhatsApp">Phone and WhatsApp</xen><xar data-edit="t279" data-edit-label="Text (AR): الهاتف والواتساب">الهاتف والواتساب</xar></p>
+        <p class="ph num" data-edit="t280" data-edit-label="Text: +961 70 500 019">+961 70 500 019</p>
+        <p style="margin-top:20px">
+          <a class="btn" href="tel:+96170500019"><xen data-edit="t281" data-edit-label="Text (EN): Call the shop">Call the shop</xen><xar data-edit="t282" data-edit-label="Text (AR): اتصل بالمحل">اتصل بالمحل</xar></a>
+          <a class="btn s" href="https://wa.me/96170500019?text=Hello%20Saj%20Stories%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><xen data-edit="t283" data-edit-label="Text (EN): Order on WhatsApp">Order on WhatsApp</xen><xar data-edit="t284" data-edit-label="Text (AR): اطلب عالواتساب">اطلب عالواتساب</xar></a>
+        </p>
+        <p style="margin-top:6px">
+          <a class="btn o" href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><xen data-edit="t285" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t286" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+          <a class="btn o" href="https://www.instagram.com/sajstories/" target="_blank" rel="noopener" data-edit="t287" data-edit-label="Button / link: Instagram">Instagram</a>
+          <a class="btn o" href="https://www.facebook.com/sajstories/" target="_blank" rel="noopener" data-edit="t288" data-edit-label="Button / link: Facebook">Facebook</a>
+        </p>
+        <p class="k" style="margin-top:26px"><xen data-edit="t289" data-edit-label="Text (EN): Catering and events">Catering and events</xen><xar data-edit="t290" data-edit-label="Text (AR): كايترينغ ومناسبات">كايترينغ ومناسبات</xar></p>
+        <p style="color:var(--ink2);margin-top:6px"><xen data-edit="t291" data-edit-label="Text (EN): Pop-ups, private events and catering a…">Pop-ups, private events and catering are booked the same way, a message on WhatsApp or a call to the shop.</xen><xar data-edit="t292" data-edit-label="Text (AR): البسطات والمناسبات الخاصة والكايترينغ …">البسطات والمناسبات الخاصة والكايترينغ بينحجزوا بنفس الطريقة، رسالة عالواتساب أو مكالمة عالمحل.</xar></p>
+      </div>
+      <div class="shots rev">
+        <div>
+          <div class="pf port"><img src="img/09.jpg" loading="lazy" alt="The round Saj Stories sign hanging against the greenery"></div>
+          <p class="cap"><xen data-edit="t293" data-edit-label="Text (EN): Look for the round sign under the tree…">Look for the round sign under the trees.</xen><xar data-edit="t294" data-edit-label="Text (AR): دوّر عاللافتة المدوّرة تحت الشجر.">دوّر عاللافتة المدوّرة تحت الشجر.</xar></p>
+        </div>
+        <div>
+          <div class="pf port"><img src="img/13.jpg" loading="lazy" alt="A saj with greens and pomegranate beside a cold pressed juice"></div>
+          <p class="cap"><xen data-edit="t295" data-edit-label="Text (EN): Lunch on the terrace, most days of the…">Lunch on the terrace, most days of the week.</xen><xar data-edit="t296" data-edit-label="Text (AR): غدا بالبرّا، معظم أيام الأسبوع.">غدا بالبرّا، معظم أيام الأسبوع.</xar></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p><xen data-edit="t229" data-edit-label="Text (EN): Saj Stories, Alyarz Leisure Club, Yarz…">Saj Stories, Alyarz Leisure Club, Yarze, Baabda.</xen><xar data-edit="t230" data-edit-label="Text (AR): ساج ستوريز، نادي الأرز، اليرزة، بعبدا.">ساج ستوريز، نادي الأرز، اليرزة، بعبدا.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t231" data-edit-label="Text (EN): Saj, coffee and mooneh, nine to nine, …">Saj, coffee and mooneh, nine to nine, every day of the week.</xen><xar data-edit="t232" data-edit-label="Text (AR): صاج، قهوة ومونة، من 9 لـ 9، كل أيام ال…">صاج، قهوة ومونة، من 9 لـ 9، كل أيام الأسبوع.</xar></p>
+  <b data-edit="t297" data-edit-label="Text: Saj Stories">Saj Stories</b>
+  <p><xen data-edit="t298" data-edit-label="Text (EN): Alyarz Leisure Club, Yarze, Baabda.">Alyarz Leisure Club, Yarze, Baabda.</xen><xar data-edit="t299" data-edit-label="Text (AR): نادي الأرز، اليرزة، بعبدا.">نادي الأرز، اليرزة، بعبدا.</xar></p>
+  <p style="margin-top:8px"><xen data-edit="t300" data-edit-label="Text (EN): Saj, coffee and mooneh, nine to nine, …">Saj, coffee and mooneh, nine to nine, every day of the week.</xen><xar data-edit="t301" data-edit-label="Text (AR): صاج، قهوة ومونة، من 9 لـ 9، كل أيام ال…">صاج، قهوة ومونة، من 9 لـ 9، كل أيام الأسبوع.</xar></p>
+  <p style="margin-top:14px">
+    <a href="https://www.instagram.com/sajstories/" target="_blank" rel="noopener" data-edit="t302" data-edit-label="Button / link: Instagram">Instagram</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.facebook.com/sajstories/" target="_blank" rel="noopener" data-edit="t303" data-edit-label="Button / link: Facebook">Facebook</a>
+  </p>
 </footer>
 
 <nav class="bar">
-  <a href="tel:+96170500019"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t233" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t234" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
-  <a class="w" href="https://wa.me/96170500019?text=Hello%20Saj%20Stories%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t235" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t236" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
-  <a href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t237" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t238" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a href="https://www.instagram.com/sajstories/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t239" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a class="c" href="tel:+96170500019"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t304" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t305" data-edit-label="Text (AR): اتصل">اتصل</xar></span></a>
+  <a class="w" href="https://wa.me/96170500019?text=Hello%20Saj%20Stories%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2m0 2a8 8 0 1 1-4.1 14.9l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 0 1 12 4m-3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.1.8 2.6.7 3 .6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.5-.7c-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-1.9-1.2 7 7 0 0 1-1.3-1.7c-.1-.2 0-.3.1-.4l.4-.5.3-.5v-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4z"/></svg><span><xen data-edit="t306" data-edit-label="Text (EN): WhatsApp">WhatsApp</xen><xar data-edit="t307" data-edit-label="Text (AR): واتساب">واتساب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=11968041437034109416" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t308" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t309" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a class="g" href="https://www.instagram.com/sajstories/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5m0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5m4.8-3.3a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1"/></svg><span data-edit="t310" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a class="g" href="https://www.facebook.com/sajstories/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.55-1.5h1.65V4.6a22 22 0 0 0-2.4-.12c-2.4 0-4.05 1.47-4.05 4.16v2.32H7.5V14h2.75v8z"/></svg><span data-edit="t311" data-edit-label="Text: Facebook">Facebook</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ساج ستوريز · اليرزة، بعبدا" data-edit="t240" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="ساج ستوريز · اليرزة، بعبدا" data-edit="t312" data-edit-label="Button: عربي">عربي</button>
 <script>
 (function(){var n=document.getElementById('nav');if(!n)return;
 function s(){n.classList.toggle('sc',scrollY>40)}addEventListener('scroll',s,{passive:true});s();})();

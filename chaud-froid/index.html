@@ -5,168 +5,276 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Chaud Froid · General Wazen, Dekwaneh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Lalezar&family=Asap:wght@400;500;700&family=Changa:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Kufam:wght@500;600;700&family=League+Spartan:wght@500;700;900&family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+/* ============================================================================
+   CHAUD FROID, Dekwaneh.
+   ONE flat saturated field owns the hero. ONE sandwich floats in the middle of
+   it. ONE line of small caps underneath. Everything else is subtracted.
+   The field red is sampled straight out of their own studio photograph
+   (#C01F27), so the seamless paper behind the sandwich becomes the page.
+   ========================================================================== */
 :root{
-  --arh:'Lalezar';--arb:'IBM Plex Sans Arabic';
-  --tilewhite:#F4EFE2;--tile2:#E8E2D1;--ink:#232A25;--hot:#B75C6B;--cold:#2C4A38;--wood:#6B4A2E;
-  --grout:rgba(35,42,37,.14);
+  --red:#C01F27;--red-lo:#9B1219;--ink:#17110F;--ink-2:#241A17;
+  --bone:#F4F0E7;--bone-2:#EAE4D7;--cream:#FBF7EF;
+  --mute:#6E635C;--line:rgba(23,17,15,.16);--lineC:rgba(251,247,239,.26);
+  --arh:'Kufam';--arb:'Vazirmatn';
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--tilewhite);color:var(--ink);font:400 16.5px/1.75 'Asap',system-ui,sans-serif}
-.wrap{width:min(1140px,100%);margin-inline:auto;padding-inline:6vw}
-h1,h2,h3{font-family:'Changa One',system-ui,sans-serif;font-weight:400;line-height:1.06;letter-spacing:.01em}
-a{color:inherit}
+body{background:var(--bone);color:var(--ink);
+     font:400 16.5px/1.72 'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
-.k{font:700 11.5px/1.5 'Asap',sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--cold)}
+a{color:inherit}
+.wrap{width:min(1180px,100%);margin-inline:auto;padding-inline:clamp(22px,5vw,58px)}
+h1,h2,h3,.dsp{font-family:'League Spartan',system-ui,sans-serif;font-weight:900;
+  line-height:.98;letter-spacing:-.025em;text-transform:uppercase}
+html.ar h1 xar,html.ar h2 xar,html.ar h3 xar,html.ar .dsp xar{
+  font-family:var(--arh),sans-serif;letter-spacing:0;text-transform:none}
+.k{font:700 11px/1.5 'League Spartan',sans-serif;letter-spacing:.3em;text-transform:uppercase}
+html.ar .k xar{font-family:var(--arb),sans-serif;letter-spacing:.06em;font-weight:600}
 
-.lngt{position:fixed;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:80;
-  font:700 12.5px/1 var(--arb),sans-serif;padding:10px 15px;border-radius:2px;cursor:pointer;
-  background:var(--ink);color:var(--tilewhite);border:1.5px solid #0F1215;-webkit-appearance:none;
-  box-shadow:0 4px 14px rgba(35,39,46,.35);min-width:58px;text-align:center}
-.lngt:active{transform:scale(.94)}
+/* ---------- language chip, fixed top right, clear of the masthead ---------- */
+.lngt{position:fixed;right:16px;top:calc(16px + env(safe-area-inset-top));z-index:90;
+  font:600 13px/1 var(--arb),sans-serif;padding:10px 16px;cursor:pointer;border-radius:1px;
+  background:var(--cream);color:var(--ink);border:1.5px solid var(--ink);-webkit-appearance:none;
+  box-shadow:0 6px 18px rgba(23,17,15,.28);min-width:62px;text-align:center;letter-spacing:.02em}
+.lngt:active{transform:translateY(1px)}
 
-/* ---------- HERO: COUCOU. Their own table shot from straight above, wordmark laid across it.
-     Their top-down counter frame is 1280x720, so the plate is capped at 980px and the photograph
-     is never shown wider than it was taken. Field is the forest green, plate carries the picture. */
-header{position:relative;min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;padding:clamp(20px,3vh,30px) 0;
-  background:radial-gradient(128% 104% at 50% 4%,#26422F 0%,#1B2E22 58%,#121E17 100%)}
-header::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(90deg,rgba(244,239,226,.045) 0 1px,transparent 1px 92px)}
-.hcol{position:relative;z-index:3;width:min(1020px,100% - 10vw);margin-inline:auto;text-align:center;color:#F4EFE2}
-.plate{position:relative;overflow:hidden;border:1px solid rgba(244,239,226,.30);
-  box-shadow:0 44px 96px -34px rgba(0,0,0,.86)}
-.plate img.bg{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 50%;
-  filter:contrast(1.12) saturate(1.12) brightness(.97)}
-.plate .scrim{position:absolute;inset:0;
-  background:radial-gradient(74% 52% at 50% 45%,rgba(14,25,18,.80) 0%,rgba(14,25,18,.44) 56%,rgba(14,25,18,0) 100%),
-             linear-gradient(180deg,rgba(14,25,18,.52) 0%,rgba(14,25,18,.04) 30%,rgba(14,25,18,.06) 68%,rgba(14,25,18,.58) 100%)}
-.wordm{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;padding:0 4%;color:#F4EFE2}
-.wordm .kick{font:700 12px/1.5 'Asap',sans-serif;letter-spacing:.34em;text-transform:uppercase;color:#F3CCD3;
-  text-shadow:0 2px 10px rgba(0,0,0,.95),0 0 26px rgba(0,0,0,.7)}
-.wordm h1{margin-top:14px;font-family:'Unbounded',sans-serif;font-weight:800;line-height:.94;
-  font-size:clamp(30px,5.6vw,74px);letter-spacing:-.03em;white-space:nowrap;color:#F7F3E8;
-  text-shadow:0 14px 44px rgba(0,0,0,.82)}
-.wordm h1 .hotw{color:#F7F3E8}
-.wordm h1 .coldw{color:#F7F3E8;margin-left:.22em}
-html.ar .wordm h1{font-family:var(--arh),sans-serif;letter-spacing:0;font-size:clamp(34px,6vw,70px)}
-.hbelow{margin-top:26px}
-.wordm .sub,.hbelow .sub{margin:0 auto;max-width:58ch;color:#DCD6C6;font-size:clamp(14.5px,1.7vw,17px);line-height:1.72}
-.splitpill{display:inline-flex;margin-top:20px;border-radius:99px;overflow:hidden;
-  font:700 11.5px/1 'Asap',sans-serif;letter-spacing:.14em;text-transform:uppercase}
-.splitpill .l{background:var(--hot);color:#2A1219;padding:12px 18px}
-.splitpill .r{background:var(--cold);color:#EFF5F1;padding:12px 18px}
-.hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
-.hbtns a{display:inline-flex;align-items:center;gap:8px;padding:13px 23px;text-decoration:none;border-radius:99px;
-  font:700 12px/1 'Asap',sans-serif;letter-spacing:.12em;text-transform:uppercase;border:2px solid transparent}
-.hbtns a.s{background:#F4EFE2;color:#232A25}
-.hbtns a.s:hover{background:#E5A9B4;color:#2A1219}
-.hbtns a.g2{background:#1FA855;color:#04240F}
-.hbtns a.l{border-color:rgba(244,239,226,.6);color:#F4EFE2}
-.hbtns a.l:hover{border-color:#E5A9B4;color:#E5A9B4}
-[data-r]{opacity:0;transform:translateY(14px);animation:rise 620ms ease-out forwards}
-[data-r="1"]{animation-delay:70ms}[data-r="2"]{animation-delay:160ms}[data-r="3"]{animation-delay:250ms}
-[data-r="4"]{animation-delay:330ms}[data-r="5"]{animation-delay:410ms}
-@keyframes rise{to{opacity:1;transform:none}}
-@media(max-width:760px){
-  header{padding:clamp(20px,3vh,32px) 0}
-  .hcol{width:min(980px,100% - 8vw)}
-  .plate img.bg{aspect-ratio:4/3;object-position:56% 52%}
-  .hbelow{margin-top:20px}
+/* ============================ HERO ======================================== */
+header{background:var(--red);color:var(--cream);position:relative;
+  min-height:clamp(600px,92svh,820px);max-height:860px;overflow:hidden;
+  display:flex;flex-direction:column;padding-bottom:0}
+.mast{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;
+  padding:clamp(20px,3.2vh,32px) clamp(22px,5vw,58px) 0;padding-right:clamp(96px,10vw,130px)}
+.mast .brand{font-family:'League Spartan',sans-serif;font-weight:900;text-transform:uppercase;
+  line-height:.86;letter-spacing:-.035em;font-size:clamp(30px,5.4vw,62px);color:var(--cream)}
+html.ar .mast .brand xar{font-family:var(--arh),sans-serif;letter-spacing:0;line-height:1.1}
+.mast .brand small{display:block;font-size:.2em;letter-spacing:.42em;font-weight:700;
+  margin-top:.5em;color:rgba(251,247,239,.9)}
+html.ar .mast .brand small xar{letter-spacing:.1em;font-family:var(--arb),sans-serif}
+.nav{display:flex;align-items:center;gap:clamp(14px,2vw,28px);padding-top:8px}
+.nav a{text-decoration:none;font:700 11.5px/1 'League Spartan',sans-serif;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(251,247,239,.86);padding-bottom:5px;
+  border-bottom:1.5px solid transparent}
+html.ar .nav a xar{font-family:var(--arb),sans-serif;letter-spacing:.04em;font-weight:600}
+.nav a:hover{color:var(--cream);border-bottom-color:var(--cream)}
+.nav a.cta{background:var(--cream);color:var(--red-lo);padding:11px 18px;border-bottom:0;border-radius:1px}
+.nav a.cta:hover{background:#fff;color:var(--red-lo)}
+@media(max-width:860px){.nav{display:none}}
+
+/* the single floating object */
+.float{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;
+  padding:clamp(10px,2.4vh,26px) 22px 0}
+/* the photograph's own seamless backdrop IS the page red, so the panel almost vanishes.
+   A cream hairline and one deep shadow are all it takes to lift the sandwich off the field. */
+.float img{max-height:100%;width:auto;max-width:min(80vw,478px);height:auto;object-fit:contain;
+  box-shadow:0 0 0 1px rgba(251,247,239,.24),0 46px 92px -34px rgba(51,0,3,.72)}
+.hcap{text-align:center;padding:clamp(12px,2.4vh,24px) 24px clamp(14px,2.6vh,26px);
+  font:700 clamp(11.5px,1.5vw,14px)/1.5 'League Spartan',sans-serif;letter-spacing:.34em;
+  text-transform:uppercase;color:rgba(251,247,239,.94)}
+html.ar .hcap xar{font-family:var(--arb),sans-serif;letter-spacing:.05em;font-weight:600;font-size:.95em}
+.hstrip{display:flex;flex-wrap:wrap;justify-content:center;gap:0;
+  border-top:1px solid rgba(251,247,239,.3);background:var(--red-lo)}
+.hstrip span{flex:1 1 0;text-align:center;padding:14px 16px;
+  font:600 10.5px/1.4 'League Spartan',sans-serif;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(251,247,239,.9);border-left:1px solid rgba(251,247,239,.22)}
+.hstrip span:first-child{border-left:0}
+html.ar .hstrip span xar{font-family:var(--arb),sans-serif;letter-spacing:.04em}
+/* phone: two short facts share a row, the street takes its own, so the strip stays
+   clear of the sticky bar instead of hiding behind it. */
+@media(max-width:560px){
+  .hstrip span{padding:11px 10px;font-size:9.5px;letter-spacing:.13em}
+  .hstrip span:nth-child(1){order:1}
+  .hstrip span:nth-child(3){order:2}
+  .hstrip span:nth-child(2){order:3;flex:1 1 100%;border-left:0;
+    border-top:1px solid rgba(251,247,239,.22)}
+  .hcap{letter-spacing:.2em}
+}
+
+/* ============================ SECTIONS =================================== */
+section{padding-block:clamp(58px,9vh,110px)}
+.pale{background:var(--bone)}
+.field{background:var(--red);color:var(--cream)}
+.dark{background:var(--ink);color:var(--cream)}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.eyebrow i{flex:0 0 44px;height:2px;background:currentColor;opacity:.55;font-size:0}
+h2{font-size:clamp(30px,5.2vw,58px);margin-bottom:22px}
+h3{font-size:clamp(19px,2.2vw,24px);letter-spacing:-.015em}
+p.lead{font-size:clamp(17px,1.7vw,19.5px);line-height:1.72}
+.pale p{color:#40382F}
+.field p{color:rgba(251,247,239,.92)}
+.dark p{color:rgba(251,247,239,.82)}
+.cap{font:500 12.5px/1.6 'Inter',sans-serif;color:var(--mute);margin-top:10px;letter-spacing:.01em}
+.field .cap{color:rgba(251,247,239,.88)}
+.dark .cap{color:rgba(251,247,239,.72)}
+html.ar .cap xar{font-family:var(--arb),sans-serif}
+
+/* ---- story ---- */
+.story{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:start}
+.story .txt p{margin-bottom:16px}
+.panel{position:relative}
+.panel img{width:100%;height:auto;border:1px solid var(--line)}
+.seal{position:absolute;top:-30px;right:-22px;width:clamp(96px,11vw,132px);height:clamp(96px,11vw,132px);
+  border-radius:50%;background:var(--red);color:var(--cream);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 34px rgba(23,17,15,.3)}
+.seal svg{position:absolute;inset:0;width:100%;height:100%;animation:sealturn 84s linear infinite}
+.seal svg text{fill:var(--cream);font-family:'League Spartan',sans-serif;font-weight:700;
+  font-size:9.4px;letter-spacing:.26em;text-transform:uppercase}
+.seal b{position:relative;font-family:'League Spartan',sans-serif;font-weight:900;font-size:1.05rem;
+  letter-spacing:.02em}
+@keyframes sealturn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.seal svg{animation:none}}
+
+/* ---- storefront band ---- */
+.front{margin-top:clamp(34px,5vh,64px)}
+.front img{width:100%;height:auto;border:1px solid var(--line)}
+
+/* ---- the sub, layer by layer ---- */
+.subgrid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(28px,5vw,74px);align-items:center}
+.subgrid .shot{display:flex;justify-content:center}
+.subgrid .shot img{width:100%;max-width:400px;height:auto;border:1px solid rgba(251,247,239,.28)}
+ol.lay{list-style:none;counter-reset:l}
+ol.lay li{counter-increment:l;display:grid;grid-template-columns:38px minmax(0,1fr);
+  column-gap:16px;row-gap:3px;padding:16px 0;border-top:1px solid var(--lineC)}
+ol.lay li:last-child{border-bottom:1px solid var(--lineC)}
+ol.lay li::before{content:counter(l,decimal-leading-zero);grid-column:1;grid-row:1/span 2;
+  font:700 12px/1.6 'League Spartan',sans-serif;letter-spacing:.14em;color:rgba(251,247,239,.92)}
+ol.lay b{grid-column:2;grid-row:1;display:block;
+  font:700 16.5px/1.4 'League Spartan',sans-serif;letter-spacing:.02em;
+  text-transform:uppercase;color:var(--cream)}
+html.ar ol.lay b xar{font-family:var(--arh),sans-serif;letter-spacing:0;text-transform:none}
+ol.lay span.d{grid-column:2;grid-row:2;display:block;font-size:14.5px;line-height:1.6;
+  color:rgba(251,247,239,.9)}
+
+/* ---- counter cards ---- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.6vw,32px)}
+.card figure{margin:0;background:var(--cream);border:1px solid var(--line)}
+.card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.card .t{padding:20px 20px 24px;border-top:1px solid var(--line)}
+.card h3{margin-bottom:8px}
+.card p{font-size:14.8px;line-height:1.62}
+
+/* ---- three ways ---- */
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,46px)}
+.way{padding-top:20px;border-top:2px solid rgba(251,247,239,.45)}
+.way .n{font:700 11px/1 'League Spartan',sans-serif;letter-spacing:.24em;
+  color:rgba(251,247,239,.55);display:block;margin-bottom:12px}
+.way h3{margin-bottom:9px;color:var(--cream)}
+.way p{font-size:14.8px;line-height:1.68}
+
+/* ---- gallery ---- */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,18px)}
+.gal a{display:block;overflow:hidden;border:1px solid var(--line);background:var(--cream)}
+.gal img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.gal a.wide{grid-column:span 3}
+.gal a.wide img{aspect-ratio:auto;height:auto}
+.gal a:hover img{opacity:.9}
+
+/* ---- reviews ---- */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px)}
+.rv{border-top:2px solid rgba(251,247,239,.45);padding-top:20px}
+.rv q{display:block;quotes:none;font-size:16px;line-height:1.72;color:rgba(251,247,239,.94)}
+.rv cite{display:block;margin-top:14px;font-style:normal;
+  font:700 11px/1 'League Spartan',sans-serif;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(251,247,239,.9)}
+
+/* ---- visit ---- */
+.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:start}
+table.hrs{width:100%;border-collapse:collapse}
+table.hrs td{padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+table.hrs td:first-child{font:600 12px/1.4 'League Spartan',sans-serif;letter-spacing:.16em;
+  text-transform:uppercase}
+html.ar table.hrs td:first-child xar{font-family:var(--arb),sans-serif;letter-spacing:.02em;font-weight:600}
+table.hrs td:last-child{text-align:right;color:#40382F}
+/* Arabic: the day swaps to the right edge and the hours to the left, so the two
+   never meet in the middle of the row. */
+html.ar table.hrs{direction:rtl}
+html.ar table.hrs td:first-child{text-align:right}
+html.ar table.hrs td:last-child{text-align:left}
+table.hrs tr.off td{color:var(--red);font-weight:600}
+.ad,.ph{font-size:17px;color:#2C2521}
+.note{margin-top:14px;font-size:14px;line-height:1.65;color:var(--mute);
+  border-left:2px solid var(--red);padding-left:14px}
+html.ar .note{border-left:0;border-right:2px solid var(--red);padding-left:0;padding-right:14px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:14px 22px;
+  font:700 12px/1 'League Spartan',sans-serif;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--red);color:var(--cream);border:1.5px solid var(--red);border-radius:1px}
+.btn.o{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.o:hover{background:var(--ink);color:var(--cream)}
+.btn svg{width:16px;height:16px;fill:currentColor}
+html.ar .btn xar{font-family:var(--arb),sans-serif;letter-spacing:.02em;font-weight:600}
+.socs{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.soc{display:inline-flex;align-items:center;gap:9px;text-decoration:none;padding:12px 18px;
+  border:1.5px solid var(--ink);border-radius:1px;background:var(--cream);color:var(--ink);
+  font:700 11.5px/1 'League Spartan',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.soc svg{width:16px;height:16px;fill:currentColor}
+.soc:hover{background:var(--ink);color:var(--cream)}
+
+/* ---- footer ---- */
+footer{background:var(--ink);color:rgba(251,247,239,.72);padding:clamp(46px,7vh,78px) 0 150px;
+  text-align:center;font-size:14.5px}
+footer .fm{font-family:'League Spartan',sans-serif;font-weight:900;text-transform:uppercase;
+  letter-spacing:-.02em;font-size:clamp(24px,3.6vw,40px);color:var(--cream);margin-bottom:14px}
+html.ar footer .fm xar{font-family:var(--arh),sans-serif;letter-spacing:0}
+footer p+p{margin-top:8px}
+footer .fsoc{display:flex;justify-content:center;gap:10px;margin-top:24px}
+footer .fsoc a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  border:1px solid rgba(251,247,239,.4);color:rgba(251,247,239,.9);padding:11px 17px;border-radius:1px;
+  font:700 11px/1 'League Spartan',sans-serif;letter-spacing:.16em;text-transform:uppercase}
+footer .fsoc a svg{width:15px;height:15px;fill:currentColor}
+footer .fsoc a:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* ---- sticky bar: the takeaway paper. Cream plank, red print, red rule on top.
+       Floats as a plank on desktop, sits flush on a phone. Visible at every width,
+       so the social links are reachable without a phone. ---- */
+.bar{position:fixed;z-index:80;background:var(--cream);border:1.5px solid var(--ink);
+  display:flex;align-items:stretch;box-shadow:0 16px 40px rgba(23,17,15,.3)}
+.bar::before{content:"";position:absolute;left:0;right:0;top:-1.5px;height:4px;background:var(--red)}
+.bar a{flex:1 1 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  padding:12px 6px 11px;text-decoration:none;color:var(--ink);border-left:1px solid var(--line);
+  font:700 10.5px/1.2 'League Spartan',sans-serif;letter-spacing:.14em;text-transform:uppercase;
+  text-align:center;min-height:58px}
+html.ar .bar a xar{font-family:var(--arb),sans-serif;letter-spacing:.02em;font-weight:600}
+.bar a:first-child{border-left:0}
+.bar a svg{width:18px;height:18px;fill:currentColor}
+.bar a.pri{background:var(--red);color:var(--cream)}
+.bar a:active{filter:brightness(.94)}
+@media(min-width:901px){
+  .bar{left:50%;transform:translateX(-50%);bottom:24px;width:min(760px,90vw);border-radius:2px}
+  .bar a{flex-direction:row;gap:9px;padding:14px 10px;min-height:0;font-size:11px}
+}
+@media(max-width:900px){
+  .bar{left:0;right:0;bottom:0;border-left:0;border-right:0;border-bottom:0;
+       padding-inline:9px;padding-bottom:env(safe-area-inset-bottom)}
+  .bar a{padding:12px 5px 11px}
+  body{padding-bottom:82px}
+}
+@media(max-width:430px){.bar a{font-size:9.5px;letter-spacing:.09em}}
+
+/* ---- Arabic layer: everything that sits beside right-aligned text moves with it ---- */
+html.ar .eyebrow{flex-direction:row-reverse}
+html.ar ol.lay li{grid-template-columns:minmax(0,1fr) 38px}
+html.ar ol.lay li::before{grid-column:2;text-align:right}
+html.ar ol.lay b,html.ar ol.lay span.d{grid-column:1}
+html.ar .way .n{text-align:right}
+html.ar .btns,html.ar .socs{justify-content:flex-end}
+html.ar .ad,html.ar .ph{text-align:right}
+
+/* ---- breakpoints ---- */
+@media(max-width:900px){
+  .story,.subgrid,.visit{grid-template-columns:1fr}
+  .cards,.ways,.revs{grid-template-columns:1fr}
+  .gal{grid-template-columns:repeat(2,1fr)}
+  .gal a.wide{grid-column:span 2}
+  .seal{top:-24px;right:-10px}
+  .subgrid .shot{order:-1}
 }
 @media(max-width:520px){
-  .wordm h1{white-space:normal;font-size:clamp(30px,11vw,46px)}
-  .wordm h1 .coldw{display:block;margin-left:0}
-  .plate img.bg{aspect-ratio:5/4}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-  header img.bg{transform:none}
-  [data-r]{opacity:1;transform:none}
-}
-
-section{padding-block:clamp(56px,8vh,96px)}
-.band{background:var(--tile2)}
-.two{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,54px);align-items:start}
-h2.hd{font-size:clamp(26px,4vw,42px);margin:8px 0 18px}
-.two p{color:#43464C;margin-bottom:15px}
-.frame{border:2px solid var(--ink);padding:9px;background:#FCF9EE;border-radius:4px}
-.frame img{width:100%;height:clamp(230px,36vh,380px);object-fit:cover;border-radius:2px}
-.cap{font:500 12.5px/1.55 'Asap',sans-serif;color:#84806F;margin-top:8px}
-.sublayers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,3.6vw,50px);align-items:center}
-.lay{list-style:none}
-.lay li{display:flex;align-items:center;gap:13px;margin:9px 0;background:#FCF9EE;border:2px solid var(--ink);
-  border-radius:999px;padding:10px 18px}
-.lay li i{flex:0 0 30px;height:12px;border-radius:99px;font-size:0}
-.lay li i.c1{background:#D8A657}.lay li i.c2{background:#B4762F}.lay li i.c3{background:#C4372E}
-.lay li i.c4{background:#7B9E5F}.lay li i.c5{background:#EDE4C8}.lay li i.c6{background:#2E5E8C}
-.lay li b{font:700 14.5px/1.4 'Asap',sans-serif}
-.lay li span{color:#6B6D72;font-size:13px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.card{background:#FCF9EE;border:2px solid var(--ink);border-radius:4px;overflow:hidden}
-.card img{width:100%;height:215px;object-fit:cover}
-.card .t{padding:15px 16px 19px;border-top:2px solid var(--ink)}
-.card h3{font-size:19px;margin-bottom:6px}
-.card p{color:#54565B;font-size:14.5px;line-height:1.65}
-.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.way{background:#FCF9EE;border:2px solid var(--ink);border-radius:4px;padding:24px 20px 20px;text-align:center;position:relative}
-.way::before{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:56px;height:5px}
-.way.w1::before{background:var(--hot)}.way.w2::before{background:var(--wood)}.way.w3::before{background:var(--cold)}
-.way h3{font-size:19px;margin-bottom:8px}
-.way p{color:#54565B;font-size:14.5px;line-height:1.65}
-.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
-.gal a{display:block;border:2px solid var(--ink);border-radius:3px;overflow:hidden;background:#FCF9EE;padding:5px}
-.gal img{width:100%;height:195px;object-fit:cover;border-radius:1px}
-.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2.4vw,26px)}
-.rev-c{background:#FCF9EE;border:2px solid var(--ink);border-radius:4px;padding:22px 20px 18px;position:relative}
-.rev-c::before{content:"";position:absolute;top:-2px;left:20px;width:40px;height:5px;background:var(--hot)}
-.rev-c:nth-child(2)::before{background:var(--wood)}
-.rev-c:nth-child(3)::before{background:var(--cold)}
-.rev-c q{display:block;quotes:none;font-size:15px;line-height:1.7;color:#33363C}
-.rev-c cite{display:block;margin-top:12px;font-style:normal;font:700 12.5px/1 'Asap',sans-serif;color:var(--cold);letter-spacing:.1em;text-transform:uppercase}
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
-table.hrs{width:100%;border-collapse:collapse}
-table.hrs td{padding:9px 0;border-bottom:1.5px solid var(--grout);font-size:15px}
-table.hrs td:last-child{text-align:right;color:#43464C}
-table.hrs tr.off td{color:var(--hot);font-weight:700}
-.ad,.ph{font-size:16.5px;color:#33363C}
-.btn{display:inline-flex;align-items:center;gap:9px;background:var(--hot);color:#FCF6E8;
-  padding:13px 20px;border-radius:3px;text-decoration:none;font:700 14.5px/1 'Asap',sans-serif;
-  border:2px solid var(--ink);margin:6px 8px 0 0}
-.btn.o{background:transparent;color:var(--ink)}
-.lland{margin-top:14px;font-size:14px;color:#54565B;border-left:3px solid var(--cold);padding-left:12px}
-footer{padding:36px 7vw 128px;color:#84806F;font-size:13.5px;text-align:center;background:var(--tile2)}
-
-/* ---------- sticky bar: the tiled counter edge, hot tile / cold tile ---------- */
-.bar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:2px;
-  background:
-   linear-gradient(var(--grout) 1.5px,transparent 1.5px) 0 0/100% 26px,
-   linear-gradient(90deg,var(--grout) 1.5px,transparent 1.5px) 0 0/26px 100%,
-   #EDE9DB;
-  border-top:2.5px solid var(--ink);
-  padding:8px 8px calc(8px + env(safe-area-inset-bottom));
-  box-shadow:0 -10px 26px rgba(35,39,46,.25)}
-.bar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
-  padding:9px 4px 10px;color:#FCF6E8;border:2px solid var(--ink);border-radius:3px;
-  text-decoration:none;font:700 12px/1.2 'Asap',sans-serif;min-height:54px}
-.bar a.hotb{background:var(--hot)}
-.bar a.coldb{background:var(--cold)}
-.bar a.woodb{background:var(--wood)}
-.bar a:active{filter:brightness(.92)}
-.bar svg{width:18px;height:18px;fill:currentColor}
-@media(max-width:880px){
-  .two,.visit,.sublayers{grid-template-columns:1fr}
-  .grid3,.ways,.revs{grid-template-columns:1fr}
-  .gal{grid-template-columns:repeat(2,1fr)}
-  body{padding-bottom:84px}
-  .heroPane{position:static;margin:clamp(20px,3.4vh,32px) 6vw 0;width:auto;max-width:360px}
-  .heroPane img{height:140px}
-}
-@media(max-width:430px){
-  .bar{gap:2px}
-  .bar a{font-size:10.5px}
+  .mast{padding-right:clamp(84px,24vw,104px)}
+  .mast .brand{font-size:clamp(28px,9vw,40px)}
+  h2{font-size:clamp(27px,8.4vw,38px)}
 }
 </style>
 <meta name="robots" content="noindex,nofollow">
@@ -216,173 +324,218 @@ b.setAttribute('aria-label',on?'Switch to English':'التبديل إلى الع
 <body>
 
 <header id="top">
-  <div class="hcol">
-    <div class="plate" data-r="1">
-      <img class="bg" src="img/04.jpg" alt="A Chaud Froid wrap and a branded box of fries on the table">
-      <div class="scrim" aria-hidden="true"></div>
-      <div class="wordm">
-        <p class="kick"><xen data-edit="t1" data-edit-label="Text (EN): General Wazen street · Dekwaneh">General Wazen street · Dekwaneh</xen><xar data-edit="t2" data-edit-label="Text (AR): شارع جنرال وازن · الدكوانة">شارع جنرال وازن · الدكوانة</xar></p>
-        <h1><span class="hotw"><xen class="c" data-edit="t3" data-edit-label="Text (EN): CHAUD">CHAUD</xen><xar class="c" data-edit="t4" data-edit-label="Text (AR): شو">شو</xar></span><span class="coldw"><xen class="c" data-edit="t5" data-edit-label="Text (EN): FROID">FROID</xen><xar class="c" data-edit="t6" data-edit-label="Text (AR): فروا">فروا</xar></span></h1>
-      </div>
+  <div class="mast">
+    <div class="brand dsp">
+      <xen data-edit="t1" data-edit-label="Text (EN): Chaud Froid">Chaud Froid</xen><xar data-edit="t2" data-edit-label="Text (AR): شو فروا">شو فروا</xar>
+      <small><xen data-edit="t3" data-edit-label="Text (EN): Snack, Dekwaneh">Snack, Dekwaneh</xen><xar data-edit="t4" data-edit-label="Text (AR): سناك، الدكوانة">سناك، الدكوانة</xar></small>
     </div>
-    <div class="hbelow">
-      <p class="sub" data-r="3"><xen data-edit="t7" data-edit-label="Text (EN): A family snack under a slow ceiling fa…">A family snack under a slow ceiling fan: toasted chicken subs, loaded fries, and a room that has fed Dekwaneh for a generation.</xen><xar data-edit="t8" data-edit-label="Text (AR): سناك عيلة تحت مروحة سقف بطيئة: صبات دج…">سناك عيلة تحت مروحة سقف بطيئة: صبات دجاج محمّصة، بطاطا معبّاية، وغرفة عم تطعمي الدكوانة من جيل كامل.</xar></p>
-      <div data-r="4"><span class="splitpill"><span class="l"><xen class="c" data-edit="t9" data-edit-label="Text (EN): 4.4 stars">4.4 stars</xen><xar class="c" data-edit="t10" data-edit-label="Text (AR): 4.4 نجوم">4.4 نجوم</xar></span><span class="r"><xen class="c"><span class="num" data-edit="t11" data-edit-label="Text: 451">451</span> reviews</xen><xar class="c"><span class="num" data-edit="t12" data-edit-label="Text: 451">451</span> تقييم</xar></span></span></div>
-      <div class="hbtns" data-r="5">
-        <a class="s" href="tel:+9611684126"><xen data-edit="t13" data-edit-label="Text (EN): Call the snack">Call the snack</xen><xar data-edit="t14" data-edit-label="Text (AR): اتصل بالسناك">اتصل بالسناك</xar></a>
-        <a class="l" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><xen data-edit="t15" data-edit-label="Text (EN): Find us in Dekwaneh">Find us in Dekwaneh</xen><xar data-edit="t16" data-edit-label="Text (AR): لاقونا بالدكوانة">لاقونا بالدكوانة</xar></a>
-      </div>
-    </div>
+    <nav class="nav">
+      <a href="#story"><xen data-edit="t5" data-edit-label="Text (EN): The corner">The corner</xen><xar data-edit="t6" data-edit-label="Text (AR): الزاوية">الزاوية</xar></a>
+      <a href="#sub"><xen data-edit="t7" data-edit-label="Text (EN): The sub">The sub</xen><xar data-edit="t8" data-edit-label="Text (AR): الصب">الصب</xar></a>
+      <a href="#counter"><xen data-edit="t9" data-edit-label="Text (EN): The counter">The counter</xen><xar data-edit="t10" data-edit-label="Text (AR): الكاونتر">الكاونتر</xar></a>
+      <a href="#visit"><xen data-edit="t11" data-edit-label="Text (EN): Visit">Visit</xen><xar data-edit="t12" data-edit-label="Text (AR): زورونا">زورونا</xar></a>
+      <a class="cta" href="tel:+9611684126"><xen data-edit="t13" data-edit-label="Text (EN): Call">Call</xen><xar data-edit="t14" data-edit-label="Text (AR): اتصل">اتصل</xar></a>
+    </nav>
+  </div>
+
+  <div class="float">
+    <img src="img/01.jpg" alt="Two halves of the Chaud Froid fajita sandwich stacked on a white plate against a flat red field">
+  </div>
+
+  <p class="hcap"><xen data-edit="t15" data-edit-label="Text (EN): The fajita sandwich, cut in two">The fajita sandwich, cut in two</xen><xar data-edit="t16" data-edit-label="Text (AR): ساندويش الفاهيتا، مقطوع نصين">ساندويش الفاهيتا، مقطوع نصين</xar></p>
+
+  <div class="hstrip">
+    <span><xen>Since <span class="num" data-edit="t17" data-edit-label="Text: 1992">1992</span></xen><xar>من <span class="num" data-edit="t18" data-edit-label="Text: 1992">1992</span></xar></span>
+    <span><xen data-edit="t19" data-edit-label="Text (EN): General Wazen street, Dekwaneh">General Wazen street, Dekwaneh</xen><xar data-edit="t20" data-edit-label="Text (AR): شارع جنرال وازن، الدكوانة">شارع جنرال وازن، الدكوانة</xar></span>
+    <span><xen class="c"><span class="num" data-edit="t21" data-edit-label="Text: 4.4">4.4</span> stars, <span class="num" data-edit="t22" data-edit-label="Text: 451">451</span> reviews</xen><xar class="c"><span class="num" data-edit="t23" data-edit-label="Text: 4.4">4.4</span> نجوم، <span class="num" data-edit="t24" data-edit-label="Text: 451">451</span> تقييم</xar></span>
   </div>
 </header>
 
-<section class="wrap">
-  <div class="two">
-    <div class="rev">
-      <p class="k"><xen data-edit="t17" data-edit-label="Text (EN): The corner">The corner</xen><xar data-edit="t18" data-edit-label="Text (AR): الزاوية">الزاوية</xar></p>
-      <h2 class="hd"><xen data-edit="t19" data-edit-label="Text (EN): A snack that outlived the trends">A snack that outlived the trends</xen><xar data-edit="t20" data-edit-label="Text (AR): سناك عاش أكتر من الموضات">سناك عاش أكتر من الموضات</xar></h2>
-      <p><xen data-edit="t21" data-edit-label="Text (EN): Chaud Froid is the kind of Dekwaneh in…">Chaud Froid is the kind of Dekwaneh institution that never needed a rebrand: white tiles, wooden chairs, a fan turning overhead, and a counter that has been passing subs across since the early nineties, as the regulars will happily tell you.</xen><xar data-edit="t22" data-edit-label="Text (AR): شو فروا من مؤسسات الدكوانة يلّي عمرها …">شو فروا من مؤسسات الدكوانة يلّي عمرها ما احتاجت تغيير هوية: بلاط أبيض، كراسي خشب، مروحة عم تدور فوق، وكاونتر عم يمرّر الصبات من أوائل التسعينات، متل ما بيحبوا يخبروك الزباين.</xar></p>
-      <p><xen data-edit="t23" data-edit-label="Text (EN): The chicken sub is the reason people c…">The chicken sub is the reason people cross town: toasted bread, grilled chicken, ham, cheese, tomatoes, pickles, lettuce and mayo, built heavy enough to count as a meal and a half.</xen><xar data-edit="t24" data-edit-label="Text (AR): صب الدجاج هو سبب قطع الناس للمدينة: خب…">صب الدجاج هو سبب قطع الناس للمدينة: خبز محمّص، دجاج مشوي، جمبون، جبنة، بندورة، كبيس، خس ومايونيز، معمّر تقيل لدرجة بيحسب أكلة ونص.</xar></p>
-      <p><xen data-edit="t25" data-edit-label="Text (EN): Sunday the fan rests. Every other day …">Sunday the fan rests. Every other day it turns from lunch until almost midnight.</xen><xar data-edit="t26" data-edit-label="Text (AR): الأحد المروحة بترتاح. باقي الأيام بتضل…">الأحد المروحة بترتاح. باقي الأيام بتضل دايرة من الغدا لقبل نص الليل.</xar></p>
+<!-- ================= 1. the corner ================= -->
+<section class="pale" id="story">
+  <div class="wrap">
+    <div class="story">
+      <div class="txt rev">
+        <p class="k eyebrow"><i></i><xen data-edit="t25" data-edit-label="Text (EN): The corner">The corner</xen><xar data-edit="t26" data-edit-label="Text (AR): الزاوية">الزاوية</xar></p>
+        <h2><xen data-edit="t27" data-edit-label="Text (EN): A snack that outlived the trends">A snack that outlived the trends</xen><xar data-edit="t28" data-edit-label="Text (AR): سناك عاش أكتر من الموضات">سناك عاش أكتر من الموضات</xar></h2>
+        <p class="lead"><xen data-edit="t29" data-edit-label="Text (EN): Chaud Froid is the kind of Dekwaneh in…">Chaud Froid is the kind of Dekwaneh institution that never needed a rebrand: white tiles, wooden chairs, a fan turning overhead, and a counter that has been passing subs across since the early nineties, as the regulars will happily tell you.</xen><xar data-edit="t30" data-edit-label="Text (AR): شو فروا من مؤسسات الدكوانة يلّي عمرها …">شو فروا من مؤسسات الدكوانة يلّي عمرها ما احتاجت تغيير هوية: بلاط أبيض، كراسي خشب، مروحة عم تدور فوق، وكاونتر عم يمرّر الصبات من أوائل التسعينات، متل ما بيحبوا يخبروك الزباين.</xar></p>
+        <p><xen data-edit="t31" data-edit-label="Text (EN): The chicken sub is the reason people c…">The chicken sub is the reason people cross town: toasted bread, grilled chicken, ham, cheese, tomatoes, pickles, lettuce and mayo, built heavy enough to count as a meal and a half.</xen><xar data-edit="t32" data-edit-label="Text (AR): صب الدجاج هو سبب قطع الناس للمدينة: خب…">صب الدجاج هو سبب قطع الناس للمدينة: خبز محمّص، دجاج مشوي، جمبون، جبنة، بندورة، كبيس، خس ومايونيز، معمّر تقيل لدرجة بيحسب أكلة ونص.</xar></p>
+        <p><xen data-edit="t33" data-edit-label="Text (EN): Sunday the fan rests. Every other day …">Sunday the fan rests. Every other day it turns from lunch until almost midnight.</xen><xar data-edit="t34" data-edit-label="Text (AR): الأحد المروحة بترتاح. باقي الأيام بتضل…">الأحد المروحة بترتاح. باقي الأيام بتضل دايرة من الغدا لقبل نص الليل.</xar></p>
+      </div>
+      <div class="panel rev">
+        <img src="img/09.jpg" loading="lazy" alt="The tiled dining room at Chaud Froid with its marble tables and wooden chairs">
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sealring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path></defs>
+            <text><textPath href="#sealring" startOffset="0">CHAUD FROID · SNACK · DEKWANEH · </textPath></text>
+          </svg>
+          <b class="num" data-edit="t35" data-edit-label="Text: 1992">1992</b>
+        </div>
+        <p class="cap"><xen data-edit="t36" data-edit-label="Text (EN): The room: tiles, wood, and nothing pre…">The room: tiles, wood, and nothing pretending.</xen><xar data-edit="t37" data-edit-label="Text (AR): الغرفة: بلاط، خشب، وما في شي عم يمثّل.">الغرفة: بلاط، خشب، وما في شي عم يمثّل.</xar></p>
+      </div>
     </div>
-    <div>
-      <div class="frame rev"><img src="img/07.jpg" loading="lazy" alt="The tiled dining room with its wooden tables and chairs">
-        <p class="cap"><xen data-edit="t27" data-edit-label="Text (EN): The room: tiles, wood, and nothing pre…">The room: tiles, wood, and nothing pretending.</xen><xar data-edit="t28" data-edit-label="Text (AR): الغرفة: بلاط، خشب، وما في شي عم يمثّل.">الغرفة: بلاط، خشب، وما في شي عم يمثّل.</xar></p>
+    <div class="front rev">
+      <img src="img/08.jpg" loading="lazy" alt="The Chaud Froid Snak shopfront and its striped awning on General Wazen street">
+      <p class="cap"><xen data-edit="t38" data-edit-label="Text (EN): Find the awning: green, yellow, red, b…">Find the awning: green, yellow, red, blue, over the glass on General Wazen.</xen><xar data-edit="t39" data-edit-label="Text (AR): لاقي التندة: أخضر، أصفر، أحمر، أزرق، ف…">لاقي التندة: أخضر، أصفر، أحمر، أزرق، فوق الزجاج بشارع جنرال وازن.</xar></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. the chicken sub ================= -->
+<section class="field" id="sub">
+  <div class="wrap">
+    <div class="subgrid">
+      <div class="shot rev">
+        <img src="img/02.jpg" loading="lazy" alt="The Chaud Froid chicken sub split open, grilled chicken and melted cheese inside">
+      </div>
+      <div class="rev">
+        <p class="k eyebrow"><i></i><xen data-edit="t40" data-edit-label="Text (EN): The famous one">The famous one</xen><xar data-edit="t41" data-edit-label="Text (AR): المشهور">المشهور</xar></p>
+        <h2><xen data-edit="t42" data-edit-label="Text (EN): The chicken sub, layer by layer">The chicken sub, layer by layer</xen><xar data-edit="t43" data-edit-label="Text (AR): صب الدجاج، طبقة طبقة">صب الدجاج، طبقة طبقة</xar></h2>
+        <ol class="lay">
+          <li><b><xen data-edit="t44" data-edit-label="Text (EN): Toasted bread">Toasted bread</xen><xar data-edit="t45" data-edit-label="Text (AR): خبز محمّص">خبز محمّص</xar></b><span class="d"><xen data-edit="t46" data-edit-label="Text (EN): pressed until it crackles">pressed until it crackles</xen><xar data-edit="t47" data-edit-label="Text (AR): مكبوس ليقرقش">مكبوس ليقرقش</xar></span></li>
+          <li><b><xen data-edit="t48" data-edit-label="Text (EN): Grilled chicken">Grilled chicken</xen><xar data-edit="t49" data-edit-label="Text (AR): دجاج مشوي">دجاج مشوي</xar></b><span class="d"><xen data-edit="t50" data-edit-label="Text (EN): the full layer, not a rumour of one">the full layer, not a rumour of one</xen><xar data-edit="t51" data-edit-label="Text (AR): طبقة كاملة، مش إشاعة طبقة">طبقة كاملة، مش إشاعة طبقة</xar></span></li>
+          <li><b><xen data-edit="t52" data-edit-label="Text (EN): Ham and cheese">Ham and cheese</xen><xar data-edit="t53" data-edit-label="Text (AR): جمبون وجبنة">جمبون وجبنة</xar></b><span class="d"><xen data-edit="t54" data-edit-label="Text (EN): melted into each other">melted into each other</xen><xar data-edit="t55" data-edit-label="Text (AR): دايبين ببعض">دايبين ببعض</xar></span></li>
+          <li><b><xen data-edit="t56" data-edit-label="Text (EN): Tomatoes, pickles, lettuce">Tomatoes, pickles, lettuce</xen><xar data-edit="t57" data-edit-label="Text (AR): بندورة، كبيس، خس">بندورة، كبيس، خس</xar></b><span class="d"><xen data-edit="t58" data-edit-label="Text (EN): the fresh crunch">the fresh crunch</xen><xar data-edit="t59" data-edit-label="Text (AR): القرمشة الفريش">القرمشة الفريش</xar></span></li>
+          <li><b><xen data-edit="t60" data-edit-label="Text (EN): Mayo">Mayo</xen><xar data-edit="t61" data-edit-label="Text (AR): مايونيز">مايونيز</xar></b><span class="d"><xen data-edit="t62" data-edit-label="Text (EN): generous, ask for less if you must">generous, ask for less if you must</xen><xar data-edit="t63" data-edit-label="Text (AR): بسخا، واطلب أقل إذا لازم">بسخا، واطلب أقل إذا لازم</xar></span></li>
+        </ol>
+        <p class="cap"><xen data-edit="t64" data-edit-label="Text (EN): Every layer above is quoted from what …">Every layer above is quoted from what their own customers describe in reviews.</xen><xar data-edit="t65" data-edit-label="Text (AR): كل طبقة فوق منقولة عن وصف زباينهن نفسه…">كل طبقة فوق منقولة عن وصف زباينهن نفسهن بالتقييمات.</xar></p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band">
+<!-- ================= 3. off the counter ================= -->
+<section class="pale" id="counter">
   <div class="wrap">
-    <div class="sublayers">
-      <div>
-        <p class="k"><xen data-edit="t29" data-edit-label="Text (EN): The famous one">The famous one</xen><xar data-edit="t30" data-edit-label="Text (AR): المشهور">المشهور</xar></p>
-        <h2 class="hd"><xen data-edit="t31" data-edit-label="Text (EN): The chicken sub, layer by layer">The chicken sub, layer by layer</xen><xar data-edit="t32" data-edit-label="Text (AR): صب الدجاج، طبقة طبقة">صب الدجاج، طبقة طبقة</xar></h2>
-        <ul class="lay">
-          <li class="rev"><i class="c1"></i><span><b><xen class="c" data-edit="t33" data-edit-label="Text (EN): Toasted bread">Toasted bread</xen><xar class="c" data-edit="t34" data-edit-label="Text (AR): خبز محمّص">خبز محمّص</xar></b> <span><xen class="c" data-edit="t35" data-edit-label="Text (EN): pressed until it crackles">pressed until it crackles</xen><xar class="c" data-edit="t36" data-edit-label="Text (AR): مكبوس ليقرقش">مكبوس ليقرقش</xar></span></span></li>
-          <li class="rev"><i class="c2"></i><span><b><xen class="c" data-edit="t37" data-edit-label="Text (EN): Grilled chicken">Grilled chicken</xen><xar class="c" data-edit="t38" data-edit-label="Text (AR): دجاج مشوي">دجاج مشوي</xar></b> <span><xen class="c" data-edit="t39" data-edit-label="Text (EN): the full layer, not a rumour of one">the full layer, not a rumour of one</xen><xar class="c" data-edit="t40" data-edit-label="Text (AR): طبقة كاملة، مش إشاعة طبقة">طبقة كاملة، مش إشاعة طبقة</xar></span></span></li>
-          <li class="rev"><i class="c3"></i><span><b><xen class="c" data-edit="t41" data-edit-label="Text (EN): Ham and cheese">Ham and cheese</xen><xar class="c" data-edit="t42" data-edit-label="Text (AR): جمبون وجبنة">جمبون وجبنة</xar></b> <span><xen class="c" data-edit="t43" data-edit-label="Text (EN): melted into each other">melted into each other</xen><xar class="c" data-edit="t44" data-edit-label="Text (AR): دايبين ببعض">دايبين ببعض</xar></span></span></li>
-          <li class="rev"><i class="c4"></i><span><b><xen class="c" data-edit="t45" data-edit-label="Text (EN): Tomatoes, pickles, lettuce">Tomatoes, pickles, lettuce</xen><xar class="c" data-edit="t46" data-edit-label="Text (AR): بندورة، كبيس، خس">بندورة، كبيس، خس</xar></b> <span><xen class="c" data-edit="t47" data-edit-label="Text (EN): the fresh crunch">the fresh crunch</xen><xar class="c" data-edit="t48" data-edit-label="Text (AR): القرمشة الفريش">القرمشة الفريش</xar></span></span></li>
-          <li class="rev"><i class="c5"></i><span><b><xen class="c" data-edit="t49" data-edit-label="Text (EN): Mayo">Mayo</xen><xar class="c" data-edit="t50" data-edit-label="Text (AR): مايونيز">مايونيز</xar></b> <span><xen class="c" data-edit="t51" data-edit-label="Text (EN): generous, ask for less if you must">generous, ask for less if you must</xen><xar class="c" data-edit="t52" data-edit-label="Text (AR): بسخا، واطلب أقل إذا لازم">بسخا، واطلب أقل إذا لازم</xar></span></span></li>
-        </ul>
-        <p class="cap" style="margin-top:14px"><xen data-edit="t53" data-edit-label="Text (EN): Every layer above is quoted from what …">Every layer above is quoted from what their own customers describe in reviews.</xen><xar data-edit="t54" data-edit-label="Text (AR): كل طبقة فوق منقولة عن وصف زباينهن نفسه…">كل طبقة فوق منقولة عن وصف زباينهن نفسهن بالتقييمات.</xar></p>
+    <p class="k eyebrow"><i></i><xen data-edit="t66" data-edit-label="Text (EN): Off the counter">Off the counter</xen><xar data-edit="t67" data-edit-label="Text (AR): من عالكاونتر">من عالكاونتر</xar></p>
+    <h2 style="margin-bottom:34px"><xen data-edit="t68" data-edit-label="Text (EN): What leaves the kitchen most">What leaves the kitchen most</xen><xar data-edit="t69" data-edit-label="Text (AR): شو بيطلع من المطبخ أكتر شي">شو بيطلع من المطبخ أكتر شي</xar></h2>
+    <div class="cards">
+      <div class="card rev"><figure>
+        <img src="img/04.jpg" loading="lazy" alt="A hand dipping a chip into ketchup on the printed Chaud Froid tray">
+        <figcaption class="t"><h3><xen data-edit="t70" data-edit-label="Text (EN): Fries in the box">Fries in the box</xen><xar data-edit="t71" data-edit-label="Text (AR): بطاطا بالعلبة">بطاطا بالعلبة</xar></h3>
+        <p><xen data-edit="t72" data-edit-label="Text (EN): Cut thick, salted properly, standing a…">Cut thick, salted properly, standing at attention in the red branded box.</xen><xar data-edit="t73" data-edit-label="Text (AR): مقطّعة سميك، مملّحة صح، واقفة انتباه ب…">مقطّعة سميك، مملّحة صح، واقفة انتباه بالعلبة الحمرا.</xar></p></figcaption>
+      </figure></div>
+      <div class="card rev"><figure>
+        <img src="img/05.jpg" loading="lazy" alt="Two wraps standing upright in the printed Chaud Froid paper">
+        <figcaption class="t"><h3><xen data-edit="t74" data-edit-label="Text (EN): The wrap to go">The wrap to go</xen><xar data-edit="t75" data-edit-label="Text (AR): اللفة سفري">اللفة سفري</xar></h3>
+        <p><xen data-edit="t76" data-edit-label="Text (EN): Rolled in their printed paper, still w…">Rolled in their printed paper, still warm at the other end of Dekwaneh.</xen><xar data-edit="t77" data-edit-label="Text (AR): ملفوفة بورقهن المطبوع، بتوصل سخنة لآخر…">ملفوفة بورقهن المطبوع، بتوصل سخنة لآخر الدكوانة.</xar></p></figcaption>
+      </figure></div>
+      <div class="card rev"><figure>
+        <img src="img/07.jpg" loading="lazy" alt="A sandwich held open with chips and pickles tucked inside">
+        <figcaption class="t"><h3><xen data-edit="t78" data-edit-label="Text (EN): The open secret">The open secret</xen><xar data-edit="t79" data-edit-label="Text (AR): السر المكشوف">السر المكشوف</xar></h3>
+        <p><xen data-edit="t80" data-edit-label="Text (EN): Fries do end up inside the sandwich. N…">Fries do end up inside the sandwich. Nobody has ever complained.</xen><xar data-edit="t81" data-edit-label="Text (AR): البطاطا بتخلص جوّات السندويشة فعلًا. و…">البطاطا بتخلص جوّات السندويشة فعلًا. وعمرو ما اشتكى حدا.</xar></p></figcaption>
+      </figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. three ways ================= -->
+<section class="dark">
+  <div class="wrap">
+    <p class="k eyebrow"><i></i><xen data-edit="t82" data-edit-label="Text (EN): Three ways to get it">Three ways to get it</xen><xar data-edit="t83" data-edit-label="Text (AR): تلات طرق توصلك">تلات طرق توصلك</xar></p>
+    <h2 style="margin-bottom:36px;color:var(--cream)"><xen data-edit="t84" data-edit-label="Text (EN): Table, paper, or phone">Table, paper, or phone</xen><xar data-edit="t85" data-edit-label="Text (AR): طاولة، ورقة، أو تلفون">طاولة، ورقة، أو تلفون</xar></h2>
+    <div class="ways">
+      <div class="way rev"><span class="n num" data-edit="t86" data-edit-label="Text: 01">01</span>
+        <h3><xen data-edit="t87" data-edit-label="Text (EN): At a table">At a table</xen><xar data-edit="t88" data-edit-label="Text (AR): على طاولة">على طاولة</xar></h3>
+        <p><xen data-edit="t89" data-edit-label="Text (EN): Wooden chairs, the fan overhead, the g…">Wooden chairs, the fan overhead, the game on someone's phone. Eat it hot the second it lands.</xen><xar data-edit="t90" data-edit-label="Text (AR): كراسي خشب، المروحة فوق، والماتش على مو…">كراسي خشب، المروحة فوق، والماتش على موبايل حدا. كولها سخنة لحظة ما توصل.</xar></p></div>
+      <div class="way rev"><span class="n num" data-edit="t91" data-edit-label="Text: 02">02</span>
+        <h3><xen data-edit="t92" data-edit-label="Text (EN): Wrapped to go">Wrapped to go</xen><xar data-edit="t93" data-edit-label="Text (AR): ملفوفة سفري">ملفوفة سفري</xar></h3>
+        <p><xen data-edit="t94" data-edit-label="Text (EN): The classic move: paper wrap, fries bo…">The classic move: paper wrap, fries box, and the car smells like victory all the way home.</xen><xar data-edit="t95" data-edit-label="Text (AR): الحركة الكلاسيكية: لفة ورق، علبة بطاطا…">الحركة الكلاسيكية: لفة ورق، علبة بطاطا، والسيارة ريحتها انتصار لحد البيت.</xar></p></div>
+      <div class="way rev"><span class="n num" data-edit="t96" data-edit-label="Text: 03">03</span>
+        <h3><xen data-edit="t97" data-edit-label="Text (EN): Called ahead">Called ahead</xen><xar data-edit="t98" data-edit-label="Text (AR): مطلوبة سلف">مطلوبة سلف</xar></h3>
+        <p><xen data-edit="t99" data-edit-label="Text (EN): Ring the landline, order, and walk in …">Ring the landline, order, and walk in as it comes off the press. The number is at the bottom of this page.</xen><xar data-edit="t100" data-edit-label="Text (AR): دق عالخط الأرضي، اطلب، وفوت وهي نازلة …">دق عالخط الأرضي، اطلب، وفوت وهي نازلة عن المكبس. الرقم بآخر الصفحة.</xar></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. photographs ================= -->
+<section class="pale">
+  <div class="wrap">
+    <p class="k eyebrow"><i></i><xen data-edit="t101" data-edit-label="Text (EN): Under the fan">Under the fan</xen><xar data-edit="t102" data-edit-label="Text (AR): تحت المروحة">تحت المروحة</xar></p>
+    <h2 style="margin-bottom:30px"><xen data-edit="t103" data-edit-label="Text (EN): Photographs from Chaud Froid">Photographs from Chaud Froid</xen><xar data-edit="t104" data-edit-label="Text (AR): صور من شو فروا">صور من شو فروا</xar></h2>
+    <div class="gal">
+      <a href="img/03.jpg" target="_blank" rel="noopener"><img src="img/03.jpg" loading="lazy" alt="The Chaud Froid burger cut in half against the red field"></a>
+      <a href="img/06.jpg" target="_blank" rel="noopener"><img src="img/06.jpg" loading="lazy" alt="Crisp chicken strips on flatbread on the printed Chaud Froid paper"></a>
+      <a href="img/05.jpg" target="_blank" rel="noopener"><img src="img/05.jpg" loading="lazy" alt="Two wraps standing in the printed Chaud Froid paper"></a>
+      <a href="img/02.jpg" target="_blank" rel="noopener"><img src="img/02.jpg" loading="lazy" alt="The chicken sub split open with melted cheese"></a>
+      <a href="img/04.jpg" target="_blank" rel="noopener"><img src="img/04.jpg" loading="lazy" alt="Chips and ketchup on the printed Chaud Froid tray"></a>
+      <a href="img/07.jpg" target="_blank" rel="noopener"><img src="img/07.jpg" loading="lazy" alt="A sandwich held open with pickles and chips inside"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. reviews ================= -->
+<section class="field">
+  <div class="wrap">
+    <p class="k eyebrow"><i></i><xen data-edit="t105" data-edit-label="Text (EN): The regulars report">The regulars report</xen><xar data-edit="t106" data-edit-label="Text (AR): تقرير الزباين">تقرير الزباين</xar></p>
+    <h2 style="margin-bottom:36px"><xen data-edit="t107" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t108" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
+    <div class="revs">
+      <div class="rv rev"><q dir="ltr" data-edit="t109" data-edit-label="Quote: Tried Chaud Froid and honestly I was p…">Tried Chaud Froid and honestly I was pleasantly surprised. The chicken sub is very good, full of flavor and loaded with ingredients like chicken, ham, cheese, tomatoes, pickles, lettuce, and mayo.</q><cite dir="ltr" data-edit="t110" data-edit-label="Credit: Joe Turk">Joe Turk</cite></div>
+      <div class="rv rev"><q dir="ltr" data-edit="t111" data-edit-label="Quote: Snack Chaud Froid in Dekwaneh is a tru…">Snack Chaud Froid in Dekwaneh is a true gem in Lebanon's fast food scene. Serving customers since 1992, this family-run spot has built a loyal following,and for good reason.</q><cite dir="ltr" data-edit="t112" data-edit-label="Credit: Serge El-Khazen">Serge El-Khazen</cite></div>
+      <div class="rv rev"><q dir="ltr" data-edit="t113" data-edit-label="Quote: The chicken sub was toasted , generous…">The chicken sub was toasted , generously filled with grilled chicken ; it was tasty . Portion is fulfilling. Less mayonnaise would have been perfect .</q><cite dir="ltr" data-edit="t114" data-edit-label="Credit: Melted Butter">Melted Butter</cite></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 7. visit ================= -->
+<section class="pale" id="visit">
+  <div class="wrap">
+    <div class="visit">
+      <div class="rev">
+        <p class="k eyebrow"><i></i><xen data-edit="t115" data-edit-label="Text (EN): Six days a week">Six days a week</xen><xar data-edit="t116" data-edit-label="Text (AR): ستة أيام بالأسبوع">ستة أيام بالأسبوع</xar></p>
+        <h2 style="margin-bottom:24px"><xen data-edit="t117" data-edit-label="Text (EN): Half past eleven, almost to midnight">Half past eleven, almost to midnight</xen><xar data-edit="t118" data-edit-label="Text (AR): من 11:30 لقبل نص الليل">من 11:30 لقبل نص الليل</xar></h2>
+        <table class="hrs">
+          <tr><td><xen data-edit="t119" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t120" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t121" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t122" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr><td><xen data-edit="t123" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t124" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t125" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t126" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr><td><xen data-edit="t127" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t128" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t129" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t130" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr><td><xen data-edit="t131" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t132" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t133" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t134" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr><td><xen data-edit="t135" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t136" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t137" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t138" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr><td><xen data-edit="t139" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t140" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t141" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c"><span class="num" data-edit="t142" data-edit-label="Text: 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</span></xar></td></tr>
+          <tr class="off"><td><xen data-edit="t143" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t144" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t145" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t146" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
+        </table>
+        <p class="cap"><xen data-edit="t147" data-edit-label="Text (EN): They close at 11:50 PM sharp. The ten …">They close at 11:50 PM sharp. The ten minutes matter to somebody.</xen><xar data-edit="t148" data-edit-label="Text (AR): بيسكّروا 11:50 بالظبط. العشر دقايق فار…">بيسكّروا 11:50 بالظبط. العشر دقايق فارقة مع حدا أكيد.</xar></p>
       </div>
-      <div>
-        <div class="frame rev"><img src="img/04.jpg" loading="lazy" alt="A table with the sub, fries, ketchup dip and a soft drink">
-          <p class="cap"><xen data-edit="t55" data-edit-label="Text (EN): The standard order, in its natural hab…">The standard order, in its natural habitat.</xen><xar data-edit="t56" data-edit-label="Text (AR): الطلبية المعتمدة، ببيئتها الطبيعية.">الطلبية المعتمدة، ببيئتها الطبيعية.</xar></p>
+      <div class="rev">
+        <p class="k eyebrow"><i></i><xen data-edit="t149" data-edit-label="Text (EN): Find the awning">Find the awning</xen><xar data-edit="t150" data-edit-label="Text (AR): لاقي التندة">لاقي التندة</xar></p>
+        <h3 style="margin-bottom:16px"><xen data-edit="t151" data-edit-label="Text (EN): General Wazen street, Dekwaneh">General Wazen street, Dekwaneh</xen><xar data-edit="t152" data-edit-label="Text (AR): شارع جنرال وازن، الدكوانة">شارع جنرال وازن، الدكوانة</xar></h3>
+        <p class="k" style="margin:22px 0 6px"><xen data-edit="t153" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t154" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
+        <p class="ad" data-edit="t155" data-edit-label="Text: General Wazen, Dekwaneh, Lebanon">General Wazen, Dekwaneh, Lebanon</p>
+        <p class="k" style="margin:22px 0 6px"><xen data-edit="t156" data-edit-label="Text (EN): Phone, landline">Phone, landline</xen><xar data-edit="t157" data-edit-label="Text (AR): الهاتف، خط أرضي">الهاتف، خط أرضي</xar></p>
+        <p class="ph num" data-edit="t158" data-edit-label="Text: +961 1 684 126">+961 1 684 126</p>
+        <p class="note"><xen data-edit="t159" data-edit-label="Text (EN): This is a landline: calls only, no Wha…">This is a landline: calls only, no WhatsApp. Phone your order in and ask on the call whether they are taking WhatsApp orders these days.</xen><xar data-edit="t160" data-edit-label="Text (AR): هيدا خط أرضي: تلفونات بس، بلا واتساب. …">هيدا خط أرضي: تلفونات بس، بلا واتساب. اطلب طلبيتك عالتلفون، واسأل وانت عالخط إذا صاروا ياخدوا طلبات عالواتساب.</xar></p>
+        <div class="btns">
+          <a class="btn" href="tel:+9611684126"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><xen data-edit="t161" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t162" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
+          <a class="btn o" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><xen data-edit="t163" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t164" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
+        </div>
+        <p class="k" style="margin:26px 0 6px"><xen data-edit="t165" data-edit-label="Text (EN): Follow the snack">Follow the snack</xen><xar data-edit="t166" data-edit-label="Text (AR): تابع السناك">تابع السناك</xar></p>
+        <div class="socs">
+          <a class="soc" href="https://www.instagram.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>Instagram</a>
+          <a class="soc" href="https://www.facebook.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="wrap">
-  <p class="k"><xen data-edit="t57" data-edit-label="Text (EN): Off the counter">Off the counter</xen><xar data-edit="t58" data-edit-label="Text (AR): من عالكاونتر">من عالكاونتر</xar></p>
-  <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t59" data-edit-label="Text (EN): What leaves the kitchen most">What leaves the kitchen most</xen><xar data-edit="t60" data-edit-label="Text (AR): شو بيطلع من المطبخ أكتر شي">شو بيطلع من المطبخ أكتر شي</xar></h2>
-  <div class="grid3">
-    <div class="card rev"><img src="img/05.jpg" loading="lazy" alt="Fries standing in the red Chaud Froid box">
-      <div class="t"><h3><xen data-edit="t61" data-edit-label="Text (EN): Fries in the box">Fries in the box</xen><xar data-edit="t62" data-edit-label="Text (AR): بطاطا بالعلبة">بطاطا بالعلبة</xar></h3>
-      <p><xen data-edit="t63" data-edit-label="Text (EN): Cut thick, salted properly, standing a…">Cut thick, salted properly, standing at attention in the red branded box.</xen><xar data-edit="t64" data-edit-label="Text (AR): مقطّعة سميك، مملّحة صح، واقفة انتباه ب…">مقطّعة سميك، مملّحة صح، واقفة انتباه بالعلبة الحمرا.</xar></p></div>
-    </div>
-    <div class="card rev"><img src="img/08.jpg" loading="lazy" alt="A wrapped sandwich and fries box on the table">
-      <div class="t"><h3><xen data-edit="t65" data-edit-label="Text (EN): The wrap to go">The wrap to go</xen><xar data-edit="t66" data-edit-label="Text (AR): اللفة سفري">اللفة سفري</xar></h3>
-      <p><xen data-edit="t67" data-edit-label="Text (EN): Rolled in their printed paper, still w…">Rolled in their printed paper, still warm at the other end of Dekwaneh.</xen><xar data-edit="t68" data-edit-label="Text (AR): ملفوفة بورقهن المطبوع، بتوصل سخنة لآخر…">ملفوفة بورقهن المطبوع، بتوصل سخنة لآخر الدكوانة.</xar></p></div>
-    </div>
-    <div class="card rev"><img src="img/03.jpg" loading="lazy" alt="The sub held open showing fries tucked inside">
-      <div class="t"><h3><xen data-edit="t69" data-edit-label="Text (EN): The open secret">The open secret</xen><xar data-edit="t70" data-edit-label="Text (AR): السر المكشوف">السر المكشوف</xar></h3>
-      <p><xen data-edit="t71" data-edit-label="Text (EN): Fries do end up inside the sandwich. N…">Fries do end up inside the sandwich. Nobody has ever complained.</xen><xar data-edit="t72" data-edit-label="Text (AR): البطاطا بتخلص جوّات السندويشة فعلًا. و…">البطاطا بتخلص جوّات السندويشة فعلًا. وعمرو ما اشتكى حدا.</xar></p></div>
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <p class="k"><xen data-edit="t73" data-edit-label="Text (EN): Three ways to get it">Three ways to get it</xen><xar data-edit="t74" data-edit-label="Text (AR): تلات طرق توصلك">تلات طرق توصلك</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t75" data-edit-label="Text (EN): Table, paper, or phone">Table, paper, or phone</xen><xar data-edit="t76" data-edit-label="Text (AR): طاولة، ورقة، أو تلفون">طاولة، ورقة، أو تلفون</xar></h2>
-    <div class="ways">
-      <div class="way w1 rev"><h3><xen data-edit="t77" data-edit-label="Text (EN): At a table">At a table</xen><xar data-edit="t78" data-edit-label="Text (AR): على طاولة">على طاولة</xar></h3>
-        <p><xen data-edit="t79" data-edit-label="Text (EN): Wooden chairs, the fan overhead, the g…">Wooden chairs, the fan overhead, the game on someone's phone. Eat it hot the second it lands.</xen><xar data-edit="t80" data-edit-label="Text (AR): كراسي خشب، المروحة فوق، والماتش على مو…">كراسي خشب، المروحة فوق، والماتش على موبايل حدا. كولها سخنة لحظة ما توصل.</xar></p></div>
-      <div class="way w2 rev"><h3><xen data-edit="t81" data-edit-label="Text (EN): Wrapped to go">Wrapped to go</xen><xar data-edit="t82" data-edit-label="Text (AR): ملفوفة سفري">ملفوفة سفري</xar></h3>
-        <p><xen data-edit="t83" data-edit-label="Text (EN): The classic move: paper wrap, fries bo…">The classic move: paper wrap, fries box, and the car smells like victory all the way home.</xen><xar data-edit="t84" data-edit-label="Text (AR): الحركة الكلاسيكية: لفة ورق، علبة بطاطا…">الحركة الكلاسيكية: لفة ورق، علبة بطاطا، والسيارة ريحتها انتصار لحد البيت.</xar></p></div>
-      <div class="way w3 rev"><h3><xen data-edit="t85" data-edit-label="Text (EN): Called ahead">Called ahead</xen><xar data-edit="t86" data-edit-label="Text (AR): مطلوبة سلف">مطلوبة سلف</xar></h3>
-        <p><xen data-edit="t87" data-edit-label="Text (EN): Ring the landline, order, and walk in …">Ring the landline, order, and walk in as it comes off the press. The number is at the bottom of this page.</xen><xar data-edit="t88" data-edit-label="Text (AR): دق عالخط الأرضي، اطلب، وفوت وهي نازلة …">دق عالخط الأرضي، اطلب، وفوت وهي نازلة عن المكبس. الرقم بآخر الصفحة.</xar></p></div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap">
-  <p class="k"><xen data-edit="t89" data-edit-label="Text (EN): Under the fan">Under the fan</xen><xar data-edit="t90" data-edit-label="Text (AR): تحت المروحة">تحت المروحة</xar></p>
-  <h2 class="hd" style="margin-bottom:24px"><xen data-edit="t91" data-edit-label="Text (EN): Photographs from Chaud Froid">Photographs from Chaud Froid</xen><xar data-edit="t92" data-edit-label="Text (AR): صور من شو فروا">صور من شو فروا</xar></h2>
-  <div class="gal">
-    <a href="img/01.jpg" target="_blank" rel="noopener" class="g"><img src="img/01.jpg" loading="lazy" alt="The shopfront with its striped awning on General Wazen"></a>
-    <a href="img/06.jpg" target="_blank" rel="noopener" class="g"><img src="img/06.jpg" loading="lazy" alt="Fries and wrapped sub on the terrazzo table"></a>
-    <a href="img/07.jpg" target="_blank" rel="noopener" class="g"><img src="img/07.jpg" loading="lazy" alt="The tiled dining room"></a>
-    <a href="img/04.jpg" target="_blank" rel="noopener" class="g"><img src="img/04.jpg" loading="lazy" alt="Sub, fries and dips on the table"></a>
-    <a href="img/05.jpg" target="_blank" rel="noopener" class="g"><img src="img/05.jpg" loading="lazy" alt="Fries in the branded box"></a>
-    <a href="img/08.jpg" target="_blank" rel="noopener" class="g"><img src="img/08.jpg" loading="lazy" alt="A wrapped sandwich with fries on a plate"></a>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap">
-    <p class="k"><xen data-edit="t93" data-edit-label="Text (EN): The regulars report">The regulars report</xen><xar data-edit="t94" data-edit-label="Text (AR): تقرير الزباين">تقرير الزباين</xar></p>
-    <h2 class="hd" style="margin-bottom:26px"><xen data-edit="t95" data-edit-label="Text (EN): Three of the reviews">Three of the reviews</xen><xar data-edit="t96" data-edit-label="Text (AR): تلاتة من التقييمات">تلاتة من التقييمات</xar></h2>
-    <div class="revs">
-      <div class="rev-c rev"><q dir="ltr" data-edit="t97" data-edit-label="Quote: Tried Chaud Froid and honestly I was p…">Tried Chaud Froid and honestly I was pleasantly surprised. The chicken sub is very good, full of flavor and loaded with ingredients like chicken, ham, cheese, tomatoes, pickles, lettuce, and mayo.</q><cite data-edit="t98" data-edit-label="Credit: Joe Turk">Joe Turk</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t99" data-edit-label="Quote: Snack Chaud Froid in Dekwaneh is a tru…">Snack Chaud Froid in Dekwaneh is a true gem in Lebanon's fast food scene. Serving customers since 1992, this family-run spot has built a loyal following,and for good reason.</q><cite data-edit="t100" data-edit-label="Credit: Serge El-Khazen">Serge El-Khazen</cite></div>
-      <div class="rev-c rev"><q dir="ltr" data-edit="t101" data-edit-label="Quote: The chicken sub was toasted , generous…">The chicken sub was toasted , generously filled with grilled chicken ; it was tasty . Portion is fulfilling. Less mayonnaise would have been perfect .</q><cite data-edit="t102" data-edit-label="Credit: Melted Butter">Melted Butter</cite></div>
-    </div>
-  </div>
-</section>
-
-<section class="wrap" id="vst">
-  <div class="visit">
-    <div>
-      <p class="k"><xen data-edit="t103" data-edit-label="Text (EN): Six days a week">Six days a week</xen><xar data-edit="t104" data-edit-label="Text (AR): ستة أيام بالأسبوع">ستة أيام بالأسبوع</xar></p>
-      <h2 class="hd" style="margin-bottom:18px"><xen data-edit="t105" data-edit-label="Text (EN): Half past eleven, almost to midnight">Half past eleven, almost to midnight</xen><xar data-edit="t106" data-edit-label="Text (AR): من 11:30 لقبل نص الليل">من 11:30 لقبل نص الليل</xar></h2>
-      <table class="hrs">
-        <tr><td><xen data-edit="t107" data-edit-label="Text (EN): Monday">Monday</xen><xar data-edit="t108" data-edit-label="Text (AR): الاثنين">الاثنين</xar></td><td><xen class="c"><span class="num" data-edit="t109" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t110" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr><td><xen data-edit="t111" data-edit-label="Text (EN): Tuesday">Tuesday</xen><xar data-edit="t112" data-edit-label="Text (AR): الثلاثاء">الثلاثاء</xar></td><td><xen class="c"><span class="num" data-edit="t113" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t114" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr><td><xen data-edit="t115" data-edit-label="Text (EN): Wednesday">Wednesday</xen><xar data-edit="t116" data-edit-label="Text (AR): الأربعاء">الأربعاء</xar></td><td><xen class="c"><span class="num" data-edit="t117" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t118" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr><td><xen data-edit="t119" data-edit-label="Text (EN): Thursday">Thursday</xen><xar data-edit="t120" data-edit-label="Text (AR): الخميس">الخميس</xar></td><td><xen class="c"><span class="num" data-edit="t121" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t122" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr><td><xen data-edit="t123" data-edit-label="Text (EN): Friday">Friday</xen><xar data-edit="t124" data-edit-label="Text (AR): الجمعة">الجمعة</xar></td><td><xen class="c"><span class="num" data-edit="t125" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t126" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr><td><xen data-edit="t127" data-edit-label="Text (EN): Saturday">Saturday</xen><xar data-edit="t128" data-edit-label="Text (AR): السبت">السبت</xar></td><td><xen class="c"><span class="num" data-edit="t129" data-edit-label="Text: 11:30 AM–11:50 PM">11:30 AM–11:50 PM</span></xen><xar class="c" data-edit="t130" data-edit-label="Text (AR): 11:30 ص إلى 11:50 م">11:30 ص إلى 11:50 م</xar></td></tr>
-        <tr class="off"><td><xen data-edit="t131" data-edit-label="Text (EN): Sunday">Sunday</xen><xar data-edit="t132" data-edit-label="Text (AR): الأحد">الأحد</xar></td><td><xen class="c" data-edit="t133" data-edit-label="Text (EN): Closed">Closed</xen><xar class="c" data-edit="t134" data-edit-label="Text (AR): مسكّر">مسكّر</xar></td></tr>
-      </table>
-      <p class="cap"><xen data-edit="t135" data-edit-label="Text (EN): They close at 11:50 PM sharp. The ten …">They close at 11:50 PM sharp. The ten minutes matter to somebody.</xen><xar data-edit="t136" data-edit-label="Text (AR): بيسكّروا 11:50 بالظبط. العشر دقايق فار…">بيسكّروا 11:50 بالظبط. العشر دقايق فارقة مع حدا أكيد.</xar></p>
-    </div>
-    <div>
-      <p class="k"><xen data-edit="t137" data-edit-label="Text (EN): Find the awning">Find the awning</xen><xar data-edit="t138" data-edit-label="Text (AR): لاقي التندة">لاقي التندة</xar></p>
-      <h3 style="font-size:21px;margin:6px 0 14px"><xen data-edit="t139" data-edit-label="Text (EN): General Wazen street, Dekwaneh">General Wazen street, Dekwaneh</xen><xar data-edit="t140" data-edit-label="Text (AR): شارع جنرال وازن، الدكوانة">شارع جنرال وازن، الدكوانة</xar></h3>
-      <p class="k" style="margin-top:16px"><xen data-edit="t141" data-edit-label="Text (EN): Address">Address</xen><xar data-edit="t142" data-edit-label="Text (AR): العنوان">العنوان</xar></p>
-      <p class="ad" data-edit="t143" data-edit-label="Text: General Wazen, Dekwaneh, Lebanon">General Wazen, Dekwaneh, Lebanon</p>
-      <p class="k" style="margin-top:20px"><xen data-edit="t144" data-edit-label="Text (EN): Phone, landline">Phone, landline</xen><xar data-edit="t145" data-edit-label="Text (AR): الهاتف، خط أرضي">الهاتف، خط أرضي</xar></p>
-      <p class="ph num" data-edit="t146" data-edit-label="Text: +961 1 684 126">+961 1 684 126</p>
-      <p class="lland"><xen data-edit="t147" data-edit-label="Text (EN): This is a landline: calls only, no Wha…">This is a landline: calls only, no WhatsApp. Phone your order in and ask on the call whether they are taking WhatsApp orders these days.</xen><xar data-edit="t148" data-edit-label="Text (AR): هيدا خط أرضي: تلفونات بس، بلا واتساب. …">هيدا خط أرضي: تلفونات بس، بلا واتساب. اطلب طلبيتك عالتلفون، واسأل وانت عالخط إذا صاروا ياخدوا طلبات عالواتساب.</xar></p>
-      <p style="margin-top:20px">
-        <a class="btn" href="tel:+9611684126"><xen data-edit="t149" data-edit-label="Text (EN): Call the counter">Call the counter</xen><xar data-edit="t150" data-edit-label="Text (AR): اتصل بالكاونتر">اتصل بالكاونتر</xar></a>
-        <a class="btn o" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><xen data-edit="t151" data-edit-label="Text (EN): Open in Maps">Open in Maps</xen><xar data-edit="t152" data-edit-label="Text (AR): افتح عالخريطة">افتح عالخريطة</xar></a>
-      </p>
-    </div>
-  </div>
-</section>
-
 <footer>
-  <p><xen data-edit="t153" data-edit-label="Text (EN): Chaud Froid, General Wazen street, Dek…">Chaud Froid, General Wazen street, Dekwaneh.</xen><xar data-edit="t154" data-edit-label="Text (AR): شو فروا، شارع جنرال وازن، الدكوانة.">شو فروا، شارع جنرال وازن، الدكوانة.</xar></p>
-  <p style="margin-top:8px"><xen data-edit="t155" data-edit-label="Text (EN): Hot sub, cold drink. The name was alwa…">Hot sub, cold drink. The name was always the menu.</xen><xar data-edit="t156" data-edit-label="Text (AR): صب سخن، كولا باردة. الاسم كان دايمًا ه…">صب سخن، كولا باردة. الاسم كان دايمًا هو اللائحة.</xar></p>
+  <div class="wrap">
+    <p class="fm"><xen data-edit="t167" data-edit-label="Text (EN): Chaud Froid">Chaud Froid</xen><xar data-edit="t168" data-edit-label="Text (AR): شو فروا">شو فروا</xar></p>
+    <p><xen data-edit="t169" data-edit-label="Text (EN): Chaud Froid, General Wazen street, Dek…">Chaud Froid, General Wazen street, Dekwaneh.</xen><xar data-edit="t170" data-edit-label="Text (AR): شو فروا، شارع جنرال وازن، الدكوانة.">شو فروا، شارع جنرال وازن، الدكوانة.</xar></p>
+    <p><xen data-edit="t171" data-edit-label="Text (EN): Hot sub, cold drink. The name was alwa…">Hot sub, cold drink. The name was always the menu.</xen><xar data-edit="t172" data-edit-label="Text (AR): صب سخن، كولا باردة. الاسم كان دايمًا ه…">صب سخن، كولا باردة. الاسم كان دايمًا هو اللائحة.</xar></p>
+    <div class="fsoc">
+      <a href="https://www.instagram.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>Instagram</a>
+      <a href="https://www.facebook.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+    </div>
+  </div>
 </footer>
 
 <nav class="bar">
-  <a class="hotb" href="tel:+9611684126"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t157" data-edit-label="Text (EN): Call to order">Call to order</xen><xar data-edit="t158" data-edit-label="Text (AR): اتصل واطلب">اتصل واطلب</xar></span></a>
-  <a class="coldb" href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t159" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t160" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
-  <a class="woodb" href="#vst"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8m-.5 3v5.3l4.1 2.5.8-1.3-3.4-2V7z"/></svg><span><xen data-edit="t161" data-edit-label="Text (EN): Hours">Hours</xen><xar data-edit="t162" data-edit-label="Text (AR): الدوام">الدوام</xar></span></a>
-
-  <a class="woodb" href="https://www.instagram.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg>
-    Instagram</a>
-  <a class="woodb" href="https://www.facebook.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.91.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-    Facebook</a>
+  <a class="pri" href="tel:+9611684126"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11 11 0 0 0 .56 3.5 1 1 0 0 1-.25 1z"/></svg><span><xen data-edit="t173" data-edit-label="Text (EN): Call to order">Call to order</xen><xar data-edit="t174" data-edit-label="Text (AR): اتصل واطلب">اتصل واطلب</xar></span></a>
+  <a href="https://www.google.com/maps?cid=16476896506683864379" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5"/></svg><span><xen data-edit="t175" data-edit-label="Text (EN): Map">Map</xen><xar data-edit="t176" data-edit-label="Text (AR): الخريطة">الخريطة</xar></span></a>
+  <a href="#visit"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 2a8 8 0 1 1-8 8 8 8 0 0 1 8-8m-.5 3v5.3l4.1 2.5.8-1.3-3.4-2V7z"/></svg><span><xen data-edit="t177" data-edit-label="Text (EN): Hours">Hours</xen><xar data-edit="t178" data-edit-label="Text (AR): الدوام">الدوام</xar></span></a>
+  <a href="https://www.instagram.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.2A6.6 6.6 0 1 0 18.6 12 6.6 6.6 0 0 0 12 5.4zm0 10.9A4.3 4.3 0 1 1 16.3 12 4.3 4.3 0 0 1 12 16.3zm6.9-11.1a1.5 1.5 0 1 1-1.5-1.5 1.5 1.5 0 0 1 1.5 1.5z"/></svg><span data-edit="t179" data-edit-label="Text: Instagram">Instagram</span></a>
+  <a href="https://www.facebook.com/snackchaudfroid/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg><span data-edit="t180" data-edit-label="Text: Facebook">Facebook</span></a>
 </nav>
 
-<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="شو فروا · جنرال وازن، الدكوانة" data-edit="t163" data-edit-label="Button: عربي">عربي</button>
+<button class="lngt" id="lngt" type="button" aria-label="التبديل إلى العربية" data-ar-title="شو فروا · جنرال وازن، الدكوانة" data-edit="t181" data-edit-label="Button: عربي">عربي</button>
 </body></html>
